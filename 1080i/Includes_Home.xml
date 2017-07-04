@@ -415,7 +415,7 @@
             <!-- Viewmode -->
             <item>
                 <label>$INFO[Container.Viewmode]</label>
-                <icon>special://skin/extras/icons/playlist.png</icon>
+                <icon>special://skin/extras/icons/viewmode.png</icon>
                 <include>Home_View_LockUnlock</include>
                 <onclick>Container.NextViewMode</onclick>
                 <visible>Control.IsEnabled(2)</visible>
@@ -528,19 +528,27 @@
                 <onclick>SendClick(28)</onclick>
                 <visible>Control.IsEnabled(28)</visible>
             </item>
+            <!-- Playlist -->
+            <item>
+                <icon>special://skin/extras/icons/playlist.png</icon>
+                <label>13350</label>
+                <onclick condition="Integer.IsGreater(Playlist.Length(video),0)">ActivateWindow(VideoPlaylist)</onclick>
+                <onclick condition="Integer.IsGreater(Playlist.Length(music),0)">ActivateWindow(MusicPlaylist)</onclick>
+                <visible>Integer.IsGreater(Playlist.Length(music),0) | Integer.IsGreater(Playlist.Length(video),0)</visible>
+            </item>
+            <!-- Fullscreen -->
+            <item>
+                <icon>special://skin/extras/icons/fullscreen.png</icon>
+                <label>$LOCALIZE[31023]</label>
+                <visible>Player.HasMedia</visible>
+                <onclick>Fullscreen</onclick>
+            </item>
         </content>
     </include>
 
 
     <include name="Home_MainMenu_PlaylistItems">
         <content>
-            <!-- View -->
-            <item>
-                <label>$INFO[Control.GetLabel(2)]</label>
-                <icon>special://skin/extras/icons/playlist.png</icon>
-                <onclick>SendClick(2)</onclick>
-                <visible>Control.IsEnabled(2)</visible>
-            </item>
             <!-- Sort -->
             <item>
                 <label>$INFO[Control.GetLabel(3)]</label>
@@ -589,6 +597,13 @@
                 <icon>special://skin/extras/icons/shuffle.png</icon>
                 <onclick>SendClick(20)</onclick>
                 <visible>Control.IsEnabled(20)</visible>
+            </item>
+            <!-- Fullscreen -->
+            <item>
+                <icon>special://skin/extras/icons/fullscreen.png</icon>
+                <label>$LOCALIZE[31023]</label>
+                <visible>Player.HasMedia</visible>
+                <onclick>Fullscreen</onclick>
             </item>
         </content>
     </include>

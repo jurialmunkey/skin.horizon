@@ -176,8 +176,7 @@
                                 <font>font_small</font>
                                 <visible>!Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(ListItem.AddonSummary)</visible>
                             </control>
-                            <include condition="Window.IsVisible(MyMusicNav.xml)">Object_StarRating_Music</include>
-                            
+                            <include condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)">Object_StarRating_Music</include>                            
                         </control>
                     </control>
                 </control>
