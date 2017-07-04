@@ -365,12 +365,12 @@
                             <visible>!String.Contains(ListItem.Icon,/extras/icons/)</visible>
                         </control>
                         <control type="image">
-                            <top>0</top>
-                            <left>0</left>
-                            <right>0</right>
-                            <bottom>0</bottom>
+                            <top>47</top>
+                            <left>47</left>
+                            <right>47</right>
+                            <bottom>47</bottom>
                             <texture background="true" colordiffuse="main_fg_70">$INFO[ListItem.Icon]</texture>
-                            <aspectratio>scale</aspectratio>
+                            <aspectratio>keep</aspectratio>
                             <visible>[!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !String.IsEqual(ListItem.Icon,ListItem.Art(poster)) + !String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))] | $PARAM[square]</visible>
                             <visible>String.Contains(ListItem.Icon,/extras/icons/)</visible>
                         </control>
@@ -465,6 +465,17 @@
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>scale</aspectratio>
                             <visible>[!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !String.IsEqual(ListItem.Icon,ListItem.Art(poster)) + !String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))] | $PARAM[square]</visible>
+                            <visible>!String.Contains(ListItem.Icon,/extras/icons/)</visible>
+                        </control>
+                        <control type="image">
+                            <top>47</top>
+                            <left>47</left>
+                            <right>47</right>
+                            <bottom>47</bottom>
+                            <texture background="true" colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+                            <aspectratio>keep</aspectratio>
+                            <visible>[!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !String.IsEqual(ListItem.Icon,ListItem.Art(poster)) + !String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))] | $PARAM[square]</visible>
+                            <visible>String.Contains(ListItem.Icon,/extras/icons/)</visible>
                         </control>
                     </control>
                     <control type="image">
