@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="Defs_Info_MovieCast"><content>plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[ListItem.Title]&amp;castaction=extendedinfo</content></include>
+    <include name="Defs_Info_TVShowCast"><content>plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[ListItem.Title]&amp;castaction=extendedinfo</content></include>
+    <include name="Defs_Info_EpisodeCast"><content>plugin://script.skin.helper.service/?action=getcast&amp;episode=$INFO[ListItem.Title]&amp;castaction=extendedinfo</content></include>
+
+    <include name="Defs_SkinShortcuts_Widget">
+        <control type="button" id="312$PARAM[num]" description="Widget">
+            <width>100%</width>
+            <height>66</height>
+            <label>31266</label>
+            <label2>$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]</label2>
+            <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+            <align>left</align>
+            <onclick>SetProperty(widgetID,Widget$PARAM[num])</onclick>
+            <onclick>SendClick(312)</onclick>
+            <include>Dialog_Standard_Right_Buttons</include>
+            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+            <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[prev_id]))</visible>
+        </control>
+    </include>
+
+    <include name="Defs_Settings_InfoLine">
+        <left>50</left>
+        <right>30</right>
+        <top>72</top>
+        <height>40</height>
+        <font>font_tiny</font>
+        <textcolor>panel_fg_70</textcolor>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Defs_Settings_Header">
+        <control type="label">
+            <left>50</left>
+            <width>390</width>
+            <top>0</top>
+            <height>100</height>
+            <font>font_medium_bold</font>
+            <label>$VAR[Label_Settings_Header]</label>
+            <textcolor>panel_fg_100</textcolor>
+        </control>
+    </include>
+
+    <include name="Defs_Settings_Arrows">
+        <control type="image">
+            <visible>Container($PARAM[id]).HasPrevious</visible>
+            <centerright>735</centerright>
+            <centertop>120</centertop>
+            <width>16</width>
+            <height>16</height>
+            <texture flipy="true" colordiffuse="panel_fg_70">common/arrow-small.png</texture>
+        </control>
+        <control type="image">
+            <visible>Container($PARAM[id]).HasNext</visible>
+            <centerright>735</centerright>
+            <centerbottom>-18</centerbottom>
+            <width>16</width>
+            <height>16</height>
+            <texture colordiffuse="panel_fg_70">common/arrow-small.png</texture>
+        </control>
+    </include>
+
+    <include name="Defs_Settings_Line">
+        <control type="image">
+            <top>140</top>
+            <left>450</left>
+            <width>1</width>
+            <bottom>0</bottom>
+            <colordiffuse>main_fg_12</colordiffuse>
+            <texture>common/white.png</texture>
+        </control>
+    </include>
+
+    <include name="Defs_PVRGuide_Lines">
+        <control type="image" id="2">
+            <height>1</height>
+            <top>0</top>
+            <texture colordiffuse="7f000000">common/white.png</texture>
+        </control>
+        <control type="image" id="2">
+            <height>1</height>
+            <top>1</top>
+            <texture colordiffuse="1fcccccc">common/white.png</texture>
+        </control>
+    </include>
+
+    <include name="Defs_InfoDialog_Visible">
+        <visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)] | Window.IsVisible(script-script.extendedinfo-VideoList.xml)</visible>
+    </include>
+
+    <include name="Defs_Shortcuts_SetHub">
+        <control type="button" id="$PARAM[buttonid1]" description="Set HUB">
+            <width>100%</width>
+            <label>31291</label>
+            <height>66</height>
+            <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+            <align>left</align>
+            <include>Dialog_Standard_Right_Buttons</include>
+            <visible>String.IsEqual(Container(211).ListItem.Property(Path),ActivateWindow($PARAM[hubid]))</visible>
+            <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=x$PARAM[hubid])</onclick>
+        </control>
+    </include>
+
+    <!-- Options Menu -->
+    <include name="Defs_Options_Menu">
+        <left>8</left>
+        <bottom>56</bottom>
+        <include>Animation_FadeIn_SlideUp</include>
+        <include>Animation_FadeOut</include>
+        <width>466</width>
+        <height>382</height>
+        <include>Defs_Options_Texture</include>
+    </include>
+    <include name="Defs_Options_Texture">
+        <control type="image">
+            <left>-16</left>
+            <right>-16</right>
+            <top>-16</top>
+            <bottom>-16</bottom>
+            <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
+            <bordersize>24</bordersize>
+            <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
+        </control>
+    </include>
+    <include name="Defs_Options_Grouplist">
+        <left>8</left>
+        <bottom>16</bottom>
+        <width>450</width>
+        <top>16</top>
+        <itemgap>0</itemgap>
+        <onback condition="!Window.IsVisible(DialogButtonMenu.xml)">50</onback>
+        <onleft condition="!Window.IsVisible(DialogButtonMenu.xml)">50</onleft>
+        <onright condition="!Window.IsVisible(DialogButtonMenu.xml)">50</onright>
+    </include>
+
+    <include name="Defs_Powermenu_Group">
+        <height>592</height>
+        <centerleft>50%</centerleft>
+        <centertop>50%</centertop>
+        <width>466</width>
+    </include>
+
+    <include name="Defs_Options_StandardButtons">
+        <control type="button" id="2">
+            <description>Viewmode</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="3">
+            <description>Sortby</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="6003">
+            <description>Sort By</description>
+            <label>$INFO[Control.GetLabel(3)]</label>
+            <onclick>SendClick(3)</onclick>
+            <visible>Control.IsVisible(3)</visible>
+            <visible>Control.IsEnabled(3)</visible>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="togglebutton" id="4">
+            <label>$LOCALIZE[584]</label>
+            <altlabel>$LOCALIZE[585]</altlabel>
+            <usealttexture>Container.SortDirection(Descending)</usealttexture>
+            <include>Defs_Hidden_Button</include>
+        </control>
+    </include>
+
+    <include name="Defs_Hidden_Button">
+        <visible allowhiddenfocus="true">false</visible>
+        <width>1</width>
+        <height>1</height>
+    </include>
+
+    <!-- Widget Content -->
+    <variable name="Defs_Widget_Content">
+        <value condition="[String.IsEqual(Container(300).ListItem.Property(widget),weather) + [Control.HasFocus(300) | String.IsEmpty(Container(302).ListItem.Property(widget))] | [String.IsEqual(Container(302).ListItem.Property(widget),weather) + !Control.HasFocus(300)]]">-</value>
+        <value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
+        
+        <value condition="!String.IsEmpty(Container(300).ListItem.Property(Background))">-</value>
+        <value condition="!String.IsEmpty(Skin.String(home.slideshowpath)) + String.IsEmpty(Container(300).ListItem.Property(widget))">-</value>
+        <value condition="!String.IsEmpty(Skin.String(home.fallbackwidget))">$INFO[Skin.String(home.fallbackwidget)]</value>
+        <value>special://skin/extras/playlists/RandomMovies.xsp</value>
+    </variable>
+
+    <variable name="Defs_Widget_Target">
+        <value condition="!String.IsEmpty(Skin.String(home.fallbackwidget.target))">$INFO[Skin.String(home.fallbackwidget.target)]</value>
+        <value>videos</value>
+    </variable>
+
+    <!-- Keyboard and Numeric Keys -->
+    <include name="Defs_Keyboard_Button">
+        <width>85</width>
+        <height>75</height>
+        <texturenofocus border="5" colordiffuse="dialog_fg_12">common/box.png</texturenofocus>
+        <texturefocus border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texturefocus>
+        <textoffsetx>0</textoffsetx>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <radioposx>320</radioposx>
+        <radioposy>22</radioposy>
+    </include>
+
+    <!-- Context Button -->
+    <include name="Defs_Context_Button">
+        <radioposx>400</radioposx>
+        <width>450</width>
+        <height>70</height>
+        <font>font_tiny</font>
+        <textcolor>dialog_fg_70</textcolor>
+        <textureradiofocus colordiffuse="dialog_fg_70">buttons/radio-on.png</textureradiofocus>
+        <textureradionofocus colordiffuse="dialog_fg_30">buttons/radio-off.png</textureradionofocus>
+        <focusedcolor>Selected</focusedcolor>
+        <alttexturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</alttexturefocus>
+        <texturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</texturefocus>
+    </include>
+
+    <!-- Settings Buttons -->
+    <include name="Defs_Settings_Button">
+        <align>left</align>
+        <font>font_small</font>
+        <radioposx>1310</radioposx>
+        <textcolor>panel_fg_100</textcolor>
+        <disabledcolor>panel_fg_12</disabledcolor>
+        <height>74</height>
+        <textoffsetx>50</textoffsetx>
+        <textureup flipy="true" colordiffuse="panel_fg_30">buttons/spin-down.png</textureup>
+        <texturedown colordiffuse="panel_fg_30">buttons/spin-down.png</texturedown>
+        <textureupfocus flipy="true" colordiffuse="panel_fg_100">buttons/spin-down.png</textureupfocus>
+        <texturedownfocus colordiffuse="panel_fg_100">buttons/spin-down.png</texturedownfocus>
+        <textureradiofocus colordiffuse="panel_fg_70">buttons/radio-on.png</textureradiofocus>
+        <textureradionofocus colordiffuse="panel_fg_12">buttons/radio-off.png</textureradionofocus>
+        <texturefocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</texturefocus>
+        <alttexturefocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturefocus>
+    </include>
+    <variable name="Defs_Settings_ColorHighlight">
+        <value condition="Control.HasFocus(300) | Control.HasFocus(302) | Control.HasFocus(20)">00ffffff</value>
+        <value>$VAR[ColorHighlight2]</value>
+    </variable>
+
+    <!-- Grouplist 9000 -->
+    <include name="Defs_9000_Grouplist">
+        <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
+        <onleft>50</onleft>
+        <onright>50</onright>
+        <onback>50</onback>
+        <left>8</left>
+        <top>16</top>
+        <width>510</width>
+        <height>350</height>
+        <itemgap>0</itemgap>
+    </include>
+
+    <!-- Context Type Menu Background -->
+    <include name="Defs_9000_Background">
+        <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
+        <include>Animation_ZoomIn</include>
+        <include>Animation_FadeOut</include>
+        <top>184</top>
+        <centerleft>50%</centerleft>
+        <height>382</height>
+        <width>466</width>
+
+        <control type="image">
+            <description>background image</description>
+            <left>0</left>
+            <top>0</top>
+            <width>466</width>
+            <height>100%</height>
+            <texture border="16" colordiffuse="dialog_bg_100">common/rounded-shadow8.png</texture>
+        </control>
+    </include>
+
+    <!-- Shadows -->
+    <include name="Defs_DarkShadow">
+        <left>-24</left>
+        <right>-24</right>
+        <top>-24</top>
+        <bottom>-24</bottom>
+        <bordersize>24</bordersize>
+        <bordertexture border="24">common/dark-shadow-24.png</bordertexture>
+    </include>
+    <include name="Defs_Shadow">
+        <left>-24</left>
+        <right>-24</right>
+        <top>-24</top>
+        <bottom>-24</bottom>
+        <bordersize>24</bordersize>
+        <bordertexture border="32" colordiffuse="dialog_fg_12">common/shadow-24.png</bordertexture>
+    </include>
+    <include name="Defs_Shadow_Opaque">
+        <left>-24</left>
+        <right>-24</right>
+        <top>-24</top>
+        <bottom>-24</bottom>
+        <bordersize>24</bordersize>
+        <!-- <bordertexture border="32" colordiffuse="PosterBack">common/shadow-24.png</bordertexture> -->
+        <bordertexture border="32">common/trans-shadow-24.png</bordertexture>
+    </include>
+
+    <!-- Busy Spinner -->
+    <include name="Defs_BusySpinner">
+        <param name="label" default="$LOCALIZE[20186]..." />
+        <definition>
+            <control type="group">
+                <height>170</height>
+                <width>720</width>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <control type="image">
+                    <description>Busy animation</description>
+                    <centerleft>50%</centerleft>
+                    <top>0</top>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>dialog/loading-back.png</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
+                <control type="group">
+                    <description>Busy animation</description>
+                    <centerleft>50%</centerleft>
+                    <top>0</top>
+                    <width>100</width>
+                    <height>100</height>
+                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight2]">dialog/loading-spinner.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
+                    </control>
+                </control>
+                <control type="label">
+                    <description>Busy label</description>
+                    <centerleft>50%</centerleft>
+                    <bottom>0</bottom>
+                    <width>720</width>
+                    <height>100</height>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <label>$PARAM[label]</label>
+                    <textcolor>ffededed</textcolor>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Defs_Progress_Colorfade">
+        <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),0)">Conditional</animation>
+        <animation effect="fade" start="100" end="1" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),1)">Conditional</animation>
+        <animation effect="fade" start="100" end="2" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),2)">Conditional</animation>
+        <animation effect="fade" start="100" end="3" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),3)">Conditional</animation>
+        <animation effect="fade" start="100" end="4" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),4)">Conditional</animation>
+        <animation effect="fade" start="100" end="5" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),5)">Conditional</animation>
+        <animation effect="fade" start="100" end="6" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),6)">Conditional</animation>
+        <animation effect="fade" start="100" end="7" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),7)">Conditional</animation>
+        <animation effect="fade" start="100" end="8" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),8)">Conditional</animation>
+        <animation effect="fade" start="100" end="9" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),9)">Conditional</animation>
+        <animation effect="fade" start="100" end="10" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),10)">Conditional</animation>
+        <animation effect="fade" start="100" end="11" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),11)">Conditional</animation>
+        <animation effect="fade" start="100" end="12" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),12)">Conditional</animation>
+        <animation effect="fade" start="100" end="13" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),13)">Conditional</animation>
+        <animation effect="fade" start="100" end="14" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),14)">Conditional</animation>
+        <animation effect="fade" start="100" end="15" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),15)">Conditional</animation>
+        <animation effect="fade" start="100" end="16" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),16)">Conditional</animation>
+        <animation effect="fade" start="100" end="17" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),17)">Conditional</animation>
+        <animation effect="fade" start="100" end="18" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),18)">Conditional</animation>
+        <animation effect="fade" start="100" end="19" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),19)">Conditional</animation>
+        <animation effect="fade" start="100" end="20" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),20)">Conditional</animation>
+        <animation effect="fade" start="100" end="21" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),21)">Conditional</animation>
+        <animation effect="fade" start="100" end="22" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),22)">Conditional</animation>
+        <animation effect="fade" start="100" end="23" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),23)">Conditional</animation>
+        <animation effect="fade" start="100" end="24" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),24)">Conditional</animation>
+        <animation effect="fade" start="100" end="25" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),25)">Conditional</animation>
+        <animation effect="fade" start="100" end="26" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),26)">Conditional</animation>
+        <animation effect="fade" start="100" end="27" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),27)">Conditional</animation>
+        <animation effect="fade" start="100" end="28" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),28)">Conditional</animation>
+        <animation effect="fade" start="100" end="29" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),29)">Conditional</animation>
+        <animation effect="fade" start="100" end="30" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),30)">Conditional</animation>
+        <animation effect="fade" start="100" end="31" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),31)">Conditional</animation>
+        <animation effect="fade" start="100" end="32" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),32)">Conditional</animation>
+        <animation effect="fade" start="100" end="33" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),33)">Conditional</animation>
+        <animation effect="fade" start="100" end="34" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),34)">Conditional</animation>
+        <animation effect="fade" start="100" end="35" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),35)">Conditional</animation>
+        <animation effect="fade" start="100" end="36" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),36)">Conditional</animation>
+        <animation effect="fade" start="100" end="37" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),37)">Conditional</animation>
+        <animation effect="fade" start="100" end="38" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),38)">Conditional</animation>
+        <animation effect="fade" start="100" end="39" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),39)">Conditional</animation>
+        <animation effect="fade" start="100" end="40" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),40)">Conditional</animation>
+        <animation effect="fade" start="100" end="41" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),41)">Conditional</animation>
+        <animation effect="fade" start="100" end="42" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),42)">Conditional</animation>
+        <animation effect="fade" start="100" end="43" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),43)">Conditional</animation>
+        <animation effect="fade" start="100" end="44" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),44)">Conditional</animation>
+        <animation effect="fade" start="100" end="45" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),45)">Conditional</animation>
+        <animation effect="fade" start="100" end="46" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),46)">Conditional</animation>
+        <animation effect="fade" start="100" end="47" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),47)">Conditional</animation>
+        <animation effect="fade" start="100" end="48" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),48)">Conditional</animation>
+        <animation effect="fade" start="100" end="49" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),49)">Conditional</animation>
+        <animation effect="fade" start="100" end="50" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),50)">Conditional</animation>
+        <animation effect="fade" start="100" end="51" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),51)">Conditional</animation>
+        <animation effect="fade" start="100" end="52" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),52)">Conditional</animation>
+        <animation effect="fade" start="100" end="53" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),53)">Conditional</animation>
+        <animation effect="fade" start="100" end="54" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),54)">Conditional</animation>
+        <animation effect="fade" start="100" end="55" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),55)">Conditional</animation>
+        <animation effect="fade" start="100" end="56" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),56)">Conditional</animation>
+        <animation effect="fade" start="100" end="57" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),57)">Conditional</animation>
+        <animation effect="fade" start="100" end="58" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),58)">Conditional</animation>
+        <animation effect="fade" start="100" end="59" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),59)">Conditional</animation>
+        <animation effect="fade" start="100" end="60" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),60)">Conditional</animation>
+        <animation effect="fade" start="100" end="61" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),61)">Conditional</animation>
+        <animation effect="fade" start="100" end="62" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),62)">Conditional</animation>
+        <animation effect="fade" start="100" end="63" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),63)">Conditional</animation>
+        <animation effect="fade" start="100" end="64" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),64)">Conditional</animation>
+        <animation effect="fade" start="100" end="65" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),65)">Conditional</animation>
+        <animation effect="fade" start="100" end="66" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),66)">Conditional</animation>
+        <animation effect="fade" start="100" end="67" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),67)">Conditional</animation>
+        <animation effect="fade" start="100" end="68" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),68)">Conditional</animation>
+        <animation effect="fade" start="100" end="69" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),69)">Conditional</animation>
+        <animation effect="fade" start="100" end="70" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),70)">Conditional</animation>
+        <animation effect="fade" start="100" end="71" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),71)">Conditional</animation>
+        <animation effect="fade" start="100" end="72" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),72)">Conditional</animation>
+        <animation effect="fade" start="100" end="73" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),73)">Conditional</animation>
+        <animation effect="fade" start="100" end="74" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),74)">Conditional</animation>
+        <animation effect="fade" start="100" end="75" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),75)">Conditional</animation>
+        <animation effect="fade" start="100" end="76" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),76)">Conditional</animation>
+        <animation effect="fade" start="100" end="77" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),77)">Conditional</animation>
+        <animation effect="fade" start="100" end="78" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),78)">Conditional</animation>
+        <animation effect="fade" start="100" end="79" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),79)">Conditional</animation>
+        <animation effect="fade" start="100" end="80" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),80)">Conditional</animation>
+        <animation effect="fade" start="100" end="81" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),81)">Conditional</animation>
+        <animation effect="fade" start="100" end="82" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),82)">Conditional</animation>
+        <animation effect="fade" start="100" end="83" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),83)">Conditional</animation>
+        <animation effect="fade" start="100" end="84" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),84)">Conditional</animation>
+        <animation effect="fade" start="100" end="85" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),85)">Conditional</animation>
+        <animation effect="fade" start="100" end="86" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),86)">Conditional</animation>
+        <animation effect="fade" start="100" end="87" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),87)">Conditional</animation>
+        <animation effect="fade" start="100" end="88" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),88)">Conditional</animation>
+        <animation effect="fade" start="100" end="89" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),89)">Conditional</animation>
+        <animation effect="fade" start="100" end="90" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),90)">Conditional</animation>
+        <animation effect="fade" start="100" end="91" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),91)">Conditional</animation>
+        <animation effect="fade" start="100" end="92" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),92)">Conditional</animation>
+        <animation effect="fade" start="100" end="93" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),93)">Conditional</animation>
+        <animation effect="fade" start="100" end="94" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),94)">Conditional</animation>
+        <animation effect="fade" start="100" end="95" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),95)">Conditional</animation>
+        <animation effect="fade" start="100" end="96" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),96)">Conditional</animation>
+        <animation effect="fade" start="100" end="97" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),97)">Conditional</animation>
+        <animation effect="fade" start="100" end="98" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),98)">Conditional</animation>
+        <animation effect="fade" start="100" end="99" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),99)">Conditional</animation>
+    </include>
+
+</includes>

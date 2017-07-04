@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="7">
+    <defaultcontrol always="true">95</defaultcontrol>
+    <controls>
+
+        <include>Global_Background</include>
+        <include>View_Layout</include>
+        <control type="group">
+            <include>Dialog_Settings_Panel</include>
+            <include>Animation_Home_Textbar_Slideover</include>
+            <control type="group">
+                <left>320</left>
+                <right>-290</right>
+                <top>37</top>
+                <height>880</height>
+
+                <!-- Left Gradient Fade -->
+                <control type="image">
+                    <top>140</top>
+                    <height>74</height>
+                    <width>450</width>
+                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    <visible>ControlGroup(50).HasFocus()</visible>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,0)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,1)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,2)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,3)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,4)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,5)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,6)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,7)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(50).Position,8)">Conditional</animation>
+                </control>
+
+                <!-- Lines -->
+                <include>Defs_Settings_Line</include>
+
+                <!-- Header -->
+                <include>Defs_Settings_Header</include>
+                <control type="label">
+                    <include>Defs_Settings_InfoLine</include>
+                    <label>$INFO[System.FriendlyName,,  -  ]$INFO[Control.GetLabel(52)]</label>
+                </control>
+
+                <control type="label" id="52" description="XBMC Build Version">
+                    <visible>false</visible>
+                </control>
+
+                <!-- Left Group -->
+                <control type="grouplist" id="50">
+                    <width>450</width>
+                    <top>140</top>
+                    <bottom>0</bottom>
+                    <itemgap>0</itemgap>
+                    <onleft>300</onleft>
+
+                    <control type="button" id="95">
+                        <description>General</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>20037</label>
+                    </control>
+
+                    <control type="button" id="94">
+                        <description>Storage</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13277</label>
+                    </control>
+
+                    <control type="button" id="96">
+                        <description>Network</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13279</label>
+                    </control>
+
+                    <control type="button" id="97">
+                        <description>Video</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13280</label>
+                    </control>
+
+                    <control type="button" id="98">
+                        <description>Hardware</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13281</label>
+                    </control>
+
+                    <control type="button" id="99">
+                        <description>Live TV</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>19012</label>
+                    </control>
+                </control>
+
+                <control type="grouplist">
+                    <left>450</left>
+                    <top>140</top>
+                    <bottom>0</bottom>
+                    <right>0</right>
+                    <itemgap>0</itemgap>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <control type="label">
+                        <description>CPU Text</description>
+                        <font>font_tiny</font>
+                        <width>750</width>
+                        <height>60</height>
+                        <label>$LOCALIZE[13271]</label>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+                    <control type="label">
+                        <description>CPU Text</description>
+                        <font>font_tiny</font>
+                        <top>-60</top>
+                        <left>100</left>
+                        <align>right</align>
+                        <width>750</width>
+                        <height>60</height>
+                        <label>$INFO[System.CPUUsage]</label>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+                    <control type="progress" id="22">
+                        <description>CPU BAR</description>
+                        <left>50</left>
+                        <height>10</height>
+                        <width>750</width>
+                        <info>System.CPUUsage</info>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label">
+                        <description>Memory Text</description>
+                        <top>-70</top>
+                        <left>800</left>
+                        <font>font_tiny</font>
+                        <height>60</height>
+                        <label>$LOCALIZE[31104]:</label>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+                    <control type="label">
+                        <description>Memory Text</description>
+                        <top>-60</top>
+                        <align>right</align>
+                        <left>800</left>
+                        <font>font_tiny</font>
+                        <height>60</height>
+                        <label>$INFO[system.memory(used.percent)]</label>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="progress" id="24">
+                        <description>Memory BAR</description>
+                        <left>850</left>
+                        <right>50</right>
+                        <height>10</height>
+                        <info>system.memory(used)</info>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="25">
+                        <description>Spacer</description>
+                        <font/>
+                        <height>25</height>
+                    </control>
+
+                    <control type="label" id="2">
+                        <description>Label 2</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="3">
+                        <description>Label 3</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="4">
+                        <description>Label 4</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="5">
+                        <description>Label 5</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="6">
+                        <description>Label 6</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="7">
+                        <description>Label 7</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="8">
+                        <description>Label 8</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="9">
+                        <description>Label 9</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="10">
+                        <description>Label 10</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="11">
+                        <description>Label 11</description>
+                        <font>font_small</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                </control>
+
+            </control>
+        </control>
+
+        <!-- Standard Furniture -->
+        <include>Topbar</include>
+        <include>Home</include>
+    </controls>
+
+</window>

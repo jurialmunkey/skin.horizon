@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2001">
+    <defaultcontrol always="true">8</defaultcontrol>
+    <controls>
+        <include condition="Window.IsVisible(Home)">View_Layout</include>
+        <control type="group">
+            <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
+    
+            <control type="group">
+                <include>Animation_Right_Delay</include>
+                <top>MenuBarTop</top>
+
+                <!-- Info and Albums -->
+                <control type="grouplist">
+                    <left>musicinfo_left</left>
+                    <top>20</top>
+                    <right>70</right>
+                    <bottom>30</bottom>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <control type="grouplist">
+                        <top>20</top>
+                        <height>42</height>
+                        <left>0</left>
+                        <align>left</align>
+                        <itemgap>12</itemgap>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <orientation>horizontal</orientation>
+                        <include>Object_DownArrows</include>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <height>100%</height>
+                            <label>$LOCALIZE[21821]</label>
+                        </control>
+                    </control>
+                    <control type="textbox">
+                        <top>42</top>
+                        <height>auto</height>
+                        <textcolor>main_fg_70</textcolor>
+                        <font>font_textviewer</font>
+                        <label fallback="19055">$VAR[Label_Plot]</label>
+                    </control>
+                </control>
+            </control>
+
+            
+            <control type="group">
+                <left>70</left>
+                <width>320</width>
+                <include>Animation_Home_Textbar_Slideover</include>
+                <include>Home_Textbar_Texture</include>
+                <include>Home_Textbar_Items</include>
+            </control>
+            <control type="group">
+                <left>0</left>
+                <width>74</width>
+                <include>Home_Iconbar_Texture</include>
+                <include>Home_Iconbar_Logo</include>
+                <control type="group">
+                    <control type="list" id="300">
+                        <onright>8</onright>
+                        <onleft>8</onleft>
+                        <include>Home_OnFocus</include>
+                        <include>Home_VideoInfo_Layout</include>
+                        <include>Home_MainMenu_InfoItems</include>
+                    </control>
+                    <control type="group" id="9000">
+                        <top>MenuBarTop</top>
+                        <height>74</height>
+                        <control type="group">
+                            <left>74</left>
+                            <width>6</width>     
+                            <visible>Control.HasFocus(8)</visible>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="group">
+                                <include>Home_Separator</include>
+                            </control>
+                            <control type="group">
+                                <top>74</top>
+                                <include>Home_Separator</include>
+                            </control>
+                        </control>
+                        <control type="button" id="8">
+                            <description>Play button</description>
+                            <label>208</label>
+                            <width>74</width>
+                            <height>74</height>
+                            <font/>
+                            <onright>9601</onright>
+                            <onleft>SetFocus(300,0)</onleft>
+                            <onup>SetFocus(300,0)</onup>
+                            <ondown>SetFocus(300,0)</ondown>
+                            <onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,album)">RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
+                            <onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,song)">RunScript(script.playalbum,songid=$INFO[ListItem.DBID])</onclick>
+                            <onclick condition="System.HasAddon(script.playalbum)">Action(close)</onclick>
+                            <onclick condition="!System.HasAddon(script.playalbum)">InstallAddon(script.playalbum)</onclick>
+                            <visible allowhiddenfocus="true">Control.HasFocus(8)</visible>
+                            <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/play3.png</texturenofocus>
+                            <texturefocus colordiffuse="Selected">special://skin/extras/icons/play3.png</texturefocus>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <top>MenuBarTop</top>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,3)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,4)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,5)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,6)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,7)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,8)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,9)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,10)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,11)">Conditional</animation>
+                        <include>Home_Separator</include>
+                    </control>
+                </control>
+            </control>
+
+            <include>Object_PlotOverlay</include>
+        </control>    
+
+        <!-- Hidden Buttons -->
+        <control type="button" id ="9003">
+            <description>Youtube</description>
+            <label>31141</label>
+            <onclick>Close</onclick>
+            <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/search/?q=$INFO[ListItem.Artist],return)</onclick>
+            <onclick>SetFocus(50)</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
+        <control type="button" id ="6">
+            <description>Refresh</description>
+            <label>184</label>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
+        <control type="button" id ="10">
+            <description>Get Thumb</description>
+            <label>13405</label>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
+        <control type="button" id ="12">
+            <description>Get Fanart</description>
+            <label>20413</label>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
+            <visible>Container.Content(artists)</visible>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
+    </controls>
+
+</window>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- ====== -->
+    <!-- Common -->
+    <!-- ====== -->
+    <include name="Topbar_Gradient">
+        <control type="group">
+            <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]</visible>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <control type="image">
+                <top>-128</top>
+                <height>320</height>
+                <texture colordiffuse="9f000000">common/gradient-top.png</texture>
+            </control>
+            <control type="image">
+                <height>320</height>
+                <texture>common/gradient-top.png</texture>
+            </control>
+        </control>
+    </include>
+    <include name="Topbar">
+        <control type="group">
+            <include condition="Window.IsActive(Home)">Topbar_Gradient</include>
+            <control type="group">
+                <top>0</top>
+                <height>186</height>
+                <include>Topbar_Texture</include>
+            </control>
+            <include>Topbar_TextDetails</include>
+        </control>
+    </include>
+
+    <include name="Topbar_Texture">
+        <control type="image">
+            <bottom>-24</bottom>
+            <height>24</height>
+            <width>100%</width>
+            <texture flipy="false">common/shadow-line-24px.png</texture>
+        </control>
+        <control type="image">
+            <bottom>0</bottom>
+            <top>0</top>
+            <aspectratio>scale</aspectratio>
+            <texture flipy="true">common/gradient-solid.png</texture>
+        </control>
+        <control type="image">
+            <bottom>2</bottom>
+            <height>1</height>
+            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+        </control>
+        <control type="image">
+            <bottom>1</bottom>
+            <height>1</height>
+            <texture colordiffuse="darkline_separator">common/white.png</texture>
+        </control>
+    </include>
+
+    <!-- ======== -->
+    <!-- MainMenu -->
+    <!-- ======== -->
+    <include name="Topbar_MainMenu">
+        <control type="group">
+            <include>Topbar_MainMenu_Group</include>
+            <include>Topbar_TextDetails</include>
+            <include>Topbar_MainMenu_Lines</include>
+        </control>
+    </include>
+
+    <include name="Topbar_MainMenu_Group">
+        <top>0</top>
+        <left>0</left>
+        <right>0</right>
+        <height>80</height>
+        <control type="image">
+            <bottom>-24</bottom>
+            <height>24</height>
+            <width>100%</width>
+            <texture flipy="false">common/shadow-line-24px.png</texture>
+        </control>
+        <control type="image">
+            <texture>common/gradient-solid.png</texture>
+        </control>
+
+    </include>
+
+    <include name="Topbar_MainMenu_Lines">
+        <control type="image">
+            <top>0</top>
+            <height>1</height>
+            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+        </control>
+        <control type="image">
+            <bottom>0</bottom>
+            <height>1</height>
+            <texture colordiffuse="darkline_topbar">common/white.png</texture>
+            <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
+        </control>
+    </include>
+
+    <include name="Topbar_TextDetails">
+
+        <control type="group">
+            <!-- Left Side | Location / Num Items -->
+            <control type="group">
+                <include>Animation_MusicVis_Left</include>
+                <top>48</top>
+                <left>SidePad</left>
+                <include>Animation_Home_Topbar_Slideover_NoInfo</include>
+                <control type="label">
+                    <height>48</height>
+                    <label>$VAR[Label_Header_Content]</label>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <shadowcolor>main_bg_30</shadowcolor>
+                </control>
+                <control type="grouplist">
+                    <top>48</top>
+                    <height>42</height>
+                    <left>0</left>
+                    <align>left</align>
+                    <itemgap>12</itemgap>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <orientation>horizontal</orientation>
+                    <control type="group">
+                        <width>20</width>
+                        <visible>!Player.HasMedia | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                        <include>Object_DownArrows</include>
+                    </control>
+                    <control type="label">
+                        <font>font_small</font>
+                        <aligny>center</aligny>
+                        <width>auto</width>
+                        <height>100%</height>
+                        <textcolor>main_fg_70</textcolor>
+                        <shadowcolor>main_bg_30</shadowcolor>
+                        <label>$VAR[Label_SubHeader_Content]</label>
+                        <visible>!Player.HasMedia | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                    </control>
+                    <control type="multiimage">
+                        <top>10</top>
+                        <left>0</left>
+                        <imagepath colordiffuse="$VAR[ColorHighlight]">eq</imagepath>
+                        <width>40</width>
+                        <height>23</height>
+                        <fadetime>50</fadetime>
+                        <timeperimage>50</timeperimage>
+                        <visible>Player.HasMedia</visible>
+                        <visible>!Player.Paused</visible>
+                        <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                    </control>
+                    <control type="image">
+                        <top>7</top>
+                        <left>0</left>
+                        <texture colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texture>
+                        <width>32</width>
+                        <height>32</height>
+                        <fadetime>50</fadetime>
+                        <timeperimage>50</timeperimage>
+                        <visible>Player.HasMedia</visible>
+                        <visible>Player.Paused</visible>
+                        <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                    </control>
+                    <control type="label">
+                        <left>8</left>
+                        <font>font_small</font>
+                        <aligny>center</aligny>
+                        <width>auto</width>
+                        <height>100%</height>
+                        <textcolor>main_fg_70</textcolor>
+                        <shadowcolor>main_bg_30</shadowcolor>
+                        <label>$VAR[Label_SubHeader_Content_Playing]</label>
+                        <visible>Player.HasMedia</visible>
+                        <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                    </control>
+                </control>
+            </control>
+
+
+            <!-- Right Side | Date / Time -->
+            <include>Topbar_TextDetails_DateTime</include>
+            
+        </control>
+        
+    </include>
+
+    <include name="Topbar_TextDetails_DateTime">
+        <control type="group">
+            <top>48</top>
+            <include>Animation_OSD_Notification</include>
+            <right>SidePad</right>
+            <visible>!Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml) + ![Window.IsVisible(DialogVolumeBar.xml) + !Player.Muted]</visible>
+            <include>Animation_FadeIn_Slide_Visible</include>
+            <control type="image">
+                <include>Dialog_Notification_Icon</include>
+                <texture colordiffuse="main_fg_100">buttons/mute.png</texture>
+                <animation type="Visible">
+                    <effect type="fade" start="0" end="100" delay="50" time="150" />
+                    <effect type="slide" start="20" end="0" delay="0" time="100" />
+                </animation>
+                <visible>Player.Muted</visible>
+            </control>
+            <control type="group">
+                <animation effect="slide" end="-80" time="0" condition="Player.Muted">Conditional</animation>
+                <control type="label">
+                    <width>200</width>
+                    <right>0</right>
+                    <height>48</height>
+                    <label>$INFO[System.Time]</label>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <shadowcolor>main_bg_30</shadowcolor>
+                </control>
+                <control type="grouplist">
+                    <orientation>horizontal</orientation>
+                    <right>0</right>
+                    <top>48</top>
+                    <height>42</height>
+                    <align>right</align>
+                    <itemgap>20</itemgap>
+                    <control type="label">
+                        <font>font_small</font>
+                        <align>right</align>
+                        <textcolor>main_fg_70</textcolor>
+                        <shadowcolor>main_bg_30</shadowcolor>
+                        <label>$INFO[Weather.Temperature]</label>
+                        <aligny>center</aligny>
+                        <width>auto</width>
+                        <height>100%</height>
+                        <visible>Weather.IsFetched</visible>
+                    </control>
+                    <control type="label">
+                        <font>font_small</font>
+                        <align>right</align>
+                        <shadowcolor>main_bg_30</shadowcolor>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <label>$INFO[System.Date]</label>
+                        <aligny>center</aligny>
+                        <width>auto</width>
+                        <height>100%</height>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+
+
+    <!-- ======= -->
+    <!-- SubMenu -->
+    <!-- ======= -->
+    <include name="Topbar_SubMenu">
+        <control type="group">
+            <include>Topbar_SubMenu_Group</include>
+            <include>Topbar_SubMenu_Home</include>
+        </control>
+    </include>
+
+    <include name="Topbar_SubMenu_Group">
+        <animation effect="slide" start="0,-40" end="0" time="400" tween="quadratic" easing="out" reversible="false" condition="$EXP[Expression_ShowTopbar]">Conditional</animation>
+        <animation effect="slide" start="0" end="0,-40" time="400" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Expression_ShowTopbar]">Conditional</animation>
+        <include>Topbar_SubMenu_Group_Content</include>
+    </include>
+
+    <include name="Topbar_SubMenu_Group_Content">
+        <top>80</top>
+        <left>0</left>
+        <right>0</right>
+        <height>40</height>
+        <control type="image">
+            <bottom>-24</bottom>
+            <height>24</height>
+            <width>100%</width>
+            <texture flipy="false">common/shadow-line-24px.png</texture>
+        </control>
+        <control type="image">
+            <top>-100</top>
+            <bottom>0</bottom>
+            <texture colordiffuse="panel_bg">common/white.png</texture>
+        </control>
+    </include>
+
+    <include name="Topbar_SubMenu_Layout">
+        <height>40</height>
+        <left>0</left>
+        <right>0</right>
+        <orientation>horizontal</orientation>
+        <itemlayout height="40" width="320">
+            <control type="label">
+                <left>20</left>
+                <right>20</right>
+                <height>40</height>
+                <label>$INFO[ListItem.Label]</label>
+                <aligny>center</aligny>
+                <align>center</align>
+                <font>font_osd_submenu</font>
+                <textcolor>panel_fg_70</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout height="40" width="320">
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+            </control>
+            <control type="label">
+                <left>20</left>
+                <right>20</right>
+                <height>40</height>
+                <label>$INFO[ListItem.Label]</label>
+                <aligny>center</aligny>
+                <align>center</align>
+                <font>font_osd_submenu</font>
+                <textcolor>Selected</textcolor>
+            </control>
+        </focusedlayout>
+    </include>
+
+</includes>

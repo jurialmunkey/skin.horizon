@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+    <include name="Home">
+        <control type="group">
+            <left>0</left>
+            <include>Animation_MusicVis_Left</include>
+            <control type="group">
+                <include>Animation_Home_Textbar_Slideover</include>
+                <control type="group">
+                    <left>70</left>
+                    <width>320</width>
+                    <include>Home_Textbar_Texture</include>
+                    <include>Home_Textbar_Items</include>
+                </control>
+            </control>
+
+            <control type="group">
+                <animation effect="slide" start="0" end="304" time="300" tween="sine" easing="inout" condition="Control.HasFocus(302)">Conditional</animation>
+                <control type="group">
+                    <left>-320</left>
+                    <width>320</width>
+                    <control type="group">
+                        <right>-8</right>
+                        <include>Home_Textbar_Texture</include>
+                    </control>
+                    <control type="list" id="302">
+                        <visible>Window.IsVisible(Home)</visible>
+                        <onclick>SetFocus(300)</onclick>
+                        <include>Home_OnClick</include>
+                        <include>Home_OnFocus</include>
+                        <onright>300</onright>
+                        <include>Home_SubMenu_Layout</include>
+                        <include>Home_SubMenu_Items</include>
+                    </control>
+                    <control type="group">
+                        <top>MenuBarTop</top>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,0)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,1)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,2)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,3)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,4)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,5)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,6)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,7)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,8)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,9)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,10)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,11)">Conditional</animation>
+                        <include>Home_Separator</include>
+                    </control>
+                </control>
+                <control type="group">
+                    <left>0</left>
+                    <width>74</width>
+                    
+                    <include>Home_Iconbar_Texture</include>
+                    <include>Home_Iconbar_Logo</include>
+                    <control type="list" id="300">
+                        <include>Defs_InfoDialog_Visible</include>
+                        <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_OnClick</include>
+                        <include>Home_OnFocus</include>
+                        <onleft>302</onleft>
+                        <onright condition="Window.IsVisible(Home)">3000</onright>
+                        <onright condition="Window.IsVisible(SettingsCategory.xml)">3</onright>
+                        <onright condition="Window.IsVisible(SkinSettings.xml)">9100</onright>
+                        <onright condition="Window.IsVisible(SettingsSystemInfo.xml)">50</onright>
+                        <onright condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">50</onright>
+
+                        <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_Layout</include>
+                        <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_VideoInfo_Layout</include>
+
+                        <include condition="Window.IsVisible(Home)">Home_MainMenu_Items</include>
+                        <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_OptionsItems</include>
+                        <include condition="Window.IsVisible(MyPlaylist.xml)">Home_MainMenu_PlaylistItems</include>
+                        <include condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml)">Home_MainMenu_SettingsItems</include>
+                    </control>
+                    <control type="group">
+                        <top>MenuBarTop</top>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,3)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,4)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,5)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,6)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,7)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,8)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,9)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,10)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,11)">Conditional</animation>
+                        <include>Home_Separator</include>
+                    </control>
+                </control>
+            </control>
+           
+
+        </control>
+    </include>
+
+    <include name="Home_MainMenu_SettingsItems">
+        <content>
+            <item id="1">
+                <label>14206</label>
+                <icon>special://skin/extras/icons/swissarmy.png</icon>
+                <onclick>ReplaceWindow(InterfaceSettings)</onclick>
+                <property name="path">ReplaceWindow(InterfaceSettings)</property>
+                <property name="altpath">ActivateWindow(InterfaceSettings)</property>
+            </item>
+            <item id="4">
+                <label>20077</label>
+                <icon>special://skin/extras/icons/paintbrush.png</icon>
+                <onclick>ReplaceWindow(SkinSettings)</onclick>
+                <property name="path">ReplaceWindow(SkinSettings)</property>
+                <property name="altpath">ActivateWindow(SkinSettings)</property>
+            </item>
+            <item id="2">
+                <label>14202</label>
+                <icon>special://skin/extras/icons/tags.png</icon>
+                <onclick>ReplaceWindow(MediaSettings)</onclick>
+                <property name="path">ReplaceWindow(MediaSettings)</property>
+                <property name="altpath">ActivateWindow(MediaSettings)</property>
+            </item>
+            <item id="3">
+                <label>14200</label>
+                <icon>special://skin/extras/icons/equalizer.png</icon>
+                <onclick>ReplaceWindow(PlayerSettings)</onclick>
+                <property name="path">ReplaceWindow(PlayerSettings)</property>
+                <property name="altpath">ActivateWindow(PlayerSettings)</property>
+            </item>
+            <item id="5">
+                <label>13000</label>
+                <icon>special://skin/extras/icons/configure.png</icon>
+                <onclick>ReplaceWindow(SystemSettings)</onclick>
+                <property name="path">ReplaceWindow(SystemSettings)</property>
+                <property name="altpath">ActivateWindow(SystemSettings)</property>
+            </item>
+            <item id="6">
+                <label>14036</label>
+                <icon>special://skin/extras/icons/network.png</icon>
+                <onclick>ReplaceWindow(servicesettings)</onclick>
+                <property name="path">ReplaceWindow(servicesettings)</property>
+                <property name="altpath">ActivateWindow(servicesettings)</property>
+            </item>
+            <item id="10">
+                <label>19191</label>
+                <icon>special://skin/extras/icons/livetv.png</icon>
+                <onclick>ReplaceWindow(pvrsettings)</onclick>
+                <property name="path">ReplaceWindow(pvrsettings)</property>
+                <property name="altpath">ActivateWindow(pvrsettings)</property>
+            </item>
+            <item id="9">
+                <label>130</label>
+                <icon>special://skin/extras/icons/sysinfo.png</icon>
+                <onclick>ReplaceWindow(7)</onclick>
+                <property name="path">ReplaceWindow(7)</property>
+                <property name="altpath">ActivateWindow(7)</property>
+            </item>
+            <item id="7">
+                <label>13200</label>
+                <icon>special://skin/extras/icons/actor.png</icon>
+                <onclick>ActivateWindow(Profiles)</onclick>
+                <property name="path">ActivateWindow(Profiles)</property>
+                <property name="altpath">ActivateWindow(Profiles)</property>
+            </item>
+            <item id="8">
+                <label>24001</label>
+                <icon>special://skin/extras/icons/addons.png</icon>
+                <onclick>ActivateWindow(AddonBrowser)</onclick>
+                <property name="path">ActivateWindow(AddonBrowser)</property>
+                <property name="altpath">ActivateWindow(AddonBrowser)</property>
+            </item>
+            <item id="11">
+                <label>7</label>
+                <icon>special://skin/extras/icons/files.png</icon>
+                <onclick>ActivateWindow(filemanager)</onclick>
+                <property name="path">ActivateWindow(filemanager)</property>
+                <property name="altpath">ActivateWindow(filemanager)</property>
+            </item>
+        </content>
+    </include>
+
+    <include name="Home_MainMenu_InfoItems">
+        <content>
+            <item>
+                <label>$INFO[Control.GetLabel(8)]</label>
+                <icon>special://skin/extras/icons/play3.png</icon>
+                <onclick>SendClick(8)</onclick>
+                <visible>Control.IsEnabled(8)</visible>
+            </item>
+            <!-- Trailer -->
+            <item>
+                <label>$INFO[Control.GetLabel(11)]</label>
+                <icon>special://skin/extras/icons/video.png</icon>
+                <onclick>SendClick(11)</onclick>
+                <visible>Control.IsEnabled(11)</visible>
+            </item>
+            <!-- Director -->
+            <item>
+                <label>$INFO[Control.GetLabel(9002)]</label>
+                <icon>special://skin/extras/icons/director.png</icon>
+                <onclick>SetFocus(9002)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9002)</visible>
+            </item>
+            <!-- Info -->
+            <item>
+                <label>$INFO[Control.GetLabel(9005)]</label>
+                <icon>special://skin/extras/icons/infobubble.png</icon>
+                <onclick>SetFocus(9005)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9005)</visible>
+            </item>
+            <!-- Art -->
+            <item>
+                <label>$INFO[Control.GetLabel(10)]</label>
+                <icon>special://skin/extras/icons/paintbrush.png</icon>
+                <onclick>SendClick(10)</onclick>
+                <visible>Control.IsEnabled(10)</visible>
+            </item>
+            <!-- Art Downloader -->
+            <item>
+                <label>$INFO[Control.GetLabel(9001)]</label>
+                <icon>special://skin/extras/icons/paintbucket3.png</icon>
+                <onclick>SetFocus(9001)</onclick>
+                <onclick>Select</onclick>
+                <onclick>SetFocus(300)</onclick>
+                <visible>Control.IsEnabled(9001)</visible>
+            </item>
+            <!-- Refresh -->
+            <item>
+                <label>$INFO[Control.GetLabel(6)]</label>
+                <icon>special://skin/extras/icons/update.png</icon>
+                <onclick>SendClick(6)</onclick>
+                <visible>Control.IsEnabled(6)</visible>
+            </item>
+        </content>
+    </include>
+
+    <include name="Home_MainMenu_ExtInfoItems">
+        <content>
+            <!-- Cast -->
+            <item>
+                <label>$INFO[Control.GetLabel(9002)]</label>
+                <icon>special://skin/extras/icons/artist.png</icon>
+                <onclick>SetFocus(9002)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9002)</visible>
+            </item>
+            <!-- Similar -->
+            <item>
+                <label>$INFO[Control.GetLabel(9003)]</label>
+                <icon>special://skin/extras/icons/years.png</icon>
+                <onclick>SetFocus(9003)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9003)</visible>
+            </item>
+            <!-- Youtube -->
+            <item>
+                <label>$INFO[Control.GetLabel(9004)]</label>
+                <icon>special://skin/extras/icons/youtube.png</icon>
+                <onclick>SetFocus(9004)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9004)</visible>
+            </item>
+            <!-- Crew -->
+            <item>
+                <label>$INFO[Control.GetLabel(9005)]</label>
+                <icon>special://skin/extras/icons/actor.png</icon>
+                <onclick>SetFocus(9005)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9005)</visible>
+            </item>
+            <!-- Trakt -->
+            <item>
+                <label>$INFO[Control.GetLabel(9009)]</label>
+                <icon>special://skin/extras/icons/addtile.png</icon>
+                <onclick>SendClick(9009)</onclick>
+                <visible>Control.IsEnabled(9009)</visible>
+            </item>
+            <!-- Manage -->
+            <item>
+                <label>$INFO[Control.GetLabel(445)]</label>
+                <icon>special://skin/extras/icons/configure.png</icon>
+                <onclick>SendClick(445)</onclick>
+                <visible>Control.IsEnabled(445)</visible>
+            </item>
+        </content>
+    </include>
+
+    <include name="Home_MainMenu_ExtInfoItems2">
+        <content>
+            <!-- Movies -->
+            <item>
+                <label>$INFO[Control.GetLabel(9001)]</label>
+                <icon>special://skin/extras/icons/film.png</icon>
+                <onclick>SetFocus(9001)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9001)</visible>
+            </item>
+            <!-- tv -->
+            <item>
+                <label>$INFO[Control.GetLabel(9002)]</label>
+                <icon>special://skin/extras/icons/tv.png</icon>
+                <onclick>SetFocus(9002)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9002)</visible>
+            </item>
+            <!-- Youtube -->
+            <item>
+                <label>$INFO[Control.GetLabel(9003)]</label>
+                <icon>special://skin/extras/icons/youtube.png</icon>
+                <onclick>SetFocus(9003)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9003)</visible>
+            </item>
+            <!-- Crew -->
+            <item>
+                <label>$INFO[Control.GetLabel(9004)]</label>
+                <icon>special://skin/extras/icons/actor.png</icon>
+                <onclick>SetFocus(9004)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9004)</visible>
+            </item>
+        </content>
+    </include>
+
+    <include name="Home_MainMenu_InfoItems_Addons">
+        <content>
+            <!--Update -->
+            <item>
+                <label>$INFO[Control.GetLabel(8)]</label>
+                <icon>special://skin/extras/icons/update.png</icon>
+                <onclick>SendClick(8)</onclick>
+                <visible>Control.IsEnabled(8)</visible>
+            </item>
+            <!-- enable -->
+            <item>
+                <label>$INFO[Control.GetLabel(7)]</label>
+                <icon>special://skin/extras/icons/enabled.png</icon>
+                <onclick>SendClick(7)</onclick>
+                <visible>Control.IsEnabled(7)</visible>
+            </item>
+            <!-- use -->
+            <item>
+                <label>$INFO[Control.GetLabel(12)]</label>
+                <icon>special://skin/extras/icons/play3.png</icon>
+                <onclick>SendClick(12)</onclick>
+                <visible>Control.IsEnabled(12)</visible>
+            </item>
+            <!-- settings -->
+            <item>
+                <label>$INFO[Control.GetLabel(9)]</label>
+                <icon>special://skin/extras/icons/settings.png</icon>
+                <onclick>SendClick(9)</onclick>
+                <visible>Control.IsEnabled(9)</visible>
+            </item>
+            <!-- uninstall -->
+            <item>
+                <label>$INFO[Control.GetLabel(6)]</label>
+                <icon>special://skin/extras/icons/error.png</icon>
+                <onclick>SendClick(6)</onclick>
+                <visible>Control.IsEnabled(6)</visible>
+            </item>
+            <!-- Auto Update -->
+            <item>
+                <label>$INFO[Control.GetLabel(13)]</label>
+                <icon>special://skin/extras/icons/antenna.png</icon>
+                <onclick>SendClick(13)</onclick>
+                <visible>Control.IsEnabled(13)</visible>
+            </item>
+        </content>
+    </include>
+
+
+    <variable name="Home_View_Locked">
+        <value condition="[Container.Content() + !String.IsEmpty(Skin.String(Skin.ForcedView.))] | [Container.Content(tags) + !String.IsEmpty(Skin.String(Skin.ForcedView.tags))] | [Container.Content(years) + !String.IsEmpty(Skin.String(Skin.ForcedView.years))] | [Container.Content(genres) + !String.IsEmpty(Skin.String(Skin.ForcedView.genres))] | [Container.Content(countries) + !String.IsEmpty(Skin.String(Skin.ForcedView.countries))] | [Container.Content(studios) + !String.IsEmpty(Skin.String(Skin.ForcedView.studios))] | [Container.Content(playlists) + !String.IsEmpty(Skin.String(Skin.ForcedView.playlists))] | [Container.Content(movies) + !String.IsEmpty(Skin.String(Skin.ForcedView.movies))] | [Container.Content(sets) + !String.IsEmpty(Skin.String(Skin.ForcedView.sets))] | [Container.Content(tvshows) + !String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))] | [Container.Content(seasons) + !String.IsEmpty(Skin.String(Skin.ForcedView.seasons))] | [Container.Content(episodes) + !String.IsEmpty(Skin.String(Skin.ForcedView.episodes))] | [Container.Content(artists) + !String.IsEmpty(Skin.String(Skin.ForcedView.artists))] | [Container.Content(albums) + !String.IsEmpty(Skin.String(Skin.ForcedView.albums))] | [Container.Content(songs) + !String.IsEmpty(Skin.String(Skin.ForcedView.songs))] | [Container.Content(musicvideos) + !String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))] | [Container.Content(addons) + !String.IsEmpty(Skin.String(Skin.ForcedView.addons))] | [Container.Content(actors) + !String.IsEmpty(Skin.String(Skin.ForcedView.actors))] | [Container.Content(directors) + !String.IsEmpty(Skin.String(Skin.ForcedView.directors))] | [Container.Content(files) + !String.IsEmpty(Skin.String(Skin.ForcedView.files))] | [Container.Content(mixed) + !String.IsEmpty(Skin.String(Skin.ForcedView.mixed))] | [Container.Content(images) + !String.IsEmpty(Skin.String(Skin.ForcedView.images))] | [Container.Content(games) + !String.IsEmpty(Skin.String(Skin.ForcedView.games))] | [Container.Content(unknown) + !String.IsEmpty(Skin.String(Skin.ForcedView.unknown))] | [Container.Content(videos) + !String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">special://skin/extras/icons/locked.png</value>
+        <value>special://skin/extras/icons/unlocked.png</value>
+    </variable>
+    <variable name="Home_View_Locked_Label">
+        <value condition="[Container.Content() + !String.IsEmpty(Skin.String(Skin.ForcedView.))] | [Container.Content(tags) + !String.IsEmpty(Skin.String(Skin.ForcedView.tags))] | [Container.Content(years) + !String.IsEmpty(Skin.String(Skin.ForcedView.years))] | [Container.Content(genres) + !String.IsEmpty(Skin.String(Skin.ForcedView.genres))] | [Container.Content(countries) + !String.IsEmpty(Skin.String(Skin.ForcedView.countries))] | [Container.Content(studios) + !String.IsEmpty(Skin.String(Skin.ForcedView.studios))] | [Container.Content(playlists) + !String.IsEmpty(Skin.String(Skin.ForcedView.playlists))] | [Container.Content(movies) + !String.IsEmpty(Skin.String(Skin.ForcedView.movies))] | [Container.Content(sets) + !String.IsEmpty(Skin.String(Skin.ForcedView.sets))] | [Container.Content(tvshows) + !String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))] | [Container.Content(seasons) + !String.IsEmpty(Skin.String(Skin.ForcedView.seasons))] | [Container.Content(episodes) + !String.IsEmpty(Skin.String(Skin.ForcedView.episodes))] | [Container.Content(artists) + !String.IsEmpty(Skin.String(Skin.ForcedView.artists))] | [Container.Content(albums) + !String.IsEmpty(Skin.String(Skin.ForcedView.albums))] | [Container.Content(songs) + !String.IsEmpty(Skin.String(Skin.ForcedView.songs))] | [Container.Content(musicvideos) + !String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))] | [Container.Content(addons) + !String.IsEmpty(Skin.String(Skin.ForcedView.addons))] | [Container.Content(actors) + !String.IsEmpty(Skin.String(Skin.ForcedView.actors))] | [Container.Content(directors) + !String.IsEmpty(Skin.String(Skin.ForcedView.directors))] | [Container.Content(files) + !String.IsEmpty(Skin.String(Skin.ForcedView.files))] | [Container.Content(mixed) + !String.IsEmpty(Skin.String(Skin.ForcedView.mixed))] | [Container.Content(images) + !String.IsEmpty(Skin.String(Skin.ForcedView.images))] | [Container.Content(games) + !String.IsEmpty(Skin.String(Skin.ForcedView.games))] | [Container.Content(unknown) + !String.IsEmpty(Skin.String(Skin.ForcedView.unknown))] | [Container.Content(videos) + !String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">$LOCALIZE[31180]</value>
+        <value>$LOCALIZE[31179]</value>
+    </variable>
+
+    <include name="Home_View_LockUnlock">
+        <onclick condition="[Container.Content() + !String.IsEmpty(Skin.String(Skin.ForcedView.))]">Skin.Reset(Skin.ForcedView.)</onclick>
+        <onclick condition="[Container.Content(tags) + !String.IsEmpty(Skin.String(Skin.ForcedView.tags))]">Skin.Reset(Skin.ForcedView.tags)</onclick>
+        <onclick condition="[Container.Content(years) + !String.IsEmpty(Skin.String(Skin.ForcedView.years))]">Skin.Reset(Skin.ForcedView.years)</onclick>
+        <onclick condition="[Container.Content(genres) + !String.IsEmpty(Skin.String(Skin.ForcedView.genres))]">Skin.Reset(Skin.ForcedView.genres)</onclick>
+        <onclick condition="[Container.Content(countries) + !String.IsEmpty(Skin.String(Skin.ForcedView.countries))]">Skin.Reset(Skin.ForcedView.countries)</onclick>
+        <onclick condition="[Container.Content(studios) + !String.IsEmpty(Skin.String(Skin.ForcedView.studios))]">Skin.Reset(Skin.ForcedView.studios)</onclick>
+        <onclick condition="[Container.Content(playlists) + !String.IsEmpty(Skin.String(Skin.ForcedView.playlists))]">Skin.Reset(Skin.ForcedView.playlists)</onclick>
+        <onclick condition="[Container.Content(movies) + !String.IsEmpty(Skin.String(Skin.ForcedView.movies))]">Skin.Reset(Skin.ForcedView.movies)</onclick>
+        <onclick condition="[Container.Content(sets) + !String.IsEmpty(Skin.String(Skin.ForcedView.sets))]">Skin.Reset(Skin.ForcedView.sets)</onclick>
+        <onclick condition="[Container.Content(tvshows) + !String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))]">Skin.Reset(Skin.ForcedView.tvshows)</onclick>
+        <onclick condition="[Container.Content(seasons) + !String.IsEmpty(Skin.String(Skin.ForcedView.seasons))]">Skin.Reset(Skin.ForcedView.seasons)</onclick>
+        <onclick condition="[Container.Content(episodes) + !String.IsEmpty(Skin.String(Skin.ForcedView.episodes))]">Skin.Reset(Skin.ForcedView.episodes)</onclick>
+        <onclick condition="[Container.Content(artists) + !String.IsEmpty(Skin.String(Skin.ForcedView.artists))]">Skin.Reset(Skin.ForcedView.artists)</onclick>
+        <onclick condition="[Container.Content(albums) + !String.IsEmpty(Skin.String(Skin.ForcedView.albums))]">Skin.Reset(Skin.ForcedView.albums)</onclick>
+        <onclick condition="[Container.Content(songs) + !String.IsEmpty(Skin.String(Skin.ForcedView.songs))]">Skin.Reset(Skin.ForcedView.songs)</onclick>
+        <onclick condition="[Container.Content(musicvideos) + !String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))]">Skin.Reset(Skin.ForcedView.musicvideos)</onclick>
+        <onclick condition="[Container.Content(addons) + !String.IsEmpty(Skin.String(Skin.ForcedView.addons))]">Skin.Reset(Skin.ForcedView.addons)</onclick>
+        <onclick condition="[Container.Content(actors) + !String.IsEmpty(Skin.String(Skin.ForcedView.actors))]">Skin.Reset(Skin.ForcedView.actors)</onclick>
+        <onclick condition="[Container.Content(directors) + !String.IsEmpty(Skin.String(Skin.ForcedView.directors))]">Skin.Reset(Skin.ForcedView.directors)</onclick>
+        <onclick condition="[Container.Content(files) + !String.IsEmpty(Skin.String(Skin.ForcedView.files))]">Skin.Reset(Skin.ForcedView.files)</onclick>
+        <onclick condition="[Container.Content(mixed) + !String.IsEmpty(Skin.String(Skin.ForcedView.mixed))]">Skin.Reset(Skin.ForcedView.mixed)</onclick>
+        <onclick condition="[Container.Content(images) + !String.IsEmpty(Skin.String(Skin.ForcedView.images))]">Skin.Reset(Skin.ForcedView.images)</onclick>
+        <onclick condition="[Container.Content(games) + !String.IsEmpty(Skin.String(Skin.ForcedView.games))]">Skin.Reset(Skin.ForcedView.games)</onclick>
+        <onclick condition="[Container.Content(unknown) + !String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]">Skin.Reset(Skin.ForcedView.unknown)</onclick>
+        <onclick condition="[Container.Content(videos) + !String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">Skin.Reset(Skin.ForcedView.videos)</onclick>
+    </include>
+    <include name="Home_MainMenu_OptionsItems">
+        <content>
+            <!-- Viewmode -->
+            <item>
+                <label>$INFO[Container.Viewmode]</label>
+                <icon>special://skin/extras/icons/playlist.png</icon>
+                <include>Home_View_LockUnlock</include>
+                <onclick>Container.NextViewMode</onclick>
+                <visible>Control.IsEnabled(2)</visible>
+                <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
+            </item>
+            <!-- Lock viewmode -->
+            <item>
+                <label>$VAR[Home_View_Locked_Label,, ]$INFO[Container.Content,(,)]</label>
+                <icon>$VAR[Home_View_Locked]</icon>
+                <include>Home_View_LockUnlock</include>
+                <onclick condition="[Container.Content() + String.IsEmpty(Skin.String(Skin.ForcedView.))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(tags) + String.IsEmpty(Skin.String(Skin.ForcedView.tags))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(years) + String.IsEmpty(Skin.String(Skin.ForcedView.years))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(genres) + String.IsEmpty(Skin.String(Skin.ForcedView.genres))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(countries) + String.IsEmpty(Skin.String(Skin.ForcedView.countries))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(studios) + String.IsEmpty(Skin.String(Skin.ForcedView.studios))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(playlists) + String.IsEmpty(Skin.String(Skin.ForcedView.playlists))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(movies) + String.IsEmpty(Skin.String(Skin.ForcedView.movies))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(sets) + String.IsEmpty(Skin.String(Skin.ForcedView.sets))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(tvshows) + String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(seasons) + String.IsEmpty(Skin.String(Skin.ForcedView.seasons))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(episodes) + String.IsEmpty(Skin.String(Skin.ForcedView.episodes))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(artists) + String.IsEmpty(Skin.String(Skin.ForcedView.artists))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(albums) + String.IsEmpty(Skin.String(Skin.ForcedView.albums))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(songs) + String.IsEmpty(Skin.String(Skin.ForcedView.songs))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(musicvideos) + String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(addons) + String.IsEmpty(Skin.String(Skin.ForcedView.addons))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(actors) + String.IsEmpty(Skin.String(Skin.ForcedView.actors))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(directors) + String.IsEmpty(Skin.String(Skin.ForcedView.directors))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(files) + String.IsEmpty(Skin.String(Skin.ForcedView.files))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(mixed) + String.IsEmpty(Skin.String(Skin.ForcedView.mixed))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(images) + String.IsEmpty(Skin.String(Skin.ForcedView.images))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(games) + String.IsEmpty(Skin.String(Skin.ForcedView.games))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(unknown) + String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <onclick condition="[Container.Content(videos) + String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+                <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
+            </item>
+            <!-- Viewmode -->
+            <item>
+                <label>$VAR[Label_WrapList]</label>
+                <icon>special://skin/extras/icons/signpost.png</icon>
+                <onclick>Skin.ToggleSetting(WrapList)</onclick>
+                <onclick>ReloadSkin()</onclick>
+                <visible>Control.IsVisible(52) | Control.IsVisible(56)</visible>
+            </item>
+            <!-- Sort -->
+            <item>
+                <label>$INFO[Control.GetLabel(3)]</label>
+                <icon>special://skin/extras/icons/sort2.png</icon>
+                <onclick>SendClick(3)</onclick>
+                <visible>Control.IsEnabled(3)</visible>
+            </item>
+            <!-- Ascend Descend -->
+            <item>
+                <label>$INFO[Control.GetLabel(4)]</label>
+                <icon>special://skin/extras/icons/sort.png</icon>
+                <onclick>SendClick(4)</onclick>
+                <visible>Control.IsEnabled(4)</visible>
+            </item>
+            <!-- Search -->
+            <item>
+                <label>$INFO[Control.GetLabel(8)]</label>
+                <icon>special://skin/extras/icons/search.png</icon>
+                <onclick>SendClick(8)</onclick>
+                <visible>Control.IsEnabled(8)</visible>
+            </item>
+            <!-- Hide Watched -->
+            <item>
+                <label>$INFO[Control.GetLabel(14)]</label>
+                <icon>special://skin/extras/icons/eye.png</icon>
+                <onclick>SendClick(14)</onclick>
+                <visible>Control.IsEnabled(14)</visible>
+            </item>
+            
+            <!-- Notifications -->
+            <item>
+                <label>$INFO[Control.GetLabel(6)]</label>
+                <icon>special://skin/extras/icons/infobubble.png</icon>
+                <onclick>SetFocus(6)</onclick>
+                <onclick>Select</onclick>
+                <onclick>SetFocus(300)</onclick>
+                <visible>Control.IsEnabled(6)</visible>
+            </item>
+
+            <!-- Settings -->
+            <item>
+                <label>$INFO[Control.GetLabel(5)]</label>
+                <icon>special://skin/extras/icons/settings.png</icon>
+                <onclick>SendClick(5)</onclick>
+                <visible>Control.IsEnabled(5)</visible>
+            </item>
+            <!-- Update -->
+            <item>
+                <label>$INFO[Control.GetLabel(20)]</label>
+                <icon>special://skin/extras/icons/update.png</icon>
+                <onclick>SendClick(20)</onclick>
+                <visible>Control.IsEnabled(20)</visible>
+            </item>
+            <!-- Check Updates -->
+            <item>
+                <label>$INFO[Control.GetLabel(9)]</label>
+                <icon>special://skin/extras/icons/update.png</icon>
+                <onclick>SendClick(9)</onclick>
+                <visible>Control.IsEnabled(9)</visible>
+            </item>
+            <!-- Group -->
+            <item>
+                <label>$INFO[Control.GetLabel(28)]</label>
+                <icon>special://skin/extras/icons/years.png</icon>
+                <onclick>SendClick(28)</onclick>
+                <visible>Control.IsEnabled(28)</visible>
+            </item>
+        </content>
+    </include>
+
+
+    <include name="Home_MainMenu_PlaylistItems">
+        <content>
+            <!-- View -->
+            <item>
+                <label>$INFO[Control.GetLabel(2)]</label>
+                <icon>special://skin/extras/icons/playlist.png</icon>
+                <onclick>SendClick(2)</onclick>
+                <visible>Control.IsEnabled(2)</visible>
+            </item>
+            <!-- Sort -->
+            <item>
+                <label>$INFO[Control.GetLabel(3)]</label>
+                <icon>special://skin/extras/icons/sort2.png</icon>
+                <onclick>SendClick(3)</onclick>
+                <visible>Control.IsEnabled(3)</visible>
+            </item>
+            <!-- Ascend Descend -->
+            <item>
+                <label>$INFO[Control.GetLabel(4)]</label>
+                <icon>special://skin/extras/icons/sort.png</icon>
+                <onclick>SendClick(4)</onclick>
+                <visible>Control.IsEnabled(4)</visible>
+            </item>
+            <!-- Save -->
+            <item>
+                <label>$INFO[Control.GetLabel(21)]</label>
+                <icon>special://skin/extras/icons/files.png</icon>
+                <onclick>SendClick(21)</onclick>
+                <visible>Control.IsEnabled(21)</visible>
+            </item>
+            <!-- Clear -->
+            <item>
+                <label>$INFO[Control.GetLabel(22)]</label>
+                <icon>special://skin/extras/icons/error.png</icon>
+                <onclick>SendClick(22)</onclick>
+                <visible>Control.IsEnabled(22)</visible>
+            </item>
+            <!-- Play -->
+            <item>
+                <label>$INFO[Control.GetLabel(23)]</label>
+                <icon>special://skin/extras/icons/play3.png</icon>
+                <onclick>SendClick(23)</onclick>
+                <visible>Control.IsEnabled(23)</visible>
+            </item>
+            <!-- Repeat -->
+            <item>
+                <label>$INFO[Control.GetLabel(26)]</label>
+                <icon>special://skin/extras/icons/repeat.png</icon>
+                <onclick>SendClick(26)</onclick>
+                <visible>Control.IsEnabled(26)</visible>
+            </item>
+            <!-- Shuffle -->
+            <item>
+                <label>$INFO[Control.GetLabel(20)]</label>
+                <icon>special://skin/extras/icons/shuffle.png</icon>
+                <onclick>SendClick(20)</onclick>
+                <visible>Control.IsEnabled(20)</visible>
+            </item>
+        </content>
+    </include>
+
+    <include name="Home_Separator">
+        <param name="visible" default="true" />
+        <definition>
+            <control type="group">
+                <height>74</height>
+                <control type="group">
+                    <visible>$PARAM[visible]</visible>
+                    <include>Animation_FadeOut_Delay</include>
+                    <control type="image">
+                        <width>100%</width>
+                        <height>1</height>
+                        <top>0</top>
+                        <texture colordiffuse="darkline_separator">common/white.png</texture>
+                    </control>
+                    <control type="image">
+                        <width>100%</width>
+                        <height>1</height>
+                        <top>1</top>
+                        <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_Textbar_Texture">
+        <control type="image">
+            <texture>common/gradient-solid-horizontal.png</texture>
+            <include>Defs_DarkShadow</include>
+        </control>
+        <control type="image">
+            <right>6</right>
+            <texture colordiffuse="main_fg_100">common/white.png</texture>
+        </control>
+        <control type="image">
+            <width>1</width>
+            <right>4</right>
+            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+        </control>
+        <control type="image">
+            <width>1</width>
+            <right>5</right>
+            <texture colordiffuse="darkline_separator">common/white.png</texture>
+        </control>
+    </include>
+
+    <include name="Home_Textbar_Item">
+        <control type="group">
+            <height>74</height>
+            <visible>!String.IsEmpty(Container(300).ListItemAbsolute($PARAM[id]).Label)</visible>
+            <control type="group">
+                <visible>Control.HasFocus(300)</visible>
+                <include>Animation_FadeOut_Delay</include>
+                <control type="image">
+                    <visible>String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <visible>String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                    <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                </control>
+                <include content="Home_Separator">
+                    <param name="visible" value="Control.HasFocus(300)" />
+                </include>
+            </control>
+            <include content="Home_Textbar_Item_Label" condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="font" value="font_mainmenu" />
+            </include>
+            <include content="Home_Textbar_Item_Label" condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="font" value="font_submenu" />
+            </include>
+        </control>
+    </include>
+
+    <include name="Home_Textbar_Item_Label">
+        <param name="font" default="font_mainmenu" />
+        <definition>
+            <control type="group">
+                <control type="label">
+                    <left>30</left>
+                    <font>$PARAM[font]</font>
+                    <textcolor>main_bg_100</textcolor>
+                    <label>$INFO[Container(300).ListItemAbsolute($PARAM[id]).Label]</label>
+                    <visible>!String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                </control>
+                <control type="label">
+                    <left>30</left>
+                    <right>40</right>
+                    <font>$PARAM[font]_bold</font>
+                    <align>left</align>
+                    <!-- <animation effect="slide" start="-40" end="0" time="100" reversible="false">Visible</animation> -->
+                    <textcolor>Selected</textcolor>
+                    <label>$INFO[Container(300).ListItemAbsolute($PARAM[id]).Label]</label>
+                    <visible>String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_Textbar_Items">
+        <control type="grouplist">
+            <top>MenuBarTop</top>
+            <right>6</right>
+            <left>0</left>
+            <orientation>vertical</orientation>
+            <itemgap>0</itemgap>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="0" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="1" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="2" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="3" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="4" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="5" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="6" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="7" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="8" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="9" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="10" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="11" />
+            </include>
+            <include content="Home_Textbar_Item">
+                <param name="id" value="12" />
+            </include>
+            <include content="Home_Separator">
+                <param name="visible" value="Control.HasFocus(300)" />
+            </include>
+        </control>
+    </include>
+
+    <include name="Home_MainMenu_Layout">
+        <top>MenuBarTop</top>
+        <width>240</width>
+        <preloaditems>2</preloaditems>
+        <orientation>vertical</orientation>
+        <focusposition>1</focusposition>
+        <itemlayout height="74" width="240">
+            <control type="group">
+                <width>74</width>
+                <include>Home_Separator</include>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
+            </control>
+
+            <control type="group">
+                <left>74</left>
+                <width>6</width>
+                <visible>!Control.HasFocus(300) + [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]</visible>
+                <include>Animation_FadeIn_Delay</include>
+                <control type="image">
+                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                </control>
+                <control type="group">
+                    <include>Home_Separator</include>
+                </control>
+                <control type="group">
+                    <top>74</top>
+                    <include>Home_Separator</include>
+                </control>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
+                <visible>!Control.HasFocus(300) + [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]</visible>
+            </control>
+        </itemlayout>
+        <focusedlayout height="74" width="240">
+            <control type="group">
+                <width>74</width>
+                <include>Home_Separator</include>
+            </control>
+
+            <control type="group">
+                <left>74</left>
+                <width>6</width>
+                <visible>!Control.HasFocus(300) + [Window.IsVisible(Home) | [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]]</visible>
+                <include>Animation_FadeIn_Delay</include>
+                <control type="image">
+                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                </control>
+                <control type="group">
+                    <include>Home_Separator</include>
+                </control>
+                <control type="group">
+                    <top>74</top>
+                    <include>Home_Separator</include>
+                </control>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
+                <visible>!Control.HasFocus(300) + [Window.IsVisible(Home) | [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]]</visible>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
+                <visible>!Control.HasFocus(300) + !Window.IsVisible(Home) + !String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))</visible>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
+                <visible>Control.HasFocus(300)</visible>
+            </control>
+        </focusedlayout>
+    </include>
+
+    <include name="Home_VideoInfo_Layout">
+        <top>MenuBarTop</top>
+        <width>240</width>
+        <preloaditems>2</preloaditems>
+        <orientation>vertical</orientation>
+        <focusposition>1</focusposition>
+        <itemlayout height="74" width="240">
+            <control type="group">
+                <width>74</width>
+                <include>Home_Separator</include>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
+            </control>
+        </itemlayout>
+        <focusedlayout height="74" width="240">
+            <control type="group">
+                <width>74</width>
+                <include>Home_Separator</include>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
+                <visible>!Control.HasFocus(300)</visible>
+            </control>
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
+                <visible>Control.HasFocus(300)</visible>
+            </control>
+        </focusedlayout>
+    </include>
+
+    <include name="Home_MainMenu_Items">
+        <content limit="11"><include>skinshortcuts-mainmenu</include></content>
+    </include>
+
+    <include name="Home_SubMenu_Layout">
+        <top>MenuBarTop</top>
+        <width>310</width>
+        <right>0</right>
+        <preloaditems>2</preloaditems>
+        <orientation>vertical</orientation>
+        <focusposition>1</focusposition>
+        <itemlayout height="74" width="310">
+            <include>Home_Separator</include>
+            <control type="label">
+                <left>24</left>
+                <font>font_submenu</font>
+                <align>right</align>
+                <right>24</right>
+                <textcolor>main_bg_100</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+            </control>
+        </itemlayout>
+        <focusedlayout height="74" width="310">
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+            </control>
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+            </control>
+            <include>Home_Separator</include>
+            <control type="label">
+                <left>24</left>
+                <right>24</right>
+                <font>font_submenu_bold</font>
+                <align>right</align>
+                <textcolor>Selected</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+                <!-- <animation effect="slide" start="-40" end="0" time="100" reversible="false">Focus</animation> -->
+            </control>
+        </focusedlayout>
+    </include>
+
+    <include name="Home_SubMenu_Items">
+        <content><include>skinshortcuts-submenu</include></content>
+    </include>
+
+    <include name="Home_Iconbar_Texture">
+        <control type="image">
+            <texture>common/gradient-solid-horizontal.png</texture>
+            <include>Defs_DarkShadow</include>
+        </control>
+        <control type="image">
+            <width>1</width>
+            <right>0</right>
+            <texture colordiffuse="darkline_separator">common/white.png</texture>
+        </control>
+    </include>
+
+    <include name="Home_Iconbar_Logo">
+        <control type="group">
+            <top>34</top>
+            <control type="image">
+                <top>0</top>
+                <width>74</width>
+                <height>74</height>
+                <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+            </control>
+            <control type="label">
+                <label>KODI</label>
+                <height>30</height>
+                <top>70</top>
+                <align>center</align>
+                <aligny>center</aligny>
+                <right>2</right>
+                <font>font_tiny_bold</font>
+                <textcolor>main_fg_100</textcolor>
+            </control>
+        </control>
+    </include>
+
+    <include name="Home_ShowMenu_4000"><defaultcontrol always="true">4000</defaultcontrol></include>
+    <include name="Home_ShowMenu_300"><defaultcontrol always="true">300</defaultcontrol></include>
+
+    <include name="Home_OnClick">
+
+        <!-- Set Menu Indicator -->
+        <onclick>SetProperty(MenuIconFocus,$INFO[ListItem.Property(path)],Home)</onclick>
+        <onclick>$INFO[ListItem.Property(path)]</onclick>
+
+        <onback condition="Window.IsVisible(SkinSettings.xml)">SetFocus(9100)</onback>
+        <onback condition="Window.IsVisible(SkinSettings.xml)">Close</onback>
+        <onback condition="Window.IsVisible(SettingsCategory.xml)">SetFocus(3)</onback>
+        <onback condition="Window.IsVisible(SettingsCategory.xml)">Close</onback>
+        
+    </include>
+
+    <include name="Home_OnFocus">
+        <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
+    </include>
+</includes>
+

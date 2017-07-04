@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="106">
+    <defaultcontrol always="true">1000</defaultcontrol>
+
+
+    <coordinates>
+        <origin x="0" y="0" />
+    </coordinates>
+
+    <controls>
+        <include>Global_Overlay</include>
+        <control type="group">
+            <centerleft>50%</centerleft>
+            <centertop>58%</centertop>
+            <include>Animation_FadeIn_SlideUp</include>
+            <include>Animation_FadeOut</include>
+            <width>506</width>
+            <height>624</height>
+
+            
+            <control type="image" id="999">
+                <description>background image</description>
+                <bottom>0</bottom>
+                <width>506</width>
+                <height>624</height>
+                <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
+                <bordersize>24</bordersize>
+                <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
+            </control>
+            <control type="grouplist" id="996">
+                <description>grouplist for context buttons</description>
+                <left>24</left>
+                <bottom>32</bottom>
+                <width>458</width>
+                <height>560</height>
+                <itemgap>0</itemgap>
+                <onleft>Back</onleft>
+                <onright>Back</onright>
+            </control>
+            <control type="button" id="1000">
+                <description>Buttons</description>
+                <onleft>Back</onleft>
+                <onright>Back</onright>
+                <width>458</width>
+                <include>Defs_Context_Button</include>
+            </control>
+        </control>
+    </controls>
+
+</window>

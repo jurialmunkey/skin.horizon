@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="4">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <onload>AlarmClock(MIF,SetProperty(MenuIconFocus,ReplaceWindow(InterfaceSettings),Home),00:00,silent)</onload>
+    <onload condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(SkinSettings.xml)]">ReplaceWindow(InterfaceSettings)</onload>
+    <onload condition="Window.Previous(SettingsCategory.xml) | Window.Previous(SkinSettings.xml)">ReplaceWindow(Home)</onload>
+    <controls>
+    </controls>
+</window>
