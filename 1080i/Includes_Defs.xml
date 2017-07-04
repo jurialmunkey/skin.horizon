@@ -16,7 +16,7 @@
             <onclick>SendClick(312)</onclick>
             <include>Dialog_Standard_Right_Buttons</include>
             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-            <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[prev_id]))</visible>
+            <visible>!String.IsEqual(Container(211).ListItem.Property(widget),Weather)</visible>
         </control>
     </include>
 

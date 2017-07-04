@@ -8,7 +8,7 @@
             <include>Animation_FadeIn_Slide</include>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
-            <width>1465</width>
+            <width>1880</width>
             <height>657</height>
             <control type="image">
                 <description>background image</description>
@@ -35,14 +35,14 @@
                 <description>Rules List Control</description>
                 <left>15</left>
                 <bottom>15</bottom>
-                <width>600</width>
+                <width>580</width>
                 <height>552</height>
                 <onup>211</onup>
                 <onleft>211</onleft>
                 <onright>9100</onright>
                 <ondown>211</ondown>
                 <scrolltime>0</scrolltime>
-                <itemlayout width="600" height="69">
+                <itemlayout width="580" height="69">
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
@@ -65,8 +65,16 @@
                         <texture colordiffuse="dialog_fg_30">$INFO[ListItem.Icon]</texture>
                         <visible>String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
                     </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>66</width>
+                        <height>66</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <visible>!String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
+                    </control>
                 </itemlayout>
-                <focusedlayout width="600" height="69">
+                <focusedlayout width="580" height="69">
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
@@ -88,7 +96,6 @@
                         <width>66</width>
                         <height>66</height>
                         <texture colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
-                        <visible>String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
                     </control>
                 </focusedlayout>
             </control>
@@ -96,7 +103,7 @@
             <control type="grouplist" id="9200">
                 <left>15</left>
                 <top>91</top>
-                <width>600</width>
+                <width>580</width>
                 <align>right</align>
                 <itemgap>-20</itemgap>
                 <onright>9100</onright>
@@ -147,15 +154,15 @@
 
             </control>
 
-            <!-- Right Buttons -->
+            <!-- Center Buttons -->
             <control type="grouplist" id="9100">
                 <onleft>304</onleft>
-                <onright>303</onright>
+                <onright>9300</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>
-                <right>15</right>
+                <left>610</left>
                 <bottom>15</bottom>
-                <width>820</width>
+                <width>760</width>
                 <height>552</height>
                 <orientation>vertical</orientation>
                 <itemgap>3</itemgap>
@@ -194,7 +201,6 @@
                     <label>31181</label>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
-                    <!-- <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible> -->
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
                 <control type="button" id="405" description="Set Submenu">
@@ -206,6 +212,40 @@
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
+
+                <!-- <control type="button" id="310" description="Background">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>31110</label>
+                    <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control> -->
+
+                <control type="button" id="308" description="Reset">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+            </control>
+
+            <!-- Right Buttons -->
+            <control type="grouplist" id="9300">
+                <onleft>9100</onleft>
+                <onright>304</onright>
+                <onup>9300</onup>
+                <ondown>9300</ondown>
+                <right>15</right>
+                <bottom>15</bottom>
+                <width>480</width>
+                <height>552</height>
+                <orientation>vertical</orientation>
+                <itemgap>3</itemgap>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 
                 <control type="button" id="312" description="Widget">
                     <width>100%</width>
@@ -246,26 +286,37 @@
                     <param name="prev_id" value=".Widget6" />
                     <param name="num" value="7" />
                 </include>
+            </control>
 
-
-                <!-- <control type="button" id="310" description="Background">
-                    <width>100%</width>
-                    <height>66</height>
-                    <label>31110</label>
-                    <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
-                    <align>left</align>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                </control> -->
-
-                <control type="button" id="308" description="Reset">
-                    <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
-                    <align>left</align>
-                    <include>Dialog_Standard_Right_Buttons</include>
+            <control type="group">
+                <right>15</right>
+                <bottom>15</bottom>
+                <width>480</width>
+                <height>552</height>
+                <visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <control type="image">
+                    <texture border="30" colordiffuse="dialog_fg_12">common/box.png</texture>
                 </control>
+                <control type="image">
+                    <top>100</top>
+                    <bottom>100</bottom>
+                    <left>100</left>
+                    <right>100</right>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="dialog_fg_70">$INFO[Container(211).ListItem.Icon]</texture>
+                    <visible>String.Contains(Container(211).ListItem.Icon,special://skin/extras/icons)</visible>
+                </control>
+                <control type="image">
+                    <top>100</top>
+                    <bottom>100</bottom>
+                    <left>100</left>
+                    <right>100</right>
+                    <aspectratio>keep</aspectratio>
+                    <texture>$INFO[Container(211).ListItem.Icon]</texture>
+                    <visible>!String.Contains(Container(211).ListItem.Icon,special://skin/extras/icons)</visible>
+                </control>
+                
+                
             </control>
 
 
