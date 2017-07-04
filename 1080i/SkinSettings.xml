@@ -47,6 +47,7 @@
                     <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,5)">Conditional</animation>
                     <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,6)">Conditional</animation>
                     <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,7)">Conditional</animation>
+                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,8)">Conditional</animation>
                 </control>
 
                 <!-- Left Group -->

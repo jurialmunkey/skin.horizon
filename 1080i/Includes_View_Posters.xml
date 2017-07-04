@@ -50,7 +50,7 @@
 
             <!-- Landscape -->
             <control type="panel" id="53">
-                <visible>!Container.Content(songs) + !Container.Content(albums) + !Container.Content(seasons) + !Container.Content(addons)</visible>
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(images) | Container.Content(artists)</visible>
                 <viewtype label="$LOCALIZE[31038]">landscape</viewtype>
                 <include content="View_Forced">
                     <param name="string" value="$LOCALIZE[31038]" />

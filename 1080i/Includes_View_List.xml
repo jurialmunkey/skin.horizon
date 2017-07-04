@@ -14,29 +14,9 @@
                     <include content="View_Forced">
                         <param name="string" value="$LOCALIZE[535]" />
                     </include>
-                    <!-- <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)] | Window.IsVisible(videoplaylist)</visible> -->
                     <include>View_List_Layout</include>
                 </control>
             </control>
-
-            <!-- Music List -->
-            <!-- <control type="group">
-                <visible>Control.IsVisible(54)</visible>
-                <bottom>0</bottom>
-                <left>298</left>
-                <right>80</right>
-                <control type="fixedlist" id="54">
-                    <viewtype label="$LOCALIZE[31167]">list</viewtype>
-                    <include content="View_Forced">
-                        <param name="string" value="$LOCALIZE[31167]" />
-                    </include>
-                    <visible>Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(musicplaylist)</visible>
-                    <include content="View_List_Layout">
-                        <param name="id" value="54" />
-                        <param name="width" value="860" />
-                    </include>
-                </control>
-            </control> -->
 
             <!-- Info List -->
             <control type="group">
@@ -51,7 +31,7 @@
                         <param name="string" value="$LOCALIZE[31164]" />
                     </include>
                     <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml)]</visible>
-                    <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)]</visible>
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <top>472</top>
                     <height>420</height>
                     <focusposition>2</focusposition>
