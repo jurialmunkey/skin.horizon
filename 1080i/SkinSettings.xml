@@ -309,7 +309,7 @@
                         <include>Defs_Settings_Button</include>
                         <onclick>RunScript(script.image.resource.select,property=weather.icons&amp;type=resource.images.weathericons)</onclick>
                     </control>
-
+                    
                     <control type="radiobutton" id="9244">
                         <visible>ControlGroup(9100).HasFocus(9104)</visible>
                         <label>$LOCALIZE[31022]</label>
