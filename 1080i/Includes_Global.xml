@@ -14,11 +14,6 @@
             <include>Dimensions_Fullscreen</include>
             <texture colordiffuse="Background">common/white.png</texture>
         </control>
-        <control type="image" description="Background">
-            <include>Dimensions_Fullscreen</include>
-            <texture colordiffuse="ff000000">common/white.png</texture>
-            <visible>Player.HasVideo + Skin.HasSetting(global.showvideo)</visible>
-        </control>
         <control type="videowindow">
             <visible>Skin.HasSetting(global.showvideo)</visible>
             <include>Dimensions_Fullscreen</include>
