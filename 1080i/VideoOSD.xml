@@ -5,8 +5,6 @@
     <onload condition="Player.PauseEnabled + String.IsEmpty(Window(Home).Property(OSDViewMode))">SetFocus(14)</onload>
     <onload condition="!String.IsEmpty(Window(Home).Property(OSDViewMode))">SetFocus(9003)</onload>
     <onload condition="!String.IsEmpty(Window(Home).Property(OSDViewMode))">ClearProperty(OSDViewMode,Home)</onload>
-    <onload>SetProperty(ShowTopbar,1,Home)</onload>
-    <onunload>SetProperty(ShowTopbar,0,Home)</onunload>
     <onunload>ClearProperty(OSDInfo,Home)</onunload>
     <onunload condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused">Play</onunload>
     <onunload condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onunload>
@@ -198,6 +196,14 @@
             <textureslidernibfocus>-</textureslidernibfocus>
             <info>Player.Progress</info>
             <action>seek</action>
+        </control>
+
+        <control type="group">
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <visible>Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
+            <include>Global_Background</include>
+            <include>Topbar</include>
         </control>
 
     </controls>
