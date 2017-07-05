@@ -134,7 +134,7 @@
                         <aligny>center</aligny>
                         <width>auto</width>
                         <height>100%</height>
-                        <textcolor>main_fg_70</textcolor>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
                         <label>$VAR[Label_SubHeader_Content]</label>
                         <visible>!Player.HasMedia | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
@@ -225,7 +225,7 @@
                     <control type="label">
                         <font>font_small</font>
                         <align>right</align>
-                        <textcolor>main_fg_70</textcolor>
+                        <textcolor>main_fg_100</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
                         <label>$INFO[Weather.Temperature]</label>
                         <aligny>center</aligny>

@@ -75,10 +75,10 @@
     </variable>
 
     <variable name="Label_SubHeader_Content">
-        <value condition="Window.IsVisible(weather)">$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,]</value>
+        <value condition="Window.IsVisible(weather)">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
         <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)">$VAR[Label_InfoLine]</value>
         <value condition="Window.IsVisible(Home)">$INFO[Container(300).ListItem.Label]</value>
-        <value>$VAR[Label_NumItems]$VAR[Label_NumPages,[COLOR=main_fg_30]  •  [/COLOR],]</value>
+        <value>$VAR[Label_NumItems,[COLOR=main_fg_100],[/COLOR]]$VAR[Label_NumPages,[COLOR=main_fg_30]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
     </variable>
 
     <variable name="Label_SubHeader_Content_Playing">
@@ -109,10 +109,6 @@
     <variable name="Label_NextRecording">
         <value condition="Pvr.IsRecording">[COLOR=$VAR[ColorHighlight]]$INFO[Pvr.NowRecordingTitle,,][/COLOR]$INFO[Pvr.NowRecordingChannel,  ,]</value>
         <value condition="Pvr.HasTimer">[COLOR=$VAR[ColorHighlight]]$INFO[Pvr.NextRecordingTitle,,][/COLOR]$INFO[Pvr.NextRecordingDateTime,  ,]$INFO[Pvr.NextRecordingChannel,  ,]</value>
-    </variable>
-
-    <variable name="Label_Top250">
-        <value condition="Integer.IsGreater(Window(home).Property(SkinHelper.ListItem.IMDB.Top250),0)">$INFO[Window(Home).Property(SkinHelper.ListItem.IMDB.Top250),  •  $LOCALIZE[368] #,]</value>
     </variable>
 
     <variable name="Label_Duration">
@@ -268,22 +264,16 @@
     </variable>
 
     <variable name="Label_InfoLine">
-        <value condition="Window.IsVisible(MyWeather.xml)"></value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window.Property(AlsoKnownAs)]</value>
-        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(year)]$INFO[Window.Property(duration),  •  , $LOCALIZE[31102]]$INFO[Window.Property(rating),  •  ,]</value>
-        
-        <value condition="String.IsEqual(ListItem.Label,..)"></value>
+        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(year),[COLOR=main_fg_100],[/COLOR]]$INFO[Window.Property(mpaa),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window.Property(duration),  |  [COLOR=main_fg_100], $LOCALIZE[31102][/COLOR]]$INFO[Window.Property(rating),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(movies)">$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(episodes)">$INFO[ListItem.TvShowTitle,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalSeasons),[COLOR=main_fg_100], $LOCALIZE[33054][/COLOR]  |  ]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100], $LOCALIZE[20360][/COLOR]  |  ]$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=main_fg_100], $LOCALIZE[31215][/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100], $LOCALIZE[20360][/COLOR]  |  ]$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=main_fg_100], $LOCALIZE[31215][/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(songs) | Container.Content(albums)">$INFO[ListItem.Album,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Container.Property(Album_Label),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_YearsActive),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount),[COLOR=main_fg_100], $LOCALIZE[36919][/COLOR]]</value>
+        <value condition="Container.Content(addons)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  ,[COLOR=main_fg_100],[/COLOR]]</value>
 
-        <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Count),, $LOCALIZE[36901]  •  ]$INFO[Window(Home).Property(SkinHelper.ListItem.Year),,  •  ]$VAR[Label_MPAA,,  •  ]$VAR[Label_Duration,,  •  ]$VAR[Label_Rating]</value>
-        <value condition="Container.Content(movies)">$INFO[ListItem.Year,,  •  ]$VAR[Label_MPAA,,  •  ]$VAR[Label_Duration,,  •  ]$INFO[ListItem.EndTime,$LOCALIZE[31106] ,  •  ]$VAR[Label_Rating]</value>
-        <value condition="Container.Content(episodes)">$INFO[ListItem.TvShowTitle,,  •  ]$INFO[ListItem.Premiered,,  •  ]$VAR[Label_MPAA,,  •  ]$VAR[Label_Duration,,  •  ]$INFO[ListItem.EndTime,$LOCALIZE[31106] ,  •  ]$VAR[Label_Rating]</value>
-        <value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]  •  ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]  •  ]$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]  •  ]$VAR[Label_MPAA,,  •  ]$VAR[Label_Duration,,  •  ]$VAR[Label_Rating]</value>
-        <value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]  •  ]$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]$INFO[ListItem.Year,  •  ,]</value>
-        <value condition="Container.Content(songs) | Container.Content(albums)">$INFO[ListItem.Album,,  •  ]$INFO[Container.Property(Album_Label),,  •  ]$INFO[ListItem.Year]</value>
-        <value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_YearsActive),,  •  ]$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount),, $LOCALIZE[36919]]</value>
-        <value condition="Container.Content(addons)">$INFO[ListItem.AddonType,,  •  ]$INFO[ListItem.AddonVersion]$INFO[ListItem.AddonCreator,  •  ,]</value>
-
-        <value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml)">$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]$INFO[ListItem.Plot,  •  ,]</value>
     </variable>
 
     <variable name="Label_OverlayPlot">
@@ -302,9 +292,8 @@
     </variable>
 
     <variable name="Label_Rating">
-        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(301).ListItem.Rating)">$INFO[Container(301).ListItem.Rating]$VAR[Label_Top250]</value>
-        <value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]$VAR[Label_Top250]</value>
-        <value>0.0$VAR[Label_Top250]</value>
+        <value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
+        <value>0.0</value>
     </variable>
 
     <variable name="Label_PlayerStatus">
