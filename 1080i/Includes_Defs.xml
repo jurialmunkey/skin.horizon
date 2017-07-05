@@ -23,8 +23,8 @@
     <include name="Defs_Settings_InfoLine">
         <left>50</left>
         <right>30</right>
-        <top>72</top>
-        <height>40</height>
+        <top>82</top>
+        <height>20</height>
         <font>font_tiny</font>
         <textcolor>panel_fg_70</textcolor>
         <scroll>true</scroll>

@@ -29,9 +29,20 @@
         <control type="group">
             <visible>Player.HasAudio + Skin.HasSetting(global.showvisualisation)</visible>
             <control type="visualisation">
-                <visible>Skin.HasSetting(ArtistSlideShow.Disabled) | !System.HasAddon(script.artistslideshow)</visible>
+                <visible>Skin.HasSetting(OSDVisualisation.ShowFanart) | [!Skin.HasSetting(musicvis.fanartfallback) + [!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)]]</visible>
                 <description>visualisation</description>
                 <include>Dimensions_Fullscreen</include>
+            </control>
+
+            <control type="image">
+                <aspectratio>scale</aspectratio>
+                <include>Dimensions_Fullscreen</include>
+                <texture background="true">$INFO[Player.Art(fanart)]</texture>
+                <visible>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
+                <visible>Skin.HasSetting(musicvis.fanartfallback)</visible>
+                <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
+                <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+                <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             </control>
             <control type="multiimage">
                 <aspectratio>scale</aspectratio>
@@ -42,9 +53,11 @@
                 <loop>true</loop>
                 <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
                 <visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
+                <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
                 <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
                 <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             </control>
+
         </control>
     </include>
     
@@ -84,11 +97,17 @@
                     <texture colordiffuse="FanartDim">common/white.png</texture>
                 </control>
                 <control type="image">
+                    <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
+                    <texture background="true">special://skin/extras/backgrounds/default.jpg</texture>
+                    <visible>[Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsSystemInfo.xml)]</visible>
+                </control>
+                <control type="image">
                     <texture>common/gradient-solid.png</texture>
                     <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
                 </control>
-                <include>Global_HighlightOverlay</include>
+
             </control>
+            
         </control>
         
     </include>
