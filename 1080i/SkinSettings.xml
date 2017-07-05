@@ -159,6 +159,22 @@
                         <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9218" description="Display submenu as categories widget">
+                        <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31184]</label>
+                        <selected>!Skin.HasSetting(DisableWidgetCategories)</selected>
+                        <onclick>Skin.ToggleSetting(DisableWidgetCategories)</onclick>
+                    </control>
+                    <control type="radiobutton" id="9219" description="Display submenu as categories widget">
+                        <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31183]</label>
+                        <selected>Skin.HasSetting(CategoriesOnBottom)</selected>
+                        <onclick>Skin.ToggleSetting(CategoriesOnBottom)</onclick>
+                        <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
+                    </control>
+
                     <!-- ========== -->
                     <!-- Background -->
                     <!-- ========== -->

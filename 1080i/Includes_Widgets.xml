@@ -97,7 +97,7 @@
     </include>
 
     <include name="Home_Widgets_Set">
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!Skin.HasSetting(DisableWidgetCategories) + !Skin.HasSetting(CategoriesOnBottom)">
             <param name="id" value="$PARAM[pos]3001" />
             <param name="submenu" value="true" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Label,, ]$LOCALIZE[31162]" />
@@ -158,6 +158,12 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget7)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget7)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget7))" />
+        </include>
+        <include content="Home_Widget" condition="!Skin.HasSetting(DisableWidgetCategories) + Skin.HasSetting(CategoriesOnBottom)">
+            <param name="id" value="$PARAM[pos]3001" />
+            <param name="submenu" value="true" />
+            <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Label,, ]$LOCALIZE[31162]" />
+            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
         </include>
     </include>
 

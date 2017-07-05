@@ -1,2 +1,12 @@
+[B]1.0.3[/B]
+Add option to disable categories widget
+Add option to move categories widget to bottom
+Move imdb position to bottom of info with other rating tags
+Add busy indicator for loading widgets
+Fix some labels
+Increase text brightness in topbar
+
 [B]1.0.0[/B]
 Initial Commit
+
+

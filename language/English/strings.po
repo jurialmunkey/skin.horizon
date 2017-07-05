@@ -870,6 +870,16 @@ msgctxt "#31182"
 msgid "Wrap list"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31183"
+msgid "Move categories widget to bottom"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31184"
+msgid "Display submenu as categories widget"
+msgstr ""
+
 msgctxt "#31187"
 msgid "Random Albums"
 msgstr ""
