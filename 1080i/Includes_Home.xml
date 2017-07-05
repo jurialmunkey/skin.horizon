@@ -359,7 +359,7 @@
             <!-- uninstall -->
             <item>
                 <label>$INFO[Control.GetLabel(6)]</label>
-                <icon>special://skin/extras/icons/error.png</icon>
+                <icon>special://skin/extras/icons/download.png</icon>
                 <onclick>SendClick(6)</onclick>
                 <visible>Control.IsEnabled(6)</visible>
             </item>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="146">
-    <defaultcontrol always="true">9000</defaultcontrol>
-    <onload condition="!Control.IsVisible(8)">SetFocus(8000)</onload>
+    <defaultcontrol always="true">8000</defaultcontrol>
     <controls>
         <include condition="Window.IsVisible(Home)">View_Layout</include>
         <control type="group">
@@ -115,24 +114,12 @@
                                 <include>Home_Separator</include>
                             </control>
                         </control>
-                        <control type="button" id="8">
-                            <description>Play button</description>
-                            <label>24069</label>
-                            <width>74</width>
-                            <height>74</height>
-                            <font/>
-                            <onright>9601</onright>
-                            <onleft>SetFocus(300,0)</onleft>
-                            <onup>SetFocus(300,0)</onup>
-                            <ondown>SetFocus(300,0)</ondown>
-                            <visible allowhiddenfocus="true">Control.HasFocus(8)</visible>
-                            <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/update.png</texturenofocus>
-                            <texturefocus colordiffuse="Selected">special://skin/extras/icons/update.png</texturefocus>
-                        </control>
+                        
                         <control type="button" id="8000">
                             <width>1</width>
                             <height>1</height>
                             <font/>
+                            <onclick>SetFocus(300,0)</onclick>
                             <onright>9601</onright>
                             <onleft>SetFocus(300,0)</onleft>
                             <onup>SetFocus(300,0)</onup>
@@ -165,23 +152,35 @@
         <control type="button" id ="6">
             <include>Defs_Hidden_Button</include>
             <enable>!Skin.HasSetting(global.kioskmode)</enable>
+            <visible>Control.IsEnabled(6)</visible>
         </control>
         <control type="button" id ="7">
             <include>Defs_Hidden_Button</include>
             <enable>!Skin.HasSetting(global.kioskmode)</enable>
+            <visible>Control.IsEnabled(7)</visible>
+        </control>
+        <control type="button" id="8">
+            <description>Play button</description>
+            <label>24069</label>
+            <include>Defs_Hidden_Button</include>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
+            <visible>Control.IsEnabled(7)</visible>
         </control>
         <control type="button" id ="9">
             <label>5</label>
             <include>Defs_Hidden_Button</include>
             <enable>!Skin.HasSetting(global.kioskmode)</enable>
+            <visible>Control.IsEnabled(9)</visible>
         </control>
         <control type="button" id ="12">
             <include>Defs_Hidden_Button</include>
+            <visible>Control.IsEnabled(12)</visible>
         </control>
         <control type="radiobutton" id ="13">
             <radioposx>200</radioposx>
             <align>left</align>
             <width>250</width>
+            <visible>Control.IsEnabled(13)</visible>
             <include>Defs_Hidden_Button</include>
         </control>
     </controls>
