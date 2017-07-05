@@ -180,6 +180,14 @@
                 <param name="label" value="$PARAM[label]" />
                 <param name="content" value="$PARAM[content]" />
             </include>
+            <control type="group">
+                <top>400</top>
+                <left>-120</left>
+                <include content="Defs_BusySpinner">
+                    <param name="label" value="$LOCALIZE[31138]..." />
+                </include>
+                <visible>Container($PARAM[id]).IsUpdating</visible>
+            </control>
         </control>
     </include>
 
@@ -288,6 +296,7 @@
         <param name="studios" default="false" />
         <param name="text" default="false" />
         <param name="square" default="false" />
+        <param name="poster" default="false" />
         <definition>
             <control type="group">
                 <left>72</left>
@@ -303,7 +312,7 @@
                     </control>
                     <control type="group">
                         <top>222</top>
-                        
+                        <visible>!$PARAM[poster]</visible>
                         <control type="image">
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
@@ -321,6 +330,7 @@
                     </control>
                     <control type="group">
                         <height>222</height>
+                        <visible>!$PARAM[poster]</visible>
                         <control type="image">
                             <texture colordiffuse="main_bg_30">common/white.png</texture>
                         </control>
@@ -376,9 +386,9 @@
                         </control>
                     </control>
                     <control type="image">
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <texture background="true">$VAR[Image_Poster]</texture>
                         <aspectratio>scale</aspectratio>
-                        <visible>!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !$PARAM[square] + [String.IsEqual(ListItem.Icon,ListItem.Art(poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))]</visible>
+                        <visible>!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !$PARAM[square] + [String.IsEqual(ListItem.Icon,ListItem.Art(poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | $PARAM[poster]]</visible>
                     </control>
                 </control>
                 <include>View_WatchedOverlay</include>
@@ -391,11 +401,11 @@
         <param name="studios" default="false" />
         <param name="text" default="false" />
         <param name="square" default="false" />
+        <param name="poster" default="false" />
         <definition>
             <control type="group">
                 <left>72</left>
                 <right>-72</right>
-                <!-- <animation effect="zoom" start="100" end="115" center="193,50" time="100">Focus</animation> -->
                 <control type="group">
                     <top>10</top>
                     <right>10</right>
@@ -407,6 +417,7 @@
                     </control>
                     <control type="group">
                         <top>222</top>
+                        <visible>!$PARAM[poster]</visible>
                         <control type="image">
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
@@ -423,6 +434,7 @@
                         </control>
                     </control>
                     <control type="group">
+                        <visible>!$PARAM[poster]</visible>
                         <height>222</height>
                         <control type="image">
                             <texture colordiffuse="main_bg_30">common/white.png</texture>
@@ -479,9 +491,9 @@
                         </control>
                     </control>
                     <control type="image">
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <texture background="true">$VAR[Image_Poster]</texture>
                         <aspectratio>scale</aspectratio>
-                        <visible>!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !$PARAM[square] + [String.IsEqual(ListItem.Icon,ListItem.Art(poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))]</visible>
+                        <visible>!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !$PARAM[square] + [String.IsEqual(ListItem.Icon,ListItem.Art(poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | $PARAM[poster]]</visible>
                     </control>
                 </control>
                 <include>View_WatchedOverlay</include>

@@ -63,7 +63,7 @@
                         <width>auto</width>
                         <height>100%</height>
                         <shadowcolor>main_bg_30</shadowcolor>
-                        <textcolor>main_fg_70</textcolor>
+                        <textcolor>main_fg_100</textcolor>
                         <label>$INFO[Player.Volume,  ,    ]</label>
                     </control>
                     <control type="group">
@@ -98,7 +98,7 @@
                         <aligny>center</aligny>
                         <width>80</width>
                         <height>100%</height>
-                        <textcolor>main_fg_70</textcolor>
+                        <textcolor>main_fg_100</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
                         <label>$INFO[Control.GetLabel(1),,%]</label>
                     </control>
