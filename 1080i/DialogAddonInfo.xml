@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="146">
     <defaultcontrol always="true">9000</defaultcontrol>
-    
+    <onload condition="!Control.IsVisible(8)">SetFocus(8000)</onload>
     <controls>
         <include condition="Window.IsVisible(Home)">View_Layout</include>
         <control type="group">
@@ -91,8 +91,8 @@
                 <include>Home_Iconbar_Logo</include>
                 <control type="group">
                     <control type="list" id="300">
-                        <onright>8</onright>
-                        <onleft>8</onleft>
+                        <onright>9000</onright>
+                        <onleft>9000</onleft>
                         <include>Home_OnFocus</include>
                         <include>Home_VideoInfo_Layout</include>
                         <include>Home_MainMenu_InfoItems_Addons</include>
@@ -129,6 +129,17 @@
                             <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/update.png</texturenofocus>
                             <texturefocus colordiffuse="Selected">special://skin/extras/icons/update.png</texturefocus>
                         </control>
+                        <control type="button" id="8000">
+                            <width>1</width>
+                            <height>1</height>
+                            <font/>
+                            <onright>9601</onright>
+                            <onleft>SetFocus(300,0)</onleft>
+                            <onup>SetFocus(300,0)</onup>
+                            <ondown>SetFocus(300,0)</ondown>
+                            <animation effect="fade" end="0" condition="true">Conditional</animation>
+                            <visible>!Control.IsVisible(8)</visible>
+                        </control>
                     </control>
                     <control type="group">
                         <top>MenuBarTop</top>
@@ -149,7 +160,7 @@
                 </control>
             </control>
 
-            <include>Object_PlotOverlay</include>
+            <!-- <include>Object_PlotOverlay</include> -->
         </control>
         <control type="button" id ="6">
             <include>Defs_Hidden_Button</include>
