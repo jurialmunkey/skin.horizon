@@ -147,6 +147,15 @@
                 <aligny>top</aligny>
                 <textcolor>main_fg_100</textcolor>
                 <font>font_showcase_title</font>
+                <visible>String.IsEmpty(Control.GetLabel(12345)) | !Skin.HasSetting(ShowClearlogo)</visible>
+            </control>
+            <control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(12345)) + Skin.HasSetting(ShowClearlogo)</visible>
+                <top>-20</top>
+                <animation effect="slide" start="0" end="0,10" condition="true">Conditional</animation>
+                <height>110</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture background="true">$VAR[Image_ClearLogo]</texture>
             </control>
             <control type="label">
                 <label>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</label>

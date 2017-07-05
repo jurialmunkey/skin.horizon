@@ -173,25 +173,6 @@
         <textcolor>dialog_fg_70</textcolor>
     </include>
 
-    <include name="Dialog_Info_Panel">
-        <control type="image">
-            <top>-24</top>
-            <height>24</height>
-            <width>100%</width>
-            <texture flipy="true">common/shadow-line-24px.png</texture>
-        </control>
-        <control type="image">
-            <bottom>0</bottom>
-            <top>0</top>
-            <texture>common/gradient-solid.png</texture>
-        </control>
-        <control type="image">
-            <top>0</top>
-            <height>1</height>
-            <texture colordiffuse="highlight_dialog">common/white.png</texture>
-        </control>
-    </include>
-
     <include name="Dialog_Info_Button_Grouplist">
         <left>SidePad</left>
         <right>SidePad</right>

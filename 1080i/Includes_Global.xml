@@ -49,6 +49,11 @@
     </include>
     
     <include name="Global_Background">
+        <control type="image" id="12345">
+            <width>1</width>
+            <height>1</height>
+            <texture background="true">$VAR[Image_ClearLogo]</texture>
+        </control>
         <include>Global_Videowindow</include>
         <include>Global_Visualisation</include>
         <control type="group">
@@ -81,7 +86,7 @@
             <!-- Texture Overlay -->
             <control type="group">
                 <control type="image">
-                    <texture colordiffuse="CC000000">common/white.png</texture>
+                    <texture colordiffuse="FanartDim">common/white.png</texture>
                 </control>
                 <control type="image">
                     <texture>common/gradient-solid.png</texture>
