@@ -144,29 +144,28 @@
                             <height>64</height>
                             <texture colordiffuse="main_fg_70" fallback="DefaultFolder.png">$VAR[Image_FallbackIcon]</texture>
                             <visible>String.IsEmpty(ListItem.Overlay)</visible>
-                        </control>
-                        <control type="group">
+                        </control>    
+                        <control type="label">
+                            <left>86</left>
+                            <width>80</width>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <textcolor>main_fg_30</textcolor>
+                            <font>font_small</font>
+                            <label>$INFO[ListItem.Year]</label>
                             <animation effect="slide" start="0" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
-                            <control type="label">
-                                <left>86</left>
-                                <width>80</width>
-                                <height>100%</height>
-                                <aligny>center</aligny>
-                                <textcolor>main_fg_30</textcolor>
-                                <font>font_small</font>
-                                <label>$INFO[ListItem.Year]</label>
-                                <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies)</visible>
-                            </control>
-                            <control type="label">
-                                <animation effect="slide" start="0" end="-80" condition="String.IsEmpty(ListItem.Year) | !Container.Content(movies)">Conditional</animation>
-                                <left>166</left>
-                                <right>30</right>
-                                <height>100%</height>
-                                <aligny>center</aligny>
-                                <textcolor>main_fg_70</textcolor>
-                                <font>font_small</font>
-                                <label>$INFO[ListItem.Label]</label>
-                            </control>
+                            <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies)</visible>
+                        </control>
+                        <control type="label">
+                            <animation effect="slide" start="0" end="-80" condition="String.IsEmpty(ListItem.Year) | !Container.Content(movies)">Conditional</animation>
+                            <left>166</left>
+                            <right>30</right>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <textcolor>main_fg_70</textcolor>
+                            <font>font_small</font>
+                            <animation effect="slide" start="0" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
+                            <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
                             <left>30</left>
@@ -178,6 +177,7 @@
                             <font>font_small</font>
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
+                        
                     </control>
                     <control type="group">
                         <left>20</left>
@@ -306,28 +306,27 @@
                                 <texture colordiffuse="Selected" fallback="DefaultFolder.png">$VAR[Image_FallbackIcon]</texture>
                                 <visible>String.IsEmpty(ListItem.Overlay)</visible>
                             </control>
-                            <control type="group">
+                            <control type="label">
+                                <left>86</left>
+                                <width>80</width>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <textcolor>Selected</textcolor>
+                                <font>font_small</font>
+                                <label>$INFO[ListItem.Year]</label>
                                 <animation effect="slide" start="0" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
-                                <control type="label">
-                                    <left>86</left>
-                                    <width>80</width>
-                                    <height>100%</height>
-                                    <aligny>center</aligny>
-                                    <textcolor>Selected</textcolor>
-                                    <font>font_small</font>
-                                    <label>$INFO[ListItem.Year]</label>
-                                    <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies)</visible>
-                                </control>
-                                <control type="label">
-                                    <animation effect="slide" start="0" end="-80" condition="String.IsEmpty(ListItem.Year) | !Container.Content(movies)">Conditional</animation>
-                                    <left>166</left>
-                                    <right>30</right>
-                                    <height>100%</height>
-                                    <aligny>center</aligny>
-                                    <textcolor>Selected</textcolor>
-                                    <font>font_small</font>
-                                    <label>$INFO[ListItem.Label]</label>
-                                </control>
+                                <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies)</visible>
+                            </control>
+                            <control type="label">
+                                <animation effect="slide" start="0" end="-80" condition="String.IsEmpty(ListItem.Year) | !Container.Content(movies)">Conditional</animation>
+                                <left>166</left>
+                                <right>30</right>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <textcolor>Selected</textcolor>
+                                <font>font_small</font>
+                                <animation effect="slide" start="0" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
+                                <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
                                 <left>30</left>
