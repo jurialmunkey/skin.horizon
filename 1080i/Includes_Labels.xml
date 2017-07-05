@@ -18,7 +18,7 @@
         <value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[7]</value>
         <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[13350]</value>
 
-        <value condition="[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]">$VAR[Label_Title]</value>
+        <value condition="[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]">$VAR[Label_Title]</value>
 
         <value condition="String.Contains(Container.FolderPath,videodb://recentlyaddedmovies/)">$LOCALIZE[20386]</value>
         <value condition="String.Contains(Container.FolderPath,videodb://recentlyaddedepisodes/)">$LOCALIZE[20387]</value>
@@ -76,7 +76,7 @@
 
     <variable name="Label_SubHeader_Content">
         <value condition="Window.IsVisible(weather)">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
-        <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)">$VAR[Label_InfoLine]</value>
+        <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$VAR[Label_InfoLine]</value>
         <value condition="Window.IsVisible(Home)">$INFO[Container(300).ListItem.Label]</value>
         <value>$VAR[Label_NumItems,[COLOR=main_fg_100],[/COLOR]]$VAR[Label_NumPages,[COLOR=main_fg_30]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
     </variable>

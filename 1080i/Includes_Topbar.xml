@@ -126,7 +126,7 @@
                     <orientation>horizontal</orientation>
                     <control type="group">
                         <width>20</width>
-                        <visible>!Player.HasMedia | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                        <visible>!Player.HasMedia | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                         <include>Object_DownArrows</include>
                     </control>
                     <control type="label">
@@ -137,7 +137,7 @@
                         <textcolor>$VAR[ColorHighlight]</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
                         <label>$VAR[Label_SubHeader_Content]</label>
-                        <visible>!Player.HasMedia | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                        <visible>!Player.HasMedia | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                     </control>
                     <control type="multiimage">
                         <top>10</top>
@@ -149,7 +149,7 @@
                         <timeperimage>50</timeperimage>
                         <visible>Player.HasMedia</visible>
                         <visible>!Player.Paused</visible>
-                        <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                     </control>
                     <control type="image">
                         <top>7</top>
@@ -161,7 +161,7 @@
                         <timeperimage>50</timeperimage>
                         <visible>Player.HasMedia</visible>
                         <visible>Player.Paused</visible>
-                        <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                     </control>
                     <control type="label">
                         <left>8</left>
@@ -173,7 +173,7 @@
                         <shadowcolor>main_bg_30</shadowcolor>
                         <label>$VAR[Label_SubHeader_Content_Playing]</label>
                         <visible>Player.HasMedia</visible>
-                        <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                     </control>
                 </control>
             </control>
