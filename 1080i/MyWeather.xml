@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="2600">
-    <defaultcontrol always="true">9400</defaultcontrol>
-    <menucontrol>9000</menucontrol>
+    <defaultcontrol always="true">2</defaultcontrol>
+    <menucontrol>300</menucontrol>
     <controls>
 
         <include>Global_Background</include>
         <include>View_Layout</include>
         <include>Topbar</include>
-        <include>Home</include>
         
         <control type="group">
             <left>50</left>
@@ -16,52 +15,105 @@
             <include>Weather</include>
         </control>
 
-        <!-- Options -->
         <control type="group">
-            <include>Global_Overlay</include>
-            <include>Animation_FadeIn</include>
-            <visible allowhiddenfocus="true">ControlGroup(6000).HasFocus()</visible>
             <control type="group">
-                <height>382</height>
-                <include>Defs_Options_Menu</include>
-                <control type="grouplist" id="6000">
-                    <include>Defs_Options_Grouplist</include>
-                    <!-- Refresh -->
-                    <control type="button" id="2">
-                        <description>Refresh</description>
-                        <include>Defs_Context_Button</include>
+                <left>70</left>
+                <width>320</width>
+                <include>Animation_Home_Textbar_Slideover</include>
+                <include>Home_Textbar_Texture</include>
+                <include>Home_Textbar_Items</include>
+            </control>
+            <control type="group">
+                <left>0</left>
+                <width>74</width>
+                <include>Home_Iconbar_Texture</include>
+                <include>Home_Iconbar_Logo</include>
+                <control type="group">
+                    <control type="list" id="300">
+                        <onright>2</onright>
+                        <include>Home_OnFocus</include>
+                        <include>Home_VideoInfo_Layout</include>
+                        <include>Home_MainMenu_InfoItems_Weather</include>
                     </control>
-                    <!-- Weather Settings -->
-                    <control type="button" id="9004">
-                        <label>10140</label>
-                        <onclick>Addon.OpenSettings($INFO[Weather.Plugin])</onclick>
-                        <include>Defs_Context_Button</include>
+                    <control type="group">
+                        <top>MenuBarTop</top>
+                        <height>74</height>
+                        <control type="group">
+                            <left>74</left>
+                            <width>6</width>     
+                            <visible>Control.HasFocus(2)</visible>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="group">
+                                <include>Home_Separator</include>
+                            </control>
+                            <control type="group">
+                                <top>74</top>
+                                <include>Home_Separator</include>
+                            </control>
+                        </control>
+                        <control type="button" id="2">
+                            <description>Play button</description>
+                            <label>$LOCALIZE[184]</label>
+                            <width>74</width>
+                            <height>74</height>
+                            <font/>
+                            <onright>SetFocus(50,0)</onright>
+                            <onleft>SetFocus(300,0)</onleft>
+                            <onup>SetFocus(300,0)</onup>
+                            <ondown>SetFocus(300,0)</ondown>
+                            <visible allowhiddenfocus="true">Control.HasFocus(2)</visible>
+                            <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/update.png</texturenofocus>
+                            <texturefocus colordiffuse="Selected">special://skin/extras/icons/update.png</texturefocus>
+                        </control>
                     </control>
-                    <!-- Settings -->
-                    <control type="button" id="9005">
-                        <label>5</label>
-                        <onclick>ActivateWindow(ServiceSettings,weather)</onclick>
-                        <include>Defs_Context_Button</include>
-                    </control>
-                    <!-- Weather Icons -->
-                    <control type="togglebutton" id="9006">
-                        <label>$LOCALIZE[31011]</label>
-                        <altlabel>$INFO[Skin.String(weather.icons.name)]</altlabel>
-                        <usealttexture>!String.IsEmpty(Skin.String(weather.icons.path))</usealttexture>
-                        <include>Defs_Context_Button</include>
-                        <onclick>RunScript(script.image.resource.select,property=weather.icons&amp;type=resource.images.weathericons)</onclick>
-                    </control>
-                    <!-- Weather Fanart -->
-                    <control type="togglebutton" id="9007">
-                        <label>$LOCALIZE[31008]</label>
-                        <altlabel>$LOCALIZE[31012]</altlabel>
-                        <include>Defs_Context_Button</include>
-                        <usealttexture>System.HasAddon(resource.images.weatherfanart.multi)</usealttexture>
-                        <enable>!System.HasAddon(resource.images.weatherfanart.multi)</enable>
-                        <onclick condition="!System.HasAddon(resource.images.weatherfanart.multi)">InstallAddon(resource.images.weatherfanart.multi)</onclick>
+                    <control type="group">
+                        <top>MenuBarTop</top>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,3)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,4)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,5)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,6)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,7)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,8)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,9)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,10)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,11)">Conditional</animation>
+                        <include>Home_Separator</include>
                     </control>
                 </control>
             </control>
+        </control>
+
+        <!-- Weather Settings -->
+        <control type="button" id="9004">
+            <label>10140</label>
+            <onclick>Addon.OpenSettings($INFO[Weather.Plugin])</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <!-- Settings -->
+        <control type="button" id="9005">
+            <label>5</label>
+            <onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <!-- Weather Icons -->
+        <control type="button" id="9006">
+            <label>$LOCALIZE[536]</label>
+            <include>Defs_Hidden_Button</include>
+            <onclick>RunScript(script.image.resource.select,property=weather.icons&amp;type=resource.images.weathericons)</onclick>
+        </control>
+        <!-- Weather Fanart -->
+        <control type="togglebutton" id="9007">
+            <label>$LOCALIZE[31008]</label>
+            <altlabel>$LOCALIZE[31012]</altlabel>
+            <include>Defs_Hidden_Button</include>
+            <usealttexture>System.HasAddon(resource.images.weatherfanart.multi)</usealttexture>
+            <enable>!System.HasAddon(resource.images.weatherfanart.multi)</enable>
+            <onclick condition="!System.HasAddon(resource.images.weatherfanart.multi)">InstallAddon(resource.images.weatherfanart.multi)</onclick>
         </control>
     </controls>
 

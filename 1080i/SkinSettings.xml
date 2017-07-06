@@ -1,5 +1,6 @@
 <window>
     <defaultcontrol always="true">9100</defaultcontrol>
+    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|powermenu)</onunload>
     <controls>
         <include>Global_Background</include>
         <include>View_Layout</include>
