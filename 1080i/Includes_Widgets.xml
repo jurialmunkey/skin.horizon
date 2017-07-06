@@ -118,7 +118,7 @@
             <param name="id" value="$PARAM[pos]3001" />
             <param name="submenu" value="true" />
             <param name="aspect" value="$LOCALIZE[31263]" />
-            <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Label,, ]$LOCALIZE[31162]" />
+            <param name="label" value="$LOCALIZE[31162]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
         </include>
         <include content="Home_Widget">
@@ -189,7 +189,7 @@
             <param name="id" value="$PARAM[pos]3001" />
             <param name="submenu" value="true" />
             <param name="aspect" value="$LOCALIZE[31263]" />
-            <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Label,, ]$LOCALIZE[31162]" />
+            <param name="label" value="$LOCALIZE[31162]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
         </include>
     </include>
