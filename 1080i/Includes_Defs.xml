@@ -86,7 +86,7 @@
     </include>
 
     <include name="Defs_InfoDialog_Visible">
-        <visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)] | Window.IsVisible(script-script.extendedinfo-VideoList.xml)</visible>
+        <visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
     </include>
 
     <include name="Defs_Shortcuts_SetHub">

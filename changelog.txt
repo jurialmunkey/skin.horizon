@@ -1,5 +1,6 @@
 [B]1.0.4[/B]
 Add vignette behind clock, volumebar and notifications in fullscreen
+Fix extendedinfo on home
 
 [B]1.0.3[/B]
 Add option to disable categories widget
