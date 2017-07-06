@@ -379,35 +379,6 @@
                 <itemgap>8</itemgap>
                 <centertop>50%</centertop>
                 <usecontrolcoords>true</usecontrolcoords>
-                
-                <control type="image">
-                    <width>64</width>
-                    <centertop>50%</centertop>
-                    <height>64</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]">flags/other/3D.png</texture>
-                    <visible>$PARAM[container]$PARAM[source]IsStereoscopic</visible>
-                </control>
-                <control type="image">
-                    <width>64</width>
-                    <centertop>50%</centertop>
-                    <height>64</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]">flags/other/bluray.png</texture>
-                    <visible>[String.StartsWith($PARAM[container]$PARAM[source]FilenameAndPath,bluray) | String.StartsWith($PARAM[container]$PARAM[source]FilenameAndPath,bdrip) | String.StartsWith($PARAM[container]$PARAM[source]FilenameAndPath,bd25) | String.StartsWith($PARAM[container]$PARAM[source]FilenameAndPath,bd50)]</visible>
-                </control>
-                <control type="image">
-                    <width>95</width>
-                    <centertop>50%</centertop>
-                    <height>64</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]">flags/other/hddvd.png</texture>
-                    <visible>String.StartsWith($PARAM[container]$PARAM[source]FilenameAndPath,hddvd)</visible>
-                </control>
-                <control type="image">
-                    <width>64</width>
-                    <centertop>50%</centertop>
-                    <height>64</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]">flags/other/dvd.png</texture>
-                    <visible>String.StartsWith($PARAM[container]$PARAM[source]FilenameAndPath,dvd) + !String.StartsWith($PARAM[container]$PARAM[source]FilenameAndPath,hddvd)</visible>
-                </control>
      
                 <control type="image">
                     <width>88</width>
@@ -459,49 +430,37 @@
                     <visible>Container.Content(songs)</visible>
                 </control>
 
-                <control type="grouplist">
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>10</itemgap>
-                    <orientation>horizontal</orientation>
-                    <align>left</align>
-                    <left>24</left>
+                <control type="image">
+                    <width>88</width>
+                    <aspectratio>keep</aspectratio>
                     <centertop>50%</centertop>
-                    <height>32</height>
-                    <control type="image">
-                        <width>32</width>
-                        <height>32</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(AudioLanguage.5),lang/,.png]</texture>
-                        <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.5))</visible>
-                    </control>
-                    <control type="image">
-                        <width>32</width>
-                        <height>32</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(AudioLanguage.4),lang/,.png]</texture>
-                        <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.4))</visible>
-                    </control>
-                    <control type="image">
-                        <width>32</width>
-                        <height>32</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(AudioLanguage.3),lang/,.png]</texture>
-                        <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.3))</visible>
-                    </control>
-                    <control type="image">
-                        <width>32</width>
-                        <height>32</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(AudioLanguage.2),lang/,.png]</texture>
-                        <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.2))</visible>
-                    </control>
-                    <control type="image">
-                        <width>32</width>
-                        <height>32</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture fallback="lang/eng.png">$INFO[ListItem.Property(AudioLanguage.1),lang/,.png]</texture>
-                        <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
-                    </control>
+                    <height>64</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/3D.png</texture>
+                    <visible>$PARAM[container]$PARAM[source]IsStereoscopic</visible>
+                </control>
+                <control type="image">
+                    <width>88</width>
+                    <aspectratio>keep</aspectratio>
+                    <centertop>50%</centertop>
+                    <height>64</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/bluray.png</texture>
+                    <visible>[String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bluray) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bdrip) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bd25) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bd50)]</visible>
+                </control>
+                <control type="image">
+                    <width>88</width>
+                    <aspectratio>keep</aspectratio>
+                    <centertop>50%</centertop>
+                    <height>64</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/dvd.png</texture>
+                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,dvd)</visible>
+                </control>
+                <control type="image">
+                    <width>88</width>
+                    <aspectratio>keep</aspectratio>
+                    <centertop>50%</centertop>
+                    <height>64</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/hdtv.png</texture>
+                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,hdtv)</visible>
                 </control>
             </control>
         </definition>
