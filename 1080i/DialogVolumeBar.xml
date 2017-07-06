@@ -30,7 +30,7 @@
         <control type="group">
             <include>Animation_FadeIn_Slide</include>
             <visible>!Player.Muted</visible>
-  
+
             <!-- Volume bar -->
             <control type="group">
                 <top>48</top>

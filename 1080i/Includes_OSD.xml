@@ -22,6 +22,13 @@
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
             <!-- Overlay -->
             <control type="image">
+                <right>0</right>
+                <top>0</top>
+                <width>1920</width>
+                <height>600</height>
+                <texture>common/vignette-corner.png</texture>
+            </control>
+            <control type="image">
                 <bottom>0</bottom>
                 <top>0</top>
                 <texture>common/dim-gradient.png</texture>
@@ -186,7 +193,13 @@
                 <include>Animation_FadeIn</include>
                 <include>Animation_FadeOut</include>
                 <!-- Overlay -->
-       
+                <control type="image">
+                    <right>0</right>
+                    <top>0</top>
+                    <width>1920</width>
+                    <height>600</height>
+                    <texture>common/vignette-corner.png</texture>
+                </control>
                 <control type="image">
                     <bottom>0</bottom>
                     <top>0</top>

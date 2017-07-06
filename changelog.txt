@@ -1,3 +1,6 @@
+[B]1.0.4[/B]
+Add vignette behind clock, volumebar and notifications in fullscreen
+
 [B]1.0.3[/B]
 Add option to disable categories widget
 Add option to move categories widget to bottom
