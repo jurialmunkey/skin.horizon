@@ -296,7 +296,7 @@
                 <param name="submenu" value="$PARAM[submenu]" />
             </include>
             <orientation>horizontal</orientation>
-            <itemlayout width="242" height="353" condition="String.Contains($PARAM[content],genres.xml)">
+            <itemlayout width="242" height="353" condition="[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)]">
                 <include content="Home_Widget_Posters_ItemLayout">
                     <param name="genres" value="true" />
                 </include>
@@ -312,29 +312,29 @@
                 </include>
             </itemlayout>
 
-            <itemlayout width="242" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[20021])">
+            <itemlayout width="242" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[20021])">
                 <include content="Home_Widget_Posters_ItemLayout">
                     <param name="poster" value="true" />
                 </include>
             </itemlayout>
-            <itemlayout width="564.66" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31038])">
+            <itemlayout width="564.66" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31038])">
                 <include content="Home_Widget_Posters_ItemLayout">
                     <param name="landscape" value="true" />
                 </include>
             </itemlayout>
-            <itemlayout width="242" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31263])">
+            <itemlayout width="242" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31263])">
                 <include content="Home_Widget_Posters_ItemLayout">
                     <param name="square" value="true" />
                 </include>
             </itemlayout>
-            <itemlayout width="242" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + [!$PARAM[submenu] | Skin.HasSetting(BigSubmenu)]">
+            <itemlayout width="242" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + [!$PARAM[submenu] | Skin.HasSetting(BigSubmenu)]">
                 <include>Home_Widget_Posters_ItemLayout</include>
             </itemlayout>
-            <itemlayout width="121" height="121" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + $PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">
+            <itemlayout width="121" height="121" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + $PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">
                 <include>Home_Widget_Submenu_ItemLayout</include>
             </itemlayout>
             
-            <focusedlayout width="242" height="353" condition="String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres)">
+            <focusedlayout width="242" height="353" condition="[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres)">
                 <include content="Home_Widget_Posters_FocusedLayout">
                     <param name="id" value="$PARAM[id]" />
                     <param name="genres" value="true" />
@@ -352,30 +352,30 @@
                     <param name="text" value="true" />
                 </include>
             </focusedlayout>
-            <focusedlayout width="242" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[20021])">
+            <focusedlayout width="242" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[20021])">
                 <include content="Home_Widget_Posters_FocusedLayout">
                     <param name="id" value="$PARAM[id]" />
                     <param name="poster" value="true" />
                 </include>
             </focusedlayout>
-            <focusedlayout width="564.66" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31038])">
+            <focusedlayout width="564.66" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31038])">
                 <include content="Home_Widget_Posters_FocusedLayout">
                     <param name="id" value="$PARAM[id]" />
                     <param name="landscape" value="true" />
                 </include>
             </focusedlayout>
-            <focusedlayout width="242" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31263])">
+            <focusedlayout width="242" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEqual($PARAM[aspect],$LOCALIZE[31263])">
                 <include content="Home_Widget_Posters_FocusedLayout">
                     <param name="id" value="$PARAM[id]" />
                     <param name="square" value="true" />
                 </include>
             </focusedlayout>
-            <focusedlayout width="242" height="353" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + [!$PARAM[submenu] | Skin.HasSetting(BigSubmenu)]">
+            <focusedlayout width="242" height="353" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + [!$PARAM[submenu] | Skin.HasSetting(BigSubmenu)]">
                 <include content="Home_Widget_Posters_FocusedLayout">
                     <param name="id" value="$PARAM[id]" />
                 </include>
             </focusedlayout>
-            <focusedlayout width="121" height="121" condition="![String.Contains($PARAM[content],genres.xml) | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + $PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">
+            <focusedlayout width="121" height="121" condition="![[String.Contains($PARAM[content],movieGenres) | String.Contains($PARAM[content],genres.xml)] | String.Contains($PARAM[content],tvshows/genres) | String.Contains($PARAM[content],studios.xml) | String.Contains($PARAM[content],tvshows/studios) | String.Contains($PARAM[content],years.xml) | String.Contains($PARAM[content],country.xml) | String.Contains($PARAM[content],tags.xml) | String.Contains($PARAM[content],directors.xml) | String.Contains($PARAM[content],special://videoplaylists/)] + String.IsEmpty($PARAM[aspect]) + $PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">
                 <include content="Home_Widget_Submenu_FocusedLayout">
                     <param name="id" value="$PARAM[id]" />
                 </include>
