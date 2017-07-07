@@ -10,7 +10,7 @@
             <include>Animation_FadeOut</include> -->
 
             <control type="image">
-                <height>210</height>
+                <height>150</height>
                 <texture>common/gradient-top.png</texture>
             </control>
             <control type="image">
