@@ -148,7 +148,7 @@
                     <font>-</font>
                     <texturenofocus colordiffuse="dialog_fg_30">buttons/add.png</texturenofocus>
                     <texturefocus colordiffuse="Selected">buttons/add.png</texturefocus>
-                    <visible>!Integer.IsGreater(Container(211).NumItems,11)</visible>
+                    <visible>!Integer.IsGreater(Container(211).NumItems,19)</visible>
                 </control>
                 <control type="button" id="303" description="Up">
                     <width>64</width>

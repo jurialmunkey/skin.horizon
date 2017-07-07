@@ -699,16 +699,16 @@
     <include name="Home_Textbar_Item">
         <control type="group">
             <height>74</height>
-            <visible>!String.IsEmpty(Container(300).ListItemAbsolute($PARAM[id]).Label)</visible>
+            <visible>!String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Label)</visible>
             <control type="group">
                 <visible>Control.HasFocus(300)</visible>
                 <include>Animation_FadeOut_Delay</include>
                 <control type="image">
-                    <visible>String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                    <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                     <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                 </control>
                 <control type="image">
-                    <visible>String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                    <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                     <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
                 </control>
                 <include content="Home_Separator">
@@ -734,8 +734,8 @@
                     <left>30</left>
                     <font>$PARAM[font]</font>
                     <textcolor>main_bg_100</textcolor>
-                    <label>$INFO[Container(300).ListItemAbsolute($PARAM[id]).Label]</label>
-                    <visible>!String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                    <label>$INFO[Container(300).ListItemPosition($PARAM[id]).Label]</label>
+                    <visible>!String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                 </control>
                 <control type="label">
                     <left>30</left>
@@ -744,8 +744,8 @@
                     <align>left</align>
                     <!-- <animation effect="slide" start="-16" end="0" time="100" reversible="false" condition="!Skin.HasSetting(BounceAnimations)">Visible</animation> -->
                     <textcolor>Selected</textcolor>
-                    <label>$INFO[Container(300).ListItemAbsolute($PARAM[id]).Label]</label>
-                    <visible>String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                    <label>$INFO[Container(300).ListItemPosition($PARAM[id]).Label]</label>
+                    <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                 </control>
             </control>
         </definition>
@@ -809,6 +809,7 @@
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
         <focusposition>1</focusposition>
+        <scrolltime>0</scrolltime>
         <itemlayout height="74" width="240">
             <control type="group">
                 <width>74</width>
@@ -858,7 +859,7 @@
                 <left>74</left>
                 <width>6</width>
                 <visible>!Control.HasFocus(300) + [Window.IsVisible(Home) | [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]]</visible>
-                <include>Animation_FadeIn_Delay</include>
+                <include>Animation_FadeIn</include>
                 <control type="image">
                     <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                 </control>
@@ -1010,7 +1011,7 @@
     <include name="Home_OnClick">
 
         <!-- Set Menu Indicator -->
-        <onclick>SetProperty(MenuIconFocus,$INFO[ListItem.Property(path)],Home)</onclick>
+        <onclick condition="String.Contains(ListItem.Property(path),ReplaceWindow)">SetProperty(MenuIconFocus,$INFO[ListItem.Property(path)],Home)</onclick>
         <onclick>$INFO[ListItem.Property(path)]</onclick>
 
         <onback condition="Window.IsVisible(SkinSettings.xml)">SetFocus(9100)</onback>
