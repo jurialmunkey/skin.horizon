@@ -1,5 +1,8 @@
 [B]1.0.6[/B]
 Transparent top bar option
+Add small categories icons
+Add option to remove osd submenu
+Add clearlogo to showcase when discart not available
 
 [B]1.0.5[/B]
 Add widget aspect options

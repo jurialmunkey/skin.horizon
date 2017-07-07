@@ -14,7 +14,7 @@
         <onunfocus condition="!String.IsEqual($PARAM[aspect],$LOCALIZE[31038]) + Integer.IsGreater(Container($PARAM[id]).Position,4)">SetProperty(landscapeposition,2,home)</onunfocus>
 
 
-        <onfocus condition="!$PARAM[submenu] | Skin.HasSetting(BigSubmenu)">Control.Move($PARAM[id],-$INFO[Container($PARAM[id]).Position])</onfocus>
+        <onfocus>Control.Move($PARAM[id],-$INFO[Container($PARAM[id]).Position])</onfocus>
         <onfocus condition="!String.IsEqual($PARAM[aspect],$LOCALIZE[31038]) + [!$PARAM[submenu] | Skin.HasSetting(BigSubmenu)]">Control.Move($PARAM[id],$INFO[Window(home).Property(listposition)])</onfocus>
         <onfocus condition="String.IsEqual($PARAM[aspect],$LOCALIZE[31038]) + [!$PARAM[submenu] | Skin.HasSetting(BigSubmenu)]">Control.Move($PARAM[id],$INFO[Window(home).Property(landscapeposition)])</onfocus>
 
