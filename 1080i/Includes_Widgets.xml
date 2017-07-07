@@ -96,19 +96,21 @@
     </include>
 
     <include name="Home_Widgets_Grouplist">
-        <control type="grouplist" id="$PARAM[pos]33000">
+        <control type="grouplist" id="$PARAM[pos]330">
             <onleft>300</onleft>
             <orientation>vertical</orientation>
             <itemgap>-150</itemgap>
             <usecontrolcoords>true</usecontrolcoords>
             <scrolltime tween="cubic" easing="out">500</scrolltime>
-            <control type="group" id="$PARAM[pos]333001" description="Spacer"> 
+            <!-- <animation effect="slide" start="0" end="0,-50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]332)" reversible="false">Conditional</animation>
+            <animation effect="slide" start="0" end="0,50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]331)" reversible="false">Conditional</animation> -->
+            <control type="group" id="$PARAM[pos]331" description="Spacer"> 
                 <height>76</height>
             </control>
             <include content="Home_Widgets_Set">
                 <param name="pos" value="$PARAM[pos]" />
             </include>
-            <control type="group" id="$PARAM[pos]333000">
+            <control type="group" id="$PARAM[pos]332">
                 <height>473</height>
             </control>
         </control>
@@ -206,6 +208,7 @@
     <include name="Home_Widget">
         <control type="list" id="$PARAM[id]">
             <visible>$PARAM[visible]</visible>
+            <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | String.IsEmpty(Window(Home).Property(WidgetLoading))</visible>
             <focusposition>1</focusposition>
             <movement>5</movement>
             <include condition="$PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">Home_Widget_Posters_Submenu_Height</include>
@@ -217,8 +220,9 @@
                 <param name="submenu" value="$PARAM[submenu]" />
             </include>
         </control>
-        <control type="group" id="$PARAM[id]2">
+        <control type="group" id="2$PARAM[id]">
             <visible>$PARAM[visible]</visible>
+            <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
             <include condition="$PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">Home_Widget_Label_Submenu_Height</include>
             <include content="Home_Widget_Label">
                 <param name="id" value="$PARAM[id]" />
@@ -285,6 +289,7 @@
             <preloaditems>2</preloaditems>
             <onfocus>SetProperty(WidgetFocus,1,Home)</onfocus>
             <onfocus>SetProperty(SkinHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
+            
             <include content="Home_Widget_Movement">
                 <param name="id" value="$PARAM[id]" />
                 <param name="aspect" value="$PARAM[aspect]" />
