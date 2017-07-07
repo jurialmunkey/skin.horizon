@@ -324,7 +324,6 @@
 
     <variable name="Label_SkinSettings_Info">
         <value condition="Control.HasFocus(9211)">$LOCALIZE[31041]</value>
-        <value condition="Control.HasFocus(9212)">$LOCALIZE[31042]</value>
         <value condition="Control.HasFocus(9213)">$LOCALIZE[31043]</value>
         <value condition="Control.HasFocus(9214)">$LOCALIZE[31044]</value>
         <value condition="Control.HasFocus(9215)">$LOCALIZE[31045]</value>

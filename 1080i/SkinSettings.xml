@@ -175,6 +175,14 @@
                         <onclick>Skin.ToggleSetting(CategoriesOnBottom)</onclick>
                         <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
                     </control>
+                    <control type="radiobutton" id="9212" description="Display submenu as categories widget">
+                        <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31190]</label>
+                        <selected>Skin.HasSetting(BigSubmenu)</selected>
+                        <onclick>Skin.ToggleSetting(BigSubmenu)</onclick>
+                        <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
+                    </control>
 
                     <!-- ========== -->
                     <!-- Background -->

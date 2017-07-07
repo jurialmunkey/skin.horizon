@@ -902,6 +902,11 @@ msgctxt "#31189"
 msgid "Recommended Albums"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31190"
+msgid "Use large icons for categories widget"
+msgstr ""
+
 msgctxt "#31191"
 msgid "Directed by"
 msgstr ""
