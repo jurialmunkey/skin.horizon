@@ -8,13 +8,13 @@
             <!-- <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]</visible>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include> -->
+
             <control type="image">
-                <top>-128</top>
-                <height>320</height>
-                <texture colordiffuse="9f000000">common/gradient-top.png</texture>
+                <height>210</height>
+                <texture>common/gradient-top.png</texture>
             </control>
             <control type="image">
-                <height>320</height>
+                <height>210</height>
                 <texture>common/gradient-top.png</texture>
             </control>
         </control>
