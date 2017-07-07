@@ -5,9 +5,6 @@
     <!-- ====== -->
     <include name="Topbar_Gradient">
         <control type="group">
-            <!-- <include>Defs_InfoDialog_Visible</include>
-            <include>Animation_FadeIn</include>
-            <include>Animation_FadeOut</include> -->
             <animation effect="fade" start="100" end="0" delay="300" time="400" reversible="false" condition="Skin.HasSetting(TransparentTopbar) + [Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | [!Window.IsVisible(Home) + !Control.IsVisible(51) + !Control.IsVisible(53)]]">Conditional</animation>
             <animation effect="fade" start="0" end="100" delay="0" time="400" reversible="false" condition="Skin.HasSetting(TransparentTopbar) + ![Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | [!Window.IsVisible(Home) + !Control.IsVisible(51) + !Control.IsVisible(53)]]">Conditional</animation>
             <control type="image">
