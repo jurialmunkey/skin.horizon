@@ -356,7 +356,7 @@
                                 <texture colordiffuse="PosterBack">common/white.png</texture>
                             </control>
                             <control type="textbox">
-                                <height>150</height>
+                                <height>95</height>
                                 <centertop>50%</centertop>
                                 <left>20</left>
                                 <right>20</right>
@@ -445,7 +445,7 @@
                                 <texture colordiffuse="PosterBack">common/white.png</texture>
                             </control>
                             <control type="textbox">
-                                <height>150</height>
+                                <height>95</height>
                                 <centertop>50%</centertop>
                                 <left>20</left>
                                 <right>20</right>
