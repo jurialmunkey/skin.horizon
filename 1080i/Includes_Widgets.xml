@@ -533,7 +533,12 @@
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
                     <control type="image">
+                        <texture background="true" colordiffuse="main_fg_70">$INFO[ListItem.Icon]</texture>
+                        <visible>String.Contains(ListItem.Icon,special://skin/extras/icons/)</visible>
+                    </control>
+                    <control type="image">
                         <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <visible>!String.Contains(ListItem.Icon,special://skin/extras/icons/)</visible>
                     </control>
                 </control>
             </control>
@@ -551,6 +556,8 @@
             <control type="group">
                 <left>72</left>
                 <right>-72</right>
+                <visible>Control.HasFocus($PARAM[id])</visible>
+                <include>Animation_FocusBounce_Large</include>
                 <control type="group">
                     <top>10</top>
                     <right>10</right>
@@ -565,9 +572,19 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>Control.HasFocus($PARAM[id])</visible>
                     <include>View_Selectbox</include>
                 </control>
+            </control>
+            <control type="group">
+                <visible>!Control.HasFocus($PARAM[id])</visible>
+                <include content="Home_Widget_Submenu_ItemLayout">
+                    <param name="genres" value="$PARAM[genres]" />
+                    <param name="studios" value="$PARAM[studios]" />
+                    <param name="text" value="$PARAM[text]" />
+                    <param name="square" value="$PARAM[square]" />
+                    <param name="poster" value="$PARAM[poster]" />
+                    <param name="landscape" value="$PARAM[landscape]" />
+                </include>
             </control>
         </definition>
     </include>
@@ -583,6 +600,9 @@
             <control type="group">
                 <left>72</left>
                 <right>-72</right>
+                <visible>Control.HasFocus($PARAM[id])</visible>
+                <include condition="!$PARAM[landscape]">Animation_FocusBounce</include>
+                <include condition="$PARAM[landscape]">Animation_FocusBounce_Small</include>
                 <control type="group">
 
                     <top>10</top>
@@ -701,9 +721,19 @@
                 </control>
                 <include>View_WatchedOverlay</include>
                 <control type="group">
-                    <visible>Control.HasFocus($PARAM[id])</visible>
                     <include>View_Selectbox</include>
                 </control>
+            </control>
+            <control type="group">
+                <visible>!Control.HasFocus($PARAM[id])</visible>
+                <include content="Home_Widget_Posters_ItemLayout">
+                    <param name="genres" value="$PARAM[genres]" />
+                    <param name="studios" value="$PARAM[studios]" />
+                    <param name="text" value="$PARAM[text]" />
+                    <param name="square" value="$PARAM[square]" />
+                    <param name="poster" value="$PARAM[poster]" />
+                    <param name="landscape" value="$PARAM[landscape]" />
+                </include>
             </control>
         </definition>
     </include>

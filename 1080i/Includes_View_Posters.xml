@@ -389,7 +389,7 @@
                     <top>$PARAM[top_offset]</top>
                     <right>-10</right>
                     <bottom>$PARAM[bottom_offset]</bottom>
-                    
+                    <include>Animation_FocusBounce</include>
                     <control type="group" description="ParentFolder and DefaultIcon">
                         <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
@@ -547,7 +547,9 @@
                     <top>$PARAM[top_offset]</top>
                     <right>-10</right>
                     <bottom>$PARAM[bottom_offset]</bottom>
+
                     <control type="group">
+                        <include>Animation_FocusBounce_Small</include>
                         <height>313.75</height>
                         <control type="image">
                             <bordersize>10</bordersize>

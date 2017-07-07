@@ -440,6 +440,14 @@
                         <onclick>Skin.ToggleSetting(UseHoursMinutes)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9278" description="Enable bounce animations">
+                        <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31192]</label>
+                        <selected>Skin.HasSetting(BounceAnimations)</selected>
+                        <onclick>Skin.ToggleSetting(BounceAnimations)</onclick>
+                    </control>
+
                     <control type="button" id="9274" description="Customise Shutdown Menu">
                         <visible>ControlGroup(9100).HasFocus(9107)</visible>
                         <include>Defs_Settings_Button</include>
