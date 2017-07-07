@@ -742,7 +742,7 @@
                     <right>40</right>
                     <font>$PARAM[font]_bold</font>
                     <align>left</align>
-                    <animation effect="slide" start="-16" end="0" time="100" reversible="false" condition="!Skin.HasSetting(BounceAnimations)">Visible</animation>
+                    <!-- <animation effect="slide" start="-16" end="0" time="100" reversible="false" condition="!Skin.HasSetting(BounceAnimations)">Visible</animation> -->
                     <textcolor>Selected</textcolor>
                     <label>$INFO[Container(300).ListItemAbsolute($PARAM[id]).Label]</label>
                     <visible>String.IsEqual(Container(300).ListItemAbsolute($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
@@ -954,7 +954,7 @@
                 <align>right</align>
                 <textcolor>Selected</textcolor>
                 <label>$INFO[ListItem.Label]</label>
-                <animation effect="slide" start="-16" end="0" time="100" reversible="false" condition="!Skin.HasSetting(BounceAnimations)">Focus</animation>
+                <!-- <animation effect="slide" start="-16" end="0" time="100" reversible="false" condition="!Skin.HasSetting(BounceAnimations)">Focus</animation> -->
             </control>
         </focusedlayout>
     </include>
