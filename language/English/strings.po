@@ -885,6 +885,11 @@ msgctxt "#31185"
 msgid "Make top header bar transparent"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31186"
+msgid "Show osd submenu"
+msgstr ""
+
 msgctxt "#31187"
 msgid "Random Albums"
 msgstr ""

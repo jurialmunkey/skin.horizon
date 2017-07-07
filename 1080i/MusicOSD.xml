@@ -12,6 +12,7 @@
             <include>Animation_FadeOut</include>
             <!-- Mini Blade -->
             <control type="group">
+                <visible>!Skin.HasSetting(OSDHideSubmenu)</visible>
                 <top>80</top>
                 <left>0</left>
                 <right>0</right>
