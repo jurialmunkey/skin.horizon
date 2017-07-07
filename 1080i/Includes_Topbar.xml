@@ -5,10 +5,11 @@
     <!-- ====== -->
     <include name="Topbar_Gradient">
         <control type="group">
-            <!-- <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]</visible>
+            <!-- <include>Defs_InfoDialog_Visible</include>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include> -->
-
+            <animation effect="fade" start="100" end="0" delay="300" time="400" reversible="false" condition="Skin.HasSetting(TransparentTopbar) + [Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | [!Window.IsVisible(Home) + !Control.IsVisible(51) + !Control.IsVisible(53)]]">Conditional</animation>
+            <animation effect="fade" start="0" end="100" delay="0" time="400" reversible="false" condition="Skin.HasSetting(TransparentTopbar) + ![Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | [!Window.IsVisible(Home) + !Control.IsVisible(51) + !Control.IsVisible(53)]]">Conditional</animation>
             <control type="image">
                 <height>150</height>
                 <texture>common/gradient-top.png</texture>
@@ -43,6 +44,7 @@
             <top>0</top>
             <aspectratio>scale</aspectratio>
             <animation effect="fade" start="100" end="75" condition="Skin.HasSetting(TransparentTopbar)">Conditional</animation>
+            
             <texture flipy="true">common/gradient-solid.png</texture>
         </control>
         <control type="image">
