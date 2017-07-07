@@ -36,6 +36,9 @@
                     <param name="id" value="52" />
                     <param name="orientation" value="horizontal" />
                     <param name="landscape" value="false" />
+                    <param name="top_offset" value="30" />
+                    <param name="bottom_offset" value="-10" />
+                    <param name="top" value="441.5" />
                 </include>
             </control>
             <include content="View_Posters_Info">
@@ -82,6 +85,9 @@
                     <param name="id" value="56" />
                     <param name="orientation" value="horizontal" />
                     <param name="landscape" value="true" />
+                    <param name="top_offset" value="30" />
+                    <param name="bottom_offset" value="-10" />
+                    <param name="top" value="441.5" />
                 </include>
             </control>
             <include content="View_Posters_Info">
@@ -237,12 +243,16 @@
         <param name="setfanart" default="false" />
         <param name="orientation" default="vertical" />
         <param name="landscape" default="false" />
+        <param name="top_offset" default="216" />
+        <param name="bottom_offset" default="-176" />
+        <param name="top" default="-186" />
         <definition>
             <focusposition>3</focusposition>
             <movement>3</movement>
             <orientation>$PARAM[orientation]</orientation>
             <left>0</left>
             <right>90</right>
+            <top>$PARAM[top]</top>
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
@@ -251,11 +261,11 @@
             <itemlayout width="285" height="412.5" condition="!$PARAM[landscape]">
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
+                    <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="group" description="ParentFolder and DefaultIcon">
-                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
@@ -336,7 +346,7 @@
                         <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Poster]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
                         <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
-                        <visible>[String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                     </control>
                     <include>View_WatchedOverlay</include>
                 </control>
@@ -348,12 +358,12 @@
                 </include>
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
+                    <bottom>$PARAM[bottom_offset]</bottom>
                     
                     <control type="group" description="ParentFolder and DefaultIcon">
-                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
@@ -425,7 +435,7 @@
                         <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Poster]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
                         <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
-                        <visible>[String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                     </control>
                     <include>View_WatchedOverlay</include>
                     <!-- Highlight -->
@@ -439,9 +449,9 @@
             <itemlayout width="570" height="412.5" condition="$PARAM[landscape]">
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
+                    <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="group">
                         <height>313.75</height>
                         <control type="image">
@@ -506,9 +516,9 @@
                 </include>
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
+                    <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="group">
                         <height>313.75</height>
                         <control type="image">

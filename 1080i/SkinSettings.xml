@@ -216,6 +216,14 @@
                         <onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9226" description="Transparent Top Bar">
+                        <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31185]</label>
+                        <selected>Skin.HasSetting(TransparentTopbar)</selected>
+                        <onclick>Skin.ToggleSetting(TransparentTopbar)</onclick>
+                    </control>
+
                     <control type="togglebutton" id="9225" description="Install Weather Fanart">
                         <visible>ControlGroup(9100).HasFocus(9102)</visible>
                         <include>Defs_Settings_Button</include>

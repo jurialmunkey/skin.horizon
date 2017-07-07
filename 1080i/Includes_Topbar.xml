@@ -5,9 +5,9 @@
     <!-- ====== -->
     <include name="Topbar_Gradient">
         <control type="group">
-            <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]</visible>
+            <!-- <visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]</visible>
             <include>Animation_FadeIn</include>
-            <include>Animation_FadeOut</include>
+            <include>Animation_FadeOut</include> -->
             <control type="image">
                 <top>-128</top>
                 <height>320</height>
@@ -21,7 +21,7 @@
     </include>
     <include name="Topbar">
         <control type="group">
-            <include condition="Window.IsActive(Home)">Topbar_Gradient</include>
+            <include>Topbar_Gradient</include>
             <control type="group">
                 <top>0</top>
                 <height>186</height>
@@ -42,6 +42,7 @@
             <bottom>0</bottom>
             <top>0</top>
             <aspectratio>scale</aspectratio>
+            <animation effect="fade" start="100" end="75" condition="Skin.HasSetting(TransparentTopbar)">Conditional</animation>
             <texture flipy="true">common/gradient-solid.png</texture>
         </control>
         <control type="image">
