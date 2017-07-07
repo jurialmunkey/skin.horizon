@@ -13,6 +13,7 @@
                 <include content="View_Posters_Layout">
                     <param name="id" value="51" />
                     <param name="orientation" value="vertical" />
+                  
                 </include>
             </control>
 
@@ -272,7 +273,7 @@
         <param name="orientation" default="vertical" />
         <param name="landscape" default="false" />
         <param name="top_offset" default="216" />
-        <param name="bottom_offset" default="-176" />
+        <param name="bottom_offset" default="-196" />
         <param name="top" default="-186" />
         <definition>
             <focusposition>3</focusposition>
