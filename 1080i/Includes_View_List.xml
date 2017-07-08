@@ -18,6 +18,25 @@
                 </control>
             </control>
 
+            <!-- Poster List -->
+            <control type="group">
+                <visible>Control.IsVisible(54)</visible>
+                <top>0</top>
+                <left>0</left>
+                <right>80</right>
+                <bottom>0</bottom>
+                <control type="fixedlist" id="54">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+                    <viewtype label="$LOCALIZE[31196]">infolist</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31196]" />
+                    </include>
+                    <include content="View_List_Layout">
+                        <param name="id" value="54" />
+                    </include>
+                </control>
+            </control>
+
             <!-- Info List -->
             <control type="group">
                 <visible>Control.IsVisible(55)</visible>
@@ -26,7 +45,7 @@
                 <right>80</right>
                 <bottom>0</bottom>
                 <control type="fixedlist" id="55">
-                    <viewtype label="$LOCALIZE[31164]">list</viewtype>
+                    <viewtype label="$LOCALIZE[31164]">infolist</viewtype>
                     <include content="View_Forced">
                         <param name="string" value="$LOCALIZE[31164]" />
                     </include>

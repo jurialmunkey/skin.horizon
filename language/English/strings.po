@@ -929,6 +929,11 @@ msgctxt "#31195"
 msgid "Reload Skin"
 msgstr ""
 
+#: /1080i/Includes_View_List.xml
+msgctxt "#31196"
+msgid "Infolist 2"
+msgstr ""
+
 msgctxt "#31199"
 msgid "Kiosk mode"
 msgstr ""

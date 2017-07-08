@@ -7,7 +7,6 @@
     <!-- 51 Icons      -->
     <!-- 52 Showcase   -->
     <!-- 53 Landscape  -->
-    <!-- 54 Sq List    -->
     <!-- 55 Infolist   -->
     <!-- 56 Showcase 2 -->
     <!-- ============= -->
@@ -96,6 +95,8 @@
         <control type="group">
             <width>596</width>
             <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)]</visible>
+            <animation effect="fade" start="100" end="0" time="1" reversible="false" condition="Control.IsVisible(54) + !Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+            <animation effect="fade" start="0" end="100" delay="250" time="50" reversible="false" condition="Control.IsVisible(54) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
             <control type="image">
                 <include>Defs_Shadow_Opaque</include>
                 <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
@@ -106,7 +107,7 @@
             <include>Object_Separator_Right</include>
         </control>
         <control type="group">
-            <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)]</visible>
+            <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)] + !Control.IsVisible(54)</visible>
             <control type="group">
                 <width>596</width>
                 <height>894</height>
@@ -177,6 +178,130 @@
                                 <visible>!Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(ListItem.AddonSummary)</visible>
                             </control>
                             <include condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)">Object_StarRating_Music</include>                            
+                        </control>
+                    </control>
+                </control>
+                <include>Object_Separator_Right</include>
+            </control>
+        </control>
+        <control type="group">
+            <visible>Control.IsVisible(54)</visible>
+            <animation effect="fade" start="100" end="0" delay="250" time="50" reversible="false" condition="Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+            <animation effect="fade" start="0" end="100" reversible="false" condition="!Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+            <control type="group">
+                <width>596</width>
+                <height>894</height>
+                <control type="image">
+                    <include>Defs_Shadow_Opaque</include>
+                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                </control>
+                <control type="group">
+                    <width>516</width>
+                    <height>814</height>
+                    <centerleft>50%</centerleft>
+                    <top>40</top>
+                    <bottom>40</bottom>
+                    <control type="group">
+                        <height>290</height>
+                        <control type="image">
+                            <include>Defs_Shadow_Opaque</include>
+                            <texture colordiffuse="PosterBack">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <fadetime>100</fadetime>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$VAR[Image_Fanart]</texture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <top>329</top>
+                        <control type="image">
+                            <height>1</height>
+                            <top>0</top>
+                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <height>1</height>
+                            <top>-1</top>
+                            <texture colordiffuse="darkline_separator">common/white.png</texture>
+                        </control>
+                        <control type="grouplist">
+                            <top>30</top>
+                            <align>top</align>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <orientation>vertical</orientation>
+                            <control type="label">
+                                <aligny>top</aligny>
+                                <align>center</align>
+                                <height>55</height>
+                                <font>font_topbar</font>
+                                <textcolor>main_fg_100</textcolor>
+                                <label>$VAR[Label_MainTitle]</label>
+                            </control>
+                            <control type="grouplist">
+                                <height>40</height>
+                                <align>center</align>
+                                <itemgap>0</itemgap>
+                                <orientation>horizontal</orientation>
+                                <control type="label">
+                                    <label>$INFO[ListItem.MPAA]</label>
+                                    <width>auto</width>
+                                    <aligny>top</aligny>
+                                    <height>40</height>
+                                    <textcolor>main_fg_100</textcolor>
+                                    <font>font_small</font>
+                                </control>
+                                <control type="label">
+                                    <label>  |  </label>
+                                    <width>auto</width>
+                                    <aligny>top</aligny>
+                                    <height>40</height>
+                                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                                    <font>font_small</font>
+                                    <visible>!String.IsEmpty(ListItem.MPAA) + [!String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)]</visible>
+                                </control>
+                                <control type="label">
+                                    <label>$VAR[Label_Duration]</label>
+                                    <width>auto</width>
+                                    <aligny>top</aligny>
+                                    <height>40</height>
+                                    <textcolor>main_fg_100</textcolor>
+                                    <font>font_small</font>
+                                </control>
+                                <control type="label">
+                                    <label>  |  </label>
+                                    <width>auto</width>
+                                    <aligny>top</aligny>
+                                    <height>40</height>
+                                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                                    <font>font_small</font>
+                                    <visible>!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Premiered)</visible>
+                                </control>
+                                <control type="label">
+                                    <label>$INFO[ListItem.Premiered]</label>
+                                    <width>auto</width>
+                                    <aligny>top</aligny>
+                                    <height>40</height>
+                                    <textcolor>main_fg_100</textcolor>
+                                    <font>font_small</font>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <height>64</height>
+                                <top>-10</top>
+                                <include content="Object_StarRating">
+                                    <param name="align" value="center" />
+                                </include>
+                            </control>
+                            <control type="textbox">
+                                <top>30</top>
+                                <label>$VAR[Label_Plot]</label>
+                                <height>270</height>
+                                <aligny>top</aligny>
+                                <align>center</align>
+                                <textcolor>main_fg_70</textcolor>
+                                <font>font_plotbox</font>
+                            </control>
                         </control>
                     </control>
                 </control>
