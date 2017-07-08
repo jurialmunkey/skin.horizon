@@ -92,13 +92,6 @@
                 <left>0</left>
                 <right>80</right>
                 <bottom>0</bottom>
-                <control type="group">
-                    <height>326</height>
-                    <top>518</top>
-                    <width>818</width>
-                    <left>50</left>
-
-                </control>
                 <control type="fixedlist" id="57">
                     <focusposition>1</focusposition>
                     <movement>2</movement>
@@ -112,17 +105,17 @@
                     <include content="View_List_Layout">
                         <param name="id" value="57" />
                         <param name="offset" value="0" />
-                        <param name="left" value="264" />
+                        <param name="left" value="274" />
                         <param name="height" value="84" />
-                        <param name="width" value="858" />
+                        <param name="width" value="832" />
                     </include>
                 </control>
 
                 <control type="group">
-                    <left>264</left>
+                    <left>274</left>
                     <height>336</height>
                     <top>518</top>
-                    <width>858</width>
+                    <width>832</width>
                     <control type="group">
                         <control type="image">
                             <width>1</width>
