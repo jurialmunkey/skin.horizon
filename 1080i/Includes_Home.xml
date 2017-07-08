@@ -682,7 +682,7 @@
         </control>
         <control type="image">
             <right>6</right>
-            <texture colordiffuse="main_fg_100">common/white.png</texture>
+            <texture colordiffuse="dialog_bg_100">common/white.png</texture>
         </control>
         <control type="image">
             <width>1</width>
@@ -733,7 +733,7 @@
                 <control type="label">
                     <left>30</left>
                     <font>$PARAM[font]</font>
-                    <textcolor>main_bg_100</textcolor>
+                    <textcolor>dialog_fg_100</textcolor>
                     <label>$INFO[Container(300).ListItemPosition($PARAM[id]).Label]</label>
                     <visible>!String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                 </control>
@@ -943,7 +943,7 @@
                 <font>font_submenu</font>
                 <align>right</align>
                 <right>24</right>
-                <textcolor>main_bg_100</textcolor>
+                <textcolor>dialog_fg_100</textcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
         </itemlayout>
@@ -975,6 +975,11 @@
         <control type="image">
             <texture>common/gradient-solid-horizontal.png</texture>
             <include>Defs_DarkShadow</include>
+        </control>
+        <control type="image">
+            <width>1</width>
+            <left>-1</left>
+            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
         </control>
         <control type="image">
             <width>1</width>
