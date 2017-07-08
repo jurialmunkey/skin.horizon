@@ -63,7 +63,7 @@
         <include>Global_Visualisation</include>
         <control type="group">
             <control type="group">
-                <include condition="!Skin.HasSetting(TransparentTopbar)">Global_Background_TopOffset</include>
+                <include condition="Skin.HasSetting(DisableTransparentTopbar)">Global_Background_TopOffset</include>
                 <control type="multiimage" description="Fanart">
                     <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
                     <visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>

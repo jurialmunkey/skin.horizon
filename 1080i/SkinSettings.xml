@@ -230,8 +230,8 @@
                         <visible>ControlGroup(9100).HasFocus(9102)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31185]</label>
-                        <selected>Skin.HasSetting(TransparentTopbar)</selected>
-                        <onclick>Skin.ToggleSetting(TransparentTopbar)</onclick>
+                        <selected>!Skin.HasSetting(DisableTransparentTopbar)</selected>
+                        <onclick>Skin.ToggleSetting(DisableTransparentTopbar)</onclick>
                     </control>
 
                     <control type="togglebutton" id="9225" description="Install Weather Fanart">

@@ -94,23 +94,7 @@
 
     <include name="View_Library_Poster">
 
-        <control type="group">
-            <width>596</width>
-            <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)]</visible>
-            <control type="group">
-                <visible>!Control.IsVisible(54) | Window.IsVisible(DialogVideoInfo.xml)</visible>
-                <animation effect="fade" start="100" end="0" delay="0" time="1">Hidden</animation>
-                <animation effect="fade" start="0" end="100" delay="250" time="50">Visible</animation>
-                <control type="image">
-                    <include>Defs_Shadow_Opaque</include>
-                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
-                </control>
-                <include content="Object_BigPoster">
-                    <param name="discart" value="false" />
-                </include>
-                <include>Object_Separator_Right</include>
-            </control>
-        </control>
+        <!-- Music List -->
         <control type="group">
             <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)] + !Control.IsVisible(54)</visible>
             <control type="group">
@@ -189,6 +173,8 @@
                 <include>Object_Separator_Right</include>
             </control>
         </control>
+
+        <!-- Info List 2 -->
         <control type="group">
             <visible>Control.IsVisible(54)</visible>
             <control type="group">
@@ -314,6 +300,25 @@
                 <include>Object_Separator_Right</include>
             </control>
         </control>
+        <!-- Large Poster -->
+        <control type="group">
+            <width>596</width>
+            <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)]</visible>
+            <control type="group">
+                <visible>!Control.IsVisible(54) | Window.IsVisible(DialogVideoInfo.xml)</visible>
+                <animation effect="fade" start="100" end="0" delay="0" time="1">Hidden</animation>
+                <animation effect="fade" start="0" end="100" delay="250" time="50">Visible</animation>
+                <control type="image">
+                    <include>Defs_Shadow_Opaque</include>
+                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                </control>
+                <include content="Object_BigPoster">
+                    <param name="discart" value="false" />
+                </include>
+                <include>Object_Separator_Right</include>
+            </control>
+        </control>
+        
     </include>
 
 
