@@ -142,7 +142,7 @@
             <aspectratio>keep</aspectratio>
             <visible>Control.IsVisible($PARAM[id])</visible>
             <visible>$PARAM[discart]</visible>
-            <texture>$INFO[ListItem.Art(discart)]</texture>
+            <texture background="true">$INFO[ListItem.Art(discart)]</texture>
         </control>
         <control type="image">
             <top>50</top>
@@ -153,7 +153,7 @@
             <visible>Control.IsVisible($PARAM[id])</visible>
             <visible>$PARAM[discart]</visible>
             <visible>String.IsEmpty(ListItem.Art(discart))</visible>
-            <texture>$INFO[ListItem.Art(clearlogo)]</texture>
+            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
         </control>
     </include>
 
