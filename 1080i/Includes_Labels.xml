@@ -29,9 +29,11 @@
         
         <value condition="String.IsEqual(Container.FolderPath,musicdb://songs/)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
 
-        <value condition="Container.Content(albums)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
-        <value condition="Container.Content(songs) + String.Contains(Container.FolderPath,/artists/)">$VAR[Label_Header_Location,, / ]$INFO[ListItem.Artist,, / ]$INFO[Container.FolderName]</value>
-        <value condition="Container.Content(songs)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(albums) + !String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(albums) + String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location]$INFO[ListItem.Artist, / ,]</value>
+        <value condition="Container.Content(songs) + String.Contains(Container.FolderPath,/artists/) + !String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location,, / ]$INFO[ListItem.Artist,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(songs) + !String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(songs) + String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location]$INFO[ListItem.Album, / ,]</value>
 
         <value condition="Container.Content(years)">$VAR[Label_Header_Location,, / ]$LOCALIZE[652]</value>
         <value condition="String.Contains(Container.FolderPath,/years/)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
