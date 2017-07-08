@@ -934,6 +934,11 @@ msgctxt "#31196"
 msgid "Infolist 2"
 msgstr ""
 
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31197"
+msgid "Reinitialise Widgets"
+msgstr ""
+
 msgctxt "#31199"
 msgid "Kiosk mode"
 msgstr ""

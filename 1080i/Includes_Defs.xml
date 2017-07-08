@@ -4,8 +4,235 @@
     <include name="Defs_Info_TVShowCast"><content>plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[ListItem.Title]&amp;castaction=extendedinfo</content></include>
     <include name="Defs_Info_EpisodeCast"><content>plugin://script.skin.helper.service/?action=getcast&amp;episode=$INFO[ListItem.Title]&amp;castaction=extendedinfo</content></include>
 
+    <include name="Defs_SkinShortcuts_SetStrings">
+        <onback>Skin.SetString(HomeNumItems,$INFO[Container(211).NumItems])</onback>
+
+        <onback>Skin.SetString(Home.0.Widget.0,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.0.Widget.1,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.0.Widget.2,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.0.Widget.3,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.0.Widget.4,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.0.Widget.5,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.0.Widget.6,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.0.Widget.7,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.1.Widget.0,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.1.Widget.1,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.1.Widget.2,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.1.Widget.3,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.1.Widget.4,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.1.Widget.5,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.1.Widget.6,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.1.Widget.7,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.2.Widget.0,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.2.Widget.1,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.2.Widget.2,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.2.Widget.3,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.2.Widget.4,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.2.Widget.5,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.2.Widget.6,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.2.Widget.7,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.3.Widget.0,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.3.Widget.1,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.3.Widget.2,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.3.Widget.3,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.3.Widget.4,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.3.Widget.5,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.3.Widget.6,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.3.Widget.7,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.4.Widget.0,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.4.Widget.1,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.4.Widget.2,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.4.Widget.3,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.4.Widget.4,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.4.Widget.5,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.4.Widget.6,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.4.Widget.7,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.5.Widget.0,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.5.Widget.1,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.5.Widget.2,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.5.Widget.3,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.5.Widget.4,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.5.Widget.5,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.5.Widget.6,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.5.Widget.7,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.6.Widget.0,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.6.Widget.1,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.6.Widget.2,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.6.Widget.3,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.6.Widget.4,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.6.Widget.5,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.6.Widget.6,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.6.Widget.7,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.7.Widget.0,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.7.Widget.1,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.7.Widget.2,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.7.Widget.3,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.7.Widget.4,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.7.Widget.5,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.7.Widget.6,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.7.Widget.7,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.8.Widget.0,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.8.Widget.1,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.8.Widget.2,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.8.Widget.3,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.8.Widget.4,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.8.Widget.5,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.8.Widget.6,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.8.Widget.7,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.9.Widget.0,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.9.Widget.1,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.9.Widget.2,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.9.Widget.3,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.9.Widget.4,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.9.Widget.5,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.9.Widget.6,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.9.Widget.7,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.10.Widget.0,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.10.Widget.1,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.10.Widget.2,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.10.Widget.3,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.10.Widget.4,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.10.Widget.5,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.10.Widget.6,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.10.Widget.7,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget7)])</onback>
+
+        <onback>Skin.SetString(Home.11.Widget.0,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath)])</onback>
+        <onback>Skin.SetString(Home.11.Widget.1,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget1)])</onback>
+        <onback>Skin.SetString(Home.11.Widget.2,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget2)])</onback>
+        <onback>Skin.SetString(Home.11.Widget.3,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget3)])</onback>
+        <onback>Skin.SetString(Home.11.Widget.4,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget4)])</onback>
+        <onback>Skin.SetString(Home.11.Widget.5,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget5)])</onback>
+        <onback>Skin.SetString(Home.11.Widget.6,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget6)])</onback>
+        <onback>Skin.SetString(Home.11.Widget.7,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget7)])</onback>
+    </include>
+
+    <include name="Defs_SkinShortcuts_SetStrings_OnClick">
+        <onclick>Skin.SetString(HomeNumItems,$INFO[Container(211).NumItems])</onclick>
+
+        <onclick>Skin.SetString(Home.0.Widget.0,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.0.Widget.1,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.0.Widget.2,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.0.Widget.3,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.0.Widget.4,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.0.Widget.5,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.0.Widget.6,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.0.Widget.7,$INFO[Container(211).ListItemAbsolute(0).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.1.Widget.0,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.1.Widget.1,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.1.Widget.2,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.1.Widget.3,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.1.Widget.4,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.1.Widget.5,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.1.Widget.6,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.1.Widget.7,$INFO[Container(211).ListItemAbsolute(1).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.2.Widget.0,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.2.Widget.1,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.2.Widget.2,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.2.Widget.3,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.2.Widget.4,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.2.Widget.5,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.2.Widget.6,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.2.Widget.7,$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.3.Widget.0,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.3.Widget.1,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.3.Widget.2,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.3.Widget.3,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.3.Widget.4,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.3.Widget.5,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.3.Widget.6,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.3.Widget.7,$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.4.Widget.0,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.4.Widget.1,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.4.Widget.2,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.4.Widget.3,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.4.Widget.4,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.4.Widget.5,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.4.Widget.6,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.4.Widget.7,$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.5.Widget.0,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.5.Widget.1,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.5.Widget.2,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.5.Widget.3,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.5.Widget.4,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.5.Widget.5,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.5.Widget.6,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.5.Widget.7,$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.6.Widget.0,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.6.Widget.1,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.6.Widget.2,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.6.Widget.3,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.6.Widget.4,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.6.Widget.5,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.6.Widget.6,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.6.Widget.7,$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.7.Widget.0,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.7.Widget.1,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.7.Widget.2,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.7.Widget.3,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.7.Widget.4,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.7.Widget.5,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.7.Widget.6,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.7.Widget.7,$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.8.Widget.0,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.8.Widget.1,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.8.Widget.2,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.8.Widget.3,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.8.Widget.4,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.8.Widget.5,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.8.Widget.6,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.8.Widget.7,$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.9.Widget.0,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.9.Widget.1,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.9.Widget.2,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.9.Widget.3,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.9.Widget.4,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.9.Widget.5,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.9.Widget.6,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.9.Widget.7,$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.10.Widget.0,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.10.Widget.1,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.10.Widget.2,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.10.Widget.3,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.10.Widget.4,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.10.Widget.5,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.10.Widget.6,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.10.Widget.7,$INFO[Container(211).ListItemAbsolute(10).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Skin.SetString(Home.11.Widget.0,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath)])</onclick>
+        <onclick>Skin.SetString(Home.11.Widget.1,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget1)])</onclick>
+        <onclick>Skin.SetString(Home.11.Widget.2,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget2)])</onclick>
+        <onclick>Skin.SetString(Home.11.Widget.3,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget3)])</onclick>
+        <onclick>Skin.SetString(Home.11.Widget.4,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget4)])</onclick>
+        <onclick>Skin.SetString(Home.11.Widget.5,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget5)])</onclick>
+        <onclick>Skin.SetString(Home.11.Widget.6,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget6)])</onclick>
+        <onclick>Skin.SetString(Home.11.Widget.7,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget7)])</onclick>
+
+        <onclick>Close</onclick>
+    </include>
+
     <include name="Defs_SkinShortcuts_Widget">
         <control type="togglebutton" id="312$PARAM[num]" description="Widget">
+            <include>Defs_SkinShortcuts_SetStrings</include>
             <width>100%</width>
             <height>66</height>
             <usealttexture>ControlGroup(9300).HasFocus(312$PARAM[num]) + ControlGroup(9400).HasFocus()</usealttexture>

@@ -42,40 +42,40 @@
                 <top>0</top>
                 <bottom>0</bottom>
                 <include>Animation_Home_Textbar_Slideover_Widgets</include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),0)">
                     <param name="pos" value="0" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),1)">
                     <param name="pos" value="1" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),2)">
                     <param name="pos" value="2" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),3)">
                     <param name="pos" value="3" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),4)">
                     <param name="pos" value="4" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),5)">
                     <param name="pos" value="5" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),6)">
                     <param name="pos" value="6" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),7)">
                     <param name="pos" value="7" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),8)">
                     <param name="pos" value="8" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),9)">
                     <param name="pos" value="9" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),10)">
                     <param name="pos" value="10" />
                 </include>
-                <include content="Home_Widgets_Grouplist">
+                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),11)">
                     <param name="pos" value="11" />
                 </include>
                 <control type="button" id="9966">
@@ -131,7 +131,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath))" />
         </include>
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.1))">
             <param name="id" value="$PARAM[pos]3003" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget1)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)" />
@@ -139,7 +139,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget1)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1))" />
         </include>
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.2))">
             <param name="id" value="$PARAM[pos]3004" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget2)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget2)" />
@@ -147,7 +147,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget2)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget2))" />
         </include>
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.3))">
             <param name="id" value="$PARAM[pos]3005" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget3)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget3)" />
@@ -155,7 +155,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget3)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget3))" />
         </include>
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.4))">
             <param name="id" value="$PARAM[pos]3006" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget4)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget4)" />
@@ -163,7 +163,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget4)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget4))" />
         </include>
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.5))">
             <param name="id" value="$PARAM[pos]3007" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget5)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget5)" />
@@ -171,7 +171,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget5)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget5))" />
         </include>
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.6))">
             <param name="id" value="$PARAM[pos]3008" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget6)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget6)" />
@@ -179,7 +179,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget6)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget6))" />
         </include>
-        <include content="Home_Widget">
+        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.7))">
             <param name="id" value="$PARAM[pos]3009" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget7)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget7)" />

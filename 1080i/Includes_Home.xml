@@ -926,7 +926,7 @@
     </include>
 
     <include name="Home_MainMenu_Items">
-        <content limit="11"><include>skinshortcuts-mainmenu</include></content>
+        <content><include>skinshortcuts-mainmenu</include></content>
     </include>
 
     <include name="Home_SubMenu_Layout">

@@ -2,6 +2,7 @@
     <defaultcontrol always="true">9100</defaultcontrol>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|powermenu)</onunload>
     <controls>
+
         <include>Global_Background</include>
         <include>View_Layout</include>
 
@@ -183,6 +184,7 @@
                         <onclick>Skin.ToggleSetting(BigSubmenu)</onclick>
                         <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
                     </control>
+
 
                     <!-- ========== -->
                     <!-- Background -->
