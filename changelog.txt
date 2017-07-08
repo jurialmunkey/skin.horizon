@@ -1,6 +1,7 @@
 [B]1.0.8[/B]
 Revert number of menu items to 12 due to performance.
 Add performance enhancement that prevents excessive loading of widgets (go into home customisation menu and the press back).
+Add home background options
 
 [B]1.0.7[/B]
 Add infolist 2

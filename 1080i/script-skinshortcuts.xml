@@ -237,7 +237,7 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
 
-                <!-- <control type="button" id="310" description="Background">
+                <control type="button" id="310" description="Background">
                 <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
@@ -247,7 +247,7 @@
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
-                </control> -->
+                </control>
 
                 <control type="button" id="9900" description="Reinitialise Widgets">
                     <include>Defs_SkinShortcuts_SetStrings</include>
