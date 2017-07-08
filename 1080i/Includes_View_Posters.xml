@@ -104,60 +104,67 @@
     </include>
 
     <include name="View_Posters_Info">
-        <control type="group">
-            <left>$PARAM[left]</left>
-            <right>$PARAM[right]</right>
+        <param name="plot_height" default="130" />
+        <definition>
             <control type="group">
-                <visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(discart))] | !$PARAM[discart]</visible>
-                <include content="View_Posters_Info_Content">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="width" value="$PARAM[width]" />
-                    <param name="bottom" value="$PARAM[bottom]" />
-                </include>
+                <left>$PARAM[left]</left>
+                <right>$PARAM[right]</right>
+                <control type="group">
+                    <visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(discart))] | !$PARAM[discart]</visible>
+                    <include content="View_Posters_Info_Content">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="width" value="$PARAM[width]" />
+                        <param name="bottom" value="$PARAM[bottom]" />
+                        <param name="plot_height" value="$PARAM[plot_height]" />
+                    </include>
+                </control>
+                <control type="group">
+                    <right>420</right>
+                    <visible>!String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart]</visible>
+                    <include content="View_Posters_Info_Content">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="width" value="$PARAM[altwidth]" />
+                        <param name="bottom" value="$PARAM[bottom]" />
+                        <param name="plot_height" value="$PARAM[plot_height]" />
+                    </include>
+                </control>
+                <control type="group">
+                    <visible>!String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart]</visible>
+                    <include content="View_Posters_Info_Content">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="width" value="$PARAM[altwidth]" />
+                        <param name="right" value="420" />
+                        <param name="bottom" value="$PARAM[bottom]" />
+                        <param name="plot_height" value="$PARAM[plot_height]" />
+                    </include>
+                </control>
             </control>
-            <control type="group">
-                <right>420</right>
-                <visible>!String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart]</visible>
-                <include content="View_Posters_Info_Content">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="width" value="$PARAM[altwidth]" />
-                    <param name="bottom" value="$PARAM[bottom]" />
-                </include>
+            <control type="image">
+                <top>50</top>
+                <right>130</right>
+                <height>380</height>
+                <width>380</width>
+                <aspectratio>keep</aspectratio>
+                <visible>Control.IsVisible($PARAM[id])</visible>
+                <visible>$PARAM[discart]</visible>
+                <texture background="true">$INFO[ListItem.Art(discart)]</texture>
             </control>
-            <control type="group">
-                <visible>!String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart]</visible>
-                <include content="View_Posters_Info_Content">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="width" value="$PARAM[altwidth]" />
-                    <param name="right" value="420" />
-                    <param name="bottom" value="$PARAM[bottom]" />
-                </include>
+            <control type="image">
+                <top>50</top>
+                <right>150</right>
+                <height>380</height>
+                <width>380</width>
+                <aspectratio aligny="top">keep</aspectratio>
+                <visible>Control.IsVisible($PARAM[id])</visible>
+                <visible>$PARAM[discart]</visible>
+                <visible>String.IsEmpty(ListItem.Art(discart))</visible>
+                <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
             </control>
-        </control>
-        <control type="image">
-            <top>50</top>
-            <right>130</right>
-            <height>380</height>
-            <width>380</width>
-            <aspectratio>keep</aspectratio>
-            <visible>Control.IsVisible($PARAM[id])</visible>
-            <visible>$PARAM[discart]</visible>
-            <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-        </control>
-        <control type="image">
-            <top>50</top>
-            <right>150</right>
-            <height>380</height>
-            <width>380</width>
-            <aspectratio aligny="top">keep</aspectratio>
-            <visible>Control.IsVisible($PARAM[id])</visible>
-            <visible>$PARAM[discart]</visible>
-            <visible>String.IsEmpty(ListItem.Art(discart))</visible>
-            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-        </control>
+        </definition>
     </include>
 
     <include name="View_Posters_Info_Content">
+    
         <control type="grouplist">
             <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
             <visible>Control.IsVisible($PARAM[id])</visible>
@@ -217,7 +224,7 @@
             </control>
             <control type="textbox">
                 <label>$VAR[Label_Plot]</label>
-                <height>130</height>
+                <height>$PARAM[plot_height]</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>

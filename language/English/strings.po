@@ -939,6 +939,11 @@ msgctxt "#31197"
 msgid "Reinitialise Widgets"
 msgstr ""
 
+#: /1080i/Includes_View_List.xml
+msgctxt "#31198"
+msgid "Infolist 3"
+msgstr ""
+
 msgctxt "#31199"
 msgid "Kiosk mode"
 msgstr ""
