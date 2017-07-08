@@ -390,14 +390,13 @@
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
                     </control>
-                    <!-- <control type="radiobutton" id="9252">
+                    <control type="button" id="9254">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                        
-                        <label>$LOCALIZE[31015]</label>
-                        <selected>Skin.HasSetting(UseColorFlags)</selected>
+                        <label>$LOCALIZE[31193]</label>
                         <include>Defs_Settings_Button</include>
-                        <onclick>Skin.ToggleSetting(UseColorFlags)</onclick>
-                    </control> -->
+                        <onclick>Skin.Reset(focuscolor.name)</onclick>
+                        <onclick>Skin.Reset(gradientcolor.name)</onclick>
+                    </control>
 
                     <!-- ============= -->
                     <!-- Miscellaneous -->

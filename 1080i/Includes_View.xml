@@ -259,6 +259,7 @@
         <param name="id" default="9501" />
         <param name="label2" default="$INFO[ListItem.Label2]"/>
         <param name="infolabel" default="true" />
+        <param name="itemwidth" default="228.8" />
         <definition>
             <focusposition>2</focusposition>
             <movement>3</movement>
@@ -272,7 +273,7 @@
             <pagecontrol>60</pagecontrol>
             <onfocus>SetProperty(ViewType,Square,Home)</onfocus>
             <scrolltime tween="quadratic">400</scrolltime>
-            <itemlayout width="228.8" height="333.2">
+            <itemlayout width="$PARAM[itemwidth]" height="333.2">
 
                 <control type="image">
                     <bordersize>10</bordersize>
@@ -324,7 +325,7 @@
                 </control>
                 <include>View_WatchedOverlay</include>
             </itemlayout>
-            <focusedlayout width="228.8" height="333.2">
+            <focusedlayout width="$PARAM[itemwidth]" height="333.2">
 
                 <include content="View_Position_Button">
                     <param name="id" value="$PARAM[id]" />

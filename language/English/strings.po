@@ -916,6 +916,11 @@ msgctxt "#31192"
 msgid "Disable focus bounce animation"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31193"
+msgid "Reset colors to default"
+msgstr ""
+
 msgctxt "#31194"
 msgid "View Options"
 msgstr ""
