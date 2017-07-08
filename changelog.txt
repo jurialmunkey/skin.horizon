@@ -1,5 +1,6 @@
 [B]1.0.7[/B]
 Increase number of main menu items to 20
+Add infolist 2
 
 [B]1.0.6[/B]
 Transparent top bar option
