@@ -948,6 +948,11 @@ msgctxt "#31199"
 msgid "Kiosk mode"
 msgstr ""
 
+#: /shortcuts/overrides.xml
+msgctxt "#31200"
+msgid "Random Movies"
+msgstr ""
+
 msgctxt "#31203"
 msgid "Artwork"
 msgstr ""

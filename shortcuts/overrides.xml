@@ -321,14 +321,43 @@
     <!-- DEFAULT WIDGETS -->
     <!-- Movies -->
     <widgetdefaultnode labelID="20342" label="20386" path="videodb://recentlyaddedmovies" target="videos">RecentMovies</widgetdefaultnode>
+    <propertydefault labelID="20342" property="widgetName.Widget1">$LOCALIZE[31200]</propertydefault>
+    <propertydefault labelID="20342" property="widgetPath.Widget1">special://skin/extras/playlists/RandomMovies.xsp</propertydefault>
+    <propertydefault labelID="20342" property="widgetTarget.Widget1">videos</propertydefault>
+    <propertydefault labelID="20342" property="widgetName.Widget2">$LOCALIZE[135]</propertydefault>
+    <propertydefault labelID="20342" property="widgetPath.Widget2">library://video/movies/genres.xml</propertydefault>
+    <propertydefault labelID="20342" property="widgetTarget.Widget2">videos</propertydefault>
+
     <!-- TvShows -->
     <widgetdefaultnode labelID="tvshows" label="20387" path="videodb://recentlyaddedepisodes" target="videos">RecentEpisodes</widgetdefaultnode>
+    <propertydefault labelID="tvshows" property="widgetAspect">$LOCALIZE[31038]</propertydefault>
+    <propertydefault labelID="tvshows" property="widgetName.Widget1">$LOCALIZE[626]</propertydefault>
+    <propertydefault labelID="tvshows" property="widgetPath.Widget1">library://video/tvshows/inprogressshows.xml</propertydefault>
+    <propertydefault labelID="tvshows" property="widgetTarget.Widget1">videos</propertydefault>
+    <propertydefault labelID="tvshows" property="widgetName.Widget2">$LOCALIZE[135]</propertydefault>
+    <propertydefault labelID="tvshows" property="widgetPath.Widget2">library://video/tvshows/genres.xml</propertydefault>
+    <propertydefault labelID="tvshows" property="widgetTarget.Widget2">videos</propertydefault>
+
     <!-- Music -->
     <widgetdefaultnode labelID="2" label="359" path="musicdb://recentlyaddedalbums" target="music">RecentAlbums</widgetdefaultnode>
+    <propertydefault labelID="2" property="widgetName.Widget1">$LOCALIZE[517]</propertydefault>
+    <propertydefault labelID="2" property="widgetPath.Widget1">library://music/recentlyplayedalbums.xml</propertydefault>
+    <propertydefault labelID="2" property="widgetTarget.Widget1">music</propertydefault>
+    <propertydefault labelID="2" property="widgetName.Widget2">$LOCALIZE[135]</propertydefault>
+    <propertydefault labelID="2" property="widgetPath.Widget2">library://music/genres.xml</propertydefault>
+    <propertydefault labelID="2" property="widgetTarget.Widget2">music</propertydefault>
+
     <!-- PVR -->
     <widgetdefaultnode labelID="31103" label="19023" path="pvr://channels/tv/*?view=lastplayed" target="pvr">TVChannels</widgetdefaultnode>
+    
     <!-- Addons -->
     <widgetdefaultnode labelID="24001" label="1037" path="addons://sources/video" target="videos">VideoAddons</widgetdefaultnode>
+    <propertydefault labelID="24001" property="widgetName.Widget1">$LOCALIZE[1038]</propertydefault>
+    <propertydefault labelID="24001" property="widgetPath.Widget1">addons://sources/audio</propertydefault>
+    <propertydefault labelID="24001" property="widgetTarget.Widget1">music</propertydefault>
+    <propertydefault labelID="24001" property="widgetName.Widget2">$LOCALIZE[1043]</propertydefault>
+    <propertydefault labelID="24001" property="widgetPath.Widget2">addons://sources/executable</propertydefault>
+    <propertydefault labelID="24001" property="widgetTarget.Widget2">programs</propertydefault>
 
     <!-- Weather Default for Settings and Power -->
     <widgetdefault labelID="5">Weather</widgetdefault>

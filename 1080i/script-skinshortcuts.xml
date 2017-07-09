@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol always="true">401</defaultcontrol>
+    <onload condition="!Skin.HasSetting(WidgetsInit)">AlarmClock(Clickit,Action(Close),00:01,silent)</onload>
+    <onunload condition="!Skin.HasSetting(WidgetsInit)">Skin.ToggleSetting(WidgetsInit)</onunload>
     <controls>
         <include>Global_Overlay</include>
 
         <control type="group">
+            <animation effect="fade" start="100" end="0" condition="!Skin.HasSetting(WidgetsInit)">Conditional</animation>
             <include>Animation_FadeIn_Slide</include>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
