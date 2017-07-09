@@ -205,7 +205,7 @@
             <control type="group">
                 <animation effect="slide" end="-80" time="0" condition="Player.Muted">Conditional</animation>
                 <control type="label">
-                    <width>200</width>
+                    <width>400</width>
                     <right>0</right>
                     <height>48</height>
                     <label>$INFO[System.Time]</label>
@@ -227,7 +227,7 @@
                         <align>right</align>
                         <textcolor>main_fg_100</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
-                        <label>$INFO[Weather.Temperature]</label>
+                        <label>$INFO[Weather.Conditions,,$COMMA ]$INFO[Weather.Temperature]</label>
                         <aligny>center</aligny>
                         <width>auto</width>
                         <height>100%</height>
