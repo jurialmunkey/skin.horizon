@@ -437,7 +437,7 @@
                             <left>50</left>
                             <right>50</right>
                             <bottom>50</bottom>
-                            <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <aspectratio>keep</aspectratio>
                             <visible>$PARAM[genres]</visible>
                         </control>
@@ -649,7 +649,7 @@
                             <left>50</left>
                             <right>50</right>
                             <bottom>50</bottom>
-                            <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <aspectratio>keep</aspectratio>
                             <visible>$PARAM[genres]</visible>
                         </control>

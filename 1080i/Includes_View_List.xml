@@ -93,6 +93,19 @@
                 <left>0</left>
                 <right>80</right>
                 <bottom>0</bottom>
+
+                <control type="group">
+                    <bottom>40</bottom>
+                    <right>40</right>
+                    <height>336</height>
+                    <!-- <width>784</width> -->
+                    <left>40</left>
+                    <control type="image">
+                    <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    </control>
+                </control>
+
                 <control type="fixedlist" id="57">
                     <focusposition>1</focusposition>
                     <movement>2</movement>
@@ -106,44 +119,86 @@
                     <include content="View_List_Layout">
                         <param name="id" value="57" />
                         <param name="offset" value="0" />
-                        <param name="left" value="264" />
+                        <param name="left" value="40" />
                         <param name="height" value="84" />
-                        <param name="width" value="852" />
+                        <param name="width" value="890" />
                     </include>
                 </control>
 
                 <control type="group">
-                    <left>264</left>
+                    <left>40</left>
+                    <right>40</right>
                     <height>336</height>
                     <top>518</top>
-                    <width>852</width>
                     <control type="group">
                         <control type="image">
-                            <width>1</width>
-                            <left>0</left>
+                            <height>1</height>
+                            <top>0</top>
                             <texture colordiffuse="highlight_bottombar">common/white.png</texture>
                         </control>
                         <control type="image">
-                            <width>1</width>
-                            <left>-1</left>
+                            <height>1</height>
+                            <top>-1</top>
                             <texture colordiffuse="darkline_separator">common/white.png</texture>
                         </control>
                     </control>
                     <control type="group">
                         <control type="image">
-                            <width>1</width>
-                            <right>0</right>
+                            <height>1</height>
+                            <bottom>0</bottom>
                             <texture colordiffuse="highlight_bottombar">common/white.png</texture>
                         </control>
                         <control type="image">
-                            <width>1</width>
-                            <right>-1</right>
+                            <height>1</height>
+                            <bottom>-1</bottom>
                             <texture colordiffuse="darkline_separator">common/white.png</texture>
                         </control>
                     </control>
+                    <control type="group">
+                        <top>1</top>
+                        <bottom>1</bottom>
+                        <control type="group">
+                            <control type="image">
+                                <width>1</width>
+                                <left>0</left>
+                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <width>1</width>
+                                <left>-1</left>
+                                <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <width>890</width>
+                            <control type="image">
+                                <width>1</width>
+                                <right>0</right>
+                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <width>1</width>
+                                <right>-1</right>
+                                <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <control type="image">
+                                <width>1</width>
+                                <right>0</right>
+                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <width>1</width>
+                                <right>-1</right>
+                                <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
+                        </control>
+                    </control>
+                    
                 </control>
 
-                
+
 
                 <include content="View_Posters_Info">
                     <param name="bottom" value="430" />
@@ -155,10 +210,10 @@
                     <param name="discart" value="false" />
                 </include>
                 <control type="group">
-                    <bottom>40</bottom>
-                    <left>40</left>
-                    <width>224</width>
-                    <height>336</height>
+                    <bottom>60</bottom>
+                    <right>606</right>
+                    <width>198</width>
+                    <height>296</height>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
@@ -171,10 +226,10 @@
                     
                 </control>
                 <control type="group">
-                    <bottom>40</bottom>
-                    <right>40</right>
-                    <width>598</width>
-                    <height>336</height>
+                    <bottom>60</bottom>
+                    <right>60</right>
+                    <width>526</width>
+                    <height>296</height>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>

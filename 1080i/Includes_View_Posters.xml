@@ -333,7 +333,7 @@
                             <height>265</height>
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
-                            <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <visible>Container.Content(genres)</visible>
                         </control>
                         <control type="image">
@@ -422,7 +422,7 @@
                             <height>265</height>
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
-                            <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <visible>Container.Content(genres)</visible>
                         </control>
                         <control type="image">

@@ -335,7 +335,7 @@
                         <control type="image">
                             <bordersize>80</bordersize>
                             <aspectratio aligny="center">$PARAM[aspect]</aspectratio>
-                            <texture background="true" colordiffuse="main_fg_100" fallback="DefaultFolder.png">$INFO[$PARAM[container]ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="main_fg_100" fallback="DefaultFolder.png">$VAR[Image_GenreIcons_Path]$INFO[$PARAM[container]ListItem.Label,,.png]</texture>
                             <visible>Container.Content(genres) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
