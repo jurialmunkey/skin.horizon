@@ -105,17 +105,17 @@
                     <include content="View_List_Layout">
                         <param name="id" value="57" />
                         <param name="offset" value="0" />
-                        <param name="left" value="274" />
+                        <param name="left" value="264" />
                         <param name="height" value="84" />
-                        <param name="width" value="832" />
+                        <param name="width" value="852" />
                     </include>
                 </control>
 
                 <control type="group">
-                    <left>274</left>
+                    <left>264</left>
                     <height>336</height>
                     <top>518</top>
-                    <width>832</width>
+                    <width>852</width>
                     <control type="group">
                         <control type="image">
                             <width>1</width>
@@ -226,11 +226,8 @@
         <control type="group">
             <include>Animation_Left</include>
             <include>Defs_InfoDialog_Visible</include>
-            <visible>Control.IsVisible(54)</visible>
             <control type="group">
-                <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
-                <animation effect="fade" start="100" end="0" delay="250" time="50">Hidden</animation>
-                <animation effect="fade" start="0" end="100" delay="0" time="1">Visible</animation>
+                <visible>Control.IsVisible(54)</visible>
                 <width>596</width>
                 <height>894</height>
                 <control type="image">

@@ -434,7 +434,7 @@
                 </control>
 
                 <control type="image">
-                    <width>88</width>
+                    <width>112</width>
                     <aspectratio>keep</aspectratio>
                     <centertop>50%</centertop>
                     <height>64</height>
@@ -442,7 +442,7 @@
                     <visible>$PARAM[container]$PARAM[source]IsStereoscopic</visible>
                 </control>
                 <control type="image">
-                    <width>88</width>
+                    <width>112</width>
                     <aspectratio>keep</aspectratio>
                     <centertop>50%</centertop>
                     <height>64</height>
@@ -450,7 +450,7 @@
                     <visible>[String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bluray) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bdrip) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bd25) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bd50)]</visible>
                 </control>
                 <control type="image">
-                    <width>88</width>
+                    <width>112</width>
                     <aspectratio>keep</aspectratio>
                     <centertop>50%</centertop>
                     <height>64</height>
@@ -458,12 +458,20 @@
                     <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,dvd)</visible>
                 </control>
                 <control type="image">
-                    <width>88</width>
+                    <width>112</width>
                     <aspectratio>keep</aspectratio>
                     <centertop>50%</centertop>
                     <height>64</height>
                     <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/hdtv.png</texture>
-                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,hdtv)</visible>
+                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,hdtv) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,pdtv) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,dsr)</visible>
+                </control>
+                <control type="image">
+                    <width>112</width>
+                    <aspectratio>keep</aspectratio>
+                    <centertop>50%</centertop>
+                    <height>64</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/web-dl.png</texture>
+                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,web-dl) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,webdl) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,WEBRip)</visible>
                 </control>
             </control>
         </definition>

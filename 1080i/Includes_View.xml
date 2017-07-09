@@ -76,13 +76,15 @@
 
             <!-- Library Poster -->
             <control type="group">
-                <visible>![Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(57)]</visible>
                 <control type="group">
                     <visible>Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
                     <include>Animation_Left</include>
                     <visible>![Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
                     <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
-                    <include>View_Library_Poster</include>
+                    <control type="group">
+                        <visible>![Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(57)]</visible>
+                        <include>View_Library_Poster</include>
+                    </control>
                 </control>
             </control>
             <control type="group">
