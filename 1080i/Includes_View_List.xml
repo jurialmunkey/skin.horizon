@@ -320,7 +320,7 @@
                         <control type="image">
                             <fadetime>100</fadetime>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
+                            <texture background="true">$VAR[Image_Thumb]</texture>
                         </control>
                     </control>
                     <control type="group">

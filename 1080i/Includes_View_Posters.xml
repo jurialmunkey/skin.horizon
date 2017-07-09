@@ -503,7 +503,7 @@
                         <control type="image">
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
+                            <texture background="true">$VAR[Image_Thumb]</texture>
                         </control>
                     </control>
                     <control type="group">
@@ -572,7 +572,7 @@
                         <control type="image">
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
+                            <texture background="true">$VAR[Image_Thumb]</texture>
                         </control>
                         <include>View_WatchedOverlay</include>
                         <!-- Highlight -->
