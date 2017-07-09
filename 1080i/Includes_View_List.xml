@@ -106,6 +106,17 @@
                     </control>
                 </control>
 
+                <control type="image">
+                    <top>50</top>
+                    <right>150</right>
+                    <height>380</height>
+                    <width>380</width>
+                    <aspectratio aligny="top">keep</aspectratio>
+                    <visible>Control.IsVisible(57)</visible>
+                    <visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
+                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                </control>
+
                 <control type="fixedlist" id="57">
                     <focusposition>1</focusposition>
                     <movement>2</movement>
@@ -200,15 +211,19 @@
 
 
 
-                <include content="View_Posters_Info">
-                    <param name="bottom" value="430" />
-                    <param name="plot_height" value="170" />
-                    <param name="id" value="57" />
-                    <param name="left" value="50" />
-                    <param name="right" value="50" />
-                    <param name="width" value="1652" />
-                    <param name="discart" value="false" />
-                </include>
+                <control type="group">
+                    <left>50</left>
+                    <right>50</right>
+                    <include content="View_Posters_Info_Content">
+                        <param name="bottom" value="430" />
+                        <param name="plot_height" value="170" />
+                        <param name="id" value="57" />
+                        <param name="left" value="50" />
+                        <param name="right" value="420" />
+                        <param name="width" value="1234" />
+                        <param name="discart" value="false" />
+                    </include>
+                </control>
                 <control type="group">
                     <bottom>60</bottom>
                     <right>606</right>
