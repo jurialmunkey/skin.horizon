@@ -108,7 +108,7 @@
 
                 <control type="image">
                     <top>50</top>
-                    <right>150</right>
+                    <right>50</right>
                     <height>380</height>
                     <width>380</width>
                     <aspectratio aligny="top">keep</aspectratio>
