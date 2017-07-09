@@ -370,12 +370,12 @@
 
     <include name="Home_MainMenu_InfoItems_Addons">
         <content>
-            <!--Update -->
+            <!-- use -->
             <item>
-                <label>$INFO[Control.GetLabel(8)]</label>
-                <icon>special://skin/extras/icons/update.png</icon>
-                <onclick>SendClick(8)</onclick>
-                <visible>Control.IsEnabled(8)</visible>
+                <label>$INFO[Control.GetLabel(12)]</label>
+                <icon>special://skin/extras/icons/play3.png</icon>
+                <onclick>SendClick(12)</onclick>
+                <visible>Control.IsEnabled(12)</visible>
             </item>
             <!-- enable -->
             <item>
@@ -384,12 +384,19 @@
                 <onclick>SendClick(7)</onclick>
                 <visible>Control.IsEnabled(7)</visible>
             </item>
-            <!-- use -->
+            <!-- uninstall -->
             <item>
-                <label>$INFO[Control.GetLabel(12)]</label>
-                <icon>special://skin/extras/icons/play3.png</icon>
-                <onclick>SendClick(12)</onclick>
-                <visible>Control.IsEnabled(12)</visible>
+                <label>$INFO[Control.GetLabel(6)]</label>
+                <icon>special://skin/extras/icons/download.png</icon>
+                <onclick>SendClick(6)</onclick>
+                <visible>Control.IsEnabled(6)</visible>
+            </item>
+            <!--Update -->
+            <item>
+                <label>$INFO[Control.GetLabel(8)]</label>
+                <icon>special://skin/extras/icons/update.png</icon>
+                <onclick>SendClick(8)</onclick>
+                <visible>Control.IsEnabled(8)</visible>
             </item>
             <!-- settings -->
             <item>
@@ -397,13 +404,6 @@
                 <icon>special://skin/extras/icons/settings.png</icon>
                 <onclick>SendClick(9)</onclick>
                 <visible>Control.IsEnabled(9)</visible>
-            </item>
-            <!-- uninstall -->
-            <item>
-                <label>$INFO[Control.GetLabel(6)]</label>
-                <icon>special://skin/extras/icons/download.png</icon>
-                <onclick>SendClick(6)</onclick>
-                <visible>Control.IsEnabled(6)</visible>
             </item>
             <!-- Auto Update -->
             <item>

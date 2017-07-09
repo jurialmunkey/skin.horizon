@@ -1,3 +1,9 @@
+[B]1.0.9[/B]
+Add screenshots
+Add web-dl and hdtv flags
+Tweak flags in info dialog
+Add infolist2, showcase2 and landscape to videos content
+
 [B]1.0.8[/B]
 Revert number of menu items to 12 due to performance.
 Add performance enhancement that prevents excessive loading of widgets (go into home customisation menu and the press back).
