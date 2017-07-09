@@ -343,59 +343,62 @@
                     <param name="id" value="$PARAM[id]" />
                     <param name="setfanart" value="$PARAM[setfanart]" />
                 </include>
-                <control type="image">
-                    <bordersize>10</bordersize>
-                    <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture colordiffuse="main_fg_12">common/white.png</texture>
-                </control>
-
-                <!-- Poster -->
-                <control type="image">
-                    <left>10</left>
-                    <right>10</right>
-                    <top>10</top>
-                    <bottom>10</bottom>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture fallback="DefaultArtist.png" background="true">$VAR[Image_Poster]</texture>
-                </control>
-                <control type="image">
-                    <left>10</left>
-                    <right>10</right>
-                    <height>100</height>
-                    <bottom>10</bottom>
-                    <visible>$PARAM[infolabel]</visible>
-                    <texture colordiffuse="bf000000">common/gradient-actor.png</texture>
-                </control>
-                <control type="label">
-                    <left>20</left>
-                    <right>20</right>
-                    <height>30</height>
-                    <bottom>42</bottom>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <font>font_statusbar</font>
-                    <textcolor>main_fg_100</textcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                    <visible>$PARAM[infolabel]</visible>
-                </control>
-                <control type="label">
-                    <left>20</left>
-                    <right>20</right>
-                    <height>30</height>
-                    <bottom>18</bottom>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <font>font_statusbar</font>
-                    <textcolor>main_fg_70</textcolor>
-                    <label>$PARAM[label2]</label>
-                    <visible>$PARAM[infolabel]</visible>
-                </control>
-                <include>View_WatchedOverlay</include>
-                <!-- Highlight -->
                 <control type="group">
-                    <visible>Control.HasFocus($PARAM[id])</visible>
-                    <include>View_Selectbox</include>
+                    <include>Animation_FocusBounce</include>
+                    <control type="image">
+                        <bordersize>10</bordersize>
+                        <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture colordiffuse="main_fg_12">common/white.png</texture>
+                    </control>
+
+                    <!-- Poster -->
+                    <control type="image">
+                        <left>10</left>
+                        <right>10</right>
+                        <top>10</top>
+                        <bottom>10</bottom>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture fallback="DefaultArtist.png" background="true">$VAR[Image_Poster]</texture>
+                    </control>
+                    <control type="image">
+                        <left>10</left>
+                        <right>10</right>
+                        <height>100</height>
+                        <bottom>10</bottom>
+                        <visible>$PARAM[infolabel]</visible>
+                        <texture colordiffuse="bf000000">common/gradient-actor.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>20</left>
+                        <right>20</right>
+                        <height>30</height>
+                        <bottom>42</bottom>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                        <visible>$PARAM[infolabel]</visible>
+                    </control>
+                    <control type="label">
+                        <left>20</left>
+                        <right>20</right>
+                        <height>30</height>
+                        <bottom>18</bottom>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$PARAM[label2]</label>
+                        <visible>$PARAM[infolabel]</visible>
+                    </control>
+                    <include>View_WatchedOverlay</include>
+                    <!-- Highlight -->
+                    <control type="group">
+                        <visible>Control.HasFocus($PARAM[id])</visible>
+                        <include>View_Selectbox</include>
+                    </control>
                 </control>
             </focusedlayout>
         </definition>
