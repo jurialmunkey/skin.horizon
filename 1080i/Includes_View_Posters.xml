@@ -283,6 +283,7 @@
         <param name="bottom_offset" default="-196" />
         <param name="top" default="-186" />
         <definition>
+            <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
             <focusposition>3</focusposition>
             <movement>3</movement>
             <orientation>$PARAM[orientation]</orientation>

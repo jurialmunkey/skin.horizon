@@ -433,6 +433,7 @@
             <width>$PARAM[width]</width>
             <left>$PARAM[left]</left>
             <top>0</top>
+            <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <orientation>vertical</orientation>

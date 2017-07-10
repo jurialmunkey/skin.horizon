@@ -7,8 +7,11 @@
     <onunload>SetFocus(50)</onunload>
     <controls>
 
+        <include>Topbar_TextDetails</include>
+
         <control type="group">
             <width>596</width>
+            <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>View_Group</include>
             <include>Animation_Left_Delay</include>
             <control type="image">
@@ -25,6 +28,7 @@
         <control type="group">
             <include>Animation_Right_Delay</include>
             <top>MenuBarTop</top>
+            <include>Animation_Home_Textbar_Slideover_Library</include>
             <!-- Plot -->
             <control type="group">
                 <left>info_left</left>

@@ -9,14 +9,19 @@
     <onunload>ClearProperty(ListFanartContent,Home)</onunload>
     <controls>
 
-        <include condition="Window.IsVisible(Home)">View_Layout</include>
         <control type="group">
-    
+            <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
+            <include>Topbar_TextDetails</include>
+        </control>
+
+        <include>View_Info_Poster</include>
+
+        <control type="group">
             <control type="group">
                 <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
                 <include>Animation_Right_Delay</include>
                 <top>MenuBarTop</top>
-
+                <include>Animation_Home_Textbar_Slideover_Library</include>
                 <!-- Plot -->
                 <control type="group">
                     <left>info_left</left>
@@ -316,8 +321,6 @@
                     </control>
                 </control>     
             </control>
-
-            
             <control type="group">
                 <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
                 <control type="group">
@@ -367,6 +370,7 @@
                                 <onleft>SetFocus(300,0)</onleft>
                                 <onup>SetFocus(300,0)</onup>
                                 <ondown>SetFocus(300,0)</ondown>
+                                <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
                                 <visible allowhiddenfocus="true">Control.HasFocus(8)</visible>
                                 <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/play3.png</texturenofocus>
                                 <texturefocus colordiffuse="Selected">special://skin/extras/icons/play3.png</texturefocus>
@@ -395,9 +399,7 @@
             </control>
         </control>
 
-
         <!-- HIDDEN BUTTONS -->
-    
         <control type="button" id="11">
             <description>Trailer button</description>
             <label>20410</label>

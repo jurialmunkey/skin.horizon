@@ -3,14 +3,16 @@
 <window id="2001">
     <defaultcontrol always="true">8</defaultcontrol>
     <controls>
-        <include condition="Window.IsVisible(Home)">View_Layout</include>
+        <include>View_Info_Poster</include>
+        <include>Topbar_TextDetails</include>
+        
         <control type="group">
             <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
     
             <control type="group">
                 <include>Animation_Right_Delay</include>
                 <top>MenuBarTop</top>
-
+                <include>Animation_Home_Textbar_Slideover_Library</include>
                 <!-- Info and Albums -->
                 <control type="grouplist">
                     <left>musicinfo_left</left>

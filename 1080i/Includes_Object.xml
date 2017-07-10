@@ -208,6 +208,7 @@
 
     <include name="Object_PVR_Info">
         <control type="grouplist">
+            <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Right</include>
             <bottom>612</bottom>
             <top>216</top>

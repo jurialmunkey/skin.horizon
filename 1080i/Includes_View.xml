@@ -25,12 +25,22 @@
         <right>0</right>
     </include>
 
+    <include name="View_Info_Poster">
+        <control type="group">
+            <include>View_Group</include>
+            <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
+            <include>Animation_Left_Delay</include>
+            <include>Animation_Home_Textbar_Slideover_Library</include>
+            <include>View_Library_Poster</include>
+        </control>
+    </include>
+
     <include name="View_Library">
         <control type="group">
             <include>Animation_Right</include>
             <include>Defs_InfoDialog_Visible</include>
             <control type="group">
-                <include>View_Library_Global</include>
+                <include>View_Library_AlphabetStrip</include>
                 <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]">View_List</include>
                 
                 <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)] + !Skin.HasSetting(WrapList)">View_Posters</include>
@@ -44,7 +54,7 @@
         </control>
     </include>
 
-    <include name="View_Library_Global">
+    <include name="View_Library_AlphabetStrip">
         <control type="image">
             <width>80</width>
             <right>0</right>
@@ -87,12 +97,7 @@
                     </control>
                 </control>
             </control>
-            <control type="group">
-                <visible>[Window.IsVisible(Home) + [Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]] | [!Window.IsVisible(Home) + [Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml)]]</visible>
-                <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
-                <include>Animation_Left_Delay</include>
-                <include>View_Library_Poster</include>
-            </control>
+            
         </control>
     </include>
 
@@ -283,6 +288,7 @@
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
+            <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
             <onfocus>SetProperty(ViewType,Square,Home)</onfocus>
             <scrolltime tween="quadratic">400</scrolltime>
             <itemlayout width="$PARAM[itemwidth]" height="333.2">
