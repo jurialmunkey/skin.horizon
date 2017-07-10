@@ -260,6 +260,7 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
 
