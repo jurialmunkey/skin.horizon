@@ -10,7 +10,7 @@
                 <right>80</right>
                 <bottom>0</bottom>
                 <control type="fixedlist" id="50">
-                    <visible>!Container.Content(videos)</visible>
+                    <visible>!Container.Content(videos) + !Window.IsVisible(videoplaylist)</visible>
                     <viewtype label="$LOCALIZE[535]">list</viewtype>
                     <include content="View_Forced">
                         <param name="string" value="$LOCALIZE[535]" />
@@ -31,7 +31,7 @@
                     <include content="View_Forced">
                         <param name="string" value="$LOCALIZE[31164]" />
                     </include>
-                    <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml)]</visible>
+                    <include>View_NotTheseWindows</include>
                     <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <top>472</top>
                     <height>420</height>
@@ -75,7 +75,8 @@
                 <right>80</right>
                 <bottom>0</bottom>
                 <control type="fixedlist" id="54">
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(videos)</visible>
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(videos) | Window.IsVisible(videoplaylist)</visible>
+                    <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]</visible>
                     <viewtype label="$LOCALIZE[31196]">infolist</viewtype>
                     <include content="View_Forced">
                         <param name="string" value="$LOCALIZE[31196]" />
@@ -98,7 +99,6 @@
                     <bottom>40</bottom>
                     <right>40</right>
                     <height>336</height>
-                    <!-- <width>784</width> -->
                     <left>40</left>
                     <control type="image">
                     <include>Defs_Shadow_Opaque</include>
@@ -122,6 +122,7 @@
                     <movement>2</movement>
                     <height>336</height>
                     <top>518</top>
+                    <include>View_NotTheseWindows</include>
                     <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <viewtype label="$LOCALIZE[31198]">infolist</viewtype>
                     <include content="View_Forced">

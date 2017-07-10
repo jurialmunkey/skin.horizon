@@ -35,6 +35,10 @@
         </control>
     </include>
 
+    <include name="View_NotTheseWindows">
+        <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml)]</visible>
+    </include>
+
     <include name="View_Library">
         <control type="group">
             <include>Animation_Right</include>

@@ -6,6 +6,7 @@
             <!-- Standard Wall -->
             <control type="panel" id="51">
                 <visible>!Container.Content(songs) + !Container.Content(episodes) + !Container.Content(videos)</visible>
+                <include>View_NotTheseWindows</include>
                 <viewtype label="$LOCALIZE[536]">icon</viewtype>
                 <include content="View_Forced">
                     <param name="string" value="$LOCALIZE[536]" />
@@ -33,6 +34,7 @@
                     <param name="string" value="$LOCALIZE[31161]" />
                 </include>
                 <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
+                <include>View_NotTheseWindows</include>
                 <include content="View_Posters_Layout">
                     <param name="id" value="52" />
                     <param name="orientation" value="horizontal" />
@@ -55,6 +57,7 @@
             <!-- Landscape -->
             <control type="panel" id="53">
                 <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(images) | Container.Content(artists) | Container.Content(videos)</visible>
+                <include>View_NotTheseWindows</include>
                 <viewtype label="$LOCALIZE[31038]">landscape</viewtype>
                 <include content="View_Forced">
                     <param name="string" value="$LOCALIZE[31038]" />
@@ -82,6 +85,7 @@
                     <param name="string" value="$LOCALIZE[31178]" />
                 </include>
                 <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) |  Container.Content(artists) | Container.Content(episodes) | Container.Content(videos)</visible>
+                <include>View_NotTheseWindows</include>
                 <include content="View_Posters_Layout">
                     <param name="id" value="56" />
                     <param name="orientation" value="horizontal" />
