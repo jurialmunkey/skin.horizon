@@ -203,7 +203,33 @@
                 <visible>Player.Muted</visible>
             </control>
             <control type="group">
+                <visible>Weather.IsFetched</visible>
+                <visible>System.HasAddon(resource.images.weathericons.white)</visible>
                 <animation effect="slide" end="-80" time="0" condition="Player.Muted">Conditional</animation>
+                <control type="image">
+                    <width>80</width>
+                    <height>80</height>
+                    <right>0</right>
+                    <top>-16</top>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="main_fg_100">$INFO[Weather.FanartCode,resource://resource.images.weathericons.white/,.png]</texture>
+                </control>
+                <control type="label">
+                    <top>48</top>
+                    <height>42</height>
+                    <width>80</width>
+                    <right>0</right>
+                    <font>font_small</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <shadowcolor>main_bg_30</shadowcolor>
+                    <label>$INFO[Weather.Temperature]</label>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                </control>
+            </control>
+            <control type="group">
+                <animation effect="slide" end="-80" time="0" condition="Player.Muted">Conditional</animation>
+                <animation effect="slide" end="-100" time="0" condition="Weather.IsFetched + System.HasAddon(resource.images.weathericons.white)">Conditional</animation>
                 <control type="label">
                     <width>400</width>
                     <right>0</right>
@@ -231,7 +257,7 @@
                         <aligny>center</aligny>
                         <width>auto</width>
                         <height>100%</height>
-                        <visible>Weather.IsFetched</visible>
+                        <visible>Weather.IsFetched + !System.HasAddon(resource.images.weathericons.white)</visible>
                     </control>
                     <control type="label">
                         <font>font_small</font>
