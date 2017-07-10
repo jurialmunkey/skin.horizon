@@ -16,7 +16,7 @@
         <value condition="Window.IsVisible(SkinSettings.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(SettingsSystemInfo.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[7]</value>
-        <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[13350]</value>
+        <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[13350]$INFO[ListItem.TvShowTitle, / ,]</value>
 
         <value condition="[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]">$VAR[Label_Title]</value>
 
