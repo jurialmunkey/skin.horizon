@@ -591,6 +591,21 @@
                 <visible>Player.HasMedia</visible>
                 <onclick>Fullscreen</onclick>
             </item>
+            <!-- Addon settings -->
+            <item>
+                <icon>special://skin/extras/icons/settings.png</icon>
+                <label>$LOCALIZE[10140]</label>
+                <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+                <visible>!String.IsEmpty(Container.PluginName)</visible>
+            </item>
+            <!-- Get More -->
+            <item>
+                <icon>special://skin/extras/icons/download.png</icon>
+                <label>$LOCALIZE[21452]</label>
+                <onclick>ActivateWindow(addonbrowser,addons://more/video/,return)</onclick>
+                <visible>Container.Content(addons) + !String.Contains(Container.FolderPath,addons://)</visible>
+            </item>
+            
         </content>
     </include>
 
