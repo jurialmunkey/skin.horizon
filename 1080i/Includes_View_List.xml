@@ -297,7 +297,6 @@
     <include name="View_List_Info">
         <control type="group">
             <include>Animation_Left</include>
-            <visible>String.IsEqual(Container.FolderPath,Window(Home).Property(FolderPath))</visible>
             <include>Defs_InfoDialog_Visible</include>
             <control type="group">
                 <visible>Control.IsVisible(54)</visible>
