@@ -300,6 +300,7 @@
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <onfocus>SetProperty(WidgetName,WidgetName)</onfocus>
                     <onfocus>SetProperty(customProperty,WidgetAspect)</onfocus>
                     <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[31263]) | String.IsEmpty(Container(211).ListItem.Property(WidgetAspect))">SetProperty(customValue,$LOCALIZE[20021])</onfocus>
                     <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[20021])">SetProperty(customValue,$LOCALIZE[31038])</onfocus>
@@ -387,6 +388,15 @@
                     <onclick>SendClick(404)</onclick>
                     <onclick>AlarmClock(Setit,SetFocus(9300),00:00,silent)</onclick>
                     <onclick>AlarmClock(Setitback,SetFocus(9402),00:00,silent)</onclick>
+                </control>
+                <control type="button" id="9403" description="Rename">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <width>64</width>
+                    <height>64</height>
+                    <font>-</font>
+                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/write.png</texturenofocus>
+                    <texturefocus colordiffuse="Selected">special://skin/extras/icons/write.png</texturefocus>
+                    <onclick>RunScript(script.skin.helper.service,action=setskinshortcutsproperty,header=$ADDON[script.skinshortcuts 32025],property=$INFO[Window.Property(WidgetName)])</onclick>
                 </control>
             </control>
 

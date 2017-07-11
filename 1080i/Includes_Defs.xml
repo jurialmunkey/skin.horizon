@@ -246,6 +246,7 @@
             <include>Dialog_Standard_Right_Buttons</include>
             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
             <visible>!String.IsEqual(Container(211).ListItem.Property(widget),Weather)</visible>
+            <onfocus>SetProperty(WidgetName,WidgetName.Widget$PARAM[num])</onfocus>
             <onfocus>SetProperty(customProperty,WidgetAspect.Widget$PARAM[num])</onfocus>
             <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),$LOCALIZE[31263]) | String.IsEmpty(Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]))">SetProperty(customValue,$LOCALIZE[20021])</onfocus>
             <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),$LOCALIZE[20021])">SetProperty(customValue,$LOCALIZE[31038])</onfocus>
