@@ -109,7 +109,7 @@
 
         <!-- Music List -->
         <control type="group">
-            <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)]</visible>
+            <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
                 <width>596</width>
                 <height>894</height>
@@ -177,9 +177,9 @@
                                 <align>center</align>
                                 <textcolor>main_fg_70</textcolor>
                                 <font>font_small</font>
-                                <visible>!Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(ListItem.AddonSummary)</visible>
+                                <visible>[!Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(DialogAddonInfo.xml)] + !String.IsEmpty(ListItem.AddonSummary)</visible>
                             </control>
-                            <include condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)">Object_StarRating_Music</include>                            
+                            <include>Object_StarRating_Music</include>                            
                         </control>
                     </control>
                 </control>
@@ -191,7 +191,7 @@
         <!-- Large Poster -->
         <control type="group">
             <width>596</width>
-            <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs)]</visible>
+            <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
                 <control type="image">
                     <include>Defs_Shadow_Opaque</include>
