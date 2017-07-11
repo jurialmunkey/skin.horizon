@@ -96,29 +96,18 @@
                 <bottom>0</bottom>
 
                 <control type="group">
-                    <left>50</left>
-                    <right>50</right>
-                    <include content="View_Posters_Info_Content">
+                    <right>-80</right>
+                    <include content="View_Posters_Info">
                         <param name="bottom" value="430" />
                         <param name="plot_height" value="170" />
                         <param name="id" value="57" />
                         <param name="left" value="50" />
-                        <param name="right" value="420" />
-                        <param name="width" value="1234" />
-                        <param name="discart" value="false" />
+                        <param name="right" value="130" />
+                        <param name="width" value="1654" />
+                        <param name="altwidth" value="1234" />
+                        <param name="discart" value="true" />
                     </include>
                 </control>
-                <control type="image">
-                    <top>50</top>
-                    <right>60</right>
-                    <height>380</height>
-                    <width>380</width>
-                    <aspectratio aligny="top">keep</aspectratio>
-                    <visible>Control.IsVisible(57)</visible>
-                    <visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
-                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                </control>
-
 
                 <control type="group">
                     <bottom>0</bottom>

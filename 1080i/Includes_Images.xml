@@ -94,6 +94,13 @@
         <value>$INFO[Container(301).ListItem.Icon]</value>
     </variable>
 
+    <variable name="Image_Banner">
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value>$INFO[ListItem.Icon]</value>
+    </variable>
+
     <variable name="Image_Thumb">
         <value condition="Window.IsVisible(MyVideoNav.xml) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets)]">$VAR[Image_Fanart]</value>
         <value condition="Window.IsVisible(home)">$VAR[Image_Fanart]</value>
