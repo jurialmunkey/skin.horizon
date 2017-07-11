@@ -114,7 +114,7 @@
                 <left>$PARAM[left]</left>
                 <right>$PARAM[right]</right>
                 <control type="group">
-                    <visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(discart))] | !$PARAM[discart]</visible>
+                    <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableClearLogo)] + [String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(DisableDiscArt)]] | !$PARAM[discart]</visible>
                     <include content="View_Posters_Info_Content">
                         <param name="id" value="$PARAM[id]" />
                         <param name="width" value="$PARAM[width]" />
@@ -124,7 +124,7 @@
                 </control>
                 <control type="group">
                     <right>420</right>
-                    <visible>!String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart]</visible>
+                    <visible>!String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart] + !Skin.HasSetting(DisableDiscArt)</visible>
                     <include content="View_Posters_Info_Content">
                         <param name="id" value="$PARAM[id]" />
                         <param name="width" value="$PARAM[altwidth]" />
@@ -133,7 +133,7 @@
                     </include>
                 </control>
                 <control type="group">
-                    <visible>!String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart]</visible>
+                    <visible>!String.IsEmpty(ListItem.Art(clearlogo)) + [String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(DisableDiscArt)] + $PARAM[discart] + !Skin.HasSetting(DisableClearLogo)</visible>
                     <include content="View_Posters_Info_Content">
                         <param name="id" value="$PARAM[id]" />
                         <param name="width" value="$PARAM[altwidth]" />
@@ -152,6 +152,7 @@
                 <visible>Control.IsVisible($PARAM[id])</visible>
                 <visible>$PARAM[discart]</visible>
                 <texture background="true">$INFO[ListItem.Art(discart)]</texture>
+                <visible>!Skin.HasSetting(DisableDiscArt)</visible>
             </control>
             <control type="image">
                 <top>50</top>
@@ -161,7 +162,7 @@
                 <aspectratio aligny="top">keep</aspectratio>
                 <visible>Control.IsVisible($PARAM[id])</visible>
                 <visible>$PARAM[discart]</visible>
-                <visible>String.IsEmpty(ListItem.Art(discart))</visible>
+                <visible>String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(DisableDiscArt)</visible>
                 <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
             </control>
         </definition>

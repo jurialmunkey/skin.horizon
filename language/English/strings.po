@@ -277,12 +277,12 @@ msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31053"
-msgid "Use poster aspect for musicvideos. Useful if your music videos are dvd concerts."
+msgid "Show discart in showcase viewtypes. Available discart overrides logo if both options are enabled."
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31054"
-msgid "Use poster aspect for tvshows instead of landscape fanart."
+msgid "Show logo in showcase viewtypes. Available discart overrides logo if both options are enabled."
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -958,6 +958,11 @@ msgctxt "#31201"
 msgid "Only show seekbar when pressing info"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31202"
+msgid "Show discart in showcase viewtype"
+msgstr ""
+
 msgctxt "#31203"
 msgid "Artwork"
 msgstr ""
@@ -1008,6 +1013,11 @@ msgstr ""
 
 msgctxt "#31215"
 msgid "Unwatched"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31216"
+msgid "Show logo in showcase viewtype"
 msgstr ""
 
 msgctxt "#31220"

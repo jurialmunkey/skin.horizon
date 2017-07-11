@@ -96,123 +96,6 @@
                 <bottom>0</bottom>
 
                 <control type="group">
-                    <bottom>40</bottom>
-                    <right>40</right>
-                    <height>336</height>
-                    <left>40</left>
-                    <control type="image">
-                    <include>Defs_Shadow_Opaque</include>
-                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
-                    </control>
-                </control>
-
-                <control type="image">
-                    <top>50</top>
-                    <right>50</right>
-                    <height>380</height>
-                    <width>380</width>
-                    <aspectratio aligny="top">keep</aspectratio>
-                    <visible>Control.IsVisible(57)</visible>
-                    <visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
-                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                </control>
-
-                <control type="fixedlist" id="57">
-                    <focusposition>1</focusposition>
-                    <movement>2</movement>
-                    <height>336</height>
-                    <top>518</top>
-                    <include>View_NotTheseWindows</include>
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <viewtype label="$LOCALIZE[31198]">infolist</viewtype>
-                    <include content="View_Forced">
-                        <param name="string" value="$LOCALIZE[31198]" />
-                    </include>
-                    <include content="View_List_Layout">
-                        <param name="id" value="57" />
-                        <param name="offset" value="0" />
-                        <param name="left" value="40" />
-                        <param name="height" value="84" />
-                        <param name="width" value="890" />
-                    </include>
-                </control>
-
-                <control type="group">
-                    <left>40</left>
-                    <right>40</right>
-                    <height>336</height>
-                    <top>518</top>
-                    <control type="group">
-                        <control type="image">
-                            <height>1</height>
-                            <top>0</top>
-                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                        </control>
-                        <control type="image">
-                            <height>1</height>
-                            <top>-1</top>
-                            <texture colordiffuse="darkline_separator">common/white.png</texture>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <control type="image">
-                            <height>1</height>
-                            <bottom>0</bottom>
-                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                        </control>
-                        <control type="image">
-                            <height>1</height>
-                            <bottom>-1</bottom>
-                            <texture colordiffuse="darkline_separator">common/white.png</texture>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <top>1</top>
-                        <bottom>1</bottom>
-                        <control type="group">
-                            <control type="image">
-                                <width>1</width>
-                                <left>0</left>
-                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <width>1</width>
-                                <left>-1</left>
-                                <texture colordiffuse="darkline_separator">common/white.png</texture>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <width>890</width>
-                            <control type="image">
-                                <width>1</width>
-                                <right>0</right>
-                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <width>1</width>
-                                <right>-1</right>
-                                <texture colordiffuse="darkline_separator">common/white.png</texture>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <control type="image">
-                                <width>1</width>
-                                <right>0</right>
-                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <width>1</width>
-                                <right>-1</right>
-                                <texture colordiffuse="darkline_separator">common/white.png</texture>
-                            </control>
-                        </control>
-                    </control>
-                    
-                </control>
-
-
-
-                <control type="group">
                     <left>50</left>
                     <right>50</right>
                     <include content="View_Posters_Info_Content">
@@ -225,35 +108,107 @@
                         <param name="discart" value="false" />
                     </include>
                 </control>
+                <control type="image">
+                    <top>50</top>
+                    <right>60</right>
+                    <height>380</height>
+                    <width>380</width>
+                    <aspectratio aligny="top">keep</aspectratio>
+                    <visible>Control.IsVisible(57)</visible>
+                    <visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
+                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                </control>
+
+
                 <control type="group">
-                    <bottom>60</bottom>
-                    <right>606</right>
-                    <width>198</width>
-                    <height>296</height>
+                    <bottom>0</bottom>
+                    <right>0</right>
+                    <height>376</height>
+                    <left>0</left>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
-                        <texture colordiffuse="PosterBack">common/white.png</texture>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                     </control>
-                    <control type="image">
-                        <fadetime>100</fadetime>
-                        <aspectratio>scale</aspectratio>
-                        <texture background="true">$VAR[Image_Poster]</texture>
+                    <control type="fixedlist" id="57">
+                        <focusposition>1</focusposition>
+                        <movement>2</movement>
+                        <height>376</height>
+                        <top>0</top>
+                        <include>View_NotTheseWindows</include>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+                        <viewtype label="$LOCALIZE[31198]">infolist</viewtype>
+                        <include content="View_Forced">
+                            <param name="string" value="$LOCALIZE[31198]" />
+                        </include>
+                        <include content="View_List_Layout">
+                            <param name="id" value="57" />
+                            <param name="offset" value="16" />
+                            <param name="left" value="0" />
+                            <param name="height" value="94" />
+                            <param name="width" value="930" />
+                        </include>
+                    </control>
+
+                    <control type="group">
+                        <height>376</height>
+                        <control type="group">
+                            <control type="image">
+                                <height>1</height>
+                                <top>0</top>
+                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <height>1</height>
+                                <top>-1</top>
+                                <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <width>930</width>
+                            <top>1</top>
+                            <bottom>1</bottom>
+                            <control type="image">
+                                <width>1</width>
+                                <right>0</right>
+                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <width>1</width>
+                                <right>-1</right>
+                                <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
+                        </control>
                     </control>
                     
-                </control>
-                <control type="group">
-                    <bottom>60</bottom>
-                    <right>60</right>
-                    <width>526</width>
-                    <height>296</height>
-                    <control type="image">
-                        <include>Defs_Shadow_Opaque</include>
-                        <texture colordiffuse="PosterBack">common/white.png</texture>
+                    <control type="group">
+                        <bottom>40</bottom>
+                        <right>586</right>
+                        <width>198</width>
+                        <height>296</height>
+                        <control type="image">
+                            <include>Defs_Shadow_Opaque</include>
+                            <texture colordiffuse="PosterBack">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <fadetime>100</fadetime>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$VAR[Image_Poster]</texture>
+                        </control>
                     </control>
-                    <control type="image">
-                        <fadetime>100</fadetime>
-                        <aspectratio>scale</aspectratio>
-                        <texture background="true">$VAR[Image_Fanart]</texture>
+                    <control type="group">
+                        <bottom>40</bottom>
+                        <right>40</right>
+                        <width>526</width>
+                        <height>296</height>
+                        <control type="image">
+                            <include>Defs_Shadow_Opaque</include>
+                            <texture colordiffuse="PosterBack">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <fadetime>100</fadetime>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$VAR[Image_Fanart]</texture>
+                        </control>
                     </control>
                 </control>
             </control>

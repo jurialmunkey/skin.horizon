@@ -347,6 +347,22 @@
                         <selected>Skin.HasSetting(ArtworkDownloaderAll)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
+
+                    <control type="radiobutton" id="9242">
+                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
+                        <label>$LOCALIZE[31202]</label>
+                        <onclick>Skin.ToggleSetting(DisableDiscArt)</onclick>
+                        <selected>!Skin.HasSetting(DisableDiscArt)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="radiobutton" id="9243">
+                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
+                        <label>$LOCALIZE[31216]</label>
+                        <onclick>Skin.ToggleSetting(DisableClearLogo)</onclick>
+                        <selected>!Skin.HasSetting(DisableClearLogo)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
                     
 
                     <!-- ====== -->
