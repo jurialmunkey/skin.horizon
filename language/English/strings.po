@@ -953,6 +953,11 @@ msgctxt "#31200"
 msgid "Random Movies"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31201"
+msgid "Only show seekbar when pressing info"
+msgstr ""
+
 msgctxt "#31203"
 msgid "Artwork"
 msgstr ""

@@ -370,7 +370,7 @@
                                 <onleft>SetFocus(300,0)</onleft>
                                 <onup>SetFocus(300,0)</onup>
                                 <ondown>SetFocus(300,0)</ondown>
-                                <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
+                                
                                 <visible allowhiddenfocus="true">Control.HasFocus(8)</visible>
                                 <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/play3.png</texturenofocus>
                                 <texturefocus colordiffuse="Selected">special://skin/extras/icons/play3.png</texturefocus>

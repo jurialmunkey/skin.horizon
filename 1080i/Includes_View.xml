@@ -292,7 +292,7 @@
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
-            <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
+            
             <onfocus>SetProperty(ViewType,Square,Home)</onfocus>
             <scrolltime tween="quadratic">400</scrolltime>
             <itemlayout width="$PARAM[itemwidth]" height="333.2">

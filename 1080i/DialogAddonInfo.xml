@@ -125,7 +125,7 @@
                             <onleft>SetFocus(300,0)</onleft>
                             <onup>SetFocus(300,0)</onup>
                             <ondown>SetFocus(300,0)</ondown>
-                            <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
+                            
                             <animation effect="fade" end="0" condition="true">Conditional</animation>
                         </control>
                     </control>

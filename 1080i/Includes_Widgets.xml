@@ -290,7 +290,7 @@
             <width>1920</width>
             <height>684</height>
             <preloaditems>2</preloaditems>
-            <onfocus>ClearProperty(MenuFocused,Home)</onfocus>
+            
             <onfocus>SetProperty(WidgetFocus,1,Home)</onfocus>
             <onfocus>SetProperty(SkinHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
             

@@ -983,7 +983,6 @@
                 <align>right</align>
                 <textcolor>Selected</textcolor>
                 <label>$INFO[ListItem.Label]</label>
-                <!-- <animation effect="slide" start="-16" end="0" time="100" reversible="false" condition="!Skin.HasSetting(BounceAnimations)">Focus</animation> -->
             </control>
         </focusedlayout>
     </include>
@@ -1048,7 +1047,6 @@
     </include>
 
     <include name="Home_OnFocus">
-        <onfocus>SetProperty(MenuFocused,1,Home)</onfocus>
         <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
     </include>
 </includes>
