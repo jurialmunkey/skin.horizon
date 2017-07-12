@@ -240,6 +240,12 @@
 
     <include name="Home_MainMenu_InfoItems_Weather">
         <content>
+            <!-- Next -->
+            <item>
+                <label>$LOCALIZE[31217]</label>
+                <icon>special://skin/extras/icons/sort-up.png</icon>
+                <onclick>Weather.LocationNext</onclick>
+            </item>
             <!-- Refresh -->
             <item>
                 <label>$INFO[Control.GetLabel(2)]</label>
@@ -247,12 +253,7 @@
                 <onclick>SendClick(2)</onclick>
                 <visible>Control.IsEnabled(2)</visible>
             </item>
-            <!-- Next -->
-            <item>
-                <label>$INFO[Weather.Location]</label>
-                <icon>special://skin/extras/icons/sort-up.png</icon>
-                <onclick>Weather.LocationNext</onclick>
-            </item>
+            
             <!-- Settings -->
             <item>
                 <label>$INFO[Control.GetLabel(9004)]</label>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="2600">
-    <defaultcontrol always="true">2</defaultcontrol>
+    <defaultcontrol always="true">9002</defaultcontrol>
     <menucontrol>300</menucontrol>
     <controls>
 
@@ -30,7 +30,7 @@
                 <include>Home_Iconbar_Logo</include>
                 <control type="group">
                     <control type="list" id="300">
-                        <onright>2</onright>
+                        <onright>9002</onright>
                         <include>Home_OnFocus</include>
                         <include>Home_VideoInfo_Layout</include>
                         <include>Home_MainMenu_InfoItems_Weather</include>
@@ -41,7 +41,7 @@
                         <control type="group">
                             <left>74</left>
                             <width>6</width>     
-                            <visible>Control.HasFocus(2)</visible>
+                            <visible>Control.HasFocus(9002)</visible>
                             <control type="image">
                                 <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                             </control>
@@ -53,19 +53,20 @@
                                 <include>Home_Separator</include>
                             </control>
                         </control>
-                        <control type="button" id="2">
-                            <description>Play button</description>
-                            <label>$LOCALIZE[184]</label>
+                        <control type="button" id="9002">
+                            <description>Change Location</description>
+                            <label>$LOCALIZE[31217]</label>
                             <width>74</width>
                             <height>74</height>
                             <font/>
-                            <onright>SetFocus(50,0)</onright>
+                            <onclick>Weather.LocationNext</onclick>
+                            <onright>SetFocus(300,0)</onright>
                             <onleft>SetFocus(300,0)</onleft>
                             <onup>SetFocus(300,0)</onup>
                             <ondown>SetFocus(300,0)</ondown>
-                            <visible allowhiddenfocus="true">Control.HasFocus(2)</visible>
-                            <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/update.png</texturenofocus>
-                            <texturefocus colordiffuse="Selected">special://skin/extras/icons/update.png</texturefocus>
+                            <visible allowhiddenfocus="true">Control.HasFocus(9002)</visible>
+                            <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/sort-up.png</texturenofocus>
+                            <texturefocus colordiffuse="Selected">special://skin/extras/icons/sort-up.png</texturefocus>
                         </control>
                     </control>
                     <control type="group">
@@ -88,6 +89,12 @@
             </control>
         </control>
 
+        <!-- Refresh -->
+        <control type="button" id="2">
+            <description>Refresh</description>
+            <label>$LOCALIZE[184]</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
         <!-- Weather Settings -->
         <control type="button" id="9004">
             <label>10140</label>

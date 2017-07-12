@@ -1020,6 +1020,11 @@ msgctxt "#31216"
 msgid "Show logo in showcase viewtype"
 msgstr ""
 
+#: /1080i/Includes_Home.xml
+msgctxt "#31217"
+msgid "Change location"
+msgstr ""
+
 msgctxt "#31220"
 msgid "Next Aired"
 msgstr ""
