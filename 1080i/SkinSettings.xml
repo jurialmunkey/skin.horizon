@@ -167,6 +167,13 @@
                         <onclick>Skin.ToggleSetting(BigSubmenu)</onclick>
                         <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
                     </control>
+                    <control type="radiobutton" id="9213" description="Pressing left opens submenu">
+                        <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31230]</label>
+                        <selected>!Skin.HasSetting(DisableSubMenu)</selected>
+                        <onclick>Skin.ToggleSetting(DisableSubMenu)</onclick>
+                    </control>
 
                     <!-- ========== -->
                     <!-- Background -->
