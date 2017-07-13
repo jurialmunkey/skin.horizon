@@ -2,6 +2,7 @@
 <includes>
     <include name="Object_StarRating">
         <param name="align" default="left" />
+        <param name="rating_prop" default="ListItem.Rating" />
         <definition>
             <control type="group">
                 <height>64</height>
@@ -47,31 +48,31 @@
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,0)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],0)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,2)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],2)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,4)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],4)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,6)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],6)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,8)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],8)">Conditional</animation>
                     </control>
                 </control>
                 <control type="grouplist">
@@ -84,31 +85,31 @@
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],1)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,3)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],3)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,5)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],5)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,7)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],7)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
                         <width>64</width>
                         <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,9)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],9)">Conditional</animation>
                     </control>
                 </control>
             </control>
