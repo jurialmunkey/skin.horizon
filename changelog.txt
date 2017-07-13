@@ -1,3 +1,7 @@
+[B]1.0.10[/B]
+Add nextup post play window
+Add nextup in window dialogs
+
 [B]1.0.9[/B]
 Add screenshots
 Add web-dl and hdtv flags
