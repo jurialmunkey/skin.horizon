@@ -70,14 +70,6 @@
                     <label>190</label>
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
-                <!-- DEFAULT -->
-                <control type="button" id="9001">
-                    <label>31287</label>
-                    <onclick>Close</onclick>
-                    <onclick>AlarmClock(ResetColor,Skin.Reset(focuscolor.name),00:00,silent)</onclick>
-                    <onclick>AlarmClock(ResetColor,Skin.Reset(gradientcolor.name),00:00,silent)</onclick>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                </control>
             </control>
         </control>
         <control type="button" id="3011"><visible allowhiddenfocus="true">false</visible></control>

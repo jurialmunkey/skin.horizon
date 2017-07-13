@@ -5,7 +5,8 @@
         <definition>
             <!-- Standard Wall -->
             <control type="panel" id="51">
-                <visible>!Container.Content(songs) + !Container.Content(episodes)</visible>
+                <visible>!Container.Content(songs) + !Container.Content(episodes) + !Container.Content(videos)</visible>
+                <include>View_NotTheseWindows</include>
                 <viewtype label="$LOCALIZE[536]">icon</viewtype>
                 <include content="View_Forced">
                     <param name="string" value="$LOCALIZE[536]" />
@@ -13,6 +14,7 @@
                 <include content="View_Posters_Layout">
                     <param name="id" value="51" />
                     <param name="orientation" value="vertical" />
+                  
                 </include>
             </control>
 
@@ -32,10 +34,14 @@
                     <param name="string" value="$LOCALIZE[31161]" />
                 </include>
                 <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
+                <include>View_NotTheseWindows</include>
                 <include content="View_Posters_Layout">
                     <param name="id" value="52" />
                     <param name="orientation" value="horizontal" />
                     <param name="landscape" value="false" />
+                    <param name="top_offset" value="30" />
+                    <param name="bottom_offset" value="-10" />
+                    <param name="top" value="441.5" />
                 </include>
             </control>
             <include content="View_Posters_Info">
@@ -50,7 +56,8 @@
 
             <!-- Landscape -->
             <control type="panel" id="53">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(images) | Container.Content(artists)</visible>
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(images) | Container.Content(artists) | Container.Content(videos)</visible>
+                <include>View_NotTheseWindows</include>
                 <viewtype label="$LOCALIZE[31038]">landscape</viewtype>
                 <include content="View_Forced">
                     <param name="string" value="$LOCALIZE[31038]" />
@@ -77,11 +84,15 @@
                 <include content="View_Forced">
                     <param name="string" value="$LOCALIZE[31178]" />
                 </include>
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) |  Container.Content(artists) | Container.Content(episodes)</visible>
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) |  Container.Content(artists) | Container.Content(episodes) | Container.Content(videos)</visible>
+                <include>View_NotTheseWindows</include>
                 <include content="View_Posters_Layout">
                     <param name="id" value="56" />
                     <param name="orientation" value="horizontal" />
                     <param name="landscape" value="true" />
+                    <param name="top_offset" value="30" />
+                    <param name="bottom_offset" value="-10" />
+                    <param name="top" value="441.5" />
                 </include>
             </control>
             <include content="View_Posters_Info">
@@ -93,46 +104,92 @@
                 <param name="altwidth" value="1234" />
                 <param name="discart" value="true" />
             </include>
+
+            <!-- Banners -->
+            <control type="panel" id="58">
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
+                <include>View_NotTheseWindows</include>
+                <viewtype label="$LOCALIZE[20020]">landscape</viewtype>
+                <include content="View_Forced">
+                    <param name="string" value="$LOCALIZE[20020]" />
+                </include>
+                <include content="View_Posters_Layout">
+                    <param name="id" value="58" />
+                    <param name="orientation" value="vertical" />
+                    <param name="banner" value="true" />
+                    <param name="top_offset" value="30" />
+                    <param name="bottom_offset" value="-10" />
+                    <param name="top" value="0" />
+                </include>
+            </control>
         </definition>
     </include>
 
     <include name="View_Posters_Info">
-        <control type="group">
-            <left>$PARAM[left]</left>
-            <right>$PARAM[right]</right>
+        <param name="plot_height" default="130" />
+        <definition>
             <control type="group">
-                <visible>String.IsEmpty(ListItem.Art(discart)) | !$PARAM[discart]</visible>
-                <include content="View_Posters_Info_Content">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="width" value="$PARAM[width]" />
-                    <param name="bottom" value="$PARAM[bottom]" />
-                </include>
+                <left>$PARAM[left]</left>
+                <right>$PARAM[right]</right>
+                <control type="group">
+                    <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableClearLogo)] + [String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(DisableDiscArt)]] | !$PARAM[discart]</visible>
+                    <include content="View_Posters_Info_Content">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="width" value="$PARAM[width]" />
+                        <param name="bottom" value="$PARAM[bottom]" />
+                        <param name="plot_height" value="$PARAM[plot_height]" />
+                    </include>
+                </control>
+                <control type="group">
+                    <right>420</right>
+                    <visible>!String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart] + !Skin.HasSetting(DisableDiscArt)</visible>
+                    <include content="View_Posters_Info_Content">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="width" value="$PARAM[altwidth]" />
+                        <param name="bottom" value="$PARAM[bottom]" />
+                        <param name="plot_height" value="$PARAM[plot_height]" />
+                    </include>
+                </control>
+                <control type="group">
+                    <visible>!String.IsEmpty(ListItem.Art(clearlogo)) + [String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(DisableDiscArt)] + $PARAM[discart] + !Skin.HasSetting(DisableClearLogo)</visible>
+                    <include content="View_Posters_Info_Content">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="width" value="$PARAM[altwidth]" />
+                        <param name="right" value="420" />
+                        <param name="bottom" value="$PARAM[bottom]" />
+                        <param name="plot_height" value="$PARAM[plot_height]" />
+                    </include>
+                </control>
             </control>
-            <control type="group">
-                <right>420</right>
-                <visible>!String.IsEmpty(ListItem.Art(discart)) + $PARAM[discart]</visible>
-                <include content="View_Posters_Info_Content">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="width" value="$PARAM[altwidth]" />
-                    <param name="bottom" value="$PARAM[bottom]" />
-                </include>
+            <control type="image">
+                <top>50</top>
+                <right>130</right>
+                <height>380</height>
+                <width>380</width>
+                <aspectratio>keep</aspectratio>
+                <visible>Control.IsVisible($PARAM[id])</visible>
+                <visible>$PARAM[discart]</visible>
+                <texture background="true">$INFO[ListItem.Art(discart)]</texture>
+                <visible>!Skin.HasSetting(DisableDiscArt)</visible>
             </control>
-        </control>
-        <control type="image">
-            <top>50</top>
-            <right>130</right>
-            <height>380</height>
-            <width>380</width>
-            <aspectratio>keep</aspectratio>
-            <visible>Control.IsVisible($PARAM[id])</visible>
-            <visible>$PARAM[discart]</visible>
-            <texture>$INFO[ListItem.Art(discart)]</texture>
-        </control>
+            <control type="image">
+                <top>50</top>
+                <right>150</right>
+                <height>380</height>
+                <width>380</width>
+                <aspectratio aligny="top">keep</aspectratio>
+                <visible>Control.IsVisible($PARAM[id])</visible>
+                <visible>$PARAM[discart]</visible>
+                <visible>!Skin.HasSetting(DisableClearLogo)</visible>
+                <visible>String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(DisableDiscArt)</visible>
+                <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+            </control>
+        </definition>
     </include>
 
     <include name="View_Posters_Info_Content">
         <control type="grouplist">
-            <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+            <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos)</visible>
             <visible>Control.IsVisible($PARAM[id])</visible>
             <bottom>$PARAM[bottom]</bottom>
             <top>30</top>
@@ -142,6 +199,8 @@
             <usecontrolcoords>true</usecontrolcoords>
             <itemgap>0</itemgap>
             <control type="label">
+                <left>0</left>
+                <right>$PARAM[right]</right>
                 <label>$INFO[ListItem.Label]</label>
                 <height>90</height>
                 <aligny>top</aligny>
@@ -149,6 +208,8 @@
                 <font>font_showcase_title</font>
             </control>
             <control type="label">
+                <left>0</left>
+                <right>$PARAM[right]</right>
                 <label>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</label>
                 <height>40</height>
                 <aligny>top</aligny>
@@ -157,6 +218,8 @@
             </control>
             <control type="group">
                 <height>80</height>
+                <left>0</left>
+                <right>$PARAM[right]</right>
                 <control type="group">
                     <top>-17</top>
                     <left>-16</left>
@@ -174,6 +237,8 @@
                 </control>
             </control>
             <control type="label">
+                <left>0</left>
+                <right>$PARAM[right]</right>
                 <label>$INFO[ListItem.Genre]</label>
                 <height>60</height>
                 <aligny>top</aligny>
@@ -182,7 +247,7 @@
             </control>
             <control type="textbox">
                 <label>$VAR[Label_Plot]</label>
-                <height>130</height>
+                <height>$PARAM[plot_height]</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>
@@ -237,25 +302,30 @@
         <param name="setfanart" default="false" />
         <param name="orientation" default="vertical" />
         <param name="landscape" default="false" />
+        <param name="banner" default="false" />
+        <param name="top_offset" default="30" />
+        <param name="bottom_offset" default="-10" />
+        <param name="top" default="0" />
         <definition>
             <focusposition>3</focusposition>
             <movement>3</movement>
             <orientation>$PARAM[orientation]</orientation>
             <left>0</left>
             <right>90</right>
+            <top>$PARAM[top]</top>
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
             <scrolltime tween="quadratic">400</scrolltime>
             <onfocus>SetProperty(ViewType,Posters,Home)</onfocus>
-            <itemlayout width="285" height="412.5" condition="!$PARAM[landscape]">
+            <itemlayout width="285" height="412.5" condition="!$PARAM[landscape] + !$PARAM[banner]">
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
+                    <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="group" description="ParentFolder and DefaultIcon">
-                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
@@ -287,7 +357,7 @@
                             <height>265</height>
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
-                            <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <visible>Container.Content(genres)</visible>
                         </control>
                         <control type="image">
@@ -317,8 +387,8 @@
                                 <texture colordiffuse="PosterBack">common/white.png</texture>
                             </control>
                             <control type="textbox">
-                                <top>30</top>
-                                <bottom>30</bottom>
+                                <height>95</height>
+                                <centertop>50%</centertop>
                                 <left>20</left>
                                 <right>20</right>
                                 <align>center</align>
@@ -336,24 +406,24 @@
                         <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Poster]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
                         <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
-                        <visible>[String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                     </control>
                     <include>View_WatchedOverlay</include>
                 </control>
             </itemlayout>
-            <focusedlayout width="285" height="412.5" condition="!$PARAM[landscape]">
+            <focusedlayout width="285" height="412.5" condition="!$PARAM[landscape] + !$PARAM[banner]">
                 <include content="View_Position_Button">
                     <param name="id" value="$PARAM[id]" />
                     <param name="setfanart" value="$PARAM[setfanart]" />
                 </include>
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
-                    
+                    <bottom>$PARAM[bottom_offset]</bottom>
+                    <include>Animation_FocusBounce</include>
                     <control type="group" description="ParentFolder and DefaultIcon">
-                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
@@ -376,7 +446,7 @@
                             <height>265</height>
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
-                            <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <visible>Container.Content(genres)</visible>
                         </control>
                         <control type="image">
@@ -406,8 +476,8 @@
                                 <texture colordiffuse="PosterBack">common/white.png</texture>
                             </control>
                             <control type="textbox">
-                                <top>30</top>
-                                <bottom>30</bottom>
+                                <height>95</height>
+                                <centertop>50%</centertop>
                                 <left>20</left>
                                 <right>20</right>
                                 <align>center</align>
@@ -425,7 +495,7 @@
                         <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Poster]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
                         <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
-                        <visible>[String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(season.poster)) | String.IsEqual(ListItem.Icon,ListItem.Art(poster))]</visible>
+                        <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                     </control>
                     <include>View_WatchedOverlay</include>
                     <!-- Highlight -->
@@ -439,9 +509,9 @@
             <itemlayout width="570" height="412.5" condition="$PARAM[landscape]">
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
+                    <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="group">
                         <height>313.75</height>
                         <control type="image">
@@ -457,7 +527,7 @@
                         <control type="image">
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
+                            <texture background="true">$VAR[Image_Thumb]</texture>
                         </control>
                     </control>
                     <control type="group">
@@ -506,10 +576,12 @@
                 </include>
                 <control type="group">
                     <left>30</left>
-                    <top>30</top>
+                    <top>$PARAM[top_offset]</top>
                     <right>-10</right>
-                    <bottom>-10</bottom>
+                    <bottom>$PARAM[bottom_offset]</bottom>
+
                     <control type="group">
+                        <include>Animation_FocusBounce_Small</include>
                         <height>313.75</height>
                         <control type="image">
                             <bordersize>10</bordersize>
@@ -524,7 +596,7 @@
                         <control type="image">
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
+                            <texture background="true">$VAR[Image_Thumb]</texture>
                         </control>
                         <include>View_WatchedOverlay</include>
                         <!-- Highlight -->
@@ -568,6 +640,99 @@
                             <textcolor>main_fg_30</textcolor>
                             <label>$INFO[ListItem.Premiered]</label>
                         </control>
+                    </control>
+                </control>
+            </focusedlayout>
+
+            <itemlayout width="855" height="214" condition="$PARAM[banner]">
+                <control type="group">
+                    <left>30</left>
+                    <top>$PARAM[top_offset]</top>
+                    <right>-10</right>
+                    <bottom>$PARAM[bottom_offset]</bottom>
+                    <control type="image">
+                        <bordersize>10</bordersize>
+                        <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
+                        <texture colordiffuse="PosterBack">common/white.png</texture>
+                    </control>
+                    <control type="image" description="Poster">
+                        <height>150</height>
+                        <bordersize>10</bordersize>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
+                    </control>
+                    <control type="label">
+                        <top>150</top>
+                        <bottom>20</bottom>
+                        <left>24</left>
+                        <right>24</right>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <top>150</top>
+                        <bottom>20</bottom>
+                        <left>24</left>
+                        <right>24</right>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                    <include>View_WatchedOverlay</include>
+                </control>
+            </itemlayout>
+            <focusedlayout width="855" height="214" condition="$PARAM[banner]">
+                <include content="View_Position_Button">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="setfanart" value="$PARAM[setfanart]" />
+                </include>
+                <control type="group">
+                    <left>30</left>
+                    <top>$PARAM[top_offset]</top>
+                    <right>-10</right>
+                    <bottom>$PARAM[bottom_offset]</bottom>
+                    <include>Animation_FocusBounce_Small</include>
+                    <control type="image">
+                        <bordersize>10</bordersize>
+                        <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
+                        <texture colordiffuse="PosterBack">common/white.png</texture>
+                    </control>
+                    <control type="image" description="Poster">
+                        <height>150</height>
+                        <bordersize>10</bordersize>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
+                    </control>
+                    <control type="label">
+                        <top>150</top>
+                        <bottom>20</bottom>
+                        <left>24</left>
+                        <right>24</right>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>Selected</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <top>150</top>
+                        <bottom>20</bottom>
+                        <left>24</left>
+                        <right>24</right>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>Selected</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                    <include>View_WatchedOverlay</include>
+                    <!-- Highlight -->
+                    <control type="group">
+                        <visible>Control.HasFocus($PARAM[id])</visible>
+                        <include>View_Selectbox</include>
                     </control>
                 </control>
             </focusedlayout>

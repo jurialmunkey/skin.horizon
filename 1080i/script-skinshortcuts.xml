@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol always="true">401</defaultcontrol>
+    <onload condition="!Skin.HasSetting(WidgetsInit)">AlarmClock(Clickit,Action(Close),00:01,silent)</onload>
+    <onunload condition="!Skin.HasSetting(WidgetsInit)">Skin.ToggleSetting(WidgetsInit)</onunload>
     <controls>
         <include>Global_Overlay</include>
 
         <control type="group">
+            <animation effect="fade" start="100" end="0" condition="!Skin.HasSetting(WidgetsInit)">Conditional</animation>
             <include>Animation_FadeIn_Slide</include>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
@@ -30,6 +33,19 @@
                 <textcolor>dialog_fg_70</textcolor>
             </control>
 
+            <control type="label">
+                <description>widgets label</description>
+                <top>10</top>
+                <right>15</right>
+                <height>66</height>
+                <width>580</width>
+                <label>$INFO[Container(211).ListItem.Label,, ]$LOCALIZE[31144]</label>
+                <font>font_small_bold</font>
+                <align>center</align>
+                <textcolor>dialog_fg_70</textcolor>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+            </control>
+
             <!-- Left List: Current Shortcuts -->
             <control type="list" id="211">
                 <description>Rules List Control</description>
@@ -42,6 +58,7 @@
                 <onright>9100</onright>
                 <ondown>211</ondown>
                 <scrolltime>0</scrolltime>
+
                 <itemlayout width="580" height="69">
                     <control type="image">
                         <left>0</left>
@@ -123,6 +140,7 @@
                 <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(211).Position,10)">Conditional</animation>
                 <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(211).Position,11)">Conditional</animation>
                 <control type="button" id="302" description="Delete">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
@@ -130,6 +148,7 @@
                     <texturefocus colordiffuse="Selected">buttons/delete.png</texturefocus>
                 </control>
                 <control type="button" id="301" description="Add">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
@@ -138,6 +157,7 @@
                     <visible>!Integer.IsGreater(Container(211).NumItems,11)</visible>
                 </control>
                 <control type="button" id="303" description="Up">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
@@ -145,24 +165,26 @@
                     <texturefocus colordiffuse="Selected">buttons/moveup.png</texturefocus>
                 </control>
                 <control type="button" id="304" description="Down">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
                     <texturenofocus colordiffuse="dialog_fg_30" flipy="true">buttons/moveup.png</texturenofocus>
                     <texturefocus colordiffuse="Selected" flipy="true">buttons/moveup.png</texturefocus>
                 </control>
-
             </control>
 
             <!-- Center Buttons -->
             <control type="grouplist" id="9100">
+
                 <onleft>304</onleft>
-                <onright>9300</onright>
+                <onright>SetFocus(9300)</onright>
+                <onright>SetFocus(9401)</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>
                 <left>610</left>
                 <bottom>15</bottom>
-                <width>760</width>
+                <width>660</width>
                 <height>552</height>
                 <orientation>vertical</orientation>
                 <itemgap>3</itemgap>
@@ -170,6 +192,7 @@
 
 
                 <control type="button" id="401" description="Alt chooser">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
@@ -177,6 +200,7 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
                 <control type="button" id="307" description="Custom">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <label>31267</label>
@@ -186,6 +210,7 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
                 <control type="button" id="305" description="Set Label">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <label>31268</label>
@@ -196,6 +221,7 @@
                 </control>
 
                 <control type="button" id="311" description="Browse for Thumb">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <label>31181</label>
@@ -204,6 +230,7 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
                 <control type="button" id="405" description="Set Submenu">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <label>31112</label>
@@ -213,7 +240,8 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
 
-                <!-- <control type="button" id="310" description="Background">
+                <control type="button" id="310" description="Background">
+                <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <label>31110</label>
@@ -222,9 +250,22 @@
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
-                </control> -->
+                </control>
+
+                <control type="button" id="9900" description="Reinitialise Widgets">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <include>Defs_SkinShortcuts_SetStrings_OnClick</include>
+                    <width>100%</width>
+                    <label>$LOCALIZE[31197]</label>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <align>left</align>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
 
                 <control type="button" id="308" description="Reset">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
@@ -236,26 +277,34 @@
             <!-- Right Buttons -->
             <control type="grouplist" id="9300">
                 <onleft>9100</onleft>
-                <onright>304</onright>
+                <onright>9400</onright>
                 <onup>9300</onup>
                 <ondown>9300</ondown>
                 <right>15</right>
                 <bottom>15</bottom>
-                <width>480</width>
+                <width>580</width>
                 <height>552</height>
                 <orientation>vertical</orientation>
                 <itemgap>3</itemgap>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 
-                <control type="button" id="312" description="Widget">
+                <control type="togglebutton" id="312" description="Widget">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
-                    <label>31266</label>
-                    <label2>$VAR[Label_SkinShortcuts_WidgetName]</label2>
+                    <usealttexture>ControlGroup(9300).HasFocus(312) + ControlGroup(9400).HasFocus()</usealttexture>
+                    <label>$VAR[Label_SkinShortcuts_WidgetName]$INFO[Container(211).ListItem.Property(WidgetAspect), (,)]</label>
+                    <altlabel>[COLOR=Selected]$VAR[Label_SkinShortcuts_WidgetName]$INFO[Container(211).ListItem.Property(WidgetAspect), (,)][/COLOR]</altlabel>
+                    <alttexturenofocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</alttexturenofocus>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <onfocus>SetProperty(WidgetName,WidgetName)</onfocus>
+                    <onfocus>SetProperty(customProperty,WidgetAspect)</onfocus>
+                    <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[31263]) | String.IsEmpty(Container(211).ListItem.Property(WidgetAspect))">SetProperty(customValue,$LOCALIZE[20021])</onfocus>
+                    <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[20021])">SetProperty(customValue,$LOCALIZE[31038])</onfocus>
+                    <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[31038])">SetProperty(customValue,$LOCALIZE[31263])</onfocus>
                 </control>
 
                 <include content="Defs_SkinShortcuts_Widget">
@@ -288,10 +337,73 @@
                 </include>
             </control>
 
+            <control type="grouplist" id="9400">
+                <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
+                <right>15</right>
+                <top>91</top>
+                <width>580</width>
+                <align>right</align>
+                <itemgap>-10</itemgap>
+                <onleft>9100</onleft>
+                <onright>noop</onright>
+                <onup>SetFocus(9300)</onup>
+                <onup>Up</onup>
+                <onup>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</onup>
+                <ondown>SetFocus(9300)</ondown>
+                <ondown>Down</ondown>
+                <ondown>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</ondown>
+                <orientation>horizontal</orientation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,0)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,1)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,2)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,3)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,4)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,5)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,6)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,7)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,8)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,9)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,10)">Conditional</animation>
+                <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,11)">Conditional</animation>
+                <control type="button" id="9401" description="Configure">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <width>64</width>
+                    <height>64</height>
+                    <font>-</font>
+                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/configure.png</texturenofocus>
+                    <texturefocus colordiffuse="Selected">special://skin/extras/icons/configure.png</texturefocus>
+                    <onclick>SetProperty(customValue,)</onclick>
+                    <onclick>SendClick(404)</onclick>
+                    <onclick>SetFocus(9300)</onclick>
+                    <onclick>Select</onclick>
+                    <onclick>SetFocus(9400)</onclick>
+                </control>
+                <control type="button" id="9402" description="Aspect">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <width>64</width>
+                    <height>64</height>
+                    <font>-</font>
+                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/pictures.png</texturenofocus>
+                    <texturefocus colordiffuse="Selected">special://skin/extras/icons/pictures.png</texturefocus>
+                    <onclick>SendClick(404)</onclick>
+                    <onclick>AlarmClock(Setit,SetFocus(9300),00:00,silent)</onclick>
+                    <onclick>AlarmClock(Setitback,SetFocus(9402),00:00,silent)</onclick>
+                </control>
+                <control type="button" id="9403" description="Rename">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <width>64</width>
+                    <height>64</height>
+                    <font>-</font>
+                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/write.png</texturenofocus>
+                    <texturefocus colordiffuse="Selected">special://skin/extras/icons/write.png</texturefocus>
+                    <onclick>RunScript(script.skin.helper.service,action=setskinshortcutsproperty,header=$ADDON[script.skinshortcuts 32025],property=$INFO[Window.Property(WidgetName)])</onclick>
+                </control>
+            </control>
+
             <control type="group">
                 <right>15</right>
                 <bottom>15</bottom>
-                <width>480</width>
+                <width>580</width>
                 <height>552</height>
                 <visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                 <control type="image">

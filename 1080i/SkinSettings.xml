@@ -1,6 +1,8 @@
 <window>
     <defaultcontrol always="true">9100</defaultcontrol>
+    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|powermenu)</onunload>
     <controls>
+
         <include>Global_Background</include>
         <include>View_Layout</include>
 
@@ -65,71 +67,55 @@
                     <control type="togglebutton" id="9101" description="Home">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9101)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>10000</label>
                     </control>
                     <control type="togglebutton" id="9102" description="Background">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9102)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>31110</label>
                     </control>
 
                     <control type="togglebutton" id="9103" description="OSD">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9103)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>31270</label>
                     </control>
 
                     <control type="togglebutton" id="9104" description="Artwork">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9104)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31203]</label>
                     </control>
 
                     <control type="togglebutton" id="9105" description="Colors">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9105)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31021]</label>
                     </control>
 
                     <control type="togglebutton" id="9107" description="Extras">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9107)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31024]</label>
                     </control>
 
                     <control type="togglebutton" id="9108" description="Dependencies">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9108)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[24996]</label>
                     </control>
 
                     <control type="togglebutton" id="9106" description="Reset Backup">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9106)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                        <width>450</width>
-                        
-                        <include>Defs_Settings_Button</include>
+                        <width>450</width><include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31030]</label>
                     </control>
                 </control>
@@ -141,7 +127,7 @@
                     <left>450</left>
                     <right>0</right>
                     <top>140</top>
-                    <bottom>0</bottom>
+                    <bottom>74</bottom>
                     <itemgap>0</itemgap>
                     <onback>9100</onback>
                     <onleft>9100</onleft>
@@ -158,7 +144,6 @@
                         <label>$LOCALIZE[31109]</label>
                         <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
                     </control>
-
                     <control type="radiobutton" id="9218" description="Display submenu as categories widget">
                         <visible>ControlGroup(9100).HasFocus(9101)</visible>
                         <include>Defs_Settings_Button</include>
@@ -166,12 +151,20 @@
                         <selected>!Skin.HasSetting(DisableWidgetCategories)</selected>
                         <onclick>Skin.ToggleSetting(DisableWidgetCategories)</onclick>
                     </control>
-                    <control type="radiobutton" id="9219" description="Display submenu as categories widget">
+                    <control type="radiobutton" id="9219" description="Categories on bottom">
                         <visible>ControlGroup(9100).HasFocus(9101)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31183]</label>
                         <selected>Skin.HasSetting(CategoriesOnBottom)</selected>
                         <onclick>Skin.ToggleSetting(CategoriesOnBottom)</onclick>
+                        <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
+                    </control>
+                    <control type="radiobutton" id="9212" description="Big categories">
+                        <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31190]</label>
+                        <selected>Skin.HasSetting(BigSubmenu)</selected>
+                        <onclick>Skin.ToggleSetting(BigSubmenu)</onclick>
                         <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
                     </control>
 
@@ -215,6 +208,14 @@
                         <onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9226" description="Transparent Top Bar">
+                        <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31185]</label>
+                        <selected>!Skin.HasSetting(DisableTransparentTopbar)</selected>
+                        <onclick>Skin.ToggleSetting(DisableTransparentTopbar)</onclick>
+                    </control>
+
                     <control type="togglebutton" id="9225" description="Install Weather Fanart">
                         <visible>ControlGroup(9100).HasFocus(9102)</visible>
                         <include>Defs_Settings_Button</include>
@@ -230,7 +231,6 @@
                     <!-- ================= -->
                     <control type="radiobutton" id="9231" description="Show Fanart">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>31121</label>
                         <selected>Skin.HasSetting(musicvis.fanartfallback)</selected>
@@ -239,7 +239,6 @@
                     </control>
                     <control type="radiobutton" id="9232" description="Show slideshow in background">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>31118</label>
                         <enable>System.HasAddon(script.artistslideshow)</enable>
@@ -248,7 +247,6 @@
                     </control>
                     <control type="radiobutton" id="9233" description="Show slideshow in background">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>31119</label>
                         <selected>Skin.HasSetting(OSDVisualisation.ShowFanart)</selected>
@@ -257,7 +255,6 @@
                     </control>
                     <control type="radiobutton" id="9236" description="Colour overlay">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31087]</label>
                         <selected>!Skin.HasSetting(HideOSDDiffuseColors)</selected>
@@ -265,7 +262,6 @@
                     </control>
                     <control type="radiobutton" id="9237" description="Scrolling Text">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31088]</label>
                         <selected>!Skin.HasSetting(HideOSDScrollingText)</selected>
@@ -273,7 +269,6 @@
                     </control>
                     <control type="radiobutton" id="9234" description="Animate Artist slideshow">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>31120</label>
                         <selected>Skin.HasSetting(ArtistSlideshow.Animate)</selected>
@@ -282,7 +277,6 @@
                     </control>
                     <control type="radiobutton" id="9239" description="Show detailed info on pause">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31145]</label>
                         <selected>Skin.HasSetting(ShowInfoPaused)</selected>
@@ -290,27 +284,39 @@
                     </control>
                     <control type="radiobutton" id="9238" description="Media Flags">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31130]</label>
                         <selected>Skin.HasSetting(ShowOSDVideoCodec)</selected>
                         <onclick>Skin.ToggleSetting(ShowOSDVideoCodec)</onclick>
                     </control>
-                    <control type="radiobutton" id="9299" description="Dont pause on information">
+                    <control type="radiobutton" id="9267" description="Hide sub blade">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31186]</label>
+                        <selected>!Skin.HasSetting(OSDHideSubmenu)</selected>
+                        <onclick>Skin.ToggleSetting(OSDHideSubmenu)</onclick>
+                    </control>
+                    <control type="radiobutton" id="9299" description="AutoMusicVis">
+                        <visible>ControlGroup(9100).HasFocus(9103)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31158]</label>
                         <selected>Skin.HasSetting(AutoMusicVis)</selected>
                         <onclick>Skin.ToggleSetting(AutoMusicVis)</onclick>
                     </control>
+                    
                     <control type="radiobutton" id="9235" description="Dont pause on information">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31079]</label>
                         <selected>!Skin.HasSetting(DontPauseOSD)</selected>
                         <onclick>Skin.ToggleSetting(DontPauseOSD)</onclick>
+                    </control>
+                    <control type="radiobutton" id="9248" description="Only show seekbar on pressing info">
+                        <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31201]</label>
+                        <selected>Skin.HasSetting(DisableOSDInfo)</selected>
+                        <onclick>Skin.ToggleSetting(DisableOSDInfo)</onclick>
                     </control>
 
                     
@@ -341,6 +347,22 @@
                         <selected>Skin.HasSetting(ArtworkDownloaderAll)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
+
+                    <control type="radiobutton" id="9242">
+                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
+                        <label>$LOCALIZE[31202]</label>
+                        <onclick>Skin.ToggleSetting(DisableDiscArt)</onclick>
+                        <selected>!Skin.HasSetting(DisableDiscArt)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="radiobutton" id="9243">
+                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
+                        <label>$LOCALIZE[31216]</label>
+                        <onclick>Skin.ToggleSetting(DisableClearLogo)</onclick>
+                        <selected>!Skin.HasSetting(DisableClearLogo)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
                     
 
                     <!-- ====== -->
@@ -348,7 +370,6 @@
                     <!-- ====== -->
                     <control type="button" id="9251" description="Color Highlight">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>31286</label>
                         <label2>$INFO[Skin.String(focuscolor.name)]</label2>
@@ -357,28 +378,25 @@
                     </control>
                     <control type="button" id="9253" description="Color Highlight">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>Select secondary gradient colour</label>
                         <label2>$INFO[Skin.String(gradientcolor.name)]</label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
                     </control>
-                    <!-- <control type="radiobutton" id="9252">
+                    <control type="button" id="9254">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                        
-                        <label>$LOCALIZE[31015]</label>
-                        <selected>Skin.HasSetting(UseColorFlags)</selected>
+                        <label>$LOCALIZE[31193]</label>
                         <include>Defs_Settings_Button</include>
-                        <onclick>Skin.ToggleSetting(UseColorFlags)</onclick>
-                    </control> -->
+                        <onclick>Skin.Reset(focuscolor.name)</onclick>
+                        <onclick>Skin.Reset(gradientcolor.name)</onclick>
+                    </control>
 
                     <!-- ============= -->
                     <!-- Miscellaneous -->
                     <!-- ============= -->
                     <control type="button" id="9271" description="Startup Video">
                         <visible>ControlGroup(9100).HasFocus(9107)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>31168</label>
                         <label2>$INFO[Skin.String(StartupPlaylist)]</label2>
@@ -388,7 +406,6 @@
 
                     <control type="radiobutton" id="9272" description="Disable Alphabet Strip">
                         <visible>ControlGroup(9100).HasFocus(9107)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31025]</label>
                         <selected>Skin.HasSetting(DisableAlphabetStrip)</selected>
@@ -414,6 +431,14 @@
                         <onclick>Skin.ToggleSetting(UseHoursMinutes)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9278" description="Enable bounce animations">
+                        <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31192]</label>
+                        <selected>Skin.HasSetting(BounceAnimations)</selected>
+                        <onclick>Skin.ToggleSetting(BounceAnimations)</onclick>
+                    </control>
+
                     <control type="button" id="9274" description="Customise Shutdown Menu">
                         <visible>ControlGroup(9100).HasFocus(9107)</visible>
                         <include>Defs_Settings_Button</include>
@@ -426,7 +451,6 @@
                     <!-- ============ -->
                     <control type="radiobutton" id="9281">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.skin.helper.service</label>
                         <label2>$INFO[System.AddonVersion(script.skin.helper.service)]        </label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
@@ -436,7 +460,6 @@
                     </control>
                     <control type="radiobutton" id="9282">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.skin.helper.widgets</label>
                         <label2>$INFO[System.AddonVersion(script.skin.helper.widgets)]        </label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.widgets)">InstallAddon(script.skin.helper.widgets)</onclick>
@@ -446,7 +469,6 @@
                     </control>
                     <control type="radiobutton" id="9283">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.skin.helper.colorpicker</label>
                         <label2>$INFO[System.AddonVersion(script.skin.helper.colorpicker)]        </label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
@@ -456,7 +478,6 @@
                     </control>
                     <control type="radiobutton" id="9284">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.skin.helper.backgrounds</label>
                         <label2>$INFO[System.AddonVersion(script.skin.helper.backgrounds)]        </label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.backgrounds)">InstallAddon(script.skin.helper.backgrounds)</onclick>
@@ -466,7 +487,6 @@
                     </control>
                     <control type="radiobutton" id="9297">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.skin.helper.skinbackup</label>
                         <label2>$INFO[System.AddonVersion(script.skin.helper.skinbackup)]        </label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">InstallAddon(script.skin.helper.skinbackup)</onclick>
@@ -476,7 +496,6 @@
                     </control>
                     <control type="radiobutton" id="9298">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.toolbox</label>
                         <label2>$INFO[System.AddonVersion(script.toolbox)]        </label2>
                         <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
@@ -486,7 +505,6 @@
                     </control>
                     <control type="radiobutton" id="9285">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.extendedinfo</label>
                         <label2>$INFO[System.AddonVersion(script.extendedinfo)]        </label2>
                         <onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
@@ -496,7 +514,6 @@
                     </control>
                     <control type="radiobutton" id="9286">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.skinshortcuts</label>
                         <label2>$INFO[System.AddonVersion(script.skinshortcuts)]        </label2>
                         <onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
@@ -506,7 +523,6 @@
                     </control>
                     <control type="radiobutton" id="9293">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.artwork.downloader</label>
                         <label2>$INFO[System.AddonVersion(script.artwork.downloader)]        </label2>
                         <onclick condition="!System.HasAddon(script.artwork.downloader)">InstallAddon(script.artwork.downloader)</onclick>
@@ -516,7 +532,6 @@
                     </control>
                     <control type="radiobutton" id="9294">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.cu.lrclyrics</label>
                         <label2>$INFO[System.AddonVersion(script.cu.lrclyrics)]        </label2>
                         <onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
@@ -526,7 +541,6 @@
                     </control>
                     <control type="radiobutton" id="9295">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.artistslideshow</label>
                         <label2>$INFO[System.AddonVersion(script.artistslideshow)]        </label2>
                         <onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
@@ -536,7 +550,6 @@
                     </control>
                     <control type="radiobutton" id="9292">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.globalsearch</label>
                         <label2>$INFO[System.AddonVersion(script.globalsearch)]        </label2>
                         <onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
@@ -546,7 +559,6 @@
                     </control>
                     <control type="radiobutton" id="9296">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>script.tv.show.next.aired</label>
                         <label2>$INFO[System.AddonVersion(script.tv.show.next.aired)]        </label2>
                         <onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
@@ -556,7 +568,6 @@
                     </control>
                     <control type="radiobutton" id="9288">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>plugin.program.autocompletion</label>
                         <label2>$INFO[System.AddonVersion(plugin.program.autocompletion)]        </label2>
                         <onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>
@@ -566,7 +577,6 @@
                     </control>
                     <control type="radiobutton" id="9289">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>resource.images.studios.white</label>
                         <label2>$INFO[System.AddonVersion(resource.images.studios.white)]        </label2>
                         <onclick condition="!System.HasAddon(resource.images.studios.white)">InstallAddon(resource.images.studios.white)</onclick>
@@ -576,7 +586,6 @@
                     </control>
                     <control type="radiobutton" id="9290">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>resource.images.moviegenreicons.transparent</label>
                         <label2>$INFO[System.AddonVersion(resource.images.moviegenreicons.transparent)]        </label2>
                         <onclick condition="!System.HasAddon(resource.images.moviegenreicons.transparent)">InstallAddon(resource.images.moviegenreicons.transparent)</onclick>
@@ -586,7 +595,6 @@
                     </control>
                     <control type="radiobutton" id="9291">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
-                        
                         <label>resource.images.weatherfanart.multi</label>
                         <label2>$INFO[System.AddonVersion(resource.images.weatherfanart.multi)]        </label2>
                         <onclick condition="!System.HasAddon(resource.images.weatherfanart.multi)">InstallAddon(resource.images.weatherfanart.multi)</onclick>
@@ -600,21 +608,18 @@
                     <!-- ================ -->
                     <control type="button" id="9261" description="Backup">
                         <visible>ControlGroup(9100).HasFocus(9106)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31031]</label>
                         <onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
                     </control>
                     <control type="button" id="9262" description="Restore">
                         <visible>ControlGroup(9100).HasFocus(9106)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31032]</label>
                         <onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
                     </control>
                     <control type="button" id="9263" description="Backup Restore Settings">
                         <visible>ControlGroup(9100).HasFocus(9106)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31034]</label>
                         <onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">InstallAddon(script.skin.helper.skinbackup)</onclick>
@@ -622,7 +627,6 @@
                     </control>
                     <control type="button" id="9264" description="Reset">
                         <visible>ControlGroup(9100).HasFocus(9106)</visible>
-                        
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31028]</label>
                         <onclick>Skin.ResetSettings</onclick>

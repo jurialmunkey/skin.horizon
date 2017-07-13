@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <menucontrol>9000</menucontrol>
+    <menucontrol>300</menucontrol>
     <background>0</background>
     <defaultcontrol always="true">10</defaultcontrol>
     <views>10</views>
@@ -12,6 +12,7 @@
         
         <control type="group" id="50">
             <control type="group">
+                <include>Animation_Home_Textbar_Slideover_Library</include>
                 <visible>Control.IsVisible(10)</visible>
                 <control type="epggrid" id="10" description="EPG">
                     <include>Animation_Right</include>

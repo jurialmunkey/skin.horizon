@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="101">
+    <onunload condition="!Skin.HasSetting(WidgetsInit)">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onunload>
     <controls>
 
         <include>Global_Overlay</include>

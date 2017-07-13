@@ -72,13 +72,14 @@
                         <label>$LOCALIZE[31003]</label>
                     </control>
                     <control type="label">
-                        <height>56</height>
+                        <height>32</height>
                         <aligny>top</aligny>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
                     </control>
                     <control type="button">
+                        <top>24</top>
                         <height>48</height>
                         <font>font_small</font>
                         <align>left</align>
@@ -89,7 +90,7 @@
                         <label>$LOCALIZE[402]$INFO[Window(Weather).Property(Current.FeelsLike), ,°]</label>
                     </control>
                     <control type="label">
-                        <height>56</height>
+                        <height>32</height>
                         <aligny>top</aligny>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
@@ -115,13 +116,14 @@
                         <label>$VAR[Weather_Sunrise]</label>
                     </control>
                     <control type="label">
-                        <height>56</height>
+                        <height>32</height>
                         <aligny>top</aligny>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <label>$INFO[Window(Weather).Property(Current.DewPoint),$LOCALIZE[405] ,°]</label>
                     </control>
                     <control type="button">
+                        <top>24</top>
                         <height>48</height>
                         <font>font_small</font>
                         <align>left</align>
@@ -132,7 +134,7 @@
                         <label>$VAR[Weather_Sunset]</label>
                     </control>
                     <control type="label">
-                        <height>56</height>
+                        <height>32</height>
                         <aligny>top</aligny>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
@@ -161,13 +163,14 @@
                         <label>$LOCALIZE[383]</label>
                     </control>
                     <control type="label">
-                        <height>56</height>
+                        <height>32</height>
                         <aligny>top</aligny>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <label>$INFO[Window(Weather).Property(Current.Wind)]</label>
                     </control>
                     <control type="button">
+                        <top>24</top>
                         <height>48</height>
                         <font>font_small</font>
                         <align>left</align>
@@ -178,7 +181,7 @@
                         <label>$VAR[Weather_UVIndex_Label]</label>
                     </control>
                     <control type="label">
-                        <height>56</height>
+                        <height>32</height>
                         <aligny>top</aligny>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
@@ -195,7 +198,7 @@
             <orientation>horizontal</orientation>
             <itemgap>0</itemgap>
             <bottom>0</bottom>
-            <height>500</height>
+            <height>520</height>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
             <align>left</align>
@@ -272,7 +275,7 @@
                 <label fallback="161">$PARAM[label]</label>
             </control>
             <control type="label">
-                <centertop>77%</centertop>
+                <centertop>75%</centertop>
                 <left>0</left>
                 <right>0</right>
                 <align>center</align>
@@ -282,10 +285,11 @@
             </control>
             <control type="textbox">
                 <bottom>10</bottom>
-                <height>60</height>
+                <height>80</height>
                 <left>20</left>
                 <right>20</right>
                 <align>center</align>
+                <aligny>top</aligny>
                 <font>font_small</font>
                 <textcolor>panel_fg_100</textcolor>
                 <label fallback="161">$INFO[Window(Weather).Property($PARAM[day].Outlook),[CAPITALIZE],[/CAPITALIZE]]</label>

@@ -1,5 +1,36 @@
+[B]1.0.9[/B]
+Add screenshots
+Add web-dl and hdtv flags
+Tweak flags in info dialog
+Add infolist2, showcase2 and landscape to videos content
+Option to disable clearlogo and discart from showcase view
+Tweak infolist3
+Fix and consolidate views
+Add banner view
+
+[B]1.0.8[/B]
+Revert number of menu items to 12 due to performance.
+Add performance enhancement that prevents excessive loading of widgets (go into home customisation menu and the press back).
+Add home background options
+
+[B]1.0.7[/B]
+Add infolist 2
+
+[B]1.0.6[/B]
+Transparent top bar option
+Add small categories icons
+Add option to remove osd submenu
+Add clearlogo to showcase when discart not available
+Add bounce animation to focus items
+
+[B]1.0.5[/B]
+Add widget aspect options
+Add weather options sideblade
+A few other fixes
+
 [B]1.0.4[/B]
 Add vignette behind clock, volumebar and notifications in fullscreen
+Fix extendedinfo on home
 
 [B]1.0.3[/B]
 Add option to disable categories widget

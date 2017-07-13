@@ -15,6 +15,7 @@
             <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
             <!-- Mini Blade -->
             <control type="group">
+                <visible>!Skin.HasSetting(OSDHideSubmenu)</visible>
                 <top>80</top>
                 <left>0</left>
                 <right>0</right>

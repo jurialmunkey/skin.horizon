@@ -11,12 +11,12 @@
         <value condition="Window.IsVisible(MyPVRRecordings.xml)">$LOCALIZE[31165]</value>
         <value condition="Window.IsVisible(MyPVRTimers.xml)">$LOCALIZE[31166]</value>
         <value condition="Window.IsVisible(MyPVRSearch.xml)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(Weather)">$INFO[Window(Weather).Property(Location),$LOCALIZE[31007] ,]</value>
+        <value condition="Window.IsVisible(Weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">$INFO[Window(Weather).Property(Location),$LOCALIZE[31007] ,]</value>
         <value condition="Window.IsVisible(SettingsCategory.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(SkinSettings.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(SettingsSystemInfo.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[7]</value>
-        <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[13350]</value>
+        <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[13350]$INFO[ListItem.TvShowTitle, / ,]</value>
 
         <value condition="[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]">$VAR[Label_Title]</value>
 
@@ -29,9 +29,11 @@
         
         <value condition="String.IsEqual(Container.FolderPath,musicdb://songs/)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
 
-        <value condition="Container.Content(albums)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
-        <value condition="Container.Content(songs) + String.Contains(Container.FolderPath,/artists/)">$VAR[Label_Header_Location,, / ]$INFO[ListItem.Artist,, / ]$INFO[Container.FolderName]</value>
-        <value condition="Container.Content(songs)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(albums) + !String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(albums) + String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location]$INFO[ListItem.Artist, / ,]</value>
+        <value condition="Container.Content(songs) + String.Contains(Container.FolderPath,/artists/) + !String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location,, / ]$INFO[ListItem.Artist,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(songs) + !String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
+        <value condition="Container.Content(songs) + String.Contains(Container.FolderPath,plugin://)">$VAR[Label_Header_Location]$INFO[ListItem.Album, / ,]</value>
 
         <value condition="Container.Content(years)">$VAR[Label_Header_Location,, / ]$LOCALIZE[652]</value>
         <value condition="String.Contains(Container.FolderPath,/years/)">$VAR[Label_Header_Location,, / ]$INFO[Container.FolderName]</value>
@@ -75,7 +77,7 @@
     </variable>
 
     <variable name="Label_SubHeader_Content">
-        <value condition="Window.IsVisible(weather)">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
+        <value condition="Window.IsVisible(weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
         <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$VAR[Label_InfoLine]</value>
         <value condition="Window.IsVisible(Home)">$INFO[Container(300).ListItem.Label,[COLOR=main_fg_100],[/COLOR]]</value>
         <value>$VAR[Label_NumItems,[COLOR=main_fg_100],[/COLOR]]$VAR[Label_NumPages,[COLOR=main_fg_30]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
@@ -243,7 +245,7 @@
         
         <value condition="!String.IsEmpty(ListItem.Artist) + [Container.Content(albums) | Container.Content(songs)]">$INFO[ListItem.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Genre,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
-        <value condition="Container.Content(addons) + !String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="[Window.IsVisible(DialogAddonInfo.xml) | Container.Content(addons)] + !String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="Container.Content(images) + !String.IsEmpty(ListItem.Size)">$INFO[ListItem.PictureDate ,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.PictureResolution ,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Size,[COLOR=main_fg_100],[/COLOR]]</value>
 
@@ -272,7 +274,7 @@
         <value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100], $LOCALIZE[20360][/COLOR]  |  ]$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=main_fg_100], $LOCALIZE[31215][/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(songs) | Container.Content(albums)">$INFO[ListItem.Album,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Container.Property(Album_Label),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_YearsActive),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount),[COLOR=main_fg_100], $LOCALIZE[36919][/COLOR]]</value>
-        <value condition="Container.Content(addons)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(addons) | Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
     </variable>
 
@@ -324,7 +326,6 @@
 
     <variable name="Label_SkinSettings_Info">
         <value condition="Control.HasFocus(9211)">$LOCALIZE[31041]</value>
-        <value condition="Control.HasFocus(9212)">$LOCALIZE[31042]</value>
         <value condition="Control.HasFocus(9213)">$LOCALIZE[31043]</value>
         <value condition="Control.HasFocus(9214)">$LOCALIZE[31044]</value>
         <value condition="Control.HasFocus(9215)">$LOCALIZE[31045]</value>

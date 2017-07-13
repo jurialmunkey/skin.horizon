@@ -1,115 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="Object_StarRating">
-        <control type="group">
-            <height>64</height>
-            <control type="grouplist">
-                <top>24</top>
-                <orientation>horizontal</orientation>
-                <align>left</align>
+        <param name="align" default="left" />
+        <definition>
+            <control type="group">
                 <height>64</height>
-                <itemgap>-16</itemgap>
-                <control type="image">
+                <control type="grouplist">
+                    <top>24</top>
+                    <orientation>horizontal</orientation>
+                    <align>$PARAM[align]</align>
                     <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    <itemgap>-16</itemgap>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
                 </control>
-                <control type="image">
+                <control type="grouplist">
+                    <top>24</top>
+                    <orientation>horizontal</orientation>
+                    <align>$PARAM[align]</align>
                     <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    <itemgap>-16</itemgap>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,0)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,2)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,4)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,6)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,8)">Conditional</animation>
+                    </control>
                 </control>
-                <control type="image">
+                <control type="grouplist">
+                    <top>24</top>
+                    <orientation>horizontal</orientation>
+                    <align>$PARAM[align]</align>
                     <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="main_fg_30">flags/star10.png</texture>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="main_fg_30">flags/star10.png</texture>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    <itemgap>-16</itemgap>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,3)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,5)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,7)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,9)">Conditional</animation>
+                    </control>
                 </control>
             </control>
-            <control type="grouplist">
-                <top>24</top>
-                <orientation>horizontal</orientation>
-                <align>left</align>
-                <height>64</height>
-                <itemgap>-16</itemgap>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,0)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,2)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,4)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,6)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star5.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,8)">Conditional</animation>
-                </control>
-            </control>
-            <control type="grouplist">
-                <top>24</top>
-                <orientation>horizontal</orientation>
-                <align>left</align>
-                <height>64</height>
-                <itemgap>-16</itemgap>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,3)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,5)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,7)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <height>64</height>
-                    <width>64</width>
-                    <texture colordiffuse="Highlight2">flags/star10.png</texture>
-                    <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(ListItem.Rating,9)">Conditional</animation>
-                </control>
-            </control>
-        </control>
+        </definition>
     </include>
 
     <include name="Object_StarRating_Music">
@@ -117,6 +120,7 @@
         <definition>
             <control type="group">
                 <height>64</height>
+                <visible>Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)</visible>
                 <control type="grouplist">
                     <top>24</top>
                     <orientation>horizontal</orientation>
@@ -205,6 +209,7 @@
 
     <include name="Object_PVR_Info">
         <control type="grouplist">
+            <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Right</include>
             <bottom>612</bottom>
             <top>216</top>
@@ -332,7 +337,7 @@
                         <control type="image">
                             <bordersize>80</bordersize>
                             <aspectratio aligny="center">$PARAM[aspect]</aspectratio>
-                            <texture background="true" colordiffuse="main_fg_100" fallback="DefaultFolder.png">$INFO[$PARAM[container]ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</texture>
+                            <texture background="true" colordiffuse="main_fg_100" fallback="DefaultFolder.png">$VAR[Image_GenreIcons_Path]$INFO[$PARAM[container]ListItem.Label,,.png]</texture>
                             <visible>Container.Content(genres) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
@@ -376,7 +381,7 @@
                 <height>120</height>
                 <orientation>horizontal</orientation>
                 <align>$PARAM[align]</align>
-                <itemgap>8</itemgap>
+                <itemgap>4</itemgap>
                 <centertop>50%</centertop>
                 <usecontrolcoords>true</usecontrolcoords>
      
@@ -429,18 +434,9 @@
                     <aspectratio align="right">keep</aspectratio>
                     <visible>Container.Content(songs)</visible>
                 </control>
-
                 <control type="image">
                     <width>88</width>
-                    <aspectratio>keep</aspectratio>
-                    <centertop>50%</centertop>
-                    <height>64</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/3D.png</texture>
-                    <visible>$PARAM[container]$PARAM[source]IsStereoscopic</visible>
-                </control>
-                <control type="image">
-                    <width>88</width>
-                    <aspectratio>keep</aspectratio>
+                    <aspectratio align="right">keep</aspectratio>
                     <centertop>50%</centertop>
                     <height>64</height>
                     <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/bluray.png</texture>
@@ -448,7 +444,7 @@
                 </control>
                 <control type="image">
                     <width>88</width>
-                    <aspectratio>keep</aspectratio>
+                    <aspectratio align="right">keep</aspectratio>
                     <centertop>50%</centertop>
                     <height>64</height>
                     <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/dvd.png</texture>
@@ -456,11 +452,27 @@
                 </control>
                 <control type="image">
                     <width>88</width>
-                    <aspectratio>keep</aspectratio>
+                    <aspectratio align="right">keep</aspectratio>
                     <centertop>50%</centertop>
                     <height>64</height>
                     <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/hdtv.png</texture>
-                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,hdtv)</visible>
+                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,hdtv) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,pdtv) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,dsr)</visible>
+                </control>
+                <control type="image">
+                    <width>88</width>
+                    <aspectratio align="right">keep</aspectratio>
+                    <centertop>50%</centertop>
+                    <height>64</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/web-dl.png</texture>
+                    <visible>String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,web-dl) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,webdl) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,WEBRip)</visible>
+                </control>
+                <control type="image">
+                    <width>88</width>
+                    <aspectratio align="right">keep</aspectratio>
+                    <centertop>50%</centertop>
+                    <height>64</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/3D.png</texture>
+                    <visible>$PARAM[container]$PARAM[source]IsStereoscopic</visible>
                 </control>
             </control>
         </definition>
@@ -560,7 +572,7 @@
                     <width>40</width>
                     <height>32</height>
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/imdbicon.png</texture>
-                    <visible>!String.IsEmpty(ListItem.RatingAndVotes) | !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
+                    <visible>!String.IsEmpty(ListItem.RatingAndVotes) | !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB)) | [Window.IsVisible(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Rating)]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -570,6 +582,7 @@
                     <align>right</align>
                     <font>font_tiny</font>
                     <label>$INFO[Window(home).Property(SkinHelper.ListItem.Rating.IMDB), ,]$INFO[Window(home).Property(SkinHelper.ListItem.Votes.IMDB), (, $LOCALIZE[205])]</label>
+                    <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
                 </control>
                 <control type="label">
@@ -580,7 +593,30 @@
                     <align>right</align>
                     <font>font_tiny</font>
                     <label>$INFO[ListItem.RatingAndVotes, ,]</label>
+                    <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB)) + !String.IsEmpty(ListItem.RatingAndVotes)</visible>
+                </control>
+                <control type="label">
+                    <textcolor>main_fg_70</textcolor>
+                    <top>2</top>
+                    <width>auto</width>
+                    <height>28</height>
+                    <align>right</align>
+                    <font>font_tiny</font>
+                    <label>$INFO[Window(home).Property(SkinHelper.ListItem.Rating.IMDB), ,]</label>
+                    <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                    <visible>!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
+                </control>
+                <control type="label">
+                    <textcolor>main_fg_70</textcolor>
+                    <top>2</top>
+                    <width>auto</width>
+                    <height>28</height>
+                    <align>right</align>
+                    <font>font_tiny</font>
+                    <label>$INFO[ListItem.Rating, ,]</label>
+                    <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                    <visible>String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB)) + !String.IsEmpty(ListItem.Rating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>

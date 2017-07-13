@@ -8,9 +8,12 @@
     <onunload>SetFocus(50)</onunload>
     <controls>
 
+        <include>Topbar_TextDetails</include>
+
         <control type="group">
             <width>596</width>
             <include>View_Group</include>
+            <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Left_Delay</include>
             <control type="image">
                 <include>Defs_Shadow_Opaque</include>
@@ -24,6 +27,7 @@
         </control>
 
         <control type="group">
+            <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Right_Delay</include>
             <top>MenuBarTop</top>
             <!-- Plot -->
@@ -69,6 +73,7 @@
                     <top>20</top>
                     <height>42</height>
                     <left>0</left>
+                    <right>80</right>
                     <align>left</align>
                     <itemgap>12</itemgap>
                     <usecontrolcoords>true</usecontrolcoords>
@@ -78,7 +83,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
-                        <width>auto</width>
+                        <width>100%</width>
                         <height>100%</height>
                         <label>$VAR[Label_VideoInfo_Title]$VAR[Label_VideoInfo_InfoLine, ,]</label>
                     </control>
@@ -147,6 +152,7 @@
                     <include content="View_Actor_Layout">
                         <param name="id" value="350" />
                         <param name="infolabel" value="false" />
+                        <param name="itemwidth" value="572" />
                     </include>
                 </control>
                 <include content="Dialog_VideoInfo_BusyIndicator">
