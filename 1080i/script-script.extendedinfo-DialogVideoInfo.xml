@@ -106,9 +106,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,1000,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(1000).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="1000" />
@@ -129,9 +126,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,150,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(150).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="150" />
@@ -152,9 +146,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,350,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(350).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="350" />
@@ -176,9 +167,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,750,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(750).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="750" />
@@ -317,32 +305,7 @@
                         <label>$INFO[Window.Property(Revenue),$,]</label>
                     </control>
                 </control>
-            </control>
-
-            <!-- Ratings -->
-            <control type="group">
-                <bottom>0</bottom>
-                <height>64</height>
-                <right>60</right>
-                <visible>!Container.Content(episodes)</visible>
-                <include content="Object_Ratings">
-                    <param name="directory" value="color" />
-                </include>
-            </control>
-
-            <!-- Flags -->
-            <control type="group">
-                <left>info_left</left>
-                <height>100</height>
-                <bottom>0</bottom>
-                <control type="group">
-                    <include content="Object_Flags">
-                        <param name="container" value="" />
-                        <param name="directory" value="color" />
-                        <param name="align" value="left" />
-                    </include>
-                </control>
-            </control>     
+            </control>  
         </control>
 
 

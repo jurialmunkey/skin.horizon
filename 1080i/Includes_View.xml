@@ -312,6 +312,8 @@
         <param name="infolabel" default="true" />
         <param name="itemwidth" default="228.8" />
         <definition>
+            <left>-10</left>
+            <top>70</top>
             <focusposition>2</focusposition>
             <movement>3</movement>
             <description>Plugin Content Widget</description>
@@ -322,15 +324,11 @@
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
-            
             <onfocus>SetProperty(ViewType,Square,Home)</onfocus>
             <scrolltime tween="quadratic">400</scrolltime>
             <itemlayout width="$PARAM[itemwidth]" height="333.2">
                 <control type="group">
-                    <left>24</left>
-                    <right>-24</right>
-                    <top>24</top>
-                    <bottom>-24</bottom>
+                    
                     <control type="image">
                         <bordersize>10</bordersize>
                         <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
@@ -384,10 +382,7 @@
             </itemlayout>
             <focusedlayout width="$PARAM[itemwidth]" height="333.2">
                 <control type="group">
-                    <left>24</left>
-                    <right>-24</right>
-                    <top>24</top>
-                    <bottom>-24</bottom>
+                    
                     <include>Animation_FocusBounce</include>
                     <control type="image">
                         <bordersize>10</bordersize>

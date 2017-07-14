@@ -7,6 +7,7 @@
             <control type="group" id="$PARAM[groupid]">
                 <control type="panel" id="$PARAM[id]">
                     <width>1000</width>
+                    <height>828</height>
                     <include>Dialog_Standard_List_Left</include>
                     <onleft>$PARAM[onleft]</onleft>
                     <onright>$PARAM[onright]</onright>

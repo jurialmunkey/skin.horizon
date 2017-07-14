@@ -526,10 +526,11 @@
             </item>
             <!-- Search -->
             <item>
-                <label>$INFO[Control.GetLabel(8)]</label>
+                <label>Search</label>
                 <icon>special://skin/extras/icons/search.png</icon>
-                <onclick>SendClick(8)</onclick>
-                <visible>Control.IsEnabled(8)</visible>
+                <!-- <onclick>SendClick(8)</onclick> -->
+                <onclick>RunScript(script.globalsearch)</onclick>
+                <visible>!String.Contains(Container.FolderPath,plugin://,left)</visible>
             </item>
             <!-- Hide Watched -->
             <item>

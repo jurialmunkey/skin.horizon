@@ -98,9 +98,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,150,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(150).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="150" />
@@ -121,9 +118,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,250,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(250).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="250" />
@@ -144,9 +138,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,350,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(350).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="350" />
@@ -168,9 +159,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,550,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-34</left>
-                    <top>46</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(550).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="550" />

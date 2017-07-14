@@ -8,7 +8,7 @@
             <control type="group">
                 <include content="Dialog_Standard_Group">
                     <param name="width" value="1820" />
-                    <param name="height" value="848" />
+                    <param name="height" value="986" />
                 </include>
 
                 <control type="label" id="9700">
@@ -47,28 +47,47 @@
                         </control>
                     </itemlayout>
                     <focusedlayout width="400" height="69">
-                        <control type="image">
-                            <visible>Control.HasFocus(9600)</visible>
-                            <texture colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texture>
-                        </control>
-                        <control type="image">
+                        <control type="group">
                             <visible>!Control.HasFocus(9600)</visible>
-                            <texture colordiffuse="dialog_fg_12" border="8">common/box.png</texture>
+                            <control type="image">
+                                <texture colordiffuse="dialog_fg_12" border="8">common/box.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>30</left>
+                                <right>30</right>
+                                <align>left</align>
+                                <font>font_button</font>
+                                <textcolor>dialog_fg_70</textcolor>
+                                <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, [COLOR=dialog_fg_30](,)[/COLOR]]</label>
+                            </control>
+                            <control type="image">
+                                <centertop>50%</centertop>
+                                <height>64</height>
+                                <width>64</width>
+                                <right>10</right>
+                                <texture colordiffuse="dialog_fg_30">$INFO[ListItem.Icon]</texture>
+                            </control>
                         </control>
-                        <control type="label">
-                            <left>30</left>
-                            <right>30</right>
-                            <align>left</align>
-                            <font>font_button</font>
-                            <textcolor>Selected</textcolor>
-                            <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, [COLOR=dialog_fg_70](,)[/COLOR]]</label>
-                        </control>
-                        <control type="image">
-                            <centertop>50%</centertop>
-                            <height>64</height>
-                            <width>64</width>
-                            <right>10</right>
-                            <texture colordiffuse="dialog_fg_100">$INFO[ListItem.Icon]</texture>
+                        <control type="group">
+                            <visible>Control.HasFocus(9600)</visible>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>30</left>
+                                <right>30</right>
+                                <align>left</align>
+                                <font>font_button</font>
+                                <textcolor>Selected</textcolor>
+                                <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, [COLOR=Selected](,)[/COLOR]]</label>
+                            </control>
+                            <control type="image">
+                                <centertop>50%</centertop>
+                                <height>64</height>
+                                <width>64</width>
+                                <right>10</right>
+                                <texture colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+                            </control>
                         </control>
                     </focusedlayout>
                     <content>
@@ -242,7 +261,7 @@
                 <!-- Big Image -->
                 <control type="group">
                     <centerright>190</centerright>
-                    <top>357</top>
+                    <top>495</top>
                     <width>300</width>
                     <height>450</height>
                     <control type="image">
@@ -296,14 +315,14 @@
                 <control type="image">
                     <right>380</right>
                     <top>120</top>
-                    <height>687</height>
+                    <height>825</height>
                     <width>1</width>
                     <texture colordiffuse="dialog_fg_12">common/white.png</texture>
                 </control>
                 <control type="image">
                     <right>1380</right>
                     <top>120</top>
-                    <height>687</height>
+                    <height>825</height>
                     <width>1</width>
                     <texture colordiffuse="dialog_fg_12">common/white.png</texture>
                 </control>
