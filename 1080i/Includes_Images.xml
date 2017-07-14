@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Image_Watched">
+        <value condition="System.Setting(hidewatched)">special://skin/extras/icons/watched-hide.png</value>
+        <value>special://skin/extras/icons/watched-show.png</value>
+    </variable>
+    <variable name="Image_Filtered">
+        <value condition="Container.Filtered">special://skin/extras/icons/filter-on.png</value>
+        <value>special://skin/extras/icons/filter-off.png</value>
+    </variable>
+
     <variable name="Image_GenreIcons">
         <value>$VAR[Image_GenreIcons_Path]$INFO[ListItem.Label,,.png]</value>
     </variable>

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Filtered">
+        <value condition="Container.Filtered">$LOCALIZE[16041]</value>
+        <value>$LOCALIZE[351]</value>
+    </variable>
+
     <variable name="Label_WrapList">
         <value condition="Skin.HasSetting(WrapList)">$LOCALIZE[31182]: $LOCALIZE[16041]</value>
         <value>$LOCALIZE[31182]: $LOCALIZE[16039]</value>

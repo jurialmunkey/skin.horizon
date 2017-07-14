@@ -526,16 +526,23 @@
             </item>
             <!-- Search -->
             <item>
-                <label>Search</label>
+                <label>$LOCALIZE[137]</label>
                 <icon>special://skin/extras/icons/search.png</icon>
                 <!-- <onclick>SendClick(8)</onclick> -->
                 <onclick>RunScript(script.globalsearch)</onclick>
                 <visible>!String.Contains(Container.FolderPath,plugin://,left)</visible>
             </item>
+            <!-- Filter -->
+            <item>
+                <label>$LOCALIZE[587]: $VAR[Label_Filtered]</label>
+                <icon>$VAR[Image_Filtered]</icon>
+                <onclick>Filter</onclick>
+                <visible>Container.CanFilterAdvanced</visible>
+            </item>
             <!-- Hide Watched -->
             <item>
                 <label>$INFO[Control.GetLabel(14)]</label>
-                <icon>special://skin/extras/icons/eye.png</icon>
+                <icon>$VAR[Image_Watched]</icon>
                 <onclick>SendClick(14)</onclick>
                 <visible>Control.IsEnabled(14)</visible>
             </item>
