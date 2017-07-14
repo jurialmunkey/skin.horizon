@@ -62,7 +62,7 @@
             </control>
 
             <!-- Cast / Directed By -->
-            <control type="group" id="50">
+            <control type="group" id="9000">
                 <top>230</top>
                 <left>info_left</left>
                 <right>0</right>
@@ -304,7 +304,7 @@
             <include>Home_Iconbar_Logo</include>
             <control type="group">
                 <control type="list" id="300">
-                    <onright>50</onright>
+                    <onright>150</onright>
                     <onfocus>ClearProperty(FocusedList,Home)</onfocus>
                     <include>Home_OnFocus</include>
                     <include>Home_VideoInfo_Layout</include>
@@ -365,6 +365,8 @@
                 </control>
             </control>
         </control>
+
+        <include>Object_PlotOverlay</include>
 
         <!-- Hidden Buttons -->
         <!-- Movies -->

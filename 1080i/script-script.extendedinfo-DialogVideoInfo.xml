@@ -8,6 +8,13 @@
     <onunload>SetFocus(50)</onunload>
     <controls>
 
+        <include>Global_Background</include>
+        <include>Topbar_Gradient</include>
+        <control type="group">
+            <top>0</top>
+            <height>186</height>
+            <include>Topbar_Texture</include>
+        </control>
         <include>Topbar_TextDetails</include>
 
         <control type="group">
@@ -63,7 +70,7 @@
             </control>
 
             <!-- Cast / Directed By -->
-            <control type="group" id="50">
+            <control type="group" id="9000">
                 <top>230</top>
                 <left>info_left</left>
                 <right>0</right>
@@ -354,7 +361,7 @@
             <include>Home_Iconbar_Logo</include>
             <control type="group">
                 <control type="list" id="300">
-                    <onright>50</onright>
+                    <onright>1000</onright>
                     <onfocus>ClearProperty(FocusedList,Home)</onfocus>
                     <include>Home_OnFocus</include>
                     <include>Home_VideoInfo_Layout</include>
@@ -415,6 +422,8 @@
                 </control>
             </control>
         </control>
+
+        <include>Object_PlotOverlay</include>
 
         <control type="button" id ="120">
             <description>Browse</description>

@@ -863,7 +863,7 @@
                         <height>45</height>
                         <font>font_overlay_title</font>
                         <textcolor>main_fg_100</textcolor>
-                        <label>$INFO[ListItem.Title]</label>
+                        <label>$VAR[Label_OverlayTitle]</label>
                     </control>
 
                     <control type="textbox" id="9609">
@@ -875,7 +875,7 @@
                         <align>left</align>
                         <textcolor>main_fg_70</textcolor>
                         <font>font_overlay_plotbox</font>
-                        <label>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_OverlayPlot]</label>
+                        <label>$VAR[Label_OverlayPlot]</label>
                         <pagecontrol>9601</pagecontrol>
                         <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
                     </control>

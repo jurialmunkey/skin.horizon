@@ -118,7 +118,6 @@
                         <onback>50</onback>
                         <animation effect="fade" start="100" end="0" time="0" condition="Container(9502).IsUpdating">Conditional</animation>
                         <include content="View_Actor_Layout">
-                            <param name="setfanart" value="true" />
                             <param name="id" value="9502" />
                             <param name="infolabel" value="false" />
                         </include>

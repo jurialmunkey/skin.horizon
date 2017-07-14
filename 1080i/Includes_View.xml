@@ -275,7 +275,6 @@
             <visible allowhiddenfocus="true">false</visible>
             <onfocus condition="[String.IsEqual(ListItem.SortLetter,N) | String.IsEqual(ListItem.SortLetter,O) | String.IsEqual(ListItem.SortLetter,P) | String.IsEqual(ListItem.SortLetter,Q) | String.IsEqual(ListItem.SortLetter,R) | String.IsEqual(ListItem.SortLetter,S) | String.IsEqual(ListItem.SortLetter,T) | String.IsEqual(ListItem.SortLetter,U) | String.IsEqual(ListItem.SortLetter,V) | String.IsEqual(ListItem.SortLetter,W) | String.IsEqual(ListItem.SortLetter,X) | String.IsEqual(ListItem.SortLetter,Y) | String.IsEqual(ListItem.SortLetter,Z)] + Container(8001).HasNext">Control.Message(8099,pagedown)</onfocus>
             <onfocus condition="![String.IsEqual(ListItem.SortLetter,N) | String.IsEqual(ListItem.SortLetter,O) | String.IsEqual(ListItem.SortLetter,P) | String.IsEqual(ListItem.SortLetter,Q) | String.IsEqual(ListItem.SortLetter,R) | String.IsEqual(ListItem.SortLetter,S) | String.IsEqual(ListItem.SortLetter,T) | String.IsEqual(ListItem.SortLetter,U) | String.IsEqual(ListItem.SortLetter,V) | String.IsEqual(ListItem.SortLetter,W) | String.IsEqual(ListItem.SortLetter,X) | String.IsEqual(ListItem.SortLetter,Y) | String.IsEqual(ListItem.SortLetter,Z)] + Container(8001).HasPrevious">Control.Message(8099,pageup)</onfocus>
-            <onfocus condition="$PARAM[setfanart]">SetProperty(ListFanartContent,$INFO[Container(9502).ListItem.Art(fanart)],Home)</onfocus>
         </control>
     </include>
 
@@ -351,11 +350,6 @@
                 <include>View_WatchedOverlay</include>
             </itemlayout>
             <focusedlayout width="$PARAM[itemwidth]" height="333.2">
-
-                <include content="View_Position_Button">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="setfanart" value="$PARAM[setfanart]" />
-                </include>
                 <control type="group">
                     <include>Animation_FocusBounce</include>
                     <control type="image">
@@ -427,8 +421,7 @@
     <include name="View_Info_Movement">
         <onup>ClearProperty(FocusedList)</onup>
         <onup>SetFocus(9601)</onup>
-        <ondown>ClearProperty(FocusedList)</ondown>
-        <ondown>9000</ondown>
+        <ondown condition="!Control.HasFocus(50)">Select</ondown>
     </include>
 
     <include name="View_Info_Movement_Horizontal">
