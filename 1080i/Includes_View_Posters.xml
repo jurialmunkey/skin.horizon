@@ -28,8 +28,8 @@
                 <ondown condition="Control.IsVisible(60)">60</ondown>
                 <onleft>52</onleft>
                 <onright>52</onright>
-                <bottom>30</bottom>
-                <height>422.5</height>
+                <top>441.5</top>
+                <bottom>0</bottom>
                 <include content="View_Forced">
                     <param name="string" value="$LOCALIZE[31161]" />
                 </include>
