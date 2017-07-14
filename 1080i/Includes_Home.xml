@@ -531,6 +531,7 @@
                 <!-- <onclick>SendClick(8)</onclick> -->
                 <onclick>RunScript(script.globalsearch)</onclick>
                 <visible>!String.Contains(Container.FolderPath,plugin://,left)</visible>
+                <visible>Control.IsEnabled(8)</visible>
             </item>
             <!-- Filter -->
             <item>
