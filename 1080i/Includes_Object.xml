@@ -758,8 +758,8 @@
             <onback>50</onback>
             <centerright>40</centerright>
             <width>8</width>
-            <top>30</top>
-            <bottom>30</bottom>
+            <top>40</top>
+            <bottom>40</bottom>
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
             <onright>6000</onright>
