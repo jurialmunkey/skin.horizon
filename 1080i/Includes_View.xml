@@ -254,20 +254,48 @@
             <effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
         </animation>
         <include>View_WatchedOverlay_Focus</include>
-        <control type="image">
+        <control type="group">
             <left>3</left>
             <top>3</top>
             <right>3</right>
             <bottom>3</bottom>
-            <texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
+            <control type="image">
+                <include condition="Skin.HasSetting(EnableGlow)">View_Glow</include>
+                <texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
+            </control>
+            <control type="image">
+                <include condition="Skin.HasSetting(EnableGlow)">View_Glow2</include>
+                <texture colordiffuse="$VAR[ColorHighlight2]" border="20">common/gradient-diffuse-selectbox.png</texture>
+            </control>
         </control>
-        <control type="image">
-            <left>3</left>
-            <top>3</top>
-            <right>3</right>
-            <bottom>3</bottom>
-            <texture colordiffuse="$VAR[ColorHighlight2]" border="20">common/gradient-diffuse-selectbox.png</texture>
-        </control>
+    </include>
+
+    <include name="View_Border_24">
+        <left>-24</left>
+        <right>-24</right>
+        <top>-24</top>
+        <bottom>-24</bottom>
+        <bordersize>24</bordersize>
+    </include>
+
+    <include name="View_Glow">
+        <include>View_Border_24</include>
+        <bordertexture colordiffuse="$VAR[ColorHighlight]" border="25">common/glow-fade-24.png</bordertexture>
+    </include>
+
+    <include name="View_Glow2">
+        <include>View_Border_24</include>
+        <bordertexture colordiffuse="$VAR[ColorHighlight2]" border="25" flipy="true">common/glow-fade-24.png</bordertexture>
+    </include>
+
+    <include name="View_SideGlow">
+        <include>View_Border_24</include>
+        <bordertexture colordiffuse="$VAR[ColorHighlight]" border="25">common/glow-fade-side-24.png</bordertexture>
+    </include>
+
+    <include name="View_SideGlow2">
+        <include>View_Border_24</include>
+        <bordertexture colordiffuse="$VAR[ColorHighlight2]" border="25" flipx="true">common/glow-fade-side-24.png</bordertexture>
     </include>
 
     <include name="View_Position_Button">
@@ -275,7 +303,6 @@
             <visible allowhiddenfocus="true">false</visible>
             <onfocus condition="[String.IsEqual(ListItem.SortLetter,N) | String.IsEqual(ListItem.SortLetter,O) | String.IsEqual(ListItem.SortLetter,P) | String.IsEqual(ListItem.SortLetter,Q) | String.IsEqual(ListItem.SortLetter,R) | String.IsEqual(ListItem.SortLetter,S) | String.IsEqual(ListItem.SortLetter,T) | String.IsEqual(ListItem.SortLetter,U) | String.IsEqual(ListItem.SortLetter,V) | String.IsEqual(ListItem.SortLetter,W) | String.IsEqual(ListItem.SortLetter,X) | String.IsEqual(ListItem.SortLetter,Y) | String.IsEqual(ListItem.SortLetter,Z)] + Container(8001).HasNext">Control.Message(8099,pagedown)</onfocus>
             <onfocus condition="![String.IsEqual(ListItem.SortLetter,N) | String.IsEqual(ListItem.SortLetter,O) | String.IsEqual(ListItem.SortLetter,P) | String.IsEqual(ListItem.SortLetter,Q) | String.IsEqual(ListItem.SortLetter,R) | String.IsEqual(ListItem.SortLetter,S) | String.IsEqual(ListItem.SortLetter,T) | String.IsEqual(ListItem.SortLetter,U) | String.IsEqual(ListItem.SortLetter,V) | String.IsEqual(ListItem.SortLetter,W) | String.IsEqual(ListItem.SortLetter,X) | String.IsEqual(ListItem.SortLetter,Y) | String.IsEqual(ListItem.SortLetter,Z)] + Container(8001).HasPrevious">Control.Message(8099,pageup)</onfocus>
-            <onfocus condition="$PARAM[setfanart]">SetProperty(ListFanartContent,$INFO[Container(9502).ListItem.Art(fanart)],Home)</onfocus>
         </control>
     </include>
 
@@ -285,78 +312,77 @@
         <param name="infolabel" default="true" />
         <param name="itemwidth" default="228.8" />
         <definition>
+            <left>-10</left>
+            <top>70</top>
             <focusposition>2</focusposition>
             <movement>3</movement>
             <description>Plugin Content Widget</description>
-            <height>333.2</height>
+            <height>381.2</height>
             <orientation>vertical</orientation>
             <onleft>$PARAM[id]</onleft>
             <onright>$PARAM[id]</onright>
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
-            
             <onfocus>SetProperty(ViewType,Square,Home)</onfocus>
             <scrolltime tween="quadratic">400</scrolltime>
             <itemlayout width="$PARAM[itemwidth]" height="333.2">
+                <control type="group">
+                    
+                    <control type="image">
+                        <bordersize>10</bordersize>
+                        <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture colordiffuse="main_fg_12">common/white.png</texture>
+                    </control>
 
-                <control type="image">
-                    <bordersize>10</bordersize>
-                    <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture colordiffuse="main_fg_12">common/white.png</texture>
+                    <!-- Poster -->
+                    <control type="image">
+                        <left>10</left>
+                        <right>10</right>
+                        <top>10</top>
+                        <bottom>10</bottom>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture fallback="DefaultArtist.png" background="true">$VAR[Image_Poster]</texture>
+                    </control>
+                    <control type="image">
+                        <left>10</left>
+                        <right>10</right>
+                        <height>100</height>
+                        <bottom>10</bottom>
+                        <texture colordiffuse="bf000000">common/gradient-actor.png</texture>
+                        <visible>$PARAM[infolabel]</visible>
+                    </control>
+                    <control type="label">
+                        <left>20</left>
+                        <right>20</right>
+                        <height>30</height>
+                        <bottom>42</bottom>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                        <visible>$PARAM[infolabel]</visible>
+                    </control>
+                    <control type="label">
+                        <left>20</left>
+                        <right>20</right>
+                        <height>30</height>
+                        <bottom>18</bottom>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>font_statusbar</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$PARAM[label2]</label>
+                        <visible>$PARAM[infolabel]</visible>
+                    </control>
+                    <include>View_WatchedOverlay</include>
                 </control>
-
-                <!-- Poster -->
-                <control type="image">
-                    <left>10</left>
-                    <right>10</right>
-                    <top>10</top>
-                    <bottom>10</bottom>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture fallback="DefaultArtist.png" background="true">$VAR[Image_Poster]</texture>
-                </control>
-                <control type="image">
-                    <left>10</left>
-                    <right>10</right>
-                    <height>100</height>
-                    <bottom>10</bottom>
-                    <texture colordiffuse="bf000000">common/gradient-actor.png</texture>
-                    <visible>$PARAM[infolabel]</visible>
-                </control>
-                <control type="label">
-                    <left>20</left>
-                    <right>20</right>
-                    <height>30</height>
-                    <bottom>42</bottom>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <font>font_statusbar</font>
-                    <textcolor>main_fg_100</textcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                    <visible>$PARAM[infolabel]</visible>
-                </control>
-                <control type="label">
-                    <left>20</left>
-                    <right>20</right>
-                    <height>30</height>
-                    <bottom>18</bottom>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <font>font_statusbar</font>
-                    <textcolor>main_fg_70</textcolor>
-                    <label>$PARAM[label2]</label>
-                    <visible>$PARAM[infolabel]</visible>
-                </control>
-                <include>View_WatchedOverlay</include>
             </itemlayout>
             <focusedlayout width="$PARAM[itemwidth]" height="333.2">
-
-                <include content="View_Position_Button">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="setfanart" value="$PARAM[setfanart]" />
-                </include>
                 <control type="group">
+                    
                     <include>Animation_FocusBounce</include>
                     <control type="image">
                         <bordersize>10</bordersize>
@@ -427,8 +453,7 @@
     <include name="View_Info_Movement">
         <onup>ClearProperty(FocusedList)</onup>
         <onup>SetFocus(9601)</onup>
-        <ondown>ClearProperty(FocusedList)</ondown>
-        <ondown>9000</ondown>
+        <ondown condition="!Control.HasFocus(50)">Select</ondown>
     </include>
 
     <include name="View_Info_Movement_Horizontal">

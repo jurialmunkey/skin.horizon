@@ -91,9 +91,6 @@
                         <include>View_Info_Movement</include>
                         <onfocus>SetProperty(FocusedList,50,Home)</onfocus>
                         <orientation>horizontal</orientation>
-                        <right>0</right>
-                        <left>-10</left>
-                        <top>70</top>
                         <animation effect="fade" start="100" end="0" time="0" condition="Container(50).IsUpdating">Conditional</animation>
                         <include content="View_Actor_Layout">
                             <param name="id" value="50" />
@@ -105,9 +102,6 @@
                     <control type="list" id="9502">
                         <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),9502) | Control.HasFocus(9502)</visible>
                         <orientation>horizontal</orientation>
-                        <right>0</right>
-                        <left>-10</left>
-                        <top>70</top>
                         <onleft>300</onleft>
                         <onright>noop</onright>
                         <onleft>ClearProperty(FocusedList,Home)</onleft>
@@ -118,7 +112,6 @@
                         <onback>50</onback>
                         <animation effect="fade" start="100" end="0" time="0" condition="Container(9502).IsUpdating">Conditional</animation>
                         <include content="View_Actor_Layout">
-                            <param name="setfanart" value="true" />
                             <param name="id" value="9502" />
                             <param name="infolabel" value="false" />
                         </include>

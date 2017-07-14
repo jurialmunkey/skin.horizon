@@ -279,6 +279,7 @@
                                     <textcolor>main_fg_70</textcolor>
                                     <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
                                     <visible>!VideoPlayer.Content(episodes)</visible>
+                                    <visible>!VideoPlayer.Content(livetv)</visible>
                                     <visible>!String.IsEmpty(VideoPlayer.Director)</visible>
                                 </control>
                                 <control type="label">
@@ -288,7 +289,16 @@
                                     <label>$INFO[VideoPlayer.Director]</label>
                                     <textcolor>main_fg_70</textcolor>
                                     <visible>!VideoPlayer.Content(episodes)</visible>
+                                    <visible>!VideoPlayer.Content(livetv)</visible>
                                     <visible>!String.IsEmpty(VideoPlayer.Director)</visible>
+                                </control>
+                                <control type="label">
+                                    <aligny>top</aligny>
+                                    <width>auto</width>
+                                    <font>font_musicvis_album</font>
+                                    <label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</label>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <visible>VideoPlayer.Content(livetv)</visible>
                                 </control>
                                 <control type="label">
                                     <aligny>top</aligny>
@@ -332,6 +342,7 @@
                                     <textcolor>main_fg_70</textcolor>
                                     <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
                                     <visible>!VideoPlayer.Content(episodes)</visible>
+                                    <visible>!VideoPlayer.Content(livetv)</visible>
                                     <visible>!String.IsEmpty(VideoPlayer.Director)</visible>
                                 </control>
                                 <control type="label">
@@ -342,7 +353,17 @@
                                     <textcolor>main_fg_70</textcolor>
                                     <label>$INFO[VideoPlayer.Director]</label>
                                     <visible>!VideoPlayer.Content(episodes)</visible>
+                                    <visible>!VideoPlayer.Content(livetv)</visible>
                                     <visible>!String.IsEmpty(VideoPlayer.Director)</visible>
+                                </control>
+                                <control type="label">
+                                    <aligny>top</aligny>
+                                    <width>640</width>
+                                    <font>font_musicvis_album</font>
+                                    <scroll>true</scroll>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</label>
+                                    <visible>VideoPlayer.Content(livetv)</visible>
                                 </control>
                                 <control type="label">
                                     <aligny>top</aligny>

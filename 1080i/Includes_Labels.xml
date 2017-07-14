@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Filtered">
+        <value condition="Container.Filtered">$LOCALIZE[16041]</value>
+        <value>$LOCALIZE[351]</value>
+    </variable>
+
     <variable name="Label_WrapList">
         <value condition="Skin.HasSetting(WrapList)">$LOCALIZE[31182]: $LOCALIZE[16041]</value>
         <value>$LOCALIZE[31182]: $LOCALIZE[16039]</value>
     </variable>
 
     <variable name="Label_Header_Content">
+        <value condition="Window.IsVisible(script-nextup-notification-PostPlayInfo.xml)">$LOCALIZE[31221]</value>
         <value condition="Window.IsVisible(MyPVRChannels.xml)">$LOCALIZE[19023]</value>
         <value condition="Window.IsVisible(MyPVRGuide.xml)">$LOCALIZE[19273]</value>
         <value condition="Window.IsVisible(MyPVRRecordings.xml)">$LOCALIZE[31165]</value>
@@ -77,6 +83,7 @@
     </variable>
 
     <variable name="Label_SubHeader_Content">
+        <value condition="Window.IsVisible(script-nextup-notification-PostPlayInfo.xml)">$INFO[Window.Property(next.tvshowtitle),[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
         <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$VAR[Label_InfoLine]</value>
         <value condition="Window.IsVisible(Home)">$INFO[Container(300).ListItem.Label,[COLOR=main_fg_100],[/COLOR]]</value>
@@ -278,9 +285,16 @@
 
     </variable>
 
+    <variable name="Label_OverlayTitle">
+        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window.Property(label)]</value>
+        <value>$INFO[ListItem.Title]</value>
+    </variable>
+
     <variable name="Label_OverlayPlot">
-        <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
-        <value>$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</value>
+        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(plot)]</value>
+        <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window.Property(biography)]</value>
+        <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Plot]</value>
+        <value>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</value>
     </variable>
     
     <variable name="Label_Plot">

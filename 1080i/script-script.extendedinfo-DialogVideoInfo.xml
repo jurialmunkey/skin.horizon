@@ -8,6 +8,13 @@
     <onunload>SetFocus(50)</onunload>
     <controls>
 
+        <include>Global_Background</include>
+        <include>Topbar_Gradient</include>
+        <control type="group">
+            <top>0</top>
+            <height>186</height>
+            <include>Topbar_Texture</include>
+        </control>
         <include>Topbar_TextDetails</include>
 
         <control type="group">
@@ -63,7 +70,7 @@
             </control>
 
             <!-- Cast / Directed By -->
-            <control type="group" id="50">
+            <control type="group" id="9000">
                 <top>230</top>
                 <left>info_left</left>
                 <right>0</right>
@@ -99,9 +106,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,1000,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-10</left>
-                    <top>70</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(1000).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="1000" />
@@ -122,9 +126,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,150,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-10</left>
-                    <top>70</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(150).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="150" />
@@ -145,9 +146,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,350,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-10</left>
-                    <top>70</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(350).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="350" />
@@ -169,9 +167,6 @@
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,750,Home)</onfocus>
                     <orientation>horizontal</orientation>
-                    <right>0</right>
-                    <left>-10</left>
-                    <top>70</top>
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(750).IsUpdating">Conditional</animation>
                     <include content="View_Actor_Layout">
                         <param name="id" value="750" />
@@ -310,32 +305,7 @@
                         <label>$INFO[Window.Property(Revenue),$,]</label>
                     </control>
                 </control>
-            </control>
-
-            <!-- Ratings -->
-            <control type="group">
-                <bottom>0</bottom>
-                <height>64</height>
-                <right>60</right>
-                <visible>!Container.Content(episodes)</visible>
-                <include content="Object_Ratings">
-                    <param name="directory" value="color" />
-                </include>
-            </control>
-
-            <!-- Flags -->
-            <control type="group">
-                <left>info_left</left>
-                <height>100</height>
-                <bottom>0</bottom>
-                <control type="group">
-                    <include content="Object_Flags">
-                        <param name="container" value="" />
-                        <param name="directory" value="color" />
-                        <param name="align" value="left" />
-                    </include>
-                </control>
-            </control>     
+            </control>  
         </control>
 
 
@@ -354,7 +324,7 @@
             <include>Home_Iconbar_Logo</include>
             <control type="group">
                 <control type="list" id="300">
-                    <onright>50</onright>
+                    <onright>1000</onright>
                     <onfocus>ClearProperty(FocusedList,Home)</onfocus>
                     <include>Home_OnFocus</include>
                     <include>Home_VideoInfo_Layout</include>
@@ -415,6 +385,8 @@
                 </control>
             </control>
         </control>
+
+        <include>Object_PlotOverlay</include>
 
         <control type="button" id ="120">
             <description>Browse</description>
