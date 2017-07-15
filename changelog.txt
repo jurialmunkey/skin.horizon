@@ -1,7 +1,7 @@
 [B]1.0.11[/B]
 Overhaul of dimensions, reduce top bar height by 30px
-Fixes
-
+Add widget sorting and direction options
+Some other fixes
 
 [B]1.0.10[/B]
 Add nextup post play window

@@ -8,20 +8,31 @@
 
         <control type="group">
             <animation effect="fade" start="100" end="0" condition="!Skin.HasSetting(WidgetsInit)">Conditional</animation>
-            <include>Animation_FadeIn_Slide</include>
+            <visible allowhiddenfocus="true">![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
+            <animation type="Visible" reversible="False">
+                <effect type="fade" start="0" end="100" time="300" delay="400" tween="sine" easing="out"/>
+                <effect type="slide" start="-320" end="0" time="400" delay="400" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Hidden" reversible="False">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+                <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
+            </animation>
+            <include>Animation_Left</include>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
-            <width>1880</width>
+            <width>1590</width>
             <height>657</height>
             <control type="image">
-                <description>background image</description>
-                <top>-8</top>
-                <bottom>-8</bottom>
-                <left>-8</left>
-                <right>-8</right>
-                <texture border="16" colordiffuse="dialog_bg_100">common/rounded-shadow8.png</texture>
+                <centertop>50%</centertop>
+                <right>-100</right>
+                <width>48</width>
+                <height>48</height>
+                <texture colordiffuse="main_fg_70">common/arrow-48.png</texture>
             </control>
-
+            <control type="image">
+                <include>Defs_Shadow_Opaque</include>
+                <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
+            </control>
             <control type="label" id="500">
                 <description>header label</description>
                 <top>10</top>
@@ -34,13 +45,13 @@
             </control>
 
             <control type="label">
-                <description>widgets label</description>
+                <description>customise hint label</description>
                 <top>10</top>
-                <right>15</right>
+                <left>710</left>
+                <right>22</right>
                 <height>66</height>
-                <width>580</width>
-                <label>$INFO[Container(211).ListItem.Label,, ]$LOCALIZE[31144]</label>
-                <font>font_small_bold</font>
+                <label>$LOCALIZE[31246] $INFO[Container(211).ListItem.Label] $LOCALIZE[31144]</label>
+                <font>font_tiny_bold</font>
                 <align>center</align>
                 <textcolor>dialog_fg_70</textcolor>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
@@ -51,7 +62,7 @@
                 <description>Rules List Control</description>
                 <left>15</left>
                 <bottom>15</bottom>
-                <width>580</width>
+                <width>680</width>
                 <height>552</height>
                 <onup>211</onup>
                 <onleft>211</onleft>
@@ -59,7 +70,7 @@
                 <ondown>211</ondown>
                 <scrolltime>0</scrolltime>
 
-                <itemlayout width="580" height="69">
+                <itemlayout width="680" height="69">
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
@@ -91,7 +102,7 @@
                         <visible>!String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout width="580" height="69">
+                <focusedlayout width="680" height="69">
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
@@ -120,10 +131,11 @@
             <control type="grouplist" id="9200">
                 <left>15</left>
                 <top>91</top>
-                <width>580</width>
+                <width>680</width>
                 <align>right</align>
                 <itemgap>-20</itemgap>
                 <onright>9100</onright>
+                <onleft>noop</onleft>
                 <onup>Control.Move(211,-1)</onup>
                 <ondown>Control.Move(211,1)</ondown>
                 <orientation>horizontal</orientation>
@@ -174,7 +186,7 @@
                 </control>
             </control>
 
-            <!-- Center Buttons -->
+            <!-- Right Buttons -->
             <control type="grouplist" id="9100">
 
                 <onleft>304</onleft>
@@ -182,9 +194,9 @@
                 <onright>SetFocus(9401)</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>
-                <left>610</left>
+                <left>710</left>
                 <bottom>15</bottom>
-                <width>660</width>
+                <width>860</width>
                 <height>552</height>
                 <orientation>vertical</orientation>
                 <itemgap>3</itemgap>
@@ -252,6 +264,19 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
 
+                <!-- <control type="button" id="9901" description="Widgets">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <onclick>SetFocus(9300)</onclick>
+                    <onclick>SetFocus(9401)</onclick>
+                    <width>100%</width>
+                    <label>$LOCALIZE[31144]</label>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <align>left</align>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control> -->
+
                 <control type="button" id="9900" description="Reinitialise Widgets">
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <include>Defs_SkinShortcuts_SetStrings_OnClick</include>
@@ -274,37 +299,82 @@
                 </control>
             </control>
 
-            <!-- Right Buttons -->
+        </control>
+
+
+        <!-- Widgets -->
+        <control type="group">
+            <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <include>Global_Overlay</include>
+        </control>
+        <control type="group">
+            <animation effect="fade" start="100" end="0" condition="!Skin.HasSetting(WidgetsInit)">Conditional</animation>
+            <visible allowhiddenfocus="true">ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
+            <animation type="Visible" reversible="False">
+                <effect type="fade" start="0" end="100" time="300" delay="400" tween="sine" easing="out"/>
+                <effect type="slide" start="320" end="0" time="400" delay="400" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Hidden" reversible="False">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+                <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
+            </animation>
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <width>1590</width>
+            <height>657</height>
+            <control type="image">
+                <include>Defs_Shadow_Opaque</include>
+                <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
+            </control>
+            <control type="image">
+                <centertop>50%</centertop>
+                <left>-100</left>
+                <width>48</width>
+                <height>48</height>
+                <texture colordiffuse="main_fg_70" flipx="true">common/arrow-48.png</texture>
+            </control>
+            <control type="label">
+                <description>header label</description>
+                <top>10</top>
+                <left>22</left>
+                <right>22</right>
+                <height>66</height>
+                <font>font_small_bold</font>
+                <align>left</align>
+                <textcolor>dialog_fg_70</textcolor>
+                <label>$INFO[Container(211).ListItem.Label,$LOCALIZE[31245] , $LOCALIZE[31144]]</label>
+            </control>
+
             <control type="grouplist" id="9300">
-                <onleft>9100</onleft>
+                <onleft>9400</onleft>
                 <onright>9400</onright>
                 <onup>9300</onup>
                 <ondown>9300</ondown>
                 <right>15</right>
                 <bottom>15</bottom>
-                <width>580</width>
+                <width>1560</width>
                 <height>552</height>
                 <orientation>vertical</orientation>
                 <itemgap>3</itemgap>
-                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-
                 <control type="togglebutton" id="312" description="Widget">
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>
                     <usealttexture>ControlGroup(9300).HasFocus(312) + ControlGroup(9400).HasFocus()</usealttexture>
-                    <label>$VAR[Label_SkinShortcuts_WidgetName]$INFO[Container(211).ListItem.Property(WidgetAspect), (,)]</label>
-                    <altlabel>[COLOR=Selected]$VAR[Label_SkinShortcuts_WidgetName]$INFO[Container(211).ListItem.Property(WidgetAspect), (,)][/COLOR]</altlabel>
+                    <label>$VAR[Label_SkinShortcuts_WidgetName]$INFO[Container(211).ListItem.Property(WidgetAspect),  |  $LOCALIZE[31240]: ,]$INFO[Container(211).ListItem.Property(WidgetSort),  |  $LOCALIZE[31237]: ,]$INFO[Container(211).ListItem.Property(WidgetDirection),  |  ,]</label>
+                    <altlabel>[COLOR=Selected]$VAR[Label_SkinShortcuts_WidgetName]$INFO[Container(211).ListItem.Property(WidgetAspect),  |  $LOCALIZE[31240]: ,]$INFO[Container(211).ListItem.Property(WidgetSort),  |  $LOCALIZE[31237]: ,]$INFO[Container(211).ListItem.Property(WidgetDirection),  |  ,][/COLOR]</altlabel>
                     <alttexturenofocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</alttexturenofocus>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     <onfocus>SetProperty(WidgetName,WidgetName)</onfocus>
-                    <onfocus>SetProperty(customProperty,WidgetAspect)</onfocus>
-                    <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[31263]) | String.IsEmpty(Container(211).ListItem.Property(WidgetAspect))">SetProperty(customValue,$LOCALIZE[20021])</onfocus>
-                    <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[20021])">SetProperty(customValue,$LOCALIZE[31038])</onfocus>
-                    <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect),$LOCALIZE[31038])">SetProperty(customValue,$LOCALIZE[31263])</onfocus>
+                    <onfocus>SetProperty(WidgetSort,WidgetSort)</onfocus>
+                    <onfocus>SetProperty(WidgetAspect,WidgetAspect)</onfocus>
+                    <onfocus>SetProperty(WidgetAspect_Item,$INFO[Container(211).ListItem.Property(WidgetAspect)])</onfocus>
+                    <onfocus>SetProperty(WidgetDirection,WidgetDirection)</onfocus>
+                    <onfocus>SetProperty(WidgetDirection_Item,$INFO[Container(211).ListItem.Property(WidgetDirection)])</onfocus>
                 </control>
 
                 <include content="Defs_SkinShortcuts_Widget">
@@ -341,9 +411,9 @@
                 <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
                 <right>15</right>
                 <top>91</top>
-                <width>580</width>
+                <width>1560</width>
                 <align>right</align>
-                <itemgap>-10</itemgap>
+                <itemgap>-20</itemgap>
                 <onleft>9100</onleft>
                 <onright>noop</onright>
                 <onup>SetFocus(9300)</onup>
@@ -367,71 +437,78 @@
                 <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,11)">Conditional</animation>
                 <control type="button" id="9401" description="Configure">
                     <include>Defs_SkinShortcuts_SetStrings</include>
-                    <width>64</width>
+                    <width>auto</width>
                     <height>64</height>
-                    <font>-</font>
-                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/configure.png</texturenofocus>
-                    <texturefocus colordiffuse="Selected">special://skin/extras/icons/configure.png</texturefocus>
+                    <font>font_tiny</font>
+                    <texturefocus />
+                    <label>$LOCALIZE[31244]</label>
+                    <textcolor>dialog_fg_30</textcolor>
                     <onclick>SetProperty(customValue,)</onclick>
                     <onclick>SendClick(404)</onclick>
                     <onclick>SetFocus(9300)</onclick>
                     <onclick>Select</onclick>
                     <onclick>SetFocus(9400)</onclick>
+                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
-                <control type="button" id="9402" description="Aspect">
+                <control type="button" id="9402" description="Rename">
                     <include>Defs_SkinShortcuts_SetStrings</include>
-                    <width>64</width>
+                    <width>auto</width>
                     <height>64</height>
-                    <font>-</font>
-                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/pictures.png</texturenofocus>
-                    <texturefocus colordiffuse="Selected">special://skin/extras/icons/pictures.png</texturefocus>
+                    <font>font_tiny</font>
+                    <texturefocus />
+                    <label>$LOCALIZE[118]</label>
+                    <textcolor>dialog_fg_30</textcolor>
+                    <onclick>RunScript(script.skin.helper.service,action=setskinshortcutsproperty,header=$ADDON[script.skinshortcuts 32025],property=$INFO[Window.Property(WidgetName)])</onclick>
+                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+                </control>
+                <control type="button" id="9403" description="Aspect">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <width>auto</width>
+                    <height>64</height>
+                    <font>font_tiny</font>
+                    <texturefocus />
+                    <label>$LOCALIZE[31240]</label>
+                    <textcolor>dialog_fg_30</textcolor>
+                    <onfocus>SetProperty(customProperty,$INFO[Window.Property(WidgetAspect)])</onfocus>
+                    <onfocus condition="String.IsEqual(Window.Property(WidgetAspect_Item),$LOCALIZE[31263]) | String.IsEmpty(Window.Property(WidgetAspect_Item))">SetProperty(customValue,$LOCALIZE[20021])</onfocus>
+                    <onfocus condition="String.IsEqual(Window.Property(WidgetAspect_Item),$LOCALIZE[20021])">SetProperty(customValue,$LOCALIZE[31038])</onfocus>
+                    <onfocus condition="String.IsEqual(Window.Property(WidgetAspect_Item),$LOCALIZE[31038])">SetProperty(customValue,$LOCALIZE[31263])</onfocus>
+
                     <onclick>SendClick(404)</onclick>
                     <onclick>AlarmClock(Setit,SetFocus(9300),00:00,silent)</onclick>
-                    <onclick>AlarmClock(Setitback,SetFocus(9402),00:00,silent)</onclick>
+                    <onclick>AlarmClock(Setitback,SetFocus(9403),00:00,silent)</onclick>
+                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
-                <control type="button" id="9403" description="Rename">
+                <control type="button" id="9404" description="Sort">
                     <include>Defs_SkinShortcuts_SetStrings</include>
-                    <width>64</width>
+                    <width>auto</width>
                     <height>64</height>
-                    <font>-</font>
-                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/write.png</texturenofocus>
-                    <texturefocus colordiffuse="Selected">special://skin/extras/icons/write.png</texturefocus>
-                    <onclick>RunScript(script.skin.helper.service,action=setskinshortcutsproperty,header=$ADDON[script.skinshortcuts 32025],property=$INFO[Window.Property(WidgetName)])</onclick>
+                    <font>font_tiny</font>
+                    <texturefocus />
+                    <label>$LOCALIZE[31237]</label>
+                    <textcolor>dialog_fg_30</textcolor>
+                    <onclick>RunScript(script.skin.helper.service,action=setskinshortcutsproperty,header=$LOCALIZE[31235],property=$INFO[Window.Property(WidgetSort)])</onclick>
+                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+                </control>
+                <control type="button" id="9405" description="Direction">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <width>auto</width>
+                    <height>64</height>
+                    <font>font_tiny</font>
+                    <texturefocus />
+                    <label>$LOCALIZE[31239]</label>
+                    <textcolor>dialog_fg_30</textcolor>
+                    <onfocus>SetProperty(customProperty,$INFO[Window.Property(WidgetDirection)])</onfocus>
+                    <onfocus condition="!String.IsEqual(Window.Property(WidgetDirection_Item),descending)">SetProperty(customValue,descending)</onfocus>
+                    <onfocus condition="String.IsEqual(Window.Property(WidgetDirection_Item),descending)">SetProperty(customValue,ascending)</onfocus>
+
+                    <onclick>SendClick(404)</onclick>
+                    <onclick>AlarmClock(Setit,SetFocus(9300),00:00,silent)</onclick>
+                    <onclick>AlarmClock(Setitback,SetFocus(9405),00:00,silent)</onclick>
+
+                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
             </control>
-
-            <control type="group">
-                <right>15</right>
-                <bottom>15</bottom>
-                <width>580</width>
-                <height>552</height>
-                <visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <control type="image">
-                    <texture border="30" colordiffuse="dialog_fg_12">common/box.png</texture>
-                </control>
-                <control type="image">
-                    <top>100</top>
-                    <bottom>100</bottom>
-                    <left>100</left>
-                    <right>100</right>
-                    <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="dialog_fg_70">$INFO[Container(211).ListItem.Icon]</texture>
-                    <visible>String.Contains(Container(211).ListItem.Icon,special://skin/extras/icons)</visible>
-                </control>
-                <control type="image">
-                    <top>100</top>
-                    <bottom>100</bottom>
-                    <left>100</left>
-                    <right>100</right>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[Container(211).ListItem.Icon]</texture>
-                    <visible>!String.Contains(Container(211).ListItem.Icon,special://skin/extras/icons)</visible>
-                </control>
-                
-                
-            </control>
-
-
 
         </control>
         <control type="button" id="404"><visible allowhiddenfocus="true">false</visible></control>

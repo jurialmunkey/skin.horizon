@@ -1101,8 +1101,33 @@ msgctxt "#31234"
 msgid "Customise your user profiles and enable/disable the login screen."
 msgstr ""
 
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31235"
+msgid "Set sorting (default$COMMA year$COMMA rating$COMMA lastplayed$COMMA dateadded$COMMA etc.)"
+msgstr ""
+
 msgctxt "#31236"
 msgid "Now playing..."
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31237"
+msgid "Sort"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31238"
+msgid "Set sort direction (ascending$COMMA descending)"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31239"
+msgid "Direction"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31240"
+msgid "Aspect"
 msgstr ""
 
 msgctxt "#31241"
@@ -1115,6 +1140,21 @@ msgstr ""
 
 msgctxt "#31243"
 msgid "pages"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31244"
+msgid "Select Widget"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31245"
+msgid "Customize"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31246"
+msgid "Press Right to Customize"
 msgstr ""
 
 msgctxt "#31251"

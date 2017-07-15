@@ -236,8 +236,8 @@
             <width>100%</width>
             <height>66</height>
             <usealttexture>ControlGroup(9300).HasFocus(312$PARAM[num]) + ControlGroup(9400).HasFocus()</usealttexture>
-            <label>$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]), (,)]</label>
-            <altlabel>[COLOR=Selected]$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]), (,)][/COLOR]</altlabel>
+            <label>$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),  |  $LOCALIZE[31240]: ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget$PARAM[num]),  |  $LOCALIZE[31237]: ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num]),  |  ,]</label>
+            <altlabel>[COLOR=Selected]$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),  |  $LOCALIZE[31240]: ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget$PARAM[num]),  |  $LOCALIZE[31237]: ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num]),  |  ,][/COLOR]</altlabel>
             <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
             <alttexturenofocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</alttexturenofocus>
             <align>left</align>
@@ -247,10 +247,11 @@
             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
             <visible>!String.IsEqual(Container(211).ListItem.Property(widget),Weather)</visible>
             <onfocus>SetProperty(WidgetName,WidgetName.Widget$PARAM[num])</onfocus>
-            <onfocus>SetProperty(customProperty,WidgetAspect.Widget$PARAM[num])</onfocus>
-            <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),$LOCALIZE[31263]) | String.IsEmpty(Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]))">SetProperty(customValue,$LOCALIZE[20021])</onfocus>
-            <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),$LOCALIZE[20021])">SetProperty(customValue,$LOCALIZE[31038])</onfocus>
-            <onfocus condition="String.IsEqual(Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),$LOCALIZE[31038])">SetProperty(customValue,$LOCALIZE[31263])</onfocus>
+            <onfocus>SetProperty(WidgetSort,WidgetSort.Widget$PARAM[num])</onfocus>
+            <onfocus>SetProperty(WidgetDirection,WidgetDirection.Widget$PARAM[num])</onfocus>
+            <onfocus>SetProperty(WidgetAspect,WidgetAspect.Widget$PARAM[num])</onfocus>
+            <onfocus>SetProperty(WidgetAspect_Item,$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num])])</onfocus>
+            <onfocus>SetProperty(WidgetDirection_Item,$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num])])</onfocus>
         </control>
     </include>
 
