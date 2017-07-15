@@ -540,11 +540,9 @@
                             <bottom>0</bottom>
                             <visible>Control.HasFocus($PARAM[id])</visible>
                             <control type="image">
-                                <include condition="Skin.HasSetting(EnableGlow)">View_SideGlow</include>
                                 <texture colordiffuse="$VAR[ColorHighlight]" flipx="true">common/white.png</texture>
                             </control>
                             <control type="image">
-                                <include condition="Skin.HasSetting(EnableGlow)">View_SideGlow2</include>
                                 <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
                             </control>
                         </control>

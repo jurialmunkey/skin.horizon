@@ -26,7 +26,7 @@
     <constant name="infolist3_list_width">1094</constant> <!-- 930 -->
     <constant name="infolist3_item_height">101.5</constant> <!-- 94 -->
     <constant name="infolist3_left">660</constant>
-
+    <constant name="info_details_width">226</constant>
     <constant name="showcase_top">471.5</constant> <!-- 441.5 -->
     <constant name="lovefilm_height">844</constant> <!-- 814 -->
     <constant name="widget_spacer_top">76</constant> <!-- 76 -->

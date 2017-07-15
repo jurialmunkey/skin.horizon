@@ -186,7 +186,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -194,7 +194,7 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
@@ -210,7 +210,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -218,7 +218,7 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
@@ -234,7 +234,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -242,7 +242,7 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
@@ -258,7 +258,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -266,7 +266,7 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
