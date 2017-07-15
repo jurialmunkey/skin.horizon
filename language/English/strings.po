@@ -693,7 +693,7 @@ msgid "Set weather fanart"
 msgstr ""
 
 msgctxt "#31144"
-msgid "Widgets"
+msgid "Edit Widgets"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1154,12 +1154,22 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31246"
-msgid "Press Right to Customize"
+msgid "Press right to customize widgets"
 msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31247"
 msgid "Widgets"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31248"
+msgid "Edit Shortcuts"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31249"
+msgid "Press left to customize shortcuts"
 msgstr ""
 
 msgctxt "#31251"

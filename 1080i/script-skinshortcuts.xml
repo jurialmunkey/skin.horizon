@@ -26,20 +26,80 @@
                 <font>font_small_bold</font>
                 <align>left</align>
                 <textcolor>dialog_fg_70</textcolor>
+                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
             </control>
 
+            <control type="label">
+                <description>Widgets</description>
+                <top>10</top>
+                <left>620</left>
+                <right>22</right>
+                <height>66</height>
+                <label>$LOCALIZE[31144]</label>
+                <font>font_small_bold</font>
+                <align>left</align>
+                <textcolor>dialog_fg_70</textcolor>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
+            </control>
             <control type="label">
                 <description>customise hint label</description>
                 <top>10</top>
                 <left>620</left>
                 <right>22</right>
                 <height>66</height>
-                <label>$INFO[Container(211).ListItem.Label] $LOCALIZE[31144]</label>
+                <label>$LOCALIZE[31248]</label>
                 <font>font_small_bold</font>
-                <align>center</align>
+                <align>left</align>
                 <textcolor>dialog_fg_70</textcolor>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
+                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
+            </control>
+            <control type="label">
+                <description>customise hint label</description>
+                <top>10</top>
+                <left>620</left>
+                <right>74</right>
+                <height>66</height>
+                <label>$LOCALIZE[31246]</label>
+                <font>font_tiny</font>
+                <align>right</align>
+                <textcolor>dialog_fg_70</textcolor>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
+            </control>
+            <control type="image">
+                <top>28</top>
+                <right>22</right>
+                <width>32</width>
+                <height>32</height>
+                <texture colordiffuse="dialog_fg_70">common/arrow-48.png</texture>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
+            </control>
+
+            <!-- Press Left -->
+            <control type="label">
+                <description>customise hint label</description>
+                <top>10</top>
+                <left>74</left>
+                <right>74</right>
+                <height>66</height>
+                <label>$LOCALIZE[31249]</label>
+                <font>font_tiny</font>
+                <align>left</align>
+                <textcolor>dialog_fg_70</textcolor>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <visible>[ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
+            </control>
+            <control type="image">
+                <top>28</top>
+                <left>22</left>
+                <width>32</width>
+                <height>32</height>
+                <texture colordiffuse="dialog_fg_70" flipx="true">common/arrow-48.png</texture>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <visible>[ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
             </control>
 
             <!-- Shortcuts List -->
