@@ -35,7 +35,7 @@
                         <include>Home_SubMenu_Items</include>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,0)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,1)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,2)">Conditional</animation>
@@ -63,6 +63,7 @@
                         <include>Home_OnFocus</include>
                         <onleft condition="!Skin.HasSetting(DisableSubMenu) | String.IsEqual(Container(300).ListItem.Property(widget),Weather)">302</onleft>
                         <onright condition="Window.IsVisible(Home)">3000</onright>
+                        <onright condition="Window.IsVisible(SettingsProfile.xml)">4</onright>
                         <onright condition="Window.IsVisible(SettingsCategory.xml)">3</onright>
                         <onright condition="Window.IsVisible(SkinSettings.xml)">9100</onright>
                         <onright condition="Window.IsVisible(SettingsSystemInfo.xml)">50</onright>
@@ -74,10 +75,10 @@
                         <include condition="Window.IsVisible(Home)">Home_MainMenu_Items</include>
                         <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_OptionsItems</include>
                         <include condition="Window.IsVisible(MyPlaylist.xml)">Home_MainMenu_PlaylistItems</include>
-                        <include condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml)">Home_MainMenu_SettingsItems</include>
+                        <include condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsProfile.xml)">Home_MainMenu_SettingsItems</include>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>
@@ -94,8 +95,6 @@
                     </control>
                 </control>
             </control>
-           
-
         </control>
     </include>
 
@@ -783,7 +782,7 @@
 
     <include name="Home_Textbar_Items">
         <control type="grouplist">
-            <top>MenuBarTop</top>
+            <top>view_top</top>
             <right>6</right>
             <left>0</left>
             <orientation>vertical</orientation>
@@ -834,7 +833,7 @@
     </include>
 
     <include name="Home_MainMenu_Layout">
-        <top>MenuBarTop</top>
+        <top>view_top</top>
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
@@ -921,7 +920,7 @@
     </include>
 
     <include name="Home_VideoInfo_Layout">
-        <top>MenuBarTop</top>
+        <top>view_top</top>
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
@@ -960,7 +959,7 @@
     </include>
 
     <include name="Home_SubMenu_Layout">
-        <top>MenuBarTop</top>
+        <top>view_top</top>
         <width>310</width>
         <right>0</right>
         <preloaditems>2</preloaditems>
@@ -1019,22 +1018,26 @@
 
     <include name="Home_Iconbar_Logo">
         <control type="group">
-            <top>34</top>
-            <control type="image">
-                <top>0</top>
-                <width>74</width>
-                <height>74</height>
-                <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
-            </control>
-            <control type="label">
-                <label>KODI</label>
-                <height>30</height>
-                <top>70</top>
-                <align>center</align>
-                <aligny>center</aligny>
-                <right>2</right>
-                <font>font_tiny_bold</font>
-                <textcolor>main_fg_100</textcolor>
+            <height>topbar_height</height>
+            <control type="group">
+                <centertop>45%</centertop>
+                <height>100</height>
+                <control type="image">
+                    <top>0</top>
+                    <width>74</width>
+                    <height>74</height>
+                    <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+                </control>
+                <control type="label">
+                    <label>KODI</label>
+                    <height>30</height>
+                    <top>70</top>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <right>2</right>
+                    <font>font_tiny_bold</font>
+                    <textcolor>main_fg_100</textcolor>
+                </control>
             </control>
         </control>
     </include>

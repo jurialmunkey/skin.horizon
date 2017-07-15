@@ -30,10 +30,11 @@
         <control type="group">
             <include>Animation_FadeIn_Slide</include>
             <visible>!Player.Muted</visible>
-
+            <height>topbar_height</height>
             <!-- Volume bar -->
             <control type="group">
-                <top>48</top>
+                <centertop>53%</centertop>
+                <height>100</height>
                 <include>Animation_OSD_Notification</include>
                 <control type="label">
                     <width>200</width>

@@ -284,8 +284,8 @@
         <param name="container" default="" />
         <param name="visible" default="!Container.IsUpdating" />
         <param name="variable" default="$VAR[Image_Poster]" />
-        <param name="height" default="894" />
-        <param name="width" default="596" />
+        <param name="height" default="poster_height" />
+        <param name="width" default="view_left" />
         <param name="discart" default="false" />
         <param name="aspect" default="keep" />
         <definition>
@@ -691,18 +691,18 @@
                 <right>14</right>
                 <width>48</width>
                 <top>0</top>
-                <bottom>12</bottom>
+                <bottom>alphabet_bottom</bottom>
                 <onleft>50</onleft>
                 <onright>300</onright>
                 <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])</visible>
                 <visible>!Container.Content(seasons)</visible>
                 <visible>Control.IsEnabled(3) | Control.IsEnabled(4)</visible>
                 <visible>!Skin.HasSetting(DisableAlphabetStrip)</visible>
-                <itemlayout height="63" width="48">
+                <itemlayout height="alphabet_item_height" width="48">
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <height>63</height>
+                        <height>alphabet_item_height</height>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>main_fg_12</textcolor>
                         <animation effect="fade" start="100" end="10" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
@@ -710,13 +710,13 @@
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <height>63</height>
+                        <height>alphabet_item_height</height>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>main_fg_30</textcolor>
                         <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter) | [String.IsEqual(ListItem.Label,#) + !String.IsEqual(Container.ListItem.SortLetter,A) + !String.IsEqual(Container.ListItem.SortLetter,B) + !String.IsEqual(Container.ListItem.SortLetter,C) + !String.IsEqual(Container.ListItem.SortLetter,D) + !String.IsEqual(Container.ListItem.SortLetter,E) + !String.IsEqual(Container.ListItem.SortLetter,F) + !String.IsEqual(Container.ListItem.SortLetter,G) + !String.IsEqual(Container.ListItem.SortLetter,H) + !String.IsEqual(Container.ListItem.SortLetter,I) + !String.IsEqual(Container.ListItem.SortLetter,J) + !String.IsEqual(Container.ListItem.SortLetter,K) + !String.IsEqual(Container.ListItem.SortLetter,L) + !String.IsEqual(Container.ListItem.SortLetter,M) + !String.IsEqual(Container.ListItem.SortLetter,N) + !String.IsEqual(Container.ListItem.SortLetter,O) + !String.IsEqual(Container.ListItem.SortLetter,P) + !String.IsEqual(Container.ListItem.SortLetter,Q) + !String.IsEqual(Container.ListItem.SortLetter,R) + !String.IsEqual(Container.ListItem.SortLetter,S) + !String.IsEqual(Container.ListItem.SortLetter,T) + !String.IsEqual(Container.ListItem.SortLetter,U) + !String.IsEqual(Container.ListItem.SortLetter,V) + !String.IsEqual(Container.ListItem.SortLetter,W) + !String.IsEqual(Container.ListItem.SortLetter,X) + !String.IsEqual(Container.ListItem.SortLetter,Y) + !String.IsEqual(Container.ListItem.SortLetter,Z)]</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout height="63" width="48">
+                <focusedlayout height="alphabet_item_height" width="48">
                     <control type="image">
                         <height>4</height>
                         <bottom>0</bottom>
@@ -725,7 +725,7 @@
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <height>63</height>
+                        <height>alphabet_item_height</height>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>Selected</textcolor>
                         <animation effect="fade" start="100" end="10" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
@@ -803,10 +803,10 @@
             </control>
 
             <control type="group">
-                <left>SidePad</left>
-                <right>SidePad</right>
-                <top>SidePad</top>
-                <bottom>SidePad</bottom>
+                <left>sidepad</left>
+                <right>sidepad</right>
+                <top>sidepad</top>
+                <bottom>sidepad</bottom>
                 <visible>Control.HasFocus(9601)</visible>
                 <include>Animation_FadeIn</include>
                 <control type="group">

@@ -4,7 +4,7 @@
     <include name="Weather">
         <control type="group">
             <left>140</left>
-            <right>SidePad</right>
+            <right>sidepad</right>
             <orientation>horizontal</orientation>
             <itemgap>14</itemgap>
             <top>240</top>
@@ -194,7 +194,7 @@
         <control type="grouplist">
             <centerleft>50%</centerleft>
             <left>100</left>
-            <right>SidePad</right>
+            <right>sidepad</right>
             <orientation>horizontal</orientation>
             <itemgap>0</itemgap>
             <bottom>0</bottom>

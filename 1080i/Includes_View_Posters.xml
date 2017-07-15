@@ -19,33 +19,34 @@
             </control>
 
             <!-- Showcase -->
-            <control type="$PARAM[listtype]" id="52">
-                <focusposition>2</focusposition>
-                <movement>3</movement>
-                <viewtype label="$LOCALIZE[31161]">showcase</viewtype>
-                <onup>300</onup>
-                <ondown condition="Control.IsVisible(8000)">8000</ondown>
-                <ondown condition="Control.IsVisible(60)">60</ondown>
-                <onleft>52</onleft>
-                <onright>52</onright>
-                <top>441.5</top>
-                <bottom>0</bottom>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[31161]" />
-                </include>
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
-                <include>View_NotTheseWindows</include>
-                <include content="View_Posters_Layout">
-                    <param name="id" value="52" />
-                    <param name="orientation" value="horizontal" />
-                    <param name="landscape" value="false" />
-                    <param name="top_offset" value="30" />
-                    <param name="bottom_offset" value="-10" />
-                    <param name="top" value="441.5" />
-                </include>
+            <control type="group">
+                <bottom>30</bottom>
+                <height>422.5</height>
+                <control type="$PARAM[listtype]" id="52">
+                    <focusposition>2</focusposition>
+                    <movement>3</movement>
+                    <viewtype label="$LOCALIZE[31161]">showcase</viewtype>
+                    <onup>300</onup>
+                    <ondown condition="Control.IsVisible(8000)">8000</ondown>
+                    <ondown condition="Control.IsVisible(60)">60</ondown>
+                    <onleft>52</onleft>
+                    <onright>52</onright>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31161]" />
+                    </include>
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="52" />
+                        <param name="orientation" value="horizontal" />
+                        <param name="landscape" value="false" />
+                        <param name="top_offset" value="34" />
+                        <param name="bottom_offset" value="-10" />
+                    </include>
+                </control>
             </control>
             <include content="View_Posters_Info">
-                <param name="bottom" value="470" />
+                <param name="bottom" value="450" />
                 <param name="id" value="52" />
                 <param name="left" value="50" />
                 <param name="right" value="130" />
@@ -70,33 +71,34 @@
             </control>
 
             <!-- Landscape Showcase -->
-            <control type="$PARAM[listtype]" id="56">
-                <focusposition>1</focusposition>
-                <movement>1</movement>
-                <viewtype label="$LOCALIZE[31178]">showcase</viewtype>
-                <onup>300</onup>
-                <ondown condition="Control.IsVisible(8000)">8000</ondown>
-                <ondown condition="Control.IsVisible(60)">60</ondown>
-                <onleft>56</onleft>
-                <onright>56</onright>
+            <control type="group">
                 <bottom>30</bottom>
                 <height>422.5</height>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[31178]" />
-                </include>
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) |  Container.Content(artists) | Container.Content(episodes) | Container.Content(videos)</visible>
-                <include>View_NotTheseWindows</include>
-                <include content="View_Posters_Layout">
-                    <param name="id" value="56" />
-                    <param name="orientation" value="horizontal" />
-                    <param name="landscape" value="true" />
-                    <param name="top_offset" value="30" />
-                    <param name="bottom_offset" value="-10" />
-                    <param name="top" value="441.5" />
-                </include>
+                <control type="$PARAM[listtype]" id="56">
+                    <focusposition>1</focusposition>
+                    <movement>1</movement>
+                    <viewtype label="$LOCALIZE[31178]">showcase</viewtype>
+                    <onup>300</onup>
+                    <ondown condition="Control.IsVisible(8000)">8000</ondown>
+                    <ondown condition="Control.IsVisible(60)">60</ondown>
+                    <onleft>56</onleft>
+                    <onright>56</onright>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31178]" />
+                    </include>
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) |  Container.Content(artists) | Container.Content(episodes) | Container.Content(videos)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="56" />
+                        <param name="orientation" value="horizontal" />
+                        <param name="landscape" value="true" />
+                        <param name="top_offset" value="34" />
+                        <param name="bottom_offset" value="-10" />
+                    </include>
+                </control>
             </control>
             <include content="View_Posters_Info">
-                <param name="bottom" value="470" />
+                <param name="bottom" value="450" />
                 <param name="id" value="56" />
                 <param name="left" value="50" />
                 <param name="right" value="130" />
@@ -155,13 +157,13 @@
                     <ondown condition="!Control.IsVisible(8000)">300</ondown>
                     <pagecontrol>60</pagecontrol>
                     <scrolltime tween="cubic">400</scrolltime>
-                    <itemlayout width="1674" height="814">
+                    <itemlayout width="1674" height="lovefilm_height">
                         <control type="image">
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[Image_Fanart]</texture>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="1674" height="814">
+                    <focusedlayout width="1674" height="lovefilm_height">
                         <control type="image">
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[Image_Fanart]</texture>
@@ -230,7 +232,7 @@
     </include>
 
     <include name="View_Posters_Info">
-        <param name="plot_height" default="130" />
+        <param name="plot_height" default="170" />
         <definition>
             <control type="group">
                 <left>$PARAM[left]</left>
@@ -393,7 +395,7 @@
             </control>
             <control type="textbox">
                 <label fallback="19055">$VAR[Label_Plot]</label>
-                <height>170</height>
+                <height>infolist3_plot_height</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>
@@ -411,12 +413,12 @@
         <param name="bottom_offset" default="-10" />
         <param name="top" default="0" />
         <definition>
+            <top>$PARAM[top]</top>
             <focusposition>3</focusposition>
             <movement>3</movement>
             <orientation>$PARAM[orientation]</orientation>
             <left>0</left>
             <right>90</right>
-            <top>$PARAM[top]</top>
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
@@ -748,7 +750,7 @@
                 </control>
             </focusedlayout>
 
-            <itemlayout width="855" height="214" condition="$PARAM[banner]">
+            <itemlayout width="855" height="275" condition="$PARAM[banner]">
                 <control type="group">
                     <left>30</left>
                     <top>$PARAM[top_offset]</top>
@@ -760,36 +762,57 @@
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
                     <control type="image" description="Poster">
-                        <height>150</height>
+                        <height>170</height>
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
                     </control>
                     <control type="label">
-                        <top>150</top>
-                        <bottom>20</bottom>
-                        <left>24</left>
-                        <right>24</right>
+                        <top>170</top>
+                        <bottom>50</bottom>
+                        <left>30</left>
+                        <right>30</right>
                         <aligny>center</aligny>
-                        <font>font_statusbar</font>
+                        <font>font_tiny</font>
                         <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
-                        <top>150</top>
-                        <bottom>20</bottom>
-                        <left>24</left>
-                        <right>24</right>
+                        <top>170</top>
+                        <bottom>50</bottom>
+                        <left>30</left>
+                        <right>30</right>
                         <align>right</align>
                         <aligny>center</aligny>
-                        <font>font_statusbar</font>
+                        <font>font_tiny</font>
                         <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                    <control type="label">
+                        <top>200</top>
+                        <bottom>20</bottom>
+                        <left>30</left>
+                        <right>30</right>
+                        <aligny>center</aligny>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_30</textcolor>
+                        <label>$INFO[ListItem.Genre]</label>
+                    </control>
+                    <control type="label">
+                        <top>200</top>
+                        <bottom>20</bottom>
+                        <left>30</left>
+                        <right>30</right>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_30</textcolor>
+                        <label>$INFO[ListItem.Premiered]</label>
                     </control>
                     <include>View_WatchedOverlay</include>
                 </control>
             </itemlayout>
-            <focusedlayout width="855" height="214" condition="$PARAM[banner]">
+            <focusedlayout width="855" height="275" condition="$PARAM[banner]">
                 <include content="View_Position_Button">
                     <param name="id" value="$PARAM[id]" />
                     <param name="setfanart" value="$PARAM[setfanart]" />
@@ -806,31 +829,52 @@
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
                     <control type="image" description="Poster">
-                        <height>150</height>
+                        <height>170</height>
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
                     </control>
                     <control type="label">
-                        <top>150</top>
-                        <bottom>20</bottom>
-                        <left>24</left>
-                        <right>24</right>
+                        <top>170</top>
+                        <bottom>50</bottom>
+                        <left>30</left>
+                        <right>30</right>
                         <aligny>center</aligny>
-                        <font>font_statusbar</font>
-                        <textcolor>Selected</textcolor>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
-                        <top>150</top>
-                        <bottom>20</bottom>
-                        <left>24</left>
-                        <right>24</right>
+                        <top>170</top>
+                        <bottom>50</bottom>
+                        <left>30</left>
+                        <right>30</right>
                         <align>right</align>
                         <aligny>center</aligny>
-                        <font>font_statusbar</font>
-                        <textcolor>Selected</textcolor>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                    <control type="label">
+                        <top>200</top>
+                        <bottom>20</bottom>
+                        <left>30</left>
+                        <right>30</right>
+                        <aligny>center</aligny>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_30</textcolor>
+                        <label>$INFO[ListItem.Genre]</label>
+                    </control>
+                    <control type="label">
+                        <top>200</top>
+                        <bottom>20</bottom>
+                        <left>30</left>
+                        <right>30</right>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_30</textcolor>
+                        <label>$INFO[ListItem.Premiered]</label>
                     </control>
                     <include>View_WatchedOverlay</include>
                     <!-- Highlight -->

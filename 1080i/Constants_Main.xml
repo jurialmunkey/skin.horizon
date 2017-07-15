@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <constant name="NavBarPad">112</constant>
-    <constant name="MenuBarTop">184</constant>
-    <constant name="SidePad">80</constant>
-    <constant name="PosterPad">216</constant>
-    <constant name="PosterH">640</constant>
-    <constant name="PosterW">428</constant>
-    <constant name="PosterShadowH">688</constant>
-    <constant name="PosterShadowW">475</constant>
-    <constant name="ListX">540</constant>
-    <constant name="ListW">1300</constant>
-    <constant name="ListSquareX">752</constant>
-    <constant name="ListSquareW">1088</constant>
+    <constant name="sidepad">80</constant>
+    <constant name="settings_top">126</constant> <!-- 156 -->
+    <constant name="settings_height">954</constant> <!-- 880 -->
+    <constant name="topbar_height">156</constant> <!-- 186 -->
+    <constant name="view_top">154</constant> <!-- 184 -->
+    <constant name="view_left">616</constant> <!-- 596 -->
+    <constant name="view_width">1138</constant> <!-- 1158 -->
+    <constant name="info_left">746</constant> <!-- 736 -->
+    <constant name="poster_height">924</constant> <!-- 894 -->
+    <constant name="musicposter_width">536</constant> <!-- 516 -->
+    <constant name="musicposter_infotop">576</constant> <!-- 556 -->
+    <constant name="listitem_height">102.66</constant> <!-- 99.3 -->
+    <constant name="alphabet_item_height">65</constant> <!-- 63 -->
+    <constant name="alphabet_bottom">14</constant> <!-- 12 -->
+    <constant name="infolist_left">666</constant> <!-- 646 -->
+    <constant name="infolist_width">1036</constant> <!-- 1056 -->
+    <constant name="infolist_item_height">90</constant> <!-- 84 -->
+    <constant name="infolist2_icon_height">302</constant> <!-- 290 -->
+    <constant name="infolist3_plot_height">220</constant> <!-- 170 -->
+    <constant name="infolist3_main_height">406</constant> <!-- 376 -->
+    <constant name="infolist3_fanart_width">580</constant> <!-- 526 -->
+    <constant name="infolist3_poster_width">218</constant> <!-- 198 -->
+    <constant name="infolist3_list_width">1094</constant> <!-- 930 -->
+    <constant name="infolist3_item_height">101.5</constant> <!-- 94 -->
+    <constant name="infolist3_left">660</constant>
+
+    <constant name="showcase_top">471.5</constant> <!-- 441.5 -->
+    <constant name="lovefilm_height">844</constant> <!-- 814 -->
+    <constant name="widget_spacer_top">76</constant> <!-- 76 -->
+    <constant name="widget_spacer_bottom">463</constant> <!-- 473 -->
+    <constant name="widget_poster_top">342</constant> <!-- 374 --> <!-- upwards move position -->
+    <constant name="widget_poster_spacer">738</constant> <!-- 708 --> <!-- downwards move position -->
+    <constant name="widget_poster_label_top">-806</constant> <!-- -774 --> <!-- label position -->
+    <constant name="widget_poster_label_spacer">495</constant> <!-- 451 --> <!-- space between items -->
+    <constant name="widget_submenu_spacer">506</constant> <!-- 476 -->
+    <constant name="widget_submenu_label_top">-584</constant> <!-- -542 -->
+    <constant name="widget_submenu_label_spacer">258</constant> <!-- 214 -->
     
-    <constant name="view_left">596</constant>
-    <constant name="view_width">1158</constant>
-    <constant name="info_left">736</constant>
-    <constant name="musicinfo_left">736</constant>
-    <!-- <constant name="musicinfo_left">1034</constant> -->
+
 
 </includes>

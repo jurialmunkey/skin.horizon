@@ -36,7 +36,7 @@
                         <include>Home_MainMenu_InfoItems_Weather</include>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <height>74</height>
                         <control type="group">
                             <left>74</left>
@@ -70,7 +70,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>

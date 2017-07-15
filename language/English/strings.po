@@ -1096,6 +1096,11 @@ msgctxt "#31233"
 msgid "Show glow around selection boxes"
 msgstr ""
 
+#: /1080i/SettingsProfile.xml
+msgctxt "#31234"
+msgid "Customise your user profiles and enable/disable the login screen."
+msgstr ""
+
 msgctxt "#31236"
 msgid "Now playing..."
 msgstr ""

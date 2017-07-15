@@ -288,7 +288,7 @@
         <control type="image">
             <visible>Container($PARAM[id]).HasNext</visible>
             <centerright>735</centerright>
-            <centerbottom>37</centerbottom>
+            <centerbottom>54</centerbottom>
             <width>16</width>
             <height>16</height>
             <texture colordiffuse="panel_fg_70">common/arrow-small.png</texture>

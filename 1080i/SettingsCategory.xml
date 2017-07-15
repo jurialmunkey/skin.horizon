@@ -16,7 +16,7 @@
                 <left>320</left>
                 <right>-290</right>
                 <top>37</top>
-                <height>880</height>
+                <height>settings_height</height>
                 <control type="image">
                     <bottom>74</bottom>
                     <height>74</height>

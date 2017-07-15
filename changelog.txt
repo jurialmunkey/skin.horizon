@@ -1,3 +1,8 @@
+[B]1.0.11[/B]
+Overhaul of dimensions, reduce top bar height by 30px
+Fixes
+
+
 [B]1.0.10[/B]
 Add nextup post play window
 Add nextup in window dialogs

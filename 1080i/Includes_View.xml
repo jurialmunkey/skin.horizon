@@ -23,7 +23,7 @@
     </include>
 
     <include name="View_Group">
-        <top>186</top>
+        <top>topbar_height</top>
         <left>86</left>
         <right>0</right>
     </include>
@@ -114,33 +114,32 @@
         <control type="group">
             <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
-                <width>596</width>
-                <height>894</height>
+                <width>view_left</width>
+                <height>poster_height</height>
                 <control type="image">
                     <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <control type="group">
-                    <width>516</width>
-                    <height>814</height>
-                    <centerleft>50%</centerleft>
+                    <left>40</left>
+                    <right>40</right>
                     <top>40</top>
                     <bottom>40</bottom>
                     <control type="group">
-                        <height>516</height>
+                        <height>musicposter_width</height>
                         <control type="image">
                             <include>Defs_Shadow_Opaque</include>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <include content="Object_BigPoster">
                             <param name="discart" value="false" />
-                            <param name="width" value="516" />
-                            <param name="height" value="516" />
+                            <param name="width" value="musicposter_width" />
+                            <param name="height" value="musicposter_width" />
                             <param name="aspect" value="scale" />
                         </include>
                     </control>
                     <control type="group">
-                        <top>556</top>
+                        <top>musicposter_infotop</top>
                         <control type="image">
                             <height>1</height>
                             <top>0</top>
@@ -193,7 +192,7 @@
         
         <!-- Large Poster -->
         <control type="group">
-            <width>596</width>
+            <width>view_left</width>
             <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
                 <control type="image">
@@ -310,7 +309,7 @@
         <param name="id" default="9501" />
         <param name="label2" default="$INFO[ListItem.Label2]"/>
         <param name="infolabel" default="true" />
-        <param name="itemwidth" default="228.8" />
+        <param name="itemwidth" default="226.8" />
         <definition>
             <left>-10</left>
             <top>70</top>
@@ -326,7 +325,7 @@
             <pagecontrol>60</pagecontrol>
             <onfocus>SetProperty(ViewType,Square,Home)</onfocus>
             <scrolltime tween="quadratic">400</scrolltime>
-            <itemlayout width="$PARAM[itemwidth]" height="333.2">
+            <itemlayout width="$PARAM[itemwidth]" height="330.2">
                 <control type="group">
                     
                     <control type="image">
@@ -380,7 +379,7 @@
                     <include>View_WatchedOverlay</include>
                 </control>
             </itemlayout>
-            <focusedlayout width="$PARAM[itemwidth]" height="333.2">
+            <focusedlayout width="$PARAM[itemwidth]" height="330.2">
                 <control type="group">
                     
                     <include>Animation_FocusBounce</include>

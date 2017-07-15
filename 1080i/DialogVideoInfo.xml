@@ -11,6 +11,7 @@
 
         <control type="group">
             <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
+            <height>topbar_height</height>
             <include>Topbar_TextDetails</include>
         </control>
 
@@ -20,7 +21,7 @@
             <control type="group">
                 <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
                 <include>Animation_Right_Delay</include>
-                <top>MenuBarTop</top>
+                <top>view_top</top>
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <!-- Plot -->
                 <control type="group">
@@ -336,7 +337,7 @@
                             <include>Home_MainMenu_InfoItems</include>
                         </control>
                         <control type="group">
-                            <top>MenuBarTop</top>
+                            <top>view_top</top>
                             <height>74</height>
                             <control type="group">
                                 <left>74</left>
@@ -370,7 +371,7 @@
                             </control>
                         </control>
                         <control type="group">
-                            <top>MenuBarTop</top>
+                            <top>view_top</top>
                             <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
                             <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
                             <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>

@@ -24,12 +24,12 @@
             <include>Topbar_Gradient</include>
             <control type="group">
                 <top>0</top>
-                <height>186</height>
+                <height>topbar_height</height>
                 <include>Topbar_Texture</include>
-            </control>
-            <control type="group">
-                <include>Defs_InfoDialog_Visible</include>
-                <include>Topbar_TextDetails</include>
+                <control type="group">
+                    <include>Defs_InfoDialog_Visible</include>
+                    <include>Topbar_TextDetails</include>
+                </control>
             </control>
         </control>
     </include>
@@ -98,8 +98,9 @@
             <!-- Left Side | Location / Num Items -->
             <control type="group">
                 <include>Animation_MusicVis_Left</include>
-                <top>48</top>
-                <left>SidePad</left>
+                <centertop>53%</centertop>
+                <height>100</height>
+                <left>sidepad</left>
                 <right>600</right>
                 <include>Animation_Home_Topbar_Slideover_NoInfo</include>
                 <control type="label">
@@ -173,7 +174,6 @@
                 </control>
             </control>
 
-
             <!-- Right Side | Date / Time -->
             <include>Topbar_TextDetails_DateTime</include>
             
@@ -183,9 +183,10 @@
 
     <include name="Topbar_TextDetails_DateTime">
         <control type="group">
-            <top>48</top>
+            <centertop>53%</centertop>
+            <height>100</height>
             <include>Animation_OSD_Notification</include>
-            <right>SidePad</right>
+            <right>sidepad</right>
             <visible>!Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml) + ![Window.IsVisible(DialogVolumeBar.xml) + !Player.Muted]</visible>
             <include>Animation_FadeIn_Slide_Visible</include>
             <control type="image">

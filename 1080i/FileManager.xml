@@ -14,7 +14,7 @@
             <control type="group">
                 <description>Left panel</description>
                 <left>40</left>
-                <top>SidePad</top>
+                <top>sidepad</top>
                 <bottom>0</bottom>
                 <width>870</width>
                 <control type="label" id="101">
@@ -102,8 +102,8 @@
 
             <control type="group">
                 <description>Right panel</description>
-                <right>SidePad</right>
-                <top>SidePad</top>
+                <right>sidepad</right>
+                <top>sidepad</top>
                 <bottom>0</bottom>
                 <width>870</width>
 

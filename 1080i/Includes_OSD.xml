@@ -34,7 +34,10 @@
                 <texture>common/dim-gradient.png</texture>
             </control>
 
-            <include>Topbar_TextDetails_DateTime</include>
+            <control type="group">
+                <height>topbar_height</height>
+                <include>Topbar_TextDetails_DateTime</include>
+            </control>
 
             <control type="group">
                 <control type="group">
@@ -42,8 +45,8 @@
                     <include>Animation_Left</include>
                     <width>720</width>
                     <height>720</height>
-                    <left>SidePad</left>
-                    <bottom>SidePad</bottom>
+                    <left>sidepad</left>
+                    <bottom>sidepad</bottom>
                     <control type="image">
                         <centerbottom>0</centerbottom>
                         <width>100%</width>
@@ -62,7 +65,7 @@
                     <left>800</left>
                     <right>30</right>
                     <top>100</top>
-                    <bottom>SidePad</bottom>
+                    <bottom>sidepad</bottom>
                     <control type="grouplist">
                         <top>400</top>
                         <left>40</left>
@@ -207,14 +210,17 @@
                     <texture>common/dim-gradient.png</texture>
                 </control>
 
-                <include>Topbar_TextDetails_DateTime</include>
+                <control type="group">
+                    <height>topbar_height</height>
+                    <include>Topbar_TextDetails_DateTime</include>
+                </control>
 
                 <control type="group">
                     <control type="group">
                         <width>480</width>
                         <height>720</height>
-                        <left>SidePad</left>
-                        <bottom>SidePad</bottom>
+                        <left>sidepad</left>
+                        <bottom>sidepad</bottom>
                         <control type="image">
                             <centerbottom>0</centerbottom>
                             <width>100%</width>
@@ -237,9 +243,9 @@
                     </control>
                     <control type="group" description="info">
                         <left>560</left>
-                        <right>SidePad</right>
+                        <right>sidepad</right>
                         <top>310</top>
-                        <bottom>SidePad</bottom>
+                        <bottom>sidepad</bottom>
                         <control type="grouplist">
                             <top>200</top>
                             <left>40</left>

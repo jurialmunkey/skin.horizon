@@ -105,13 +105,13 @@
             <!-- <animation effect="slide" start="0" end="0,-50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]332)" reversible="false">Conditional</animation>
             <animation effect="slide" start="0" end="0,50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]331)" reversible="false">Conditional</animation> -->
             <control type="group" id="$PARAM[pos]331" description="Spacer"> 
-                <height>76</height>
+                <height>widget_spacer_top</height>
             </control>
             <include content="Home_Widgets_Set">
                 <param name="pos" value="$PARAM[pos]" />
             </include>
             <control type="group" id="$PARAM[pos]332">
-                <height>473</height>
+                <height>widget_spacer_bottom</height>
             </control>
         </control>
     </include>
@@ -198,11 +198,11 @@
     </include>
 
     <include name="Home_Widget_Posters_Submenu_Height">
-        <height>476</height>
+        <height>widget_submenu_spacer</height>
     </include>
     <include name="Home_Widget_Label_Submenu_Height">
-        <top>-542</top>
-        <height>214</height>
+        <top>widget_submenu_label_top</top>
+        <height>widget_submenu_label_spacer</height>
     </include>
 
     <include name="Home_Widget">
@@ -244,8 +244,8 @@
     </include>
 
     <include name="Home_Widget_Label">
-        <top>-774</top>
-        <height>451</height>
+        <top>widget_poster_label_top</top>
+        <height>widget_poster_label_spacer</height>
         <control type="grouplist">
             <top>194</top>
             <left>82</left>
@@ -286,9 +286,9 @@
         <param name="aspect" default="" />
         <definition>
             <onleft>300</onleft>
-            <top>374</top>
+            <top>widget_poster_top</top>
             <width>1920</width>
-            <height>708</height>
+            <height>widget_poster_spacer</height>
             <preloaditems>2</preloaditems>
             
             <onfocus>SetProperty(WidgetFocus,1,Home)</onfocus>

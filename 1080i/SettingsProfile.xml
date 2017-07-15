@@ -3,117 +3,119 @@
 <window id="34">
     <defaultcontrol always="true">4</defaultcontrol>
     <controls>
+
+        <include>Global_Background</include>
+        <include>View_Layout</include>
+
+        <!-- GroupList -->
         <control type="group">
-            <include content="Dialog_Standard_Group">
-                <param name="width" value="1100" />
-                <param name="height" value="900" />
-            </include>
-            <!-- Header -->
-            <control type="label" >
-                <include>Dialog_Standard_Header</include>
-                <label>10130</label>
-            </control>
+            <include>Dialog_Settings_Panel</include>
+            <include>Animation_Home_Textbar_Slideover</include>
+            <control type="group">
+                <left>320</left>
+                <right>-290</right>
+                <top>37</top>
+                <height>settings_height</height>
 
-            <control type="radiobutton" id="4">
-                <description>Enable Login Screen</description>
-                <top>100</top>
-                <left>20</left>
-                <right>20</right>
-                <label>20096</label>
-                <ondown>2</ondown>
-                <radioposx>1015</radioposx>
-                <include>Dialog_Standard_ListButton</include>
-            </control>
+                <!-- Left Gradient Fade -->
+                <control type="image">
+                    <top>140</top>
+                    <height>74</height>
+                    <width>450</width>
+                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    <visible>Control.HasFocus(4)</visible>
+                </control>
+                <!-- Left Group -->
+                <control type="radiobutton" id="4">
+                    <top>140</top>
+                    <onleft>300</onleft>
+                    <onright>2</onright>
+                    <width>450</width>
+                    <label>20096</label>
+                    <radioposx>395</radioposx>
+                    <include>Defs_Settings_Button</include>
+                </control>
 
-            <control type="list" id="2">
-                <left>20</left>
-                <top>176</top>
-                <right>20</right>
-                <bottom>10</bottom>
-                <onup>4</onup>
-
-                <itemlayout height="76" width="1060">
-                    <control type="image">
-                        <width>100%</width>
-                        <height>66</height>
-                        <texture border="5" colordiffuse="dialog_fg_12">common/box.png</texture>
-                    </control>
-                    <control type="label">
-                        <left>20</left>
-                        <width>810</width>
-                        <height>66</height>
-                        <info>ListItem.Label</info>
-                    </control>
-
-                    <control type="label">
-                        <right>20</right>
-                        <width>810</width>
-                        <align>right</align>
-                        <font>font_tiny</font>
-                        <height>66</height>
-                        <info>ListItem.Label2</info>
-                    </control>
-
-                </itemlayout>
-
-                <focusedlayout height="76" width="1060">
-                    <control type="group">
-
-                        <visible>Control.HasFocus(2)</visible>
-                        <control type="image">
-                            <width>100%</width>
-                            <height>66</height>
-                            <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
-                        </control>
-
+                <!-- Right Group -->
+                <control type="panel" id="2">
+                    <description>Control Area</description>
+                    <left>450</left>
+                    <right>0</right>
+                    <top>140</top>
+                    <bottom>74</bottom>
+                    <itemgap>0</itemgap>
+                    <onleft>4</onleft>
+                    <onup>noop</onup>
+                    <ondown>noop</ondown>
+                    <orientation>vertical</orientation>
+                    <scrolltime>0</scrolltime>
+                    <itemlayout height="74" width="1384">
                         <control type="label">
-                            <left>20</left>
-                            <width>810</width>
-                            <height>66</height>
-                            <textcolor>Selected</textcolor>
+                            <right>50</right>
+                            <left>50</left>
+                            <textcolor>main_fg_100</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
-                            <right>20</right>
-                            <width>810</width>
+                            <right>50</right>
+                            <left>50</left>
                             <align>right</align>
                             <font>font_tiny</font>
-                            <height>66</height>
-                            <textcolor>Selected</textcolor>
+                            <textcolor>main_fg_100</textcolor>
                             <info>ListItem.Label2</info>
                         </control>
-                    </control>
-                    <control type="group">
-                        <visible>!Control.HasFocus(2)</visible>
-                        <control type="image">
-                            <width>100%</width>
-                            <height>66</height>
-                            <texture border="5" colordiffuse="dialog_fg_12">common/box.png</texture>
-                        </control>
-                        <control type="label">
-                            <left>20</left>
-                            <width>810</width>
-                            <height>66</height>
-                            <info>ListItem.Label</info>
-                        </control>
+                    </itemlayout>
 
-                        <control type="label">
-                            <right>20</right>
-                            <width>810</width>
-                            <height>66</height>
-                            <align>right</align>
-                            <font>font_tiny</font>
-                            <info>ListItem.Label2</info>
+                    <focusedlayout height="74" width="1384">
+                        <control type="group">
+                            <control type="image">
+                                <width>100%</width>
+                                <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <width>100%</width>
+                                <texture border="5" colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>50</left>
+                                <right>50</right>
+                                <textcolor>Selected</textcolor>
+                                <info>ListItem.Label</info>
+                            </control>
+                            <control type="label">
+                                <right>50</right>
+                                <left>50</left>
+                                <align>right</align>
+                                <font>font_tiny</font>
+                                <textcolor>Selected</textcolor>
+                                <info>ListItem.Label2</info>
+                            </control>
                         </control>
-                    </control>
+                    </focusedlayout>
+                </control>
 
-                </focusedlayout>
+                <!-- Lines -->
+                <include>Defs_Settings_Line</include>
 
+                <!-- Arrows -->
+                <include content="Defs_Settings_Arrows">
+                    <param name="id" value="5" />
+                </include>
+
+                <!-- Header -->
+                <include>Defs_Settings_Header</include>
+                <control type="label">
+                    <label>$LOCALIZE[31234]</label>
+                    <include>Defs_Settings_InfoLine</include>
+                </control>
             </control>
-
         </control>
 
+        <include>Topbar</include>
+        <include>Home</include>
+
+
+        
     </controls>
 
 </window>

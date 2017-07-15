@@ -56,7 +56,7 @@
         </control>
     </include>
     
-    <include name="Global_Background_TopOffset"><top>186</top></include>
+    <include name="Global_Background_TopOffset"><top>view_top</top></include>
 
     <include name="Global_Background">
         <include>Global_Videowindow</include>
