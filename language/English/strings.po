@@ -936,7 +936,7 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31197"
-msgid "Reinitialise Widgets"
+msgid "Reinitialise"
 msgstr ""
 
 #: /1080i/Includes_View_List.xml
@@ -1155,6 +1155,11 @@ msgstr ""
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31246"
 msgid "Press Right to Customize"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31247"
+msgid "Widgets"
 msgstr ""
 
 msgctxt "#31251"

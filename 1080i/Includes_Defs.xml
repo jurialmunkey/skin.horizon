@@ -236,8 +236,8 @@
             <width>100%</width>
             <height>66</height>
             <usealttexture>ControlGroup(9300).HasFocus(312$PARAM[num]) + ControlGroup(9400).HasFocus()</usealttexture>
-            <label>$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),  |  $LOCALIZE[31240]: ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget$PARAM[num]),  |  $LOCALIZE[31237]: ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num]),  |  ,]</label>
-            <altlabel>[COLOR=Selected]$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),  |  $LOCALIZE[31240]: ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget$PARAM[num]),  |  $LOCALIZE[31237]: ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num]),  |  ,][/COLOR]</altlabel>
+            <label>$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget$PARAM[num]),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num]),  |  ,]</label>
+            <altlabel>[COLOR=Selected]$INFO[Container(211).ListItem.Property(WidgetName.Widget$PARAM[num])]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num]),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget$PARAM[num]),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num]),  |  ,][/COLOR]</altlabel>
             <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
             <alttexturenofocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</alttexturenofocus>
             <align>left</align>
