@@ -10,6 +10,7 @@
         <include>Home</include>
 
         <control type="group">
+            <include>Animation_Right</include>
             <include>Dialog_Settings_Panel</include>
             <control type="group">
                 <description>Left panel</description>

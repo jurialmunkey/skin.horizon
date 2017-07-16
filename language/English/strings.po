@@ -1185,6 +1185,11 @@ msgctxt "#31252"
 msgid "Weather Forecast"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31253"
+msgid "Use larger font for progress bar"
+msgstr ""
+
 msgctxt "#31259"
 msgid "Extra fanart"
 msgstr ""

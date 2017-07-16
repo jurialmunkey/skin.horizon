@@ -174,8 +174,12 @@
         </control>
     </include>
 
+    <include name="Statusbar_Font_Normal"><font>font_statusbar</font></include>
+    <include name="Statusbar_Font_Large"><font>font_small</font></include>
+
     <include name="Statusbar_Menubar_Button">
-        <font>font_statusbar</font>
+        <include condition="Skin.HasSetting(LargeStatusbarFont)">Statusbar_Font_Large</include>
+        <include condition="!Skin.HasSetting(LargeStatusbarFont)">Statusbar_Font_Normal</include>
         <textcolor>main_fg_100</textcolor>
         <focusedcolor>$VAR[ColorHighlight]</focusedcolor>
         <aligny>center</aligny>
@@ -185,7 +189,8 @@
     </include>
 
     <include name="Statusbar_Menubar_Items">
-        <font>font_statusbar</font>
+        <include condition="Skin.HasSetting(LargeStatusbarFont)">Statusbar_Font_Large</include>
+        <include condition="!Skin.HasSetting(LargeStatusbarFont)">Statusbar_Font_Normal</include>
         <textcolor>main_fg_100</textcolor>
         <aligny>center</aligny>
         <width>auto</width>

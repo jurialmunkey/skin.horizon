@@ -326,6 +326,14 @@
                         <onclick>Skin.ToggleSetting(DisableOSDInfo)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9287" description="Larger statusbar font">
+                        <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31253]</label>
+                        <selected>Skin.HasSetting(LargeStatusbarFont)</selected>
+                        <onclick>Skin.ToggleSetting(LargeStatusbarFont)</onclick>
+                    </control>
+
                     
 
                     <!-- ======= -->

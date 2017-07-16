@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="Animation_MusicVis_Left">
-        <animation type="WindowOpen" reversible="False" condition="Window.Previous(MusicVisualisation.xml) | Window.Previous(VideoFullScreen.xml)">
+        <animation type="WindowOpen" reversible="false" condition="Window.Previous(MusicVisualisation.xml) | Window.Previous(VideoFullScreen.xml)">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowClose" reversible="False" condition="Window.Next(MusicVisualisation.xml) | Window.Next(VideoFullScreen.xml)">
+        <animation type="WindowClose" reversible="false" condition="Window.Next(MusicVisualisation.xml) | Window.Next(VideoFullScreen.xml)">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
         </animation>
@@ -64,93 +64,101 @@
     </include>
 
     <include name="Animation_Left">
-        <animation type="Visible" reversible="False">
+        <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="Hidden" reversible="False">
+        <animation type="Hidden" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" reversible="False">
+        <animation type="WindowOpen" reversible="false">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowClose" reversible="False">
+        <animation type="WindowClose" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
         </animation>
     </include>
 
     <include name="Animation_Right">
-        <animation type="Visible" reversible="False">
+        <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="Hidden" reversible="False">
+        <animation type="Hidden" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" reversible="False">
+        <animation type="WindowOpen" reversible="false">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowClose" reversible="False">
+        <animation type="WindowClose" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
         </animation>
     </include>
 
     <include name="Animation_Right_Settings">
-        <animation type="Visible" reversible="False">
+        <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="Hidden" reversible="False">
+        <animation type="Hidden" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" reversible="False" condition="Window.Previous(Settings.xml)">
+        <animation type="WindowOpen" reversible="false" condition="!Window.Previous(SettingsCategory.xml) + !Window.Previous(SkinSettings.xml) + !Window.Previous(SettingsProfile.xml) + !Window.Previous(SettingsSystemInfo.xml) + !Window.Previous(Home) + !Window.Previous(Settings.xml)">
+            <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+            <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false" condition="!Window.Next(SettingsCategory.xml) + !Window.Next(SkinSettings.xml) + !Window.Next(SettingsProfile.xml) + !Window.Next(SettingsSystemInfo.xml) + !Window.Next(Home) + !Window.Next(Settings.xml)">
+            <effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+            <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowOpen" reversible="false" condition="Window.Previous(Home) | Window.Previous(Settings.xml)">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
         </animation>
-        <animation type="WindowClose" reversible="False" condition="Window.Next(Home) | Window.Next(Settings.xml)">
+        <animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(Settings.xml)">
             <effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
         </animation>
     </include>
 
     <include name="Animation_Left_Delay">
-        <animation type="Visible" reversible="False">
+        <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" delay="400" tween="sine" easing="out"/>
             <effect type="slide" start="-320" end="0" time="400" delay="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="Hidden" reversible="False">
+        <animation type="Hidden" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" reversible="False">
+        <animation type="WindowOpen" reversible="false">
             <effect type="fade" start="0" end="100" time="300" delay="400" tween="sine" easing="out"/>
             <effect type="slide" start="-320" end="0" time="400" delay="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowClose" reversible="False">
+        <animation type="WindowClose" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
         </animation>
     </include>
 
     <include name="Animation_Right_Delay">
-        <animation type="Visible" reversible="False">
+        <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" delay="400" tween="sine" easing="out"/>
             <effect type="slide" start="320" end="0" time="400" delay="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="Hidden" reversible="False">
+        <animation type="Hidden" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" reversible="False">
+        <animation type="WindowOpen" reversible="false">
             <effect type="fade" start="0" end="100" time="300" delay="400" tween="sine" easing="out"/>
             <effect type="slide" start="320" end="0" time="400" delay="400" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowClose" reversible="False">
+        <animation type="WindowClose" reversible="false">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
             <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
         </animation>
