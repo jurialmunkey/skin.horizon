@@ -616,6 +616,15 @@
                         <selected>System.HasAddon(resource.images.weatherfanart.multi)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
+                    <control type="radiobutton" id="9259">
+                        <visible>ControlGroup(9100).HasFocus(9108)</visible>
+                        <label>resource.images.weathericons.white</label>
+                        <label2>$INFO[System.AddonVersion(resource.images.weathericons.white)]        </label2>
+                        <onclick condition="!System.HasAddon(resource.images.weathericons.white)">InstallAddon(resource.images.weathericons.white)</onclick>
+                        <onclick condition="System.HasAddon(resource.images.weathericons.white)">Addon.OpenSettings(resource.images.weathericons.white)</onclick>
+                        <selected>System.HasAddon(resource.images.weathericons.white)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
 
                     <!-- ================ -->
                     <!-- Backup / Restore -->
