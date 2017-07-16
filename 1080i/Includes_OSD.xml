@@ -2,7 +2,7 @@
 <includes>
     <include name="OSD_Music_Seekbar">
         <control type="group">
-            <visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | Window.IsActive(DialogFullScreenInfo.xml)</visible>
+            <visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml)</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
             <animation type="WindowOpen" reversible="False">
                 <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
@@ -18,7 +18,7 @@
 
     <include name="OSD_Music_Info">
         <control type="group">
-            <visible>Player.ShowInfo | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+            <visible>Player.ShowInfo</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
             <!-- Overlay -->
             <control type="image">
@@ -41,7 +41,7 @@
 
             <control type="group">
                 <control type="group">
-                    <visible>Player.ShowInfo | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+                    <visible>Player.ShowInfo</visible>
                     <include>Animation_Left</include>
                     <width>720</width>
                     <height>720</height>
@@ -60,7 +60,7 @@
                     </control>
                 </control>
                 <control type="group" description="info">
-                    <visible>Player.ShowInfo | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+                    <visible>Player.ShowInfo</visible>
                     <include>Animation_Right</include>
                     <left>800</left>
                     <right>30</right>
@@ -187,9 +187,9 @@
 
     <include name="OSD_Video_Seekbar">
         <control type="group">
-            <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
-            <animation effect="fade" start="0" end="100" time="300" condition="![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | Window.IsActive(DialogFullScreenInfo.xml)]">WindowOpen</animation>
+            <animation effect="fade" start="0" end="100" time="300" condition="![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml)]">WindowOpen</animation>
             <control type="group">
                 <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | [Player.Paused + Skin.HasSetting(ShowInfoPaused)]</visible>
                 <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
