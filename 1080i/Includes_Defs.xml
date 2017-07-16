@@ -249,6 +249,7 @@
             <onfocus>SetProperty(WidgetAspect,WidgetAspect.Widget$PARAM[num])</onfocus>
             <onfocus>SetProperty(WidgetAspect_Item,$INFO[Container(211).ListItem.Property(WidgetAspect.Widget$PARAM[num])])</onfocus>
             <onfocus>SetProperty(WidgetDirection_Item,$INFO[Container(211).ListItem.Property(WidgetDirection.Widget$PARAM[num])])</onfocus>
+            <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
         </control>
     </include>
 

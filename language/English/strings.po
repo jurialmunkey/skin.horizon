@@ -1169,7 +1169,7 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31249"
-msgid "Press left to customize shortcuts"
+msgid "Press right to customize shortcuts"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

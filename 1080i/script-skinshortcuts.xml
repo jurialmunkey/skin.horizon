@@ -17,6 +17,7 @@
                 <include>Defs_Shadow_Opaque</include>
                 <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
             </control>
+            <!-- Header Label -->
             <control type="label" id="500">
                 <description>header label</description>
                 <top>10</top>
@@ -26,47 +27,34 @@
                 <font>font_small_bold</font>
                 <align>left</align>
                 <textcolor>dialog_fg_70</textcolor>
-                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
             </control>
 
+            <!-- Edit Widgets / Shortcuts Header -->
             <control type="label">
                 <description>Widgets</description>
                 <top>10</top>
                 <left>620</left>
                 <right>22</right>
                 <height>66</height>
-                <label>$LOCALIZE[31144]</label>
+                <label>$VAR[Label_Skinshortcuts_EditHeader]</label>
                 <font>font_small_bold</font>
                 <align>left</align>
                 <textcolor>dialog_fg_70</textcolor>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
             </control>
-            <control type="label">
-                <description>customise hint label</description>
-                <top>10</top>
-                <left>620</left>
-                <right>22</right>
-                <height>66</height>
-                <label>$LOCALIZE[31248]</label>
-                <font>font_small_bold</font>
-                <align>left</align>
-                <textcolor>dialog_fg_70</textcolor>
-                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
-            </control>
+
+            <!-- Press Right Hint -->
             <control type="label">
                 <description>customise hint label</description>
                 <top>10</top>
                 <left>620</left>
                 <right>74</right>
                 <height>66</height>
-                <label>$LOCALIZE[31246]</label>
+                <label>$VAR[Label_Skinshortcuts_PressRightHint]</label>
                 <font>font_tiny</font>
                 <align>right</align>
                 <textcolor>dialog_fg_70</textcolor>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
             </control>
             <control type="image">
                 <top>28</top>
@@ -75,32 +63,8 @@
                 <height>32</height>
                 <texture colordiffuse="dialog_fg_70">common/arrow-48.png</texture>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>![ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
             </control>
 
-            <!-- Press Left -->
-            <control type="label">
-                <description>customise hint label</description>
-                <top>10</top>
-                <left>74</left>
-                <right>74</right>
-                <height>66</height>
-                <label>$LOCALIZE[31249]</label>
-                <font>font_tiny</font>
-                <align>left</align>
-                <textcolor>dialog_fg_70</textcolor>
-                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>[ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
-            </control>
-            <control type="image">
-                <top>28</top>
-                <left>22</left>
-                <width>32</width>
-                <height>32</height>
-                <texture colordiffuse="dialog_fg_70" flipx="true">common/arrow-48.png</texture>
-                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>[ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()]</visible>
-            </control>
 
             <!-- Shortcuts List -->
             <control type="list" id="211">
@@ -114,7 +78,7 @@
                 <onright>9100</onright>
                 <ondown>211</ondown>
                 <scrolltime>0</scrolltime>
-
+                <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 <itemlayout width="580" height="69">
                     <control type="image">
                         <left>0</left>
@@ -203,6 +167,7 @@
                     <font/>
                     <texturenofocus colordiffuse="dialog_fg_30">buttons/delete.png</texturenofocus>
                     <texturefocus colordiffuse="Selected">buttons/delete.png</texturefocus>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
                 <control type="button" id="301" description="Add">
                     <include>Defs_SkinShortcuts_SetStrings</include>
@@ -212,6 +177,7 @@
                     <texturenofocus colordiffuse="dialog_fg_30">buttons/add.png</texturenofocus>
                     <texturefocus colordiffuse="Selected">buttons/add.png</texturefocus>
                     <visible>!Integer.IsGreater(Container(211).NumItems,11)</visible>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
                 <control type="button" id="303" description="Up">
                     <include>Defs_SkinShortcuts_SetStrings</include>
@@ -220,6 +186,7 @@
                     <font/>
                     <texturenofocus colordiffuse="dialog_fg_30">buttons/moveup.png</texturenofocus>
                     <texturefocus colordiffuse="Selected">buttons/moveup.png</texturefocus>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
                 <control type="button" id="304" description="Down">
                     <include>Defs_SkinShortcuts_SetStrings</include>
@@ -228,13 +195,15 @@
                     <font/>
                     <texturenofocus colordiffuse="dialog_fg_30" flipy="true">buttons/moveup.png</texturenofocus>
                     <texturefocus colordiffuse="Selected" flipy="true">buttons/moveup.png</texturefocus>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
             </control>
 
             <!-- Shortcuts Buttons -->
             <control type="grouplist" id="9100">
-                <visible>!ControlGroup(9300).HasFocus() + !ControlGroup(9400).HasFocus()</visible>
+                <visible>String.IsEmpty(Window.Property(SetWidgets)) + !ControlGroup(9300).HasFocus() + !ControlGroup(9400).HasFocus()</visible>
                 <onleft>304</onleft>
+                <onright>SetProperty(SetWidgets,1)</onright>
                 <onright>SetFocus(9300)</onright>
                 <onright>SetFocus(9401)</onright>
                 <onup>9100</onup>
@@ -344,7 +313,7 @@
 
             <!-- Widgets -->
             <control type="grouplist" id="9300">
-                <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
+                <visible>!String.IsEmpty(Window.Property(SetWidgets)) | ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
                 <onleft>9400</onleft>
                 <onright>9400</onright>
                 <onup>9300</onup>
@@ -372,6 +341,7 @@
                     <onfocus>SetProperty(WidgetAspect_Item,$INFO[Container(211).ListItem.Property(WidgetAspect)])</onfocus>
                     <onfocus>SetProperty(WidgetDirection,WidgetDirection)</onfocus>
                     <onfocus>SetProperty(WidgetDirection_Item,$INFO[Container(211).ListItem.Property(WidgetDirection)])</onfocus>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
 
                 <include content="Defs_SkinShortcuts_Widget">
@@ -411,8 +381,9 @@
                 <width>1250</width>
                 <align>right</align>
                 <itemgap>-20</itemgap>
-                <onleft>SetFocus(401)</onleft>
-                <onright>noop</onright>
+                <onleft>SetFocus(304)</onleft>
+                <onright>ClearProperty(SetWidgets)</onright>
+                <onright>SetFocus(401)</onright>
                 <onup>SetFocus(9300)</onup>
                 <onup>Up</onup>
                 <onup>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</onup>
@@ -445,7 +416,7 @@
                     <onclick>SetFocus(9300)</onclick>
                     <onclick>Select</onclick>
                     <onclick>SetFocus(9400)</onclick>
-                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
                 <control type="button" id="9402" description="Rename">
                     <include>Defs_SkinShortcuts_SetStrings</include>
@@ -456,7 +427,7 @@
                     <label>$LOCALIZE[118]</label>
                     <textcolor>dialog_fg_30</textcolor>
                     <onclick>RunScript(script.skin.helper.service,action=setskinshortcutsproperty,header=$ADDON[script.skinshortcuts 32025],property=$INFO[Window.Property(WidgetName)])</onclick>
-                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
                 <control type="button" id="9403" description="Aspect">
                     <include>Defs_SkinShortcuts_SetStrings</include>
@@ -473,7 +444,7 @@
                     <onclick>SendClick(404)</onclick>
                     <onclick>AlarmClock(Setit,SetFocus(9300),00:00,silent)</onclick>
                     <onclick>AlarmClock(Setitback,SetFocus(9403),00:00,silent)</onclick>
-                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
                 <control type="button" id="9404" description="Sort">
                     <include>Defs_SkinShortcuts_SetStrings</include>
@@ -484,7 +455,7 @@
                     <label>$LOCALIZE[31237]</label>
                     <textcolor>dialog_fg_30</textcolor>
                     <onclick>RunScript(script.skin.helper.service,action=setskinshortcutsproperty,header=$LOCALIZE[31235],property=$INFO[Window.Property(WidgetSort)])</onclick>
-                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
                 <control type="button" id="9405" description="Direction">
                     <include>Defs_SkinShortcuts_SetStrings</include>
@@ -500,7 +471,7 @@
                     <onclick>SendClick(404)</onclick>
                     <onclick>AlarmClock(Setit,SetFocus(9300),00:00,silent)</onclick>
                     <onclick>AlarmClock(Setitback,SetFocus(9405),00:00,silent)</onclick>
-                    <onback>AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+                    <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
                 </control>
             </control>
 

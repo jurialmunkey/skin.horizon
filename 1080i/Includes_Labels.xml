@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Skinshortcuts_EditHeader">
+        <value condition="!String.IsEmpty(Window.Property(SetWidgets)) | ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()">$LOCALIZE[31144]</value>
+        <value>$LOCALIZE[31248]</value>
+    </variable>
+
+    <variable name="Label_Skinshortcuts_PressRightHint">
+        <value condition="!String.IsEmpty(Window.Property(SetWidgets)) | ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()">$LOCALIZE[31249]</value>
+        <value>$LOCALIZE[31246]</value>
+    </variable>
+
     <variable name="Label_Filtered">
         <value condition="Container.Filtered">$LOCALIZE[16041]</value>
         <value>$LOCALIZE[351]</value>
