@@ -101,7 +101,7 @@
                 <centertop>53%</centertop>
                 <height>100</height>
                 <left>sidepad</left>
-                <right>600</right>
+                <right>850</right>
                 <include>Animation_Home_Topbar_Slideover_NoInfo</include>
                 <control type="label">
                     <height>48</height>
@@ -128,7 +128,7 @@
                     <control type="label">
                         <font>font_small</font>
                         <aligny>center</aligny>
-                        <width>auto</width>
+                        <width>950</width>
                         <height>100%</height>
                         <textcolor>$VAR[ColorHighlight]</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
@@ -162,11 +162,23 @@
                         <left>8</left>
                         <font>font_small</font>
                         <aligny>center</aligny>
+                        <width max="750">auto</width>
+                        <height>100%</height>
+                        <textcolor>main_fg_70</textcolor>
+                        <shadowcolor>main_bg_30</shadowcolor>
+                        <label>$INFO[MusicPlayer.Artist,,[COLOR=main_fg_30]  •  [/COLOR]]$INFO[Player.Title,[COLOR=main_fg_100],[/COLOR][COLOR=main_fg_30]  •  [/COLOR]]</label>
+                        <visible>Player.HasMedia</visible>
+                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                    </control>
+                    <control type="label">
+                        <left>-12</left>
+                        <font>font_small</font>
+                        <aligny>center</aligny>
                         <width>auto</width>
                         <height>100%</height>
                         <textcolor>main_fg_70</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
-                        <label>$VAR[Label_SubHeader_Content_Playing]</label>
+                        <label>[COLOR=$VAR[ColorHighlight]]$INFO[Player.Time][/COLOR]  |  [COLOR=$VAR[ColorHighlight]]$INFO[Player.Duration][/COLOR]</label>
                         <visible>Player.HasMedia</visible>
                         <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                     </control>
