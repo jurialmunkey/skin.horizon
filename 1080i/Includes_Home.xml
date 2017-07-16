@@ -389,6 +389,14 @@
                 <icon>special://skin/extras/icons/enabled.png</icon>
                 <onclick>SendClick(7)</onclick>
                 <visible>Control.IsEnabled(7)</visible>
+                <visible>String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])</visible>
+            </item>
+            <item>
+                <label>$INFO[Control.GetLabel(7)]</label>
+                <icon>special://skin/extras/icons/error.png</icon>
+                <onclick>SendClick(7)</onclick>
+                <visible>Control.IsEnabled(7)</visible>
+                <visible>!String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])</visible>
             </item>
             <!-- uninstall -->
             <item>
@@ -415,7 +423,9 @@
             <item>
                 <label>$INFO[Control.GetLabel(13)]</label>
                 <icon>special://skin/extras/icons/antenna.png</icon>
-                <onclick>SendClick(13)</onclick>
+                <onclick>SetFocus(13)</onclick>
+                <onclick>Select</onclick>
+                <onclick>SetFocus(300)</onclick>
                 <visible>Control.IsEnabled(13)</visible>
             </item>
         </content>
