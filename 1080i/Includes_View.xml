@@ -267,33 +267,6 @@
         </control>
     </include>
 
-    <include name="View_Border_24">
-        <left>-24</left>
-        <right>-24</right>
-        <top>-24</top>
-        <bottom>-24</bottom>
-        <bordersize>24</bordersize>
-    </include>
-
-    <include name="View_Glow">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight]" border="25">common/glow-fade-24.png</bordertexture>
-    </include>
-
-    <include name="View_Glow2">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight2]" border="25" flipy="true">common/glow-fade-24.png</bordertexture>
-    </include>
-
-    <include name="View_SideGlow">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight]" border="25">common/glow-fade-side-24.png</bordertexture>
-    </include>
-
-    <include name="View_SideGlow2">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight2]" border="25" flipx="true">common/glow-fade-side-24.png</bordertexture>
-    </include>
 
     <include name="View_Position_Button">
         <control type="button">
@@ -451,12 +424,6 @@
         <onup>ClearProperty(FocusedList)</onup>
         <onup>SetFocus(9601)</onup>
         <ondown condition="!Control.HasFocus(50)">Select</ondown>
-    </include>
-
-    <include name="View_Info_Movement_Horizontal">
-        <onleft>ClearProperty(FocusedList)</onleft>
-        <onright>60</onright>
-        <onleft>9000</onleft>
     </include>
 
     <include name="View_Forced">

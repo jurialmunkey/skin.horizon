@@ -226,7 +226,6 @@
                             <width>info_details_width</width>
                             <align>right</align>
                             <textoffsetx>20</textoffsetx>
-                            <height>100%</height>
                             <label>$LOCALIZE[20339]</label>
                         </control>
                         <control type="label">
@@ -236,7 +235,6 @@
                             <textcolor>main_fg_100</textcolor>
                             <aligny>center</aligny>
                             <width>auto</width>
-                            <height>100%</height>
                             <label>$INFO[ListItem.Director]</label>
                         </control>
                     </control>
@@ -260,7 +258,6 @@
                             <textcolor>main_fg_100</textcolor>
                             <aligny>center</aligny>
                             <width>auto</width>
-                            <height>100%</height>
                             <label>$INFO[ListItem.Writer]</label>
                         </control>
                     </control>
@@ -284,7 +281,6 @@
                             <textcolor>main_fg_100</textcolor>
                             <aligny>center</aligny>
                             <width>auto</width>
-                            <height>100%</height>
                             <label>$INFO[ListItem.Genre]</label>
                         </control>
                     </control>

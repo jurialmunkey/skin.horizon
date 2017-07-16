@@ -163,26 +163,6 @@
     <!-- ============ -->
     <!-- Info Dialogs -->
     <!-- ============ -->
-    <include name="Dialog_Info_Header">
-        <left>30</left>
-        <right>320</right>
-        <top>15</top>
-        <height>70</height>
-        <font>font_medium_bold</font>
-        <align>left</align>
-        <textcolor>dialog_fg_70</textcolor>
-    </include>
-
-    <include name="Dialog_Info_Button_Grouplist">
-        <left>sidepad</left>
-        <right>sidepad</right>
-        <align>center</align>
-        <height>423</height>
-        <top>778</top>
-        <itemgap>14</itemgap>
-        <orientation>horizontal</orientation>
-    </include>
-
 
     <include name="Dialog_Info_Buttons">
         <width>320</width>

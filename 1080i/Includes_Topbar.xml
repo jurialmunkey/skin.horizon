@@ -154,7 +154,6 @@
                         <width>32</width>
                         <height>32</height>
                         <fadetime>50</fadetime>
-                        <timeperimage>50</timeperimage>
                         <visible>Player.HasMedia</visible>
                         <visible>Player.Paused</visible>
                         <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
@@ -274,18 +273,7 @@
     <!-- ======= -->
     <!-- SubMenu -->
     <!-- ======= -->
-    <include name="Topbar_SubMenu">
-        <control type="group">
-            <include>Topbar_SubMenu_Group</include>
-            <include>Topbar_SubMenu_Home</include>
-        </control>
-    </include>
 
-    <include name="Topbar_SubMenu_Group">
-        <animation effect="slide" start="0,-40" end="0" time="400" tween="quadratic" easing="out" reversible="false" condition="$EXP[Expression_ShowTopbar]">Conditional</animation>
-        <animation effect="slide" start="0" end="0,-40" time="400" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Expression_ShowTopbar]">Conditional</animation>
-        <include>Topbar_SubMenu_Group_Content</include>
-    </include>
 
     <include name="Topbar_SubMenu_Group_Content">
         <top>80</top>
@@ -303,40 +291,6 @@
             <bottom>0</bottom>
             <texture colordiffuse="panel_bg">common/white.png</texture>
         </control>
-    </include>
-
-    <include name="Topbar_SubMenu_Layout">
-        <height>40</height>
-        <left>0</left>
-        <right>0</right>
-        <orientation>horizontal</orientation>
-        <itemlayout height="40" width="320">
-            <control type="label">
-                <left>20</left>
-                <right>20</right>
-                <height>40</height>
-                <label>$INFO[ListItem.Label]</label>
-                <aligny>center</aligny>
-                <align>center</align>
-                <font>font_osd_submenu</font>
-                <textcolor>panel_fg_70</textcolor>
-            </control>
-        </itemlayout>
-        <focusedlayout height="40" width="320">
-            <control type="image">
-                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-            </control>
-            <control type="label">
-                <left>20</left>
-                <right>20</right>
-                <height>40</height>
-                <label>$INFO[ListItem.Label]</label>
-                <aligny>center</aligny>
-                <align>center</align>
-                <font>font_osd_submenu</font>
-                <textcolor>Selected</textcolor>
-            </control>
-        </focusedlayout>
     </include>
 
 </includes>

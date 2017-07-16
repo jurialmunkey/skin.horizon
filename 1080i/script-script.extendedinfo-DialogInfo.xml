@@ -199,7 +199,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(PlaceOfBirth)]</label>
                     </control>
                 </control>
@@ -223,7 +222,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Birthday)]</label>
                     </control>
                 </control>
@@ -247,7 +245,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(DeathDay)]</label>
                     </control>
                 </control>
@@ -271,7 +268,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Age)]</label>
                     </control>
                 </control>

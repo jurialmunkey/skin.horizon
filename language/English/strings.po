@@ -1172,6 +1172,11 @@ msgctxt "#31249"
 msgid "Press left to customize shortcuts"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31250"
+msgid "Select secondary gradient colour"
+msgstr ""
+
 msgctxt "#31251"
 msgid "Weather Fanart"
 msgstr ""

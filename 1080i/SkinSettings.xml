@@ -386,7 +386,7 @@
                     <control type="button" id="9253" description="Color Highlight">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Select secondary gradient colour</label>
+                        <label>$LOCALIZE[31250]</label>
                         <label2>$INFO[Skin.String(gradientcolor.name)]</label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
@@ -398,14 +398,6 @@
                         <onclick>Skin.Reset(focuscolor.name)</onclick>
                         <onclick>Skin.Reset(gradientcolor.name)</onclick>
                     </control>
-                    <!-- <control type="radiobutton" id="9252" description="Enable Glow">
-                        <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31233]</label>
-                        <selected>Skin.HasSetting(EnableGlow)</selected>
-                        <onclick>Skin.ToggleSetting(EnableGlow)</onclick>
-                    </control> -->
-
                     <!-- ============= -->
                     <!-- Miscellaneous -->
                     <!-- ============= -->

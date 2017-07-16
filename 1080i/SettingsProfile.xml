@@ -43,7 +43,6 @@
                     <right>0</right>
                     <top>140</top>
                     <bottom>74</bottom>
-                    <itemgap>0</itemgap>
                     <onleft>4</onleft>
                     <onup>noop</onup>
                     <ondown>noop</ondown>

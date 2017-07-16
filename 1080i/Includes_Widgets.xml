@@ -227,8 +227,6 @@
             <control type="list" id="$PARAM[id]">
                 <visible>$PARAM[visible]</visible>
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | String.IsEmpty(Window(Home).Property(WidgetLoading))</visible>
-                <focusposition>1</focusposition>
-                <movement>5</movement>
                 <include condition="$PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">Home_Widget_Posters_Submenu_Height</include>
                 <include content="Home_Widget_Posters">
                     <param name="id" value="$PARAM[id]" />

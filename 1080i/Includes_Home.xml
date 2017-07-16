@@ -1041,10 +1041,6 @@
             </control>
         </control>
     </include>
-
-    <include name="Home_ShowMenu_4000"><defaultcontrol always="true">4000</defaultcontrol></include>
-    <include name="Home_ShowMenu_300"><defaultcontrol always="true">300</defaultcontrol></include>
-
     <include name="Home_OnClick">
 
         <!-- Set Menu Indicator -->

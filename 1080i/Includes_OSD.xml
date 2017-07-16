@@ -4,11 +4,11 @@
         <control type="group">
             <visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml)</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
-            <animation type="WindowOpen" reversible="False">
+            <animation type="WindowOpen" reversible="false">
                 <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
                 <effect type="slide" start="0,96" end="0" time="400" tween="cubic" easing="out" />
             </animation>
-            <animation type="WindowClose" reversible="False">
+            <animation type="WindowClose" reversible="false">
                 <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
                 <effect type="slide" start="0" end="0,96" time="300" tween="cubic" easing="out" />
             </animation>

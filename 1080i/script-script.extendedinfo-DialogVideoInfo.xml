@@ -204,7 +204,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Director)]</label>
                     </control>
                 </control>
@@ -228,7 +227,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Writer)]</label>
                     </control>
                 </control>
@@ -252,7 +250,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Genre)]</label>
                     </control>
                 </control>
@@ -276,7 +273,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Budget),$,]</label>
                     </control>
                 </control>
@@ -290,7 +286,6 @@
                         <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
-                        <height>100%</height>
                         <label>$ADDON[script.extendedinfo 32108]</label>
                     </control>
                     <control type="label">
@@ -300,7 +295,6 @@
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Revenue),$,]</label>
                     </control>
                 </control>

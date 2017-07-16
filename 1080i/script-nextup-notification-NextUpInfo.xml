@@ -10,7 +10,7 @@
         <control type="label" id="3004"><visible>false</visible></control>
 
         <control type="group">
-            <include>Animation_SlideIn</include>
+            <include>Animation_FadeIn_Slide</include>
             <include>Animation_FadeOut</include>
             <right>20</right>
             <bottom>20</bottom>

@@ -5,11 +5,8 @@
         <control type="group">
             <left>140</left>
             <right>sidepad</right>
-            <orientation>horizontal</orientation>
-            <itemgap>14</itemgap>
             <top>240</top>
             <height>332</height>
-            <align>left</align>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
             <control type="group">
@@ -47,7 +44,6 @@
                     <left>330</left>
                     <height>256</height>
                     <width>320</width>
-                    <left>0</left>
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font_weather_currenttemp</font>

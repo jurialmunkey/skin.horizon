@@ -200,7 +200,7 @@
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
-                    <font>-</font>
+                    <font/>
                     <texturenofocus colordiffuse="dialog_fg_30">buttons/delete.png</texturenofocus>
                     <texturefocus colordiffuse="Selected">buttons/delete.png</texturefocus>
                 </control>
@@ -208,7 +208,7 @@
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
-                    <font>-</font>
+                    <font/>
                     <texturenofocus colordiffuse="dialog_fg_30">buttons/add.png</texturenofocus>
                     <texturefocus colordiffuse="Selected">buttons/add.png</texturefocus>
                     <visible>!Integer.IsGreater(Container(211).NumItems,11)</visible>
@@ -217,7 +217,7 @@
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
-                    <font>-</font>
+                    <font/>
                     <texturenofocus colordiffuse="dialog_fg_30">buttons/moveup.png</texturenofocus>
                     <texturefocus colordiffuse="Selected">buttons/moveup.png</texturefocus>
                 </control>
@@ -225,7 +225,7 @@
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>64</width>
                     <height>64</height>
-                    <font>-</font>
+                    <font/>
                     <texturenofocus colordiffuse="dialog_fg_30" flipy="true">buttons/moveup.png</texturenofocus>
                     <texturefocus colordiffuse="Selected" flipy="true">buttons/moveup.png</texturefocus>
                 </control>

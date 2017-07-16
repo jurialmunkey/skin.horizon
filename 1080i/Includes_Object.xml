@@ -261,24 +261,6 @@
         </control>
     </include>
 
-    <include name="Object_RightArrows">
-        <control type="group">
-            <width>22</width>
-            <control type="image">
-                <centertop>52%</centertop>
-                <width>16</width>
-                <height>16</height>
-                <texture colordiffuse="$VAR[ColorHighlight]">common/arrow-small-right.png</texture>
-            </control>
-            <control type="image">
-                <centertop>52%</centertop>
-                <left>10</left>
-                <width>16</width>
-                <height>16</height>
-                <texture colordiffuse="$VAR[ColorHighlight]">common/arrow-small-right.png</texture>
-            </control>
-        </control>
-    </include>
 
     <include name="Object_BigPoster">
         <param name="container" default="" />
