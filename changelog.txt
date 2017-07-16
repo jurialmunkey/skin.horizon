@@ -1,3 +1,11 @@
+[B]1.0.12[/B]
+Unwatched Episodes counter on indicators
+Cleanup of unused includes and variables etc
+Add option for larger statusbar text
+Lyrics centered when no info showing
+Lyrics can be enabled without info showing
+NextAired info in tvshows views
+
 [B]1.0.11[/B]
 Overhaul of dimensions, reduce top bar height by 30px
 Add widget sorting and direction options
