@@ -468,6 +468,7 @@
                 <onclick>Container.NextViewMode</onclick>
                 <visible>Control.IsEnabled(2)</visible>
                 <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Lock viewmode -->
             <item>
@@ -500,6 +501,7 @@
                 <onclick condition="[Container.Content(unknown) + String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
                 <onclick condition="[Container.Content(videos) + String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
                 <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Viewmode -->
             <item>
@@ -508,6 +510,7 @@
                 <onclick>Skin.ToggleSetting(WrapList)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(52) | Control.IsVisible(56)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Sort -->
             <item>
@@ -554,6 +557,7 @@
                 <onclick>Select</onclick>
                 <onclick>SetFocus(300)</onclick>
                 <visible>Control.IsEnabled(6)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
 
             <!-- Settings -->
@@ -562,6 +566,7 @@
                 <icon>special://skin/extras/icons/settings.png</icon>
                 <onclick>SendClick(5)</onclick>
                 <visible>Control.IsEnabled(5)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Update -->
             <item>
@@ -569,6 +574,7 @@
                 <icon>special://skin/extras/icons/update.png</icon>
                 <onclick>SendClick(20)</onclick>
                 <visible>Control.IsEnabled(20)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Check Updates -->
             <item>
@@ -576,6 +582,7 @@
                 <icon>special://skin/extras/icons/update.png</icon>
                 <onclick>SendClick(9)</onclick>
                 <visible>Control.IsEnabled(9)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Group -->
             <item>
@@ -605,6 +612,7 @@
                 <label>$LOCALIZE[10140]</label>
                 <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
                 <visible>!String.IsEmpty(Container.PluginName)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Get More -->
             <item>
@@ -612,6 +620,7 @@
                 <label>$LOCALIZE[21452]</label>
                 <onclick>ActivateWindow(addonbrowser,addons://more/video/,return)</onclick>
                 <visible>Container.Content(addons) + !String.Contains(Container.FolderPath,addons://)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             
         </content>
