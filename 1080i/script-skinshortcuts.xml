@@ -55,6 +55,7 @@
                 <align>right</align>
                 <textcolor>dialog_fg_70</textcolor>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <visible>String.IsEmpty(Window.Property(SetWidgets))</visible>
             </control>
             <control type="image">
                 <top>28</top>
@@ -63,6 +64,7 @@
                 <height>32</height>
                 <texture colordiffuse="dialog_fg_70">common/arrow-48.png</texture>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                <visible>String.IsEmpty(Window.Property(SetWidgets))</visible>
             </control>
 
             <!-- Hint about important stuff -->
@@ -73,7 +75,6 @@
                 <height>153</height>
                 <aspectratio>keep</aspectratio>
                 <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/info.png</texture>
-                <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEmpty(Window.Property(SetWidgets))</visible>
             </control>
             <control type="grouplist">
                 <height>153</height>
@@ -83,7 +84,6 @@
                 <itemgap>0</itemgap>
                 <align>center</align>
                 <orientation>vertical</orientation>
-                <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEmpty(Window.Property(SetWidgets))</visible>
                 <control type="label">
                     <description>Widgets</description>
                     <height>50</height>
@@ -95,7 +95,7 @@
                 <control type="textbox">
                     <description>Widgets</description>
                     <height>auto</height>
-                    <label>If you are having difficulties with widgets or home menu items not showing correctly please press the reinitialise button after you finish making any changes. This will ensure that your changes are set.</label>
+                    <label>$LOCALIZE[31254]</label>
                     <font>font_tiny</font>
                     <align>left</align>
                     <textcolor>dialog_fg_70</textcolor>
@@ -308,6 +308,7 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
+                    <onclick>SetProperty(SetWidgets,1)</onclick>
                     <onclick>SetFocus(9300)</onclick>
                     <onclick>SetFocus(9401)</onclick>
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
@@ -326,21 +327,20 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
 
-                <control type="button" id="9900" description="Reinitialise Widgets">
+                <control type="button" id="308" description="Reset">
+                    <include>Defs_SkinShortcuts_SetStrings</include>
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+
+                <control type="button" id="9900" description="Save Changes">
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <include>Defs_SkinShortcuts_SetStrings_OnClick</include>
                     <width>100%</width>
                     <label>$LOCALIZE[31197]</label>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
-                    <align>left</align>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                </control>
-
-                <control type="button" id="308" description="Reset">
-                    <include>Defs_SkinShortcuts_SetStrings</include>
-                    <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
@@ -411,6 +411,28 @@
                 </include>
             </control>
 
+            <control type="button" id="9777" description="Widget">
+                <top>642</top>
+                <width>1250</width>
+                <right>15</right>
+                <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus() | Control.HasFocus(9777) | !String.IsEmpty(Window.Property(SetWidgets))</visible>
+                <onup>SetFocus(3127)</onup>
+                <onup>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</onup>
+                <ondown>SetFocus(312)</ondown>
+                <ondown>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</ondown>
+                <include>Defs_SkinShortcuts_SetStrings</include>
+                <width>100%</width>
+                <height>66</height>
+                <label>$LOCALIZE[31197]</label>
+                <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                <align>left</align>
+                <include>Dialog_Standard_Right_Buttons</include>
+                <onclick>ClearProperty(SetWidgets)</onclick>
+                <onclick>SetFocus(401)</onclick>
+                <include>Defs_SkinShortcuts_SetStrings_OnClick</include>
+                <onback condition="!String.IsEmpty(Window.Property(SetWidgets))">AlarmClock(reopen,RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu),00:00,silent)</onback>
+            </control>
+
             <control type="grouplist" id="9400">
                 <visible>ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()</visible>
                 <right>15</right>
@@ -419,14 +441,17 @@
                 <align>right</align>
                 <itemgap>0</itemgap>
                 <onleft>SetFocus(304)</onleft>
-                <onright>ClearProperty(SetWidgets)</onright>
-                <onright>SetFocus(401)</onright>
-                <onup>SetFocus(9300)</onup>
-                <onup>Up</onup>
-                <onup>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</onup>
-                <ondown>SetFocus(9300)</ondown>
-                <ondown>Down</ondown>
-                <ondown>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</ondown>
+                <!-- <onright>ClearProperty(SetWidgets)</onright>
+                <onright>SetFocus(401)</onright> -->
+                <onright>noop</onright>
+                <onup condition="!Integer.IsEqual(Container(9300).Position,0)">SetFocus(9300)</onup>
+                <onup condition="!Integer.IsEqual(Container(9300).Position,0)">Up</onup>
+                <onup condition="!Integer.IsEqual(Container(9300).Position,0)">AlarmClock(MoveList,SetFocus(9400),00:00,silent)</onup>
+                <onup condition="Integer.IsEqual(Container(9300).Position,0)">SetFocus(9777)</onup>
+                <ondown condition="!Integer.IsEqual(Container(9300).Position,7)">SetFocus(9300)</ondown>
+                <ondown condition="!Integer.IsEqual(Container(9300).Position,7)">Down</ondown>
+                <ondown condition="!Integer.IsEqual(Container(9300).Position,7)">AlarmClock(MoveList,SetFocus(9400),00:00,silent)</ondown>
+                <ondown condition="Integer.IsEqual(Container(9300).Position,7)">SetFocus(9777)</ondown>
                 <orientation>horizontal</orientation>
                 <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,0)">Conditional</animation>
                 <animation effect="slide" end="0,69" condition="Integer.IsGreater(Container(9300).Position,1)">Conditional</animation>

@@ -936,7 +936,7 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31197"
-msgid "Reinitialise"
+msgid "Save Changes"
 msgstr ""
 
 #: /1080i/Includes_View_List.xml
@@ -1188,6 +1188,11 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31253"
 msgid "Use larger font for progress bar"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31254"
+msgid "If you are having difficulties with widgets or home menu items not displaying correctly please make sure that you press the \"save changes\" button to ensure that your shortcuts and widgets are set."
 msgstr ""
 
 msgctxt "#31259"

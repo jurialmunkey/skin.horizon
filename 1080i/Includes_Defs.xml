@@ -223,8 +223,7 @@
         <onclick>Skin.SetString(Home.11.Widget.5,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget5)])</onclick>
         <onclick>Skin.SetString(Home.11.Widget.6,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget6)])</onclick>
         <onclick>Skin.SetString(Home.11.Widget.7,$INFO[Container(211).ListItemAbsolute(11).Property(widgetPath.Widget7)])</onclick>
-
-        <onclick>Close</onclick>
+        <onclick condition="String.IsEmpty(Window.Property(SetWidgets))">Close</onclick>
     </include>
 
     <include name="Defs_SkinShortcuts_Widget">
