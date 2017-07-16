@@ -101,7 +101,7 @@
                 <centertop>53%</centertop>
                 <height>100</height>
                 <left>sidepad</left>
-                <right>850</right>
+                <right>600</right>
                 <include>Animation_Home_Topbar_Slideover_NoInfo</include>
                 <control type="label">
                     <height>48</height>
@@ -128,7 +128,7 @@
                     <control type="label">
                         <font>font_small</font>
                         <aligny>center</aligny>
-                        <width>950</width>
+                        <width>1200</width>
                         <height>100%</height>
                         <textcolor>$VAR[ColorHighlight]</textcolor>
                         <shadowcolor>main_bg_30</shadowcolor>
