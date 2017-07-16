@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Widget">
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle,, - ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+
     <variable name="Label_Skinshortcuts_EditHeader">
         <value condition="!String.IsEmpty(Window.Property(SetWidgets)) | ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()">$LOCALIZE[31144]</value>
         <value>$LOCALIZE[31248]</value>

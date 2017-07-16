@@ -531,7 +531,7 @@
                                 <aligny>center</aligny>
                                 <font>font_tiny</font>
                                 <textcolor>main_fg_70</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[Label_Widget]</label>
                             </control>
                         </control>
                     </control>
@@ -749,7 +749,7 @@
                                 <aligny>center</aligny>
                                 <font>font_tiny</font>
                                 <textcolor>Selected</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[Label_Widget]</label>
                             </control>
                         </control>
                     </control>
