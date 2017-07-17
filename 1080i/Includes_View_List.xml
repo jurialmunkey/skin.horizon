@@ -116,7 +116,7 @@
                     <height>infolist3_main_height</height>
                     <left>0</left>
                     <control type="image">
-                        <include>Defs_Shadow_Opaque</include>
+                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
                         <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                     </control>
                     <control type="fixedlist" id="57">
@@ -169,33 +169,14 @@
                                 <texture colordiffuse="darkline_separator">common/white.png</texture>
                             </control>
                         </control>
-                        <!-- <control type="group">
-                            <bottom>40</bottom>
-                            <left>40</left>
-                            <top>40</top>
-                            <control type="group">
-                                <width>infolist3_poster_width</width>
-                                <control type="image">
-                                    <include>Defs_Shadow_Opaque</include>
-                                    <texture colordiffuse="PosterBack">common/white.png</texture>
-                                </control>
-                                <control type="image">
-                                    <fadetime>100</fadetime>
-                                    <aspectratio>scale</aspectratio>
-                                    <texture background="true">$VAR[Image_Poster]</texture>
-                                </control>
-                            </control>
-                        </control> -->
                         <control type="group">
                             <bottom>40</bottom>
                             <left>40</left>
-                            <!-- <left>infolist3_poster_width</left> -->
                             <top>40</top>
                             <control type="group">
-                                <!-- <left>60</left> -->
                                 <width>infolist3_fanart_width</width>
                                 <control type="image">
-                                    <include>Defs_Shadow_Opaque</include>
+                                    <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
                                     <texture colordiffuse="PosterBack">common/white.png</texture>
                                 </control>
                                 <control type="image">
@@ -256,7 +237,7 @@
                 <width>view_left</width>
                 <height>poster_height</height>
                 <control type="image">
-                    <include>Defs_Shadow_Opaque</include>
+                    <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <control type="group">
@@ -267,7 +248,7 @@
                     <control type="group">
                         <height>infolist2_icon_height</height>
                         <control type="image">
-                            <include>Defs_Shadow_Opaque</include>
+                            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <control type="image">

@@ -40,6 +40,7 @@
             <height>24</height>
             <width>100%</width>
             <texture flipy="false">common/shadow-line-24px.png</texture>
+            <visible>!Skin.HasSetting(FlattenGradient)</visible>
         </control>
         <control type="image">
             <bottom>0</bottom>
@@ -71,6 +72,7 @@
             <height>24</height>
             <width>100%</width>
             <texture flipy="false">common/shadow-line-24px.png</texture>
+            <visible>!Skin.HasSetting(FlattenGradient)</visible>
         </control>
         <control type="image">
             <texture>common/gradient-solid.png</texture>
@@ -297,6 +299,7 @@
             <height>24</height>
             <width>100%</width>
             <texture flipy="false">common/shadow-line-24px.png</texture>
+            <visible>!Skin.HasSetting(FlattenGradient)</visible>
         </control>
         <control type="image">
             <top>-100</top>
