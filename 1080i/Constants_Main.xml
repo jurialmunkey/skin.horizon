@@ -9,6 +9,7 @@
     <constant name="view_left">616</constant> <!-- 596 -->
     <constant name="view_width">1138</constant> <!-- 1158 -->
     <constant name="info_left">746</constant> <!-- 736 -->
+    <constant name="lovefilm_height">844</constant>
     <constant name="poster_height">924</constant> <!-- 894 -->
     <constant name="musicposter_width">536</constant> <!-- 516 -->
     <constant name="musicposter_infotop">576</constant> <!-- 556 -->
