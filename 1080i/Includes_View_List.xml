@@ -176,7 +176,7 @@
                             <control type="group">
                                 <width>infolist3_fanart_width</width>
                                 <control type="image">
-                                    <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                                    <include>Defs_Shadow_Opaque</include>
                                     <texture colordiffuse="PosterBack">common/white.png</texture>
                                 </control>
                                 <control type="image">
@@ -248,7 +248,7 @@
                     <control type="group">
                         <height>infolist2_icon_height</height>
                         <control type="image">
-                            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                            <include>Defs_Shadow_Opaque</include>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <control type="image">

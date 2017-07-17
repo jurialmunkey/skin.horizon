@@ -329,7 +329,7 @@
                     
                     <control type="image">
                         <bordersize>10</bordersize>
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                        <include>Defs_Shadow_Small</include>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture colordiffuse="main_fg_12">common/white.png</texture>
                     </control>
@@ -384,7 +384,7 @@
                     <include>Animation_FocusBounce</include>
                     <control type="image">
                         <bordersize>10</bordersize>
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                        <include>Defs_Shadow_Small</include>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture colordiffuse="main_fg_12">common/white.png</texture>
                     </control>

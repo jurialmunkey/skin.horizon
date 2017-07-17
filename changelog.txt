@@ -1,3 +1,6 @@
+[B]1.0.13[/B]
+Added option to overlay logo on fanart to create fake banners and landscape art (big thanks to Jeroen for this idea).
+
 [B]1.0.12[/B]
 Unwatched Episodes counter on indicators
 Cleanup of unused includes and variables etc
