@@ -211,7 +211,7 @@
                         <right>530</right>
                         <bottom>0</bottom>
                         <height>78</height>
-                        <label>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</label>
+                        <label>$VAR[Label_ShowCase_InfoLine]</label>
                         <textcolor>$VAR[ColorHighlight]</textcolor>
                         <align>left</align>
                         <font>font_small</font>
@@ -316,7 +316,7 @@
             <control type="label">
                 <left>0</left>
                 <right>$PARAM[right]</right>
-                <label>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</label>
+                <label>$VAR[Label_ShowCase_InfoLine]</label>
                 <height>40</height>
                 <aligny>top</aligny>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
@@ -345,7 +345,7 @@
             <control type="label">
                 <left>0</left>
                 <right>$PARAM[right]</right>
-                <label>$INFO[ListItem.Genre]</label>
+                <label>$VAR[Label_Genre]</label>
                 <height>60</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_100</textcolor>
