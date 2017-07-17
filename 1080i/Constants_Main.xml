@@ -36,7 +36,7 @@
     <constant name="widget_poster_label_top">-806</constant> <!-- -774 --> <!-- label position -->
     <constant name="widget_poster_label_spacer">495</constant> <!-- 451 --> <!-- space between items -->
     <constant name="widget_submenu_spacer">506</constant> <!-- 476 -->
-    <constant name="widget_submenu_label_top">-584</constant> <!-- -542 -->
+    <constant name="widget_submenu_label_top">-574</constant> <!-- -542 -->
     <constant name="widget_submenu_label_spacer">258</constant> <!-- 214 -->
     
 
