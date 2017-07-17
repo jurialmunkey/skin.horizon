@@ -288,7 +288,17 @@
                         <label>$LOCALIZE[31145]</label>
                         <selected>Skin.HasSetting(ShowInfoPaused)</selected>
                         <onclick>Skin.ToggleSetting(ShowInfoPaused)</onclick>
+                        <onclick>Skin.Reset(DisableOSDInfo)</onclick>
                     </control>
+                    <control type="radiobutton" id="9248" description="Only show seekbar on pressing info">
+                        <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31201]</label>
+                        <selected>Skin.HasSetting(DisableOSDInfo)</selected>
+                        <onclick>Skin.ToggleSetting(DisableOSDInfo)</onclick>
+                        <onclick>Skin.Reset(ShowInfoPaused)</onclick>
+                    </control>
+
                     <control type="radiobutton" id="9238" description="Media Flags">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
                         <include>Defs_Settings_Button</include>
@@ -318,14 +328,7 @@
                         <selected>!Skin.HasSetting(DontPauseOSD)</selected>
                         <onclick>Skin.ToggleSetting(DontPauseOSD)</onclick>
                     </control>
-                    <control type="radiobutton" id="9248" description="Only show seekbar on pressing info">
-                        <visible>ControlGroup(9100).HasFocus(9103)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31201]</label>
-                        <selected>Skin.HasSetting(DisableOSDInfo)</selected>
-                        <onclick>Skin.ToggleSetting(DisableOSDInfo)</onclick>
-                    </control>
-
+                    
                     <control type="radiobutton" id="9287" description="Larger statusbar font">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
                         <include>Defs_Settings_Button</include>
@@ -376,6 +379,14 @@
                         <label>$LOCALIZE[31216]</label>
                         <onclick>Skin.ToggleSetting(DisableClearLogo)</onclick>
                         <selected>!Skin.HasSetting(DisableClearLogo)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="radiobutton" id="9245">
+                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
+                        <label>$LOCALIZE[31255]</label>
+                        <onclick>Skin.ToggleSetting(DisableLandscapeClearLogo)</onclick>
+                        <selected>!Skin.HasSetting(DisableLandscapeClearLogo)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
                     

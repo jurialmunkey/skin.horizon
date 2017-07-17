@@ -1195,6 +1195,11 @@ msgctxt "#31254"
 msgid "If you are having difficulties with widgets or home menu items not displaying correctly please make sure that you press the \"save changes\" button to ensure that your shortcuts and widgets are set."
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31255"
+msgid "Create fake landscape art by overlaying clearlogo over fanart"
+msgstr ""
+
 msgctxt "#31259"
 msgid "Extra fanart"
 msgstr ""
