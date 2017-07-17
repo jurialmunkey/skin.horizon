@@ -117,7 +117,7 @@
                 <width>view_left</width>
                 <height>poster_height</height>
                 <control type="image">
-                    <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                    <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <control type="group">
@@ -128,7 +128,7 @@
                     <control type="group">
                         <height>musicposter_width</height>
                         <control type="image">
-                            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                            <include>Defs_Shadow_Opaque</include>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <include content="Object_BigPoster">
@@ -196,7 +196,7 @@
             <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
                 <control type="image">
-                    <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                    <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <include content="Object_BigPoster">

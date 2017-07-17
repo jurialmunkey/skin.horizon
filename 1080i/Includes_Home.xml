@@ -726,7 +726,7 @@
     <include name="Home_Textbar_Texture">
         <control type="image">
             <texture>common/gradient-solid-horizontal.png</texture>
-            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_DarkShadow</include>
+            <include>Defs_DarkShadow</include>
         </control>
         <control type="image">
             <right>6</right>
@@ -1018,14 +1018,11 @@
         <content><include>skinshortcuts-submenu</include></content>
     </include>
 
-    <include name="Home_Iconbar_Texture_Gradient"><texture>common/gradient-solid-horizontal.png</texture></include>
-    <include name="Home_Iconbar_Texture_Flat"><texture colordiffuse="main_bg_100">common/white.png</texture></include>
 
     <include name="Home_Iconbar_Texture">
         <control type="image">
-            <include condition="!Skin.HasSetting(FlattenGradient)">Home_Iconbar_Texture_Gradient</include>
-            <include condition="Skin.HasSetting(FlattenGradient)">Home_Iconbar_Texture_Flat</include>
-            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_DarkShadow</include>
+            <texture>common/gradient-solid-horizontal.png</texture>
+            <include>Defs_DarkShadow</include>
         </control>
         <control type="image">
             <width>1</width>

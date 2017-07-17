@@ -21,6 +21,27 @@
 
             <!-- Info List -->
             <control type="group">
+                <visible>Control.IsVisible(54)</visible>
+                <top>0</top>
+                <left>0</left>
+                <right>80</right>
+                <bottom>0</bottom>
+                <control type="fixedlist" id="54">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(videos) | Window.IsVisible(videoplaylist)</visible>
+                    <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]</visible>
+                    <viewtype label="$LOCALIZE[31196]">list</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31196]" />
+                    </include>
+                    <include content="View_List_Layout">
+                        <param name="id" value="54" />
+                    </include>
+                </control>
+            </control>
+
+
+            <!-- Info List 2 -->
+            <control type="group">
                 <visible>Control.IsVisible(55)</visible>
                 <top>0</top>
                 <left>0</left>
@@ -40,7 +61,7 @@
                     <include content="View_List_Layout">
                         <param name="id" value="55" />
                         <param name="height" value="infolist_item_height"/>
-                        <param name="offset" value="20" />
+                        <param name="offset" value="18" />
                     </include>
                 </control>
                 <control type="group">
@@ -68,26 +89,7 @@
                 </include>
             </control>
 
-            <!-- Info List 2 -->
-            <control type="group">
-                <visible>Control.IsVisible(54)</visible>
-                <top>0</top>
-                <left>0</left>
-                <right>80</right>
-                <bottom>0</bottom>
-                <control type="fixedlist" id="54">
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(videos) | Window.IsVisible(videoplaylist)</visible>
-                    <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]</visible>
-                    <viewtype label="$LOCALIZE[31196]">list</viewtype>
-                    <include content="View_Forced">
-                        <param name="string" value="$LOCALIZE[31196]" />
-                    </include>
-                    <include content="View_List_Layout">
-                        <param name="id" value="54" />
-                    </include>
-                </control>
-            </control>
-
+            
             <!-- Info List 3 -->
             <control type="group">
                 <visible>Control.IsVisible(57)</visible>
@@ -116,7 +118,7 @@
                     <height>infolist3_main_height</height>
                     <left>0</left>
                     <control type="image">
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                        <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                     </control>
                     <control type="fixedlist" id="57">
@@ -237,7 +239,7 @@
                 <width>view_left</width>
                 <height>poster_height</height>
                 <control type="image">
-                    <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                    <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <control type="group">

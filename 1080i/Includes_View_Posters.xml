@@ -134,7 +134,7 @@
                     <top>40</top>
                     <bottom>40</bottom>
                     <control type="image">
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Opaque</include>
+                        <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="main_bg_100">common/white.png</texture>
                     </control>
                 </control>
@@ -434,7 +434,7 @@
                         <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
-                            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                            <include>Defs_Shadow_Small</include>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
@@ -507,7 +507,7 @@
                     </control>
                     <control type="image" description="Poster">
                         <bordersize>10</bordersize>
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                        <include>Defs_Shadow_Small</include>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Poster]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
@@ -532,7 +532,7 @@
                         <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
-                            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                            <include>Defs_Shadow_Small</include>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
@@ -596,7 +596,7 @@
                     </control>
                     <control type="image" description="Poster">
                         <bordersize>10</bordersize>
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                        <include>Defs_Shadow_Small</include>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Poster]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
@@ -622,7 +622,7 @@
                         <height>313.75</height>
                         <control type="image">
                             <bordersize>10</bordersize>
-                            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                            <include>Defs_Shadow_Small</include>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
@@ -702,7 +702,7 @@
                         <height>313.75</height>
                         <control type="image">
                             <bordersize>10</bordersize>
-                            <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                            <include>Defs_Shadow_Small</include>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
@@ -780,7 +780,7 @@
                     <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="image">
                         <bordersize>10</bordersize>
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                        <include>Defs_Shadow_Small</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
                     <control type="image" description="Poster">
@@ -856,7 +856,7 @@
                     <include>Animation_FocusBounce_Small</include>
                     <control type="image">
                         <bordersize>10</bordersize>
-                        <include condition="!Skin.HasSetting(FlattenGradient)">Defs_Shadow_Small</include>
+                        <include>Defs_Shadow_Small</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
                     <control type="image" description="Poster">
