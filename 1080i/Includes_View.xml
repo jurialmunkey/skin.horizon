@@ -12,6 +12,8 @@
     <!-- 56 Showcase 2 -->
     <!-- 57 Infolist 3 -->
     <!-- 58 Banner     -->
+    <!-- 501 Infolist 4-->
+    <!-- 500 List 2    -->
     <!-- ============= -->
 
 
@@ -446,6 +448,13 @@
         <onright condition="Control.IsVisible(60)">61</onright>
         <onright condition="!Control.IsVisible(8000) + !Control.IsVisible(60)">300</onright>
         <onleft condition="Control.IsVisible(300)">300</onleft>
+    </include>
+
+    <include name="View_Movement_Vertical">
+        <ondown condition="Control.IsVisible(8000)">8000</ondown>
+        <ondown condition="Control.IsVisible(60)">61</ondown>
+        <ondown condition="!Control.IsVisible(8000) + !Control.IsVisible(60)">300</ondown>
+        <onup condition="Control.IsVisible(300)">300</onup>
     </include>
 
     <include name="View_Info_Movement">
