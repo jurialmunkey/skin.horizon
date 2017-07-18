@@ -635,17 +635,17 @@
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture background="true">$VAR[Image_Thumb]</texture>
                         </control>
-                        <!-- <control type="image">
+                        <control type="image">
                             <bottom>30</bottom>
                             <top>170</top>
                             <left>100</left>
                             <right>100</right>
                             <aspectratio aligny="bottom">keep</aspectratio>
                             <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                            <visible>!Skin.HasSetting(DisableLandscapeClearLogo)</visible>
+                            <visible>Skin.HasSetting(FakeLandscapeArt)</visible>
                             <visible>String.IsEmpty(ListItem.Art(landscape))</visible>
                             <visible>Container.Content(movies) | Container.Content(sets)</visible>
-                        </control> -->
+                        </control>
                     </control>
                     <control type="group">
                         <top>290</top>
@@ -715,17 +715,17 @@
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture background="true">$VAR[Image_Thumb]</texture>
                         </control>
-                        <!-- <control type="image">
+                        <control type="image">
                             <bottom>30</bottom>
                             <top>170</top>
                             <left>100</left>
                             <right>100</right>
                             <aspectratio aligny="bottom">keep</aspectratio>
                             <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                            <visible>!Skin.HasSetting(DisableLandscapeClearLogo)</visible>
+                            <visible>Skin.HasSetting(FakeLandscapeArt)</visible>
                             <visible>String.IsEmpty(ListItem.Art(landscape))</visible>
                             <visible>Container.Content(movies) | Container.Content(sets)</visible>
-                        </control> -->
+                        </control>
                         <include>View_WatchedOverlay</include>
                         <!-- Highlight -->
                         <control type="group">

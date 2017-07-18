@@ -382,13 +382,13 @@
                         <include>Defs_Settings_Button</include>
                     </control>
 
-                    <!-- <control type="radiobutton" id="9245">
+                    <control type="radiobutton" id="9245">
                         <visible>ControlGroup(9100).HasFocus(9104)</visible>
                         <label>$LOCALIZE[31255]</label>
-                        <onclick>Skin.ToggleSetting(DisableLandscapeClearLogo)</onclick>
-                        <selected>!Skin.HasSetting(DisableLandscapeClearLogo)</selected>
+                        <onclick>Skin.ToggleSetting(FakeLandscapeArt)</onclick>
+                        <selected>Skin.HasSetting(FakeLandscapeArt)</selected>
                         <include>Defs_Settings_Button</include>
-                    </control> -->
+                    </control>
                     
 
                     <!-- ====== -->

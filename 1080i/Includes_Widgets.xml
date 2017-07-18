@@ -516,9 +516,19 @@
                             <texture background="true">$VAR[Image_Thumb]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
+                        <control type="image">
+                            <bottom>30</bottom>
+                            <top>170</top>
+                            <left>120</left>
+                            <right>120</right>
+                            <aspectratio aligny="bottom">keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <visible>Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]</visible>
+                        </control>
                         <control type="group">
                             <top>270</top>
                             <bottom>0</bottom>
+                            <visible>![Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]]</visible>
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
@@ -734,9 +744,19 @@
                             <texture background="true">$VAR[Image_Thumb]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
+                        <control type="image">
+                            <bottom>30</bottom>
+                            <top>170</top>
+                            <left>120</left>
+                            <right>120</right>
+                            <aspectratio aligny="bottom">keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <visible>Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]</visible>
+                        </control>
                         <control type="group">
                             <top>270</top>
                             <bottom>0</bottom>
+                            <visible>![Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]]</visible>
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
