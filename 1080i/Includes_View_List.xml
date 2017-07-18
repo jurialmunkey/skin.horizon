@@ -242,27 +242,34 @@
                     <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
+
+
                 <control type="group">
                     <right>40</right>
                     <left>40</left>
                     <top>40</top>
-                    <bottom>40</bottom>
-                    <control type="group">
-                        <height>infolist2_icon_height</height>
-                        <control type="image">
-                            <include>Defs_Shadow_Opaque</include>
-                            <texture colordiffuse="PosterBack">common/white.png</texture>
-                        </control>
-                        <control type="image">
-                            <fadetime>100</fadetime>
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$VAR[Image_Thumb]</texture>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <top>infolist2_icon_height</top>
+                    <bottom>45</bottom>
+                    <control type="grouplist">
+                        <align>top</align>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <orientation>vertical</orientation>
                         <control type="group">
-                            <top>40</top>
+                            <height>infolist2_icon_height</height>
+                            <control type="image">
+                                <include>Defs_Shadow_Opaque</include>
+                                <texture colordiffuse="PosterBack">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <fadetime>100</fadetime>
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true">$VAR[Image_Thumb]</texture>
+                            </control>
+                            <visible>!Skin.HasSetting(DisableInfoListArt)</visible>
+                        </control>
+                        <control type="group">
+                            <visible>!Skin.HasSetting(DisableInfoListArt)</visible>
+                            <top>38</top>
+                            <height>22</height>
                             <control type="image">
                                 <height>1</height>
                                 <top>0</top>
@@ -273,84 +280,88 @@
                                 <top>-1</top>
                                 <texture colordiffuse="darkline_separator">common/white.png</texture>
                             </control>
-                            <control type="grouplist">
-                                <top>30</top>
-                                <align>top</align>
-                                <usecontrolcoords>true</usecontrolcoords>
-                                <orientation>vertical</orientation>
-                                <control type="label">
-                                    <aligny>top</aligny>
-                                    <align>center</align>
-                                    <height>55</height>
-                                    <font>font_topbar</font>
-                                    <textcolor>main_fg_100</textcolor>
-                                    <label>$VAR[Label_MainTitle]</label>
-                                </control>
-                                <control type="grouplist">
-                                    <height>40</height>
-                                    <align>center</align>
-                                    <itemgap>0</itemgap>
-                                    <orientation>horizontal</orientation>
-                                    <control type="label">
-                                        <label>$INFO[ListItem.MPAA]</label>
-                                        <width>auto</width>
-                                        <aligny>top</aligny>
-                                        <height>40</height>
-                                        <textcolor>main_fg_100</textcolor>
-                                        <font>font_small</font>
-                                    </control>
-                                    <control type="label">
-                                        <label>  |  </label>
-                                        <width>auto</width>
-                                        <aligny>top</aligny>
-                                        <height>40</height>
-                                        <textcolor>$VAR[ColorHighlight]</textcolor>
-                                        <font>font_small</font>
-                                        <visible>!String.IsEmpty(ListItem.MPAA) + [!String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)]</visible>
-                                    </control>
-                                    <control type="label">
-                                        <label>$VAR[Label_Duration]</label>
-                                        <width>auto</width>
-                                        <aligny>top</aligny>
-                                        <height>40</height>
-                                        <textcolor>main_fg_100</textcolor>
-                                        <font>font_small</font>
-                                    </control>
-                                    <control type="label">
-                                        <label>  |  </label>
-                                        <width>auto</width>
-                                        <aligny>top</aligny>
-                                        <height>40</height>
-                                        <textcolor>$VAR[ColorHighlight]</textcolor>
-                                        <font>font_small</font>
-                                        <visible>!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Premiered)</visible>
-                                    </control>
-                                    <control type="label">
-                                        <label>$INFO[ListItem.Premiered]</label>
-                                        <width>auto</width>
-                                        <aligny>top</aligny>
-                                        <height>40</height>
-                                        <textcolor>main_fg_100</textcolor>
-                                        <font>font_small</font>
-                                    </control>
-                                </control>
-                                <control type="group">
-                                    <height>64</height>
-                                    <top>-10</top>
-                                    <include content="Object_StarRating">
-                                        <param name="align" value="center" />
-                                    </include>
-                                </control>
-                                <control type="textbox">
-                                    <top>40</top>
-                                    <label>$VAR[Label_Plot]</label>
-                                    <height>250</height>
-                                    <aligny>top</aligny>
-                                    <align>center</align>
-                                    <textcolor>main_fg_70</textcolor>
-                                    <font>font_plotbox</font>
-                                </control>
+                        </control>
+                        <control type="label">
+                            <aligny>top</aligny>
+                            <align>center</align>
+                            <height>55</height>
+                            <font>font_topbar</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <label>$VAR[Label_MainTitle]</label>
+                        </control>
+                        <control type="grouplist">
+                            <height>40</height>
+                            <align>center</align>
+                            <itemgap>0</itemgap>
+                            <orientation>horizontal</orientation>
+                            <control type="label">
+                                <label>$INFO[ListItem.MPAA]</label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
                             </control>
+                            <control type="label">
+                                <label>  |  </label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>$VAR[ColorHighlight]</textcolor>
+                                <font>font_small</font>
+                                <visible>!String.IsEmpty(ListItem.MPAA) + [!String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)]</visible>
+                            </control>
+                            <control type="label">
+                                <label>$VAR[Label_Duration]</label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
+                            </control>
+                            <control type="label">
+                                <label>  |  </label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>$VAR[ColorHighlight]</textcolor>
+                                <font>font_small</font>
+                                <visible>!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Premiered)</visible>
+                            </control>
+                            <control type="label">
+                                <label>$INFO[ListItem.Premiered]</label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <height>64</height>
+                            <top>-10</top>
+                            <include content="Object_StarRating">
+                                <param name="align" value="center" />
+                            </include>
+                        </control>
+                        <control type="label">
+                            <top>40</top>
+                            <label>$INFO[ListItem.Genre]</label>
+                            <align>center</align>
+                            <aligny>top</aligny>
+                            <height>40</height>
+                            <textcolor>main_fg_100</textcolor>
+                            <font>font_small</font>
+                            <visible>Skin.HasSetting(DisableInfoListArt)</visible>
+                        </control>
+                        <control type="textbox">
+                            <top>40</top>
+                            <label>$VAR[Label_Plot]</label>
+                            <height>auto</height>
+                            <aligny>top</aligny>
+                            <align>center</align>
+                            <textcolor>main_fg_70</textcolor>
+                            <font>font_plotbox</font>
                         </control>
                     </control>
                 </control>

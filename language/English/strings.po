@@ -709,6 +709,11 @@ msgctxt "#31147"
 msgid "Extra Info"
 msgstr ""
 
+#: /1080i/Includes_Home.xml
+msgctxt "#31148"
+msgid "Hide Artwork"
+msgstr ""
+
 msgctxt "#31149"
 msgid "Replace widget fanart with background"
 msgstr ""
@@ -1193,6 +1198,11 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31255"
 msgid "Create fake landscape art by overlaying clearlogo over fanart"
+msgstr ""
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31256"
+msgid "Show Artwork"
 msgstr ""
 
 msgctxt "#31259"

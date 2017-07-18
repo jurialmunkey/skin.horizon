@@ -513,13 +513,21 @@
                 <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
-            <!-- Viewmode -->
+            <!-- Wraplist -->
             <item>
                 <label>$VAR[Label_WrapList]</label>
                 <icon>special://skin/extras/icons/signpost.png</icon>
                 <onclick>Skin.ToggleSetting(WrapList)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(52) | Control.IsVisible(56)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            </item>
+            <!-- InfoList Hide Artwork -->
+            <item>
+                <label>$VAR[Label_HideArtwork]</label>
+                <icon>special://skin/extras/icons/pictures.png</icon>
+                <onclick>Skin.ToggleSetting(DisableInfoListArt)</onclick>
+                <visible>Control.IsVisible(54)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Sort -->
