@@ -304,19 +304,6 @@
         </control>
     </include>
 
-    <include name="Defs_PVRGuide_Lines">
-        <control type="image" id="2">
-            <height>1</height>
-            <top>0</top>
-            <texture colordiffuse="7f000000">common/white.png</texture>
-        </control>
-        <control type="image" id="2">
-            <height>1</height>
-            <top>1</top>
-            <texture colordiffuse="1fcccccc">common/white.png</texture>
-        </control>
-    </include>
-
     <include name="Defs_InfoDialog_Visible">
         <visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
     </include>

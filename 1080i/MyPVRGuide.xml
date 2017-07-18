@@ -14,6 +14,14 @@
             <control type="group">
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <visible>Control.IsVisible(10)</visible>
+                <control type="image">
+                    <left>86</left>
+                    <right>0</right>
+                    <height>4</height>
+                    <bottom>514</bottom>
+                    <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                    <include>Animation_Right</include>
+                </control>
                 <control type="epggrid" id="10" description="EPG">
                     <include>Animation_Right</include>
                     <left>86</left>
@@ -25,11 +33,11 @@
                     <onleft>9400</onleft>
                     <progresstexture border="5" colordiffuse="bf777777">pvr/progressline.png</progresstexture>
                     <scrolltime tween="quadratic">300</scrolltime>
-                    <timeblocks>40</timeblocks>
+                    <timeblocks>24</timeblocks>
                     <rulerunit>6</rulerunit>
                     <rulerlayout height="74" width="262">
                         <control type="label" id="2">
-                            <posx>40</posx>
+                            <posx>50</posx>
                             <posy>46</posy>
                             <width>200</width>
                             <align>left</align>
@@ -39,7 +47,7 @@
                             <textcolor>main_fg_30</textcolor>
                         </control>
                     </rulerlayout>
-                    <channellayout height="74" width="524">
+                    <channellayout height="103.6" width="524">
                         <control type="image">
                             <left>0</left>
                             <right>1</right>
@@ -51,22 +59,23 @@
                         </control>
                         <control type="image">
                             <left>0</left>
-                            <width>100%</width>
-                            <top>1</top>
-                            <texture colordiffuse="2f000000">common/white.png</texture>
-                        </control>
-                        <include>Defs_PVRGuide_Lines</include>
-                        <control type="image" id="2">
-                            <width>1</width>
-                            <top>1</top>
                             <right>0</right>
-                            <texture colordiffuse="7f000000">common/white.png</texture>
+                            <height>4</height>
+                            <bottom>-4</bottom>
+                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <right>0</right>
+                            <width>4</width>
+                            <top>4</top>
+                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
                         </control>
                         <control type="label">
                             <posx>90</posx>
                             <width>300</width>
                             <aligny>center</aligny>
-                            <height>67</height>
+                            <height>103.6</height>
+                            <font>font_tiny_bold_uppercase</font>
                             <textcolor>main_fg_70</textcolor>
                             <label>$INFO[ListItem.ChannelName]</label>
                         </control>
@@ -75,50 +84,58 @@
                             <width>90</width>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <height>67</height>
+                            <height>103.6</height>
                             <textcolor>main_fg_70</textcolor>
+                            <font>font_tiny_bold_uppercase</font>
                             <label>$INFO[ListItem.ChannelNumberLabel]</label>
                         </control>
                         <control type="image">
-                            <top>10</top>
+                            <top>14</top>
                             <bottom>10</bottom>
-                            <right>10</right>
-                            <width>50</width>
+                            <right>14</right>
                             <texture>$INFO[ListItem.Icon]</texture>
                             <aspectratio aligny="center" align="right">keep</aspectratio>
                         </control>
                     </channellayout>
-                    <focusedchannellayout height="74" width="524"> 
+                    <focusedchannellayout height="103.6" width="524"> 
+                        <control type="group">
+                            <left>0</left>
+                            <right>4</right>
+                            <top>4</top>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                            </control>
+                            <control type="image">
+                                <texture>common/selected.png</texture>
+                                <aspectratio aligny="top">center</aspectratio>
+                                <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
+                                <visible>ListItem.IsPlaying</visible>
+                            </control>
+                        </control>
                         <control type="image">
                             <left>0</left>
-                            <right>1</right>
-                            <top>1</top>
-                            <bottom>0</bottom>
-                            <texture border="12" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-                        </control>
-                        <include>Defs_PVRGuide_Lines</include>
-                        <control type="image" id="2">
-                            <width>1</width>
-                            <top>1</top>
                             <right>0</right>
-                            <texture colordiffuse="7f000000">common/white.png</texture>
+                            <height>4</height>
+                            <bottom>-4</bottom>
+                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
                         </control>
                         <control type="image">
-                            <left>0</left>
-                            <right>1</right>
-                            <top>1</top>
-                            <texture>common/selected.png</texture>
-                            <aspectratio aligny="top">center</aspectratio>
-                            <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
-                            <visible>ListItem.IsPlaying</visible>
+                            <right>0</right>
+                            <width>4</width>
+                            <top>4</top>
+                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
                         </control>
                         <control type="label">
                             <posx>90</posx>
                             <width>300</width>
                             <aligny>center</aligny>
-                            <height>67</height>
+                            <height>103.6</height>
                             <selectedcolor>Selected</selectedcolor>
                             <textcolor>Selected</textcolor>
+                            <font>font_tiny_bold_uppercase</font>
                             <label>$INFO[ListItem.ChannelName]</label>
                         </control>
                         <control type="label">
@@ -127,93 +144,111 @@
                             <align>center</align>
                             <aligny>center</aligny>
                             <selectedcolor>Selected</selectedcolor>
-                            <height>67</height>
+                            <height>103.6</height>
                             <textcolor>Selected</textcolor>
+                            <font>font_tiny_bold_uppercase</font>
                             <label>$INFO[ListItem.ChannelNumberLabel]</label>
                         </control>
                         <control type="image">
-                            <top>10</top>
+                            <top>14</top>
                             <bottom>10</bottom>
-                            <right>10</right>
-                            <width>50</width>
+                            <right>14</right>
                             <texture>$INFO[ListItem.Icon]</texture>
                             <aspectratio aligny="center" align="right">keep</aspectratio>
                         </control>
                     </focusedchannellayout>
-                    <itemlayout height="74" width="262">
-                        <include>Defs_PVRGuide_Lines</include>
+                    <itemlayout height="103.6" width="262">
                         <control type="image" id="2">
                             <left>0</left>
-                            <width>259</width>
-                            <top>1</top>
-                            <texture colordiffuse="2f000000">common/white.png</texture>
+                            <width>258</width>
+                            <top>4</top>
+                            <texture colordiffuse="BBffffff">pvrgenre/$INFO[ListItem.Property(GenreType)].png</texture>
                         </control>
-                        <control type="image" id="2">
-                            <left>0</left>
-                            <width>259</width>
-                            <top>1</top>
-                            <texture colordiffuse="5fffffff">pvrgenre/$INFO[ListItem.Property(GenreType)].png</texture>
-                        </control>
-
                         <control type="image">
-                            <posy>6</posy>
-                            <width>52</width>
-                            <height>52</height>
-                            <texture colordiffuse="main_fg_70">special://skin/extras/icons/timer.png</texture>
-                            <visible>ListItem.HasTimer | ListItem.IsRecording</visible>
+                            <top>5</top>
+                            <width>24</width>
+                            <height>24</height>
+                            <texture colordiffuse="ff000000">indicator/new.png</texture>
+                            <visible>ListItem.HasTimer</visible>
+                        </control>
+                        <control type="image">
+                            <top>5</top>
+                            <width>24</width>
+                            <height>24</height>
+                            <texture colordiffuse="ff000000">indicator/checkmark.png</texture>
+                            <visible>ListItem.IsRecording</visible>
                         </control>
                         <control type="label" id="1">
-                            <posx>0</posx>
-                            <height>66</height>
-                            <width>285</width>
-                            <textoffsetx>50</textoffsetx>
-                            <textcolor>main_fg_70</textcolor>
+                            <left>20</left>
+                            <width>218</width>
+                            <centertop>35%</centertop>
+                            <textcolor>main_fg_100</textcolor>
+                            <textoffsetx>0</textoffsetx>
+                            <font>font_tiny_bold_uppercase</font>
                             <label>$INFO[ListItem.Label]</label>
-                            <visible>ListItem.HasTimer | ListItem.IsRecording</visible>
                         </control>
                         <control type="label" id="1">
-                            <posx>15</posx>
-                            <width>226</width>
-                            <height>67</height>
+                            <left>20</left>
+                            <width>218</width>
+                            <centerbottom>35%</centerbottom>
                             <textcolor>main_fg_70</textcolor>
                             <textoffsetx>0</textoffsetx>
-                            <label>$INFO[ListItem.Label]</label>
-                            <visible>!ListItem.HasTimer + !ListItem.IsRecording</visible>
+                            <font>font_statusbar</font>
+                            <label>$INFO[ListItem.Genre,[UPPERCASE],[/UPPERCASE]]</label>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="74" width="262">
-                        <include>Defs_PVRGuide_Lines</include>
+                    <focusedlayout height="103.6" width="262">
                         <control type="image" id="2">
-                            <width>259</width>
-                            <top>1</top>
-                            <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            <left>0</left>
+                            <width>258</width>
+                            <top>4</top>
+                            <texture colordiffuse="BBffffff">pvrgenre/$INFO[ListItem.Property(GenreType)].png</texture>
                         </control>
 
+                        <control type="image" id="2">
+                            <left>0</left>
+                            <width>258</width>
+                            <top>4</top>
+                            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        </control>
+                        <control type="image" id="2">
+                            <left>0</left>
+                            <width>258</width>
+                            <top>4</top>
+                            <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                        </control>
                         <control type="image">
-                            <posy>6</posy>
-                            <width>52</width>
-                            <height>52</height>
-                            <texture>special://skin/extras/icons/timer.png</texture>
-                            <colordiffuse>Selected</colordiffuse>
-                            <visible>ListItem.HasTimer | ListItem.IsRecording</visible>
+                            <top>5</top>
+                            <width>24</width>
+                            <height>24</height>
+                            <texture colordiffuse="ff000000">indicator/new.png</texture>
+                            <visible>ListItem.HasTimer</visible>
                         </control>
-                        <control type="label" id="1">
-                            <posx>0</posx>
-                            <height>66</height>
-                            <width>285</width>
-                            <textoffsetx>50</textoffsetx>
-                            <textcolor>Selected</textcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <visible>ListItem.HasTimer | ListItem.IsRecording</visible>
+                        <control type="image">
+                            <top>5</top>
+                            <width>24</width>
+                            <height>24</height>
+                            <texture colordiffuse="ff000000">indicator/checkmark.png</texture>
+                            <visible>ListItem.IsRecording</visible>
                         </control>
+                        
                         <control type="label" id="1">
-                            <posx>15</posx>
-                            <width>226</width>
-                            <height>67</height>
+                            <left>20</left>
+                            <width>218</width>
+                            <centertop>35%</centertop>
                             <textcolor>Selected</textcolor>
                             <textoffsetx>0</textoffsetx>
+                            <font>font_tiny_bold_uppercase</font>
                             <label>$INFO[ListItem.Label]</label>
-                            <visible>!ListItem.HasTimer + !ListItem.IsRecording</visible>
+                        </control>
+                        <control type="label" id="1">
+                            <left>20</left>
+                            <width>218</width>
+                            <centerbottom>35%</centerbottom>
+                            <textcolor>Selected</textcolor>
+                            <textoffsetx>0</textoffsetx>
+                            <font>font_statusbar</font>
+                            <label>$INFO[ListItem.Genre,[UPPERCASE],[/UPPERCASE]]</label>
                         </control>
                     </focusedlayout>
                 </control>

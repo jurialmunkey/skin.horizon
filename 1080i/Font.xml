@@ -40,6 +40,18 @@
             <size>26</size>
         </font>
         <font>
+            <name>font_tiny_uppercase</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>26</size>
+            <style>uppercase</style>
+        </font>
+        <font>
+            <name>font_tiny_bold_uppercase</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>26</size>
+            <style>uppercase</style>
+        </font>
+        <font>
             <name>font_button</name>
             <style>uppercase</style>
             <filename>RobotoCondensed-Regular.ttf</filename>

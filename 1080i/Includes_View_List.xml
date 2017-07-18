@@ -173,9 +173,6 @@
                     <param name="offset" value="20" />
                 </include>
             </control>
-            <control type="group">
-                <include>Object_Separator_Top</include>
-            </control>
         </control>
     </include>
 
@@ -393,7 +390,7 @@
                             <bordersize>10</bordersize>
                             <height>$PARAM[height]</height>
                             <width>$PARAM[height]</width>
-                            <texture>$INFO[ListItem.Icon]</texture>
+                            <texture fallback="special://skin/extras/icons/tv.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="group">
                             <left>$PARAM[height]</left>
@@ -403,7 +400,7 @@
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <textcolor>main_fg_30</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_bold_uppercase</font>
                                 <label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName,,]</label>
                             </control>
                             <control type="label">
@@ -412,30 +409,53 @@
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <textcolor>main_fg_70</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_uppercase</font>
                                 <label>$INFO[ListItem.Title]</label>
                             </control>
                             <control type="label">
                                 <left>800</left>
-                                <right>285</right>
+                                <right>340</right>
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <textcolor>main_fg_30</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_uppercase</font>
                                 <scroll>false</scroll>
                                 <label>$INFO[ListItem.NextTitle]</label>
                             </control>
                             <control type="label">
-                                <width>280</width>
+                                <width>125</width>
+                                <right>155</right>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <align>right</align>
+                                <textcolor>main_fg_30</textcolor>
+                                <font>font_tiny_bold_uppercase</font>
+                                <scroll>false</scroll>
+                                <label>$INFO[ListItem.StartTime]    </label>
+                            </control>
+                            <control type="label">
+                                <width>250</width>
+                                <right>30</right>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <textcolor>main_fg_30</textcolor>
+                                <font>font_tiny_bold_uppercase</font>
+                                <scroll>false</scroll>
+                                <label>   |</label>
+                                <visible>!String.IsEmpty(ListItem.EndTime)</visible>
+                            </control>
+                            <control type="label">
+                                <width>125</width>
                                 <right>30</right>
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <textcolor>main_fg_30</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_bold_uppercase</font>
                                 <scroll>false</scroll>
-                                <label>$INFO[ListItem.StartTime,   (,]$INFO[ListItem.EndTime, | ,)]</label>
+                                <label>   $INFO[ListItem.EndTime]</label>
                             </control>
                         </control>
                     </control>
@@ -553,7 +573,7 @@
                             <bordersize>10</bordersize>
                             <height>$PARAM[height]</height>
                             <width>$PARAM[height]</width>
-                            <texture>$INFO[ListItem.Icon]</texture>
+                            <texture fallback="special://skin/extras/icons/tv.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="group">
                             <left>$PARAM[height]</left>
@@ -563,7 +583,7 @@
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <textcolor>Selected</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_bold_uppercase</font>
                                 <label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName,,]</label>
                             </control>
                             <control type="label">
@@ -572,30 +592,53 @@
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <textcolor>Selected</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_uppercase</font>
                                 <label>$INFO[ListItem.Title]</label>
                             </control>
                             <control type="label">
                                 <left>800</left>
-                                <right>285</right>
+                                <right>340</right>
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <textcolor>Selected</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_uppercase</font>
                                 <scroll>false</scroll>
-                                <label>$INFO[ListItem.NextTitle]</label>
+                                <label>[UPPERCASE]$INFO[ListItem.NextTitle][/UPPERCASE]</label>
                             </control>
                             <control type="label">
-                                <width>280</width>
+                                <width>125</width>
+                                <right>155</right>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <align>right</align>
+                                <textcolor>Selected</textcolor>
+                                <font>font_tiny_bold_uppercase</font>
+                                <scroll>false</scroll>
+                                <label>$INFO[ListItem.StartTime]    </label>
+                            </control>
+                            <control type="label">
+                                <width>250</width>
+                                <right>30</right>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <textcolor>Selected</textcolor>
+                                <font>font_tiny_bold_uppercase</font>
+                                <scroll>false</scroll>
+                                <label>   |</label>
+                                <visible>!String.IsEmpty(ListItem.EndTime)</visible>
+                            </control>
+                            <control type="label">
+                                <width>125</width>
                                 <right>30</right>
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <textcolor>Selected</textcolor>
-                                <font>font_small</font>
+                                <font>font_tiny_bold_uppercase</font>
                                 <scroll>false</scroll>
-                                <label>$INFO[ListItem.StartTime,   (,]$INFO[ListItem.EndTime, | ,)]</label>
+                                <label>   $INFO[ListItem.EndTime]</label>
                             </control>
                         </control>
                     </control>

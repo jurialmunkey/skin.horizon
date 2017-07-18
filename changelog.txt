@@ -2,6 +2,8 @@
 Overlay logo on fanart to create fake landscape art (thanks to Jeroen)
 Fix bug with season endtime in showcase view
 Option to hide artwork in infolist view
+Updates to PVR guide and PVR channels views
+Updates to some list view types
 
 [B]1.0.12[/B]
 Unwatched Episodes counter on indicators
