@@ -213,7 +213,7 @@
             <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Right</include>
             <bottom>612</bottom>
-            <top>216</top>
+            <top>186</top>
             <left>136</left>
             <right>50</right>
             <orientation>vertical</orientation>
@@ -235,7 +235,7 @@
             </control>
             <control type="textbox">
                 <label fallback="19055">$VAR[Label_Plot]</label>
-                <height>80</height>
+                <height>130</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>
