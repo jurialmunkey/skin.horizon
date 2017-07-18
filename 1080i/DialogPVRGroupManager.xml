@@ -2,7 +2,7 @@
 <window id="604">
     <defaultcontrol always="true">29</defaultcontrol>
     <controls>
-        <include>GlobalOverlay</include>
+        <include>Global_Overlay</include>
 
         <control type="group">
 
@@ -75,7 +75,7 @@
                     <width>100%</width>
                     <align>center</align>
                     <height>84</height>
-                    <font>TinyBold</font>
+                    <font>font_tiny_bold</font>
                 </control>
                 <control type="list" id="13">
                     <posx>0</posx>
@@ -149,7 +149,7 @@
                     <width>100%</width>
                     <align>center</align>
                     <height>84</height>
-                    <font>TinyBold</font>
+                    <font>font_tiny_bold</font>
                 </control>
                 <control type="list" id="11">
                     <posx>0</posx>
@@ -223,7 +223,7 @@
                     <width>100%</width>
                     <align>center</align>
                     <height>84</height>
-                    <font>TinyBold</font>
+                    <font>font_tiny_bold</font>
                 </control>
                 <control type="list" id="12">
                     <posx>0</posx>

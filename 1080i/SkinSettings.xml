@@ -13,7 +13,7 @@
                 <left>320</left>
                 <right>-290</right>
                 <top>37</top>
-                <height>880</height>
+                <height>settings_height</height>
 
                 <!-- Left Gradient Fade -->
                 <control type="image">
@@ -288,7 +288,17 @@
                         <label>$LOCALIZE[31145]</label>
                         <selected>Skin.HasSetting(ShowInfoPaused)</selected>
                         <onclick>Skin.ToggleSetting(ShowInfoPaused)</onclick>
+                        <onclick>Skin.Reset(DisableOSDInfo)</onclick>
                     </control>
+                    <control type="radiobutton" id="9248" description="Only show seekbar on pressing info">
+                        <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31201]</label>
+                        <selected>Skin.HasSetting(DisableOSDInfo)</selected>
+                        <onclick>Skin.ToggleSetting(DisableOSDInfo)</onclick>
+                        <onclick>Skin.Reset(ShowInfoPaused)</onclick>
+                    </control>
+
                     <control type="radiobutton" id="9238" description="Media Flags">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
                         <include>Defs_Settings_Button</include>
@@ -318,12 +328,13 @@
                         <selected>!Skin.HasSetting(DontPauseOSD)</selected>
                         <onclick>Skin.ToggleSetting(DontPauseOSD)</onclick>
                     </control>
-                    <control type="radiobutton" id="9248" description="Only show seekbar on pressing info">
+                    
+                    <control type="radiobutton" id="9287" description="Larger statusbar font">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31201]</label>
-                        <selected>Skin.HasSetting(DisableOSDInfo)</selected>
-                        <onclick>Skin.ToggleSetting(DisableOSDInfo)</onclick>
+                        <label>$LOCALIZE[31253]</label>
+                        <selected>Skin.HasSetting(LargeStatusbarFont)</selected>
+                        <onclick>Skin.ToggleSetting(LargeStatusbarFont)</onclick>
                     </control>
 
                     
@@ -370,6 +381,14 @@
                         <selected>!Skin.HasSetting(DisableClearLogo)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
+
+                    <control type="radiobutton" id="9245">
+                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
+                        <label>$LOCALIZE[31255]</label>
+                        <onclick>Skin.ToggleSetting(FakeLandscapeArt)</onclick>
+                        <selected>Skin.HasSetting(FakeLandscapeArt)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
                     
 
                     <!-- ====== -->
@@ -386,7 +405,7 @@
                     <control type="button" id="9253" description="Color Highlight">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Select secondary gradient colour</label>
+                        <label>$LOCALIZE[31250]</label>
                         <label2>$INFO[Skin.String(gradientcolor.name)]</label2>
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
@@ -398,14 +417,6 @@
                         <onclick>Skin.Reset(focuscolor.name)</onclick>
                         <onclick>Skin.Reset(gradientcolor.name)</onclick>
                     </control>
-                    <!-- <control type="radiobutton" id="9252" description="Enable Glow">
-                        <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31233]</label>
-                        <selected>Skin.HasSetting(EnableGlow)</selected>
-                        <onclick>Skin.ToggleSetting(EnableGlow)</onclick>
-                    </control> -->
-
                     <!-- ============= -->
                     <!-- Miscellaneous -->
                     <!-- ============= -->
@@ -614,6 +625,15 @@
                         <onclick condition="!System.HasAddon(resource.images.weatherfanart.multi)">InstallAddon(resource.images.weatherfanart.multi)</onclick>
                         <onclick condition="System.HasAddon(resource.images.weatherfanart.multi)">Addon.OpenSettings(resource.images.weatherfanart.multi)</onclick>
                         <selected>System.HasAddon(resource.images.weatherfanart.multi)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+                    <control type="radiobutton" id="9259">
+                        <visible>ControlGroup(9100).HasFocus(9108)</visible>
+                        <label>resource.images.weathericons.white</label>
+                        <label2>$INFO[System.AddonVersion(resource.images.weathericons.white)]        </label2>
+                        <onclick condition="!System.HasAddon(resource.images.weathericons.white)">InstallAddon(resource.images.weathericons.white)</onclick>
+                        <onclick condition="System.HasAddon(resource.images.weathericons.white)">Addon.OpenSettings(resource.images.weathericons.white)</onclick>
+                        <selected>System.HasAddon(resource.images.weathericons.white)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
 

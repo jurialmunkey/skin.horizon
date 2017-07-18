@@ -5,10 +5,10 @@
     <!-- Notification Dialogs -->
     <!-- ==================== -->
     <include name="Dialog_Notification_Group">
-        <right>SidePad</right>
-        <top>48</top>
-        <width>600</width>
+        <right>sidepad</right>
+        <centertop>53%</centertop>
         <height>100</height>
+        <width>600</width>
         <include>Animation_FadeIn_Slide</include>
         <include>Animation_FadeOut</include>
     </include>
@@ -163,26 +163,6 @@
     <!-- ============ -->
     <!-- Info Dialogs -->
     <!-- ============ -->
-    <include name="Dialog_Info_Header">
-        <left>30</left>
-        <right>320</right>
-        <top>15</top>
-        <height>70</height>
-        <font>font_medium_bold</font>
-        <align>left</align>
-        <textcolor>dialog_fg_70</textcolor>
-    </include>
-
-    <include name="Dialog_Info_Button_Grouplist">
-        <left>SidePad</left>
-        <right>SidePad</right>
-        <align>center</align>
-        <height>423</height>
-        <top>778</top>
-        <itemgap>14</itemgap>
-        <orientation>horizontal</orientation>
-    </include>
-
 
     <include name="Dialog_Info_Buttons">
         <width>320</width>
@@ -194,7 +174,7 @@
 
     <include name="Dialog_Info_Details_Grouplist">
         <left>910</left>
-        <right>SidePad</right>
+        <right>sidepad</right>
         <top>106</top>
         <orientation>vertical</orientation>
         <usecontrolcoords>true</usecontrolcoords>
@@ -448,7 +428,7 @@
         <include>Animation_Right_Settings</include>
         <left>70</left>
         <right>-16</right>
-        <top>156</top>
+        <top>settings_top</top>
         <bottom>48</bottom>
     </include>
 

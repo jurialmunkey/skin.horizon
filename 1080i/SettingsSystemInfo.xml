@@ -13,7 +13,7 @@
                 <left>320</left>
                 <right>-290</right>
                 <top>37</top>
-                <height>880</height>
+                <height>settings_height</height>
 
                 <!-- Left Gradient Fade -->
                 <control type="image">

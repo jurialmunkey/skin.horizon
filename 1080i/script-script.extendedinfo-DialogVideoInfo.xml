@@ -11,14 +11,13 @@
         <include>Global_Background</include>
         <include>Topbar_Gradient</include>
         <control type="group">
-            <top>0</top>
-            <height>186</height>
+            <height>topbar_height</height>
             <include>Topbar_Texture</include>
+            <include>Topbar_TextDetails</include>
         </control>
-        <include>Topbar_TextDetails</include>
 
         <control type="group">
-            <width>596</width>
+            <width>view_left</width>
             <include>View_Group</include>
             <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Left_Delay</include>
@@ -36,7 +35,7 @@
         <control type="group">
             <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Right_Delay</include>
-            <top>MenuBarTop</top>
+            <top>view_top</top>
             <!-- Plot -->
             <control type="group">
                 <left>info_left</left>
@@ -150,7 +149,7 @@
                     <include content="View_Actor_Layout">
                         <param name="id" value="350" />
                         <param name="infolabel" value="false" />
-                        <param name="itemwidth" value="572" />
+                        <param name="itemwidth" value="567" />
                     </include>
                 </control>
                 <include content="Dialog_VideoInfo_BusyIndicator">
@@ -192,7 +191,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -200,12 +199,11 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Director)]</label>
                     </control>
                 </control>
@@ -216,7 +214,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -224,12 +222,11 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Writer)]</label>
                     </control>
                 </control>
@@ -240,7 +237,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -248,12 +245,11 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Genre)]</label>
                     </control>
                 </control>
@@ -264,7 +260,7 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
                         <height>100%</height>
@@ -272,12 +268,11 @@
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Budget),$,]</label>
                     </control>
                 </control>
@@ -288,20 +283,18 @@
                         <font>font_small</font>
                         <textcolor>main_fg_30</textcolor>
                         <aligny>center</aligny>
-                        <width>200</width>
+                        <width>info_details_width</width>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
-                        <height>100%</height>
                         <label>$ADDON[script.extendedinfo 32108]</label>
                     </control>
                     <control type="label">
                         <height>42</height>
-                        <left>200</left>
+                        <left>info_details_width</left>
                         <font>font_small</font>
                         <textcolor>main_fg_100</textcolor>
                         <aligny>center</aligny>
                         <width>auto</width>
-                        <height>100%</height>
                         <label>$INFO[Window.Property(Revenue),$,]</label>
                     </control>
                 </control>
@@ -331,7 +324,7 @@
                     <include>Home_MainMenu_ExtInfoItems</include>
                 </control>
                 <control type="group">
-                    <top>MenuBarTop</top>
+                    <top>view_top</top>
                     <height>74</height>
                     <control type="group">
                         <left>74</left>
@@ -368,7 +361,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <top>MenuBarTop</top>
+                    <top>view_top</top>
                     <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
                     <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
                     <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>

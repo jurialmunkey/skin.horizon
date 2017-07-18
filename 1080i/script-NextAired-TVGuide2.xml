@@ -22,13 +22,15 @@
 
             <control type="group">
                 <control type="group">
+                    <include>Topbar_SubMenu_Group_Content</include>
+                </control>
+                <control type="group">
                     <include>Topbar_MainMenu_Group</include>
                     <include>Topbar_MainMenu_Lines</include>
                 </control>
-                <control type="group">
-                    <include>Topbar_SubMenu_Group_Content</include>
-                </control>
+                
             </control>
+
 
             <control type="grouplist" id="9500">
                 <orientation>horizontal</orientation>
@@ -195,7 +197,5 @@
                 </include>
             </control>
         </control>
-
-        <include>Statusbar</include>
     </controls>
 </window>

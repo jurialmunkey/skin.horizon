@@ -2,13 +2,13 @@
 <includes>
     <include name="OSD_Music_Seekbar">
         <control type="group">
-            <visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | Window.IsActive(DialogFullScreenInfo.xml)</visible>
+            <visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml)</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
-            <animation type="WindowOpen" reversible="False">
+            <animation type="WindowOpen" reversible="false">
                 <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
                 <effect type="slide" start="0,96" end="0" time="400" tween="cubic" easing="out" />
             </animation>
-            <animation type="WindowClose" reversible="False">
+            <animation type="WindowClose" reversible="false">
                 <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
                 <effect type="slide" start="0" end="0,96" time="300" tween="cubic" easing="out" />
             </animation>
@@ -18,7 +18,7 @@
 
     <include name="OSD_Music_Info">
         <control type="group">
-            <visible>Player.ShowInfo | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+            <visible>Player.ShowInfo</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
             <!-- Overlay -->
             <control type="image">
@@ -34,16 +34,19 @@
                 <texture>common/dim-gradient.png</texture>
             </control>
 
-            <include>Topbar_TextDetails_DateTime</include>
+            <control type="group">
+                <height>topbar_height</height>
+                <include>Topbar_TextDetails_DateTime</include>
+            </control>
 
             <control type="group">
                 <control type="group">
-                    <visible>Player.ShowInfo | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+                    <visible>Player.ShowInfo</visible>
                     <include>Animation_Left</include>
                     <width>720</width>
                     <height>720</height>
-                    <left>SidePad</left>
-                    <bottom>SidePad</bottom>
+                    <left>sidepad</left>
+                    <bottom>sidepad</bottom>
                     <control type="image">
                         <centerbottom>0</centerbottom>
                         <width>100%</width>
@@ -57,12 +60,12 @@
                     </control>
                 </control>
                 <control type="group" description="info">
-                    <visible>Player.ShowInfo | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+                    <visible>Player.ShowInfo</visible>
                     <include>Animation_Right</include>
                     <left>800</left>
                     <right>30</right>
                     <top>100</top>
-                    <bottom>SidePad</bottom>
+                    <bottom>sidepad</bottom>
                     <control type="grouplist">
                         <top>400</top>
                         <left>40</left>
@@ -184,9 +187,9 @@
 
     <include name="OSD_Video_Seekbar">
         <control type="group">
-            <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
-            <animation effect="fade" start="0" end="100" time="300" condition="![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | Window.IsActive(DialogFullScreenInfo.xml)]">WindowOpen</animation>
+            <animation effect="fade" start="0" end="100" time="300" condition="![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml)]">WindowOpen</animation>
             <control type="group">
                 <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | [Player.Paused + Skin.HasSetting(ShowInfoPaused)]</visible>
                 <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
@@ -207,14 +210,17 @@
                     <texture>common/dim-gradient.png</texture>
                 </control>
 
-                <include>Topbar_TextDetails_DateTime</include>
+                <control type="group">
+                    <height>topbar_height</height>
+                    <include>Topbar_TextDetails_DateTime</include>
+                </control>
 
                 <control type="group">
                     <control type="group">
                         <width>480</width>
                         <height>720</height>
-                        <left>SidePad</left>
-                        <bottom>SidePad</bottom>
+                        <left>sidepad</left>
+                        <bottom>sidepad</bottom>
                         <control type="image">
                             <centerbottom>0</centerbottom>
                             <width>100%</width>
@@ -237,9 +243,9 @@
                     </control>
                     <control type="group" description="info">
                         <left>560</left>
-                        <right>SidePad</right>
+                        <right>sidepad</right>
                         <top>310</top>
-                        <bottom>SidePad</bottom>
+                        <bottom>sidepad</bottom>
                         <control type="grouplist">
                             <top>200</top>
                             <left>40</left>

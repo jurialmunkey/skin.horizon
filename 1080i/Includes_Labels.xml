@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_HideArtwork">
+        <value condition="Skin.HasSetting(DisableInfoListArt)">$LOCALIZE[31256]</value>
+        <value>$LOCALIZE[31148]</value>
+    </variable>
+
+    <variable name="Label_Widget">
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEqual(ListItem.Title,ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle,, - ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+
+    <variable name="Label_Skinshortcuts_EditHeader">
+        <value condition="!String.IsEmpty(Window.Property(SetWidgets)) | ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()">$LOCALIZE[31144]</value>
+        <value>$LOCALIZE[31248]</value>
+    </variable>
+
+    <variable name="Label_Skinshortcuts_PressRightHint">
+        <value condition="!String.IsEmpty(Window.Property(SetWidgets)) | ControlGroup(9300).HasFocus() | ControlGroup(9400).HasFocus()">$LOCALIZE[31249]</value>
+        <value>$LOCALIZE[31246]</value>
+    </variable>
+
     <variable name="Label_Filtered">
         <value condition="Container.Filtered">$LOCALIZE[16041]</value>
         <value>$LOCALIZE[351]</value>
@@ -19,6 +39,7 @@
         <value condition="Window.IsVisible(MyPVRSearch.xml)">$LOCALIZE[137]</value>
         <value condition="Window.IsVisible(Weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">$INFO[Window(Weather).Property(Location),$LOCALIZE[31007] ,]</value>
         <value condition="Window.IsVisible(SettingsCategory.xml)">$LOCALIZE[5]</value>
+        <value condition="Window.IsVisible(SettingsProfile.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(SkinSettings.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(SettingsSystemInfo.xml)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[7]</value>
@@ -87,11 +108,13 @@
         <value condition="Window.IsVisible(weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
         <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$VAR[Label_InfoLine]</value>
         <value condition="Window.IsVisible(Home)">$INFO[Container(300).ListItem.Label,[COLOR=main_fg_100],[/COLOR]]</value>
-        <value>$VAR[Label_NumItems,[COLOR=main_fg_100],[/COLOR]]$VAR[Label_NumPages,[COLOR=main_fg_30]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
-    </variable>
 
-    <variable name="Label_SubHeader_Content_Playing">
-        <value condition="Player.HasMedia">$INFO[MusicPlayer.Artist,,[COLOR=main_fg_30]  •  [/COLOR]]$INFO[Player.Title,[COLOR=main_fg_100],[/COLOR][COLOR=main_fg_30]  •  [/COLOR]][COLOR=$VAR[ColorHighlight]]$INFO[Player.Time][/COLOR]  |  [COLOR=$VAR[ColorHighlight]]$INFO[Player.Duration][/COLOR]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">[COLOR=main_fg_100]$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),,[COLOR=main_fg_70]  •  [/COLOR]]$INFO[Window(Home).Property(NextAired.NextDate),[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">[COLOR=main_fg_100]$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ][/COLOR]$INFO[Window(Home).Property(NextAired.Status),,[COLOR=main_fg_70]  •  [/COLOR]]$INFO[Window(Home).Property(NextAired.LatestDate),[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label))">[COLOR=main_fg_100]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label),,  ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.AirDay),,: ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.AirTime),,[COLOR=main_fg_70]  •  [/COLOR]]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate),[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">[COLOR=main_fg_100]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label),,  ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),[COLOR=main_fg_70]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value>$VAR[Label_NumItems,[COLOR=main_fg_100],[/COLOR]]$VAR[Label_NumPages,[COLOR=main_fg_30]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
     </variable>
 
     <variable name="Label_Header_Location">
@@ -111,19 +134,9 @@
         <value condition="Window.IsVisible(Home.xml)">$LOCALIZE[10000]</value>
     </variable>
 
-    <variable name="Label_NextRecordingHeader">
-        <value condition="Pvr.IsRecording">$LOCALIZE[19158]...</value>
-        <value condition="Pvr.HasTimer">$LOCALIZE[19157]...</value>
-    </variable>
-    <variable name="Label_NextRecording">
-        <value condition="Pvr.IsRecording">[COLOR=$VAR[ColorHighlight]]$INFO[Pvr.NowRecordingTitle,,][/COLOR]$INFO[Pvr.NowRecordingChannel,  ,]</value>
-        <value condition="Pvr.HasTimer">[COLOR=$VAR[ColorHighlight]]$INFO[Pvr.NextRecordingTitle,,][/COLOR]$INFO[Pvr.NextRecordingDateTime,  ,]$INFO[Pvr.NextRecordingChannel,  ,]</value>
-    </variable>
-
     <variable name="Label_Duration">
-        <value condition="!Skin.HasSetting(UseHoursMinutes) + !String.IsEmpty(Container(301).ListItem.Duration)">$INFO[Container(301).ListItem.Duration,, $LOCALIZE[31020]]</value>
         <value condition="!Skin.HasSetting(UseHoursMinutes) + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31020]]</value>
-        <value condition="Skin.HasSetting(UseHoursMinutes)">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[31036] ]$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[31020] ]</value>
+        <value condition="Skin.HasSetting(UseHoursMinutes) | ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[31036] ]$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[31020] ]</value>
     </variable>
 
     <variable name="Label_MPAA">
@@ -134,7 +147,7 @@
         <value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
         <value condition="!String.IsEqual(Container.NumItems,0) + !String.IsEmpty(Container.NumItems) + !Container.IsUpdating">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
         <value condition="!String.IsEqual(Container(50).NumItems,0) + !String.IsEmpty(Container(50).NumItems) + !Container(50).IsUpdating">[COLOR=$VAR[ColorHighlight]]$INFO[Container(50).NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
-        <value>$VAR[Label_Counter_Movies]$VAR[Label_Counter_Episodes]$VAR[Label_Counter_Songs]</value>
+        <value>$VAR[Label_Counter_Movies]$VAR[Label_Counter_Episodes]$VAR[Label_Counter_Songs]$VAR[Label_Counter_Channels]</value>
     </variable>
 
     <variable name="Label_NumPages">
@@ -165,24 +178,10 @@
         <value condition="Skin.HasSetting(header.mainheadercount) + Integer.IsGreater(Pvr.BackendChannels,0) + !Integer.IsGreater(Window(home).Property(Music.SongsCount),0) + !Integer.IsGreater(Window(home).Property(Episodes.UnWatched),0) + !Integer.IsGreater(Window(home).Property(Movies.UnWatched),0)">[COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
     </variable>
 
-    <variable name="Label_Statusbar_NextAired">
-        <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">[COLOR=main_fg_70]$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate)]</value>
-        <value condition="String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">[COLOR=main_fg_70]$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</value>
-
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label))">[COLOR=main_fg_70]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label),,  ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.AirDay),,: ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.AirTime),, • ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate)]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">[COLOR=main_fg_70]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label),,  ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate), • ,]</value>
-    </variable>
-
     <variable name="Label_SkinShortcuts_WidgetName">
         <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
         <value condition="!String.IsEmpty(Container(211).ListItem.Property(background))">$LOCALIZE[31110]</value>
         <value>$LOCALIZE[16018]</value>
-    </variable>
-
-    <variable name="Label_SkinShortcuts_WidgetName_Fallback">
-        <value condition="String.IsEqual(Skin.String(home.slideshowpath),special://skin/extras/backgrounds/default.jpg)">$LOCALIZE[16018]</value>
-        <value condition="!String.IsEmpty(Skin.String(home.slideshowpath))">$INFO[Skin.String(home.slideshowpath)]</value>
-        <value>$LOCALIZE[31266]$INFO[Skin.String(home.fallbackwidget.name), (,)]</value>
     </variable>
 
     <variable name="Label_Settings_Header">
@@ -275,6 +274,7 @@
     <variable name="Label_InfoLine">
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window.Property(AlsoKnownAs),[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(year),[COLOR=main_fg_100],[/COLOR]]$INFO[Window.Property(mpaa),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window.Property(duration),  |  [COLOR=main_fg_100], $LOCALIZE[31102][/COLOR]]$INFO[Window.Property(rating),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
         <value condition="Container.Content(movies)">$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(episodes)">$INFO[ListItem.TvShowTitle,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalSeasons),[COLOR=main_fg_100], $LOCALIZE[33054][/COLOR]  |  ]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100], $LOCALIZE[20360][/COLOR]  |  ]$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=main_fg_100], $LOCALIZE[31215][/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
@@ -283,6 +283,22 @@
         <value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_YearsActive),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount),[COLOR=main_fg_100], $LOCALIZE[36919][/COLOR]]</value>
         <value condition="Container.Content(addons) | Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
+    </variable>
+
+
+    <variable name="Label_Sets_Count">
+        <value>$INFO[Window(Home).Property(SkinHelper.ListItem.WatchedCount),, $LOCALIZE[20163] ]$INFO[Window(Home).Property(SkinHelper.ListItem.Count),, [LOWERCASE]$LOCALIZE[16102][/LOWERCASE]]</value>
+    </variable>
+
+    <variable name="Label_ShowCase_InfoLine">
+        <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Year),[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Sets_Count,[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(seasons)">$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Property(WatchedEpisodes),[COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]</value>
+        <value>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</value>
+    </variable>
+
+    <variable name="Label_Genre">
+        <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Genre)]</value>
+        <value>$INFO[ListItem.Genre]</value>
     </variable>
 
     <variable name="Label_OverlayTitle">
@@ -341,10 +357,6 @@
     <variable name="Label_SkinSettings_Info">
         <value condition="Control.HasFocus(9211)">$LOCALIZE[31041]</value>
         <value condition="Control.HasFocus(9213)">$LOCALIZE[31043]</value>
-        <value condition="Control.HasFocus(9214)">$LOCALIZE[31044]</value>
-        <value condition="Control.HasFocus(9215)">$LOCALIZE[31045]</value>
-        <value condition="Control.HasFocus(9216)">$LOCALIZE[31046]</value>
-        <value condition="Control.HasFocus(9217)">$LOCALIZE[31077]</value>
         <value condition="Control.HasFocus(9221)">$LOCALIZE[31047]</value>
         <value condition="Control.HasFocus(9222)">$LOCALIZE[31048]</value>
         <value condition="Control.HasFocus(9231)">$LOCALIZE[31049]</value>
@@ -356,14 +368,11 @@
         <value condition="Control.HasFocus(9242)">$LOCALIZE[31053]</value>
         <value condition="Control.HasFocus(9243)">$LOCALIZE[31054]</value>
         <value condition="Control.HasFocus(9244)">$LOCALIZE[31055]</value>
-        <value condition="Control.HasFocus(9245)">$LOCALIZE[31056]</value>
         <value condition="Control.HasFocus(9251)">$LOCALIZE[31058]</value>
-        <value condition="Control.HasFocus(9252)">$LOCALIZE[31059]</value>
         <value condition="Control.HasFocus(9271)">$LOCALIZE[31060]</value>
         <value condition="Control.HasFocus(9272)">$LOCALIZE[31061]</value>
         <value condition="Control.HasFocus(9273)">$LOCALIZE[31062]</value>
         <value condition="Control.HasFocus(9274)">$LOCALIZE[31063]</value>
-        <value condition="Control.HasFocus(9275)">$LOCALIZE[31154]</value>
         <value condition="Control.HasFocus(9278)">$LOCALIZE[31155]</value>
         <value condition="Control.HasFocus(9261)">$LOCALIZE[31064]</value>
         <value condition="Control.HasFocus(9262)">$LOCALIZE[31065]</value>

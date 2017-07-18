@@ -21,31 +21,52 @@
 
             <!-- Info List -->
             <control type="group">
+                <visible>Control.IsVisible(54)</visible>
+                <top>0</top>
+                <left>0</left>
+                <right>80</right>
+                <bottom>0</bottom>
+                <control type="fixedlist" id="54">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(videos) | Window.IsVisible(videoplaylist)</visible>
+                    <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]</visible>
+                    <viewtype label="$LOCALIZE[31196]">list</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31196]" />
+                    </include>
+                    <include content="View_List_Layout">
+                        <param name="id" value="54" />
+                    </include>
+                </control>
+            </control>
+
+
+            <!-- Info List 2 -->
+            <control type="group">
                 <visible>Control.IsVisible(55)</visible>
                 <top>0</top>
                 <left>0</left>
                 <right>80</right>
                 <bottom>0</bottom>
                 <control type="fixedlist" id="55">
-                    <viewtype label="$LOCALIZE[31164]">infolist</viewtype>
+                    <viewtype label="$LOCALIZE[31164]">list</viewtype>
                     <include content="View_Forced">
                         <param name="string" value="$LOCALIZE[31164]" />
                     </include>
                     <include>View_NotTheseWindows</include>
                     <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <top>472</top>
-                    <height>420</height>
+                    <bottom>0</bottom>
                     <focusposition>2</focusposition>
                     <movement>2</movement>
                     <include content="View_List_Layout">
                         <param name="id" value="55" />
-                        <param name="height" value="84"/>
-                        <param name="offset" value="20" />
+                        <param name="height" value="infolist_item_height"/>
+                        <param name="offset" value="18" />
                     </include>
                 </control>
                 <control type="group">
                     <top>472</top>
-                    <left>596</left>
+                    <left>view_left</left>
                     <control type="image">
                         <height>1</height>
                         <top>0</top>
@@ -59,34 +80,16 @@
                 </control>
                 <include content="View_Posters_Info">
                     <param name="bottom" value="470" />
+                    <param name="plot_height" value="130" />
                     <param name="id" value="55" />
-                    <param name="left" value="646" />
+                    <param name="left" value="infolist_left" />
                     <param name="right" value="50" />
-                    <param name="width" value="1056" />
+                    <param name="width" value="infolist_width" />
                     <param name="discart" value="false" />
                 </include>
             </control>
 
-            <!-- Info List 2 -->
-            <control type="group">
-                <visible>Control.IsVisible(54)</visible>
-                <top>0</top>
-                <left>0</left>
-                <right>80</right>
-                <bottom>0</bottom>
-                <control type="fixedlist" id="54">
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(videos) | Window.IsVisible(videoplaylist)</visible>
-                    <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]</visible>
-                    <viewtype label="$LOCALIZE[31196]">infolist</viewtype>
-                    <include content="View_Forced">
-                        <param name="string" value="$LOCALIZE[31196]" />
-                    </include>
-                    <include content="View_List_Layout">
-                        <param name="id" value="54" />
-                    </include>
-                </control>
-            </control>
-
+            
             <!-- Info List 3 -->
             <control type="group">
                 <visible>Control.IsVisible(57)</visible>
@@ -98,8 +101,8 @@
                 <control type="group">
                     <right>-80</right>
                     <include content="View_Posters_Info">
-                        <param name="bottom" value="430" />
-                        <param name="plot_height" value="170" />
+                        <param name="bottom" value="450" />
+                        <param name="plot_height" value="infolist3_plot_height" />
                         <param name="id" value="57" />
                         <param name="left" value="50" />
                         <param name="right" value="130" />
@@ -112,7 +115,7 @@
                 <control type="group">
                     <bottom>0</bottom>
                     <right>0</right>
-                    <height>376</height>
+                    <height>infolist3_main_height</height>
                     <left>0</left>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
@@ -121,25 +124,25 @@
                     <control type="fixedlist" id="57">
                         <focusposition>1</focusposition>
                         <movement>2</movement>
-                        <height>376</height>
+                        <height>infolist3_main_height</height>
                         <top>0</top>
                         <include>View_NotTheseWindows</include>
                         <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-                        <viewtype label="$LOCALIZE[31198]">infolist</viewtype>
+                        <viewtype label="$LOCALIZE[31198]">list</viewtype>
                         <include content="View_Forced">
                             <param name="string" value="$LOCALIZE[31198]" />
                         </include>
                         <include content="View_List_Layout">
                             <param name="id" value="57" />
-                            <param name="offset" value="16" />
-                            <param name="left" value="0" />
-                            <param name="height" value="94" />
-                            <param name="width" value="930" />
+                            <param name="offset" value="0" />
+                            <param name="left" value="infolist3_left" />
+                            <param name="height" value="infolist3_item_height" />
+                            <param name="width" value="infolist3_list_width" />
                         </include>
                     </control>
 
                     <control type="group">
-                        <height>376</height>
+                        <height>infolist3_main_height</height>
                         <control type="group">
                             <control type="image">
                                 <height>1</height>
@@ -153,52 +156,41 @@
                             </control>
                         </control>
                         <control type="group">
-                            <width>930</width>
+                            <right>0</right>
+                            <width>infolist3_list_width</width>
                             <top>1</top>
                             <bottom>1</bottom>
                             <control type="image">
                                 <width>1</width>
-                                <right>0</right>
+                                <left>0</left>
                                 <texture colordiffuse="highlight_bottombar">common/white.png</texture>
                             </control>
                             <control type="image">
                                 <width>1</width>
-                                <right>-1</right>
+                                <left>-1</left>
                                 <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <bottom>40</bottom>
+                            <left>40</left>
+                            <top>40</top>
+                            <control type="group">
+                                <width>infolist3_fanart_width</width>
+                                <control type="image">
+                                    <include>Defs_Shadow_Opaque</include>
+                                    <texture colordiffuse="PosterBack">common/white.png</texture>
+                                </control>
+                                <control type="image">
+                                    <fadetime>100</fadetime>
+                                    <aspectratio>scale</aspectratio>
+                                    <texture background="true">$VAR[Image_Fanart]</texture>
+                                </control>
                             </control>
                         </control>
                     </control>
                     
-                    <control type="group">
-                        <bottom>40</bottom>
-                        <right>586</right>
-                        <width>198</width>
-                        <height>296</height>
-                        <control type="image">
-                            <include>Defs_Shadow_Opaque</include>
-                            <texture colordiffuse="PosterBack">common/white.png</texture>
-                        </control>
-                        <control type="image">
-                            <fadetime>100</fadetime>
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$VAR[Image_Poster]</texture>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <bottom>40</bottom>
-                        <right>40</right>
-                        <width>526</width>
-                        <height>296</height>
-                        <control type="image">
-                            <include>Defs_Shadow_Opaque</include>
-                            <texture colordiffuse="PosterBack">common/white.png</texture>
-                        </control>
-                        <control type="image">
-                            <fadetime>100</fadetime>
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
-                        </control>
-                    </control>
+                    
                 </control>
             </control>
 
@@ -244,119 +236,132 @@
             <include>Defs_InfoDialog_Visible</include>
             <control type="group">
                 <visible>Control.IsVisible(54)</visible>
-                <width>596</width>
-                <height>894</height>
+                <width>view_left</width>
+                <height>poster_height</height>
                 <control type="image">
                     <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
+
+
                 <control type="group">
-                    <width>516</width>
-                    <height>814</height>
-                    <centerleft>50%</centerleft>
+                    <right>40</right>
+                    <left>40</left>
                     <top>40</top>
-                    <bottom>40</bottom>
-                    <control type="group">
-                        <height>290</height>
-                        <control type="image">
-                            <include>Defs_Shadow_Opaque</include>
-                            <texture colordiffuse="PosterBack">common/white.png</texture>
+                    <bottom>45</bottom>
+                    <control type="grouplist">
+                        <align>top</align>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <orientation>vertical</orientation>
+                        <control type="group">
+                            <height>infolist2_icon_height</height>
+                            <control type="image">
+                                <include>Defs_Shadow_Opaque</include>
+                                <texture colordiffuse="PosterBack">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <fadetime>100</fadetime>
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true">$VAR[Image_Thumb]</texture>
+                            </control>
+                            <visible>!Skin.HasSetting(DisableInfoListArt)</visible>
                         </control>
-                        <control type="image">
-                            <fadetime>100</fadetime>
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$VAR[Image_Thumb]</texture>
+                        <control type="group">
+                            <visible>!Skin.HasSetting(DisableInfoListArt)</visible>
+                            <top>38</top>
+                            <height>22</height>
+                            <control type="image">
+                                <height>1</height>
+                                <top>0</top>
+                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <height>1</height>
+                                <top>-1</top>
+                                <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
                         </control>
-                    </control>
-                    <control type="group">
-                        <top>329</top>
-                        <control type="image">
-                            <height>1</height>
-                            <top>0</top>
-                            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                        </control>
-                        <control type="image">
-                            <height>1</height>
-                            <top>-1</top>
-                            <texture colordiffuse="darkline_separator">common/white.png</texture>
+                        <control type="label">
+                            <aligny>top</aligny>
+                            <align>center</align>
+                            <height>55</height>
+                            <font>font_topbar</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <label>$VAR[Label_MainTitle]</label>
                         </control>
                         <control type="grouplist">
-                            <top>30</top>
-                            <align>top</align>
-                            <usecontrolcoords>true</usecontrolcoords>
-                            <orientation>vertical</orientation>
+                            <height>40</height>
+                            <align>center</align>
+                            <itemgap>0</itemgap>
+                            <orientation>horizontal</orientation>
                             <control type="label">
+                                <label>$INFO[ListItem.MPAA]</label>
+                                <width>auto</width>
                                 <aligny>top</aligny>
-                                <align>center</align>
-                                <height>55</height>
-                                <font>font_topbar</font>
-                                <textcolor>main_fg_100</textcolor>
-                                <label>$VAR[Label_MainTitle]</label>
-                            </control>
-                            <control type="grouplist">
                                 <height>40</height>
-                                <align>center</align>
-                                <itemgap>0</itemgap>
-                                <orientation>horizontal</orientation>
-                                <control type="label">
-                                    <label>$INFO[ListItem.MPAA]</label>
-                                    <width>auto</width>
-                                    <aligny>top</aligny>
-                                    <height>40</height>
-                                    <textcolor>main_fg_100</textcolor>
-                                    <font>font_small</font>
-                                </control>
-                                <control type="label">
-                                    <label>  |  </label>
-                                    <width>auto</width>
-                                    <aligny>top</aligny>
-                                    <height>40</height>
-                                    <textcolor>$VAR[ColorHighlight]</textcolor>
-                                    <font>font_small</font>
-                                    <visible>!String.IsEmpty(ListItem.MPAA) + [!String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)]</visible>
-                                </control>
-                                <control type="label">
-                                    <label>$VAR[Label_Duration]</label>
-                                    <width>auto</width>
-                                    <aligny>top</aligny>
-                                    <height>40</height>
-                                    <textcolor>main_fg_100</textcolor>
-                                    <font>font_small</font>
-                                </control>
-                                <control type="label">
-                                    <label>  |  </label>
-                                    <width>auto</width>
-                                    <aligny>top</aligny>
-                                    <height>40</height>
-                                    <textcolor>$VAR[ColorHighlight]</textcolor>
-                                    <font>font_small</font>
-                                    <visible>!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Premiered)</visible>
-                                </control>
-                                <control type="label">
-                                    <label>$INFO[ListItem.Premiered]</label>
-                                    <width>auto</width>
-                                    <aligny>top</aligny>
-                                    <height>40</height>
-                                    <textcolor>main_fg_100</textcolor>
-                                    <font>font_small</font>
-                                </control>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
                             </control>
-                            <control type="group">
-                                <height>64</height>
-                                <top>-10</top>
-                                <include content="Object_StarRating">
-                                    <param name="align" value="center" />
-                                </include>
-                            </control>
-                            <control type="textbox">
-                                <top>30</top>
-                                <label>$VAR[Label_Plot]</label>
-                                <height>270</height>
+                            <control type="label">
+                                <label>  |  </label>
+                                <width>auto</width>
                                 <aligny>top</aligny>
-                                <align>center</align>
-                                <textcolor>main_fg_70</textcolor>
-                                <font>font_plotbox</font>
+                                <height>40</height>
+                                <textcolor>$VAR[ColorHighlight]</textcolor>
+                                <font>font_small</font>
+                                <visible>!String.IsEmpty(ListItem.MPAA) + [!String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)]</visible>
                             </control>
+                            <control type="label">
+                                <label>$VAR[Label_Duration]</label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
+                            </control>
+                            <control type="label">
+                                <label>  |  </label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>$VAR[ColorHighlight]</textcolor>
+                                <font>font_small</font>
+                                <visible>!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Premiered)</visible>
+                            </control>
+                            <control type="label">
+                                <label>$INFO[ListItem.Premiered]</label>
+                                <width>auto</width>
+                                <aligny>top</aligny>
+                                <height>40</height>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <height>64</height>
+                            <top>-10</top>
+                            <include content="Object_StarRating">
+                                <param name="align" value="center" />
+                            </include>
+                        </control>
+                        <control type="label">
+                            <top>40</top>
+                            <label>$INFO[ListItem.Genre]</label>
+                            <align>center</align>
+                            <aligny>top</aligny>
+                            <height>40</height>
+                            <textcolor>main_fg_100</textcolor>
+                            <font>font_small</font>
+                            <visible>Skin.HasSetting(DisableInfoListArt)</visible>
+                        </control>
+                        <control type="textbox">
+                            <top>40</top>
+                            <label>$VAR[Label_Plot]</label>
+                            <height>auto</height>
+                            <aligny>top</aligny>
+                            <align>center</align>
+                            <textcolor>main_fg_70</textcolor>
+                            <font>font_plotbox</font>
                         </control>
                     </control>
                 </control>
@@ -369,7 +374,7 @@
         <param name="id" default="50" />
         <param name="left" default="view_left" />
         <param name="width" default="view_width" />
-        <param name="height" default="99.33" />
+        <param name="height" default="listitem_height" />
         <param name="offset" default="0" />
         <definition>
             <description>Plugin Content Widget</description>
@@ -529,11 +534,9 @@
                             <bottom>0</bottom>
                             <visible>Control.HasFocus($PARAM[id])</visible>
                             <control type="image">
-                                <include condition="Skin.HasSetting(EnableGlow)">View_SideGlow</include>
                                 <texture colordiffuse="$VAR[ColorHighlight]" flipx="true">common/white.png</texture>
                             </control>
                             <control type="image">
-                                <include condition="Skin.HasSetting(EnableGlow)">View_SideGlow2</include>
                                 <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
                             </control>
                         </control>

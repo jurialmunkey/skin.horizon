@@ -4,17 +4,20 @@
     <defaultcontrol always="true">8000</defaultcontrol>
     <controls>
         <include>View_Info_Poster</include>
-        <include>Topbar_TextDetails</include>
+        <control type="group">
+            <height>topbar_height</height>
+            <include>Topbar_TextDetails</include>
+        </control>
         <control type="group">
             <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
     
             <control type="group">
                 <include>Animation_Right_Delay</include>
-                <top>MenuBarTop</top>
+                <top>view_top</top>
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <!-- Info and Albums -->
                 <control type="grouplist">
-                    <left>musicinfo_left</left>
+                    <left>info_left</left>
                     <top>20</top>
                     <right>70</right>
                     <bottom>20</bottom>
@@ -98,7 +101,7 @@
                         <include>Home_MainMenu_InfoItems_Addons</include>
                     </control>
                     <control type="group" id="9000">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <height>74</height>
                         <control type="group">
                             <left>74</left>
@@ -130,7 +133,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>
@@ -152,25 +155,25 @@
         </control>
         <control type="button" id ="6">
             <include>Defs_Hidden_Button</include>
-            <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(6)</visible>
         </control>
         <control type="button" id ="7">
             <include>Defs_Hidden_Button</include>
-            <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(7)</visible>
         </control>
         <control type="button" id="8">
             <description>Play button</description>
             <label>24069</label>
             <include>Defs_Hidden_Button</include>
-            <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(8)</visible>
         </control>
         <control type="button" id ="9">
             <label>5</label>
             <include>Defs_Hidden_Button</include>
-            <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(9)</visible>
         </control>
         <control type="button" id ="12">

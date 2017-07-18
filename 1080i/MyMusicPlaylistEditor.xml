@@ -20,8 +20,8 @@
             <include>Dialog_Settings_Panel</include>
             <control type="group">
                 <description>Left panel</description>
-                <left>SidePad</left>
-                <top>SidePad</top>
+                <left>sidepad</left>
+                <top>sidepad</top>
                 <height>640</height>
                 <width>870</width>
 
@@ -104,8 +104,8 @@
             </control>
             <control type="group">
                 <description>Right panel</description>
-                <right>SidePad</right>
-                <top>SidePad</top>
+                <right>sidepad</right>
+                <top>sidepad</top>
                 <height>640</height>
                 <width>870</width>
                 <control type="label">

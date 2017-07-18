@@ -1,3 +1,21 @@
+[B]1.0.13[/B]
+Overlay logo on fanart to create fake landscape art (thanks to Jeroen)
+Fix bug with season endtime in showcase view
+Option to hide artwork in infolist view
+
+[B]1.0.12[/B]
+Unwatched Episodes counter on indicators
+Cleanup of unused includes and variables etc
+Add option for larger statusbar text
+Lyrics centered when no info showing
+Lyrics can be enabled without info showing
+NextAired info in tvshows views
+
+[B]1.0.11[/B]
+Overhaul of dimensions, reduce top bar height by 30px
+Add widget sorting and direction options
+Some other fixes
+
 [B]1.0.10[/B]
 Add nextup post play window
 Add nextup in window dialogs

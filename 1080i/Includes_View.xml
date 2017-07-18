@@ -23,7 +23,7 @@
     </include>
 
     <include name="View_Group">
-        <top>186</top>
+        <top>topbar_height</top>
         <left>86</left>
         <right>0</right>
     </include>
@@ -114,33 +114,32 @@
         <control type="group">
             <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
-                <width>596</width>
-                <height>894</height>
+                <width>view_left</width>
+                <height>poster_height</height>
                 <control type="image">
                     <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <control type="group">
-                    <width>516</width>
-                    <height>814</height>
-                    <centerleft>50%</centerleft>
+                    <left>40</left>
+                    <right>40</right>
                     <top>40</top>
                     <bottom>40</bottom>
                     <control type="group">
-                        <height>516</height>
+                        <height>musicposter_width</height>
                         <control type="image">
                             <include>Defs_Shadow_Opaque</include>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <include content="Object_BigPoster">
                             <param name="discart" value="false" />
-                            <param name="width" value="516" />
-                            <param name="height" value="516" />
+                            <param name="width" value="musicposter_width" />
+                            <param name="height" value="musicposter_width" />
                             <param name="aspect" value="scale" />
                         </include>
                     </control>
                     <control type="group">
-                        <top>556</top>
+                        <top>musicposter_infotop</top>
                         <control type="image">
                             <height>1</height>
                             <top>0</top>
@@ -193,7 +192,7 @@
         
         <!-- Large Poster -->
         <control type="group">
-            <width>596</width>
+            <width>view_left</width>
             <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
                 <control type="image">
@@ -225,6 +224,17 @@
             <height>24</height>
             <texture>$VAR[Image_Overlay]</texture>
         </control>
+        <control type="label">
+            <top>10</top>
+            <right>10</right>
+            <width>28</width>
+            <height>28</height>
+            <font>font_unwatched</font>
+            <align>center</align>
+            <textcolor>ffcccccc</textcolor>
+            <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+            <include>View_UnwatchedEpisodes_Visible</include>
+        </control>
     </include>
 
     <include name="View_WatchedOverlay_Focus">
@@ -242,6 +252,23 @@
             <height>24</height>
             <texture colordiffuse="ff000000">$VAR[Image_Overlay]</texture>
         </control>
+        <control type="label">
+            <top>10</top>
+            <right>10</right>
+            <width>28</width>
+            <height>28</height>
+            <font>font_unwatched</font>
+            <align>center</align>
+            <textcolor>Selected</textcolor>
+            <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+            <include>View_UnwatchedEpisodes_Visible</include>
+        </control>
+    </include>
+
+    <include name="View_UnwatchedEpisodes_Visible">
+        <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons) | Window.IsVisible(Home)]</visible>
+        <visible>![[[Container.Content(movies) + [String.IsEqual(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+        <visible>!ListItem.IsCollection</visible>
     </include>
 
     <include name="View_Selectbox">
@@ -260,43 +287,14 @@
             <right>3</right>
             <bottom>3</bottom>
             <control type="image">
-                <include condition="Skin.HasSetting(EnableGlow)">View_Glow</include>
                 <texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
             </control>
             <control type="image">
-                <include condition="Skin.HasSetting(EnableGlow)">View_Glow2</include>
                 <texture colordiffuse="$VAR[ColorHighlight2]" border="20">common/gradient-diffuse-selectbox.png</texture>
             </control>
         </control>
     </include>
 
-    <include name="View_Border_24">
-        <left>-24</left>
-        <right>-24</right>
-        <top>-24</top>
-        <bottom>-24</bottom>
-        <bordersize>24</bordersize>
-    </include>
-
-    <include name="View_Glow">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight]" border="25">common/glow-fade-24.png</bordertexture>
-    </include>
-
-    <include name="View_Glow2">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight2]" border="25" flipy="true">common/glow-fade-24.png</bordertexture>
-    </include>
-
-    <include name="View_SideGlow">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight]" border="25">common/glow-fade-side-24.png</bordertexture>
-    </include>
-
-    <include name="View_SideGlow2">
-        <include>View_Border_24</include>
-        <bordertexture colordiffuse="$VAR[ColorHighlight2]" border="25" flipx="true">common/glow-fade-side-24.png</bordertexture>
-    </include>
 
     <include name="View_Position_Button">
         <control type="button">
@@ -310,7 +308,7 @@
         <param name="id" default="9501" />
         <param name="label2" default="$INFO[ListItem.Label2]"/>
         <param name="infolabel" default="true" />
-        <param name="itemwidth" default="228.8" />
+        <param name="itemwidth" default="226.8" />
         <definition>
             <left>-10</left>
             <top>70</top>
@@ -326,12 +324,12 @@
             <pagecontrol>60</pagecontrol>
             <onfocus>SetProperty(ViewType,Square,Home)</onfocus>
             <scrolltime tween="quadratic">400</scrolltime>
-            <itemlayout width="$PARAM[itemwidth]" height="333.2">
+            <itemlayout width="$PARAM[itemwidth]" height="330.2">
                 <control type="group">
                     
                     <control type="image">
                         <bordersize>10</bordersize>
-                        <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
+                        <include>Defs_Shadow_Small</include>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture colordiffuse="main_fg_12">common/white.png</texture>
                     </control>
@@ -380,13 +378,13 @@
                     <include>View_WatchedOverlay</include>
                 </control>
             </itemlayout>
-            <focusedlayout width="$PARAM[itemwidth]" height="333.2">
+            <focusedlayout width="$PARAM[itemwidth]" height="330.2">
                 <control type="group">
                     
                     <include>Animation_FocusBounce</include>
                     <control type="image">
                         <bordersize>10</bordersize>
-                        <bordertexture border="10">common/nofocus-shadow10.png</bordertexture>
+                        <include>Defs_Shadow_Small</include>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture colordiffuse="main_fg_12">common/white.png</texture>
                     </control>
@@ -454,12 +452,6 @@
         <onup>ClearProperty(FocusedList)</onup>
         <onup>SetFocus(9601)</onup>
         <ondown condition="!Control.HasFocus(50)">Select</ondown>
-    </include>
-
-    <include name="View_Info_Movement_Horizontal">
-        <onleft>ClearProperty(FocusedList)</onleft>
-        <onright>60</onright>
-        <onleft>9000</onleft>
     </include>
 
     <include name="View_Forced">

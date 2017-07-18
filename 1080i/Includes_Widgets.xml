@@ -105,13 +105,13 @@
             <!-- <animation effect="slide" start="0" end="0,-50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]332)" reversible="false">Conditional</animation>
             <animation effect="slide" start="0" end="0,50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]331)" reversible="false">Conditional</animation> -->
             <control type="group" id="$PARAM[pos]331" description="Spacer"> 
-                <height>76</height>
+                <height>widget_spacer_top</height>
             </control>
             <include content="Home_Widgets_Set">
                 <param name="pos" value="$PARAM[pos]" />
             </include>
             <control type="group" id="$PARAM[pos]332">
-                <height>473</height>
+                <height>widget_spacer_bottom</height>
             </control>
         </control>
     </include>
@@ -127,6 +127,8 @@
         <include content="Home_Widget">
             <param name="id" value="$PARAM[pos]3002" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName)]" />
@@ -135,6 +137,8 @@
         <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.1))">
             <param name="id" value="$PARAM[pos]3003" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget1)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget1)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection.Widget1)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget1)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget1)]" />
@@ -143,6 +147,8 @@
         <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.2))">
             <param name="id" value="$PARAM[pos]3004" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget2)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget2)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection.Widget2)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget2)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget2)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget2)]" />
@@ -151,6 +157,8 @@
         <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.3))">
             <param name="id" value="$PARAM[pos]3005" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget3)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget3)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection.Widget3)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget3)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget3)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget3)]" />
@@ -159,6 +167,8 @@
         <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.4))">
             <param name="id" value="$PARAM[pos]3006" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget4)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget4)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection.Widget4)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget4)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget4)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget4)]" />
@@ -167,6 +177,8 @@
         <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.5))">
             <param name="id" value="$PARAM[pos]3007" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget5)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget5)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection.Widget5)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget5)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget5)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget5)]" />
@@ -175,6 +187,8 @@
         <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.6))">
             <param name="id" value="$PARAM[pos]3008" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget6)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget6)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection.Widget6)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget6)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget6)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget6)]" />
@@ -183,6 +197,8 @@
         <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.7))">
             <param name="id" value="$PARAM[pos]3009" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget7)]" />
+            <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget7)]" />
+            <param name="sortorder" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetDirection.Widget7)]" />
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget7)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget7)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget7)]" />
@@ -198,11 +214,11 @@
     </include>
 
     <include name="Home_Widget_Posters_Submenu_Height">
-        <height>476</height>
+        <height>widget_submenu_spacer</height>
     </include>
     <include name="Home_Widget_Label_Submenu_Height">
-        <top>-542</top>
-        <height>214</height>
+        <top>widget_submenu_label_top</top>
+        <height>widget_submenu_label_spacer</height>
     </include>
 
     <include name="Home_Widget">
@@ -211,8 +227,6 @@
             <control type="list" id="$PARAM[id]">
                 <visible>$PARAM[visible]</visible>
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | String.IsEmpty(Window(Home).Property(WidgetLoading))</visible>
-                <focusposition>1</focusposition>
-                <movement>5</movement>
                 <include condition="$PARAM[submenu] + !Skin.HasSetting(BigSubmenu)">Home_Widget_Posters_Submenu_Height</include>
                 <include content="Home_Widget_Posters">
                     <param name="id" value="$PARAM[id]" />
@@ -220,6 +234,8 @@
                     <param name="content" value="$PARAM[content]" />
                     <param name="aspect" value="$PARAM[aspect]" />
                     <param name="submenu" value="$PARAM[submenu]" />
+                    <param name="sortby" value="$PARAM[sortby]" />
+                    <param name="sortorder" value="$PARAM[sortorder]" />
                 </include>
             </control>
             <control type="group" id="2$PARAM[id]">
@@ -244,8 +260,8 @@
     </include>
 
     <include name="Home_Widget_Label">
-        <top>-774</top>
-        <height>451</height>
+        <top>widget_poster_label_top</top>
+        <height>widget_poster_label_spacer</height>
         <control type="grouplist">
             <top>194</top>
             <left>82</left>
@@ -284,11 +300,13 @@
     <include name="Home_Widget_Posters">
         <param name="submenu" default="false" />
         <param name="aspect" default="" />
+        <param name="sortby" default="" />
+        <param name="sortorder" default="" />
         <definition>
             <onleft>300</onleft>
-            <top>374</top>
+            <top>widget_poster_top</top>
             <width>1920</width>
-            <height>708</height>
+            <height>widget_poster_spacer</height>
             <preloaditems>2</preloaditems>
             
             <onfocus>SetProperty(WidgetFocus,1,Home)</onfocus>
@@ -386,7 +404,7 @@
             </focusedlayout>
 
             <include condition="$PARAM[submenu]">Home_SubMenu_Items</include>
-            <content target="$PARAM[target]">$INFO[$PARAM[content]]</content>
+            <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]">$INFO[$PARAM[content]]</content>
         </definition>
     </include>
 
@@ -498,9 +516,19 @@
                             <texture background="true">$VAR[Image_Thumb]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
+                        <control type="image">
+                            <bottom>30</bottom>
+                            <top>170</top>
+                            <left>120</left>
+                            <right>120</right>
+                            <aspectratio aligny="bottom">keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <visible>Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]</visible>
+                        </control>
                         <control type="group">
                             <top>270</top>
                             <bottom>0</bottom>
+                            <visible>![Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]]</visible>
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
@@ -513,7 +541,7 @@
                                 <aligny>center</aligny>
                                 <font>font_tiny</font>
                                 <textcolor>main_fg_70</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[Label_Widget]</label>
                             </control>
                         </control>
                     </control>
@@ -716,9 +744,19 @@
                             <texture background="true">$VAR[Image_Thumb]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
+                        <control type="image">
+                            <bottom>30</bottom>
+                            <top>170</top>
+                            <left>120</left>
+                            <right>120</right>
+                            <aspectratio aligny="bottom">keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <visible>Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]</visible>
+                        </control>
                         <control type="group">
                             <top>270</top>
                             <bottom>0</bottom>
+                            <visible>![Skin.HasSetting(FakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]]</visible>
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
@@ -731,7 +769,7 @@
                                 <aligny>center</aligny>
                                 <font>font_tiny</font>
                                 <textcolor>Selected</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[Label_Widget]</label>
                             </control>
                         </control>
                     </control>

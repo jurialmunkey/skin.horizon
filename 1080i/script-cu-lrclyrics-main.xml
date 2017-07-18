@@ -87,8 +87,9 @@
 
         </control>
         <control type="group">
-            <animation effect="zoom" start="100" end="66" condition="true">Conditional</animation>
-            <animation effect="slide" start="0" end="1080,400" condition="true">Conditional</animation>
+            <animation effect="zoom" start="100" end="66" condition="Player.ShowInfo">Conditional</animation>
+            <animation effect="slide" start="0" end="1080,400" condition="Player.ShowInfo">Conditional</animation>
+            <animation effect="slide" start="0" end="0,200" condition="!Player.ShowInfo">Conditional</animation>
             <visible>!String.IsEmpty(Container(110).ListItem.Label)</visible>
             <control type="group">
                 <visible>[!String.IsEmpty(Window(Home).Property(culrc.islrc)) + Integer.IsGreater(Container(110).ListItem.Property(duration),299) + !Integer.IsGreater(Container(110).ListItem.Property(duration),1449)] | String.IsEmpty(Container(110).ListItem.Property(part4))</visible>
@@ -460,8 +461,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics1">
-                    </include>
+                    <include>Lyrics1</include>
                 </control>
                 <control type="grouplist">
                     <left>4</left>
@@ -473,8 +473,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics1">
-                    </include>
+                    <include>Lyrics1</include>
                 </control>
                 <control type="grouplist">
                     <left>1</left>
@@ -504,8 +503,7 @@
                     <param name="col14">fffffaf0</param>
                 </include>
                 <!--Line 2-->
-                <include content="Lyrics2">
-                </include>
+                <include>Lyrics2</include>
                 <include content="Lyrics2">
                     <param name="2_left">4</param>
                     <param name="2_top">254</param>
@@ -529,8 +527,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics3">
-                    </include>
+                    <include>Lyrics3</include>
                 </control>
                 <control type="grouplist">
                     <left>4</left>
@@ -542,8 +539,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics3">
-                    </include>
+                    <include>Lyrics3</include>
                 </control>
                 <control type="grouplist">
                     <left>1</left>
@@ -573,8 +569,7 @@
                     <param name="col34">fffffaf0</param>
                 </include>
                 <!--Line 4-->
-                <include content="Lyrics4">
-                </include>
+                <include>Lyrics4</include>
                 <include content="Lyrics4">
                     <param name="4_left">114</param>
                     <param name="4_top">34</param>
@@ -598,8 +593,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics5">
-                    </include>
+                    <include>Lyrics5</include>
                 </control>
                 <control type="grouplist">
                     <left>1954</left>
@@ -611,8 +605,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics5">
-                    </include>
+                    <include>Lyrics5</include>
                 </control>
                 <control type="grouplist">
                     <left>1951</left>
@@ -642,8 +635,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics6">
-                    </include>
+                    <include>Lyrics6</include>
                 </control>
                 <control type="grouplist">
                     <left>4</left>
@@ -655,8 +647,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics6">
-                    </include>
+                    <include>Lyrics6</include>
                 </control>
                 <control type="grouplist">
                     <left>1</left>
@@ -686,8 +677,7 @@
                     <param name="col64">fffffaf0</param>
                 </include>
                 <!--Line 7-->
-                <include content="Lyrics7">
-                </include>
+                <include>Lyrics7</include>
                 <include content="Lyrics7">
                     <param name="7_left">14</param>
                     <param name="7_top">4</param>
@@ -711,8 +701,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics8">
-                    </include>
+                    <include>Lyrics8</include>
                 </control>
                 <control type="grouplist">
                     <left>4</left>
@@ -724,8 +713,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics8">
-                    </include>
+                    <include>Lyrics8</include>
                 </control>
                 <control type="grouplist">
                     <left>1</left>
@@ -755,8 +743,7 @@
                     <param name="col84">fffffaf0</param>
                 </include>
                 <!--Line 9-->
-                <include content="Lyrics9">
-                </include>
+                <include>Lyrics9</include>
                 <include content="Lyrics9">
                     <param name="9_left">24</param>
                     <param name="9_top">-16</param>
@@ -770,8 +757,7 @@
                     <param name="9_top">-19</param>
                 </include>
                 <!--Line 10-->
-                <include content="Lyrics10">
-                </include>
+                <include>Lyrics10</include>
                 <include content="Lyrics10">
                     <param name="10_left">4</param>
                     <param name="10_top">154</param>
@@ -785,8 +771,7 @@
                     <param name="10_top">151</param>
                 </include>
                 <!--Line 11-->
-                <include content="Lyrics11">
-                </include>
+                <include>Lyrics11</include>
                 <include content="Lyrics11">
                     <param name="11_left">4</param>
                     <param name="11_top">254</param>
@@ -800,8 +785,7 @@
                     <param name="11_top">251</param>
                 </include>
                 <!--Line 12-->
-                <include content="Lyrics12">
-                </include>
+                <include>Lyrics12</include>
                 <include content="Lyrics12">
                     <param name="12_left">14</param>
                     <param name="12_top">4</param>
@@ -811,8 +795,7 @@
                     <param name="12_left">11</param>
                     <param name="12_top">1</param>
                 </include>
-                <include content="Lyrics12b">
-                </include>
+                <include>Lyrics12b</include>
                 <include content="Lyrics12b">
                     <param name="12b_left">14</param>
                     <param name="12b_top">184</param>
@@ -823,8 +806,7 @@
                     <param name="12b_left">11</param>
                     <param name="12b_top">181</param>
                 </include>
-                <include content="Lyrics12c">
-                </include>
+                <include>Lyrics12c</include>
                 <include content="Lyrics12c">
                     <param name="12c_left">14</param>
                     <param name="12c_top">4</param>
@@ -845,8 +827,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics13">
-                    </include>
+                    <include>Lyrics13</include>
                 </control>
                 <control type="grouplist">
                     <left>4</left>
@@ -858,8 +839,7 @@
                           <orientation>horizontal</orientation>
                           <visible>true</visible>
                           <align>center</align>
-                    <include content="Lyrics13">
-                    </include>
+                    <include>Lyrics13</include>
                 </control>
                 <control type="grouplist">
                     <left>1</left>
@@ -1029,8 +1009,7 @@
                     <param name="col144">fff395b5</param>
                 </include>
                 <!--Line 15-->
-                <include content="Lyrics15">
-                </include>
+                <include>Lyrics15</include>
                 <include content="Lyrics15">
                     <param name="15_left">174</param>
                     <param name="15_top">4</param>

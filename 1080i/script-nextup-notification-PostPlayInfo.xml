@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <defaultcontrol alway="true">102</defaultcontrol>
+    <defaultcontrol>102</defaultcontrol>
     <controls>
-
         <control type="image">
             <texture background="true">$INFO[Window.Property(background)]</texture>
         </control>
@@ -14,17 +13,17 @@
             <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
         </control>
 
-        <control type="group">
+        <control type="group" id="50">
             <include>View_Group</include>
             
-            <control type="group">
+            <control type="group" id="100">
                 <include>Animation_Right</include>
                 <!-- Right Item -->
                 <control type="group">
-                    <left>1215</left>
+                    <left>1225</left>
                     <control type="group">
-                        <width>619</width>
-                        <height>894</height>
+                        <width>609</width>
+                        <height>poster_height</height>
 
                         <control type="image">
                             <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
@@ -194,10 +193,10 @@
 
                 <!-- Left Item -->
                 <control type="group">
-                    <left>596</left>
+                    <left>view_left</left>
                     <control type="group">
-                        <width>619</width>
-                        <height>894</height>
+                        <width>609</width>
+                        <height>poster_height</height>
                         <control type="image">
                             <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                         </control>
@@ -356,7 +355,7 @@
             <!-- Large Poster -->
             <control type="group">
                 <include>Animation_Left</include>
-                <width>596</width>
+                <width>view_left</width>
                 <control type="group">
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
@@ -372,12 +371,25 @@
             </control>
         </control>
 
-        <control type="list" id="400">
-            <width>1</width>
-            <height>1</height>
-            <itemlayout />
-            <focusedlayout />
+        <control type="grouplist" id="60">
+            <control type="group" id="500">
+                <control type="list" id="400">
+                    <width>2</width>
+                    <height>2</height>
+                    <itemlayout width="1" height="1">
+                        <control type="group">
+                            <height>1</height>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="1" height="1">
+                        <control type="group">
+                            <height>1</height>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
         </control>
+
 
         <include>Topbar</include>
 
@@ -389,14 +401,14 @@
             <include>Home_Textbar_Texture</include>
             <include>Home_Textbar_Items</include>
         </control>
-        <control type="group">
+        <control type="group" id="200">
             <left>0</left>
             <width>74</width>
             <include>Home_Iconbar_Texture</include>
             <include>Home_Iconbar_Logo</include>
             <control type="group">
                 <control type="group">
-                    <top>MenuBarTop</top>
+                    <top>view_top</top>
                     <height>148</height>
                     <control type="group">
                         <left>74</left>
@@ -431,7 +443,7 @@
                             <include>Home_Separator</include>
                         </control>
                     </control>
-                    <control type="button" id="202">
+                    <control type="radiobutton" id="202">
                         <description>Spoiler</description>
                         <width>74</width>
                         <height>74</height>
@@ -441,8 +453,6 @@
                         <onright>101</onright>                      
                         <texturenofocus colordiffuse="main_fg_30">special://skin/extras/icons/eye.png</texturenofocus>
                         <texturefocus colordiffuse="Selected">special://skin/extras/icons/eye.png</texturefocus>
-                        <onclick condition="String.IsEmpty(Window.Property(showplot))">SetProperty(showplot,1)</onclick>
-                        <onclick condition="!String.IsEmpty(Window.Property(showplot))">ClearProperty(showplot)</onclick>
                     </control>
                     <control type="button" id="201">
                         <description>Close</description>
@@ -458,7 +468,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <top>MenuBarTop</top>
+                    <top>view_top</top>
                     <control type="group">
                         <top>0</top>
                         <include>Home_Separator</include>

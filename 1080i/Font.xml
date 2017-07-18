@@ -50,6 +50,11 @@
             <filename>RobotoCondensed-Regular.ttf</filename>
             <size>22</size>
         </font>
+        <font>
+            <name>font_unwatched</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>16</size>
+        </font>
 
         <!-- Plot Font -->
         <font>

@@ -9,7 +9,7 @@
             <bottom>64</bottom>
             <width>592</width>
             <height>333</height>
-            <include>Animation_SlideIn</include>
+            <include>Animation_FadeIn_Slide</include>
             <include>Animation_FadeOut</include>
             <control type="label" description="text">
                 <top>-64</top>

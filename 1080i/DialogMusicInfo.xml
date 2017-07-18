@@ -4,18 +4,21 @@
     <defaultcontrol always="true">8</defaultcontrol>
     <controls>
         <include>View_Info_Poster</include>
-        <include>Topbar_TextDetails</include>
+        <control type="group">
+            <height>topbar_height</height>
+            <include>Topbar_TextDetails</include>
+        </control>
         
         <control type="group">
             <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
     
             <control type="group">
                 <include>Animation_Right_Delay</include>
-                <top>MenuBarTop</top>
+                <top>view_top</top>
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <!-- Info and Albums -->
                 <control type="grouplist">
-                    <left>musicinfo_left</left>
+                    <left>info_left</left>
                     <top>20</top>
                     <right>70</right>
                     <bottom>30</bottom>
@@ -41,7 +44,7 @@
                         </control>
                     </control>
                     <control type="textbox">
-                        <top>42</top>
+                        <top>32</top>
                         <height>auto</height>
                         <textcolor>main_fg_70</textcolor>
                         <font>font_textviewer</font>
@@ -72,7 +75,7 @@
                         <include>Home_MainMenu_InfoItems</include>
                     </control>
                     <control type="group" id="9000">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <height>74</height>
                         <control type="group">
                             <left>74</left>
@@ -109,7 +112,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>

@@ -35,7 +35,7 @@
                         <include>Home_SubMenu_Items</include>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,0)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,1)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,2)">Conditional</animation>
@@ -63,6 +63,7 @@
                         <include>Home_OnFocus</include>
                         <onleft condition="!Skin.HasSetting(DisableSubMenu) | String.IsEqual(Container(300).ListItem.Property(widget),Weather)">302</onleft>
                         <onright condition="Window.IsVisible(Home)">3000</onright>
+                        <onright condition="Window.IsVisible(SettingsProfile.xml)">4</onright>
                         <onright condition="Window.IsVisible(SettingsCategory.xml)">3</onright>
                         <onright condition="Window.IsVisible(SkinSettings.xml)">9100</onright>
                         <onright condition="Window.IsVisible(SettingsSystemInfo.xml)">50</onright>
@@ -74,10 +75,10 @@
                         <include condition="Window.IsVisible(Home)">Home_MainMenu_Items</include>
                         <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_OptionsItems</include>
                         <include condition="Window.IsVisible(MyPlaylist.xml)">Home_MainMenu_PlaylistItems</include>
-                        <include condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml)">Home_MainMenu_SettingsItems</include>
+                        <include condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsProfile.xml)">Home_MainMenu_SettingsItems</include>
                     </control>
                     <control type="group">
-                        <top>MenuBarTop</top>
+                        <top>view_top</top>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
                         <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>
@@ -94,8 +95,6 @@
                     </control>
                 </control>
             </control>
-           
-
         </control>
     </include>
 
@@ -390,6 +389,14 @@
                 <icon>special://skin/extras/icons/enabled.png</icon>
                 <onclick>SendClick(7)</onclick>
                 <visible>Control.IsEnabled(7)</visible>
+                <visible>String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])</visible>
+            </item>
+            <item>
+                <label>$INFO[Control.GetLabel(7)]</label>
+                <icon>special://skin/extras/icons/error.png</icon>
+                <onclick>SendClick(7)</onclick>
+                <visible>Control.IsEnabled(7)</visible>
+                <visible>!String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])</visible>
             </item>
             <!-- uninstall -->
             <item>
@@ -416,7 +423,9 @@
             <item>
                 <label>$INFO[Control.GetLabel(13)]</label>
                 <icon>special://skin/extras/icons/antenna.png</icon>
-                <onclick>SendClick(13)</onclick>
+                <onclick>SetFocus(13)</onclick>
+                <onclick>Select</onclick>
+                <onclick>SetFocus(300)</onclick>
                 <visible>Control.IsEnabled(13)</visible>
             </item>
         </content>
@@ -469,6 +478,7 @@
                 <onclick>Container.NextViewMode</onclick>
                 <visible>Control.IsEnabled(2)</visible>
                 <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Lock viewmode -->
             <item>
@@ -501,14 +511,24 @@
                 <onclick condition="[Container.Content(unknown) + String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
                 <onclick condition="[Container.Content(videos) + String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
                 <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
-            <!-- Viewmode -->
+            <!-- Wraplist -->
             <item>
                 <label>$VAR[Label_WrapList]</label>
                 <icon>special://skin/extras/icons/signpost.png</icon>
                 <onclick>Skin.ToggleSetting(WrapList)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(52) | Control.IsVisible(56)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            </item>
+            <!-- InfoList Hide Artwork -->
+            <item>
+                <label>$VAR[Label_HideArtwork]</label>
+                <icon>special://skin/extras/icons/pictures.png</icon>
+                <onclick>Skin.ToggleSetting(DisableInfoListArt)</onclick>
+                <visible>Control.IsVisible(54)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Sort -->
             <item>
@@ -555,6 +575,7 @@
                 <onclick>Select</onclick>
                 <onclick>SetFocus(300)</onclick>
                 <visible>Control.IsEnabled(6)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
 
             <!-- Settings -->
@@ -563,6 +584,7 @@
                 <icon>special://skin/extras/icons/settings.png</icon>
                 <onclick>SendClick(5)</onclick>
                 <visible>Control.IsEnabled(5)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Update -->
             <item>
@@ -570,6 +592,7 @@
                 <icon>special://skin/extras/icons/update.png</icon>
                 <onclick>SendClick(20)</onclick>
                 <visible>Control.IsEnabled(20)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Check Updates -->
             <item>
@@ -577,6 +600,7 @@
                 <icon>special://skin/extras/icons/update.png</icon>
                 <onclick>SendClick(9)</onclick>
                 <visible>Control.IsEnabled(9)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Group -->
             <item>
@@ -606,6 +630,7 @@
                 <label>$LOCALIZE[10140]</label>
                 <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
                 <visible>!String.IsEmpty(Container.PluginName)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Get More -->
             <item>
@@ -613,6 +638,7 @@
                 <label>$LOCALIZE[21452]</label>
                 <onclick>ActivateWindow(addonbrowser,addons://more/video/,return)</onclick>
                 <visible>Container.Content(addons) + !String.Contains(Container.FolderPath,addons://)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             
         </content>
@@ -783,7 +809,7 @@
 
     <include name="Home_Textbar_Items">
         <control type="grouplist">
-            <top>MenuBarTop</top>
+            <top>view_top</top>
             <right>6</right>
             <left>0</left>
             <orientation>vertical</orientation>
@@ -834,7 +860,7 @@
     </include>
 
     <include name="Home_MainMenu_Layout">
-        <top>MenuBarTop</top>
+        <top>view_top</top>
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
@@ -921,7 +947,7 @@
     </include>
 
     <include name="Home_VideoInfo_Layout">
-        <top>MenuBarTop</top>
+        <top>view_top</top>
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
@@ -960,7 +986,7 @@
     </include>
 
     <include name="Home_SubMenu_Layout">
-        <top>MenuBarTop</top>
+        <top>view_top</top>
         <width>310</width>
         <right>0</right>
         <preloaditems>2</preloaditems>
@@ -1000,6 +1026,7 @@
         <content><include>skinshortcuts-submenu</include></content>
     </include>
 
+
     <include name="Home_Iconbar_Texture">
         <control type="image">
             <texture>common/gradient-solid-horizontal.png</texture>
@@ -1019,29 +1046,29 @@
 
     <include name="Home_Iconbar_Logo">
         <control type="group">
-            <top>34</top>
-            <control type="image">
-                <top>0</top>
-                <width>74</width>
-                <height>74</height>
-                <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
-            </control>
-            <control type="label">
-                <label>KODI</label>
-                <height>30</height>
-                <top>70</top>
-                <align>center</align>
-                <aligny>center</aligny>
-                <right>2</right>
-                <font>font_tiny_bold</font>
-                <textcolor>main_fg_100</textcolor>
+            <height>topbar_height</height>
+            <control type="group">
+                <centertop>45%</centertop>
+                <height>100</height>
+                <control type="image">
+                    <top>0</top>
+                    <width>74</width>
+                    <height>74</height>
+                    <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+                </control>
+                <control type="label">
+                    <label>KODI</label>
+                    <height>30</height>
+                    <top>70</top>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <right>2</right>
+                    <font>font_tiny_bold</font>
+                    <textcolor>main_fg_100</textcolor>
+                </control>
             </control>
         </control>
     </include>
-
-    <include name="Home_ShowMenu_4000"><defaultcontrol always="true">4000</defaultcontrol></include>
-    <include name="Home_ShowMenu_300"><defaultcontrol always="true">300</defaultcontrol></include>
-
     <include name="Home_OnClick">
 
         <!-- Set Menu Indicator -->
