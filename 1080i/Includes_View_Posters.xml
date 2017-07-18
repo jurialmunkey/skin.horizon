@@ -137,96 +137,99 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="main_bg_100">common/white.png</texture>
                     </control>
-                </control>
-                <control type="wraplist" id="59">
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-                    <include>View_NotTheseWindows</include>
-                    <viewtype label="$LOCALIZE[31231]">icon</viewtype>
-                    <include content="View_Forced">
-                        <param name="string" value="$LOCALIZE[31231]" />
-                    </include>
-                    <orientation>horizontal</orientation>
-                    <focusposition>0</focusposition>
-                    <preloaditems>2</preloaditems>
-                    <right>120</right>
-                    <left>40</left>
-                    <top>40</top>
-                    <bottom>40</bottom>
-                    <onup>300</onup>
-                    <ondown condition="Control.IsVisible(8000)">8000</ondown>
-                    <ondown condition="!Control.IsVisible(8000)">300</ondown>
-                    <pagecontrol>60</pagecontrol>
-                    <scrolltime tween="cubic">400</scrolltime>
-                    <itemlayout width="1674" height="lovefilm_height">
-                        <control type="image">
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="1674" height="lovefilm_height">
-                        <control type="image">
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$VAR[Image_Fanart]</texture>
-                        </control>
-                    </focusedlayout>
-                </control>
-                <control type="group">
-                    <top>40</top>
-                    <right>120</right>
-                    <control type="image">
+                    <control type="wraplist" id="59">
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+                        <include>View_NotTheseWindows</include>
+                        <viewtype label="$LOCALIZE[31231]">icon</viewtype>
+                        <include content="View_Forced">
+                            <param name="string" value="$LOCALIZE[31231]" />
+                        </include>
+                        <orientation>horizontal</orientation>
+                        <focusposition>0</focusposition>
+                        <preloaditems>2</preloaditems>
+                        <right>0</right>
+                        <left>0</left>
+                        <top>0</top>
+                        <bottom>0</bottom>
+                        <onup>300</onup>
+                        <ondown condition="Control.IsVisible(8000)">8000</ondown>
+                        <ondown condition="!Control.IsVisible(8000)">300</ondown>
+                        <pagecontrol>60</pagecontrol>
+                        <scrolltime tween="cubic">400</scrolltime>
+                        <itemlayout width="1674" height="lovefilm_height">
+                            <control type="image">
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true">$VAR[Image_Fanart]</texture>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="1674" height="lovefilm_height">
+                            <control type="image">
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true">$VAR[Image_Fanart]</texture>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                    <control type="group">
                         <top>0</top>
                         <right>0</right>
-                        <width>56</width>
-                        <height>56</height>
-                        <texture colordiffuse="ff000000">$VAR[Image_Overlay_Corner]</texture>
+                        <control type="image">
+                            <top>0</top>
+                            <right>0</right>
+                            <width>56</width>
+                            <height>56</height>
+                            <texture colordiffuse="ff000000">$VAR[Image_Overlay_Corner]</texture>
+                        </control>
+                        <control type="image">
+                            <top>3</top>
+                            <right>3</right>
+                            <width>24</width>
+                            <height>24</height>
+                            <texture>$VAR[Image_Overlay]</texture>
+                        </control>
+                        <visible>!String.IsEmpty(ListItem.Overlay)</visible>
                     </control>
-                    <control type="image">
-                        <top>3</top>
-                        <right>3</right>
-                        <width>24</width>
-                        <height>24</height>
-                        <texture>$VAR[Image_Overlay]</texture>
-                    </control>
-                    <visible>!String.IsEmpty(ListItem.Overlay)</visible>
-                </control>
-                <control type="group">
-                    <right>120</right>
-                    <left>40</left>
-                    <height>130</height>
-                    <bottom>40</bottom>
-                    <control type="image">
-                        <texture colordiffuse="main_bg_70">common/white.png</texture>
-                    </control>
-                    <control type="label">
-                        <height>92</height>
-                        <left>30</left>
-                        <right>90</right>
-                        <font>font_topbar</font>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>main_fg_100</textcolor>
-                    </control>
-                    
-                    <control type="label">
-                        <left>30</left>
-                        <right>530</right>
-                        <bottom>0</bottom>
-                        <height>78</height>
-                        <label>$VAR[Label_ShowCase_InfoLine]</label>
-                        <textcolor>$VAR[ColorHighlight]</textcolor>
-                        <align>left</align>
-                        <font>font_small</font>
-                    </control>
-                    
                     <control type="group">
-                        <left>30</left>
-                        <right>30</right>
-                        <top>76</top>
-                        <include content="Object_Ratings">
-                            <param name="directory" value="color" />
-                            <param name="align" value="right" />
-                        </include>
+                        <right>0</right>
+                        <left>0</left>
+                        <height>130</height>
+                        <bottom>0</bottom>
+                        <control type="image">
+                            <bottom>0</bottom>
+                            <texture colordiffuse="99000000">common/white.png</texture>
+                        </control>
+                        <include>Object_Separator_Top</include>
+                        <control type="label">
+                            <height>92</height>
+                            <left>30</left>
+                            <right>90</right>
+                            <font>font_topbar</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <textcolor>main_fg_100</textcolor>
+                        </control>
+                        
+                        <control type="label">
+                            <left>30</left>
+                            <right>530</right>
+                            <bottom>0</bottom>
+                            <height>78</height>
+                            <label>$VAR[Label_ShowCase_InfoLine]</label>
+                            <textcolor>$VAR[ColorHighlight]</textcolor>
+                            <align>left</align>
+                            <font>font_small</font>
+                        </control>
+                        
+                        <control type="group">
+                            <left>30</left>
+                            <right>30</right>
+                            <top>76</top>
+                            <include content="Object_Ratings">
+                                <param name="directory" value="color" />
+                                <param name="align" value="right" />
+                            </include>
+                        </control>
                     </control>
                 </control>
+                
             </control>
         </definition>
     </include>
