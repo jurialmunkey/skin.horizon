@@ -134,18 +134,6 @@
                     </control>
                     <control type="group">
                         <top>view_top</top>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,0)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,1)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,2)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,3)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,4)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,5)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,6)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,7)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,8)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,9)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,10)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(300).NumItems,11)">Conditional</animation>
                         <include>Home_Separator</include>
                     </control>
                 </control>

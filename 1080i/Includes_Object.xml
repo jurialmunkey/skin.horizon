@@ -208,6 +208,32 @@
         </control>
     </include>
 
+    <include name="Object_Separator_Top">
+        <control type="image">
+            <height>1</height>
+            <top>0</top>
+            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+        </control>
+        <control type="image">
+            <height>1</height>
+            <top>-1</top>
+            <texture colordiffuse="darkline_separator">common/white.png</texture>
+        </control>
+    </include>
+
+    <include name="Object_Separator_Left">
+        <control type="image">
+            <width>1</width>
+            <left>0</left>
+            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+        </control>
+        <control type="image">
+            <width>1</width>
+            <left>-1</left>
+            <texture colordiffuse="darkline_separator">common/white.png</texture>
+        </control>
+    </include>
+
     <include name="Object_PVR_Info">
         <control type="grouplist">
             <include>Animation_Home_Textbar_Slideover_Library</include>

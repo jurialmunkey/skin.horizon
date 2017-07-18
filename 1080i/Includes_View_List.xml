@@ -47,6 +47,11 @@
                 <left>0</left>
                 <right>80</right>
                 <bottom>0</bottom>
+                <control type="group">
+                    <top>infolist_top</top>
+                    <left>view_left</left>
+                    <!-- <include>Object_Separator_Top</include> -->
+                </control>
                 <control type="fixedlist" id="55">
                     <viewtype label="$LOCALIZE[31164]">list</viewtype>
                     <include content="View_Forced">
@@ -54,33 +59,19 @@
                     </include>
                     <include>View_NotTheseWindows</include>
                     <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <top>472</top>
+                    <top>infolist_top</top>
                     <bottom>0</bottom>
                     <focusposition>2</focusposition>
                     <movement>2</movement>
                     <include content="View_List_Layout">
                         <param name="id" value="55" />
-                        <param name="height" value="infolist_item_height"/>
                         <param name="offset" value="18" />
+                        <param name="height" value="infolist_item_height"/>
                     </include>
                 </control>
-                <control type="group">
-                    <top>472</top>
-                    <left>view_left</left>
-                    <control type="image">
-                        <height>1</height>
-                        <top>0</top>
-                        <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                    </control>
-                    <control type="image">
-                        <height>1</height>
-                        <top>-1</top>
-                        <texture colordiffuse="darkline_separator">common/white.png</texture>
-                    </control>
-                </control>
                 <include content="View_Posters_Info">
-                    <param name="bottom" value="470" />
-                    <param name="plot_height" value="130" />
+                    <param name="bottom" value="450" />
+                    <param name="plot_height" value="300" />
                     <param name="id" value="55" />
                     <param name="left" value="infolist_left" />
                     <param name="right" value="50" />
@@ -97,12 +88,60 @@
                 <left>0</left>
                 <right>80</right>
                 <bottom>0</bottom>
+                <control type="group">
+                    <top>infolist_top</top>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    </control>
+                    <control type="group">
+                        <include>Object_Separator_Top</include>
+                    </control>
+                    <control type="group">
+                        <left>view_left</left>
+                        <include>Object_Separator_Left</include>
+                    </control>
+                    <control type="group">
+                        <bottom>40</bottom>
+                        <left>40</left>
+                        <top>40</top>
+                        <control type="group">
+                            <width>musicposter_width</width>
+                            <control type="image">
+                                <include>Defs_Shadow_Opaque</include>
+                                <texture colordiffuse="PosterBack">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <fadetime>100</fadetime>
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true">$VAR[Image_Fanart]</texture>
+                            </control>
+                        </control>
+                    </control>
+                </control>
+                <control type="fixedlist" id="57">
+                    <viewtype label="$LOCALIZE[31198]">list</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31198]" />
+                    </include>
+                    <include>View_NotTheseWindows</include>
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+                    <top>infolist_top</top>
+                    <bottom>0</bottom>
+                    <focusposition>2</focusposition>
+                    <movement>2</movement>
+                    <include content="View_List_Layout">
+                        <param name="id" value="57" />
+                        <param name="offset" value="18" />
+                        <param name="height" value="infolist_item_height"/>
+                    </include>
+                </control>
 
                 <control type="group">
                     <right>-80</right>
                     <include content="View_Posters_Info">
                         <param name="bottom" value="450" />
-                        <param name="plot_height" value="infolist3_plot_height" />
+                        <param name="plot_height" value="300" />
                         <param name="id" value="57" />
                         <param name="left" value="50" />
                         <param name="right" value="130" />
@@ -110,87 +149,6 @@
                         <param name="altwidth" value="1234" />
                         <param name="discart" value="true" />
                     </include>
-                </control>
-
-                <control type="group">
-                    <bottom>0</bottom>
-                    <right>0</right>
-                    <height>infolist3_main_height</height>
-                    <left>0</left>
-                    <control type="image">
-                        <include>Defs_Shadow_Opaque</include>
-                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
-                    </control>
-                    <control type="fixedlist" id="57">
-                        <focusposition>1</focusposition>
-                        <movement>2</movement>
-                        <height>infolist3_main_height</height>
-                        <top>0</top>
-                        <include>View_NotTheseWindows</include>
-                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-                        <viewtype label="$LOCALIZE[31198]">list</viewtype>
-                        <include content="View_Forced">
-                            <param name="string" value="$LOCALIZE[31198]" />
-                        </include>
-                        <include content="View_List_Layout">
-                            <param name="id" value="57" />
-                            <param name="offset" value="0" />
-                            <param name="left" value="infolist3_left" />
-                            <param name="height" value="infolist3_item_height" />
-                            <param name="width" value="infolist3_list_width" />
-                        </include>
-                    </control>
-
-                    <control type="group">
-                        <height>infolist3_main_height</height>
-                        <control type="group">
-                            <control type="image">
-                                <height>1</height>
-                                <top>0</top>
-                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <height>1</height>
-                                <top>-1</top>
-                                <texture colordiffuse="darkline_separator">common/white.png</texture>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <right>0</right>
-                            <width>infolist3_list_width</width>
-                            <top>1</top>
-                            <bottom>1</bottom>
-                            <control type="image">
-                                <width>1</width>
-                                <left>0</left>
-                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <width>1</width>
-                                <left>-1</left>
-                                <texture colordiffuse="darkline_separator">common/white.png</texture>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <bottom>40</bottom>
-                            <left>40</left>
-                            <top>40</top>
-                            <control type="group">
-                                <width>infolist3_fanart_width</width>
-                                <control type="image">
-                                    <include>Defs_Shadow_Opaque</include>
-                                    <texture colordiffuse="PosterBack">common/white.png</texture>
-                                </control>
-                                <control type="image">
-                                    <fadetime>100</fadetime>
-                                    <aspectratio>scale</aspectratio>
-                                    <texture background="true">$VAR[Image_Fanart]</texture>
-                                </control>
-                            </control>
-                        </control>
-                    </control>
-                    
-                    
                 </control>
             </control>
 
@@ -216,16 +174,7 @@
                 </include>
             </control>
             <control type="group">
-                <control type="image">
-                    <height>1</height>
-                    <top>0</top>
-                    <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                </control>
-                <control type="image">
-                    <height>1</height>
-                    <top>-1</top>
-                    <texture colordiffuse="darkline_separator">common/white.png</texture>
-                </control>
+                <include>Object_Separator_Top</include>
             </control>
         </control>
     </include>
@@ -270,16 +219,7 @@
                             <visible>!Skin.HasSetting(DisableInfoListArt)</visible>
                             <top>38</top>
                             <height>22</height>
-                            <control type="image">
-                                <height>1</height>
-                                <top>0</top>
-                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <height>1</height>
-                                <top>-1</top>
-                                <texture colordiffuse="darkline_separator">common/white.png</texture>
-                            </control>
+                            <include>Object_Separator_Top</include>
                         </control>
                         <control type="label">
                             <aligny>top</aligny>

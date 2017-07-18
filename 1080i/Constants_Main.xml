@@ -18,7 +18,7 @@
     <constant name="alphabet_bottom">14</constant> <!-- 12 -->
     <constant name="infolist_left">666</constant> <!-- 646 -->
     <constant name="infolist_width">1036</constant> <!-- 1056 -->
-    <constant name="infolist_item_height">90</constant> <!-- 84 -->
+    <constant name="infolist_item_height">81.2</constant> <!-- 84 -->
     <constant name="infolist2_icon_height">302</constant> <!-- 290 -->
     <constant name="infolist3_plot_height">220</constant> <!-- 170 -->
     <constant name="infolist3_main_height">406</constant> <!-- 376 -->
@@ -27,6 +27,7 @@
     <constant name="infolist3_list_width">1094</constant> <!-- 930 -->
     <constant name="infolist3_item_height">101.5</constant> <!-- 94 -->
     <constant name="infolist3_left">660</constant>
+    <constant name="infolist_top">518</constant>
     <constant name="info_details_width">226</constant>
     <constant name="showcase_top">471.5</constant> <!-- 441.5 -->
     <constant name="widget_spacer_top">76</constant> <!-- 76 -->
