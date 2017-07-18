@@ -138,7 +138,7 @@
                         <texture colordiffuse="main_bg_100">common/white.png</texture>
                     </control>
                     <control type="wraplist" id="59">
-                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
                         <include>View_NotTheseWindows</include>
                         <viewtype label="$LOCALIZE[31231]">icon</viewtype>
                         <include content="View_Forced">
@@ -197,7 +197,6 @@
                             <bottom>0</bottom>
                             <texture colordiffuse="99000000">common/white.png</texture>
                         </control>
-                        <include>Object_Separator_Top</include>
                         <control type="label">
                             <height>92</height>
                             <left>30</left>
