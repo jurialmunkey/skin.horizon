@@ -61,7 +61,7 @@
                         <include>Defs_InfoDialog_Visible</include>
                         <include condition="![Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_OnClick</include>
                         <include>Home_OnFocus</include>
-                        <onleft condition="!Skin.HasSetting(DisableSubMenu) | String.IsEqual(Container(300).ListItem.Property(widget),Weather)">302</onleft>
+                        <onleft condition="Window.IsVisible(Home) + [!Skin.HasSetting(DisableSubMenu) | String.IsEqual(Container(300).ListItem.Property(widget),Weather)]">302</onleft>
                         <onright condition="Window.IsVisible(Home)">3000</onright>
                         <onright condition="Window.IsVisible(SettingsProfile.xml)">4</onright>
                         <onright condition="Window.IsVisible(SettingsCategory.xml)">3</onright>
@@ -84,6 +84,7 @@
                 </control>
             </control>
         </control>
+        <include>Object_PlotOverlay</include>
     </include>
 
     <include name="Home_MainMenu_SettingsItems">

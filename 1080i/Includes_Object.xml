@@ -799,11 +799,16 @@
                 <top>100</top>
                 <left>-1000</left>
                 <bottom>100</bottom>
-                <onback>9000</onback>
-                <onup>9000</onup>
-                <onleft>9000</onleft>
-                <onright>9000</onright>
-                <ondown>9000</ondown>
+                <onback condition="Control.IsVisible(9000)">9000</onback>
+                <onup condition="Control.IsVisible(9000)">9000</onup>
+                <onleft condition="Control.IsVisible(9000)">9000</onleft>
+                <onright condition="Control.IsVisible(9000)">9000</onright>
+                <ondown condition="Control.IsVisible(9000)">9000</ondown>
+                <onback condition="!Control.IsVisible(9000)">50</onback>
+                <onup condition="!Control.IsVisible(9000)">50</onup>
+                <onleft condition="!Control.IsVisible(9000)">50</onleft>
+                <onright condition="!Control.IsVisible(9000)">50</onright>
+                <ondown condition="!Control.IsVisible(9000)">50</ondown>
                 <showonepage>true</showonepage>
                 <width>8</width>
                 <orientation>vertical</orientation>
