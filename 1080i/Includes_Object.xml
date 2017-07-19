@@ -374,7 +374,7 @@
     <include name="Object_Flags">
         <param name="container" default="" />
         <param name="source" default="ListItem." />
-        <param name="directory" default="monochrome" />
+        <param name="directory" default="color" />
         <param name="align" default="right" />
         <param name="colordiffuse" default="panel_fg_100" />
         <definition>

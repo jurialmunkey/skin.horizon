@@ -89,24 +89,21 @@
                 <right>80</right>
                 <bottom>0</bottom>
                 <control type="group">
-                    <top>infolist_top</top>
+                    <width>1068</width>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                     </control>
                     <control type="group">
-                        <include>Object_Separator_Top</include>
-                    </control>
-                    <control type="group">
-                        <left>view_left</left>
+                        <left>1068</left>
                         <include>Object_Separator_Left</include>
                     </control>
                     <control type="group">
-                        <bottom>40</bottom>
                         <left>40</left>
                         <top>40</top>
                         <control type="group">
-                            <width>musicposter_width</width>
+                            <width>704</width>
+                            <height>396</height>
                             <control type="image">
                                 <include>Defs_Shadow_Opaque</include>
                                 <texture colordiffuse="PosterBack">common/white.png</texture>
@@ -115,6 +112,20 @@
                                 <fadetime>100</fadetime>
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <left>724</left>
+                            <width>264</width>
+                            <height>396</height>
+                            <control type="image">
+                                <include>Defs_Shadow_Opaque</include>
+                                <texture colordiffuse="PosterBack">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <fadetime>100</fadetime>
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true">$VAR[Image_Poster]</texture>
                             </control>
                         </control>
                     </control>
@@ -126,28 +137,26 @@
                     </include>
                     <include>View_NotTheseWindows</include>
                     <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <top>infolist_top</top>
+                    <top>0</top>
                     <bottom>0</bottom>
-                    <focusposition>2</focusposition>
-                    <movement>2</movement>
                     <include content="View_List_Layout">
                         <param name="id" value="57" />
-                        <param name="offset" value="18" />
-                        <param name="height" value="infolist_item_height"/>
+                        <param name="left" value="1068" />
+                        <param name="width" value="686" />
                     </include>
                 </control>
 
                 <control type="group">
                     <right>-80</right>
+                    <top>425</top>
                     <include content="View_Posters_Info">
-                        <param name="bottom" value="450" />
+                        <param name="bottom" value="25" />
                         <param name="plot_height" value="300" />
                         <param name="id" value="57" />
                         <param name="left" value="50" />
-                        <param name="right" value="130" />
-                        <param name="width" value="1654" />
-                        <param name="altwidth" value="1234" />
-                        <param name="discart" value="true" />
+                        <param name="right" value="800" />
+                        <param name="width" value="1068" />
+                        <param name="discart" value="false" />
                     </include>
                 </control>
             </control>

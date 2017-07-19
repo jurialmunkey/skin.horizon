@@ -189,43 +189,21 @@
                         <visible>!String.IsEmpty(ListItem.Overlay)</visible>
                     </control>
                     <control type="group">
-                        <right>0</right>
-                        <left>0</left>
-                        <height>140</height>
-                        <bottom>0</bottom>
+                        <top>580</top>
                         <control type="image">
-                            <bottom>0</bottom>
-                            <texture colordiffuse="99000000">common/white.png</texture>
+                            <top>-300</top>
+                            <texture>common/gradient-dim.png</texture>
                         </control>
-                        <control type="label">
-                            <height>112</height>
-                            <left>40</left>
-                            <right>90</right>
-                            <font>font_topbar</font>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textcolor>main_fg_100</textcolor>
-                        </control>
-                        
-                        <control type="label">
-                            <left>40</left>
-                            <right>540</right>
-                            <bottom>0</bottom>
-                            <height>78</height>
-                            <label>$VAR[Label_ShowCase_InfoLine]</label>
-                            <textcolor>$VAR[ColorHighlight]</textcolor>
-                            <align>left</align>
-                            <font>font_small</font>
-                        </control>
-                        
-                        <control type="group">
-                            <left>40</left>
-                            <right>40</right>
-                            <top>86</top>
-                            <include content="Object_Ratings">
-                                <param name="directory" value="color" />
-                                <param name="align" value="right" />
-                            </include>
-                        </control>
+                        <include content="View_Posters_Info">
+                            <param name="bottom" value="30" />
+                            <param name="plot_height" value="300" />
+                            <param name="id" value="59" />
+                            <param name="left" value="50" />
+                            <param name="right" value="50" />
+                            <param name="width" value="1068" />
+                            <param name="discart" value="false" />
+                        </include>
+
                     </control>
                 </control>
                 

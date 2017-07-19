@@ -1,3 +1,6 @@
+[B]1.0.14[/B]
+Rework Infolist 3 and Lovefilm
+
 [B]1.0.13[/B]
 Overlay logo on fanart to create fake landscape art (thanks to Jeroen)
 Fix bug with season endtime in showcase view
