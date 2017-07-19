@@ -238,7 +238,7 @@
         <control type="grouplist">
             <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Right</include>
-            <bottom>612</bottom>
+            <bottom>600</bottom>
             <top>186</top>
             <left>136</left>
             <right>50</right>
