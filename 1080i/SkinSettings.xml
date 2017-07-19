@@ -298,6 +298,13 @@
                         <onclick>Skin.ToggleSetting(DisableOSDInfo)</onclick>
                         <onclick>Skin.Reset(ShowInfoPaused)</onclick>
                     </control>
+                    <control type="radiobutton" id="9677" description="Show clearart">
+                        <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31258]</label>
+                        <selected>Skin.HasSetting(ShowOSDClearArt)</selected>
+                        <onclick>Skin.ToggleSetting(ShowOSDClearArt)</onclick>
+                    </control>
 
                     <control type="radiobutton" id="9238" description="Media Flags">
                         <visible>ControlGroup(9100).HasFocus(9103)</visible>

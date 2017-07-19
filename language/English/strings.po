@@ -1210,6 +1210,11 @@ msgctxt "#31257"
 msgid "Slide over library content when opening sideblade"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31258"
+msgid "Show clearart with seekbar"
+msgstr ""
+
 msgctxt "#31259"
 msgid "Extra fanart"
 msgstr ""
