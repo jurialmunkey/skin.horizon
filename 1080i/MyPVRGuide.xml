@@ -252,11 +252,12 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <include>Object_PVR_Info</include>
+                
             </control>
 
         </control>
 
+        <include>Object_PVR_Info</include>
 
         <include>Topbar</include>
         <include>Home</include>
