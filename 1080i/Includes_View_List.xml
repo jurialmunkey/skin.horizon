@@ -194,7 +194,7 @@
                     <right>40</right>
                     <left>40</left>
                     <top>40</top>
-                    <bottom>45</bottom>
+                    <bottom>48</bottom>
                     <control type="grouplist">
                         <align>top</align>
                         <usecontrolcoords>true</usecontrolcoords>

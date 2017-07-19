@@ -129,10 +129,10 @@
             <control type="group">
                 <visible>Control.IsVisible(59)</visible>
                 <control type="group">
-                    <right>120</right>
-                    <left>40</left>
-                    <top>40</top>
-                    <bottom>40</bottom>
+                    <right>80</right>
+                    <left>0</left>
+                    <top>0</top>
+                    <bottom>0</bottom>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="main_bg_100">common/white.png</texture>
@@ -156,13 +156,13 @@
                         <ondown condition="!Control.IsVisible(8000)">300</ondown>
                         <pagecontrol>60</pagecontrol>
                         <scrolltime tween="cubic">400</scrolltime>
-                        <itemlayout width="1674" height="lovefilm_height">
+                        <itemlayout width="1754" height="poster_height">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="1674" height="lovefilm_height">
+                        <focusedlayout width="1754" height="poster_height">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>

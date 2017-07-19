@@ -37,9 +37,9 @@
                     <rulerunit>6</rulerunit>
                     <rulerlayout height="74" width="262">
                         <control type="label" id="2">
-                            <posx>50</posx>
+                            <posx>30</posx>
                             <posy>46</posy>
-                            <width>200</width>
+                            <width>232</width>
                             <align>left</align>
                             <aligny>top</aligny>
                             <font>font_epg_timeline</font>

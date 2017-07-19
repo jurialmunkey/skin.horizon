@@ -94,7 +94,7 @@
                     <texture colordiffuse="FanartDim">common/white.png</texture>
                 </control>
                 <control type="image">
-                    <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
+                    <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
                     <texture background="true">special://skin/extras/backgrounds/default.jpg</texture>
                     <visible>[Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsSystemInfo.xml)]</visible>
                 </control>
