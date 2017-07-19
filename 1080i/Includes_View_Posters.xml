@@ -129,10 +129,10 @@
             <control type="group">
                 <visible>Control.IsVisible(59)</visible>
                 <control type="group">
-                    <right>80</right>
-                    <left>0</left>
-                    <top>0</top>
-                    <bottom>0</bottom>
+                    <right>120</right>
+                    <left>40</left>
+                    <top>40</top>
+                    <bottom>40</bottom>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="main_bg_100">common/white.png</texture>
@@ -156,13 +156,13 @@
                         <ondown condition="!Control.IsVisible(8000)">300</ondown>
                         <pagecontrol>60</pagecontrol>
                         <scrolltime tween="cubic">400</scrolltime>
-                        <itemlayout width="1754" height="poster_height">
+                        <itemlayout width="1674" height="lovefilm_height">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="1754" height="poster_height">
+                        <focusedlayout width="1674" height="lovefilm_height">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
@@ -191,15 +191,15 @@
                     <control type="group">
                         <right>0</right>
                         <left>0</left>
-                        <height>130</height>
+                        <height>140</height>
                         <bottom>0</bottom>
                         <control type="image">
                             <bottom>0</bottom>
                             <texture colordiffuse="99000000">common/white.png</texture>
                         </control>
                         <control type="label">
-                            <height>92</height>
-                            <left>30</left>
+                            <height>112</height>
+                            <left>40</left>
                             <right>90</right>
                             <font>font_topbar</font>
                             <label>$INFO[ListItem.Label]</label>
@@ -207,8 +207,8 @@
                         </control>
                         
                         <control type="label">
-                            <left>30</left>
-                            <right>530</right>
+                            <left>40</left>
+                            <right>540</right>
                             <bottom>0</bottom>
                             <height>78</height>
                             <label>$VAR[Label_ShowCase_InfoLine]</label>
@@ -218,9 +218,9 @@
                         </control>
                         
                         <control type="group">
-                            <left>30</left>
-                            <right>30</right>
-                            <top>76</top>
+                            <left>40</left>
+                            <right>40</right>
+                            <top>86</top>
                             <include content="Object_Ratings">
                                 <param name="directory" value="color" />
                                 <param name="align" value="right" />

@@ -383,7 +383,6 @@
                 <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)</visible>
                 <visible>!Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
                 <visible>!String.IsEqual($PARAM[container]ListItem.Label,..)</visible>
-                <visible>[!$EXP[Expression_ShowWeatherWidget] + !$EXP[Expression_ShowSystemInfoWidget]] | !Window.IsVisible(Home)</visible>
                 <animation effect="fade" start="0" end="100" delay="30" time="1" reversible="false">Visible</animation>
                 <right>30</right>
                 <left>-30</left>
