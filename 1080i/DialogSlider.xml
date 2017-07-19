@@ -23,7 +23,7 @@
                 <left>30</left>
                 <right>30</right>
                 <font>font_medium_bold</font>
-                <textcolor>dialog_fg_70</textcolor>
+                <textcolor>main_fg_70</textcolor>
                 <height>70</height>
             </control>
 
@@ -33,7 +33,7 @@
                 <left>30</left>
                 <right>30</right>
                 <font>font_small_bold</font>
-                <textcolor>dialog_fg_70</textcolor>
+                <textcolor>main_fg_70</textcolor>
                 <height>70</height>
                 <align>right</align>
             </control>

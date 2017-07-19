@@ -13,6 +13,7 @@
 
         <control type="group">
             <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
+            <visible>!Window.IsVisible(DialogSlider.xml)</visible>
             <!-- Mini Blade -->
             <control type="group">
                 <visible>!Skin.HasSetting(OSDHideSubmenu)</visible>
