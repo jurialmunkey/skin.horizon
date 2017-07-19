@@ -71,16 +71,16 @@
         <!-- Plot Font -->
         <font>
             <name>font_plotbox</name>
-            <filename>Roboto-Regular.ttf</filename>
+            <filename>Roboto-Regular-LineSpacingMod.ttf</filename>
             <size>30</size>
-            <linespacing>1.2</linespacing>
+            <linespacing>1</linespacing>
             <aspect>0.9</aspect>
         </font>
         <font>
             <name>font_textviewer</name>
-            <filename>Roboto-Regular.ttf</filename>
+            <filename>Roboto-Regular-LineSpacingMod.ttf</filename>
             <size>30</size>
-            <linespacing>1.4</linespacing>
+            <linespacing>1</linespacing>
             <aspect>0.9</aspect>
         </font>
 
