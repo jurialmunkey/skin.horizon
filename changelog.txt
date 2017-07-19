@@ -2,7 +2,6 @@
 Rework Infolist 3 and Lovefilm
 Slideover content when opening side blade (can disable in Misc Skin Options)
 Attempt to fix notification and header overlap 
--- to investigate **weird kodi bug with grouplist sizing in videoinfo if dialog on and left menu open**
 
 [B]1.0.13[/B]
 Overlay logo on fanart to create fake landscape art (thanks to Jeroen)
