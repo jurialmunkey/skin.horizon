@@ -130,6 +130,19 @@
                         </control>
                     </control>
                 </control>
+                <control type="group">
+                    <right>-80</right>
+                    <top>425</top>
+                    <include content="View_Posters_Info">
+                        <param name="bottom" value="25" />
+                        <param name="plot_height" value="300" />
+                        <param name="id" value="57" />
+                        <param name="left" value="50" />
+                        <param name="right" value="800" />
+                        <param name="width" value="1068" />
+                        <param name="discart" value="false" />
+                    </include>
+                </control>
                 <control type="fixedlist" id="57">
                     <viewtype label="$LOCALIZE[31198]">list</viewtype>
                     <include content="View_Forced">
@@ -143,20 +156,6 @@
                         <param name="id" value="57" />
                         <param name="left" value="1068" />
                         <param name="width" value="686" />
-                    </include>
-                </control>
-
-                <control type="group">
-                    <right>-80</right>
-                    <top>425</top>
-                    <include content="View_Posters_Info">
-                        <param name="bottom" value="25" />
-                        <param name="plot_height" value="300" />
-                        <param name="id" value="57" />
-                        <param name="left" value="50" />
-                        <param name="right" value="800" />
-                        <param name="width" value="1068" />
-                        <param name="discart" value="false" />
                     </include>
                 </control>
             </control>
