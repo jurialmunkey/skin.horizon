@@ -12,6 +12,7 @@
         <control type="group">
             <left>50</left>
             <include>Animation_Right</include>
+            <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Weather</include>
         </control>
 
