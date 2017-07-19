@@ -104,15 +104,13 @@
 
             <control type="group">
                 <right>1020</right>
-                <visible>Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-                <visible>!Control.HasFocus(300) + !Control.HasFocus(302)</visible>
+                <visible>![Control.HasFocus(300) | Control.HasFocus(302)] + [Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)]</visible>
                 <include>Topbar_TextDetails_LeftContent</include>
             </control>
 
             <control type="group">
                 <right>1320</right>
-                <visible>Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-                <visible>Control.HasFocus(300) | Control.HasFocus(302)</visible>
+                <visible>[Control.HasFocus(300) | Control.HasFocus(302)] + [Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)]</visible>
                 <include>Topbar_TextDetails_LeftContent</include>
             </control>
 
