@@ -8,7 +8,7 @@
         <right>sidepad</right>
         <centertop>53%</centertop>
         <height>100</height>
-        <width>600</width>
+        <width>860</width>
         <include>Animation_FadeIn_Slide</include>
         <include>Animation_FadeOut</include>
     </include>

@@ -97,92 +97,23 @@
         <control type="group">
             <!-- Left Side | Location / Num Items -->
             <control type="group">
-                <include>Animation_MusicVis_Left</include>
-                <centertop>53%</centertop>
-                <height>100</height>
-                <left>sidepad</left>
-                <right>600</right>
-                <include>Animation_Home_Topbar_Slideover_NoInfo</include>
-                <control type="label">
-                    <height>48</height>
-                    <label>$VAR[Label_Header_Content]</label>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <font>font_topbar</font>
-                    <textcolor>main_fg_100</textcolor>
-                    <shadowcolor>main_bg_30</shadowcolor>
-                </control>
-                <control type="grouplist">
-                    <top>48</top>
-                    <height>42</height>
-                    <left>0</left>
-                    <align>left</align>
-                    <itemgap>12</itemgap>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <orientation>horizontal</orientation>
-                    <control type="group">
-                        <width>20</width>
-                        <visible>!Player.HasMedia | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
-                        <include>Object_DownArrows</include>
-                    </control>
-                    <control type="label">
-                        <font>font_small</font>
-                        <aligny>center</aligny>
-                        <width>1200</width>
-                        <height>100%</height>
-                        <textcolor>$VAR[ColorHighlight]</textcolor>
-                        <shadowcolor>main_bg_30</shadowcolor>
-                        <label>$VAR[Label_SubHeader_Content]</label>
-                        <visible>!Player.HasMedia | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
-                    </control>
-                    <control type="multiimage">
-                        <top>10</top>
-                        <left>0</left>
-                        <imagepath colordiffuse="$VAR[ColorHighlight]">eq</imagepath>
-                        <width>40</width>
-                        <height>23</height>
-                        <fadetime>50</fadetime>
-                        <timeperimage>50</timeperimage>
-                        <visible>Player.HasMedia</visible>
-                        <visible>!Player.Paused</visible>
-                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
-                    </control>
-                    <control type="image">
-                        <top>7</top>
-                        <left>0</left>
-                        <texture colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texture>
-                        <width>32</width>
-                        <height>32</height>
-                        <fadetime>50</fadetime>
-                        <visible>Player.HasMedia</visible>
-                        <visible>Player.Paused</visible>
-                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
-                    </control>
-                    <control type="label">
-                        <left>8</left>
-                        <font>font_small</font>
-                        <aligny>center</aligny>
-                        <width max="750">auto</width>
-                        <height>100%</height>
-                        <textcolor>main_fg_70</textcolor>
-                        <shadowcolor>main_bg_30</shadowcolor>
-                        <label>$INFO[MusicPlayer.Artist,,[COLOR=main_fg_30]  •  [/COLOR]]$INFO[Player.Title,[COLOR=main_fg_100],[/COLOR][COLOR=main_fg_30]  •  [/COLOR]]</label>
-                        <visible>Player.HasMedia</visible>
-                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
-                    </control>
-                    <control type="label">
-                        <left>-12</left>
-                        <font>font_small</font>
-                        <aligny>center</aligny>
-                        <width>auto</width>
-                        <height>100%</height>
-                        <textcolor>main_fg_70</textcolor>
-                        <shadowcolor>main_bg_30</shadowcolor>
-                        <label>[COLOR=$VAR[ColorHighlight]]$INFO[Player.Time][/COLOR]  |  [COLOR=$VAR[ColorHighlight]]$INFO[Player.Duration][/COLOR]</label>
-                        <visible>Player.HasMedia</visible>
-                        <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
-                    </control>
-                </control>
+                <right>900</right>
+                <visible>!Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                <include>Topbar_TextDetails_LeftContent</include>
+            </control>
+
+            <control type="group">
+                <right>1020</right>
+                <visible>Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                <visible>!Control.HasFocus(300) + !Control.HasFocus(302)</visible>
+                <include>Topbar_TextDetails_LeftContent</include>
+            </control>
+
+            <control type="group">
+                <right>1320</right>
+                <visible>Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                <visible>Control.HasFocus(300) | Control.HasFocus(302)</visible>
+                <include>Topbar_TextDetails_LeftContent</include>
             </control>
 
             <!-- Right Side | Date / Time -->
@@ -190,6 +121,94 @@
             
         </control>
         
+    </include>
+
+    <include name="Topbar_TextDetails_LeftContent">
+        <include>Animation_MusicVis_Left</include>
+        <centertop>53%</centertop>
+        <height>100</height>
+        <left>sidepad</left>
+        <include>Animation_Home_Topbar_Slideover_NoInfo</include>
+        <control type="label">
+            <height>48</height>
+            <label>$VAR[Label_Header_Content]</label>
+            <aligny>center</aligny>
+            <align>left</align>
+            <font>font_topbar</font>
+            <textcolor>main_fg_100</textcolor>
+            <shadowcolor>main_bg_30</shadowcolor>
+        </control>
+        <control type="grouplist">
+            <top>48</top>
+            <height>42</height>
+            <left>0</left>
+            <align>left</align>
+            <itemgap>12</itemgap>
+            <usecontrolcoords>true</usecontrolcoords>
+            <orientation>horizontal</orientation>
+            <control type="group">
+                <width>20</width>
+                <visible>!Player.HasMedia | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <include>Object_DownArrows</include>
+            </control>
+            <control type="label">
+                <font>font_small</font>
+                <aligny>center</aligny>
+                <width>1200</width>
+                <height>100%</height>
+                <textcolor>$VAR[ColorHighlight]</textcolor>
+                <shadowcolor>main_bg_30</shadowcolor>
+                <label>$VAR[Label_SubHeader_Content]</label>
+                <visible>!Player.HasMedia | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+            </control>
+            <control type="multiimage">
+                <top>10</top>
+                <left>0</left>
+                <imagepath colordiffuse="$VAR[ColorHighlight]">eq</imagepath>
+                <width>40</width>
+                <height>23</height>
+                <fadetime>50</fadetime>
+                <timeperimage>50</timeperimage>
+                <visible>Player.HasMedia</visible>
+                <visible>!Player.Paused</visible>
+                <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+            </control>
+            <control type="image">
+                <top>7</top>
+                <left>0</left>
+                <texture colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texture>
+                <width>32</width>
+                <height>32</height>
+                <fadetime>50</fadetime>
+                <visible>Player.HasMedia</visible>
+                <visible>Player.Paused</visible>
+                <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+            </control>
+            <control type="label">
+                <left>8</left>
+                <font>font_small</font>
+                <aligny>center</aligny>
+                <width max="750">auto</width>
+                <height>100%</height>
+                <textcolor>main_fg_70</textcolor>
+                <shadowcolor>main_bg_30</shadowcolor>
+                <label>$INFO[MusicPlayer.Artist,,[COLOR=main_fg_30]  •  [/COLOR]]$INFO[Player.Title,[COLOR=main_fg_100],[/COLOR][COLOR=main_fg_30]  •  [/COLOR]]</label>
+                <visible>Player.HasMedia</visible>
+                <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+            </control>
+            <control type="label">
+                <left>-12</left>
+                <font>font_small</font>
+                <aligny>center</aligny>
+                <width>auto</width>
+                <height>100%</height>
+                <textcolor>main_fg_70</textcolor>
+                <shadowcolor>main_bg_30</shadowcolor>
+                <label>[COLOR=$VAR[ColorHighlight]]$INFO[Player.Time][/COLOR]  |  [COLOR=$VAR[ColorHighlight]]$INFO[Player.Duration][/COLOR]</label>
+                <visible>Player.HasMedia</visible>
+                <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+            </control>
+        </control>
     </include>
 
     <include name="Topbar_TextDetails_DateTime">

@@ -456,6 +456,14 @@
                         <onclick>Skin.ToggleSetting(UseHoursMinutes)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9275" description="Slide over content when opening side blade in library">
+                        <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Slide over library content when opening sideblade</label>
+                        <selected>!Skin.HasSetting(SlideOverContent)</selected>
+                        <onclick>Skin.ToggleSetting(SlideOverContent)</onclick>
+                    </control>
+
                     <control type="radiobutton" id="9278" description="Enable bounce animations">
                         <visible>ControlGroup(9100).HasFocus(9107)</visible>
                         <include>Defs_Settings_Button</include>
