@@ -1219,6 +1219,11 @@ msgctxt "#31259"
 msgid "Extra fanart"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31260"
+msgid "Use secondary color as background tint"
+msgstr ""
+
 msgctxt "#31261"
 msgid "Widget aspect"
 msgstr ""

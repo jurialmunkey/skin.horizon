@@ -46,8 +46,12 @@
             <top>0</top>
             <aspectratio>scale</aspectratio>
             <animation effect="fade" start="100" end="75" condition="!Skin.HasSetting(DisableTransparentTopbar)">Conditional</animation>
-            
             <texture flipy="true">common/gradient-solid.png</texture>
+        </control>
+        <control type="image">
+            <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
+            <animation effect="fade" start="100" end="4" condition="true">Conditional</animation>
+            <visible>Skin.HasSetting(ColorOverlay)</visible>
         </control>
         <control type="image">
             <bottom>2</bottom>

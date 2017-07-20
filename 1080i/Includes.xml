@@ -38,6 +38,11 @@
         <value>GradientHighlight</value>
     </variable>
 
+    <variable name="ColorOverlay">
+        <value condition="Skin.HasSetting(ColorOverlay)">$VAR[ColorHighlight2]</value>
+        <value>FFffffff</value>
+    </variable>
+
     <include name="Dimensions_Fullscreen">
         <left>0</left>
         <top>0</top>
