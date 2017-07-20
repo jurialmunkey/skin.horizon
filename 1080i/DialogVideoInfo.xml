@@ -61,7 +61,7 @@
                     <left>info_left</left>
                     <right>0</right>
                     <height>420</height>
-                    
+
                     <control type="grouplist">
                         <top>20</top>
                         <height>42</height>
@@ -213,7 +213,7 @@
                 <!-- Info -->
                 <control type="grouplist">
                     <left>info_left</left>
-                    <top>658</top>
+                    <top>670</top>
                     <right>70</right>
                     <orientation>vertical</orientation>
                     <control type="group">

@@ -453,6 +453,20 @@
                         <visible>Control.HasFocus($PARAM[id])</visible>
                         <include>View_Selectbox</include>
                     </control>
+                    
+                </control>
+                <control type="label">
+                    <bottom>-30</bottom>
+                    <height>30</height>
+                    <align>center</align>
+                    <font>font_unwatched</font>
+                    <textcolor>main_fg_70</textcolor>
+                    <label>[UPPERCASE]$LOCALIZE[31274][/UPPERCASE]</label>
+                    <visible>Control.HasFocus(50)</visible>
+                    <include>Animation_FadeIn</include>
+                    <animation effect="fade" start="0" end="100" time="300" delay="500">Focus</animation>
+                    <visible>Control.IsVisible(50)</visible>
+                    <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
                 </control>
             </focusedlayout>
         </definition>

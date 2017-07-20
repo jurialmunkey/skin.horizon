@@ -1277,6 +1277,11 @@ msgctxt "#31273"
 msgid "Select background overlay color"
 msgstr ""
 
+#: /1080i/Includes_View.xml
+msgctxt "#31274"
+msgid "Press down for info"
+msgstr ""
+
 msgctxt "#31279"
 msgid "Video decoder"
 msgstr ""
