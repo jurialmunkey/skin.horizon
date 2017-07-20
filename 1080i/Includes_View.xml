@@ -211,6 +211,11 @@
                     <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
+                <control type="image">
+                    <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
+                    <animation effect="fade" start="100" end="4" condition="true">Conditional</animation>
+                    <visible>Skin.HasSetting(ColorOverlay)</visible>
+                </control>
                 <include content="Object_BigPoster">
                     <param name="discart" value="false" />
                 </include>
