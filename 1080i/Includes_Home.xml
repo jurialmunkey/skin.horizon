@@ -730,6 +730,13 @@
             <texture colordiffuse="dialog_bg_100">common/white.png</texture>
         </control>
         <control type="image">
+            <right>6</right>
+            <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
+            <animation effect="fade" start="100" end="5" condition="true">Conditional</animation>
+            <visible>!String.IsEmpty(Skin.String(overlaycolor.name))</visible>
+            <visible>String.IsEqual(Skin.CurrentColourTheme,Dark Dialogs)</visible>
+        </control>
+        <control type="image">
             <width>1</width>
             <right>4</right>
             <texture colordiffuse="highlight_bottombar">common/white.png</texture>
