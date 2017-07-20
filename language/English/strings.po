@@ -1272,6 +1272,11 @@ msgctxt "#31272"
 msgid "Multi Image"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31273"
+msgid "Select background overlay color"
+msgstr ""
+
 msgctxt "#31279"
 msgid "Video decoder"
 msgstr ""

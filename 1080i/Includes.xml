@@ -39,7 +39,7 @@
     </variable>
 
     <variable name="ColorOverlay">
-        <value condition="Skin.HasSetting(ColorOverlay)">$VAR[ColorHighlight2]</value>
+        <value condition="!String.IsEmpty(Skin.String(overlaycolor.name))">$INFO[Skin.String(overlaycolor.name)]</value>
         <value>FFffffff</value>
     </variable>
 

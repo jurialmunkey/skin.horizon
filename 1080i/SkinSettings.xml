@@ -417,12 +417,13 @@
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
                     </control>
-                    <control type="radiobutton" id="9252" description="Use secondary colour as background overlay">
+                    <control type="button" id="9252" description="Set overlaycolor ">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31260]</label>
-                        <selected>Skin.HasSetting(ColorOverlay)</selected>
-                        <onclick>Skin.ToggleSetting(ColorOverlay)</onclick>
+                        <label>$LOCALIZE[31273]</label>
+                        <label2>$INFO[Skin.String(overlaycolor.name)]</label2>
+                        <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                        <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
                     </control>
                     <control type="button" id="9254">
                         <visible>ControlGroup(9100).HasFocus(9105)</visible>
@@ -430,6 +431,7 @@
                         <include>Defs_Settings_Button</include>
                         <onclick>Skin.Reset(focuscolor.name)</onclick>
                         <onclick>Skin.Reset(gradientcolor.name)</onclick>
+                        <onclick>Skin.Reset(overlaycolor.name)</onclick>
                     </control>
                     <!-- ============= -->
                     <!-- Miscellaneous -->
