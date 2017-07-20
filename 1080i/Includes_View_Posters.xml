@@ -624,7 +624,7 @@
                             <texture background="true">$VAR[Image_Clearlogo]</texture>
                             <visible>Skin.HasSetting(FakeLandscapeArt)</visible>
                             <visible>String.IsEmpty(ListItem.Art(landscape))</visible>
-                            <visible>Container.Content(movies) | Container.Content(sets)</visible>
+                            <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
                         </control>
                     </control>
                     <control type="group">
@@ -704,7 +704,7 @@
                             <texture background="true">$VAR[Image_Clearlogo]</texture>
                             <visible>Skin.HasSetting(FakeLandscapeArt)</visible>
                             <visible>String.IsEmpty(ListItem.Art(landscape))</visible>
-                            <visible>Container.Content(movies) | Container.Content(sets)</visible>
+                            <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
                         </control>
                         <include>View_WatchedOverlay</include>
                         <!-- Highlight -->
