@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Image_Clearlogo">
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+        <value>$INFO[ListItem.Art(clearlogo)]</value>
+    </variable>
     <variable name="Image_Watched">
         <value condition="System.Setting(hidewatched)">special://skin/extras/icons/watched-hide.png</value>
         <value>special://skin/extras/icons/watched-show.png</value>
