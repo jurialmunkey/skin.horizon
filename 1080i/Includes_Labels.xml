@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Oscars">
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),1 Oscar)">x1</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),2 Oscar)">x2</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),3 Oscar)">x3</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),4 Oscar)">x4</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),5 Oscar)">x5</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),6 Oscar)">x6</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),7 Oscar)">x7</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),8 Oscar)">x8</value>
+        <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Oscar)">x9</value>
+    </variable>
+
     <variable name="Label_HideArtwork">
         <value condition="Skin.HasSetting(DisableInfoListArt)">$LOCALIZE[31256]</value>
         <value>$LOCALIZE[31148]</value>
