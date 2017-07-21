@@ -213,8 +213,10 @@
                 <!-- Info -->
                 <control type="grouplist">
                     <left>info_left</left>
-                    <top>670</top>
+                    <top>650</top>
                     <right>70</right>
+                    <height>180</height>
+                    <align>top</align>
                     <orientation>vertical</orientation>
                     <control type="group">
                         <height>42</height>
@@ -282,6 +284,29 @@
                             <aligny>center</aligny>
                             <width>auto</width>
                             <label>$INFO[ListItem.Genre]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>42</height>
+                        <visible>!String.IsEmpty(ListItem.Studio)</visible>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_30</textcolor>
+                            <aligny>center</aligny>
+                            <width>info_details_width</width>
+                            <align>right</align>
+                            <textoffsetx>20</textoffsetx>
+                            <height>100%</height>
+                            <label>$LOCALIZE[572]</label>
+                        </control>
+                        <control type="label">
+                            <height>42</height>
+                            <left>info_details_width</left>
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <label>$INFO[ListItem.Studio]</label>
                         </control>
                     </control>
                 </control>
