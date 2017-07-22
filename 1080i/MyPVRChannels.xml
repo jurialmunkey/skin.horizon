@@ -8,6 +8,8 @@
         <include>Global_Background</include>
         <include>View_Layout</include>
 
+        <control type="label" id="29"><visible>false</visible></control>
+
         <control type="group">
             <right>80</right>
             <include>Object_PVR_Info</include>

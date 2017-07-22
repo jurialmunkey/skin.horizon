@@ -9,6 +9,7 @@
         <include>Global_Background</include>
         <include>View_Layout</include>
         
+        <control type="label" id="29"><visible>false</visible></control>
         
         <control type="group" id="50">
             <control type="group">
