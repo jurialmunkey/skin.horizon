@@ -1032,11 +1032,7 @@
             <texture>common/gradient-solid-horizontal.png</texture>
             <include>Defs_DarkShadow</include>
         </control>
-        <control type="image">
-            <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
-            <animation effect="fade" start="100" end="5" condition="true">Conditional</animation>
-            <visible>!String.IsEmpty(Skin.String(overlaycolor.name))</visible>
-        </control>
+        <include>Defs_Color_Overlay</include>
         <control type="image">
             <width>1</width>
             <left>-1</left>

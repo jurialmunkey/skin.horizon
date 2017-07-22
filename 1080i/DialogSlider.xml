@@ -16,7 +16,7 @@
                 <include>Defs_Shadow</include>
                 <texture>common/gradient-solid.png</texture>
             </control>
-
+            <include>Defs_Color_Overlay</include>
             <control type="label" id="10">
                 <description>Heading</description>
                 <top>20</top>

@@ -48,11 +48,7 @@
             <animation effect="fade" start="100" end="75" condition="!Skin.HasSetting(DisableTransparentTopbar)">Conditional</animation>
             <texture flipy="true">common/gradient-solid.png</texture>
         </control>
-        <control type="image">
-            <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
-            <animation effect="fade" start="100" end="5" condition="true">Conditional</animation>
-            <visible>!String.IsEmpty(Skin.String(overlaycolor.name))</visible>
-        </control>
+        <include>Defs_Color_Overlay</include>
         <control type="image">
             <bottom>2</bottom>
             <height>1</height>
@@ -77,9 +73,11 @@
             <texture flipy="false">common/shadow-line-24px.png</texture>
         </control>
         <control type="image">
+            <bottom>0</bottom>
+            <top>0</top>
             <texture>common/gradient-solid.png</texture>
         </control>
-
+        <include>Defs_Color_Overlay</include>
     </include>
 
     <include name="Topbar_MainMenu_Lines">

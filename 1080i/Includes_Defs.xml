@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="Defs_Color_Overlay">
+        <control type="image">
+            <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
+            <animation effect="fade" start="100" end="5" condition="true">Conditional</animation>
+            <visible>!String.IsEmpty(Skin.String(overlaycolor.name))</visible>
+        </control>
+    </include>
+
     <include name="Defs_SkinShortcuts_SetStrings">
         <onback condition="String.IsEqual(Window.Property(groupname),mainmenu)">Skin.SetString(HomeNumItems,$INFO[Container(211).NumItems])</onback>
 
@@ -318,6 +326,15 @@
             <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
             <bordersize>24</bordersize>
             <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
+        </control>
+        <control type="image">
+            <left>-16</left>
+            <right>-16</right>
+            <top>-16</top>
+            <bottom>-16</bottom>
+            <bordertexture />
+            <bordersize>24</bordersize>
+            <include>Dialog_Color_Overlay_Def</include>
         </control>
     </include>
     <include name="Defs_Options_Grouplist">

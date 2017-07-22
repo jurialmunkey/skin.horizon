@@ -60,7 +60,25 @@
                 <include>Defs_Shadow_Opaque</include>
                 <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
             </control>
+            <include>Dialog_Color_Overlay</include>
         </definition>
+    </include>
+
+    <include name="Dialog_Color_Overlay">
+        <control type="image">
+            <include>Dialog_Color_Overlay_Def</include>
+        </control>
+    </include>
+
+    <include name="Dialog_Color_Overlay_Def">
+        <texture colordiffuse="$VAR[ColorOverlay]" border="16">common/rounded-dialog.png</texture>
+        <include>Dialog_Color_Overlay_Condition</include>
+    </include>
+
+    <include name="Dialog_Color_Overlay_Condition">
+        <animation effect="fade" start="100" end="5" condition="true">Conditional</animation>
+        <visible>!String.IsEmpty(Skin.String(overlaycolor.name))</visible>
+        <visible>String.IsEqual(Skin.CurrentColourTheme,Dark Dialogs)</visible>
     </include>
 
     <include name="Dialog_Standard_List_Left">
@@ -194,6 +212,16 @@
             <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
             <bordersize>24</bordersize>
             <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
+        </control>
+
+        <control type="image">
+            <left>-46</left>
+            <right>-46</right>
+            <top>-46</top>
+            <height>476</height>
+            <bordertexture />
+            <bordersize>24</bordersize>
+            <include>Dialog_Color_Overlay_Def</include>
         </control>
 
         <control type="label" id="1">

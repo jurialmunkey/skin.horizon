@@ -19,6 +19,7 @@
             <height>624</height>
 
             
+
             <control type="image" id="999">
                 <description>background image</description>
                 <bottom>0</bottom>
@@ -27,6 +28,15 @@
                 <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
                 <bordersize>24</bordersize>
                 <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
+            </control>
+            <control type="image" id="999">
+                <description>background image</description>
+                <bottom>0</bottom>
+                <width>506</width>
+                <height>624</height>
+                <include>Dialog_Color_Overlay_Def</include>
+                <bordersize>24</bordersize>
+                <bordertexture />
             </control>
             <control type="grouplist" id="996">
                 <description>grouplist for context buttons</description>

@@ -68,6 +68,7 @@
             <aspectratio>scale</aspectratio>
             <texture>common/gradient-solid.png</texture>
         </control>
+        <include>Defs_Color_Overlay</include>
         <control type="image">
             <height>1</height>
             <top>0</top>

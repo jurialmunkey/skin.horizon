@@ -31,6 +31,15 @@
                 <texture border="16" colordiffuse="dialog_bg_100">common/rounded-shadow8.png</texture>
             </control>
 
+            <control type="image">
+                <left>-10</left>
+                <top>66</top>
+                <width>440</width>
+                <height>508</height>
+                <texture border="16" colordiffuse="$VAR[ColorOverlay]">common/box.png</texture>
+                <include>Dialog_Color_Overlay_Condition</include>
+            </control>
+
             <control type="label" id="1">
                 <description>dialog Heading</description>
                 <left>15</left>
