@@ -436,6 +436,7 @@
                         <control type="image">
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
+                        <include>Defs_Color_Overlay</include>
                         <control type="textbox">
                             <top>20</top>
                             <bottom>20</bottom>
@@ -454,6 +455,7 @@
                         <control type="image">
                             <texture colordiffuse="main_bg_30">common/white.png</texture>
                         </control>
+                        <include>Defs_Color_Overlay</include>
                         <control type="image">
                             <top>50</top>
                             <left>50</left>
@@ -532,6 +534,7 @@
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
+                            <include>Defs_Color_Overlay</include>
                             <control type="label">
                                 <top>0</top>
                                 <bottom>0</bottom>
@@ -682,6 +685,7 @@
                         <control type="image">
                             <texture colordiffuse="main_bg_30">common/white.png</texture>
                         </control>
+                        <include>Defs_Color_Overlay</include>
                         <control type="image">
                             <top>50</top>
                             <left>50</left>
@@ -760,6 +764,7 @@
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
+                            <include>Defs_Color_Overlay</include>
                             <control type="label">
                                 <top>0</top>
                                 <bottom>0</bottom>

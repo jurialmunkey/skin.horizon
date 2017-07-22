@@ -423,6 +423,13 @@
                             <bordersize>10</bordersize>
                             <texture colordiffuse="main_bg_70">common/white.png</texture>
                         </control>
+                        <control type="group">
+                            <left>10</left>
+                            <right>10</right>
+                            <top>10</top>
+                            <bottom>10</bottom>
+                            <include>Defs_Color_Overlay</include>
+                        </control>
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
@@ -520,6 +527,13 @@
                             <height>265</height>
                             <bordersize>10</bordersize>
                             <texture colordiffuse="main_bg_70">common/white.png</texture>
+                        </control>
+                        <control type="group">
+                            <left>10</left>
+                            <right>10</right>
+                            <top>10</top>
+                            <bottom>10</bottom>
+                            <include>Defs_Color_Overlay</include>
                         </control>
                         <control type="image">
                             <height>265</height>
@@ -763,6 +777,13 @@
                         <include>Defs_Shadow_Small</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
+                    <control type="group">
+                        <left>10</left>
+                        <right>10</right>
+                        <top>10</top>
+                        <bottom>10</bottom>
+                        <include>Defs_Color_Overlay</include>
+                    </control>
                     <control type="image" description="Poster">
                         <height>170</height>
                         <bordersize>10</bordersize>
@@ -838,6 +859,13 @@
                         <bordersize>10</bordersize>
                         <include>Defs_Shadow_Small</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
+                    </control>
+                    <control type="group">
+                        <left>10</left>
+                        <right>10</right>
+                        <top>10</top>
+                        <bottom>10</bottom>
+                        <include>Defs_Color_Overlay</include>
                     </control>
                     <control type="image" description="Poster">
                         <height>170</height>
