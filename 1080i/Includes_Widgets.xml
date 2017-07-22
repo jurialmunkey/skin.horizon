@@ -532,7 +532,7 @@
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
-                            <control type="textbox">
+                            <control type="label">
                                 <top>0</top>
                                 <bottom>0</bottom>
                                 <left>20</left>
@@ -760,7 +760,7 @@
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
-                            <control type="textbox">
+                            <control type="label">
                                 <top>0</top>
                                 <bottom>0</bottom>
                                 <left>20</left>
