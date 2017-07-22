@@ -513,7 +513,7 @@
                     <control type="group">
                         <visible>$PARAM[landscape]</visible>
                         <control type="image">
-                            <texture background="true">$VAR[Image_Thumb]</texture>
+                            <texture background="true">$VAR[Image_Fanart]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
                         <control type="image">
@@ -741,7 +741,7 @@
                     <control type="group">
                         <visible>$PARAM[landscape]</visible>
                         <control type="image">
-                            <texture background="true">$VAR[Image_Thumb]</texture>
+                            <texture background="true">$VAR[Image_Fanart]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
                         <control type="image">

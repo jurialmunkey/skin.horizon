@@ -112,7 +112,7 @@
                             <control type="image">
                                 <fadetime>100</fadetime>
                                 <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[Image_Thumb]</texture>
+                                <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                             <control type="image">
                                 <bottom>20</bottom>
@@ -227,7 +227,7 @@
                             <control type="image">
                                 <fadetime>100</fadetime>
                                 <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[Image_Thumb]</texture>
+                                <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                             <control type="image">
                                 <bottom>20</bottom>

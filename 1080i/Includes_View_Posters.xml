@@ -613,7 +613,7 @@
                         <control type="image">
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
-                            <texture background="true">$VAR[Image_Thumb]</texture>
+                            <texture background="true">$VAR[Image_Fanart]</texture>
                         </control>
                         <control type="image">
                             <bottom>30</bottom>
@@ -693,7 +693,7 @@
                         <control type="image">
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
-                            <texture background="true">$VAR[Image_Thumb]</texture>
+                            <texture background="true">$VAR[Image_Fanart]</texture>
                         </control>
                         <control type="image">
                             <bottom>30</bottom>
