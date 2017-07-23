@@ -408,6 +408,88 @@
         </definition>
     </include>
 
+    <include name="Home_Widget_Submenu_ItemLayout">
+        <param name="genres" default="false" />
+        <param name="studios" default="false" />
+        <param name="text" default="false" />
+        <param name="square" default="false" />
+        <param name="poster" default="false" />
+        <param name="landscape" default="false" />
+        <definition>
+            <control type="group">
+                <left>72</left>
+                <right>-72</right>
+                <top>24</top>
+                <bottom>-24</bottom>
+                <control type="group">
+                    <top>10</top>
+                    <right>10</right>
+                    <bottom>10</bottom>
+                    <left>10</left>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="PosterBack">common/white.png</texture>
+                    </control>
+                    <control type="image">
+                        <texture background="true" colordiffuse="main_fg_70">$INFO[ListItem.Icon]</texture>
+                        <visible>String.Contains(ListItem.Icon,special://skin/extras/icons/)</visible>
+                    </control>
+                    <control type="image">
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <visible>!String.Contains(ListItem.Icon,special://skin/extras/icons/)</visible>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_Widget_Submenu_FocusedLayout">
+        <param name="genres" default="false" />
+        <param name="studios" default="false" />
+        <param name="text" default="false" />
+        <param name="square" default="false" />
+        <param name="poster" default="false" />
+        <param name="landscape" default="false" />
+        <definition>
+            <control type="group">
+                <left>72</left>
+                <right>-72</right>
+                <top>24</top>
+                <bottom>-24</bottom>
+                <visible>Control.HasFocus($PARAM[id])</visible>
+                <include>Animation_FocusBounce_Large</include>
+                <control type="group">
+                    <top>10</top>
+                    <right>10</right>
+                    <bottom>10</bottom>
+                    <left>10</left>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="PosterBack">common/white.png</texture>
+                    </control>
+                    <control type="image">
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <include>View_Selectbox</include>
+                </control>
+            </control>
+            <control type="group">
+                <visible>!Control.HasFocus($PARAM[id])</visible>
+                <include content="Home_Widget_Submenu_ItemLayout">
+                    <param name="genres" value="$PARAM[genres]" />
+                    <param name="studios" value="$PARAM[studios]" />
+                    <param name="text" value="$PARAM[text]" />
+                    <param name="square" value="$PARAM[square]" />
+                    <param name="poster" value="$PARAM[poster]" />
+                    <param name="landscape" value="$PARAM[landscape]" />
+                </include>
+            </control>
+        </definition>
+    </include>
+
+
     <include name="Home_Widget_Posters_ItemLayout">
         <param name="genres" default="false" />
         <param name="studios" default="false" />
@@ -430,13 +512,18 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
+                    <control type="image">
+                        <height>222</height>
+                        <texture colordiffuse="main_bg_70">common/white.png</texture>
+                        <visible>!$PARAM[landscape]</visible>
+                    </control>
+                    <include>Defs_Color_Overlay</include>
                     <control type="group">
                         <top>222</top>
                         <visible>!$PARAM[poster] + !$PARAM[landscape]</visible>
                         <control type="image">
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
-                        <include>Defs_Color_Overlay</include>
                         <control type="textbox">
                             <top>20</top>
                             <bottom>20</bottom>
@@ -452,10 +539,6 @@
                     <control type="group">
                         <height>222</height>
                         <visible>!$PARAM[poster] + !$PARAM[landscape]</visible>
-                        <control type="image">
-                            <texture colordiffuse="main_bg_30">common/white.png</texture>
-                        </control>
-                        <include>Defs_Color_Overlay</include>
                         <control type="image">
                             <top>50</top>
                             <left>50</left>
@@ -534,7 +617,7 @@
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
-                            <include>Defs_Color_Overlay</include>
+
                             <control type="label">
                                 <top>0</top>
                                 <bottom>0</bottom>
@@ -550,89 +633,6 @@
                     </control>
                 </control>
                 <include>View_WatchedOverlay</include>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Home_Widget_Submenu_ItemLayout">
-        <param name="genres" default="false" />
-        <param name="studios" default="false" />
-        <param name="text" default="false" />
-        <param name="square" default="false" />
-        <param name="poster" default="false" />
-        <param name="landscape" default="false" />
-        <definition>
-            <control type="group">
-                <left>72</left>
-                <right>-72</right>
-                <top>24</top>
-                <bottom>-24</bottom>
-                <control type="group">
-                    <top>10</top>
-                    <right>10</right>
-                    <bottom>10</bottom>
-                    <left>10</left>
-                    <control type="image">
-                        <include>Defs_Shadow_Opaque</include>
-                        <texture colordiffuse="PosterBack">common/white.png</texture>
-                    </control>
-                    <include>Defs_Color_Overlay</include>
-                    <control type="image">
-                        <texture background="true" colordiffuse="main_fg_70">$INFO[ListItem.Icon]</texture>
-                        <visible>String.Contains(ListItem.Icon,special://skin/extras/icons/)</visible>
-                    </control>
-                    <control type="image">
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <visible>!String.Contains(ListItem.Icon,special://skin/extras/icons/)</visible>
-                    </control>
-                </control>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Home_Widget_Submenu_FocusedLayout">
-        <param name="genres" default="false" />
-        <param name="studios" default="false" />
-        <param name="text" default="false" />
-        <param name="square" default="false" />
-        <param name="poster" default="false" />
-        <param name="landscape" default="false" />
-        <definition>
-            <control type="group">
-                <left>72</left>
-                <right>-72</right>
-                <top>24</top>
-                <bottom>-24</bottom>
-                <visible>Control.HasFocus($PARAM[id])</visible>
-                <include>Animation_FocusBounce_Large</include>
-                <control type="group">
-                    <top>10</top>
-                    <right>10</right>
-                    <bottom>10</bottom>
-                    <left>10</left>
-                    <control type="image">
-                        <include>Defs_Shadow_Opaque</include>
-                        <texture colordiffuse="PosterBack">common/white.png</texture>
-                    </control>
-                    <include>Defs_Color_Overlay</include>
-                    <control type="image">
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>View_Selectbox</include>
-                </control>
-            </control>
-            <control type="group">
-                <visible>!Control.HasFocus($PARAM[id])</visible>
-                <include content="Home_Widget_Submenu_ItemLayout">
-                    <param name="genres" value="$PARAM[genres]" />
-                    <param name="studios" value="$PARAM[studios]" />
-                    <param name="text" value="$PARAM[text]" />
-                    <param name="square" value="$PARAM[square]" />
-                    <param name="poster" value="$PARAM[poster]" />
-                    <param name="landscape" value="$PARAM[landscape]" />
-                </include>
             </control>
         </definition>
     </include>
@@ -663,13 +663,18 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
+                    <control type="image">
+                        <height>222</height>
+                        <texture colordiffuse="main_bg_70">common/white.png</texture>
+                        <visible>!$PARAM[landscape]</visible>
+                    </control>
+                    <include>Defs_Color_Overlay</include>
                     <control type="group">
                         <top>222</top>
                         <visible>!$PARAM[poster] + !$PARAM[landscape]</visible>
                         <control type="image">
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
-                        <include>Defs_Color_Overlay</include>
                         <control type="textbox">
                             <top>20</top>
                             <bottom>20</bottom>
@@ -685,10 +690,6 @@
                     <control type="group">
                         <visible>!$PARAM[poster] + !$PARAM[landscape]</visible>
                         <height>222</height>
-                        <control type="image">
-                            <texture colordiffuse="main_bg_30">common/white.png</texture>
-                        </control>
-                        <include>Defs_Color_Overlay</include>
                         <control type="image">
                             <top>50</top>
                             <left>50</left>
@@ -767,7 +768,6 @@
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
-                            <include>Defs_Color_Overlay</include>
                             <control type="label">
                                 <top>0</top>
                                 <bottom>0</bottom>
