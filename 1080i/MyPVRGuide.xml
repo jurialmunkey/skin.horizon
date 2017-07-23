@@ -73,7 +73,7 @@
                         </control>
                         <control type="label">
                             <posx>90</posx>
-                            <width>300</width>
+                            <width>250</width>
                             <aligny>center</aligny>
                             <height>103.6</height>
                             <font>font_tiny_bold_uppercase</font>
@@ -93,7 +93,7 @@
                         <control type="image">
                             <top>14</top>
                             <right>14</right>
-                            <width>80</width>
+                            <width>160</width>
                             <height>80</height>
                             <texture>$INFO[ListItem.Icon]</texture>
                             <aspectratio aligny="center" align="right">keep</aspectratio>
@@ -132,7 +132,7 @@
                         </control>
                         <control type="label">
                             <posx>90</posx>
-                            <width>300</width>
+                            <width>250</width>
                             <aligny>center</aligny>
                             <height>103.6</height>
                             <selectedcolor>Selected</selectedcolor>
@@ -154,7 +154,7 @@
                         <control type="image">
                             <top>14</top>
                             <right>14</right>
-                            <width>80</width>
+                            <width>160</width>
                             <height>80</height>
                             <texture>$INFO[ListItem.Icon]</texture>
                             <aspectratio aligny="center" align="right">keep</aspectratio>
