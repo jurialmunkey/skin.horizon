@@ -459,6 +459,13 @@
     </include>
     <include name="Home_MainMenu_OptionsItems">
         <content>
+            <!-- Group -->
+            <item>
+                <label>$INFO[Control.GetLabel(28)]</label>
+                <icon>special://skin/extras/icons/years.png</icon>
+                <onclick>SendClick(28)</onclick>
+                <visible>Control.IsEnabled(28)</visible>
+            </item>
             <!-- Viewmode -->
             <item>
                 <label>$INFO[Container.Viewmode]</label>
@@ -591,13 +598,7 @@
                 <visible>Control.IsEnabled(9)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
-            <!-- Group -->
-            <item>
-                <label>$INFO[Control.GetLabel(28)]</label>
-                <icon>special://skin/extras/icons/years.png</icon>
-                <onclick>SendClick(28)</onclick>
-                <visible>Control.IsEnabled(28)</visible>
-            </item>
+            
             <!-- Playlist -->
             <item>
                 <icon>special://skin/extras/icons/playlist.png</icon>

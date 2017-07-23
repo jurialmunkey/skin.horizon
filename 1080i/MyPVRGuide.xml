@@ -92,8 +92,9 @@
                         </control>
                         <control type="image">
                             <top>14</top>
-                            <bottom>10</bottom>
                             <right>14</right>
+                            <width>80</width>
+                            <height>80</height>
                             <texture>$INFO[ListItem.Icon]</texture>
                             <aspectratio aligny="center" align="right">keep</aspectratio>
                         </control>
@@ -152,8 +153,9 @@
                         </control>
                         <control type="image">
                             <top>14</top>
-                            <bottom>10</bottom>
                             <right>14</right>
+                            <width>80</width>
+                            <height>80</height>
                             <texture>$INFO[ListItem.Icon]</texture>
                             <aspectratio aligny="center" align="right">keep</aspectratio>
                         </control>
