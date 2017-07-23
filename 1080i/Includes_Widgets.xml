@@ -576,6 +576,7 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
+                    <include>Defs_Color_Overlay</include>
                     <control type="image">
                         <texture background="true" colordiffuse="main_fg_70">$INFO[ListItem.Icon]</texture>
                         <visible>String.Contains(ListItem.Icon,special://skin/extras/icons/)</visible>
@@ -613,6 +614,7 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="PosterBack">common/white.png</texture>
                     </control>
+                    <include>Defs_Color_Overlay</include>
                     <control type="image">
                         <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
@@ -667,6 +669,7 @@
                         <control type="image">
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
+                        <include>Defs_Color_Overlay</include>
                         <control type="textbox">
                             <top>20</top>
                             <bottom>20</bottom>
