@@ -421,7 +421,7 @@
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
-                            <texture colordiffuse="main_bg_70">common/white.png</texture>
+                            <texture colordiffuse="main_bg_30">common/white.png</texture>
                         </control>
                         <control type="group">
                             <left>10</left>
@@ -526,7 +526,7 @@
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
-                            <texture colordiffuse="main_bg_70">common/white.png</texture>
+                            <texture colordiffuse="main_bg_30">common/white.png</texture>
                         </control>
                         <control type="group">
                             <left>10</left>

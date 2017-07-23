@@ -514,7 +514,7 @@
                     </control>
                     <control type="image">
                         <height>222</height>
-                        <texture colordiffuse="main_bg_70">common/white.png</texture>
+                        <texture colordiffuse="main_bg_30">common/white.png</texture>
                         <visible>!$PARAM[landscape]</visible>
                     </control>
                     <include>Defs_Color_Overlay</include>
@@ -665,7 +665,7 @@
                     </control>
                     <control type="image">
                         <height>222</height>
-                        <texture colordiffuse="main_bg_70">common/white.png</texture>
+                        <texture colordiffuse="main_bg_30">common/white.png</texture>
                         <visible>!$PARAM[landscape]</visible>
                     </control>
                     <include>Defs_Color_Overlay</include>
