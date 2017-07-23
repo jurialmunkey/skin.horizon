@@ -30,6 +30,7 @@
     <include file="Constants_Main.xml" />
 
     <variable name="ColorHighlight">
+        <!-- <value condition="!String.IsEmpty(Window(Home).Property(ImageColorcfa))">$INFO[Window(Home).Property(ImageColorcfa)]</value> -->
         <value condition="!String.IsEmpty(Skin.String(focuscolor.name))">$INFO[Skin.String(focuscolor.name)]</value>
         <value>Highlight</value>
     </variable>

@@ -175,7 +175,7 @@
         <value condition="[Window.IsVisible(weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather)]] + System.HasAddon(resource.images.weatherfanart.multi)">$INFO[Window(Weather).Property(Current.FanartCode),resource://resource.images.weatherfanart.multi/,/]</value>     
 
         <!-- Fanart -->
-        <value condition="!String.IsEmpty(Window(home).Property(ImageFiltercfa))">$INFO[Window(home).Property(ImageFiltercfa)]</value>
+        <value condition="!String.IsEmpty(Window(home).Property(ImageFiltercfa)) + !Window.IsVisible(Home)">$INFO[Window(home).Property(ImageFiltercfa)]</value>
         <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !String.IsEmpty(ListItem.Art(animatedfanart))">$INFO[ListItem.Art(animatedfanart)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)) + Skin.HasSetting(SkinHelper.EnableExtraFanart)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>

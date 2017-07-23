@@ -17,29 +17,14 @@
             <onfocus condition="!Skin.HasSetting(SkinHelper.EnableMusicArt)">Skin.SetBool(SkinHelper.EnableMusicArt)</onfocus>
 
             <!-- Uncomment for colorbox -->
-            <!-- <onfocus>Skin.SetString(colorbox_quality,8)</onfocus>
-            <onfocus>Skin.SetString(colorbox_blursize,2)</onfocus>
+            <onfocus>Skin.SetString(colorbox_quality,8)</onfocus>
+            <onfocus>Skin.SetString(colorbox_blursize,3)</onfocus>
             <onfocus>Skin.SetString(colorbox_bitsize,1)</onfocus>
             <onfocus>Skin.SetString(colorbox_pixelsize,12)</onfocus>
             <onfocus>Skin.SetString(colorbox_black,000000)</onfocus>
             <onfocus>Skin.SetString(colorbox_white,ffffff)</onfocus>
-            <onfocus condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onfocus>
-            <onfocus condition="String.IsEmpty(Skin.String(background_fx))">Skin.SetString(background_fx,blur)</onfocus>
-            <onfocus condition="String.IsEmpty(Skin.String(focus_fx))">Skin.SetString(focus_fx,blur)</onfocus>
-            <onfocus>SetProperty(cfa_daemon_set,$INFO[Skin.String(background_fx)],home)</onfocus>
-            <onfocus>SetProperty(FIVE_daemon_set,$INFO[Skin.String(focus_fx)],home)</onfocus>
-            <onfocus>SetProperty(EIGHT_daemon_set,$INFO[Skin.String(focus_fx)],home)</onfocus>
-            <onfocus>SetProperty(SEVEN_daemon_set,True,home)</onfocus>
-            <onfocus>SetProperty(EIGHT_daemon_set,True,home)</onfocus>
-            <onfocus>SetProperty(FIVE_daemon_fallback,special://skin/extras/backgrounds/default.jpg,home)</onfocus>
-            <onfocus>SetProperty(EIGHT_daemon_fallback,special://skin/extras/backgrounds/default.jpg,home)</onfocus>
-            <onfocus>SetProperty(ImageFilterFIVE,special://skin/extras/backgrounds/default.jpg,home)</onfocus>
-            <onfocus>AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]",home),00:05,true)</onfocus>
-            <onfocus>AlarmClock(nms2,SetProperty(NINE_manual_set,"var=blursize,set=$INFO[Skin.String(colorbox_blursize)]",home),00:07,true)</onfocus>
-            <onfocus>AlarmClock(nms3,SetProperty(NINE_manual_set,"var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]",home),00:09,true)</onfocus>
-            <onfocus>AlarmClock(nms4,SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home),00:11,true)</onfocus>
-            <onfocus>AlarmClock(nms5,SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home),00:13,true)</onfocus>
-            <onfocus>AlarmClock(nms6,SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:15,true)</onfocus> -->
+            <onfocus condition="System.HasAddon(script.colorbox) + Skin.HasSetting(EnableBlur)">RunScript(script.colorbox,daemon=True)</onfocus>
+            <onfocus>SetProperty(cfa_daemon_set,blur,home)</onfocus>
 
             <onfocus condition="String.IsEmpty(Window(home).Property(SkinInitStarted)) + !String.IsEmpty(Skin.String(StartupPlaylist))">PlayMedia($ESCINFO[Skin.String(StartupPlaylist)])</onfocus>
             <onfocus condition="!Player.HasVideo + !String.IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow($INFO[System.StartupWindow])</onfocus>

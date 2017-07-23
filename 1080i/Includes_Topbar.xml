@@ -99,21 +99,44 @@
         <control type="group">
             <!-- Left Side | Location / Num Items -->
             <control type="group">
-                <right>900</right>
-                <visible>!Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-                <include>Topbar_TextDetails_LeftContent</include>
-            </control>
+                <include>Animation_MusicVis_Left</include>
+                <include>Animation_Home_Topbar_Slideover_NoInfo</include>
 
-            <control type="group">
-                <right>1020</right>
-                <visible>![Control.HasFocus(300) | Control.HasFocus(302)] + [Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)]</visible>
-                <include>Topbar_TextDetails_LeftContent</include>
-            </control>
+                <!-- Without Notifications / Sideblade Closed -->
+                <control type="group">
+                    <right>700</right>
+                    <visible>!Control.HasFocus(300) + !Control.HasFocus(302) + !Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                    <include content="Topbar_TextDetails_LeftContent">
+                        <param name="labelwidth" value="900" />
+                    </include>
+                </control>
 
-            <control type="group">
-                <right>1320</right>
-                <visible>[Control.HasFocus(300) | Control.HasFocus(302)] + [Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)]</visible>
-                <include>Topbar_TextDetails_LeftContent</include>
+                <!-- Without Notifications / Sideblade Open -->
+                <control type="group">
+                    <right>900</right>
+                    <visible>[Control.HasFocus(300) | Control.HasFocus(302)] + !Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                    <include content="Topbar_TextDetails_LeftContent">
+                        <param name="labelwidth" value="700" />
+                    </include>
+                </control>
+
+                <!-- With Notifications / Sideblade Closed -->
+                <control type="group">
+                    <right>1050</right>
+                    <visible>!Control.HasFocus(300) + !Control.HasFocus(302) + [Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)]</visible>
+                    <include content="Topbar_TextDetails_LeftContent">
+                        <param name="labelwidth" value="550" />
+                    </include>
+                </control>
+
+                <!-- With Notifications / Sideblade Open -->
+                <control type="group">
+                    <right>1350</right>
+                    <visible>[Control.HasFocus(300) | Control.HasFocus(302)] + [Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml)]</visible>
+                    <include content="Topbar_TextDetails_LeftContent">
+                        <param name="labelwidth" value="250" />
+                    </include>
+                </control>
             </control>
 
             <!-- Right Side | Date / Time -->
@@ -124,11 +147,9 @@
     </include>
 
     <include name="Topbar_TextDetails_LeftContent">
-        <include>Animation_MusicVis_Left</include>
         <centertop>53%</centertop>
         <height>100</height>
         <left>sidepad</left>
-        <include>Animation_Home_Topbar_Slideover_NoInfo</include>
         <control type="label">
             <height>48</height>
             <label>$VAR[Label_Header_Content]</label>
@@ -188,7 +209,7 @@
                 <left>8</left>
                 <font>font_small</font>
                 <aligny>center</aligny>
-                <width max="750">auto</width>
+                <width max="$PARAM[labelwidth]">auto</width>
                 <height>100%</height>
                 <textcolor>main_fg_70</textcolor>
                 <shadowcolor>main_bg_30</shadowcolor>
