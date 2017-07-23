@@ -232,13 +232,6 @@
                     <align>center</align>
                     <textcolor>panel_fg_30</textcolor>
                 </control>
-                <control type="image">
-                    <right>0</right>
-                    <top>180</top>
-                    <bottom>70</bottom>
-                    <width>1</width>
-                    <texture colordiffuse="dialog_fg_12">common/white.png</texture>
-                </control>
             </control>
         </definition>
     </include>

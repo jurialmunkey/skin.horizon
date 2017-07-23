@@ -1,6 +1,8 @@
 [B]1.0.15[/B]
 Color overlay options
 Fix color overlay for dark dialogs
+Add support for colorbox blur
+Add parallax scrollover
 
 [B]1.0.14[/B]
 Rework Infolist 3 and Lovefilm

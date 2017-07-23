@@ -1282,6 +1282,11 @@ msgctxt "#31274"
 msgid "Press down for info"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31275"
+msgid "Blur background fanart"
+msgstr ""
+
 msgctxt "#31279"
 msgid "Video decoder"
 msgstr ""

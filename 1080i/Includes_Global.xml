@@ -59,10 +59,18 @@
     <include name="Global_Background_TopOffset"><top>view_top</top></include>
 
     <include name="Global_Background">
+        <control type="multiimage" id="7975">
+            <left>-2160</left>
+            <width>1</width>
+            <height>1</height>
+            <timeperimage>12000</timeperimage>
+            <imagepath background="true">$VAR[Global_Background_Image_Var]</imagepath>
+        </control>
         <include>Global_Videowindow</include>
         <include>Global_Visualisation</include>
         <control type="group">
             <control type="group">
+                <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302)] + !Skin.HasSetting(SlideOverContent)">Conditional</animation>
                 <include condition="Skin.HasSetting(DisableTransparentTopbar)">Global_Background_TopOffset</include>
                 <control type="multiimage" description="Fanart">
                     <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
@@ -92,6 +100,7 @@
             <control type="group">
                 <control type="image">
                     <texture colordiffuse="FanartDim">common/white.png</texture>
+                    <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur)">Conditional</animation>
                 </control>
                 <control type="image">
                     <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
@@ -147,6 +156,12 @@
 
     <variable name="Global_Background_Image">
         <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
+        <value condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur)">$INFO[Window(home).Property(ImageFilterFIVE)]</value>
+        <value>$VAR[Global_Background_Image_Var]</value>
+    </variable>
+
+    <variable name="Global_Background_Image_Var">
+        <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
         <!-- Extended Info -->
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !String.IsEmpty(Window.Property(fanart_original))">$INFO[Window.Property(fanart_original)]</value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
@@ -175,7 +190,6 @@
         <value condition="[Window.IsVisible(weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather)]] + System.HasAddon(resource.images.weatherfanart.multi)">$INFO[Window(Weather).Property(Current.FanartCode),resource://resource.images.weatherfanart.multi/,/]</value>     
 
         <!-- Fanart -->
-        <value condition="!String.IsEmpty(Window(home).Property(ImageFiltercfa)) + !Window.IsVisible(Home)">$INFO[Window(home).Property(ImageFiltercfa)]</value>
         <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !String.IsEmpty(ListItem.Art(animatedfanart))">$INFO[ListItem.Art(animatedfanart)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)) + Skin.HasSetting(SkinHelper.EnableExtraFanart)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
