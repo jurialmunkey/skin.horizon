@@ -10,8 +10,8 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1400" />
-                <param name="height" value="920" />
+                <param name="width" value="1820" />
+                <param name="height" value="956" />
             </include>
 
             <control type="label" id="20">
@@ -23,7 +23,7 @@
                 <left>20</left>
                 <top>110</top>
                 <width>400</width>
-                <height>370</height>
+                <bottom>20</bottom>
                 <itemgap>10</itemgap>
                 <onleft>30</onleft>
                 <onright>2</onright>
@@ -33,15 +33,15 @@
 
             <control type="grouplist" id="2">
                 <description>control area</description>
-                <right>20</right>
+                <left>440</left>
                 <top>110</top>
                 <width>940</width>
-                <height>674</height>
+                <bottom>20</bottom>
                 <itemgap>10</itemgap>
-                <onup>9001</onup>
-                <ondown>9001</ondown>
+                <onup>2</onup>
+                <ondown>2</ondown>
+                <onright>9001</onright>
                 <onleft>9</onleft>
-                <onright>9</onright>
                 <usecontrolcoords>true</usecontrolcoords>
             </control>
 
@@ -84,7 +84,7 @@
             </control>
 
             <control type="image">
-                <left>20</left>
+                <right>20</right>
                 <bottom>20</bottom>
                 <width>400</width>
                 <height>400</height>
@@ -94,23 +94,30 @@
 
             <!-- Ok Cancel -->
             <control type="grouplist" id="9001">
-                <onup>2</onup>
+                <onleft>2</onleft>
                 <right>20</right>
-                <align>right</align>
-                <include>Dialog_Standard_OkCancel_GroupList</include>
-
+                <orientation>vertical</orientation>
+                <itemgap>10</itemgap>
+                <width>400</width>
+                <top>110</top>
                 <control type="button" id="10" description="OK">
                     <label>186</label>
+                    <height>66</height>
+                    <width>400</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
 
                 <control type="button" id="11" description="Cancel">
                     <label>222</label>
+                    <height>66</height>
+                    <width>400</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
 
                 <control type="button" id="12" description="Cancel">
                     <label>409</label>
+                    <height>66</height>
+                    <width>400</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
 
