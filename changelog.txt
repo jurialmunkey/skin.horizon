@@ -1,3 +1,8 @@
+[B]1.0.16[/B]
+Fixes for parallax scrolling
+Fix hardware decoder in playerprocess
+Fix current playlist to show episode thumbs
+
 [B]1.0.15[/B]
 Color overlay options
 Fix color overlay for dark dialogs
