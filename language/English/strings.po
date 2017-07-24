@@ -1297,6 +1297,11 @@ msgctxt "#31277"
 msgid "Animations"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31278"
+msgid "Show filename and path in video info"
+msgstr ""
+
 msgctxt "#31279"
 msgid "Video decoder"
 msgstr ""

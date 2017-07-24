@@ -335,7 +335,20 @@
                             <param name="align" value="left" />
                         </include>
                     </control>
-                </control>     
+                </control>
+
+                <control type="label">
+                    <left>info_left</left>
+                    <right>60</right>
+                    <align>left</align>
+                    <bottom>0</bottom>
+                    <height>24</height>
+                    <font>font_unwatched</font>
+                    <textcolor>main_fg_70</textcolor>
+                    <label>$INFO[ListItem.FileNameAndPath]</label>
+                    <scroll>true</scroll>
+                    <visible>Skin.HasSetting(ShowPathInfo)</visible>
+                </control>
             </control>
             <control type="group">
                 <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
