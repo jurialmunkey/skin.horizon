@@ -1073,6 +1073,8 @@
     </include>
     <include name="Home_OnClick">
 
+        <onclick>ClearProperty(MenuFocus,Home)</onclick>
+
         <!-- Set Menu Indicator -->
         <onclick condition="String.Contains(ListItem.Property(path),ReplaceWindow)">SetProperty(MenuIconFocus,$INFO[ListItem.Property(path)],Home)</onclick>
         <onclick>$INFO[ListItem.Property(path)]</onclick>
