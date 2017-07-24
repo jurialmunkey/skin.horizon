@@ -448,7 +448,7 @@
                     </control>
                     
                 </control>
-                <control type="label">
+                <!-- <control type="label">
                     <bottom>-30</bottom>
                     <height>30</height>
                     <align>center</align>
@@ -460,7 +460,7 @@
                     <animation effect="fade" start="0" end="100" time="300" delay="500">Focus</animation>
                     <visible>Control.IsVisible(50)</visible>
                     <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
-                </control>
+                </control> -->
             </focusedlayout>
         </definition>
     </include>
