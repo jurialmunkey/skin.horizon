@@ -254,23 +254,39 @@
                             <bottom>0</bottom>
                             <right>0</right>
                             <align>bottom</align>
-                            <control type="label">
-                                <aligny>top</aligny>
+                            <control type="grouplist">
+                                <itemgap>0</itemgap>
+                                <orientation>horizontal</orientation>
                                 <height>95</height>
-                                <width>100%</width>
-                                <font>font_musicvis_title</font>
-                                <textcolor>main_fg_100</textcolor>
-                                <label>$INFO[Player.Title]</label>
-                                <visible>!VideoPlayer.Content(episodes)</visible>
-                            </control>
-                            <control type="label">
-                                <aligny>top</aligny>
-                                <height>95</height>
-                                <width>100%</width>
-                                <font>font_musicvis_title</font>
-                                <textcolor>main_fg_70</textcolor>
-                                <label>$INFO[VideoPlayer.TvShowTitle]</label>
-                                <visible>VideoPlayer.Content(episodes)</visible>
+                                <usecontrolcoords>true</usecontrolcoords>
+                                <control type="label">
+                                    <aligny>top</aligny>
+                                    <height>95</height>
+                                    <width>auto</width>
+                                    <font>font_musicvis_title</font>
+                                    <textcolor>main_fg_100</textcolor>
+                                    <label>$INFO[Player.Title]</label>
+                                    <visible>!VideoPlayer.Content(episodes)</visible>
+                                </control>
+                                <control type="label">
+                                    <top>36</top>
+                                    <aligny>center</aligny>
+                                    <height>80</height>
+                                    <width>auto</width>
+                                    <font>font_small_light</font>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <label>$INFO[VideoPlayer.Year,   (,)]</label>
+                                    <visible>VideoPlayer.Content(movies)</visible>
+                                </control>
+                                <control type="label">
+                                    <aligny>top</aligny>
+                                    <height>95</height>
+                                    <width>auto</width>
+                                    <font>font_musicvis_title</font>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <label>$INFO[VideoPlayer.TvShowTitle]</label>
+                                    <visible>VideoPlayer.Content(episodes)</visible>
+                                </control>
                             </control>
                             <control type="grouplist">
                                 <itemgap>0</itemgap>
