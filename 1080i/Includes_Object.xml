@@ -389,7 +389,7 @@
                 <height>120</height>
                 <orientation>horizontal</orientation>
                 <align>$PARAM[align]</align>
-                <itemgap>4</itemgap>
+                <itemgap>0</itemgap>
                 <centertop>50%</centertop>
                 <usecontrolcoords>true</usecontrolcoords>
      
@@ -497,7 +497,7 @@
                 <height>32</height>
                 <orientation>horizontal</orientation>
                 <align>$PARAM[align]</align>
-                <itemgap>12</itemgap>
+                <itemgap>8</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="image">
                     <top>0</top>
