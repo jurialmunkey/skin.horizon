@@ -7,6 +7,7 @@
     <onunload>ClearProperty(FocusedList,Home)</onunload>
     <onload>ClearProperty(ListFanartContent,Home)</onload>
     <onunload>ClearProperty(ListFanartContent,Home)</onunload>
+    <onload>ClearProperty(MenuFocus,Home)</onload>
     <controls>
 
         <control type="group">

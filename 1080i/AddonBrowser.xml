@@ -2,6 +2,7 @@
 <window id="20">
     <defaultcontrol always="true">50</defaultcontrol>
     <menucontrol>300</menucontrol>
+    <onload>ClearProperty(MenuFocus,Home)</onload>
     <views>50,55,52,56,51,53</views>
     <controls>
         <include>Global_Background</include>
