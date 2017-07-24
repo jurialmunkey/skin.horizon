@@ -636,7 +636,7 @@
                             <right>100</right>
                             <aspectratio aligny="bottom">keep</aspectratio>
                             <texture background="true">$VAR[Image_Clearlogo]</texture>
-                            <visible>Skin.HasSetting(FakeLandscapeArt)</visible>
+                            <visible>!Skin.HasSetting(DisableFakeLandscapeArt)</visible>
                             <visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(season.landscape))</visible>
                             <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                         </control>
@@ -716,7 +716,7 @@
                             <right>100</right>
                             <aspectratio aligny="bottom">keep</aspectratio>
                             <texture background="true">$VAR[Image_Clearlogo]</texture>
-                            <visible>Skin.HasSetting(FakeLandscapeArt)</visible>
+                            <visible>!Skin.HasSetting(DisableFakeLandscapeArt)</visible>
                             <visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(season.landscape))</visible>
                             <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                         </control>

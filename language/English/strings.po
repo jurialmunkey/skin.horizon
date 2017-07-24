@@ -122,7 +122,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31022"
-msgid "Prefer animated artwork where available"
+msgid "Show animated artwork where available"
 msgstr ""
 
 #: /1080i/Includes_Statusbar.xml
@@ -913,7 +913,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31192"
-msgid "Disable focus bounce animation"
+msgid "Show focus bounce animation"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1079,7 +1079,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31230"
-msgid "Pressing left from mainmenu opens submenu"
+msgid "Open submenu on left"
 msgstr ""
 
 #: /1080i/Includes_View_Posters.xml
@@ -1197,7 +1197,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31255"
-msgid "Create fake landscape art by overlaying clearlogo over fanart"
+msgid "Show generated landscape art"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -1285,6 +1285,16 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31275"
 msgid "Blur fanart (WARNING: CPU intensive. Please disable if having performance issues.)"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31276"
+msgid "Show parallax effect on background when opening sideblade"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31277"
+msgid "Animations"
 msgstr ""
 
 msgctxt "#31279"

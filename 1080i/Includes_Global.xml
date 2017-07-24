@@ -69,26 +69,10 @@
         <include>Global_Videowindow</include>
         <include>Global_Visualisation</include>
         <control type="group">
-            <!-- Fallback image no parallax -->
-            <control type="group">
-                <include condition="Skin.HasSetting(DisableTransparentTopbar)">Global_Background_TopOffset</include>
-                <control type="multiimage">
-                    <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
-                    <visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
-                    <include>Dimensions_Fullscreen</include>
-                    <fadetime>600</fadetime>
-                    <timeperimage>12000</timeperimage>
-                    <randomize>true</randomize>
-                    <aspectratio>scale</aspectratio>
-                    <imagepath background="true">$VAR[Global_Background_Image_NoFanart]</imagepath>
-                    <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
-                    <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
-                </control>
-            </control>
             <!-- Fanart and backgrounds with parallax -->
             <control type="group">
                 <!-- <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent) + [!Window.IsVisible(Home) | [Window.IsVisible(Home) + [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]]]">Conditional</animation> -->
-                <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent)">Conditional</animation>
+                <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent) + Skin.HasSetting(ParallaxAnimation)">Conditional</animation>
                 <include condition="Skin.HasSetting(DisableTransparentTopbar)">Global_Background_TopOffset</include>
                 <control type="multiimage" description="Fanart">
                     <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
@@ -172,13 +156,13 @@
     </variable>
 
     <variable name="Global_Background_Image">
-        <value condition="Skin.HasSetting(NoFanart)">common/null.png</value>
+        <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
         <value condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur)">$INFO[Window(home).Property(ImageFilterFIVE)]</value>
         <value>$VAR[Global_Background_Image_Var]</value>
     </variable>
 
     <variable name="Global_Background_Image_Var">
-        <value condition="Skin.HasSetting(NoFanart)">common/null.png</value>
+        <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
         <!-- Extended Info -->
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !String.IsEmpty(Window.Property(fanart_original))">$INFO[Window.Property(fanart_original)]</value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
@@ -218,6 +202,6 @@
         <value condition="Window.IsVisible(MyPics.xml) + !String.IsEmpty(ListItem.FileNameAndPath)">$INFO[ListItem.FileNameAndPath]</value>
 
         <!-- Default -->
-        <value>common/null.png</value>
+        <value>$VAR[Global_Background_Image_NoFanart]</value>
     </variable>
 </includes>
