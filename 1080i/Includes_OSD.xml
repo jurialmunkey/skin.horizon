@@ -255,13 +255,14 @@
                             <right>0</right>
                             <align>bottom</align>
                             <control type="grouplist">
+                                <top>25</top>
                                 <itemgap>0</itemgap>
                                 <orientation>horizontal</orientation>
-                                <height>95</height>
+                                <height>120</height>
                                 <usecontrolcoords>true</usecontrolcoords>
                                 <control type="label">
                                     <aligny>top</aligny>
-                                    <height>95</height>
+                                    <height>120</height>
                                     <width>auto</width>
                                     <font>font_musicvis_title</font>
                                     <textcolor>main_fg_100</textcolor>
@@ -280,7 +281,7 @@
                                 </control>
                                 <control type="label">
                                     <aligny>top</aligny>
-                                    <height>95</height>
+                                    <height>120</height>
                                     <width>auto</width>
                                     <font>font_musicvis_title</font>
                                     <textcolor>main_fg_70</textcolor>
@@ -289,6 +290,7 @@
                                 </control>
                             </control>
                             <control type="grouplist">
+                                <top>-25</top>
                                 <itemgap>0</itemgap>
                                 <orientation>horizontal</orientation>
                                 <height>70</height>
@@ -351,6 +353,7 @@
                                 </control>
                             </control>
                             <control type="grouplist">
+                                <top>-25</top>
                                 <itemgap>0</itemgap>
                                 <orientation>horizontal</orientation>
                                 <height>70</height>
