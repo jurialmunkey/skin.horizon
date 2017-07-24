@@ -10,7 +10,7 @@
             <control type="group">
                 <top>132</top>
                 <control type="image">
-                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    <texture colordiffuse="77111111">common/gradient-solid.png</texture>
                 </control>
                 <include>Defs_Color_Overlay</include>
                 <include>Object_Separator_Top</include>
