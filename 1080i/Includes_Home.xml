@@ -1085,6 +1085,7 @@
     </include>
 
     <include name="Home_OnFocus">
+        <onunfocus>ClearProperty(MenuFocus,Home)</onunfocus>
         <onfocus>SetProperty(MenuFocus,1,Home)</onfocus>
         <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
     </include>
