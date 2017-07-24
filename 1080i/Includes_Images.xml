@@ -77,6 +77,7 @@
     </variable>
 
     <variable name="Image_Fanart">
+        <value condition="!String.IsEmpty(ListItem.Art(thumb)) + !String.IsEmpty(ListItem.TvShowTitle) + Window.IsVisible(MyPlaylist.xml)">$INFO[ListItem.Art(thumb)]</value>
         <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !String.IsEmpty(ListItem.Art(animatedfanart)) + !Container.Content(episodes) + !Window.IsVisible(home)">$INFO[ListItem.Art(animatedfanart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(season.landscape)) + !Container.Content(episodes) + !Window.IsVisible(home) + !Control.IsVisible(59)">$INFO[ListItem.Art(season.landscape)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes) + !Window.IsVisible(home) + !Control.IsVisible(59)">$INFO[ListItem.Art(tvshow.landscape)]</value>

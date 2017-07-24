@@ -199,17 +199,6 @@
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31150])</onclick>
                     </control>
 
-                    <control type="radiobutton" id="9227" description="Blur background fanart">
-                        <visible>ControlGroup(9100).HasFocus(9102)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31275]</label>
-                        <selected>Skin.HasSetting(EnableBlur)</selected>
-                        <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(EnableBlur)">RunScript(script.colorbox,daemon=True)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(EnableBlur)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(EnableBlur)</onclick>
-                    </control>
-
                     <control type="radiobutton" id="9223" description="Show video in background">
                         <visible>ControlGroup(9100).HasFocus(9102)</visible>
                         <include>Defs_Settings_Button</include>
@@ -242,6 +231,17 @@
                         <usealttexture>System.HasAddon(resource.images.weatherfanart.multi)</usealttexture>
                         <enable>!System.HasAddon(resource.images.weatherfanart.multi)</enable>
                         <onclick condition="!System.HasAddon(resource.images.weatherfanart.multi)">InstallAddon(resource.images.weatherfanart.multi)</onclick>
+                    </control>
+
+                    <control type="radiobutton" id="9227" description="Blur background fanart">
+                        <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31275]</label>
+                        <selected>Skin.HasSetting(EnableBlur)</selected>
+                        <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(EnableBlur)">RunScript(script.colorbox,daemon=True)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(EnableBlur)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(EnableBlur)</onclick>
                     </control>
 
                     <!-- ================= -->

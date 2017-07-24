@@ -1284,7 +1284,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31275"
-msgid "Blur background fanart"
+msgid "Blur fanart (WARNING: CPU intensive. Please disable if having performance issues.)"
 msgstr ""
 
 msgctxt "#31279"
