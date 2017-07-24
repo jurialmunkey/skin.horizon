@@ -4,6 +4,7 @@ Fix hardware decoder in playerprocess
 Fix current playlist to show episode thumbs
 Tweak colours in next aired
 Press up to open next aired settings
+Disable parallax by default - enable in skin settings animations
 
 [B]1.0.15[/B]
 Color overlay options
