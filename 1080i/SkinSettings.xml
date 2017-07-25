@@ -707,13 +707,13 @@
                         <visible>ControlGroup(9100).HasFocus(9106)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31031]</label>
-                        <onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
+                        <onclick>RunScript(script.skin.helper.skinbackup,action=backup)</onclick>
                     </control>
                     <control type="button" id="9262" description="Restore">
                         <visible>ControlGroup(9100).HasFocus(9106)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31032]</label>
-                        <onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
+                        <onclick>RunScript(script.skin.helper.skinbackup,action=restore)</onclick>
                     </control>
                     <control type="button" id="9263" description="Backup Restore Settings">
                         <visible>ControlGroup(9100).HasFocus(9106)</visible>
