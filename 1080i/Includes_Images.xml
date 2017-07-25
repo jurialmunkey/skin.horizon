@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
+    <variable name="Image_AddonImage">
+        <value condition="!String.IsEmpty(Container.PluginName) + !String.EndsWith(ListItem.Icon,icon.png)">special://home/addons/$INFO[Container.PluginName]/icon.png</value>
+        <value condition="String.EndsWith(ListItem.Icon,icon.png)">$INFO[ListItem.Icon]</value>
+    </variable>
+
     <variable name="Image_Clearlogo">
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
         <value>$INFO[ListItem.Art(clearlogo)]</value>

@@ -88,7 +88,7 @@
                 <bottom>20</bottom>
                 <width>400</width>
                 <height>400</height>
-                <texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                <texture>$VAR[Image_AddonImage]</texture>
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
             </control>
 
