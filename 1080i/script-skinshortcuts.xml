@@ -129,7 +129,7 @@
                         <right>30</right>
                         <height>66</height>
                         <info>ListItem.Label</info>
-                        <animation effect="slide" end="48" condition="true">Conditional</animation>
+                        <animation effect="slide" end="48" condition="!String.IsEqual(Window.Property(groupname),powermenu)">Conditional</animation>
                     </control>
                     <control type="image">
                         <left>0</left>
@@ -138,6 +138,7 @@
                         <height>66</height>
                         <texture colordiffuse="dialog_fg_30">$INFO[ListItem.Icon]</texture>
                         <visible>String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
+                        <visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
                     </control>
                     <control type="image">
                         <left>0</left>
@@ -146,6 +147,7 @@
                         <height>66</height>
                         <texture>$INFO[ListItem.Icon]</texture>
                         <visible>!String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
+                        <visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout width="580" height="69">
@@ -162,7 +164,7 @@
                         <height>66</height>
                         <info>ListItem.Label</info>
                         <textcolor>Selected</textcolor>
-                        <animation effect="slide" end="48" condition="true">Conditional</animation>
+                        <animation effect="slide" end="48" condition="!String.IsEqual(Window.Property(groupname),powermenu)">Conditional</animation>
                     </control>
                     <control type="image">
                         <left>0</left>
@@ -170,6 +172,7 @@
                         <width>66</width>
                         <height>66</height>
                         <texture colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+                        <visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
                     </control>
                 </focusedlayout>
             </control>
@@ -240,9 +243,9 @@
             <control type="grouplist" id="9100">
                 <visible>String.IsEmpty(Window.Property(SetWidgets)) + !ControlGroup(9300).HasFocus() + !ControlGroup(9400).HasFocus()</visible>
                 <onleft>304</onleft>
-                <onright>SetProperty(SetWidgets,1)</onright>
-                <onright>SetFocus(9300)</onright>
-                <onright>SetFocus(9401)</onright>
+                <onright condition="String.IsEqual(Window.Property(groupname),mainmenu)">SetProperty(SetWidgets,1)</onright>
+                <onright condition="String.IsEqual(Window.Property(groupname),mainmenu)">SetFocus(9300)</onright>
+                <onright condition="String.IsEqual(Window.Property(groupname),mainmenu)">SetFocus(9401)</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>
                 <right>15</right>
@@ -345,6 +348,7 @@
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                 </control>
             </control>
 
