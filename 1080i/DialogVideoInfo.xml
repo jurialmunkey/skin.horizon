@@ -45,6 +45,16 @@
                             <width>auto</width>
                             <height>100%</height>
                             <label>$LOCALIZE[207]</label>
+                            <visible>!Container.Content(musicvideos)</visible>
+                        </control>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <height>100%</height>
+                            <label>$LOCALIZE[21821]</label>
+                            <visible>Container.Content(musicvideos)</visible>
                         </control>
                     </control>
                     <control type="textbox">
@@ -53,6 +63,15 @@
                         <textcolor>main_fg_70</textcolor>
                         <font>font_plotbox</font>
                         <label>$VAR[Label_Plot]</label>
+                        <visible>!Container.Content(musicvideos)</visible>
+                    </control>
+                    <control type="textbox">
+                        <top>70</top>
+                        <height>520</height>
+                        <textcolor>main_fg_70</textcolor>
+                        <font>font_plotbox</font>
+                        <label>$VAR[Label_Plot]</label>
+                        <visible>Container.Content(musicvideos)</visible>
                     </control>
                 </control>
 
@@ -62,7 +81,7 @@
                     <left>info_left</left>
                     <right>0</right>
                     <height>420</height>
-
+                    <visible>!Container.Content(musicvideos)</visible>
                     <control type="grouplist">
                         <top>20</top>
                         <height>42</height>

@@ -262,6 +262,7 @@
     <variable name="Label_MainTitle">
         <value condition="Container.Content(artists) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
         <value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="Container.Content(musicvideos) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="Container.Content(songs) + !String.IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
         <value condition="Container.Content(songs) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
         <value condition="Container.Content(addons) + !String.IsEmpty(ListItem.AddonName)">$INFO[ListItem.AddonName]</value>
@@ -273,7 +274,7 @@
     <variable name="Label_SubTitle">
         <value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(artists)">$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount),[COLOR=main_fg_100], $LOCALIZE[132][/COLOR]  |  ]$INFO[ListItem.Genre,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_YearsActive),  |  [COLOR=main_fg_100],[/COLOR]]</value>
         
-        <value condition="!String.IsEmpty(ListItem.Artist) + [Container.Content(albums) | Container.Content(songs)]">$INFO[ListItem.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Genre,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="!String.IsEmpty(ListItem.Artist) + [Container.Content(musicvideos) | Container.Content(albums) | Container.Content(songs)]">$INFO[ListItem.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Genre,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="[Window.IsVisible(DialogAddonInfo.xml) | Container.Content(addons)] + !String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
@@ -303,6 +304,7 @@
         <value condition="Container.Content(episodes)">$INFO[ListItem.TvShowTitle,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalSeasons),[COLOR=main_fg_100], $LOCALIZE[33054][/COLOR]  |  ]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100], $LOCALIZE[20360][/COLOR]  |  ]$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=main_fg_100], $LOCALIZE[31215][/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100], $LOCALIZE[20360][/COLOR]  |  ]$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=main_fg_100], $LOCALIZE[31215][/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(musicvideos)">$INFO[ListItem.Artist,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Album,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Container.Property(Album_Label),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(songs) | Container.Content(albums)">$INFO[ListItem.Album,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Container.Property(Album_Label),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_YearsActive),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount),[COLOR=main_fg_100], $LOCALIZE[36919][/COLOR]]</value>
         <value condition="Container.Content(addons) | Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>

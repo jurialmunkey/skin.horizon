@@ -119,7 +119,7 @@
 
         <!-- Music List -->
         <control type="group">
-            <visible>[Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
+            <visible>[Container.Content(musicvideos) | Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
                 <width>view_left</width>
                 <height>poster_height</height>
@@ -201,7 +201,7 @@
         <!-- Large Poster -->
         <control type="group">
             <width>view_left</width>
-            <visible>![Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
+            <visible>![Container.Content(musicvideos) | Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
                 <control type="image">
                     <include>Defs_Shadow_Opaque</include>

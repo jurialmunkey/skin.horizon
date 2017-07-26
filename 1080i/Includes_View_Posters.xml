@@ -34,7 +34,7 @@
                     <include content="View_Forced">
                         <param name="string" value="$LOCALIZE[31161]" />
                     </include>
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(musicvideos)</visible>
                     <include>View_NotTheseWindows</include>
                     <include content="View_Posters_Layout">
                         <param name="id" value="52" />
@@ -340,7 +340,7 @@
             </control>
         </control>
         <control type="grouplist">
-            <visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(addons)</visible>
+            <visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(addons) | Container.Content(musicvideos)</visible>
             <visible>Control.IsVisible($PARAM[id])</visible>
             <bottom>$PARAM[bottom]</bottom>
             <top>30</top>
@@ -411,7 +411,7 @@
                     <right>-10</right>
                     <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="group" description="ParentFolder and DefaultIcon">
-                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
+                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))] | Container.Content(musicvideos)</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <include>Defs_Shadow_Small</include>
@@ -500,6 +500,7 @@
                         <visible>!ListItem.IsParentFolder</visible>
                         <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
                         <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
+                        <visible>!Container.Content(musicvideos)</visible>
                     </control>
                     <include>View_WatchedOverlay</include>
                 </control>
@@ -516,7 +517,7 @@
                     <bottom>$PARAM[bottom_offset]</bottom>
                     <include>Animation_FocusBounce</include>
                     <control type="group" description="ParentFolder and DefaultIcon">
-                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
+                        <visible>ListItem.IsParentFolder | String.StartsWith(ListItem.Icon,Default) | Container.Content(musicvideos) | ![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <include>Defs_Shadow_Small</include>
@@ -596,6 +597,7 @@
                         <visible>!ListItem.IsParentFolder</visible>
                         <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
                         <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(season.poster))]</visible>
+                        <visible>!Container.Content(musicvideos)</visible>
                     </control>
                     <include>View_WatchedOverlay</include>
                     <!-- Highlight -->

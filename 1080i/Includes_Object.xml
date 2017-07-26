@@ -121,7 +121,7 @@
         <definition>
             <control type="group">
                 <height>64</height>
-                <visible>Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)</visible>
+                <visible>Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist) | Container.Content(musicvideos)</visible>
                 <control type="grouplist">
                     <top>24</top>
                     <orientation>horizontal</orientation>
