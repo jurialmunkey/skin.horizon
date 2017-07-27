@@ -206,6 +206,7 @@
                 <icon>special://skin/extras/icons/paintbrush.png</icon>
                 <onclick>SendClick(10)</onclick>
                 <visible>Control.IsEnabled(10)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Art Downloader -->
             <item>
@@ -215,6 +216,7 @@
                 <onclick>Select</onclick>
                 <onclick>SetFocus(300)</onclick>
                 <visible>Control.IsEnabled(9001)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Refresh -->
             <item>
@@ -222,6 +224,7 @@
                 <icon>special://skin/extras/icons/update.png</icon>
                 <onclick>SendClick(6)</onclick>
                 <visible>Control.IsEnabled(6)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
         </content>
     </include>
@@ -379,6 +382,7 @@
                 <onclick>SendClick(7)</onclick>
                 <visible>Control.IsEnabled(7)</visible>
                 <visible>String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <item>
                 <label>$INFO[Control.GetLabel(7)]</label>
@@ -386,6 +390,7 @@
                 <onclick>SendClick(7)</onclick>
                 <visible>Control.IsEnabled(7)</visible>
                 <visible>!String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- uninstall -->
             <item>
@@ -393,6 +398,7 @@
                 <icon>special://skin/extras/icons/download.png</icon>
                 <onclick>SendClick(6)</onclick>
                 <visible>Control.IsEnabled(6)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!--Update -->
             <item>
@@ -400,6 +406,7 @@
                 <icon>special://skin/extras/icons/update.png</icon>
                 <onclick>SendClick(8)</onclick>
                 <visible>Control.IsEnabled(8)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- settings -->
             <item>
@@ -407,6 +414,7 @@
                 <icon>special://skin/extras/icons/settings.png</icon>
                 <onclick>SendClick(9)</onclick>
                 <visible>Control.IsEnabled(9)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Auto Update -->
             <item>
@@ -416,6 +424,7 @@
                 <onclick>Select</onclick>
                 <onclick>SetFocus(300)</onclick>
                 <visible>Control.IsEnabled(13)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
         </content>
     </include>

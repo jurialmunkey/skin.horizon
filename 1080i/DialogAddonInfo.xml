@@ -143,25 +143,21 @@
         </control>
         <control type="button" id ="6">
             <include>Defs_Hidden_Button</include>
-            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(6)</visible>
         </control>
         <control type="button" id ="7">
             <include>Defs_Hidden_Button</include>
-            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(7)</visible>
         </control>
         <control type="button" id="8">
             <description>Play button</description>
             <label>24069</label>
             <include>Defs_Hidden_Button</include>
-            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(8)</visible>
         </control>
         <control type="button" id ="9">
             <label>5</label>
             <include>Defs_Hidden_Button</include>
-            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>Control.IsEnabled(9)</visible>
         </control>
         <control type="button" id ="12">

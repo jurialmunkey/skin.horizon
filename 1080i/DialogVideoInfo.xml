@@ -474,7 +474,6 @@
             <description>Artwork (Get Thumb)</description>
             <label>$LOCALIZE[13405]</label>
             <include>Defs_Hidden_Button</include>
-            <enable>!Skin.HasSetting(global.kioskmode)</enable>
         </control>
 
         <control type="button" id="9001">
@@ -487,7 +486,6 @@
             <onclick condition="Container.Content(musicvideos) + Skin.HasSetting(ArtworkDownloaderAll)">XBMC.RunScript(script.artwork.downloader, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
             <description>Get Artwork</description>
             <include>Defs_Hidden_Button</include>
-            <enable>!Skin.HasSetting(global.kioskmode)</enable>
             <visible>[Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)] + system.hasaddon(script.artwork.downloader)</visible>
         </control>
 
@@ -495,7 +493,6 @@
             <description>Refresh</description>
             <label>184</label>
             <include>Defs_Hidden_Button</include>
-            <enable>!Skin.HasSetting(global.kioskmode)</enable>
         </control>
 
         
