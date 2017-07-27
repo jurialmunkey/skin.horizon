@@ -53,6 +53,7 @@
                 <param name="width" value="1654" />
                 <param name="altwidth" value="1234" />
                 <param name="discart" value="true" />
+                <param name="hdsd_flag" value="true" />
             </include>
 
             <!-- Landscape -->
@@ -105,6 +106,7 @@
                 <param name="width" value="1654" />
                 <param name="altwidth" value="1234" />
                 <param name="discart" value="true" />
+                <param name="hdsd_flag" value="true" />
             </include>
 
             <!-- Banners -->
@@ -202,6 +204,7 @@
                             <param name="right" value="50" />
                             <param name="width" value="1068" />
                             <param name="discart" value="false" />
+                            <param name="hdsd_flag" value="true" />
                         </include>
 
                     </control>
@@ -213,6 +216,7 @@
 
     <include name="View_Posters_Info">
         <param name="plot_height" default="170" />
+        <param name="hdsd_flag" default="false" />
         <definition>
             <control type="group">
                 <left>$PARAM[left]</left>
@@ -224,6 +228,7 @@
                         <param name="width" value="$PARAM[width]" />
                         <param name="bottom" value="$PARAM[bottom]" />
                         <param name="plot_height" value="$PARAM[plot_height]" />
+                        <param name="hdsd_flag" value="$PARAM[hdsd_flag]" />
                     </include>
                 </control>
                 <control type="group">
@@ -234,6 +239,7 @@
                         <param name="width" value="$PARAM[altwidth]" />
                         <param name="bottom" value="$PARAM[bottom]" />
                         <param name="plot_height" value="$PARAM[plot_height]" />
+                        <param name="hdsd_flag" value="$PARAM[hdsd_flag]" />
                     </include>
                 </control>
                 <control type="group">
@@ -244,6 +250,7 @@
                         <param name="right" value="420" />
                         <param name="bottom" value="$PARAM[bottom]" />
                         <param name="plot_height" value="$PARAM[plot_height]" />
+                        <param name="hdsd_flag" value="$PARAM[hdsd_flag]" />
                     </include>
                 </control>
             </control>
@@ -293,14 +300,39 @@
                 <textcolor>main_fg_100</textcolor>
                 <font>font_showcase_title</font>
             </control>
-            <control type="label">
+            <control type="grouplist">
+                <height>40</height>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
                 <left>0</left>
                 <right>$PARAM[right]</right>
-                <label>$VAR[Label_ShowCase_InfoLine]</label>
-                <height>40</height>
-                <aligny>top</aligny>
-                <textcolor>$VAR[ColorHighlight]</textcolor>
-                <font>font_small</font>
+                <control type="image">
+                    <left>4</left>
+                    <top>10</top>
+                    <width>37</width>
+                    <height>24</height>
+                    <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
+                    <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                    <visible>$PARAM[hdsd_flag]</visible>
+                </control>
+                <control type="label">
+                    <label>  |  </label>
+                    <width>auto</width>
+                    <height>40</height>
+                    <aligny>top</aligny>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <font>font_small</font>
+                    <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                    <visible>$PARAM[hdsd_flag]</visible>
+                </control>
+                <control type="label">
+                    <label>$VAR[Label_ShowCase_InfoLine]</label>
+                    <height>40</height>
+                    <aligny>top</aligny>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <font>font_small</font>
+                </control>
             </control>
             <control type="group">
                 <height>80</height>
