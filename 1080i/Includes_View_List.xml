@@ -363,6 +363,7 @@
                     <right>$PARAM[offset]</right>
                     <control type="group">
                         <visible>!Window.IsVisible(MyPVRChannels.xml)</visible>
+                        <!-- Overlay Indicator -->
                         <control type="image">
                             <centertop>50%</centertop>
                             <left>30</left>
@@ -371,7 +372,7 @@
                             <texture colordiffuse="main_fg_70">$VAR[Image_Overlay_List]</texture>
                             <visible>!String.IsEmpty(ListItem.Overlay)</visible>
                         </control>
-
+                        <!-- Fallback Icon -->
                         <control type="image">
                             <centertop>50%</centertop>
                             <left>16</left>
@@ -379,7 +380,8 @@
                             <height>64</height>
                             <texture colordiffuse="main_fg_70" fallback="DefaultFolder.png">$VAR[Image_FallbackIcon]</texture>
                             <visible>String.IsEmpty(ListItem.Overlay)</visible>
-                        </control>    
+                        </control>
+                        <!-- HDSD Flag -->
                         <control type="image">
                             <centertop>51%</centertop>
                             <left>90</left>
@@ -389,6 +391,7 @@
                             <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                             <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                         </control>
+                        <!-- Year Label -->
                         <control type="label">
                             <left>156</left>
                             <width>80</width>
@@ -401,18 +404,43 @@
                             <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                             <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies)</visible>
                         </control>
+                        <!-- Label with Year and HDSD -->
                         <control type="label">
-                            <animation effect="slide" end="-80" condition="String.IsEmpty(ListItem.Year) | !Container.Content(movies)">Conditional</animation>
                             <left>236</left>
                             <right>30</right>
                             <height>100%</height>
                             <aligny>center</aligny>
                             <textcolor>main_fg_70</textcolor>
                             <font>font_small</font>
-                            <animation effect="slide" end="-70" condition="!Container.Content(movies) + !Container.Content(episodes)">Conditional</animation>
                             <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                             <label>$INFO[ListItem.Label]</label>
+                            <visible>Container.Content(movies) + !String.IsEmpty(ListItem.Year)</visible>
                         </control>
+                        <!-- Label with HDSD -->
+                        <control type="label">
+                            <left>156</left>
+                            <right>30</right>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <textcolor>main_fg_70</textcolor>
+                            <font>font_small</font>
+                            <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
+                            <label>$INFO[ListItem.Label]</label>
+                            <visible>[Container.Content(movies) + String.IsEmpty(ListItem.Year)] | Container.Content(episodes)</visible>
+                        </control>
+                        <!-- Label without HDSD or Year -->
+                        <control type="label">
+                            <left>86</left>
+                            <right>30</right>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <textcolor>main_fg_70</textcolor>
+                            <font>font_small</font>
+                            <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
+                            <label>$INFO[ListItem.Label]</label>
+                            <visible>!Container.Content(movies) + !Container.Content(episodes)</visible>
+                        </control>
+                        <!-- Label 2 -->
                         <control type="label">
                             <left>30</left>
                             <right>30</right>
@@ -559,6 +587,7 @@
                         <right>$PARAM[offset]</right>
                         <control type="group">
                             <visible>!Window.IsVisible(MyPVRChannels.xml)</visible>
+                            <!-- Overlay Indicator -->
                             <control type="image">
                                 <centertop>50%</centertop>
                                 <left>30</left>
@@ -567,6 +596,7 @@
                                 <texture colordiffuse="Selected">$VAR[Image_Overlay_List]</texture>
                                 <visible>!String.IsEmpty(ListItem.Overlay)</visible>
                             </control>
+                            <!-- Fallback Icon -->
                             <control type="image">
                                 <centertop>50%</centertop>
                                 <left>16</left>
@@ -575,6 +605,7 @@
                                 <texture colordiffuse="Selected" fallback="DefaultFolder.png">$VAR[Image_FallbackIcon]</texture>
                                 <visible>String.IsEmpty(ListItem.Overlay)</visible>
                             </control>
+                            <!-- HDSD Flag -->
                             <control type="image">
                                 <centertop>51%</centertop>
                                 <left>90</left>
@@ -584,6 +615,7 @@
                                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                             </control>
+                            <!-- Year Label -->
                             <control type="label">
                                 <left>156</left>
                                 <width>80</width>
@@ -596,18 +628,43 @@
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                                 <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies)</visible>
                             </control>
+                            <!-- Label with Year and HDSD -->
                             <control type="label">
-                                <animation effect="slide" end="-80" condition="String.IsEmpty(ListItem.Year) | !Container.Content(movies)">Conditional</animation>
                                 <left>236</left>
                                 <right>30</right>
                                 <height>100%</height>
                                 <aligny>center</aligny>
                                 <textcolor>Selected</textcolor>
                                 <font>font_small</font>
-                                <animation effect="slide" end="-70" condition="!Container.Content(movies) + !Container.Content(episodes)">Conditional</animation>
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                                 <label>$INFO[ListItem.Label]</label>
+                                <visible>Container.Content(movies) + !String.IsEmpty(ListItem.Year)</visible>
                             </control>
+                            <!-- Label with HDSD -->
+                            <control type="label">
+                                <left>156</left>
+                                <right>30</right>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <textcolor>Selected</textcolor>
+                                <font>font_small</font>
+                                <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
+                                <label>$INFO[ListItem.Label]</label>
+                                <visible>[Container.Content(movies) + String.IsEmpty(ListItem.Year)] | Container.Content(episodes)</visible>
+                            </control>
+                            <!-- Label without HDSD or Year -->
+                            <control type="label">
+                                <left>86</left>
+                                <right>30</right>
+                                <height>100%</height>
+                                <aligny>center</aligny>
+                                <textcolor>Selected</textcolor>
+                                <font>font_small</font>
+                                <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
+                                <label>$INFO[ListItem.Label]</label>
+                                <visible>!Container.Content(movies) + !Container.Content(episodes)</visible>
+                            </control>
+                            <!-- Label 2 -->
                             <control type="label">
                                 <left>30</left>
                                 <right>30</right>

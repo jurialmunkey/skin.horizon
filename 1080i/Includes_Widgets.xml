@@ -102,8 +102,7 @@
             <itemgap>-150</itemgap>
             <usecontrolcoords>true</usecontrolcoords>
             <scrolltime tween="cubic" easing="out">500</scrolltime>
-            <!-- <animation effect="slide" start="0" end="0,-50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]332)" reversible="false">Conditional</animation>
-            <animation effect="slide" start="0" end="0,50" tween="back" time="350" condition="!Control.HasFocus($PARAM[pos]331)" reversible="false">Conditional</animation> -->
+            <visible>Integer.IsEqual(Container(300).Position,$PARAM[pos])</visible>
             <control type="group" id="$PARAM[pos]331" description="Spacer"> 
                 <height>widget_spacer_top</height>
             </control>
