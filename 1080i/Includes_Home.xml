@@ -201,6 +201,7 @@
                 <onclick>Select</onclick>
                 <visible>Control.IsEnabled(9004)</visible>
                 <visible>Integer.IsGreater(Container(9501).NumItems,0)</visible>
+                <visible>!String.IsEmpty(ListItem.DBID) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
             </item>
             <!-- Director -->
             <item>
