@@ -2,9 +2,9 @@
 <!-- Foundation -->
 <window id="2003">
     <defaultcontrol always="true">8</defaultcontrol>
-    <!-- <onload condition="Control.IsVisible(50) + Integer.IsGreater(Container(50).NumItems,0)">SetFocus(50)</onload> -->
-    <onload>ClearProperty(FocusedList,Home)</onload>
-    <onunload>ClearProperty(FocusedList,Home)</onunload>
+    <onload condition="!String.IsEmpty(ListItem.DBID) + [Container.Content(tvshows) | Container.Content(seasons)]">SetFocus(9501)</onload>
+    <onload>SetProperty(FocusedList,50,Home)</onload>
+    <onunload>SetProperty(FocusedList,50,Home)</onunload>
     <onload>ClearProperty(ListFanartContent,Home)</onload>
     <onunload>ClearProperty(ListFanartContent,Home)</onunload>
     <onload>ClearProperty(MenuFocus,Home)</onload>
@@ -111,12 +111,12 @@
                     </control>
 
                     <control type="list" id="50">
-                        <visible allowhiddenfocus="true">!String.IsEqual(Window(Home).Property(FocusedList),9502) | Control.HasFocus(50)</visible>
+                        <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),50) | Control.HasFocus(50)</visible>
                         <include>Animation_FadeInOut</include>
                         <ondown condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
                         <ondown condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</ondown>
                         <onleft>300</onleft>
-                        <onleft>ClearProperty(FocusedList,Home)</onleft>
+                        <onleft>SetProperty(FocusedList,50,Home)</onleft>
                         <onright>noop</onright>
                         <include>View_Info_Movement</include>
                         <onfocus>SetProperty(FocusedList,50,Home)</onfocus>
@@ -129,12 +129,39 @@
                     <include content="Dialog_VideoInfo_BusyIndicator">
                         <param name="id" value="50" />
                     </include>
+                    <control type="list" id="9501">
+                        <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),9501) | Control.HasFocus(9501)</visible>
+                        <orientation>horizontal</orientation>
+                        <onleft>300</onleft>
+                        <onright>noop</onright>
+                        <onleft>SetProperty(FocusedList,50,Home)</onleft>
+                        <include>Animation_FadeInOut</include>
+                        <onup>ClearProperty(FocusedList)</onup>
+                        <onup>SetFocus(9601)</onup>
+                        <onfocus>PageUp</onfocus>
+                        <onfocus>PageUp</onfocus>
+                        <onfocus>SetProperty(FocusedList,9501,Home)</onfocus>
+                        <onback>ClearProperty(FocusedList)</onback>
+                        <onback>50</onback>
+                        <animation effect="fade" start="100" end="0" time="0" condition="Container(9501).IsUpdating">Conditional</animation>
+                        <include content="View_Actor_Layout">
+                            <param name="id" value="9501" />
+                            <param name="infolabel" value="true" />
+                            <param name="label2" value="Aired $INFO[ListItem.Premiered]" />
+                            <param name="itemwidth" value="567" />
+                            <param name="episodelayout" value="true" />
+                        </include>
+                        <content limit="3" sortby="playcount" sortdirection="descending">videodb://inprogresstvshows/$INFO[ListItem.DBID]/-2/?tvshowid=$INFO[ListItem.DBID]</content>
+                    </control>
+                    <include content="Dialog_VideoInfo_BusyIndicator">
+                        <param name="id" value="9501" />
+                    </include>
                     <control type="list" id="9502">
                         <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),9502) | Control.HasFocus(9502)</visible>
                         <orientation>horizontal</orientation>
                         <onleft>300</onleft>
                         <onright>noop</onright>
-                        <onleft>ClearProperty(FocusedList,Home)</onleft>
+                        <onleft>SetProperty(FocusedList,50,Home)</onleft>
                         <include>Animation_FadeInOut</include>
                         <include>View_Info_Movement</include>
                         <onfocus>SetProperty(FocusedList,9502,Home)</onfocus>

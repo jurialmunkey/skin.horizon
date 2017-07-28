@@ -318,6 +318,7 @@
         <param name="label2" default="$INFO[ListItem.Label2]"/>
         <param name="infolabel" default="true" />
         <param name="itemwidth" default="226.8" />
+        <param name="episodelayout" default="false" />
         <definition>
             <left>-10</left>
             <top>70</top>
@@ -352,6 +353,16 @@
                         <bottom>10</bottom>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="DefaultArtist.png" background="true">$VAR[Image_Poster]</texture>
+                        <visible>!$PARAM[episodelayout]</visible>
+                    </control>
+                    <control type="image">
+                        <left>10</left>
+                        <right>10</right>
+                        <top>10</top>
+                        <bottom>10</bottom>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture fallback="DefaultArtist.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+                        <visible>$PARAM[episodelayout]</visible>
                     </control>
                     <control type="image">
                         <left>10</left>
@@ -407,6 +418,16 @@
                         <bottom>10</bottom>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="DefaultArtist.png" background="true">$VAR[Image_Poster]</texture>
+                        <visible>!$PARAM[episodelayout]</visible>
+                    </control>
+                    <control type="image">
+                        <left>10</left>
+                        <right>10</right>
+                        <top>10</top>
+                        <bottom>10</bottom>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture fallback="DefaultArtist.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+                        <visible>$PARAM[episodelayout]</visible>
                     </control>
                     <control type="image">
                         <left>10</left>

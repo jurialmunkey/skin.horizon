@@ -245,6 +245,7 @@
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + Control.IsVisible(1450)">$INFO[Container(1450).ListItem.Label]</value>
         <value condition="[Control.HasFocus(50) | String.IsEqual(Window(Home).Property(FocusedList),50)] + !Container(50).IsUpdating">$INFO[Container(50).ListItem.Label]</value>
         <value condition="[Control.HasFocus(9502) | String.IsEqual(Window(Home).Property(FocusedList),9502)] + !Container(9502).IsUpdating">$INFO[Container(9502).ListItem.Label]</value>
+        <value condition="[Control.HasFocus(9501) | String.IsEqual(Window(Home).Property(FocusedList),9501)] + !Container(9501).IsUpdating">$LOCALIZE[31221]</value>
         <value>$LOCALIZE[206]</value>
     </variable>
 
