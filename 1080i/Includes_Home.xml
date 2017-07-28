@@ -184,6 +184,24 @@
                 <onclick>SendClick(11)</onclick>
                 <visible>Control.IsEnabled(11)</visible>
             </item>
+            <!-- Cast -->
+            <item>
+                <label>$INFO[Control.GetLabel(9003)]</label>
+                <icon>special://skin/extras/icons/actor.png</icon>
+                <onclick>SetFocus(9003)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9003)</visible>
+                <visible>Integer.IsGreater(Container(50).NumItems,0)</visible>
+            </item>
+            <!-- Next Up -->
+            <item>
+                <label>$INFO[Control.GetLabel(9004)]</label>
+                <icon>special://skin/extras/icons/tv.png</icon>
+                <onclick>SetFocus(9004)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9004)</visible>
+                <visible>Integer.IsGreater(Container(9501).NumItems,0)</visible>
+            </item>
             <!-- Director -->
             <item>
                 <label>$INFO[Control.GetLabel(9002)]</label>
@@ -191,6 +209,7 @@
                 <onclick>SetFocus(9002)</onclick>
                 <onclick>Select</onclick>
                 <visible>Control.IsEnabled(9002)</visible>
+                <visible>Integer.IsGreater(Container(9502).NumItems,0)</visible>
             </item>
             <!-- Info -->
             <item>

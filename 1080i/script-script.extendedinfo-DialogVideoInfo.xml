@@ -100,7 +100,6 @@
                     <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),1000) | Control.HasFocus(1000) | String.IsEmpty(Window(Home).Property(FocusedList))</visible>
                     <include>Animation_FadeInOut</include>
                     <onleft>300</onleft>
-                    <onleft>ClearProperty(FocusedList,Home)</onleft>
                     <onright>noop</onright>
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,1000,Home)</onfocus>
@@ -120,7 +119,6 @@
                     <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),150) | Control.HasFocus(150)</visible>
                     <include>Animation_FadeInOut</include>
                     <onleft>300</onleft>
-                    <onleft>ClearProperty(FocusedList,Home)</onleft>
                     <onright>noop</onright>
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,150,Home)</onfocus>
@@ -140,7 +138,6 @@
                     <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),350) | Control.HasFocus(350)</visible>
                     <include>Animation_FadeInOut</include>
                     <onleft>300</onleft>
-                    <onleft>ClearProperty(FocusedList,Home)</onleft>
                     <onright>noop</onright>
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,350,Home)</onfocus>
@@ -161,7 +158,6 @@
                     <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),750) | Control.HasFocus(750)</visible>
                     <include>Animation_FadeInOut</include>
                     <onleft>300</onleft>
-                    <onleft>ClearProperty(FocusedList,Home)</onleft>
                     <onright>noop</onright>
                     <include>View_Info_Movement</include>
                     <onfocus>SetProperty(FocusedList,750,Home)</onfocus>
@@ -317,8 +313,10 @@
             <include>Home_Iconbar_Logo</include>
             <control type="group">
                 <control type="list" id="300">
-                    <onright>1000</onright>
-                    <onfocus>ClearProperty(FocusedList,Home)</onfocus>
+                    <onright condition="Control.IsVisible(1000)">1000</onright>
+                    <onright condition="Control.IsVisible(150)">150</onright>
+                    <onright condition="Control.IsVisible(350)">350</onright>
+                    <onright condition="Control.IsVisible(750)">750</onright>
                     <include>Home_OnFocus</include>
                     <include>Home_VideoInfo_Layout</include>
                     <include>Home_MainMenu_ExtInfoItems</include>
@@ -351,7 +349,6 @@
                         <onleft>SetFocus(300,0)</onleft>
                         <onup>SetFocus(300,0)</onup>
                         <ondown>SetFocus(300,0)</ondown>
-                        <onfocus>ClearProperty(FocusedList,Home)</onfocus>
                         <visible>!String.IsEmpty(Window.Property(DBID)) + !String.IsEqual(Window.Property(Type),tvshow)</visible>
                         <visible>String.IsEmpty(Window(home).Property(globalsearch))</visible>
                         <visible>!Window.IsVisible(VideoFullScreen.xml)</visible>
@@ -372,7 +369,6 @@
         <control type="button" id ="120">
             <description>Browse</description>
             <label>21385</label>
-            <onfocus>ClearProperty(FocusedList,Home)</onfocus>
             <include>Defs_Hidden_Button</include>
             <visible>!String.IsEmpty(Window.Property(DBID)) + String.IsEqual(Window.Property(Type),tvshow)</visible>
             <visible>String.IsEmpty(Window(home).Property(globalsearch))</visible>
@@ -382,7 +378,6 @@
         <control type="button" id ="9002">
             <description>Cast</description>
             <label>206</label>
-            <onfocus>ClearProperty(FocusedList,Home)</onfocus>
             <include>Defs_Hidden_Button</include>
             <onclick>SetProperty(FocusedList,1000,Home)</onclick>
             <onclick>SetProperty(VideoInfo_InfoLine,$INFO[Window.Property(label),$LOCALIZE[206] (,)],Home)</onclick>
@@ -393,7 +388,6 @@
         <control type="button" id ="9003">
             <description>Similar</description>
             <label>31206</label>
-            <onfocus>ClearProperty(FocusedList,Home)</onfocus>
             <include>Defs_Hidden_Button</include>
             <onclick>SetProperty(FocusedList,150,Home)</onclick>
             <onclick>SetProperty(VideoInfo_InfoLine,$INFO[Window.Property(label),$LOCALIZE[31206] (,)],Home)</onclick>
@@ -404,7 +398,6 @@
         <control type="button" id ="9004">
             <description>Youtube</description>
             <label>31141</label>
-            <onfocus>ClearProperty(FocusedList,Home)</onfocus>
             <include>Defs_Hidden_Button</include>
             <onclick>SetProperty(FocusedList,350,Home)</onclick>
             <onclick>SetProperty(VideoInfo_InfoLine,$INFO[Window.Property(label),$LOCALIZE[31141] (,)],Home)</onclick>
@@ -416,7 +409,6 @@
         <control type="button" id ="9005">
             <description>Crew</description>
             <label>$ADDON[script.extendedinfo 32115]</label>
-            <onfocus>ClearProperty(FocusedList,Home)</onfocus>
             <include>Defs_Hidden_Button</include>
             <onclick>SetProperty(FocusedList,750,Home)</onclick>
             <onclick>SetProperty(VideoInfo_InfoLine,$INFO[Window.Property(label), (,)],Home)</onclick>
@@ -426,7 +418,6 @@
 
         <control type="button" id ="9009">
             <description>Add to trakt</description>
-            <onfocus>ClearProperty(FocusedList,Home)</onfocus>
             <include>Defs_Hidden_Button</include>
             <onclick>XBMC.RunPlugin(plugin://plugin.video.trakt_list_manager/movies/add?title=$INFO[Window.Property(label)])</onclick>
             <label>Trakt</label>
@@ -435,7 +426,6 @@
 
         <control type="button" id ="445">
             <description>Manage</description>
-            <onfocus>ClearProperty(FocusedList,Home)</onfocus>
             <include>Defs_Hidden_Button</include>
             <label>$ADDON[script.extendedinfo 32133]</label>
         </control>
