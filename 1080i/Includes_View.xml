@@ -327,8 +327,6 @@
             <description>Plugin Content Widget</description>
             <height>381.2</height>
             <orientation>vertical</orientation>
-            <onleft>$PARAM[id]</onleft>
-            <onright>$PARAM[id]</onright>
             <onfocus>ClearProperty(MenuFocus,Home)</onfocus>
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
