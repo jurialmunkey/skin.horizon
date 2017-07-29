@@ -116,6 +116,125 @@
         </definition>
     </include>
 
+    <include name="Object_StarRating_NoGroupList">
+        <param name="rating_prop" default="ListItem.Rating" />
+        <definition>
+            <control type="group">
+                <height>64</height>
+                <control type="group">
+                    <top>24</top>
+                    <orientation>horizontal</orientation>
+                    <height>64</height>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>48</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>96</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>144</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>192</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="main_fg_30">flags/star10.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <top>24</top>
+                    <height>64</height>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],0)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>48</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],2)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>96</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],4)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>144</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],6)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>192</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star5.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],8)">Conditional</animation>
+                    </control>
+                </control>
+                <control type="group">
+                    <top>24</top>
+                    <height>64</height>
+                    <control type="image">
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],1)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>48</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],3)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>96</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],5)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>144</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],7)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>192</left>
+                        <height>64</height>
+                        <width>64</width>
+                        <texture colordiffuse="Highlight2">flags/star10.png</texture>
+                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],9)">Conditional</animation>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <include name="Object_StarRating_Music">
         <param name="align" default="center" />
         <definition>
@@ -448,7 +567,7 @@
                     <centertop>50%</centertop>
                     <height>64</height>
                     <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/4K.png</texture>
-                    <visible>[String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,UHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,UltraHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,Ultra-HD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,4K)]</visible>
+                    <visible>[String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,2160p) | $PARAM[container]$PARAM[source]FileNameAndPath,UHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,UltraHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,Ultra-HD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,4K)]</visible>
                 </control>
                 <control type="image">
                     <width>88</width>
@@ -457,7 +576,7 @@
                     <height>64</height>
                     <texture colordiffuse="$PARAM[colordiffuse]">flags/$PARAM[directory]/other/bluray.png</texture>
                     <visible>[String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bluray) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bdrip) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bd25) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,bd50)]</visible>
-                    <visible>![String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,UHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,UltraHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,Ultra-HD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,4K)]</visible>
+                    <visible>![String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,2160p) | $PARAM[container]$PARAM[source]FileNameAndPath,UHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,UltraHD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,Ultra-HD) | String.Contains($PARAM[container]$PARAM[source]FileNameAndPath,4K)]</visible>
                 </control>
                 <control type="image">
                     <width>88</width>
