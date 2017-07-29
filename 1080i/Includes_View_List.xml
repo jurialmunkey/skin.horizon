@@ -172,10 +172,9 @@
                 </control>
             </control>
 
-            <!-- Info List 4 -->
-            <!-- Standard Wall w/ Info -->
+            <!-- Media Info -->
             <control type="fixedlist" id="557">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(musicvideos)</visible>
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(artists) | Container.Content(musicvideos)</visible>
                 <include>View_NotTheseWindows</include>
                 <viewtype label="$LOCALIZE[31298]">list</viewtype>
                 <include content="View_Forced">
