@@ -306,8 +306,23 @@
             <control type="group">
                 <right>-80</right>
                 <top>465</top>
-                <include content="View_Posters_Info">
-                    <param name="bottom" value="25" />
+                <include content="View_Posters_Info" condition="Window.IsVisible(MyVideoNav.xml)">
+                    <param name="bottom" value="30" />
+                    <param name="plot_height" value="300" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="left" value="50" />
+                    <param name="right" value="1025" />
+                    <param name="width" value="855" />
+                    <param name="discart" value="false" />
+                    <param name="rottentomatoes" value="true" />
+                    <param name="usermeter" value="false" />
+                    <param name="tmdb" value="false" />
+                    <param name="metacritic" value="true" />
+                    <param name="imdbvotes" value="false" />
+                    <param name="hdsd_flag" value="true" />
+                </include>
+                <include content="View_Posters_Info" condition="!Window.IsVisible(MyVideoNav.xml)">
+                    <param name="bottom" value="40" />
                     <param name="plot_height" value="300" />
                     <param name="id" value="$PARAM[id]" />
                     <param name="left" value="50" />
