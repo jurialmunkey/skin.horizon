@@ -788,7 +788,7 @@ msgstr ""
 
 #: /1080i/Includes_View_List.xml
 msgctxt "#31164"
-msgid "Infolist 2"
+msgid "Info List"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -931,7 +931,7 @@ msgstr ""
 
 #: /1080i/Includes_View_List.xml
 msgctxt "#31196"
-msgid "Infolist"
+msgid "Details List"
 msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
@@ -941,7 +941,7 @@ msgstr ""
 
 #: /1080i/Includes_View_List.xml
 msgctxt "#31198"
-msgid "Infolist 3"
+msgid "Media Info 2"
 msgstr ""
 
 msgctxt "#31199"
@@ -1379,5 +1379,10 @@ msgstr ""
 
 #: /1080i/Includes_View_Posters.xml
 msgctxt "#31297"
-msgid "Landscape Banner"
+msgid "Landscape List"
+msgstr ""
+
+#: /1080i/Includes_View_List.xml
+msgctxt "#31298"
+msgid "Media Info"
 msgstr ""

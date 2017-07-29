@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <!-- ============= -->
-    <!-- View Mode IDs -->
-    <!-- 50 List       -->
-    <!-- 51 Icons      -->
-    <!-- 52 Showcase   -->
-    <!-- 53 Landscape  -->
-    <!-- 54 Infolist   -->
-    <!-- 55 Infolist 2 -->
-    <!-- 56 Showcase 2 -->
-    <!-- 57 Infolist 3 -->
-    <!-- 58 Banner     -->
-    <!-- ============= -->
+    <!-- ================== -->
+    <!-- View Mode IDs      -->
+    <!-- 50  List           -->
+    <!-- 51  Icons          -->
+    <!-- 52  Showcase       -->
+    <!-- 53  Landscape      -->
+    <!-- 54  Details List   -->
+    <!-- 55  Info List      -->
+    <!-- 56  Showcase 2     -->
+    <!-- 57  Media Info 2   -->
+    <!-- 58  Banner         -->
+    <!-- 59  Lovefilme      -->
+    <!-- 551 Icons Info     -->
+    <!-- 553 Landscape List -->
+    <!-- 557 Media Info     -->
+    <!-- 558 Banner Info    -->
+    <!-- ================== -->
 
 
     <include name="View_Layout">

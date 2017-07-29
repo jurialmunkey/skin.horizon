@@ -172,6 +172,25 @@
                 </control>
             </control>
 
+            <!-- Info List 4 -->
+            <!-- Standard Wall w/ Info -->
+            <control type="fixedlist" id="557">
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(musicvideos)</visible>
+                <include>View_NotTheseWindows</include>
+                <viewtype label="$LOCALIZE[31298]">list</viewtype>
+                <include content="View_Forced">
+                    <param name="string" value="$LOCALIZE[31298]" />
+                </include>
+                <include content="View_List_Layout">
+                    <param name="id" value="557" />
+                    <param name="left" value="855" />
+                    <param name="width" value="899" />
+                </include>
+            </control>
+            <include content="View_Posters_FanartInfo">
+                <param name="id" value="557" />
+            </include>
+
         </definition>
     </include>
 
