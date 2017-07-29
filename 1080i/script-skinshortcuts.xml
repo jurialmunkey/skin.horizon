@@ -7,6 +7,15 @@
         <include>Global_Overlay</include>
 
         <control type="group">
+            <visible>!Skin.HasSetting(WidgetsInit)</visible>
+            <include>Global_Overlay</include>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <include>Defs_BusySpinner</include>
+            
+        </control>
+
+        <control type="group">
             <animation effect="fade" start="100" end="0" condition="!Skin.HasSetting(WidgetsInit)">Conditional</animation>
             
             <centerleft>50%</centerleft>
