@@ -499,6 +499,13 @@
         <param name="directory" default="monochrome" />
         <param name="align" default="right" />
         <param name="width" default="900" />
+        <param name="rottentomatoes" default="true" />
+        <param name="imdbvotes" default="true" />
+        <param name="usermeter" default="true" />
+        <param name="imdb" default="true" />
+        <param name="tmdb" default="true" />
+        <param name="metacritic" default="true" />
+        <param name="oscars" default="true" />
         <definition>
             <control type="grouplist">
                 <width>$PARAM[width]</width>
@@ -514,6 +521,7 @@
                     <height>32</height>
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/oscar.png</texture>
                     <visible>String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Oscar) + String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Won)</visible>
+                    <visible>$PARAM[oscars]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -524,6 +532,7 @@
                     <font>font_tiny</font>
                     <label>$VAR[Label_Oscars,,   ]</label>
                     <visible>String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Oscar) + String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Won)</visible>
+                    <visible>$PARAM[oscars]</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -531,6 +540,7 @@
                     <height>32</height>
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/metacritic.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
+                    <visible>$PARAM[metacritic]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -541,6 +551,7 @@
                     <font>font_tiny</font>
                     <label>$INFO[Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
+                    <visible>$PARAM[metacritic]</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -548,6 +559,7 @@
                     <height>32</height>
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/tmdb.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB))</visible>
+                    <visible>$PARAM[tmdb]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -558,6 +570,7 @@
                     <font>font_tiny</font>
                     <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Rating.TMDB), ,   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB))</visible>
+                    <visible>$PARAM[tmdb]</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -565,6 +578,7 @@
                     <height>32</height>
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/popcorn.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter))</visible>
+                    <visible>$PARAM[usermeter]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -575,6 +589,7 @@
                     <font>font_tiny</font>
                     <label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter))</visible>
+                    <visible>$PARAM[usermeter]</visible>
                 </control>
                 <control type="image">
                     <width>32</width>
@@ -582,6 +597,7 @@
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/rtrotten.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
                     <visible>!Integer.IsGreater(Window(home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)</visible>
+                    <visible>$PARAM[rottentomatoes]</visible>
                 </control>
                 <control type="image">
                     <width>32</width>
@@ -589,6 +605,7 @@
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/rtfresh.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)</visible>
+                    <visible>$PARAM[rottentomatoes]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -599,6 +616,7 @@
                     <font>font_tiny</font>
                     <label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
+                    <visible>$PARAM[rottentomatoes]</visible>
                 </control>
                 <control type="image">
                     <top>1</top>
@@ -606,6 +624,7 @@
                     <height>32</height>
                     <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/imdbicon.png</texture>
                     <visible>!String.IsEmpty(ListItem.RatingAndVotes) | !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB)) | [Window.IsVisible(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Rating)]</visible>
+                    <visible>$PARAM[imdb]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -617,6 +636,8 @@
                     <label>$INFO[Window(home).Property(SkinHelper.ListItem.Rating.IMDB), ,]$INFO[Window(home).Property(SkinHelper.ListItem.Votes.IMDB), (, $LOCALIZE[205])]</label>
                     <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
+                    <visible>$PARAM[imdb]</visible>
+                    <visible>$PARAM[imdbvotes]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -628,6 +649,34 @@
                     <label>$INFO[ListItem.RatingAndVotes, ,]</label>
                     <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB)) + !String.IsEmpty(ListItem.RatingAndVotes)</visible>
+                    <visible>$PARAM[imdbvotes]</visible>
+                    <visible>$PARAM[imdb]</visible>
+                </control>
+                <control type="label">
+                    <textcolor>main_fg_70</textcolor>
+                    <top>2</top>
+                    <width>auto</width>
+                    <height>28</height>
+                    <align>right</align>
+                    <font>font_tiny</font>
+                    <label>$INFO[Window(home).Property(SkinHelper.ListItem.Rating.IMDB), ,]</label>
+                    <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
+                    <visible>!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
+                    <visible>$PARAM[imdb]</visible>
+                    <visible>!$PARAM[imdbvotes]</visible>
+                </control>
+                <control type="label">
+                    <textcolor>main_fg_70</textcolor>
+                    <top>2</top>
+                    <width>auto</width>
+                    <height>28</height>
+                    <align>right</align>
+                    <font>font_tiny</font>
+                    <label>$INFO[ListItem.Rating, ,]</label>
+                    <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
+                    <visible>String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB)) + !String.IsEmpty(ListItem.Rating)</visible>
+                    <visible>$PARAM[imdb]</visible>
+                    <visible>!$PARAM[imdbvotes]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -639,6 +688,7 @@
                     <label>$INFO[Window(home).Property(SkinHelper.ListItem.Rating.IMDB), ,]</label>
                     <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
+                    <visible>$PARAM[imdb]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -650,6 +700,7 @@
                     <label>$INFO[ListItem.Rating, ,]</label>
                     <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB)) + !String.IsEmpty(ListItem.Rating)</visible>
+                    <visible>$PARAM[imdb]</visible>
                 </control>
                 <control type="label">
                     <textcolor>main_fg_70</textcolor>
@@ -662,6 +713,7 @@
                     <visible>!Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
                     <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)</visible>
                     <visible>Integer.IsGreater(Window(home).Property(SkinHelper.ListItem.IMDB.Top250),0)</visible>
+                    <visible>$PARAM[imdb]</visible>
                 </control>
             </control>
         </definition>

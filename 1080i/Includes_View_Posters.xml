@@ -14,9 +14,27 @@
                 <include content="View_Posters_Layout">
                     <param name="id" value="51" />
                     <param name="orientation" value="vertical" />
-                  
                 </include>
             </control>
+
+            <!-- Standard Wall w/ Info -->
+            <control type="panel" id="551">
+                <visible>!Container.Content(songs) + !Container.Content(episodes) + !Container.Content(videos)</visible>
+                <include>View_NotTheseWindows</include>
+                <left>855</left>
+                <viewtype label="$LOCALIZE[31295]">icon</viewtype>
+                <include content="View_Forced">
+                    <param name="string" value="$LOCALIZE[31295]" />
+                </include>
+                <include content="View_Posters_Layout">
+                    <param name="id" value="551" />
+                    <param name="orientation" value="vertical" />
+                </include>
+            </control>
+            <include content="View_Posters_FanartInfo">
+                <param name="id" value="551" />
+            </include>
+            
 
             <!-- Showcase -->
             <control type="group">
@@ -127,6 +145,30 @@
                 </include>
             </control>
 
+            <!-- Banners w/ Info -->
+            <control type="fixedlist" id="558">
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
+                <include>View_NotTheseWindows</include>
+                <left>855</left>
+                <focusposition>1</focusposition>
+                <movement>1</movement>
+                <viewtype label="$LOCALIZE[31296]">icon</viewtype>
+                <include content="View_Forced">
+                    <param name="string" value="$LOCALIZE[31296]" />
+                </include>
+                <include content="View_Posters_Layout">
+                    <param name="id" value="558" />
+                    <param name="orientation" value="vertical" />
+                    <param name="banner" value="true" />
+                    <param name="top_offset" value="30" />
+                    <param name="bottom_offset" value="-10" />
+                    <param name="top" value="0" />
+                </include>
+            </control>
+            <include content="View_Posters_FanartInfo">
+                <param name="id" value="558" />
+            </include>
+
             <!-- Lovefilm -->
             <control type="group">
                 <visible>Control.IsVisible(59)</visible>
@@ -214,9 +256,85 @@
         </definition>
     </include>
 
+    <include name="View_Posters_FanartInfo">
+        <control type="group">
+            <visible>Control.IsVisible($PARAM[id])</visible>
+            <top>0</top>
+            <left>0</left>
+            <right>80</right>
+            <bottom>0</bottom>
+            <control type="group">
+                <width>855</width>
+                <control type="image">
+                    <include>Defs_Shadow_Opaque</include>
+                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                </control>
+                <include>Defs_Color_Overlay</include>
+                <control type="group">
+                    <left>855</left>
+                    <include>Object_Separator_Left</include>
+                </control>
+                <control type="group">
+                    <left>40</left>
+                    <top>40</top>
+                    <control type="group">
+                        <width>775</width>
+                        <height>436</height>
+                        <control type="image">
+                            <include>Defs_Shadow_Opaque</include>
+                            <texture colordiffuse="PosterBack">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <fadetime>100</fadetime>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$VAR[Image_Fanart]</texture>
+                        </control>
+                        <control type="image">
+                            <bottom>20</bottom>
+                            <top>170</top>
+                            <left>190</left>
+                            <right>190</right>
+                            <aspectratio aligny="bottom">keep</aspectratio>
+                            <texture background="true">$VAR[Image_Clearlogo]</texture>
+                            <visible>!Skin.HasSetting(DisableFakeLandscapeArt)</visible>
+                            <visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(season.landscape))</visible>
+                            <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+                        </control>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <right>-80</right>
+                <top>465</top>
+                <include content="View_Posters_Info">
+                    <param name="bottom" value="25" />
+                    <param name="plot_height" value="300" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="left" value="50" />
+                    <param name="right" value="1025" />
+                    <param name="width" value="855" />
+                    <param name="discart" value="false" />
+                    <param name="rottentomatoes" value="true" />
+                    <param name="usermeter" value="false" />
+                    <param name="tmdb" value="false" />
+                    <param name="metacritic" value="true" />
+                    <param name="imdbvotes" value="false" />
+                    <param name="hdsd_flag" value="true" />
+                </include>
+            </control>
+        </control>
+    </include>
+
     <include name="View_Posters_Info">
         <param name="plot_height" default="170" />
         <param name="hdsd_flag" default="false" />
+        <param name="rottentomatoes" default="true" />
+        <param name="imdbvotes" default="true" />
+        <param name="usermeter" default="true" />
+        <param name="imdb" default="true" />
+        <param name="tmdb" default="true" />
+        <param name="metacritic" default="true" />
+        <param name="oscars" default="true" />
         <definition>
             <control type="group">
                 <left>$PARAM[left]</left>
@@ -229,6 +347,13 @@
                         <param name="bottom" value="$PARAM[bottom]" />
                         <param name="plot_height" value="$PARAM[plot_height]" />
                         <param name="hdsd_flag" value="$PARAM[hdsd_flag]" />
+                        <param name="rottentomatoes" value="$PARAM[rottentomatoes]" />
+                        <param name="imdbvotes" value="$PARAM[imdbvotes]" />
+                        <param name="usermeter" value="$PARAM[usermeter]" />
+                        <param name="imdb" value="$PARAM[imdb]" />
+                        <param name="tmdb" value="$PARAM[tmdb]" />
+                        <param name="metacritic" value="$PARAM[metacritic]" />
+                        <param name="oscars" value="$PARAM[oscars]" />
                     </include>
                 </control>
                 <control type="group">
@@ -240,6 +365,13 @@
                         <param name="bottom" value="$PARAM[bottom]" />
                         <param name="plot_height" value="$PARAM[plot_height]" />
                         <param name="hdsd_flag" value="$PARAM[hdsd_flag]" />
+                        <param name="rottentomatoes" value="$PARAM[rottentomatoes]" />
+                        <param name="imdbvotes" value="$PARAM[imdbvotes]" />
+                        <param name="usermeter" value="$PARAM[usermeter]" />
+                        <param name="imdb" value="$PARAM[imdb]" />
+                        <param name="tmdb" value="$PARAM[tmdb]" />
+                        <param name="metacritic" value="$PARAM[metacritic]" />
+                        <param name="oscars" value="$PARAM[oscars]" />
                     </include>
                 </control>
                 <control type="group">
@@ -251,6 +383,13 @@
                         <param name="bottom" value="$PARAM[bottom]" />
                         <param name="plot_height" value="$PARAM[plot_height]" />
                         <param name="hdsd_flag" value="$PARAM[hdsd_flag]" />
+                        <param name="rottentomatoes" value="$PARAM[rottentomatoes]" />
+                        <param name="imdbvotes" value="$PARAM[imdbvotes]" />
+                        <param name="usermeter" value="$PARAM[usermeter]" />
+                        <param name="imdb" value="$PARAM[imdb]" />
+                        <param name="tmdb" value="$PARAM[tmdb]" />
+                        <param name="metacritic" value="$PARAM[metacritic]" />
+                        <param name="oscars" value="$PARAM[oscars]" />
                     </include>
                 </control>
             </control>
@@ -351,6 +490,13 @@
                         <param name="directory" value="color" />
                         <param name="align" value="left" />
                         <param name="width" value="$PARAM[width]" />
+                        <param name="rottentomatoes" value="$PARAM[rottentomatoes]" />
+                        <param name="imdbvotes" value="$PARAM[imdbvotes]" />
+                        <param name="usermeter" value="$PARAM[usermeter]" />
+                        <param name="imdb" value="$PARAM[imdb]" />
+                        <param name="tmdb" value="$PARAM[tmdb]" />
+                        <param name="metacritic" value="$PARAM[metacritic]" />
+                        <param name="oscars" value="$PARAM[oscars]" />
                     </include>
                 </control>
             </control>

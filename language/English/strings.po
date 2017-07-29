@@ -1366,3 +1366,13 @@ msgstr ""
 msgctxt "#31294"
 msgid "Hubs"
 msgstr ""
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31295"
+msgid "Icons Info"
+msgstr ""
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31296"
+msgid "Banner Info"
+msgstr ""
