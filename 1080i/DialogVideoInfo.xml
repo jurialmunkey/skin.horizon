@@ -8,6 +8,8 @@
     <onload>ClearProperty(ListFanartContent,Home)</onload>
     <onunload>ClearProperty(ListFanartContent,Home)</onunload>
     <onload>ClearProperty(MenuFocus,Home)</onload>
+    <onload>ClearProperty(TrailerPlaying,Home)</onload>
+    <onunload>ClearProperty(TrailerPlaying,Home)</onunload>
     <controls>
 
         <control type="group">
@@ -470,7 +472,48 @@
             </control>
         </control>
 
+
+        <control type="group">
+            <visible>Player.HasVideo</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <control type="image">
+                <texture colordiffuse="ff000000">common/white.png</texture>
+            </control>
+            <control type="videowindow">
+                <width>100%</width>
+                <height>100%</height>
+            </control>
+        </control>
+
         <!-- HIDDEN BUTTONS -->
+        <control type="button" id="9503">
+            <description>Trailer button</description>
+            <onclick>Stop</onclick>
+            <onleft>Stop</onleft>
+            <onright>Stop</onright>
+            <onup>Stop</onup>
+            <ondown>Stop</ondown>
+            <onback>Stop</onback>
+            <oninfo>Stop</oninfo>
+            <onclick>ClearProperty(TrailerPlaying,Home)</onclick>
+            <onleft>ClearProperty(TrailerPlaying,Home)</onleft>
+            <onright>ClearProperty(TrailerPlaying,Home)</onright>
+            <onup>ClearProperty(TrailerPlaying,Home)</onup>
+            <ondown>ClearProperty(TrailerPlaying,Home)</ondown>
+            <onback>ClearProperty(TrailerPlaying,Home)</onback>
+            <oninfo>ClearProperty(TrailerPlaying,Home)</oninfo>
+            <onclick>SetFocus(8)</onclick>
+            <onleft>SetFocus(8)</onleft>
+            <onright>SetFocus(8)</onright>
+            <onup>SetFocus(8)</onup>
+            <ondown>SetFocus(8)</ondown>
+            <onback>SetFocus(8)</onback>
+            <oninfo>SetFocus(8)</oninfo>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
         <control type="button" id="11">
             <description>Trailer button</description>
             <label>20410</label>

@@ -152,7 +152,7 @@
         <left>sidepad</left>
         <control type="label">
             <height>48</height>
-            <label>$VAR[Label_Header_Content]</label>
+            <label>$INFO[Player.FileNameAndPath]$VAR[Label_Header_Content]</label>
             <aligny>center</aligny>
             <align>left</align>
             <font>font_topbar</font>
