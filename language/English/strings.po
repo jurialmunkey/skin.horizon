@@ -1386,3 +1386,13 @@ msgstr ""
 msgctxt "#31298"
 msgid "Media Info"
 msgstr ""
+
+#: /1080i/DialogVideoInfo.xml
+msgctxt "#31299"
+msgid "Premiered"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31300"
+msgid "Show next up episodes instead of cast in tvshow info dialog"
+msgstr ""

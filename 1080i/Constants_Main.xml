@@ -22,7 +22,8 @@
     <constant name="infolist2_icon_height">302</constant> <!-- 290 -->
     <constant name="infolist3_plot_height">220</constant> <!-- 170 -->
     <constant name="infolist_top">518</constant>
-    <constant name="info_details_width">226</constant>
+    <constant name="info_details_width">256</constant>
+    <constant name="info_details_left">716</constant>
     <constant name="showcase_top">471.5</constant> <!-- 441.5 -->
     <constant name="widget_spacer_top">76</constant> <!-- 76 -->
     <constant name="widget_spacer_bottom">463</constant> <!-- 473 -->

@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="2003">
     <defaultcontrol always="true">8</defaultcontrol>
-    <onload condition="!String.IsEmpty(ListItem.DBID) + [Container.Content(tvshows) | Container.Content(seasons)]">SetFocus(9501)</onload>
+    <onload condition="!String.IsEmpty(ListItem.DBID) + [Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(DisableNextUpInfo)">SetFocus(9501)</onload>
     <onload>SetProperty(FocusedList,50,Home)</onload>
     <onunload>SetProperty(FocusedList,50,Home)</onunload>
     <onload>ClearProperty(ListFanartContent,Home)</onload>
@@ -267,10 +267,9 @@
 
                 <!-- Info -->
                 <control type="grouplist">
-                    <left>info_left</left>
+                    <left>info_details_left</left>
                     <top>650</top>
                     <right>70</right>
-                    <height>180</height>
                     <align>top</align>
                     <orientation>vertical</orientation>
                     <control type="group">
@@ -362,6 +361,102 @@
                             <aligny>center</aligny>
                             <width>auto</width>
                             <label>$INFO[ListItem.Studio]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>42</height>
+                        <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+                        <visible>!String.IsEmpty(ListItem.Premiered)</visible>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_30</textcolor>
+                            <aligny>center</aligny>
+                            <width>info_details_width</width>
+                            <align>right</align>
+                            <textoffsetx>20</textoffsetx>
+                            <height>100%</height>
+                            <label>$LOCALIZE[31299]</label>
+                        </control>
+                        <control type="label">
+                            <height>42</height>
+                            <left>info_details_width</left>
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <label>$INFO[ListItem.Premiered]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>42</height>
+                        <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+                        <visible>!String.IsEmpty(ListItem.Property(WatchedEpisodes))</visible>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_30</textcolor>
+                            <aligny>center</aligny>
+                            <width>info_details_width</width>
+                            <align>right</align>
+                            <textoffsetx>20</textoffsetx>
+                            <height>100%</height>
+                            <label>$LOCALIZE[20360]</label>
+                        </control>
+                        <control type="label">
+                            <height>42</height>
+                            <left>info_details_width</left>
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <label>$INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[20163] ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[16102]]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>42</height>
+                        <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+                        <visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_30</textcolor>
+                            <aligny>center</aligny>
+                            <width>info_details_width</width>
+                            <align>right</align>
+                            <textoffsetx>20</textoffsetx>
+                            <height>100%</height>
+                            <label>$INFO[Window(Home).Property(NextAired.Status)]</label>
+                        </control>
+                        <control type="label">
+                            <height>42</height>
+                            <left>info_details_width</left>
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <label>$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ]$INFO[Window(Home).Property(NextAired.AirTime),,  ]$INFO[Window(Home).Property(NextAired.NextDate)]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>42</height>
+                        <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+                        <visible>String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_30</textcolor>
+                            <aligny>center</aligny>
+                            <width>info_details_width</width>
+                            <align>right</align>
+                            <textoffsetx>20</textoffsetx>
+                            <height>100%</height>
+                            <label>$INFO[Window(Home).Property(NextAired.Status)]</label>
+                        </control>
+                        <control type="label">
+                            <height>42</height>
+                            <left>info_details_width</left>
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <label>$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ]$INFO[Window(Home).Property(NextAired.LatestDate)]</label>
                         </control>
                     </control>
                 </control>
