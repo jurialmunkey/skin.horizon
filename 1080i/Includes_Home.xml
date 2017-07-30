@@ -931,13 +931,6 @@
             </control>
         </itemlayout>
         <focusedlayout height="74" width="240">
-            <!-- <control type="button">
-                <width>1</width>
-                <height>1</height>
-                <animation effect="fade" end="0" condition="true">Conditional</animation>
-                <onfocus>ClearProperty(WidgetLoading,Home)</onfocus>
-                <onfocus>AlarmClock(SetLoad,SetProperty(WidgetLoading,1,Home),00:00,silent)</onfocus>
-            </control> -->
             <control type="group">
                 <width>74</width>
                 <top>74</top>
