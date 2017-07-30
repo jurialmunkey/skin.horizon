@@ -528,7 +528,7 @@
                             <control type="group">
                                 <left>74</left>
                                 <width>6</width>     
-                                <visible>Control.HasFocus(8)</visible>
+                                <visible>Control.HasFocus(8) | Control.HasFocus(9503)</visible>
                                 <control type="image">
                                     <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                                 </control>
@@ -552,6 +552,48 @@
                                 <ondown>SetFocus(300,0)</ondown>
                                 <onfocus>ClearProperty(MenuFocus,Home)</onfocus>
                                 <visible allowhiddenfocus="true">Control.HasFocus(8)</visible>
+                                <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/play3.png</texturenofocus>
+                                <texturefocus colordiffuse="Selected">special://skin/extras/icons/play3.png</texturefocus>
+                            </control>
+                            <control type="button" id="9503">
+                                <description>Trailer Play fake button</description>
+                                <label>208</label>
+                                <width>74</width>
+                                <height>74</height>
+                                <font/>
+                                <onfocus>ClearProperty(MenuFocus,Home)</onfocus>
+                                <onclick condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">SetFocus(8)</onclick>
+                                <onleft condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">SetFocus(8)</onleft>
+                                <onright condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">SetFocus(8)</onright>
+                                <onup condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">SetFocus(8)</onup>
+                                <ondown condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">SetFocus(8)</ondown>
+                                <onback condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">SetFocus(8)</onback>
+                                <oninfo condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">SetFocus(8)</oninfo>
+
+                                <onclick condition="String.IsEmpty(Window(Home).Property(TrailerPlaying)) | !Player.HasVideo">SetFocus(300,0)</onclick>
+                                <onleft condition="String.IsEmpty(Window(Home).Property(TrailerPlaying)) | !Player.HasVideo">SetFocus(300,0)</onleft>
+                                <onright condition="String.IsEmpty(Window(Home).Property(TrailerPlaying)) | !Player.HasVideo">SetFocus(50,0)</onright>
+                                <onup condition="String.IsEmpty(Window(Home).Property(TrailerPlaying)) | !Player.HasVideo">SetFocus(300,0)</onup>
+                                <ondown condition="String.IsEmpty(Window(Home).Property(TrailerPlaying)) | !Player.HasVideo">SetFocus(300,0)</ondown>
+                                <onback condition="String.IsEmpty(Window(Home).Property(TrailerPlaying)) | !Player.HasVideo">SetFocus(300,0)</onback>
+                                <oninfo condition="String.IsEmpty(Window(Home).Property(TrailerPlaying)) | !Player.HasVideo">SetFocus(300,0)</oninfo>
+
+                                <onclick condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">Stop</onclick>
+                                <onleft condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">Stop</onleft>
+                                <onright condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">Stop</onright>
+                                <onup condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">Stop</onup>
+                                <ondown condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">Stop</ondown>
+                                <onback condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">Stop</onback>
+                                <oninfo condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Player.HasVideo">Stop</oninfo>
+                                <onclick condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</onclick>
+                                <onleft condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</onleft>
+                                <onright condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</onright>
+                                <onup condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</onup>
+                                <ondown condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</ondown>
+                                <onback condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</onback>
+                                <oninfo condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</oninfo>
+                                <onclick condition="!Player.HasVideo">SendClick(8)</onclick>
+                                <visible allowhiddenfocus="true">Control.HasFocus(9503)</visible>
                                 <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/play3.png</texturenofocus>
                                 <texturefocus colordiffuse="Selected">special://skin/extras/icons/play3.png</texturefocus>
                             </control>
@@ -580,33 +622,6 @@
                 <width>100%</width>
                 <height>100%</height>
             </control>
-        </control>
-
-        <!-- HIDDEN BUTTONS -->
-        <control type="button" id="9503">
-            <description>Trailer button</description>
-            <onclick>Stop</onclick>
-            <onleft>Stop</onleft>
-            <onright>Stop</onright>
-            <onup>Stop</onup>
-            <ondown>Stop</ondown>
-            <onback>Stop</onback>
-            <oninfo>Stop</oninfo>
-            <onclick>ClearProperty(TrailerPlaying,Home)</onclick>
-            <onleft>ClearProperty(TrailerPlaying,Home)</onleft>
-            <onright>ClearProperty(TrailerPlaying,Home)</onright>
-            <onup>ClearProperty(TrailerPlaying,Home)</onup>
-            <ondown>ClearProperty(TrailerPlaying,Home)</ondown>
-            <onback>ClearProperty(TrailerPlaying,Home)</onback>
-            <oninfo>ClearProperty(TrailerPlaying,Home)</oninfo>
-            <onclick>SetFocus(8)</onclick>
-            <onleft>SetFocus(8)</onleft>
-            <onright>SetFocus(8)</onright>
-            <onup>SetFocus(8)</onup>
-            <ondown>SetFocus(8)</ondown>
-            <onback>SetFocus(8)</onback>
-            <oninfo>SetFocus(8)</oninfo>
-            <include>Defs_Hidden_Button</include>
         </control>
 
         <control type="button" id="11">
