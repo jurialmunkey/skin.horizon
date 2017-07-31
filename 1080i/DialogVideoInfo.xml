@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="2003">
     <defaultcontrol always="true">8</defaultcontrol>
-    <onload condition="!String.IsEmpty(ListItem.DBID) + [Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(NextUpInfo)">SetFocus(9501)</onload>
+    <onload condition="!String.IsEmpty(ListItem.DBID) + [Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(DisableNextUpInfo)">SetFocus(9501)</onload>
     <onload>ClearProperty(FocusedList,Home)</onload>
     <onunload>ClearProperty(FocusedList,Home)</onunload>
     <onload>ClearProperty(ListFanartContent,Home)</onload>
