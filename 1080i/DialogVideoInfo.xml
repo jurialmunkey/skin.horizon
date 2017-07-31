@@ -3,8 +3,8 @@
 <window id="2003">
     <defaultcontrol always="true">8</defaultcontrol>
     <onload condition="!String.IsEmpty(ListItem.DBID) + [Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(DisableNextUpInfo)">SetFocus(9501)</onload>
-    <onload>SetProperty(FocusedList,50,Home)</onload>
-    <onunload>SetProperty(FocusedList,50,Home)</onunload>
+    <onload>ClearProperty(FocusedList,Home)</onload>
+    <onunload>ClearProperty(FocusedList,Home)</onunload>
     <onload>ClearProperty(ListFanartContent,Home)</onload>
     <onunload>ClearProperty(ListFanartContent,Home)</onunload>
     <onload>ClearProperty(MenuFocus,Home)</onload>
@@ -113,7 +113,7 @@
                     </control>
 
                     <control type="list" id="50">
-                        <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),50) | Control.HasFocus(50)</visible>
+                        <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),50) | Control.HasFocus(50) | String.IsEmpty(Window(Home).Property(FocusedList))</visible>
                         <include>Animation_FadeInOut</include>
                         <ondown condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
                         <ondown condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</ondown>
@@ -515,9 +515,10 @@
                     <include>Home_Iconbar_Logo</include>
                     <control type="group">
                         <control type="list" id="300">
-                            <onright condition="Control.IsVisible(50)">50</onright>
-                            <onright condition="Control.IsVisible(9501)">9501</onright>
-                            <onright condition="Control.IsVisible(9502)">9502</onright>
+                            <onright condition="Control.IsVisible(50) + Integer.IsGreater(Container(50).NumItems,0)">50</onright>
+                            <onright condition="Control.IsVisible(9501) + Integer.IsGreater(Container(9501).NumItems,0)">9501</onright>
+                            <onright condition="Control.IsVisible(9502) + Integer.IsGreater(Container(9502).NumItems,0)">9502</onright>
+                            <onright condition="![Control.IsVisible(50) | Control.IsVisible(9501) | Control.IsVisible(9502)] | [Control.IsVisible(50) + !Integer.IsGreater(Container(50).NumItems,0)] | [Control.IsVisible(9501) + !Integer.IsGreater(Container(9501).NumItems,0)] | [Control.IsVisible(9502) + !Integer.IsGreater(Container(9502).NumItems,0)]">SetFocus(8)</onright>
                             <include>Home_OnFocus</include>
                             <include>Home_VideoInfo_Layout</include>
                             <include>Home_MainMenu_InfoItems</include>
@@ -546,11 +547,11 @@
                                 <width>74</width>
                                 <height>74</height>
                                 <font/>
-                                <onright>SetFocus(50,0)</onright>
+                                <onright condition="Integer.IsGreater(Container(50).NumItems,0)">SetFocus(50,0)</onright>
                                 <onleft>SetFocus(300,0)</onleft>
                                 <onup>SetFocus(300,0)</onup>
                                 <ondown>SetFocus(300,0)</ondown>
-                                <onfocus>ClearProperty(MenuFocus,Home)</onfocus>
+                                <onfocus>ClearProperty(FocusedList,Home)</onfocus>
                                 <visible allowhiddenfocus="true">Control.HasFocus(8)</visible>
                                 <texturenofocus colordiffuse="00ffffff">special://skin/extras/icons/play3.png</texturenofocus>
                                 <texturefocus colordiffuse="Selected">special://skin/extras/icons/play3.png</texturefocus>
