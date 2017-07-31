@@ -348,6 +348,7 @@
     </variable>
     
     <variable name="Label_Plot">
+        <value condition="Control.HasFocus(9501) + !String.IsEmpty(Container(9501).ListItem.Plot)">$INFO[Container(9501).ListItem.Plot]</value>
         <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Plots)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
