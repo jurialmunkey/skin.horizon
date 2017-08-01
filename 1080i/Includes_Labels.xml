@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Square">
+        <value condition="Container.Content(musicvideos) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+
     <variable name="Label_Oscars">
         <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),20 Oscar)">x20</value>
         <value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),19 Oscar)">x19</value>
