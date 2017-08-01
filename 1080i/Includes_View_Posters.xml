@@ -293,6 +293,7 @@
                     <left>40</left>
                     <top>40</top>
                     <control type="group">
+                        <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                         <width>775</width>
                         <height>436</height>
                         <control type="image">
@@ -321,6 +322,7 @@
             <control type="group">
                 <right>-80</right>
                 <top>465</top>
+                <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                 <include content="View_Posters_Info" condition="Window.IsVisible(MyVideoNav.xml)">
                     <param name="bottom" value="30" />
                     <param name="plot_height" value="300" />
@@ -352,11 +354,46 @@
                     <param name="hdsd_flag" value="true" />
                 </include>
             </control>
+            <control type="group">
+                <right>-80</right>
+                <top>0</top>
+                <visible>[[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
+                <include content="View_Posters_Info" condition="Window.IsVisible(MyVideoNav.xml)">
+                    <param name="bottom" value="30" />
+                    <param name="plot_height" value="1000" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="left" value="50" />
+                    <param name="right" value="1025" />
+                    <param name="width" value="855" />
+                    <param name="discart" value="false" />
+                    <param name="rottentomatoes" value="true" />
+                    <param name="usermeter" value="false" />
+                    <param name="tmdb" value="false" />
+                    <param name="metacritic" value="true" />
+                    <param name="imdbvotes" value="false" />
+                    <param name="hdsd_flag" value="true" />
+                </include>
+                <include content="View_Posters_Info" condition="!Window.IsVisible(MyVideoNav.xml)">
+                    <param name="bottom" value="40" />
+                    <param name="plot_height" value="1000" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="left" value="50" />
+                    <param name="right" value="1025" />
+                    <param name="width" value="855" />
+                    <param name="discart" value="false" />
+                    <param name="rottentomatoes" value="true" />
+                    <param name="usermeter" value="false" />
+                    <param name="tmdb" value="false" />
+                    <param name="metacritic" value="true" />
+                    <param name="imdbvotes" value="false" />
+                    <param name="hdsd_flag" value="true" />
+                </include>
+            </control>
         </control>
     </include>
 
     <include name="View_Posters_Info">
-        <param name="plot_height" default="170" />
+        <param name="plot_height" default="infolist3_plot_height" />
         <param name="hdsd_flag" default="false" />
         <param name="rottentomatoes" default="true" />
         <param name="imdbvotes" default="true" />
@@ -583,6 +620,7 @@
             </control>
             <control type="textbox">
                 <label fallback="19055">$VAR[Label_Plot]</label>
+                <height>$PARAM[plot_height]</height>
                 <height>infolist3_plot_height</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>

@@ -102,6 +102,7 @@
                     <control type="group">
                         <left>40</left>
                         <top>40</top>
+                        <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                         <control type="group">
                             <width>704</width>
                             <height>396</height>
@@ -145,6 +146,7 @@
                 <control type="group">
                     <right>-80</right>
                     <top>425</top>
+                    <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                     <include content="View_Posters_Info">
                         <param name="bottom" value="25" />
                         <param name="plot_height" value="300" />
@@ -153,6 +155,22 @@
                         <param name="right" value="800" />
                         <param name="width" value="1068" />
                         <param name="discart" value="false" />
+                        <param name="hdsd_flag" value="true" />
+                    </include>
+                </control>
+                <control type="group">
+                    <right>-80</right>
+                    <top>0</top>
+                    <visible>[[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
+                    <include content="View_Posters_Info">
+                        <param name="bottom" value="25" />
+                        <param name="plot_height" value="1000" />
+                        <param name="id" value="57" />
+                        <param name="left" value="50" />
+                        <param name="right" value="800" />
+                        <param name="width" value="1068" />
+                        <param name="discart" value="false" />
+                        <param name="hdsd_flag" value="true" />
                     </include>
                 </control>
                 <control type="fixedlist" id="57">
@@ -258,10 +276,10 @@
                                 <visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(season.landscape))</visible>
                                 <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                             </control>
-                            <visible>!Skin.HasSetting(DisableInfoListArt)</visible>
+                            <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                         </control>
                         <control type="group">
-                            <visible>!Skin.HasSetting(DisableInfoListArt)</visible>
+                            <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                             <top>38</top>
                             <height>22</height>
                             <include>Object_Separator_Top</include>
@@ -337,7 +355,7 @@
                             <height>40</height>
                             <textcolor>main_fg_100</textcolor>
                             <font>font_small</font>
-                            <visible>Skin.HasSetting(DisableInfoListArt)</visible>
+                            <visible>[[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                         </control>
                         <control type="textbox">
                             <top>40</top>

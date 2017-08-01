@@ -556,8 +556,12 @@
             <item>
                 <label>$VAR[Label_HideArtwork]</label>
                 <icon>special://skin/extras/icons/pictures.png</icon>
-                <onclick>Skin.ToggleSetting(DisableInfoListArt)</onclick>
-                <visible>Control.IsVisible(54)</visible>
+                <onclick condition="Control.IsVisible(54)">Skin.ToggleSetting(DisableInfoListArt.54)</onclick>
+                <onclick condition="Control.IsVisible(57)">Skin.ToggleSetting(DisableInfoListArt.57)</onclick>
+                <onclick condition="Control.IsVisible(551)">Skin.ToggleSetting(DisableInfoListArt.551)</onclick>
+                <onclick condition="Control.IsVisible(557)">Skin.ToggleSetting(DisableInfoListArt.557)</onclick>
+                <onclick condition="Control.IsVisible(558)">Skin.ToggleSetting(DisableInfoListArt.558)</onclick>
+                <visible>Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(557) | Control.IsVisible(558)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- Sort -->
