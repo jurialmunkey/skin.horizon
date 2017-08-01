@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Info_NextAired_Status">
+        <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.Status)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">$INFO[Window(Home).Property(NextAired.Status)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</value>
+    </variable>
+
+    <variable name="Label_Info_NextAired_Details">
+        <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ]$INFO[Window(Home).Property(NextAired.AirTime),,  ]$INFO[Window(Home).Property(NextAired.NextDate)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ]$INFO[Window(Home).Property(NextAired.LatestDate)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airtime),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airday),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airtime),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airday),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate)]</value>
+    </variable>
+
     <variable name="Label_Square">
         <value condition="Container.Content(musicvideos) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title]</value>
         <value>$INFO[ListItem.Label]</value>

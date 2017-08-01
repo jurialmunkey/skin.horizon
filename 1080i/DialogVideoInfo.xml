@@ -414,7 +414,6 @@
                     <control type="group">
                         <height>42</height>
                         <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-                        <visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
                         <control type="label">
                             <font>font_small</font>
                             <textcolor>main_fg_30</textcolor>
@@ -423,7 +422,7 @@
                             <align>right</align>
                             <textoffsetx>20</textoffsetx>
                             <height>100%</height>
-                            <label>$INFO[Window(Home).Property(NextAired.Status)]</label>
+                            <label>$VAR[Label_Info_NextAired_Status]</label>
                         </control>
                         <control type="label">
                             <height>42</height>
@@ -432,31 +431,7 @@
                             <textcolor>main_fg_100</textcolor>
                             <aligny>center</aligny>
                             <width>auto</width>
-                            <label>$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ]$INFO[Window(Home).Property(NextAired.AirTime),,  ]$INFO[Window(Home).Property(NextAired.NextDate)]</label>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <height>42</height>
-                        <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-                        <visible>String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
-                        <control type="label">
-                            <font>font_small</font>
-                            <textcolor>main_fg_30</textcolor>
-                            <aligny>center</aligny>
-                            <width>info_details_width</width>
-                            <align>right</align>
-                            <textoffsetx>20</textoffsetx>
-                            <height>100%</height>
-                            <label>$INFO[Window(Home).Property(NextAired.Status)]</label>
-                        </control>
-                        <control type="label">
-                            <height>42</height>
-                            <left>info_details_width</left>
-                            <font>font_small</font>
-                            <textcolor>main_fg_100</textcolor>
-                            <aligny>center</aligny>
-                            <width>auto</width>
-                            <label>$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ]$INFO[Window(Home).Property(NextAired.LatestDate)]</label>
+                            <label>$VAR[Label_Info_NextAired_Details]</label>
                         </control>
                     </control>
                 </control>
