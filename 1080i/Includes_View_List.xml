@@ -99,9 +99,11 @@
                         <left>1068</left>
                         <include>Object_Separator_Left</include>
                     </control>
+                    <include>Object_ParentFolder</include>
                     <control type="group">
                         <left>40</left>
                         <top>40</top>
+                        <visible>!ListItem.IsParentFolder</visible>
                         <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                         <control type="group">
                             <width>704</width>
@@ -245,7 +247,9 @@
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <include>Defs_Color_Overlay</include>
+                <include>Object_ParentFolder</include>
                 <control type="group">
+                    <visible>!ListItem.IsParentFolder</visible>
                     <right>40</right>
                     <left>40</left>
                     <top>40</top>
@@ -426,6 +430,7 @@
                             <texture colordiffuse="main_fg_70">$VAR[Image_HDSD]</texture>
                             <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                             <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
+                            <visible>!ListItem.IsParentFolder</visible>
                         </control>
                         <!-- Year Label -->
                         <control type="label">
@@ -450,7 +455,7 @@
                             <font>font_small</font>
                             <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                             <label>$INFO[ListItem.Label]</label>
-                            <visible>Container.Content(movies) + !String.IsEmpty(ListItem.Year)</visible>
+                            <visible>Container.Content(movies) + !String.IsEmpty(ListItem.Year) + !ListItem.IsParentFolder</visible>
                         </control>
                         <!-- Label with HDSD -->
                         <control type="label">
@@ -462,7 +467,7 @@
                             <font>font_small</font>
                             <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                             <label>$INFO[ListItem.Label]</label>
-                            <visible>[Container.Content(movies) + String.IsEmpty(ListItem.Year)] | Container.Content(episodes)</visible>
+                            <visible>[Container.Content(movies) + String.IsEmpty(ListItem.Year) + !ListItem.IsParentFolder] | Container.Content(episodes)</visible>
                         </control>
                         <!-- Label without HDSD or Year -->
                         <control type="label">
@@ -474,7 +479,7 @@
                             <font>font_small</font>
                             <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                             <label>$INFO[ListItem.Label]</label>
-                            <visible>!Container.Content(movies) + !Container.Content(episodes)</visible>
+                            <visible>[!Container.Content(movies) + !Container.Content(episodes)] | ListItem.IsParentFolder</visible>
                         </control>
                         <!-- Label 2 -->
                         <control type="label">
@@ -649,6 +654,7 @@
                                 <height>24</height>
                                 <texture colordiffuse="Selected">$VAR[Image_HDSD]</texture>
                                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                                <visible>!ListItem.IsParentFolder</visible>
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                             </control>
                             <!-- Year Label -->
@@ -662,7 +668,7 @@
                                 <label>$INFO[ListItem.Year]</label>
                                 <animation effect="slide" end="-70" condition="!Container.Content(movies) + !Container.Content(episodes)">Conditional</animation>
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
-                                <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies)</visible>
+                                <visible>!String.IsEmpty(ListItem.Year) + Container.Content(movies) + !ListItem.IsParentFolder</visible>
                             </control>
                             <!-- Label with Year and HDSD -->
                             <control type="label">
@@ -674,7 +680,7 @@
                                 <font>font_small</font>
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                                 <label>$INFO[ListItem.Label]</label>
-                                <visible>Container.Content(movies) + !String.IsEmpty(ListItem.Year)</visible>
+                                <visible>Container.Content(movies) + !String.IsEmpty(ListItem.Year) + !ListItem.IsParentFolder</visible>
                             </control>
                             <!-- Label with HDSD -->
                             <control type="label">
@@ -686,7 +692,7 @@
                                 <font>font_small</font>
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                                 <label>$INFO[ListItem.Label]</label>
-                                <visible>[Container.Content(movies) + String.IsEmpty(ListItem.Year)] | Container.Content(episodes)</visible>
+                                <visible>[Container.Content(movies) + String.IsEmpty(ListItem.Year) + !ListItem.IsParentFolder] | Container.Content(episodes)</visible>
                             </control>
                             <!-- Label without HDSD or Year -->
                             <control type="label">
@@ -698,7 +704,7 @@
                                 <font>font_small</font>
                                 <animation effect="slide" end="8" condition="String.IsEmpty(ListItem.Overlay)">Conditional</animation>
                                 <label>$INFO[ListItem.Label]</label>
-                                <visible>!Container.Content(movies) + !Container.Content(episodes)</visible>
+                                <visible>[!Container.Content(movies) + !Container.Content(episodes)] | ListItem.IsParentFolder</visible>
                             </control>
                             <!-- Label 2 -->
                             <control type="label">

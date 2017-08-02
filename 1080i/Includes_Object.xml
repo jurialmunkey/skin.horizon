@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Object_ParentFolder">
+        <control type="image">
+            <visible>ListItem.IsParentFolder</visible>
+            <texture background="true" colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
+            <aspectratio>center</aspectratio>
+        </control>
+    </include>
     <include name="Object_StarRating">
         <param name="align" default="left" />
         <param name="rating_prop" default="ListItem.Rating" />
@@ -446,7 +453,7 @@
                         <visible>$PARAM[container]ListItem.IsParentFolder | String.StartsWith($PARAM[container]ListItem.Icon,Default)</visible>
   
                         <control type="image">
-                            <aspectratio aligny="center">scale</aspectratio>
+                            <aspectratio aligny="center">center</aspectratio>
                             <texture background="true"  colordiffuse="main_fg_100" fallback="DefaultAddonNone.png">$INFO[$PARAM[container]ListItem.Icon]</texture>
                             <visible>[!Container.Content(genres) + !Container.Content(studios) + !Container.Content(countries) + !Container.Content(years) + !Container.Content(directors)] | ListItem.IsParentFolder</visible>
                         </control>

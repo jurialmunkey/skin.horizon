@@ -289,9 +289,11 @@
                     <left>855</left>
                     <include>Object_Separator_Left</include>
                 </control>
+                <include>Object_ParentFolder</include>
                 <control type="group">
                     <left>40</left>
                     <top>40</top>
+                    <visible>!ListItem.IsParentFolder</visible>
                     <control type="group">
                         <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                         <width>775</width>
@@ -406,6 +408,7 @@
             <control type="group">
                 <left>$PARAM[left]</left>
                 <right>$PARAM[right]</right>
+                <visible>!ListItem.IsParentFolder</visible>
                 <control type="group">
                     <visible>[[[String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo))] | Skin.HasSetting(DisableClearLogo)] + [String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(DisableDiscArt)]] | !$PARAM[discart]</visible>
                     <include content="View_Posters_Info_Content">
@@ -1053,6 +1056,14 @@
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
+                        <visible>!ListItem.IsParentFolder</visible>
+                    </control>
+                    <control type="image" description="Poster">
+                        <height>170</height>
+                        <bordersize>10</bordersize>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
+                        <visible>ListItem.IsParentFolder</visible>
                     </control>
                     <control type="image">
                         <height>170</height>
@@ -1136,6 +1147,14 @@
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
+                        <visible>!ListItem.IsParentFolder</visible>
+                    </control>
+                    <control type="image" description="Poster">
+                        <height>170</height>
+                        <bordersize>10</bordersize>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
+                        <visible>ListItem.IsParentFolder</visible>
                     </control>
                     <control type="image">
                         <height>170</height>
