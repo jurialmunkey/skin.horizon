@@ -1,3 +1,7 @@
+[B]1.0.18[/B]
+Add ability to hide artwork for info views
+Add ability to switch between showing media flags or ratings in sideblade
+
 [B]1.0.17[/B]
 Add 4k source flag
 Add two new views - Icons Info and Banner Info

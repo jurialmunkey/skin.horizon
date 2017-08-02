@@ -521,6 +521,7 @@
                     <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
                     <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                     <visible>$PARAM[hdsd_flag]</visible>
+                    <visible>!Skin.HasSetting(DisableInfoRatings)</visible>
                 </control>
                 <control type="label">
                     <label>  |  </label>
@@ -531,6 +532,7 @@
                     <font>font_small</font>
                     <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                     <visible>$PARAM[hdsd_flag]</visible>
+                    <visible>!Skin.HasSetting(DisableInfoRatings)</visible>
                 </control>
                 <control type="label">
                     <label>$VAR[Label_ShowCase_InfoLine]</label>
@@ -545,26 +547,38 @@
                 <left>0</left>
                 <right>$PARAM[right]</right>
                 <control type="group">
-                    <top>-17</top>
-                    <left>-16</left>
-                    <include>Object_StarRating</include>
-                </control>
-                <control type="group">
-                    <top>24</top>
-                    <left>256</left>
-                    <width>$PARAM[width]</width>
-                    <include content="Object_Ratings">
+                    <visible>Skin.HasSetting(DisableInfoRatings)</visible>
+                    <include content="Object_Flags">
+                        <param name="container" value="" />
                         <param name="directory" value="color" />
                         <param name="align" value="left" />
-                        <param name="width" value="$PARAM[width]" />
-                        <param name="rottentomatoes" value="$PARAM[rottentomatoes]" />
-                        <param name="imdbvotes" value="$PARAM[imdbvotes]" />
-                        <param name="usermeter" value="$PARAM[usermeter]" />
-                        <param name="imdb" value="$PARAM[imdb]" />
-                        <param name="tmdb" value="$PARAM[tmdb]" />
-                        <param name="metacritic" value="$PARAM[metacritic]" />
-                        <param name="oscars" value="$PARAM[oscars]" />
+                        <param name="ratings" value="true" />
                     </include>
+                </control>
+                <control type="group">
+                    <visible>!Skin.HasSetting(DisableInfoRatings)</visible>
+                    <control type="group">
+                        <top>-17</top>
+                        <left>-16</left>
+                        <include>Object_StarRating</include>
+                    </control>
+                    <control type="group">
+                        <top>24</top>
+                        <left>256</left>
+                        <width>$PARAM[width]</width>
+                        <include content="Object_Ratings">
+                            <param name="directory" value="color" />
+                            <param name="align" value="left" />
+                            <param name="width" value="$PARAM[width]" />
+                            <param name="rottentomatoes" value="$PARAM[rottentomatoes]" />
+                            <param name="imdbvotes" value="$PARAM[imdbvotes]" />
+                            <param name="usermeter" value="$PARAM[usermeter]" />
+                            <param name="imdb" value="$PARAM[imdb]" />
+                            <param name="tmdb" value="$PARAM[tmdb]" />
+                            <param name="metacritic" value="$PARAM[metacritic]" />
+                            <param name="oscars" value="$PARAM[oscars]" />
+                        </include>
+                    </control>
                 </control>
             </control>
             <control type="label">

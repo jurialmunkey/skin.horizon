@@ -43,8 +43,17 @@
     </variable>
 
     <variable name="Label_HideArtwork">
-        <value condition="Skin.HasSetting(DisableInfoListArt)">$LOCALIZE[31256]</value>
+        <value condition="Skin.HasSetting(DisableInfoListArt.54) + Control.IsVisible(54)">$LOCALIZE[31256]</value>
+        <value condition="Skin.HasSetting(DisableInfoListArt.57) + Control.IsVisible(57)">$LOCALIZE[31256]</value>
+        <value condition="Skin.HasSetting(DisableInfoListArt.551) + Control.IsVisible(551)">$LOCALIZE[31256]</value>
+        <value condition="Skin.HasSetting(DisableInfoListArt.557) + Control.IsVisible(557)">$LOCALIZE[31256]</value>
+        <value condition="Skin.HasSetting(DisableInfoListArt.558) + Control.IsVisible(558)">$LOCALIZE[31256]</value>
         <value>$LOCALIZE[31148]</value>
+    </variable>
+
+    <variable name="Label_HideRatings">
+        <value condition="Skin.HasSetting(DisableInfoRatings)">$LOCALIZE[31302]</value>
+        <value>$LOCALIZE[31301]</value>
     </variable>
 
     <variable name="Label_Widget">
