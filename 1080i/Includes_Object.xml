@@ -653,6 +653,7 @@
         <param name="usermeter" default="true" />
         <param name="imdb" default="true" />
         <param name="tmdb" default="true" />
+        <param name="tvdb" default="true" />
         <param name="metacritic" default="true" />
         <param name="oscars" default="true" />
         <param name="top250" default="true" />
@@ -722,6 +723,28 @@
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB))</visible>
                     <visible>$PARAM[tmdb]</visible>
                 </control>
+
+                <control type="image">
+                    <top>0</top>
+                    <width>32</width>
+                    <height>32</height>
+                    <texture colordiffuse="main_fg_100">flags/$PARAM[directory]/ratings/tvdb.png</texture>
+                    <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TVDB))</visible>
+                    <visible>$PARAM[tvdb]</visible>
+                </control>
+                <control type="label">
+                    <textcolor>main_fg_70</textcolor>
+                    <top>2</top>
+                    <width>auto</width>
+                    <height>28</height>
+                    <align>right</align>
+                    <font>font_tiny</font>
+                    <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Rating.TVDB), ,   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TVDB))</visible>
+                    <visible>$PARAM[tvdb]</visible>
+                </control>
+
+
                 <control type="image">
                     <top>0</top>
                     <width>32</width>
