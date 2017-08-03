@@ -390,6 +390,29 @@
                     <control type="group">
                         <height>42</height>
                         <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_30</textcolor>
+                            <aligny>center</aligny>
+                            <width>info_details_width</width>
+                            <align>right</align>
+                            <textoffsetx>20</textoffsetx>
+                            <height>100%</height>
+                            <label>$VAR[Label_Info_NextAired_Status]</label>
+                        </control>
+                        <control type="label">
+                            <height>42</height>
+                            <left>info_details_width</left>
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <label>$VAR[Label_Info_NextAired_Details]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>42</height>
+                        <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
                         <visible>!String.IsEmpty(ListItem.Property(WatchedEpisodes))</visible>
                         <control type="label">
                             <font>font_small</font>
@@ -409,29 +432,6 @@
                             <aligny>center</aligny>
                             <width>auto</width>
                             <label>$INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[20163] ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[16102]]</label>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <height>42</height>
-                        <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-                        <control type="label">
-                            <font>font_small</font>
-                            <textcolor>main_fg_30</textcolor>
-                            <aligny>center</aligny>
-                            <width>info_details_width</width>
-                            <align>right</align>
-                            <textoffsetx>20</textoffsetx>
-                            <height>100%</height>
-                            <label>$VAR[Label_Info_NextAired_Status]</label>
-                        </control>
-                        <control type="label">
-                            <height>42</height>
-                            <left>info_details_width</left>
-                            <font>font_small</font>
-                            <textcolor>main_fg_100</textcolor>
-                            <aligny>center</aligny>
-                            <width>auto</width>
-                            <label>$VAR[Label_Info_NextAired_Details]</label>
                         </control>
                     </control>
                 </control>
