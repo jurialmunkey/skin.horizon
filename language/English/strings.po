@@ -1406,3 +1406,8 @@ msgstr ""
 msgctxt "#31302"
 msgid "Show ratings"
 msgstr ""
+
+#: /1080i/DialogAddonInfo.xml
+msgctxt "#31303"
+msgid "Latest Changes"
+msgstr ""

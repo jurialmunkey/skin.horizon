@@ -46,12 +46,17 @@
                     <control type="textbox">
                         <visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
                         <top>8</top>
-                        <height>125</height>
+                        <height max="130">auto</height>
                         <font>font_plotbox</font>
                         <textcolor>main_fg_70</textcolor>
                         <label fallback="19055">$INFO[ListItem.AddonDisclaimer]</label>
                     </control>
+                    <control type="group">
+                        <height>25</height>
+                        <visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
+                    </control>
                     <control type="grouplist">
+                        <visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
                         <top>20</top>
                         <height>42</height>
                         <left>0</left>
@@ -70,11 +75,43 @@
                         </control>
                     </control>
                     <control type="textbox">
+                        <visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
                         <top>8</top>
-                        <height>580</height>
+                        <height max="425">auto</height>
                         <font>font_plotbox</font>
                         <textcolor>main_fg_70</textcolor>
-                        <label fallback="19055">$VAR[Label_Plot]</label>
+                        <label fallback="19055">$INFO[ListItem.AddonDescription]</label>
+                    </control>
+                    <control type="group">
+                        <height>25</height>
+                        <visible>!String.IsEmpty(ListItem.AddonDescription) + !String.IsEmpty(ListItem.AddonNews)</visible>
+                    </control>
+                    <control type="grouplist">
+                        <visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+                        <top>20</top>
+                        <height>42</height>
+                        <left>0</left>
+                        <align>left</align>
+                        <itemgap>12</itemgap>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <orientation>horizontal</orientation>
+                        <include>Object_DownArrows</include>
+                        <control type="label">
+                            <font>font_small</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <aligny>center</aligny>
+                            <width>auto</width>
+                            <height>100%</height>
+                            <label>$LOCALIZE[31303]</label>
+                        </control>
+                    </control>
+                    <control type="textbox">
+                        <visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+                        <top>8</top>
+                        <height>auto</height>
+                        <font>font_plotbox</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label fallback="19055">$INFO[ListItem.AddonNews]</label>
                     </control>
                 </control>
             </control>
