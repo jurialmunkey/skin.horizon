@@ -550,7 +550,7 @@
                 <left>0</left>
                 <right>$PARAM[right]</right>
                 <control type="group">
-                    <visible>Skin.HasSetting(DisableInfoRatings)</visible>
+                    <visible>Skin.HasSetting(DisableInfoRatings) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(sets) + !ListItem.IsCollection</visible>
                     <include content="Object_Flags">
                         <param name="container" value="" />
                         <param name="directory" value="color" />
@@ -559,7 +559,7 @@
                     </include>
                 </control>
                 <control type="group">
-                    <visible>!Skin.HasSetting(DisableInfoRatings)</visible>
+                    <visible>!Skin.HasSetting(DisableInfoRatings) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | ListItem.IsCollection</visible>
                     <control type="group">
                         <top>-17</top>
                         <left>-16</left>
