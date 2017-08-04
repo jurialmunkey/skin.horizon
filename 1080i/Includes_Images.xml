@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Image_AutoUpdate">
+        <value condition="String.Contains(Control.GetLabel(13),*)">special://skin/extras/icons/antenna-on.png</value>
+        <value>special://skin/extras/icons/antenna.png</value>
+    </variable>
+
     <variable name="Image_HDSD">
         <value condition="String.IsEqual(ListItem.VideoResolution,4K) | Integer.IsEqual(ListItem.VideoResolution,2160)">flags/4k.png</value>
         <value condition="Integer.IsGreater(ListItem.VideoResolution,719)">flags/hd.png</value>

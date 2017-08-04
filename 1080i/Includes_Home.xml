@@ -444,7 +444,7 @@
             <!-- Auto Update -->
             <item>
                 <label>$INFO[Control.GetLabel(13)]</label>
-                <icon>special://skin/extras/icons/antenna.png</icon>
+                <icon>$VAR[Image_AutoUpdate]</icon>
                 <onclick>SetFocus(13)</onclick>
                 <onclick>Select</onclick>
                 <onclick>SetFocus(300)</onclick>
