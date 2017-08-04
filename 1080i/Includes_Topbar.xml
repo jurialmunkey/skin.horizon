@@ -191,7 +191,7 @@
                 <fadetime>50</fadetime>
                 <timeperimage>50</timeperimage>
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
-                <visible>!Player.Paused</visible>
+                <visible>!Player.Paused + !Player.Caching</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
             </control>
             <control type="image">
@@ -202,8 +202,41 @@
                 <height>32</height>
                 <fadetime>50</fadetime>
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
-                <visible>Player.Paused</visible>
+                <visible>Player.Paused + !Player.Caching</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+            </control>
+            <control type="group">
+                <width>48</width>
+                <height>48</height>
+                <top>-2</top>
+                <left>-8</left>
+                <visible>Player.Caching</visible>
+                <control type="image">
+                    <description>Busy animation</description>
+                    <centerleft>50%</centerleft>
+                    <top>0</top>
+                    <width>100%</width>
+                    <height>100%</height>
+                    <texture>dialog/loading-back.png</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
+                <control type="group">
+                    <description>Busy animation</description>
+                    <centerleft>50%</centerleft>
+                    <top>0</top>
+                    <width>100%</width>
+                    <height>100%</height>
+                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight2]">dialog/loading-spinner.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
+                    </control>
+                </control>
             </control>
             <control type="label">
                 <left>8</left>
