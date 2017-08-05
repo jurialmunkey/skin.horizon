@@ -473,6 +473,7 @@
                     <scroll>true</scroll>
                     <visible>Skin.HasSetting(ShowPathInfo)</visible>
                 </control>
+
             </control>
             <control type="group">
                 <visible>!Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
@@ -490,6 +491,7 @@
                     <include>Home_Iconbar_Logo</include>
                     <control type="group">
                         <control type="list" id="300">
+                            <onleft>9504</onleft>
                             <onright condition="Control.IsVisible(50) + Integer.IsGreater(Container(50).NumItems,0)">50</onright>
                             <onright condition="Control.IsVisible(9501) + Integer.IsGreater(Container(9501).NumItems,0)">9501</onright>
                             <onright condition="Control.IsVisible(9502) + Integer.IsGreater(Container(9502).NumItems,0)">9502</onright>
@@ -583,6 +585,26 @@
 
                 <include>Object_PlotOverlay</include>
             </control>
+        </control>
+
+        <control type="group">
+            <visible>Control.HasFocus(9504)</visible>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <control type="image">
+                <texture background="true">$VAR[Image_Fanart]</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+        </control>
+
+        <control type="button" id="9504">
+            <onleft>300</onleft>
+            <onup>300</onup>
+            <ondown>300</ondown>
+            <onright>300</onright>
+            <onclick>SetFocus(300)</onclick>
+            <onback>300</onback>
+            <include>Defs_Hidden_Button</include>
         </control>
 
 
