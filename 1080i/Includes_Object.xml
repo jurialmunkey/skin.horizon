@@ -1156,31 +1156,6 @@
             </control>
         </control>
 
-        <control type="group">
-            <visible>Control.HasFocus(9602)</visible>
-            <include>Animation_FadeIn</include>
-            <include>Animation_FadeOut</include>
-            <control type="image">
-                <texture background="true">$VAR[Image_Fanart]</texture>
-                <aspectratio>scale</aspectratio>
-            </control>
-        </control>
-        <control type="button" id="9602">
-            <width>1</width>
-            <height>1</height>
-            <visible allowhiddenfocus="true">false</visible>
-            <onback condition="Control.IsVisible(9000)">9000</onback>
-            <onup condition="Control.IsVisible(9000)">9000</onup>
-            <onleft condition="Control.IsVisible(9000)">9000</onleft>
-            <onright condition="Control.IsVisible(9000)">9000</onright>
-            <ondown condition="Control.IsVisible(9000)">9000</ondown>
-            <onback condition="!Control.IsVisible(9000)">50</onback>
-            <onup condition="!Control.IsVisible(9000)">50</onup>
-            <onleft condition="!Control.IsVisible(9000)">50</onleft>
-            <onright condition="!Control.IsVisible(9000)">50</onright>
-            <ondown condition="!Control.IsVisible(9000)">50</ondown>
-        </control>
-
     </include>
 
 </includes>
