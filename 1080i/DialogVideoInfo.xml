@@ -592,7 +592,7 @@
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
             <control type="image">
-                <texture background="true">$VAR[Image_Fanart]</texture>
+                <texture background="true">$VAR[Global_Background_Image_Var]</texture>
                 <aspectratio>scale</aspectratio>
             </control>
         </control>
