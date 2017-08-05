@@ -5,44 +5,40 @@
     <controls>
 
         <include>Global_Background</include>
-        <include>View_Layout</include>
         <include>Topbar</include>
         <include>Home</include>
 
         <control type="group">
             <include>Animation_Right</include>
-            <include>Dialog_Settings_Panel</include>
+            <include>View_Group</include>
             <control type="group">
                 <description>Left panel</description>
-                <left>40</left>
-                <top>sidepad</top>
-                <bottom>0</bottom>
-                <width>870</width>
+                <left>50</left>
+                <top>50</top>
+                <bottom>50</bottom>
+                <width>842</width>
                 <control type="label" id="101">
                     <description>Header Label</description>
-                    <top>5</top>
-                    <left>30</left>
-                    <right>30</right>
-                    <height>66</height>
+                    <top>0</top>
+                    <left>0</left>
+                    <right>170</right>
+                    <height>50</height>
                     <align>left</align>
                     <font>font_tiny_bold</font>
+                    <haspath>true</haspath>
                     <textcolor>panel_fg_70</textcolor>
                 </control>
                 <control type="list" id="20">
                     <description>Left File List</description>
-                    <left>15</left>
-                    <top>90</top>
-                    <bottom>15</bottom>
-                    <right>15</right>
-                    <onleft>SetFocus(300,0)</onleft>
+                    <right>25</right>
+                    <width>817</width>
+                    <top>70</top>
+                    <height>759</height>
+                    <onleft>21</onleft>
                     <onright>21</onright>
-                    <onup>300</onup>
+                    <onup>20</onup>
                     <ondown>20</ondown>
-                    
-                    <itemlayout height="69" width="840">
-
-
-
+                    <itemlayout height="69" width="817">
                         <control type="label">
                             <left>30</left>
                             <width>720</width>
@@ -62,7 +58,7 @@
 
                     </itemlayout>
 
-                    <focusedlayout height="69" width="840">
+                    <focusedlayout height="69" width="817">
 
                         <control type="image">
                             <width>100%</width>
@@ -92,45 +88,54 @@
                 </control>
                 <control type="label" id="12">
                     <description>Header Label</description>
-                    <left>23</left>
-                    <top>882</top>
-                    <height>66</height>
-                    <width>480</width>
-                    <align>left</align>
-                    <label>-</label>
+                    <top>0</top>
+                    <left>0</left>
+                    <right>25</right>
+                    <height>50</height>
+                    <align>right</align>
+                    <font>font_tiny_bold</font>
+                    <textcolor>panel_fg_70</textcolor>
                 </control>
             </control>
 
             <control type="group">
-                <description>Right panel</description>
-                <right>sidepad</right>
-                <top>sidepad</top>
-                <bottom>0</bottom>
-                <width>870</width>
+                <width>2</width>
+                <centerleft>50%</centerleft>
+                <top>50</top>
+                <bottom>25</bottom>
+                <include>Object_Separator_Right</include>
+            </control>
+
+            <control type="group">
+                <right>50</right>
+                <top>50</top>
+                <bottom>50</bottom>
+                <width>842</width>
 
                 <control type="label" id="102">
                     <description>Header Label</description>
-                    <top>5</top>
-                    <left>30</left>
-                    <right>30</right>
-                    <height>66</height>
+                    <top>0</top>
+                    <left>25</left>
+                    <right>130</right>
+                    <height>50</height>
                     <align>left</align>
+                    <haspath>true</haspath>
                     <font>font_tiny_bold</font>
                     <textcolor>panel_fg_70</textcolor>
                 </control>
 
                 <control type="list" id="21">
                     <description>Left File List</description>
-                    <left>15</left>
-                    <top>90</top>
-                    <bottom>15</bottom>
-                    <right>15</right>
+                    <left>25</left>
+                    <width>817</width>
+                    <top>70</top>
+                    <height>759</height>
                     <onleft>20</onleft>
-                    <onright>SetFocus(300,5)</onright>
-                    <onup>300</onup>
+                    <onright>20</onright>
+                    <onup>21</onup>
                     <ondown>21</ondown>
                     
-                    <itemlayout height="69" width="840">
+                    <itemlayout height="69" width="817">
                         <control type="label">
                             <left>30</left>
                             <width>720</width>
@@ -147,7 +152,7 @@
                             <info>ListItem.Label2</info>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="69" width="840">
+                    <focusedlayout height="69" width="817">
                         <control type="image">
                             <width>100%</width>
                             <height>66</height>
@@ -171,14 +176,15 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="label" id="22">
+                <control type="label" id="13">
                     <description>Header Label</description>
-                    <left>23</left>
-                    <top>882</top>
-                    <height>66</height>
-                    <width>480</width>
-                    <align>left</align>
-                    <label>-</label>
+                    <top>0</top>
+                    <left>0</left>
+                    <right>0</right>
+                    <height>50</height>
+                    <align>right</align>
+                    <font>font_tiny_bold</font>
+                    <textcolor>panel_fg_70</textcolor>
                 </control>
             </control>
         </control>
