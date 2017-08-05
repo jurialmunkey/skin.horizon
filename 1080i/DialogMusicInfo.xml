@@ -69,7 +69,7 @@
                 <control type="group">
                     <control type="list" id="300">
                         <onright>8</onright>
-                        <onleft>8</onleft>
+                        <onleft>9504</onleft>
                         <include>Home_OnFocus</include>
                         <include>Home_VideoInfo_Layout</include>
                         <include>Home_MainMenu_InfoItems</include>
@@ -119,7 +119,27 @@
             </control>
 
             <include>Object_PlotOverlay</include>
-        </control>    
+        </control>
+
+        <control type="group">
+            <visible>Control.HasFocus(9504)</visible>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <control type="image">
+                <texture background="true">$VAR[Global_Background_Image_Var]</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+        </control>
+
+        <control type="button" id="9504">
+            <onleft>300</onleft>
+            <onup>300</onup>
+            <ondown>300</ondown>
+            <onright>300</onright>
+            <onclick>SetFocus(300)</onclick>
+            <onback>300</onback>
+            <include>Defs_Hidden_Button</include>
+        </control>
 
         <!-- Hidden Buttons -->
         <control type="button" id ="9003">

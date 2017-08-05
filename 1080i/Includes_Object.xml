@@ -1156,6 +1156,26 @@
             </control>
         </control>
 
+        <control type="group">
+            <visible>Control.HasFocus(9602)</visible>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <control type="image">
+                <texture background="true">$VAR[Global_Background_Image_Var]</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+        </control>
+
+        <control type="button" id="9602">
+            <onleft>300</onleft>
+            <onup>300</onup>
+            <ondown>300</ondown>
+            <onright>300</onright>
+            <onclick>SetFocus(300)</onclick>
+            <onback>300</onback>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
     </include>
 
 </includes>
