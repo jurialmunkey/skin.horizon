@@ -1276,6 +1276,7 @@
 
                     <control type="group">
                         <width>771</width>
+                        <include>Animation_FocusBounce_Small</include>
                         <control type="image" description="Poster">
                             <bordersize>10</bordersize>
                             <include>Defs_Shadow_Small</include>
