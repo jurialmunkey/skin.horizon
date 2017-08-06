@@ -82,7 +82,7 @@ msgstr ""
 
 #: /1080i/MyVideoNav.xml
 msgctxt "#31014"
-msgid "Show extra fanart"
+msgid "Display extra fanart"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -122,7 +122,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31022"
-msgid "Show animated artwork where available"
+msgid "Use animated artwork where available"
 msgstr ""
 
 #: /1080i/Includes_Statusbar.xml
@@ -257,7 +257,7 @@ msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31049"
-msgid "Show artist fanart stored from the library database on the music visualisation screen."
+msgid "Display artist fanart stored from the library database on the music visualisation screen."
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -277,12 +277,12 @@ msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31053"
-msgid "Show discart in showcase viewtypes. Available discart overrides logo if both options are enabled."
+msgid "Display discart in showcase viewtypes. Available discart overrides logo if both options are enabled."
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31054"
-msgid "Show logo in showcase viewtypes. Available discart overrides logo if both options are enabled."
+msgid "Display logo in showcase viewtypes. Available discart overrides logo if both options are enabled."
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -291,23 +291,8 @@ msgid "Use skinhelper to provide animated posters and fanart. These can be downl
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
-msgctxt "#31056"
-msgid "Show fanart instead of episode thumbs on home widgets. Useful to prevent spoilers."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31057"
-msgid "Use skinhelper to provide random fanart background walls for hub windows."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
 msgctxt "#31058"
 msgid "Change the highlight focus colour used throughout the skin."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31059"
-msgid "Show a subtle colour glow effect around the selection box of focused items."
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -368,16 +353,6 @@ msgstr ""
 #: /1080i/Includes_Labels.xml
 msgctxt "#31071"
 msgid "IMDB Top250"
-msgstr ""
-
-#: /1080i/SkinSettings.xml
-msgctxt "#31072"
-msgid "Show clearlogo in upper right corner of fanart"
-msgstr ""
-
-#: /1080i/SkinSettings.xml
-msgctxt "#31073"
-msgid "Show discart"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -447,12 +422,12 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31087"
-msgid "Show colour overlay effect"
+msgid "Use colour overlay effect"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31088"
-msgid "Show scrolling text effect"
+msgid "Use scrolling text effect"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -556,7 +531,7 @@ msgid "Background"
 msgstr ""
 
 msgctxt "#31111"
-msgid "Show now playing video in background"
+msgid "Display now playing video in background"
 msgstr ""
 
 msgctxt "#31112"
@@ -571,10 +546,6 @@ msgctxt "#31114"
 msgid "Now Playing"
 msgstr ""
 
-msgctxt "#31115"
-msgid "Show header"
-msgstr ""
-
 msgctxt "#31116"
 msgid "DVD Menu"
 msgstr ""
@@ -584,11 +555,11 @@ msgid "3D Mode"
 msgstr ""
 
 msgctxt "#31118"
-msgid "Show artist slideshow"
+msgid "Display artist slideshow"
 msgstr ""
 
 msgctxt "#31119"
-msgid "Show visualisation behind slideshow"
+msgid "Display visualisation behind slideshow"
 msgstr ""
 
 msgctxt "#31120"
@@ -596,7 +567,7 @@ msgid "Animate artist slideshow"
 msgstr ""
 
 msgctxt "#31121"
-msgid "Show fanart"
+msgid "Display fanart"
 msgstr ""
 
 msgctxt "#31122"
@@ -635,7 +606,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31130"
-msgid "Show media flags with video osd info"
+msgid "Display media flags with video info"
 msgstr ""
 
 #: /1080i/MusicOSD.xml
@@ -698,7 +669,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31145"
-msgid "Show poster and plot when video is paused"
+msgid "Display poster and plot when video is paused"
 msgstr ""
 
 msgctxt "#31146"
@@ -737,11 +708,6 @@ msgid "Sort by:"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
-msgctxt "#31154"
-msgid "Only show plot when pressing info."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
 msgctxt "#31155"
 msgid "Disable the bounce in animation when scrolling between items."
 msgstr ""
@@ -758,7 +724,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31158"
-msgid "Automatically show visualisation after starting a song"
+msgid "Automatically open visualisation after starting a song"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -823,7 +789,7 @@ msgid "Video Extras"
 msgstr ""
 
 msgctxt "#31172"
-msgid "Show music visualisation in background"
+msgid "Display music visualisation in background"
 msgstr ""
 
 msgctxt "#31173"
@@ -887,7 +853,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31186"
-msgid "Show osd submenu"
+msgid "Display osd submenu"
 msgstr ""
 
 msgctxt "#31187"
@@ -913,7 +879,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31192"
-msgid "Show focus bounce animation"
+msgid "Use focus bounce animation"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -955,12 +921,12 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31201"
-msgid "Only show seekbar when pressing info"
+msgid "Pressing info only displays seekbar (hides poster and plot)"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31202"
-msgid "Show discart in showcase viewtype"
+msgid "Display discart in showcase viewtype"
 msgstr ""
 
 msgctxt "#31203"
@@ -1007,17 +973,13 @@ msgctxt "#31213"
 msgid "Today"
 msgstr ""
 
-msgctxt "#31214"
-msgid "Show plot"
-msgstr ""
-
 msgctxt "#31215"
 msgid "Unwatched"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31216"
-msgid "Show logo in showcase viewtype"
+msgid "Display logo in showcase viewtype"
 msgstr ""
 
 #: /1080i/Includes_Home.xml
@@ -1089,11 +1051,6 @@ msgstr ""
 
 msgctxt "#31232"
 msgid "Reset path"
-msgstr ""
-
-#: /1080i/SkinSettings.xml
-msgctxt "#31233"
-msgid "Show glow around selection boxes"
 msgstr ""
 
 #: /1080i/SettingsProfile.xml
@@ -1197,12 +1154,12 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31255"
-msgid "Show generated landscape art"
+msgid "Use generated landscape art"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31256"
-msgid "Show artwork"
+msgid "Display artwork"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1212,7 +1169,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31258"
-msgid "Show clearart with seekbar"
+msgid "Display clearart with seekbar"
 msgstr ""
 
 msgctxt "#31259"
@@ -1289,7 +1246,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31276"
-msgid "Show parallax effect on background when opening sideblade"
+msgid "Use parallax effect on background when opening sideblade"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1299,7 +1256,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31278"
-msgid "Show filename and path in video info"
+msgid "Display filename and path in video info"
 msgstr ""
 
 msgctxt "#31279"
@@ -1318,17 +1275,9 @@ msgctxt "#31282"
 msgid "on"
 msgstr ""
 
-msgctxt "#31283"
-msgid "Always show the home menubar"
-msgstr ""
-
 #: MPAA Rating
 msgctxt "#31284"
 msgid "Classification"
-msgstr ""
-
-msgctxt "#31285"
-msgid "Pressing back opens home menubar"
 msgstr ""
 
 msgctxt "#31286"
@@ -1339,32 +1288,12 @@ msgctxt "#31287"
 msgid "Reset to default"
 msgstr ""
 
-msgctxt "#31288"
-msgid "Always show widgets (return home on focusing menubar)"
-msgstr ""
-
 msgctxt "#31289"
 msgid "Awards"
 msgstr ""
 
 msgctxt "#31290"
 msgid "Consensus"
-msgstr ""
-
-msgctxt "#31291"
-msgid "Hub items"
-msgstr ""
-
-msgctxt "#31292"
-msgid "Hub"
-msgstr ""
-
-msgctxt "#31293"
-msgid "Addon hub"
-msgstr ""
-
-msgctxt "#31294"
-msgid "Hubs"
 msgstr ""
 
 #: /1080i/Includes_View_Posters.xml
@@ -1394,17 +1323,17 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31300"
-msgid "Show next up episodes instead of cast in tvshow info dialog"
+msgid "Display next up episodes instead of cast in tvshow info dialog"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31301"
-msgid "Show media flags"
+msgid "Display media flags"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31302"
-msgid "Show ratings"
+msgid "Display ratings"
 msgstr ""
 
 #: /1080i/DialogAddonInfo.xml
