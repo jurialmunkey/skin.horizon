@@ -544,6 +544,20 @@
                 <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
+            <!-- Sort -->
+            <item>
+                <label>$INFO[Control.GetLabel(3)]</label>
+                <icon>special://skin/extras/icons/sort2.png</icon>
+                <onclick>SendClick(3)</onclick>
+                <visible>Control.IsEnabled(3)</visible>
+            </item>
+            <!-- Ascend Descend -->
+            <item>
+                <label>$INFO[Control.GetLabel(4)]</label>
+                <icon>special://skin/extras/icons/sort.png</icon>
+                <onclick>SendClick(4)</onclick>
+                <visible>Control.IsEnabled(4)</visible>
+            </item>
             <!-- Wraplist -->
             <item>
                 <label>$VAR[Label_WrapList]</label>
@@ -551,6 +565,15 @@
                 <onclick>Skin.ToggleSetting(WrapList)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(52) | Control.IsVisible(56)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            </item>
+            <!-- Flipside -->
+            <item>
+                <label>$LOCALIZE[31304]</label>
+                <icon>special://skin/extras/icons/signpost.png</icon>
+                <onclick>Skin.ToggleSetting(FlipSide.553)</onclick>
+                <onclick>ReloadSkin()</onclick>
+                <visible>Control.IsVisible(553)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- InfoList Hide Artwork -->
@@ -573,20 +596,6 @@
                 <visible>Control.IsVisible(52) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(551) | Control.IsVisible(557) | Control.IsVisible(558)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
-            </item>
-            <!-- Sort -->
-            <item>
-                <label>$INFO[Control.GetLabel(3)]</label>
-                <icon>special://skin/extras/icons/sort2.png</icon>
-                <onclick>SendClick(3)</onclick>
-                <visible>Control.IsEnabled(3)</visible>
-            </item>
-            <!-- Ascend Descend -->
-            <item>
-                <label>$INFO[Control.GetLabel(4)]</label>
-                <icon>special://skin/extras/icons/sort.png</icon>
-                <onclick>SendClick(4)</onclick>
-                <visible>Control.IsEnabled(4)</visible>
             </item>
             <!-- Search -->
             <item>

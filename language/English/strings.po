@@ -1411,3 +1411,8 @@ msgstr ""
 msgctxt "#31303"
 msgid "Latest Changes"
 msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31304"
+msgid "Switch artwork/info"
+msgstr ""

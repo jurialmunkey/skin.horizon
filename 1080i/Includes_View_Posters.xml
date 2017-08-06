@@ -139,6 +139,7 @@
                     <param name="id" value="553" />
                     <param name="orientation" value="vertical" />
                     <param name="bigbanner" value="true" />
+                    <param name="flipside" value="Skin.HasSetting(FlipSide.553)" />
                 </include>
             </control>
 
@@ -660,6 +661,7 @@
 
     <include name="View_Posters_Layout">
         <param name="id" default="51" />
+        <param name="flipside" default="false" />
         <param name="setfanart" default="false" />
         <param name="orientation" default="vertical" />
         <param name="landscape" default="false" />
@@ -1236,6 +1238,7 @@
                     <bottom>$PARAM[bottom_offset]</bottom>
 
                     <control type="group">
+                        <include condition="$PARAM[flipside]">View_RightSide</include>
                         <width>771</width>
                         <control type="image" description="Poster">
                             <bordersize>10</bordersize>
@@ -1260,6 +1263,7 @@
 
                     <include content="View_BigBanner_Content">
                         <param name="id" value="$PARAM[id]" />
+                        <param name="flipside" value="$PARAM[flipside]" />
                     </include>
                 </control>
             </itemlayout>
@@ -1275,6 +1279,7 @@
                     <bottom>$PARAM[bottom_offset]</bottom>
 
                     <control type="group">
+                        <include condition="$PARAM[flipside]">View_RightSide</include>
                         <width>771</width>
                         <include>Animation_FocusBounce_Small</include>
                         <control type="image" description="Poster">
@@ -1304,6 +1309,7 @@
 
                     <include content="View_BigBanner_Content">
                         <param name="id" value="$PARAM[id]" />
+                        <param name="flipside" value="$PARAM[flipside]" />
                     </include>
 
                 </control>
@@ -1313,75 +1319,85 @@
         </definition>
     </include>
 
+    <include name="View_RightSide"><right>0</right></include>
+
+    <include name="View_BigBanner_RightSide"><right>801</right></include>
+    <include name="View_BigBanner_LeftSide"><left>801</left></include>
+
     <include name="View_BigBanner_Content">
-        <control type="group">
-            <left>801</left>
-            <top>30</top>
-            <right>30</right>
-            <bottom>30</bottom>
-            <control type="label">
-                <label>$INFO[ListItem.Label]</label>
-                <height>90</height>
-                <aligny>top</aligny>
-                <textcolor>main_fg_100</textcolor>
-                <font>font_topbar</font>
-            </control>
+        <param name="flipside" default="false" />
+        <definition>
             <control type="group">
-                <visible>Container.Content(movies) | Container.Content(episodes)</visible>
-                <top>60</top>
-                <height>40</height>
-                <control type="image">
-                    <left>4</left>
-                    <top>10</top>
-                    <width>37</width>
-                    <height>24</height>
-                    <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
+                <include condition="!$PARAM[flipside]">View_BigBanner_LeftSide</include>
+                <include condition="$PARAM[flipside]">View_BigBanner_RightSide</include>
+                <top>10</top>
+                <right>10</right>
+                <left>10</left>
+                <bottom>10</bottom>
+                <control type="label">
+                    <label>$INFO[ListItem.Label]</label>
+                    <height>90</height>
+                    <aligny>top</aligny>
+                    <textcolor>main_fg_100</textcolor>
+                    <font>font_topbar</font>
+                </control>
+                <control type="group">
+                    <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                    <top>60</top>
+                    <height>40</height>
+                    <control type="image">
+                        <left>4</left>
+                        <top>10</top>
+                        <width>37</width>
+                        <height>24</height>
+                        <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
+                    </control>
+                    <control type="label">
+                        <left>45</left>
+                        <label>$VAR[Label_ShowCase_InfoLine,  |  ,]</label>
+                        <height>40</height>
+                        <aligny>top</aligny>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <font>font_small</font>
+                    </control>
+                </control>
+                <control type="group">
+                    <visible>!Container.Content(movies) + !Container.Content(episodes)</visible>
+                    <top>60</top>
+                    <height>40</height>
+                    <control type="label">
+                        <label>$VAR[Label_ShowCase_InfoLine]</label>
+                        <height>40</height>
+                        <aligny>top</aligny>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <font>font_small</font>
+                    </control>
+                </control>
+                <control type="group">
+                    <top>80</top>
+                    <left>-16</left>
+                    <include>Object_StarRating_NoGroupList</include>
                 </control>
                 <control type="label">
-                    <left>45</left>
-                    <label>$VAR[Label_ShowCase_InfoLine,  |  ,]</label>
+                    <top>170</top>
+                    <left>0</left>
+                    <label>$INFO[ListItem.Genre]</label>
                     <height>40</height>
                     <aligny>top</aligny>
-                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <textcolor>main_fg_70</textcolor>
                     <font>font_small</font>
                 </control>
-            </control>
-            <control type="group">
-                <visible>!Container.Content(movies) + !Container.Content(episodes)</visible>
-                <top>60</top>
-                <height>40</height>
-                <control type="label">
-                    <label>$VAR[Label_ShowCase_InfoLine]</label>
-                    <height>40</height>
+                <control type="textbox">
+                    <top>222</top>
+                    <label>$VAR[Label_Plot]</label>
+                    <height>170</height>
                     <aligny>top</aligny>
-                    <textcolor>$VAR[ColorHighlight]</textcolor>
-                    <font>font_small</font>
+                    <textcolor>main_fg_70</textcolor>
+                    <font>font_plotbox</font>
+                    <autoscroll>false</autoscroll>
                 </control>
             </control>
-            <control type="group">
-                <top>80</top>
-                <left>-16</left>
-                <include>Object_StarRating_NoGroupList</include>
-            </control>
-            <control type="label">
-                <top>170</top>
-                <left>0</left>
-                <label>$INFO[ListItem.Genre]</label>
-                <height>40</height>
-                <aligny>top</aligny>
-                <textcolor>main_fg_70</textcolor>
-                <font>font_small</font>
-            </control>
-            <control type="textbox">
-                <top>222</top>
-                <label>$VAR[Label_Plot]</label>
-                <height>130</height>
-                <aligny>top</aligny>
-                <textcolor>main_fg_70</textcolor>
-                <font>font_plotbox</font>
-                <autoscroll>false</autoscroll>
-            </control>
-        </control>
+        </definition>
     </include>
 </includes>
 
