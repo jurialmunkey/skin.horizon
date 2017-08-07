@@ -535,6 +535,14 @@
                         <onclick>Skin.ToggleSetting(ShowPathInfo)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="9331" description="Use fullscreen pvr guide">
+                        <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Use fullscreen pvr guide (hide plot info)</label>
+                        <selected>Skin.HasSetting(PVRGuideFullScreen)</selected>
+                        <onclick>Skin.ToggleSetting(PVRGuideFullScreen)</onclick>
+                    </control>
+
                     <control type="button" id="9274" description="Customise Shutdown Menu">
                         <visible>ControlGroup(9100).HasFocus(9107)</visible>
                         <include>Defs_Settings_Button</include>
