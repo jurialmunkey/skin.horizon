@@ -630,6 +630,14 @@
                 <visible>Control.IsEnabled(6)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
+            <!-- Extra Fanart -->
+            <item>
+                <label>$VAR[Label_ExtraFanart]</label>
+                <icon>special://skin/extras/icons/filebox.png</icon>
+                <onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
+                <visible>Control.IsEnabled(6005)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            </item>
 
             <!-- Settings -->
             <item>
@@ -918,7 +926,6 @@
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
-        <focusposition>1</focusposition>
         <scrolltime>0</scrolltime>
         <itemlayout height="74" width="240">
             <control type="group">
@@ -1000,7 +1007,7 @@
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
-        <focusposition>1</focusposition>
+        <scrolltime>0</scrolltime>
         <itemlayout height="74" width="240">
             <control type="group">
                 <width>74</width>

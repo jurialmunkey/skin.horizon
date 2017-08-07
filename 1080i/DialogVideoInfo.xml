@@ -592,7 +592,14 @@
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
             <control type="image">
-                <texture background="true">$VAR[Global_Background_Image_Var]</texture>
+                <texture colordiffuse="main_bg_100">common/white.png</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+            <control type="multiimage">
+                <timeperimage>10000</timeperimage>
+                <randomize>true</randomize>
+                <fadetime>600</fadetime>
+                <imagepath background="true">$VAR[Global_Background_Image_Var]</imagepath>
                 <aspectratio>scale</aspectratio>
             </control>
         </control>

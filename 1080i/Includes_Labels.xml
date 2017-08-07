@@ -14,6 +14,11 @@
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),,   -   ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airtime),,  ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airday)]</value>
     </variable>
 
+    <variable name="Label_ExtraFanart">
+        <value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">$LOCALIZE[31014]: $LOCALIZE[16041]</value>
+        <value>$LOCALIZE[31014]: $LOCALIZE[16039]</value>
+    </variable>
+
     <variable name="Label_Square">
         <value condition="Container.Content(musicvideos) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title]</value>
         <value>$INFO[ListItem.Label]</value>

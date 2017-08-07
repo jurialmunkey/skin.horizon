@@ -82,7 +82,7 @@ msgstr ""
 
 #: /1080i/MyVideoNav.xml
 msgctxt "#31014"
-msgid "Display extra fanart"
+msgid "Extra fanart"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

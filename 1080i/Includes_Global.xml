@@ -63,7 +63,9 @@
             <left>-2160</left>
             <width>1</width>
             <height>1</height>
-            <timeperimage>12000</timeperimage>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>600</fadetime>
             <imagepath background="true">$VAR[Global_Background_Image_Var]</imagepath>
         </control>
         <!-- <control type="multiimage" id="7977">
@@ -85,9 +87,9 @@
                     <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
                     <visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
                     <include>Dimensions_Fullscreen</include>
-                    <fadetime>600</fadetime>
-                    <timeperimage>12000</timeperimage>
+                    <timeperimage>10000</timeperimage>
                     <randomize>true</randomize>
+                    <fadetime>600</fadetime>
                     <aspectratio>scale</aspectratio>
                     <imagepath background="true">$VAR[Global_Background_Image]</imagepath>
                     <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>

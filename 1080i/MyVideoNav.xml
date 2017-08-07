@@ -33,12 +33,10 @@
             <label>653</label>
             <include>Defs_Hidden_Button</include>
         </control>
-        <control type="togglebutton" id="6005">
+        <control type="button" id="6005">
             <description>Extra fanart</description>
-            <label>$LOCALIZE[31014]: $LOCALIZE[16039]</label>
-            <altlabel>$LOCALIZE[31014]: $LOCALIZE[16041]</altlabel>
+            <label>$VAR[Label_ExtraFanart]</label>
             <onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
-            <usealttexture>Skin.HasSetting(SkinHelper.EnableExtraFanart)</usealttexture>
             <include>Defs_Hidden_Button</include>
         </control>
     </controls>
