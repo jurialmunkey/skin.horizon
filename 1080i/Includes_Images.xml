@@ -20,10 +20,10 @@
     </variable>
 
     <variable name="Image_Player_Clearart">
-        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[Player.Art(clearart)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
+        <value condition="!String.IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
+        <value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
     </variable>
 
     <variable name="Image_Clearlogo">
