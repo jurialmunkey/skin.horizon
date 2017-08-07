@@ -715,14 +715,14 @@
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture colordiffuse="main_fg_70" background="true">$INFO[ListItem.Icon]</texture>
                             <visible>String.StartsWith(ListItem.Icon,Default)</visible>
-                            <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)]</visible>
+                            <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
-                            <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
+                            <visible>!String.StartsWith(ListItem.Icon,Default) + !ListItem.IsParentFolder</visible>
                             <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)]</visible>
                         </control>
                         <control type="image">
@@ -730,21 +730,21 @@
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
-                            <visible>Container.Content(genres)</visible>
+                            <visible>Container.Content(genres) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_70" fallback="DefaultStudios.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
-                            <visible>Container.Content(studios)</visible>
+                            <visible>Container.Content(studios) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_30">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
-                            <visible>Container.Content(countries)</visible>
+                            <visible>Container.Content(countries) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="textbox">
                             <height>265</height>
@@ -755,6 +755,7 @@
                             <font>font_poster_text</font>
                             <textcolor>main_fg_70</textcolor>
                             <label>$INFO[ListItem.Label]</label>
+                            <visible>!ListItem.IsParentFolder</visible>
                             <visible>Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)</visible>
                         </control>
                         
@@ -828,28 +829,28 @@
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture colordiffuse="Selected" background="true">$INFO[ListItem.Icon]</texture>
-                            <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)]</visible>
+                            <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
                             <height>265</height>
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
-                            <visible>Container.Content(genres)</visible>
+                            <visible>Container.Content(genres) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="Selected" fallback="DefaultStudios.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
-                            <visible>Container.Content(studios)</visible>
+                            <visible>Container.Content(studios) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
                             <height>265</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_30">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
-                            <visible>Container.Content(countries)</visible>
+                            <visible>Container.Content(countries) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="textbox">
                             <height>265</height>
@@ -860,6 +861,7 @@
                             <font>font_poster_text</font>
                             <textcolor>Selected</textcolor>
                             <label>$INFO[ListItem.Label]</label>
+                            <visible>!ListItem.IsParentFolder</visible>
                             <visible>Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)</visible>
                         </control>
                         
