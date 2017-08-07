@@ -680,6 +680,15 @@
                         <selected>System.HasAddon(resource.images.studios.white)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
+                    <control type="radiobutton" id="9310">
+                        <visible>ControlGroup(9100).HasFocus(9108)</visible>
+                        <label>resource.images.moviecountryicons.maps</label>
+                        <label2>$INFO[System.AddonVersion(resource.images.moviecountryicons.maps)]        </label2>
+                        <onclick condition="!System.HasAddon(resource.images.moviecountryicons.maps)">InstallAddon(resource.images.moviecountryicons.maps)</onclick>
+                        <onclick condition="System.HasAddon(resource.images.moviecountryicons.maps)">Addon.OpenSettings(resource.images.moviecountryicons.maps)</onclick>
+                        <selected>System.HasAddon(resource.images.moviecountryicons.maps)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
                     <control type="radiobutton" id="9290">
                         <visible>ControlGroup(9100).HasFocus(9108)</visible>
                         <label>resource.images.moviegenreicons.transparent</label>
