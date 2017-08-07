@@ -538,9 +538,17 @@
                     <control type="radiobutton" id="9331" description="Use fullscreen pvr guide">
                         <visible>ControlGroup(9100).HasFocus(9107)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Use fullscreen pvr guide (hide plot info)</label>
+                        <label>$LOCALIZE[31057]</label>
                         <selected>Skin.HasSetting(PVRGuideFullScreen)</selected>
                         <onclick>Skin.ToggleSetting(PVRGuideFullScreen)</onclick>
+                    </control>
+
+                    <control type="radiobutton" id="9332" description="Use genre colors">
+                        <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31056]</label>
+                        <selected>!Skin.HasSetting(PVRGuideGenreColors)</selected>
+                        <onclick>Skin.ToggleSetting(PVRGuideGenreColors)</onclick>
                     </control>
 
                     <control type="button" id="9274" description="Customise Shutdown Menu">

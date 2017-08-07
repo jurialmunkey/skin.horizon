@@ -290,6 +290,16 @@ msgctxt "#31055"
 msgid "Use skinhelper to provide animated posters and fanart. These can be downloaded from the context menu."
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31056"
+msgid "Use genre colors in PVR guide"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31057"
+msgid "Use fullscreen PVR guide (hide plot info)"
+msgstr ""
+
 #: /1080i/Includes_Labels.xml
 msgctxt "#31058"
 msgid "Change the highlight focus colour used throughout the skin."
