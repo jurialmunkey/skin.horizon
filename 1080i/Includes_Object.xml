@@ -457,6 +457,12 @@
                             <texture background="true"  colordiffuse="main_fg_100" fallback="DefaultAddonNone.png">$INFO[$PARAM[container]ListItem.Icon]</texture>
                             <visible>[!Container.Content(genres) + !Container.Content(studios) + !Container.Content(countries) + !Container.Content(years) + !Container.Content(directors)] | ListItem.IsParentFolder</visible>
                         </control>
+                        <control type="image">
+                            <bordersize>80</bordersize>
+                            <aspectratio aligny="center">$PARAM[aspect]</aspectratio>
+                            <texture background="true" colordiffuse="main_fg_30" fallback="DefaultFolder.png">$INFO[$PARAM[container]ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
+                            <visible>Container.Content(countries) + !ListItem.IsParentFolder</visible>
+                        </control>
                         <control type="textbox">
                             <left>30</left>
                             <right>30</right>
@@ -465,7 +471,7 @@
                             <align>center</align>
                             <aligny>center</aligny>
                             <label>$INFO[$PARAM[container]ListItem.Label]</label>
-                            <textcolor>main_fg_70</textcolor>
+                            <textcolor>main_fg_100</textcolor>
                             <font>font_bigposter_text</font>
                             <visible>[Container.Content(years) | Container.Content(directors) | Container.Content(countries)] + !ListItem.IsParentFolder</visible>
                         </control>
