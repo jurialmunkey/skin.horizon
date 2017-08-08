@@ -514,16 +514,26 @@
             <control type="group">
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <visible>Control.IsVisible(10)</visible>
+                <include>Animation_Right</include>
+                <control type="group">
+                    <height>850</height>
+                    <width>524</width>
+                    <left>86</left>
+                    <bottom>0</bottom>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    </control>
+                </control>
                 <control type="image">
                     <left>86</left>
                     <right>0</right>
                     <height>4</height>
                     <bottom>846</bottom>
                     <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                    <include>Animation_Right</include>
                 </control>
                 <control type="epggrid" id="10" description="EPG">
-                    <include>Animation_Right</include>
+                    
                     <left>86</left>
                     <bottom>0</bottom>
                     <width>1834</width>
@@ -780,16 +790,25 @@
             <control type="group">
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <visible>Control.IsVisible(10)</visible>
+                <include>Animation_Right</include>
+                <control type="group">
+                    <height>518</height>
+                    <width>524</width>
+                    <left>86</left>
+                    <bottom>0</bottom>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    </control>
+                </control>
                 <control type="image">
                     <left>86</left>
                     <right>0</right>
                     <height>4</height>
                     <bottom>514</bottom>
                     <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-                    <include>Animation_Right</include>
                 </control>
                 <control type="epggrid" id="10" description="EPG">
-                    <include>Animation_Right</include>
                     <left>86</left>
                     <bottom>0</bottom>
                     <width>1834</width>
