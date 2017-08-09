@@ -328,7 +328,7 @@
                 <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                 <include content="View_Posters_Info" condition="Window.IsVisible(MyVideoNav.xml)">
                     <param name="bottom" value="30" />
-                    <param name="plot_height" value="300" />
+                    <param name="plot_height" value="130" />
                     <param name="id" value="$PARAM[id]" />
                     <param name="left" value="50" />
                     <param name="right" value="1025" />
@@ -343,7 +343,7 @@
                 </include>
                 <include content="View_Posters_Info" condition="!Window.IsVisible(MyVideoNav.xml)">
                     <param name="bottom" value="40" />
-                    <param name="plot_height" value="300" />
+                    <param name="plot_height" value="170" />
                     <param name="id" value="$PARAM[id]" />
                     <param name="left" value="50" />
                     <param name="right" value="1025" />
