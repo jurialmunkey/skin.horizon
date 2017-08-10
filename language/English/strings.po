@@ -305,6 +305,11 @@ msgctxt "#31058"
 msgid "Change the highlight focus colour used throughout the skin."
 msgstr ""
 
+#: /1080i/DialogContextMenu.xml
+msgctxt "#31059"
+msgid "Context Menu"
+msgstr ""
+
 #: /1080i/Includes_Labels.xml
 msgctxt "#31060"
 msgid "Set a music or video playlist that will run when kodi starts."
@@ -363,6 +368,11 @@ msgstr ""
 #: /1080i/Includes_Labels.xml
 msgctxt "#31071"
 msgid "IMDB Top250"
+msgstr ""
+
+#: /1080i/DialogButtonMenu.xml
+msgctxt "#31072"
+msgid "Power Menu"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

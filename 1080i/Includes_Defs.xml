@@ -401,6 +401,8 @@
 
     <!-- Context Button -->
     <include name="Defs_Context_Button">
+        <align>left</align>
+        <textoffsetx>30</textoffsetx>
         <radioposx>400</radioposx>
         <width>450</width>
         <height>70</height>
