@@ -25,7 +25,6 @@
             <animation effect="slide" end="0,35" condition="Integer.IsLess(Container(996).NumItems,4)">Conditional</animation>
             <animation effect="slide" end="0,35" condition="Integer.IsLess(Container(996).NumItems,3)">Conditional</animation>
             <animation effect="slide" end="0,35" condition="Integer.IsLess(Container(996).NumItems,2)">Conditional</animation>
-            
 
             <control type="image" id="999">
                 <description>background image</description>
@@ -71,6 +70,23 @@
                 <onright>Back</onright>
                 <width>458</width>
                 <include>Defs_Context_Button</include>
+            </control>
+
+            <control type="image">
+                <left>245</left>
+                <top>-70</top>
+                <width>16</width>
+                <height>16</height>
+                <visible>Container(996).HasNext | Container(996).HasPrevious</visible>
+                <texture flipy="true" colordiffuse="main_fg_100">common/arrow-small.png</texture>
+            </control>
+            <control type="image">
+                <left>245</left>
+                <bottom>0</bottom>
+                <width>16</width>
+                <height>16</height>
+                <visible>Container(996).HasNext | Container(996).HasPrevious</visible>
+                <texture colordiffuse="main_fg_100">common/arrow-small.png</texture>
             </control>
         </control>
     </controls>
