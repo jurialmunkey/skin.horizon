@@ -583,7 +583,7 @@
             <enable>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</enable>
             <visible>!String.Contains(Player.Art(thumb),ytimg)</visible>
         </control>
-        <control type="button" id="4">
+        <control type="button" id="44">
             <description>Extra Info</description>
             <label>$LOCALIZE[31115]</label>
             <include>OSD_TextButton</include>
