@@ -26,6 +26,8 @@
             <animation effect="slide" end="0,35" condition="Integer.IsLess(Container(996).NumItems,3)">Conditional</animation>
             <animation effect="slide" end="0,35" condition="Integer.IsLess(Container(996).NumItems,2)">Conditional</animation>
 
+            
+
             <control type="image" id="999">
                 <description>background image</description>
                 <bottom>0</bottom>
@@ -35,10 +37,26 @@
                 <bordersize>24</bordersize>
                 <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
             </control>
+            <control type="image">
+                <top>32</top>
+                <left>24</left>
+                <width>458</width>
+                <height>70</height>
+                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,0)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,1)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,2)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,3)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,4)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,5)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,6)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,7)">Conditional</animation>
+                <animation effect="slide" end="0,70" condition="Integer.IsGreater(Container(996).Position,8)">Conditional</animation>
+            </control>
             <control type="label">
                 <top>-46</top>
                 <width>458</width>
-                <height>80</height>
+                <height>78</height>
                 <left>24</left>
                 <textcolor>dialog_fg_70</textcolor>
                 <font>font_small_bold</font>
@@ -47,7 +65,7 @@
                 <textoffsetx>30</textoffsetx>
             </control>
             <control type="image">
-                <top>-38</top>
+                <top>-40</top>
                 <width>458</width>
                 <height>64</height>
                 <left>16</left>
@@ -63,6 +81,7 @@
                 <itemgap>0</itemgap>
                 <onleft>Back</onleft>
                 <onright>Back</onright>
+                <scrolltime>0</scrolltime>
             </control>
             <control type="button" id="1000">
                 <description>Buttons</description>

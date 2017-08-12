@@ -411,8 +411,8 @@
         <textureradiofocus colordiffuse="dialog_fg_70">buttons/radio-on.png</textureradiofocus>
         <textureradionofocus colordiffuse="dialog_fg_30">buttons/radio-off.png</textureradionofocus>
         <focusedcolor>Selected</focusedcolor>
-        <alttexturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</alttexturefocus>
-        <texturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</texturefocus>
+        <alttexturefocus colordiffuse="$VAR[ColorHighlight2]" border="16">common/gradient-diffuse-horizontal.png</alttexturefocus>
+        <texturefocus colordiffuse="$VAR[ColorHighlight2]" border="16">common/gradient-diffuse-horizontal.png</texturefocus>
     </include>
 
     <!-- Settings Buttons -->
