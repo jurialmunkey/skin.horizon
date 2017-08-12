@@ -581,6 +581,14 @@
             <onclick condition="VideoPlayer.Content(episodes)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[VideoPlayer.TvShowTitle])</onclick>
             <include>OSD_TextButton</include>
             <enable>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</enable>
+            <visible>!String.Contains(Player.Art(thumb),ytimg)</visible>
+        </control>
+        <control type="button" id="4">
+            <description>Extra Info</description>
+            <label>$LOCALIZE[31115]</label>
+            <include>OSD_TextButton</include>
+            <visible>String.Contains(Player.Art(thumb),ytimg)</visible>
+            <onclick>SetFocus(9605)</onclick>
         </control>
         <control type="button" id="5">
             <description>3d Mode</description>

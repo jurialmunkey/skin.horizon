@@ -375,6 +375,11 @@ msgctxt "#31072"
 msgid "Power Menu"
 msgstr ""
 
+#: /1080i/VideoOSD.xml
+msgctxt "#31073"
+msgid "Recommended Youtube Videos"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31074"
 msgid "Make bottom bar transparent"
@@ -564,6 +569,11 @@ msgstr ""
 
 msgctxt "#31114"
 msgid "Now Playing"
+msgstr ""
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31115"
+msgid "Recommended"
 msgstr ""
 
 msgctxt "#31116"

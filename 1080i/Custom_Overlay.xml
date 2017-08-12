@@ -910,12 +910,12 @@
             <posx>15r</posx>
             <posy>48</posy>
             <width>1620</width>
-            <height>60</height>
+            <height>200</height>
             <textcolor>FFFF0000</textcolor>
             <shadowcolor>FF000000</shadowcolor>
             <font>font13</font>
             <align>right</align>
-            <label>[COLOR=FF00FF00]$INFO[ListItem.Icon,, - ][/COLOR]$INFO[ListItem.ActualIcon][CR]$INFO[Player.FileNameAndPath]</label>
+            <label>[COLOR=FF00FF00]$INFO[ListItem.Icon,, - ][/COLOR]$INFO[ListItem.ActualIcon][CR]$INFO[Window(Home).Property(ThumbSplit1)][CR]$INFO[Window(Home).Property(ThumbSplit2)]</label>
             <visible>Skin.HasSetting(DebugInfo)</visible>
         </control>
 
