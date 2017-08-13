@@ -1,3 +1,8 @@
+[B]1.0.19[/B]
+Add ability to only blur info dialog
+Add gradient color to context and power menu
+Add header to context and power menu
+
 [B]1.0.18[/B]
 Add ability to hide artwork for info views
 Add ability to switch between showing media flags or ratings in sideblade
