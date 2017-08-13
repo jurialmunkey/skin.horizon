@@ -817,7 +817,7 @@
     <include name="Home_Textbar_Item">
         <control type="group">
             <height>74</height>
-            <visible>!String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Label)</visible>
+            <visible>!String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Label) | !String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Icon)</visible>
             <control type="group">
                 <visible>Control.HasFocus(300)</visible>
                 <include>Animation_FadeOut_Delay</include>
@@ -860,7 +860,6 @@
                     <right>40</right>
                     <font>$PARAM[font]_bold</font>
                     <align>left</align>
-                    <!-- <animation effect="slide" start="-16" end="0" time="100" reversible="false" condition="!Skin.HasSetting(BounceAnimations)">Visible</animation> -->
                     <textcolor>Selected</textcolor>
                     <label>$INFO[Container(300).ListItemPosition($PARAM[id]).Label]</label>
                     <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
