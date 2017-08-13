@@ -2,6 +2,12 @@
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <controls>
+        <control type="button" id="3011"><visible allowhiddenfocus="true">false</visible></control>
+        <control type="group" id="3020">
+            <control type="label" id="3016"><visible allowhiddenfocus="true">false</visible></control>
+            <control type="slider" id="3015"><visible allowhiddenfocus="true">false</visible></control>
+            <control type="label" id="3017"><visible allowhiddenfocus="true">false</visible></control>
+        </control>
         <control type="group">
             <width>1300</width>
             <height>720</height>
@@ -72,11 +78,6 @@
                 </control>
             </control>
         </control>
-        <control type="button" id="3011"><visible allowhiddenfocus="true">false</visible></control>
-        <control type="group" id="3020">
-            <control type="label" id="3016"><visible allowhiddenfocus="true">false</visible></control>
-            <control type="slider" id="3015"><visible allowhiddenfocus="true">false</visible></control>
-            <control type="label" id="3017"><visible allowhiddenfocus="true">false</visible></control>
-        </control>
+        
     </controls>
 </window>
