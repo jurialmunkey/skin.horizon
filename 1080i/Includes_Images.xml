@@ -28,7 +28,8 @@
 
     <variable name="Image_Clearlogo">
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
-        <value>$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</value>
     </variable>
     <variable name="Image_Watched">
         <value condition="System.Setting(hidewatched)">special://skin/extras/icons/watched-hide.png</value>
