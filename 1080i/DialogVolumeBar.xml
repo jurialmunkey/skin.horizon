@@ -38,7 +38,7 @@
                 <include>Animation_OSD_Notification</include>
                 <control type="label">
                     <width>200</width>
-                    <right>80</right>
+                    <right>40</right>
                     <height>48</height>
                     <label>$LOCALIZE[13376]</label>
                     <aligny>center</aligny>
@@ -48,7 +48,7 @@
                     <shadowcolor>main_bg_30</shadowcolor>
                 </control>
                 <control type="grouplist">
-                    <right>85</right>
+                    <right>45</right>
                     <height>100</height>
                     <align>right</align>
                     <orientation>horizontal</orientation>

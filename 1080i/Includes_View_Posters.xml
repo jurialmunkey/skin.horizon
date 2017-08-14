@@ -66,7 +66,7 @@
             <include content="View_Posters_Info">
                 <param name="bottom" value="450" />
                 <param name="id" value="52" />
-                <param name="left" value="50" />
+                <param name="left" value="40" />
                 <param name="right" value="130" />
                 <param name="width" value="1654" />
                 <param name="altwidth" value="1234" />
@@ -119,7 +119,7 @@
             <include content="View_Posters_Info">
                 <param name="bottom" value="450" />
                 <param name="id" value="56" />
-                <param name="left" value="50" />
+                <param name="left" value="40" />
                 <param name="right" value="130" />
                 <param name="width" value="1654" />
                 <param name="altwidth" value="1234" />
@@ -324,13 +324,13 @@
             </control>
             <control type="group">
                 <right>-80</right>
-                <top>465</top>
+                <top>475</top>
                 <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                 <include content="View_Posters_Info" condition="Window.IsVisible(MyVideoNav.xml)">
                     <param name="bottom" value="30" />
                     <param name="plot_height" value="130" />
                     <param name="id" value="$PARAM[id]" />
-                    <param name="left" value="50" />
+                    <param name="left" value="40" />
                     <param name="right" value="1025" />
                     <param name="width" value="855" />
                     <param name="discart" value="false" />
@@ -345,7 +345,7 @@
                     <param name="bottom" value="40" />
                     <param name="plot_height" value="170" />
                     <param name="id" value="$PARAM[id]" />
-                    <param name="left" value="50" />
+                    <param name="left" value="40" />
                     <param name="right" value="1025" />
                     <param name="width" value="855" />
                     <param name="discart" value="false" />
@@ -507,7 +507,7 @@
             <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos)</visible>
             <visible>Control.IsVisible($PARAM[id])</visible>
             <bottom>$PARAM[bottom]</bottom>
-            <top>30</top>
+            <top>20</top>
             <left>0</left>
             <right>0</right>
             <orientation>vertical</orientation>

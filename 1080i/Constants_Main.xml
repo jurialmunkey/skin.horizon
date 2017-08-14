@@ -16,7 +16,7 @@
     <constant name="listitem_height">102.66</constant> <!-- 99.3 -->
     <constant name="alphabet_item_height">65</constant> <!-- 63 -->
     <constant name="alphabet_bottom">14</constant> <!-- 12 -->
-    <constant name="infolist_left">666</constant> <!-- 646 -->
+    <constant name="infolist_left">656</constant> <!-- 646 -->
     <constant name="infolist_width">1036</constant> <!-- 1056 -->
     <constant name="infolist_item_height">81.2</constant> <!-- 84 -->
     <constant name="infolist2_icon_height">302</constant> <!-- 290 -->

@@ -34,7 +34,7 @@
     <include name="Home_Widgets">
         <control type="group">
             <include>Animation_Right</include>
-            <left>0</left>
+            <left>-10</left>
             <right>-400</right>
             <include>Defs_InfoDialog_Visible</include>
             <control type="group" id="3000">

@@ -65,7 +65,7 @@
                     <movement>2</movement>
                     <include content="View_List_Layout">
                         <param name="id" value="55" />
-                        <param name="offset" value="18" />
+                        <param name="offset" value="8" />
                         <param name="height" value="infolist_item_height"/>
                     </include>
                 </control>
@@ -147,13 +147,13 @@
                 </control>
                 <control type="group">
                     <right>-80</right>
-                    <top>425</top>
+                    <top>435</top>
                     <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                     <include content="View_Posters_Info">
                         <param name="bottom" value="25" />
                         <param name="plot_height" value="300" />
                         <param name="id" value="57" />
-                        <param name="left" value="50" />
+                        <param name="left" value="40" />
                         <param name="right" value="800" />
                         <param name="width" value="1068" />
                         <param name="discart" value="false" />
@@ -162,13 +162,13 @@
                 </control>
                 <control type="group">
                     <right>-80</right>
-                    <top>0</top>
+                    <top>10</top>
                     <visible>[[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                     <include content="View_Posters_Info">
                         <param name="bottom" value="25" />
                         <param name="plot_height" value="1000" />
                         <param name="id" value="57" />
-                        <param name="left" value="50" />
+                        <param name="left" value="40" />
                         <param name="right" value="800" />
                         <param name="width" value="1068" />
                         <param name="discart" value="false" />

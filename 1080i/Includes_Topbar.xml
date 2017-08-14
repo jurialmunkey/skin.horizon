@@ -149,7 +149,7 @@
     <include name="Topbar_TextDetails_LeftContent">
         <centertop>53%</centertop>
         <height>100</height>
-        <left>sidepad</left>
+        <left>70</left>
         <control type="label">
             <height>48</height>
             <label>$VAR[Label_Header_Content]</label>
@@ -270,10 +270,11 @@
             <centertop>53%</centertop>
             <height>100</height>
             <include>Animation_OSD_Notification</include>
-            <right>sidepad</right>
+            <right>40</right>
             <visible>!Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml) + ![Window.IsVisible(DialogVolumeBar.xml) + !Player.Muted]</visible>
             <include>Animation_FadeIn_Slide_Visible</include>
             <control type="image">
+                <right>-10</right>
                 <include>Dialog_Notification_Icon</include>
                 <texture colordiffuse="main_fg_100">buttons/mute.png</texture>
                 <animation type="Visible">
@@ -289,7 +290,7 @@
                 <control type="image">
                     <width>80</width>
                     <height>80</height>
-                    <right>0</right>
+                    <right>-10</right>
                     <top>-16</top>
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="main_fg_100">$INFO[Weather.FanartCode,resource://resource.images.weathericons.white/,.png]</texture>
@@ -298,7 +299,7 @@
                     <top>48</top>
                     <height>42</height>
                     <width>80</width>
-                    <right>0</right>
+                    <right>-10</right>
                     <font>font_small</font>
                     <textcolor>main_fg_100</textcolor>
                     <shadowcolor>main_bg_30</shadowcolor>
@@ -309,7 +310,7 @@
             </control>
             <control type="group">
                 <animation effect="slide" end="-80" time="0" condition="Player.Muted">Conditional</animation>
-                <animation effect="slide" end="-100" time="0" condition="Weather.IsFetched + System.HasAddon(resource.images.weathericons.white)">Conditional</animation>
+                <animation effect="slide" end="-84" time="0" condition="Weather.IsFetched + System.HasAddon(resource.images.weathericons.white)">Conditional</animation>
                 <control type="label">
                     <width>400</width>
                     <right>0</right>

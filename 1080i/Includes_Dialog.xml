@@ -5,7 +5,7 @@
     <!-- Notification Dialogs -->
     <!-- ==================== -->
     <include name="Dialog_Notification_Group">
-        <right>sidepad</right>
+        <right>30</right>
         <centertop>53%</centertop>
         <height>100</height>
         <width>860</width>
