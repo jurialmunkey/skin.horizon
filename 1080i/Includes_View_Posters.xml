@@ -64,7 +64,7 @@
                 </control>
             </control>
             <include content="View_Posters_Info">
-                <param name="bottom" value="450" />
+                <param name="bottom" value="460" />
                 <param name="id" value="52" />
                 <param name="left" value="40" />
                 <param name="right" value="130" />
@@ -117,7 +117,7 @@
                 </control>
             </control>
             <include content="View_Posters_Info">
-                <param name="bottom" value="450" />
+                <param name="bottom" value="460" />
                 <param name="id" value="56" />
                 <param name="left" value="40" />
                 <param name="right" value="130" />
