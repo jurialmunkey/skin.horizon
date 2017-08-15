@@ -90,14 +90,17 @@
                 <bottom>0</bottom>
                 <control type="group">
                     <width>1068</width>
-                    <control type="image">
-                        <include>Defs_Shadow_Opaque</include>
-                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
-                    </control>
-                    <include>Defs_Color_Overlay</include>
                     <control type="group">
-                        <left>1068</left>
-                        <include>Object_Separator_Left</include>
+                        <visible>!Skin.HasSetting(DisablePanels)</visible>
+                        <control type="image">
+                            <include>Defs_Shadow_Opaque</include>
+                            <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                        </control>
+                        <include>Defs_Color_Overlay</include>
+                        <control type="group">
+                            <left>1068</left>
+                            <include>Object_Separator_Left</include>
+                        </control>
                     </control>
                     <include>Object_ParentFolder</include>
                     <control type="group">
@@ -242,11 +245,15 @@
                 <visible>Control.IsVisible(54)</visible>
                 <width>view_left</width>
                 <height>poster_height</height>
-                <control type="image">
-                    <include>Defs_Shadow_Opaque</include>
-                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                <control type="group">
+                    <visible>!Skin.HasSetting(DisablePanels)</visible>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    </control>
+                    <include>Defs_Color_Overlay</include>
+                    <include>Object_Separator_Right</include>
                 </control>
-                <include>Defs_Color_Overlay</include>
                 <include>Object_ParentFolder</include>
                 <control type="group">
                     <visible>!ListItem.IsParentFolder</visible>
@@ -372,7 +379,6 @@
                         </control>
                     </control>
                 </control>
-                <include>Object_Separator_Right</include>
             </control>
         </control>
     </include>
@@ -620,6 +626,20 @@
                             <height>1</height>
                             <top>-2</top>
                             <texture colordiffuse="darkline_separator">common/white.png</texture>
+                        </control>
+
+                        <control type="group">
+                            <visible>Skin.HasSetting(DisablePanels)</visible>
+                            <control type="image">
+                                <width>1</width>
+                                <left>1</left>
+                                <texture colordiffuse="highlight_bottombar">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <width>1</width>
+                                <left>0</left>
+                                <texture colordiffuse="darkline_separator">common/white.png</texture>
+                            </control>
                         </control>
                     </control>
 

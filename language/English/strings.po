@@ -1008,6 +1008,11 @@ msgctxt "#31213"
 msgid "Today"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31214"
+msgid "Display panel backgrounds"
+msgstr ""
+
 msgctxt "#31215"
 msgid "Unwatched"
 msgstr ""

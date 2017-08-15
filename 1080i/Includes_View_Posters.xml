@@ -281,14 +281,17 @@
             <bottom>0</bottom>
             <control type="group">
                 <width>855</width>
-                <control type="image">
-                    <include>Defs_Shadow_Opaque</include>
-                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
-                </control>
-                <include>Defs_Color_Overlay</include>
                 <control type="group">
-                    <left>855</left>
-                    <include>Object_Separator_Left</include>
+                    <visible>!Skin.HasSetting(DisablePanels)</visible>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    </control>
+                    <include>Defs_Color_Overlay</include>
+                    <control type="group">
+                        <left>855</left>
+                        <include>Object_Separator_Left</include>
+                    </control>
                 </control>
                 <include>Object_ParentFolder</include>
                 <control type="group">

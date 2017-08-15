@@ -128,11 +128,14 @@
             <control type="group">
                 <width>view_left</width>
                 <height>poster_height</height>
-                <control type="image">
-                    <include>Defs_Shadow_Opaque</include>
-                    <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                <control type="group">
+                    <visible>!Skin.HasSetting(DisablePanels)</visible>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                    </control>
+                    <include>Defs_Color_Overlay</include>
                 </control>
-                <include>Defs_Color_Overlay</include>
                 <control type="group">
                     <left>40</left>
                     <right>40</right>
@@ -208,16 +211,17 @@
             <width>view_left</width>
             <visible>![Container.Content(musicvideos) | Container.Content(images) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
             <control type="group">
+                <visible>!Skin.HasSetting(DisablePanels)</visible>
                 <control type="image">
                     <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
                 <include>Defs_Color_Overlay</include>
-                <include content="Object_BigPoster">
-                    <param name="discart" value="false" />
-                </include>
-                <include>Object_Separator_Right</include>
             </control>
+            <include content="Object_BigPoster">
+                <param name="discart" value="false" />
+            </include>
+            <include>Object_Separator_Right</include>
         </control>
         
     </include>

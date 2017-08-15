@@ -68,13 +68,15 @@
             <fadetime>600</fadetime>
             <imagepath background="true">$VAR[Global_Background_Image_Var]</imagepath>
         </control>
-        <!-- <control type="multiimage" id="7977">
+        <control type="multiimage" id="7977">
             <left>-2160</left>
             <width>1</width>
             <height>1</height>
-            <timeperimage>12000</timeperimage>
-            <imagepath background="true">$VAR[Image_Poster]</imagepath>
-        </control> -->
+            <timeperimage>50000</timeperimage>
+            <randomize>true</randomize>
+            <!-- <imagepath background="true">special://skin/extras/colorspin/</imagepath> -->
+            <imagepath background="true">$VAR[Image_Poster_Color]</imagepath>
+        </control>
         <include>Global_Videowindow</include>
         <include>Global_Visualisation</include>
         <control type="group">
