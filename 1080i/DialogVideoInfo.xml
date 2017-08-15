@@ -475,7 +475,7 @@
                         <height>24</height>
                         <font>font_unwatched</font>
                         <textcolor>main_fg_70</textcolor>
-                        <label>$INFO[ListItem.Size,,  •  ]</label>
+                        <label>$INFO[ListItem.Size,,   -   ]</label>
                         <scroll>false</scroll>
                     </control>
                     <control type="label">
