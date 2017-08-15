@@ -461,17 +461,33 @@
                     </control>
                 </control>
 
-                <control type="label">
+                <control type="grouplist">
                     <left>info_left</left>
-                    <right>60</right>
-                    <align>left</align>
+                    <right>0</right>
                     <bottom>0</bottom>
                     <height>24</height>
-                    <font>font_unwatched</font>
-                    <textcolor>main_fg_70</textcolor>
-                    <label>$INFO[ListItem.FileNameAndPath]</label>
-                    <scroll>true</scroll>
+                    <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
                     <visible>Skin.HasSetting(ShowPathInfo)</visible>
+                    <control type="label">
+                        <align>left</align>
+                        <width max="1080">auto</width>
+                        <height>24</height>
+                        <font>font_unwatched</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$INFO[ListItem.FileNameAndPath]</label>
+                        <haspath>true</haspath>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="label">
+                        <align>left</align>
+                        <width>auto</width>
+                        <height>24</height>
+                        <font>font_unwatched</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$INFO[ListItem.Size,(,)]</label>
+                        <scroll>false</scroll>
+                    </control>
                 </control>
 
             </control>
