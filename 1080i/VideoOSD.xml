@@ -182,6 +182,7 @@
             <control type="group">
                 <animation effect="fade" start="100" end="0" condition="Container(9605).IsUpdating" time="200">Conditional</animation>
                 <control type="wraplist" id="9605">
+                    <visible>String.Contains(Player.Art(thumb),ytimg)</visible>
                     <orientation>horizontal</orientation>
                     <onup>Close</onup>
                     <ondown>Close</ondown>
