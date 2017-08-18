@@ -72,7 +72,7 @@
             <left>-2160</left>
             <width>1</width>
             <height>1</height>
-            <timeperimage>50000</timeperimage>
+            <timeperimage>5000</timeperimage>
             <randomize>true</randomize>
             <!-- <imagepath background="true">special://skin/extras/colorspin/</imagepath> -->
             <imagepath background="true">$VAR[Image_Poster_Color]</imagepath>

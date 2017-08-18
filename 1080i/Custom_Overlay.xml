@@ -915,7 +915,7 @@
             <shadowcolor>FF000000</shadowcolor>
             <font>font13</font>
             <align>right</align>
-            <label>[COLOR=FF00FF00]$INFO[System.Time(ss),, - ][/COLOR]$INFO[Window(home).Property(ImageColorSEVEN)] - $INFO[Window(home).Property(ImageCColorSEVEN)][CR]$INFO[Container.Content()]</label>
+            <label>[COLOR=FF00FF00]$INFO[System.CurrentControl][/COLOR]$INFO[System.CurrentControlID][CR]$INFO[Container.Content()]</label>
             <visible>Skin.HasSetting(DebugInfo)</visible>
         </control>
 

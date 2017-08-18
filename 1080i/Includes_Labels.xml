@@ -7,6 +7,8 @@
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</value>
     </variable>
 
+
+
     <variable name="Label_Info_NextAired_Details">
         <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate),,   -   ]$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ]$INFO[Window(Home).Property(NextAired.AirTime)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">$INFO[Window(Home).Property(NextAired.LatestDate),,   -   ]$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</value>
@@ -17,6 +19,11 @@
     <variable name="Label_ExtraFanart">
         <value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">$LOCALIZE[31014]: $LOCALIZE[16041]</value>
         <value>$LOCALIZE[31014]: $LOCALIZE[16039]</value>
+    </variable>
+
+    <variable name="Label_EdgePadding">
+        <value condition="!Skin.HasSetting(LoveFilmLarge)">$LOCALIZE[31233]: $LOCALIZE[16041]</value>
+        <value>$LOCALIZE[31233]: $LOCALIZE[16039]</value>
     </variable>
 
     <variable name="Label_Square">

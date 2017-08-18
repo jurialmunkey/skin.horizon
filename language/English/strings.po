@@ -1093,6 +1093,11 @@ msgctxt "#31232"
 msgid "Reset path"
 msgstr ""
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31233"
+msgid "Edge padding"
+msgstr ""
+
 #: /1080i/SettingsProfile.xml
 msgctxt "#31234"
 msgid "Customise your user profiles and enable/disable the login screen."

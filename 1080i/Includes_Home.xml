@@ -218,6 +218,13 @@
                 <visible>Control.IsEnabled(9002)</visible>
                 <visible>Integer.IsGreater(Container(9502).NumItems,0)</visible>
             </item>
+            <!-- youtube -->
+            <!-- <item>
+                <label>Youtube</label>
+                <icon>special://skin/extras/icons/youtube.png</icon>
+                <onclick>Close</onclick>
+                <onclick>ActivateWindow(Videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title],return)</onclick>
+            </item> -->
             <!-- Info -->
             <item>
                 <label>$INFO[Control.GetLabel(9005)]</label>
@@ -574,6 +581,15 @@
                 <onclick>Skin.ToggleSetting(FlipSide.553)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(553)</visible>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            </item>
+            <!-- No Padding Lovefilm -->
+            <item>
+                <label>$VAR[Label_EdgePadding]</label>
+                <icon>special://skin/extras/icons/signpost.png</icon>
+                <onclick>Skin.ToggleSetting(LoveFilmLarge)</onclick>
+                <onclick>ReloadSkin()</onclick>
+                <visible>Control.IsVisible(59)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item>
             <!-- InfoList Hide Artwork -->
