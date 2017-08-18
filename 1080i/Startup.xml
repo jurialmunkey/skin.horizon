@@ -23,8 +23,8 @@
             <onfocus>Skin.SetString(colorbox_pixelsize,12)</onfocus>
             <onfocus>Skin.SetString(colorbox_black,000000)</onfocus>
             <onfocus>Skin.SetString(colorbox_white,ffffff)</onfocus>
-            <onfocus>Skin.SetString(colorbox_main,main:hls*0.0;0.45;0.9)</onfocus>
-            <onfocus>Skin.SetString(colorbox_comp,main:hls*0.75;0.45;0.9)</onfocus> 
+            <onfocus>Skin.SetString(colorbox_main,main:fhls*-;0.45;0.9)</onfocus>
+            <onfocus>Skin.SetString(colorbox_comp,main:hls*0.75;0;0@fhls*-;0.45;0.9)</onfocus> 
             <onfocus condition="System.HasAddon(script.colorbox) + Skin.HasSetting(EnableBlur)">RunScript(script.colorbox,daemon=True)</onfocus>
             <onfocus>SetProperty(FIVE_daemon_set,blur,home)</onfocus>
             <!-- <onfocus>SetProperty(SEVEN_daemon_set,True,home)</onfocus> -->

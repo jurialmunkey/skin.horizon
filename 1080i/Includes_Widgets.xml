@@ -523,8 +523,8 @@
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <control type="textbox">
-                            <top>20</top>
-                            <bottom>20</bottom>
+                            <top>5</top>
+                            <bottom>5</bottom>
                             <left>20</left>
                             <right>20</right>
                             <align>center</align>
@@ -674,8 +674,8 @@
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <control type="textbox">
-                            <top>20</top>
-                            <bottom>20</bottom>
+                            <top>5</top>
+                            <bottom>5</bottom>
                             <left>20</left>
                             <right>20</right>
                             <align>center</align>
