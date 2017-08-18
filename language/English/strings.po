@@ -1320,6 +1320,11 @@ msgctxt "#31282"
 msgid "on"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31283"
+msgid "Display tvshow character art in showcase viewtype"
+msgstr ""
+
 #: MPAA Rating
 msgctxt "#31284"
 msgid "Classification"

@@ -400,6 +400,14 @@
                         <include>Defs_Settings_Button</include>
                     </control>
 
+                    <control type="radiobutton" id="9334">
+                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
+                        <label>$LOCALIZE[31283]</label>
+                        <onclick>Skin.ToggleSetting(DisableCharacterArt)</onclick>
+                        <selected>!Skin.HasSetting(DisableCharacterArt)</selected>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
                     <control type="radiobutton" id="9243">
                         <visible>ControlGroup(9100).HasFocus(9104)</visible>
                         <label>$LOCALIZE[31216]</label>
