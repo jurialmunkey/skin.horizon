@@ -1330,6 +1330,11 @@ msgctxt "#31284"
 msgid "Classification"
 msgstr ""
 
+#: /1080i/Includes_Home.xml
+msgctxt "#31285"
+msgid "Extended info"
+msgstr ""
+
 msgctxt "#31286"
 msgid "Select highlight colour"
 msgstr ""

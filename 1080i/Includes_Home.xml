@@ -186,7 +186,6 @@
                 <onclick>SetFocus(9503)</onclick>
                 <onclick>SetProperty(TrailerPlaying,1,Home)</onclick>
                 <onclick>PlayMedia($INFO[ListItem.Trailer],false,1)</onclick>
-
                 <visible>Control.IsEnabled(11)</visible>
                 <visible>!String.IsEmpty(ListItem.Trailer)</visible>
             </item>
@@ -227,7 +226,7 @@
             </item> -->
             <!-- Info -->
             <item>
-                <label>$INFO[Control.GetLabel(9005)]</label>
+                <label>$LOCALIZE[31285]</label>
                 <icon>special://skin/extras/icons/infobubble.png</icon>
                 <onclick>SetFocus(9005)</onclick>
                 <onclick>Select</onclick>
