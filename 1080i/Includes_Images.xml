@@ -31,6 +31,12 @@
         <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</value>
     </variable>
+
+    <variable name="Image_DiscArt">
+        <value condition="!String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</value>
+    </variable>
+
     <variable name="Image_Watched">
         <value condition="System.Setting(hidewatched)">special://skin/extras/icons/watched-hide.png</value>
         <value>special://skin/extras/icons/watched-show.png</value>

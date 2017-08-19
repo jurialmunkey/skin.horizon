@@ -74,7 +74,6 @@
             <height>1</height>
             <timeperimage>5000</timeperimage>
             <randomize>true</randomize>
-            <!-- <imagepath background="true">special://skin/extras/colorspin/</imagepath> -->
             <imagepath background="true">$VAR[Image_Poster_Color]</imagepath>
         </control>
         <include>Global_Videowindow</include>
@@ -82,7 +81,6 @@
         <control type="group">
             <!-- Fanart and backgrounds with parallax -->
             <control type="group">
-                <!-- <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent) + [!Window.IsVisible(Home) | [Window.IsVisible(Home) + [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]]]">Conditional</animation> -->
                 <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent) + Skin.HasSetting(ParallaxAnimation)">Conditional</animation>
                 <include condition="Skin.HasSetting(DisableTransparentTopbar)">Global_Background_TopOffset</include>
                 <control type="multiimage" description="Fanart">
@@ -111,6 +109,8 @@
 
             <!-- Texture Overlay -->
             <control type="group">
+                <visible>!Window.IsVisible(Home) | [Window.IsVisible(Home) + [String.IsEqual(Container(300).ListItem.Property(widget),Weather) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget1)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget2)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget3)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget4)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget5)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget6)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget7)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget8)) | [String.IsEqual(Container(300).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(DisableWidgetCategories)]]]</visible>
+                <include>Animation_FadeInOut</include>
                 <control type="image">
                     <texture colordiffuse="FanartDim">common/white.png</texture>
                     <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur)">Conditional</animation>

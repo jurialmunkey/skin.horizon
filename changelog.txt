@@ -3,6 +3,8 @@ Add ability to only blur info dialog
 Add gradient color to context and power menu
 Add header to context and power menu
 Add character art toggle
+Add discart for music
+Add visible background for menu items with nothing
 
 [B]1.0.18[/B]
 Add ability to hide artwork for info views
