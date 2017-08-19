@@ -469,24 +469,25 @@
                     <orientation>horizontal</orientation>
                     <itemgap>0</itemgap>
                     <visible>Skin.HasSetting(ShowPathInfo)</visible>
+                    
                     <control type="label">
                         <align>left</align>
-                        <width>auto</width>
-                        <height>24</height>
-                        <font>font_unwatched</font>
-                        <textcolor>main_fg_70</textcolor>
-                        <label>$INFO[ListItem.Size,,   -   ]</label>
-                        <scroll>false</scroll>
-                    </control>
-                    <control type="label">
-                        <align>left</align>
-                        <width max="1080">auto</width>
+                        <width max="1060">auto</width>
                         <height>24</height>
                         <font>font_unwatched</font>
                         <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.FileNameAndPath]</label>
                         <haspath>true</haspath>
                         <scroll>true</scroll>
+                    </control>
+                    <control type="label">
+                        <align>left</align>
+                        <width>auto</width>
+                        <height>24</height>
+                        <font>font_unwatched</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$INFO[ListItem.Size,   (,)]</label>
+                        <scroll>false</scroll>
                     </control>
                     
                 </control>
