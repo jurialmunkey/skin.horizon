@@ -401,6 +401,7 @@
     </variable>
 
     <variable name="Label_Rating">
+        <value condition="!String.IsEmpty(ListItem.UserRating)">$INFO[ListItem.UserRating,,.0]</value>
         <value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
         <value>0.0</value>
     </variable>

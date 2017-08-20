@@ -711,6 +711,11 @@
             <include>Defs_Hidden_Button</include>
         </control>
 
+        <control type="button" id ="7">
+            <description>Userrating</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
         
     </controls>
 

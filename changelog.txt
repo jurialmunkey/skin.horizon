@@ -2,6 +2,7 @@
 Colorbox color matching feature
 Tweak widget spacing
 Add description and news to addon info overlay
+Add User ratings
 
 [B]1.0.19[/B]
 Add ability to only blur info dialog

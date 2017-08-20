@@ -352,11 +352,21 @@
                             </control>
                         </control>
                         <control type="group">
-                            <height>64</height>
                             <top>-10</top>
+                            <height>64</height>
                             <include content="Object_StarRating">
                                 <param name="align" value="center" />
                             </include>
+                            <visible>String.IsEmpty(ListItem.UserRating)</visible>
+                        </control>
+                        <control type="group">
+                            <top>-10</top>
+                            <height>64</height>
+                            <include content="Object_StarRating">
+                                <param name="align" value="center" />
+                                <param name="rating_prop" value="ListItem.UserRating" />
+                            </include>
+                            <visible>!String.IsEmpty(ListItem.UserRating)</visible>
                         </control>
                         <control type="label">
                             <top>40</top>

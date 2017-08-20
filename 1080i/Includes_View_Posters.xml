@@ -605,6 +605,15 @@
                         <top>-17</top>
                         <left>-16</left>
                         <include>Object_StarRating</include>
+                        <visible>String.IsEmpty(ListItem.UserRating)</visible>
+                    </control>
+                    <control type="group">
+                        <top>-17</top>
+                        <left>-16</left>
+                        <include content="Object_StarRating">
+                            <param name="rating_prop" value="ListItem.UserRating" />
+                        </include>
+                        <visible>!String.IsEmpty(ListItem.UserRating)</visible>
                     </control>
                     <control type="group">
                         <top>24</top>
@@ -1423,6 +1432,15 @@
                     <top>80</top>
                     <left>-16</left>
                     <include>Object_StarRating_NoGroupList</include>
+                    <visible>String.IsEmpty(ListItem.UserRating)</visible>
+                </control>
+                <control type="group">
+                    <top>80</top>
+                    <left>-16</left>
+                    <include content="Object_StarRating_NoGroupList">
+                        <param name="rating_prop" value="ListItem.UserRating" />
+                    </include>
+                    <visible>!String.IsEmpty(ListItem.UserRating)</visible>
                 </control>
                 <control type="label">
                     <top>170</top>

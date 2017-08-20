@@ -224,6 +224,13 @@
                 <onclick>Close</onclick>
                 <onclick>ActivateWindow(Videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title],return)</onclick>
             </item> -->
+            <!-- User Rating -->
+            <item>
+                <label>User rating$INFO[ListItem.UserRating,: ,]</label>
+                <icon>special://skin/extras/icons/award.png</icon>
+                <onclick>SendClick(7)</onclick>
+                <visible>Control.IsEnabled(7)</visible>
+            </item>
             <!-- Info -->
             <item>
                 <label>$LOCALIZE[31285]</label>
@@ -232,6 +239,7 @@
                 <onclick>Select</onclick>
                 <visible>Control.IsEnabled(9005)</visible>
             </item>
+            
             <!-- Art -->
             <item>
                 <label>$INFO[Control.GetLabel(10)]</label>
