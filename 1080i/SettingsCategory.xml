@@ -80,9 +80,8 @@
                     <bottom>74</bottom>
                     <itemgap>0</itemgap>
                     <onleft>3</onleft>
-                    <onup>noop</onup>
-                    <ondown>noop</ondown>
-                    <onright>SetFocus(300,5)</onright>
+                    <onup>5</onup>
+                    <ondown>5</ondown>
                     <orientation>vertical</orientation>
                     <scrolltime>0</scrolltime>
                 </control>

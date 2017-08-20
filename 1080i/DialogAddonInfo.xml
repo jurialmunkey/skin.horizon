@@ -176,7 +176,7 @@
                 </control>
             </control>
 
-            <!-- <include>Object_PlotOverlay</include> -->
+            <include>Object_PlotOverlay</include>
         </control>
         <control type="button" id ="6">
             <include>Defs_Hidden_Button</include>

@@ -61,8 +61,8 @@
                     <itemgap>0</itemgap>
                     <onleft>300</onleft>
                     <onright>9200</onright>
-                    <onup>noop</onup>
-                    <ondown>noop</ondown>
+                    <onup>9100</onup>
+                    <ondown>9100</ondown>
                     <orientation>vertical</orientation>
                     <control type="togglebutton" id="9101" description="Home">
                         <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9101)</usealttexture>
@@ -138,8 +138,8 @@
                     <itemgap>0</itemgap>
                     <onback>9100</onback>
                     <onleft>9100</onleft>
-                    <onup>noop</onup>
-                    <ondown>noop</ondown>
+                    <onup>9200</onup>
+                    <ondown>9200</ondown>
                     <orientation>vertical</orientation>
                     <scrolltime>0</scrolltime>
                     <!-- ==== -->
