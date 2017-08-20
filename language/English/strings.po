@@ -1343,6 +1343,11 @@ msgctxt "#31287"
 msgid "Reset to default"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31288"
+msgid "Match colors with poster"
+msgstr ""
+
 msgctxt "#31289"
 msgid "Awards"
 msgstr ""

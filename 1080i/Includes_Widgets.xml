@@ -80,6 +80,10 @@
                 </include>
                 <control type="button" id="9966">
                     <onleft>300</onleft>
+                    <onright>300</onright>
+                    <onup>300</onup>
+                    <ondown>300</ondown>
+                    <onback>300</onback>
                     <width>1</width>
                     <height>1</height>
                     <top>-1000</top>
@@ -87,6 +91,19 @@
                     <visible>String.IsEqual(Container(300).ListItem.Property(widget),Weather)</visible>
                     <animation effect="fade" end="0" condition="true">Conditional</animation>
                 </control>
+                <!-- <control type="button" id="9967">
+                    <onleft>300</onleft>
+                    <onright>300</onright>
+                    <onup>300</onup>
+                    <ondown>300</ondown>
+                    <onback>300</onback>
+                    <width>1</width>
+                    <height>1</height>
+                    <top>-1000</top>
+                    <onclick>SetFocus(300)</onclick>
+                    <visible>[Window.IsVisible(Home) + ![String.IsEqual(Container(300).ListItem.Property(widget),Weather) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget1)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget2)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget3)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget4)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget5)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget6)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget7)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget8)) | [String.IsEqual(Container(300).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(DisableWidgetCategories)]]]</visible>
+                    <animation effect="fade" end="0" condition="true">Conditional</animation>
+                </control> -->
                 <control type="group">
                     <visible>String.IsEqual(Container(300).ListItem.Property(widget),Weather)</visible>
                     <include>Weather</include>

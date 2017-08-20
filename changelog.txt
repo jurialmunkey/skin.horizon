@@ -1,3 +1,6 @@
+[B]1.0.20[/B]
+Colorbox color matching feature
+
 [B]1.0.19[/B]
 Add ability to only blur info dialog
 Add gradient color to context and power menu

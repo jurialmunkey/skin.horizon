@@ -25,12 +25,12 @@
     <constant name="info_details_width">256</constant>
     <constant name="info_details_left">716</constant>
     <constant name="showcase_top">471.5</constant> <!-- 441.5 -->
-    <constant name="widget_spacer_top">76</constant> <!-- 76 -->
+    <constant name="widget_spacer_top">41</constant> <!-- 76 -->
     <constant name="widget_spacer_bottom">463</constant> <!-- 473 -->
     <constant name="widget_poster_top">342</constant> <!-- 374 --> <!-- upwards move position -->
     <constant name="widget_poster_spacer">738</constant> <!-- 708 --> <!-- downwards move position -->
     <constant name="widget_poster_label_top">-806</constant> <!-- -774 --> <!-- label position -->
-    <constant name="widget_poster_label_spacer">495</constant> <!-- 451 --> <!-- space between items -->
+    <constant name="widget_poster_label_spacer">470</constant> <!-- 451 --> <!-- space between items -->
     <constant name="widget_submenu_spacer">506</constant> <!-- 476 -->
     <constant name="widget_submenu_label_top">-574</constant> <!-- -542 -->
     <constant name="widget_submenu_label_spacer">258</constant> <!-- 214 -->
