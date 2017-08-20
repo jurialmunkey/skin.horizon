@@ -416,15 +416,7 @@
                         <selected>!Skin.HasSetting(DisableClearLogo)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
-
-                    <control type="radiobutton" id="9335">
-                        <visible>ControlGroup(9100).HasFocus(9104)</visible>
-                        <label>Display panel under textbox of square items</label>
-                        <onclick>Skin.ToggleSetting(DisableSquareBox)</onclick>
-                        <selected>!Skin.HasSetting(DisableSquareBox)</selected>
-                        <include>Defs_Settings_Button</include>
-                    </control>
-
+                    
                     <control type="radiobutton" id="9245">
                         <visible>ControlGroup(9100).HasFocus(9104)</visible>
                         <label>$LOCALIZE[31255]</label>
