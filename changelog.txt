@@ -1,5 +1,7 @@
 [B]1.0.20[/B]
 Colorbox color matching feature
+Tweak widget spacing
+Add description and news to addon info overlay
 
 [B]1.0.19[/B]
 Add ability to only blur info dialog
