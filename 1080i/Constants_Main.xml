@@ -26,7 +26,7 @@
     <constant name="info_details_left">716</constant>
     <constant name="showcase_top">471.5</constant> <!-- 441.5 -->
     <constant name="widget_spacer_top">41</constant> <!-- 76 -->
-    <constant name="widget_spacer_bottom">485</constant> <!-- 473 -->
+    <constant name="widget_spacer_bottom">301</constant> <!-- 473 -->
     <constant name="widget_poster_top">342</constant> <!-- 374 --> <!-- upwards move position -->
     <constant name="widget_poster_spacer">738</constant> <!-- 708 --> <!-- downwards move position -->
     <constant name="widget_poster_label_top">-806</constant> <!-- -774 --> <!-- label position -->

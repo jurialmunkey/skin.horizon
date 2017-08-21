@@ -29,14 +29,38 @@
         </definition>
     </include>
 
-
-
     <include name="Home_Widgets">
+        <control type="button" id="430">
+            <width>1</width>
+            <height>1</height>
+            <left>-2000</left>
+            <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+            <onfocus>SetFocus(3000)</onfocus>
+            <onclick>noop</onclick>
+            <visible allowhiddenfocus="true">Control.HasFocus(430)</visible>
+        </control>
+        <control type="button" id="431">
+            <width>1</width>
+            <height>1</height>
+            <left>-2000</left>
+            <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+            <onfocus>SetFocus(3000)</onfocus>
+            <onclick>noop</onclick>
+            <visible allowhiddenfocus="true">Control.HasFocus(431)</visible>
+        </control>
         <control type="group">
             <include>Animation_Right</include>
             <left>-10</left>
             <right>-400</right>
             <include>Defs_InfoDialog_Visible</include>
+            <animation type="Conditional" condition="Control.IsVisible(430)" reversible="false">
+                <effect type="slide" end="0,20" time="60" tween="sine" />
+                <effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
+            </animation>
+            <animation type="Conditional" condition="Control.IsVisible(431)" reversible="false">
+                <effect type="slide" end="0,-20" time="60" tween="sine" />
+                <effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
+            </animation>
             <control type="group" id="3000">
                 <left>360</left>
                 <top>0</top>
@@ -114,6 +138,8 @@
 
     <include name="Home_Widgets_Grouplist">
         <control type="grouplist" id="$PARAM[pos]330">
+            <onup>$PARAM[pos]430</onup>
+            <ondown>$PARAM[pos]431</ondown>
             <onleft>300</onleft>
             <orientation>vertical</orientation>
             <itemgap>-150</itemgap>

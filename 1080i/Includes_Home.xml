@@ -58,6 +58,7 @@
                     <include>Home_Iconbar_Texture</include>
                     <include>Home_Iconbar_Logo</include>
                     <control type="list" id="300">
+
                         <include>Defs_InfoDialog_Visible</include>
                         <include condition="![Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_OnClick</include>
                         <include>Home_OnFocus</include>

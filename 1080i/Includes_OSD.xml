@@ -630,26 +630,20 @@
 
     <include name="OSD_Controls_Video_Left">
         <control type="button" id="1">
+            <description>CodecInfo</description>
+            <label>$LOCALIZE[31085]</label>
+            <onclick>Action(CodecInfo)</onclick>
+            <include>OSD_TextButton</include>
+        </control>
+        <control type="button" id="2">
             <description>Audio Settings</description>
             <label>292</label>
             <onclick>ActivateWindow(osdaudiosettings)</onclick>
             <include>OSD_TextButton</include>
         </control>
-        <control type="button" id="2">
+        <control type="button" id="3">
             <label>291</label>
             <onclick>ActivateWindow(osdvideosettings)</onclick>
-            <include>OSD_TextButton</include>
-        </control>
-        <!-- <control type="button" id="3">
-            <description>Subs</description>
-            <label>$LOCALIZE[287]</label>
-            <onclick>Action(ShowSubtitles)</onclick>
-            <include>OSD_TextButton</include>
-        </control> -->
-        <control type="button" id="3">
-            <description>CodecInfo</description>
-            <label>$LOCALIZE[31085]</label>
-            <onclick>Action(CodecInfo)</onclick>
             <include>OSD_TextButton</include>
         </control>
     </include>

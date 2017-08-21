@@ -56,16 +56,6 @@
                     <content>
                         <item>
                             <icon/>
-                            <label>$INFO[VideoPlayer.AudioCodec,[UPPERCASE],[/UPPERCASE]] $INFO[VideoPlayer.AudioChannels]ch $INFO[VideoPlayer.AudioLanguage,[UPPERCASE],[/UPPERCASE]]</label>
-                            <onclick>AudioNextLanguage</onclick>
-                        </item>
-                        <item>
-                            <icon/>
-                            <label>297</label>
-                            <onclick>audiodelay</onclick>
-                        </item>
-                        <item>
-                            <icon/>
                             <label>$LOCALIZE[287] $LOCALIZE[305] $INFO[VideoPlayer.SubtitlesLanguage]</label>
                             <onclick>NextSubtitle</onclick>
                             <visible>VideoPlayer.SubtitlesEnabled</visible>
@@ -87,6 +77,17 @@
                             <label>22006</label>
                             <onclick>subtitledelay</onclick>
                         </item>
+                        <item>
+                            <icon/>
+                            <label>297</label>
+                            <onclick>audiodelay</onclick>
+                        </item>
+                        <item>
+                            <icon/>
+                            <label>$INFO[VideoPlayer.AudioCodec,[UPPERCASE],[/UPPERCASE]] $INFO[VideoPlayer.AudioChannels]ch $INFO[VideoPlayer.AudioLanguage,[UPPERCASE],[/UPPERCASE]]</label>
+                            <onclick>AudioNextLanguage</onclick>
+                        </item>
+                        
                         <item>
                             <icon/>
                             <label>629</label>
