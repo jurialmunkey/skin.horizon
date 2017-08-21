@@ -138,8 +138,8 @@
 
     <include name="Home_Widgets_Grouplist">
         <control type="grouplist" id="$PARAM[pos]330">
-            <onup>$PARAM[pos]430</onup>
-            <ondown>$PARAM[pos]431</ondown>
+            <onup>430</onup>
+            <ondown>431</ondown>
             <onleft>300</onleft>
             <orientation>vertical</orientation>
             <itemgap>-150</itemgap>
