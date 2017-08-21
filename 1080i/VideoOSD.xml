@@ -169,8 +169,7 @@
         </control>
 
         <control type="group">
-            <include>Animation_FadeIn</include>
-            <include>Animation_FadeOut</include>
+            <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
             <visible>Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml)</visible>
             <include>Global_Background</include>
             <include>Topbar</include>

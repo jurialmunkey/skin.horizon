@@ -1205,8 +1205,7 @@
         <control type="group">
             <bottom>48</bottom>
             <height>410</height>
-            <include>Animation_FadeIn</include>
-            <include>Animation_FadeOut</include>
+            <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
             <visible>Control.HasFocus(9605)</visible>
             <control type="image">
                 <texture colordiffuse="panel_bg">common/white.png</texture>
