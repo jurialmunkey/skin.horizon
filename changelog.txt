@@ -3,6 +3,8 @@ Colorbox color matching feature
 Tweak widget spacing
 Add description and news to addon info overlay
 Add User ratings
+Add minimal busy loader
+Add option to disable landscape widget text
 
 [B]1.0.19[/B]
 Add ability to only blur info dialog

@@ -271,7 +271,7 @@
             <height>100</height>
             <include>Animation_OSD_Notification</include>
             <right>40</right>
-            <visible>!Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml) + ![Window.IsVisible(DialogVolumeBar.xml) + !Player.Muted]</visible>
+            <visible>!Window.IsVisible(DialogNotification.xml) + !Window.IsVisible(DialogExtendedProgressBar.xml) + ![Window.IsVisible(DialogVolumeBar.xml) + !Player.Muted] + [[Skin.HasSetting(MinimalBusyLoader) + !Window.IsVisible(DialogBusy.xml)] | !Skin.HasSetting(MinimalBusyLoader)]</visible>
             <include>Animation_FadeIn_Slide_Visible</include>
             <control type="image">
                 <right>-10</right>
