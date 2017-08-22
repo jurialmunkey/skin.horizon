@@ -662,6 +662,8 @@
             <usecontrolcoords>true</usecontrolcoords>
             <itemgap>0</itemgap>
             <control type="label">
+                <left>0</left>
+                <right>$PARAM[right]</right>
                 <label>$VAR[Label_MainTitle]</label>
                 <height>90</height>
                 <aligny>top</aligny>
@@ -669,6 +671,8 @@
                 <font>font_showcase_title</font>
             </control>
             <control type="label">
+                <left>0</left>
+                <right>$PARAM[right]</right>
                 <label>$VAR[Label_SubTitle]</label>
                 <height>40</height>
                 <aligny>top</aligny>
