@@ -22,7 +22,7 @@
     
     <include name="Global_Visualisation">
         <control type="group">
-            <visible>Player.HasAudio + Skin.HasSetting(global.showvisualisation)</visible>
+            <visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasAudio + Skin.HasSetting(global.showvisualisation)</visible>
             <control type="visualisation">
                 <visible>Skin.HasSetting(OSDVisualisation.ShowFanart) | [!Skin.HasSetting(musicvis.fanartfallback) + [!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)]]</visible>
                 <description>visualisation</description>
@@ -84,7 +84,7 @@
                 <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent) + Skin.HasSetting(ParallaxAnimation)">Conditional</animation>
                 <include condition="Skin.HasSetting(DisableTransparentTopbar)">Global_Background_TopOffset</include>
                 <control type="multiimage" description="Fanart">
-                    <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
+                    <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio] | [Player.HasAudio + !String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))]</visible>
                     <visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
                     <include>Dimensions_Fullscreen</include>
                     <timeperimage>10000</timeperimage>
@@ -96,7 +96,7 @@
                     <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
                 </control>
                 <control type="image" description="Fanart Fallback always">
-                    <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
+                    <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio] | [Player.HasAudio + !String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))]</visible>
                     <include>Dimensions_Fullscreen</include>
                     <visible>!Window.IsVisible(home) + Skin.HasSetting(global.hidefanart) + !String.IsEmpty(Skin.String(fanart.fallback))</visible>
                     <aspectratio>scale</aspectratio>
