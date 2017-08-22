@@ -1356,6 +1356,11 @@ msgctxt "#31290"
 msgid "Consensus"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31291"
+msgid "Display text labels on landscape widgets"
+msgstr ""
+
 #: /1080i/Includes_View_Posters.xml
 msgctxt "#31295"
 msgid "Icons Info"

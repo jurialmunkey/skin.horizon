@@ -655,6 +655,7 @@
                             <top>270</top>
                             <bottom>0</bottom>
                             <visible>![!Skin.HasSetting(DisableFakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]]</visible>
+                            <visible>!Skin.HasSetting(WidgetLabels)</visible>
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
@@ -806,6 +807,7 @@
                             <top>270</top>
                             <bottom>0</bottom>
                             <visible>![!Skin.HasSetting(DisableFakeLandscapeArt) + !String.IsEmpty(ListItem.Art(clearlogo)) + !String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Label,ListItem.TvShowTitle) | String.IsEmpty(ListItem.TvShowTitle) | Skin.HasSetting(PreferFanartHome)]]</visible>
+                            <visible>!Skin.HasSetting(WidgetLabels)</visible>
                             <control type="image">
                                 <texture colordiffuse="main_bg_70">common/white.png</texture>
                             </control>
