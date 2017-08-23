@@ -57,10 +57,9 @@
             </control>
         </control>
         <control type="progress" id="32">
-            <texturebg>-</texturebg>
-            <lefttexture>-</lefttexture>
-            <midtexture>-</midtexture>
-            <righttexture>-</righttexture>
+            <left>-2000</left>
+            <width>100</width>
+            <height>1</height>
             <info>Player.Progress</info>
             <animation effect="fade" start="0" end="0" condition="true">Conditional</animation>
         </control>

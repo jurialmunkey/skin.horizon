@@ -152,8 +152,8 @@
         <width>360</width>
         <height>23</height>
         <orientation>horizontal</orientation>
-        <texturefocus>-</texturefocus>
-        <texturenofocus>-</texturenofocus>
+        <texturefocus/>
+        <texturenofocus/>
         <pulseonselect>false</pulseonselect>
         <texturesliderbar colordiffuse="dialog_fg_70">other_textures/OSD/slider_bg_2.png</texturesliderbar>
         <textureslidernib border="2">other_textures/OSD/SliderNibNF.png</textureslidernib>
