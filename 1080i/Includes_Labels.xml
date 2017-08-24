@@ -101,10 +101,10 @@
         <value condition="Window.IsVisible(MyPVRTimers.xml)">$LOCALIZE[31166]</value>
         <value condition="Window.IsVisible(MyPVRSearch.xml)">$LOCALIZE[137]</value>
         <value condition="Window.IsVisible(Weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">$INFO[Window(Weather).Property(Location),$LOCALIZE[31007] ,]</value>
-        <value condition="Window.IsVisible(SettingsCategory.xml)">$LOCALIZE[5]</value>
-        <value condition="Window.IsVisible(SettingsProfile.xml)">$LOCALIZE[5]</value>
-        <value condition="Window.IsVisible(SkinSettings.xml)">$LOCALIZE[5]</value>
-        <value condition="Window.IsVisible(SettingsSystemInfo.xml)">$LOCALIZE[5]</value>
+        <value condition="Window.IsVisible(SettingsCategory.xml)">$VAR[Label_Settings_Header,, $LOCALIZE[5]]</value>
+        <value condition="Window.IsVisible(SettingsProfile.xml)">$VAR[Label_Settings_Header,, $LOCALIZE[5]]</value>
+        <value condition="Window.IsVisible(SkinSettings.xml)">$VAR[Label_Settings_Header,, $LOCALIZE[5]]</value>
+        <value condition="Window.IsVisible(SettingsSystemInfo.xml)">[CAPITALIZE]$LOCALIZE[138][/CAPITALIZE]</value>
         <value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[7]</value>
         <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[13350]$INFO[ListItem.TvShowTitle, / ,]</value>
 
@@ -216,6 +216,7 @@
 
     <variable name="Label_NumItems">
         <value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
+        <value condition="Window.IsVisible(SettingsSystemInfo.xml)">$VAR[Label_Counter_Movies]$VAR[Label_Counter_Episodes]$VAR[Label_Counter_Songs]$VAR[Label_Counter_Channels]</value>
         <value condition="!String.IsEqual(Container.NumItems,0) + !String.IsEmpty(Container.NumItems) + !Container.IsUpdating">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
         <value condition="!String.IsEqual(Container(50).NumItems,0) + !String.IsEmpty(Container(50).NumItems) + !Container(50).IsUpdating">[COLOR=$VAR[ColorHighlight]]$INFO[Container(50).NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
         <value>$VAR[Label_Counter_Movies]$VAR[Label_Counter_Episodes]$VAR[Label_Counter_Songs]$VAR[Label_Counter_Channels]</value>
@@ -258,13 +259,13 @@
     <variable name="Label_Settings_Header">
         <value condition="Window.IsActive(systeminfo)">$LOCALIZE[130]</value>
         <value condition="Window.IsActive(systemsettings)">$LOCALIZE[13000]</value>
-        <value condition="Window.IsActive(pvrsettings)">$LOCALIZE[19020]</value>
+        <value condition="Window.IsActive(pvrsettings)">$LOCALIZE[31294]</value>
         <value condition="Window.IsActive(skinsettings)">$LOCALIZE[166]</value>
         <value condition="Window.IsActive(addonbrowser)">$LOCALIZE[24001]</value>
         <value condition="Window.IsActive(profiles)">$LOCALIZE[13200]</value>
         <value condition="Window.IsActive(servicesettings)">$LOCALIZE[14036]</value>
         <value condition="Window.IsActive(interfacesettings)">$LOCALIZE[14206]</value>
-        <value condition="Window.IsActive(mediasettings)">$LOCALIZE[14202]</value>
+        <value condition="Window.IsActive(mediasettings)">$LOCALIZE[14211]</value>
         <value condition="Window.IsActive(playersettings)">$LOCALIZE[14200]</value>
         <value>$LOCALIZE[480]</value>
     </variable>

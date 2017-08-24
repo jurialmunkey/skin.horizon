@@ -1371,6 +1371,11 @@ msgctxt "#31293"
 msgid "Use minimal busy loader"
 msgstr ""
 
+#: /1080i/Includes_Home.xml
+msgctxt "#31294"
+msgid "PVR / Live TV"
+msgstr ""
+
 #: /1080i/Includes_View_Posters.xml
 msgctxt "#31295"
 msgid "Icons Info"

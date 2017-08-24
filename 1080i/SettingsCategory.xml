@@ -15,111 +15,126 @@
             <control type="group">
                 <left>320</left>
                 <right>-290</right>
-                <top>37</top>
-                <height>settings_height</height>
-                <control type="image">
-                    <bottom>74</bottom>
+
+                <control type="label">
+                    <left>40</left>
                     <height>74</height>
-                    <width>450</width>
-                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-                    <visible>Control.HasFocus(20)</visible>
-                </control>
-                <control type="button" id="20">
-                    <width>450</width>
-                    <bottom>74</bottom>
-                    <onup>3</onup>
-                    <onleft>300</onleft>
-                    <texturefocus colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texturefocus>
-                    <onclick>SettingsLevelChange</onclick>
-                    <include>Defs_Settings_Button</include>
+                    <label>$INFO[Control.GetLabel(20),, $LOCALIZE[5]]</label>
+                    <font>font_button</font>
+                    <textcolor>main_fg_30</textcolor>
                 </control>
 
-                <!-- Left Gradient Fade -->
-                <control type="image">
-                    <top>140</top>
-                    <height>74</height>
-                    <width>450</width>
-                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-                    <visible>!Control.HasFocus(300) + !Control.HasFocus(20)</visible>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,0)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,1)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,2)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,3)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,4)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,5)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,6)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,7)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,8)">Conditional</animation>
+                <control type="group">
+                    <top>74</top>
+                    <height>740</height>
+
+                    <!-- Left Gradient Fade -->
+                    <control type="image">
+                        <top>0</top>
+                        <height>74</height>
+                        <width>450</width>
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        <visible>!Control.HasFocus(300) + !Control.HasFocus(20)</visible>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,0)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,1)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,2)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,3)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,4)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,5)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,6)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,7)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(3).Position,8)">Conditional</animation>
+                    </control>
+
+                    <!-- Right Gradient Fade -->
+                    <control type="image">
+                        <top>0</top>
+                        <left>450</left>
+                        <height>74</height>
+                        <right>0</right>
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        <visible>ControlGroup(5).HasFocus()</visible>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,0)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,1)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,2)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,3)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,4)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,5)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,6)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,7)">Conditional</animation>
+                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,8)">Conditional</animation>
+                    </control>
+
+                    <!-- Right Group -->
+                    <control type="grouplist" id="5">
+                        <description>Control Area</description>
+                        <left>450</left>
+                        <right>0</right>
+                        <top>0</top>
+                        <bottom>74</bottom>
+                        <itemgap>0</itemgap>
+                        <onleft>3</onleft>
+                        <onup>5</onup>
+                        <ondown>5</ondown>
+                        <orientation>vertical</orientation>
+                        <scrolltime>0</scrolltime>
+                    </control>
+
+                    <!-- Left Group -->
+                    <control type="grouplist" id="3">
+                        <description>Button Area</description>
+                        <width>450</width>
+                        <top>0</top>
+                        <bottom>0</bottom>
+                        <itemgap>0</itemgap>
+                        <onright>5</onright>
+                        <ondown>3</ondown>
+                        <onup>3</onup>
+                        <onleft>300</onleft>
+                        <orientation>vertical</orientation>
+                    </control>
+
+
+
+                    <!-- Lines -->
+                    <include>Defs_Settings_Line</include>
+
+                    <!-- Arrows -->
+                    <include content="Defs_Settings_Arrows">
+                        <param name="id" value="5" />
+                    </include>
                 </control>
 
-                <!-- Right Gradient Fade -->
-                <control type="image">
-                    <top>140</top>
-                    <left>450</left>
-                    <height>74</height>
-                    <right>0</right>
-                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-                    <visible>ControlGroup(5).HasFocus()</visible>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,0)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,1)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,2)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,3)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,4)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,5)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,6)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,7)">Conditional</animation>
-                    <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(5).Position,8)">Conditional</animation>
-                </control>
-
-                <!-- Right Group -->
-                <control type="grouplist" id="5">
-                    <description>Control Area</description>
-                    <left>450</left>
-                    <right>0</right>
-                    <top>140</top>
-                    <bottom>74</bottom>
-                    <itemgap>0</itemgap>
-                    <onleft>3</onleft>
-                    <onup>5</onup>
-                    <ondown>5</ondown>
-                    <orientation>vertical</orientation>
-                    <scrolltime>0</scrolltime>
-                </control>
-
-                <!-- Left Group -->
-                <control type="grouplist" id="3">
-                    <description>Button Area</description>
-                    <width>450</width>
-                    <top>140</top>
+                <!-- Info -->
+                <control type="grouplist">
+                    <left>40</left>
+                    <right>30</right>
+                    <top>776</top>
                     <bottom>0</bottom>
-                    <itemgap>0</itemgap>
-                    <onright>5</onright>
-                    <ondown>20</ondown>
-                    <onup>noop</onup>
-                    <onleft>300</onleft>
                     <orientation>vertical</orientation>
-                </control>
-
-
-
-                <!-- Lines -->
-                <include>Defs_Settings_Line</include>
-
-                <!-- Arrows -->
-                <include content="Defs_Settings_Arrows">
-                    <param name="id" value="5" />
-                </include>
-
-                <!-- Header -->
-                <include>Defs_Settings_Header</include>
-                <control type="label" id="6">
-                    <include>Defs_Settings_InfoLine</include>
+                    <itemgap>0</itemgap>
+                    <control type="label">
+                        <height>50</height>
+                        <label>$LOCALIZE[19033]</label>
+                        <font>font_button</font>
+                        <textcolor>main_fg_30</textcolor>
+                    </control>
+                    <control type="textbox" id="6">
+                        <height>64</height>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_70</textcolor>
+                    </control>
                 </control>
             </control>
         </control>
 
         <include>Topbar</include>
         <include>Home</include>
+
+        <control type="button" id="20">
+            <onclick>SettingsLevelChange</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
 
         <control type="button" id="7">
             <description>Default Button</description>
@@ -143,9 +158,9 @@
         </control>
 
         <control type="label" id="14">
-            <textoffsetx>50</textoffsetx>
+            <textoffsetx>40</textoffsetx>
             <font>font_button</font>
-            <textcolor>panel_fg_30</textcolor>
+            <textcolor>main_fg_30</textcolor>
             <include>Defs_Settings_Button</include>
         </control>
 

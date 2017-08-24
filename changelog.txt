@@ -1,3 +1,7 @@
+[B]1.0.21[/B]
+Tweaks to settings
+
+
 [B]1.0.20[/B]
 Colorbox color matching feature
 Tweak widget spacing

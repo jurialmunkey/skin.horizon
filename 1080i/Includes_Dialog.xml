@@ -456,8 +456,8 @@
         <include>Animation_Right_Settings</include>
         <left>70</left>
         <right>-16</right>
-        <top>settings_top</top>
-        <bottom>48</bottom>
+        <top>155</top>
+        <bottom>0</bottom>
     </include>
 
     <!-- =============== -->
