@@ -455,6 +455,7 @@
                         <control type="button" id="9251" description="Color Highlight">
                             <visible>ControlGroup(9100).HasFocus(9105)</visible>
                             <include>Defs_Settings_Button</include>
+                            <enable>!Skin.HasSetting(CycleColors)</enable>
                             <label>31286</label>
                             <label2>$INFO[Skin.String(focuscolor.name)]</label2>
                             <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
@@ -463,6 +464,7 @@
                         <control type="button" id="9253" description="Color Highlight">
                             <visible>ControlGroup(9100).HasFocus(9105)</visible>
                             <include>Defs_Settings_Button</include>
+                            <enable>!Skin.HasSetting(CycleColors)</enable>
                             <label>$LOCALIZE[31250]</label>
                             <label2>$INFO[Skin.String(gradientcolor.name)]</label2>
                             <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
@@ -476,14 +478,7 @@
                             <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                             <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
                         </control>
-                        <control type="button" id="9254">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <label>$LOCALIZE[31193]</label>
-                            <include>Defs_Settings_Button</include>
-                            <onclick>Skin.Reset(focuscolor.name)</onclick>
-                            <onclick>Skin.Reset(gradientcolor.name)</onclick>
-                            <onclick>Skin.Reset(overlaycolor.name)</onclick>
-                        </control>
+                        
                         <control type="radiobutton" id="9337" description="Enable color matching">
                             <visible>ControlGroup(9100).HasFocus(9105)</visible>
                             <include>Defs_Settings_Button</include>
@@ -494,6 +489,29 @@
                             <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">RunScript(script.colorbox,daemon=True)</onclick>
                             <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
                             <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(MatchColors)</onclick>
+                        </control>
+
+                        <control type="radiobutton" id="9338" description="Enable color cycling">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31305]</label>
+                            <selected>Skin.HasSetting(CycleColors)</selected>
+                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">RunScript(script.colorbox,daemon=True)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(CycleColors)</onclick>
+                        </control>
+
+                        <control type="button" id="9254">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <label>$LOCALIZE[31193]</label>
+                            <include>Defs_Settings_Button</include>
+                            <onclick>Skin.Reset(focuscolor.name)</onclick>
+                            <onclick>Skin.Reset(gradientcolor.name)</onclick>
+                            <onclick>Skin.Reset(overlaycolor.name)</onclick>
+                            <onclick>Skin.Reset(CycleColors)</onclick>
+                            <onclick>Skin.Reset(MatchColors)</onclick>
                         </control>
 
                         <!-- ========== -->

@@ -1425,3 +1425,8 @@ msgstr ""
 msgctxt "#31304"
 msgid "Switch artwork/info"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31305"
+msgid "Color cycling"
+msgstr ""
