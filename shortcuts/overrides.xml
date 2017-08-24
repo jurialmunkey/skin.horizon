@@ -8,7 +8,7 @@
 
     <!-- Browse for Backgrounds -->
     <backgroundBrowse>True</backgroundBrowse>
-    <!-- <background label="::PLAYLIST::">playlistBackground</background> -->
+    <background label="::PLAYLIST::">playlistBackground</background>
     <widgetRename>True</widgetRename>
 
     <!-- Warning to Remove Settings -->

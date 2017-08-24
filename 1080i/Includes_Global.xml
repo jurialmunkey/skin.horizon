@@ -113,7 +113,7 @@
                 <include>Animation_FadeInOut</include>
                 <control type="image">
                     <texture colordiffuse="FanartDim">common/white.png</texture>
-                    <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur)">Conditional</animation>
+                    <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
                 </control>
                 <control type="image">
                     <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
@@ -162,6 +162,7 @@
     </include>
 
     <variable name="Global_Background_Image_NoFanart">
+        <value condition="Window.IsVisible(home) + !String.IsEmpty(Container(300).ListItem.Property(backgroundPlaylist))">$INFO[Container(9988).ListItem.Art(fanart)]</value>
         <value condition="Window.IsVisible(home) + !String.IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Container(300).ListItem.Property(Background)]</value>
         <value condition="Window.IsVisible(home) + !String.IsEmpty(Skin.String(home.slideshowpath)) + !String.IsEqual(Skin.String(home.slideshowpath),$LOCALIZE[8]) + [String.IsEmpty(Container(300).ListItem.Property(widget)) | Container(301).IsUpdating |  Skin.HasSetting(home.dontshowfanart)]">$INFO[Skin.String(home.slideshowpath)]</value>
         <value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>

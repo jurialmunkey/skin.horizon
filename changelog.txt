@@ -1,6 +1,6 @@
 [B]1.0.21[/B]
 Tweaks to settings
-
+Add playlists for backgrounds
 
 [B]1.0.20[/B]
 Colorbox color matching feature
