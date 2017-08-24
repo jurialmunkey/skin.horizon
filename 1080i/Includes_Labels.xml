@@ -69,7 +69,7 @@
     </variable>
 
     <variable name="Label_Widget">
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEqual(ListItem.Title,ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle,, - ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEqual(ListItem.Title,ListItem.TvShowTitle)">$INFO[ListItem.Property(AirDate),, - ]$INFO[ListItem.TvShowTitle,, - ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
         <value>$INFO[ListItem.Label]</value>
     </variable>
 
