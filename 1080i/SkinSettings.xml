@@ -246,6 +246,15 @@
                             <onclick>Skin.ToggleSetting(DisableTransparentTopbar)</onclick>
                         </control>
 
+                        <control type="radiobutton" id="9336" description="Shift Fanart">
+                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31306]</label>
+                            <enable>!Skin.HasSetting(DisableTransparentTopbar)</enable>
+                            <selected>Skin.HasSetting(ShiftFanartDown) | Skin.HasSetting(DisableTransparentTopbar)</selected>
+                            <onclick>Skin.ToggleSetting(ShiftFanartDown)</onclick>
+                        </control>
+
                         <control type="radiobutton" id="9227" description="Blur background fanart">
                             <visible>ControlGroup(9100).HasFocus(9102)</visible>
                             <include>Defs_Settings_Button</include>

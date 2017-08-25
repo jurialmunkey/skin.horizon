@@ -70,7 +70,7 @@
                     </include>
                 </control>
                 <include content="View_Posters_Info">
-                    <param name="bottom" value="450" />
+                    <param name="bottom" value="465" />
                     <param name="plot_height" value="300" />
                     <param name="id" value="55" />
                     <param name="left" value="infolist_left" />

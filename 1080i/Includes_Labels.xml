@@ -22,7 +22,7 @@
     </variable>
 
     <variable name="Label_EdgePadding">
-        <value condition="!Skin.HasSetting(LoveFilmLarge)">$LOCALIZE[31233]: $LOCALIZE[16041]</value>
+        <value condition="Skin.HasSetting(LoveFilmSmall)">$LOCALIZE[31233]: $LOCALIZE[16041]</value>
         <value>$LOCALIZE[31233]: $LOCALIZE[16039]</value>
     </variable>
 

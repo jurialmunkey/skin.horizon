@@ -189,8 +189,8 @@
             <control type="group">
                 <visible>Control.IsVisible(59)</visible>
                 <control type="group">
-                    <include condition="!Skin.HasSetting(LoveFilmLarge)">View_Posters_Lovefilm_Dimensions_Small</include>
-                    <include condition="Skin.HasSetting(LoveFilmLarge)">View_Posters_Lovefilm_Dimensions_Large</include>
+                    <include condition="Skin.HasSetting(LoveFilmSmall)">View_Posters_Lovefilm_Dimensions_Small</include>
+                    <include condition="!Skin.HasSetting(LoveFilmSmall)">View_Posters_Lovefilm_Dimensions_Large</include>
                     <control type="image">
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="main_bg_100">common/white.png</texture>
@@ -214,25 +214,25 @@
                         <ondown condition="!Control.IsVisible(8000)">300</ondown>
                         <pagecontrol>60</pagecontrol>
                         <scrolltime tween="cubic">400</scrolltime>
-                        <itemlayout width="1754" height="926" condition="Skin.HasSetting(LoveFilmLarge)">
+                        <itemlayout width="1754" height="926" condition="!Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="1754" height="926" condition="Skin.HasSetting(LoveFilmLarge)">
+                        <focusedlayout width="1754" height="926" condition="!Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </focusedlayout>
-                        <itemlayout width="1674" height="lovefilm_height" condition="!Skin.HasSetting(LoveFilmLarge)">
+                        <itemlayout width="1674" height="lovefilm_height" condition="Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="1674" height="lovefilm_height" condition="!Skin.HasSetting(LoveFilmLarge)">
+                        <focusedlayout width="1674" height="lovefilm_height" condition="Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
@@ -1299,9 +1299,18 @@
                     <control type="group">
                         <include condition="$PARAM[flipside]">View_RightSide</include>
                         <width>771</width>
-                        <control type="image" description="Poster">
+                        <control type="image">
                             <bordersize>10</bordersize>
                             <include>Defs_Shadow_Small</include>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture colordiffuse="PosterBack">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>10</bordersize>
+                            <texture colordiffuse="main_bg_30">common/white.png</texture>
+                        </control>
+                        <control type="image" description="Poster">
+                            <bordersize>10</bordersize>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Fanart]</texture>
                         </control>
@@ -1341,9 +1350,18 @@
                         <include condition="$PARAM[flipside]">View_RightSide</include>
                         <width>771</width>
                         <include>Animation_FocusBounce_Small</include>
-                        <control type="image" description="Poster">
+                        <control type="image">
                             <bordersize>10</bordersize>
                             <include>Defs_Shadow_Small</include>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture colordiffuse="PosterBack">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>10</bordersize>
+                            <texture colordiffuse="main_bg_30">common/white.png</texture>
+                        </control>
+                        <control type="image" description="Poster">
+                            <bordersize>10</bordersize>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture fallback="DefaultAddonNone.png" background="true">$VAR[Image_Fanart]</texture>
                         </control>

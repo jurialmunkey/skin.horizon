@@ -1,6 +1,9 @@
 [B]1.0.21[/B]
 Tweaks to settings
 Add playlists for backgrounds
+Add shift fanart down option
+Set lovefilm to be fullsize by default
+Some plotbox size fixes
 
 [B]1.0.20[/B]
 Colorbox color matching feature

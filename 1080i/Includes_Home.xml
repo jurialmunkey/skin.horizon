@@ -603,7 +603,7 @@
             <item>
                 <label>$VAR[Label_EdgePadding]</label>
                 <icon>special://skin/extras/icons/signpost.png</icon>
-                <onclick>Skin.ToggleSetting(LoveFilmLarge)</onclick>
+                <onclick>Skin.ToggleSetting(LoveFilmSmall)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(59)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
