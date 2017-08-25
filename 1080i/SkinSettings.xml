@@ -173,15 +173,15 @@
                             <label>$LOCALIZE[31183]</label>
                             <selected>Skin.HasSetting(CategoriesOnBottom)</selected>
                             <onclick>Skin.ToggleSetting(CategoriesOnBottom)</onclick>
-                            <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
+                            <enable>!Skin.HasSetting(DisableWidgetCategories)</enable>
                         </control>
                         <control type="radiobutton" id="9212" description="Big categories">
                             <visible>ControlGroup(9100).HasFocus(9101)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31190]</label>
+                            <enable>!Skin.HasSetting(MouseWidgets) + !Skin.HasSetting(DisableWidgetCategories)</enable>
                             <selected>Skin.HasSetting(BigSubmenu)</selected>
                             <onclick>Skin.ToggleSetting(BigSubmenu)</onclick>
-                            <visible>!Skin.HasSetting(DisableWidgetCategories)</visible>
                         </control>
                         <control type="radiobutton" id="9213" description="Pressing left opens submenu">
                             <visible>ControlGroup(9100).HasFocus(9101)</visible>
@@ -196,6 +196,13 @@
                             <label>$LOCALIZE[31291]</label>
                             <selected>!Skin.HasSetting(WidgetLabels)</selected>
                             <onclick>Skin.ToggleSetting(WidgetLabels)</onclick>
+                        </control>
+                        <control type="radiobutton" id="9317" description="Touch / Mouse enabled widgets">
+                            <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31307]</label>
+                            <selected>Skin.HasSetting(MouseWidgets)</selected>
+                            <onclick>Skin.ToggleSetting(MouseWidgets)</onclick>
                         </control>
 
                         <!-- ========== -->

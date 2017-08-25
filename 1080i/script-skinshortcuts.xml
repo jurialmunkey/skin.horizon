@@ -398,27 +398,27 @@
                     <param name="prev_id" value="" />
                     <param name="num" value="1" />
                 </include>
-                <include content="Defs_SkinShortcuts_Widget">
+                <include content="Defs_SkinShortcuts_Widget" condition="!Skin.HasSetting(MouseWidgets)">
                     <param name="prev_id" value=".Widget1" />
                     <param name="num" value="2" />
                 </include>
-                <include content="Defs_SkinShortcuts_Widget">
+                <include content="Defs_SkinShortcuts_Widget" condition="!Skin.HasSetting(MouseWidgets)">
                     <param name="prev_id" value=".Widget2" />
                     <param name="num" value="3" />
                 </include>
-                <include content="Defs_SkinShortcuts_Widget">
+                <include content="Defs_SkinShortcuts_Widget" condition="!Skin.HasSetting(MouseWidgets)">
                     <param name="prev_id" value=".Widget3" />
                     <param name="num" value="4" />
                 </include>
-                <include content="Defs_SkinShortcuts_Widget">
+                <include content="Defs_SkinShortcuts_Widget" condition="!Skin.HasSetting(MouseWidgets)">
                     <param name="prev_id" value=".Widget4" />
                     <param name="num" value="5" />
                 </include>
-                <include content="Defs_SkinShortcuts_Widget">
+                <include content="Defs_SkinShortcuts_Widget" condition="!Skin.HasSetting(MouseWidgets)">
                     <param name="prev_id" value=".Widget5" />
                     <param name="num" value="6" />
                 </include>
-                <include content="Defs_SkinShortcuts_Widget">
+                <include content="Defs_SkinShortcuts_Widget" condition="!Skin.HasSetting(MouseWidgets)">
                     <param name="prev_id" value=".Widget6" />
                     <param name="num" value="7" />
                 </include>
