@@ -1445,3 +1445,8 @@ msgstr ""
 msgctxt "#31308"
 msgid "Makes widgets touch and mouse compatible. Enabling this option will limit your widgets to a maximum of two per menu item. Categories widget will be set to large and will occupy one of the widget slots if it is enabled."
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31309"
+msgid "Blur effect type"
+msgstr ""
