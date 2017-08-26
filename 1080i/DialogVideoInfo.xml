@@ -488,6 +488,7 @@
                         <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.Size,   (,)]</label>
                         <scroll>false</scroll>
+                        <visible>!String.IsEqual(ListItem.Size,0 B)</visible>
                     </control>
                     
                 </control>
