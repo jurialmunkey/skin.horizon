@@ -293,15 +293,15 @@
                             <label2>$INFO[Skin.String(colorbox_effect)]</label2>
                             <onclick condition="String.IsEmpty(Skin.String(colorbox_effect))">Skin.SetString(colorbox_effect,blur)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),blur)">Skin.SetString(colorbox_effect,pixelate)</onclick>
-                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_effect,shiftblock)</onclick>
-                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),shiftblock)">Skin.SetString(colorbox_effect,pixeledges)</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_effect,fakelight)</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),fakelight)">Skin.SetString(colorbox_effect,pixeledges)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixeledges)">Skin.SetString(colorbox_effect,dither)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dither)">Skin.SetString(colorbox_effect,posterize)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),posterize)">Skin.SetString(colorbox_effect,distort)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),distort)">Skin.SetString(colorbox_effect,dataglitch)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dataglitch)">Skin.SetString(colorbox_effect,blur)</onclick>
                             <onclick condition="Skin.HasSetting(EnableBlur)">SetProperty(FIVE_daemon_set,$INFO[Skin.String(colorbox_effect)],home)</onclick>
-                            <onclick>RunScript(script.colorbox,daemon=True)</onclick>
+                            <onclick>SetProperty(FIVE_daemon_fire,True,home)</onclick>
                             <enable>Skin.HasSetting(EnableBlur) + System.HasAddon(script.colorbox)</enable>
                         </control>
 
