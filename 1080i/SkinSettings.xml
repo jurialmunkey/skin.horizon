@@ -260,6 +260,9 @@
                             <enable>!Skin.HasSetting(DisableTransparentTopbar)</enable>
                             <selected>Skin.HasSetting(ShiftFanartDown) | Skin.HasSetting(DisableTransparentTopbar)</selected>
                             <onclick>Skin.ToggleSetting(ShiftFanartDown)</onclick>
+                            <onclick>ReloadSkin()</onclick>
+                            <onclick>SetFocus(9102)</onclick>
+                            <onclick>AlarmClock(setfo,SetFocus(9336),00:00,silent)</onclick>
                         </control>
 
                         <control type="radiobutton" id="9227" description="Blur background fanart">
@@ -727,6 +730,15 @@
                             <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
                             <onclick condition="System.HasAddon(script.toolbox)">Addon.OpenSettings(script.toolbox)</onclick>
                             <selected>System.HasAddon(script.toolbox)</selected>
+                            <include>Defs_Settings_Button</include>
+                        </control>
+                        <control type="radiobutton" id="9398">
+                            <visible>ControlGroup(9100).HasFocus(9108)</visible>
+                            <label>script.colorbox</label>
+                            <label2>$INFO[System.AddonVersion(script.colorbox)]        </label2>
+                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox)">Addon.OpenSettings(script.colorbox)</onclick>
+                            <selected>System.HasAddon(script.colorbox)</selected>
                             <include>Defs_Settings_Button</include>
                         </control>
                         <control type="radiobutton" id="9285">
