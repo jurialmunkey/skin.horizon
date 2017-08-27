@@ -7,7 +7,10 @@
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</value>
     </variable>
 
-
+    <variable name="Label_MusicPlayerArtist">
+        <value condition="!String.IsEmpty(MusicPlayer.AlbumArtist)">$INFO[MusicPlayer.AlbumArtist]</value>
+        <value>$INFO[MusicPlayer.Artist]</value>
+    </variable>
 
     <variable name="Label_Info_NextAired_Details">
         <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate),,   -   ]$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ]$INFO[Window(Home).Property(NextAired.AirTime)]</value>

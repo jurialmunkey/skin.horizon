@@ -75,7 +75,7 @@
                         <font>font_showcase_title</font>
                     </control>
                     <control type="label">
-                        <label>$INFO[MusicPlayer.AlbumArtist,[COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
+                        <label>$VAR[Label_MusicPlayerArtist,[COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
                         <height>40</height>
                         <aligny>top</aligny>
                         <textcolor>$VAR[ColorHighlight]</textcolor>
