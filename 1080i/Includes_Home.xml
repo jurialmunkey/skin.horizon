@@ -235,7 +235,7 @@
             </item> -->
             <!-- User Rating -->
             <item>
-                <label>User rating$INFO[ListItem.UserRating,: ,]</label>
+                <label>$LOCALIZE[31310]$INFO[ListItem.UserRating,: ,]</label>
                 <icon>special://skin/extras/icons/award.png</icon>
                 <onclick>SendClick(7)</onclick>
                 <visible>Control.IsEnabled(7)</visible>

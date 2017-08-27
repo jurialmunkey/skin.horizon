@@ -19,6 +19,144 @@
 
     <include name="OSD_Music_Info">
         <control type="group">
+            <visible>Window.IsVisible(musicosd) | Player.ShowInfo</visible>
+            <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
+
+            <!-- Overlay -->
+            <control type="image">
+                <animation effect="fade" end="75" condition="true">Conditional</animation>
+                <texture>common/vignette.png</texture>
+            </control>
+            <control type="group">
+                <height>topbar_height</height>
+                <include>Topbar_TextDetails_DateTime</include>
+            </control>
+
+            <control type="group">
+                <visible>Window.IsVisible(musicosd) | Player.ShowInfo</visible>
+                <include>Animation_FadeIn</include>
+                <include>Aniamtion_FadeOut</include>
+                <control type="group">
+                    <bottom>58</bottom>
+                    <left>64</left>
+                    <width>206</width>
+                    <height>206</height>
+                    <!-- <control type="image">
+                        <width>206</width>
+                        <left>103</left>
+                        <texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.Discart)]</texture>
+                    </control> -->
+                    <control type="group">
+                        <left>-6</left>
+                        <right>-6</right>
+                        <top>-6</top>
+                        <bottom>-6</bottom>
+                        <control type="image">
+                            <include>Defs_Shadow_Opaque</include>
+                            <texture>$INFO[MusicPlayer.Cover]</texture>
+                        </control>
+                    </control>
+
+                </control>
+                <control type="grouplist">
+                    <!-- <animation effect="slide" end="103" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Discart))">Conditional</animation> -->
+                    <bottom>48</bottom>
+                    <left>308</left>
+                    <right>64</right>
+                    <height>234</height>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <control type="label">
+                        <label>$INFO[Player.Title]</label>
+                        <height>90</height>
+                        <aligny>top</aligny>
+                        <textcolor>main_fg_100</textcolor>
+                        <font>font_showcase_title</font>
+                    </control>
+                    <control type="label">
+                        <label>$INFO[MusicPlayer.AlbumArtist,[COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
+                        <height>40</height>
+                        <aligny>top</aligny>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <font>font_small</font>
+                    </control>
+                    <control type="grouplist">
+                        <top>-10</top>
+                        <height>70</height>
+                        <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <control type="group">
+                            <top>-17</top>
+                            <left>-16</left>
+                            <width>260</width>
+                            <include content="Object_StarRating">
+                                <param name="align" value="left" />
+                                <param name="visible" value="true" />
+                                <param name="rating_prop" value="MusicPlayer.UserRating" />
+                            </include>
+                        </control>
+                        <control type="grouplist">
+                            <top>24</top>
+                            <itemgap>0</itemgap>
+                            <orientation>horizontal</orientation>
+                            <height>40</height>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <width>100%</width>
+                            <control type="image" id="9968">
+                                <width>84</width>
+                                <top>-6</top>
+                                <height>50</height>
+                                <centertop>50%</centertop>
+                                <texture>$INFO[MusicPlayer.Codec,flags/color/audio/,.png]</texture>
+                                <aspectratio align="left">keep</aspectratio>
+                                <visible allowhiddenfocus="true">!String.IsEmpty(Control.GetLabel(9968))</visible>
+                            </control>
+                            <control type="label">
+                                <left>16</left>
+                                <aligny>top</aligny>
+                                <width>auto</width>
+                                <textcolor>main_fg_70</textcolor>
+                                <font>font_tiny</font>
+                                <label>$INFO[MusicPlayer.BitRate,, [COLOR=main_fg_30]kbps [/COLOR]]$INFO[MusicPlayer.BitsPerSample,[COLOR=main_fg_30]  |  [/COLOR], [COLOR=main_fg_30]bps [/COLOR]]$INFO[MusicPlayer.SampleRate,[COLOR=main_fg_30]  |  [/COLOR], [COLOR=main_fg_30]khz[/COLOR]]</label>
+                            </control>
+                        </control>
+                    </control>
+                    <control type="grouplist">
+                        <height>40</height>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <orientation>horizontal</orientation>
+                        <control type="label">
+                            <label>$INFO[Player.Time]</label>
+                            <height>40</height>
+                            <width>90</width>
+                            <aligny>top</aligny>
+                            <textcolor>main_fg_100</textcolor>
+                            <font>font_small</font>
+                        </control>
+                        <control type="progress">
+                            <top>10</top>
+                            <height>24</height>
+                            <width>564</width>
+                            <info>Player.Progress</info>
+                        </control>
+                        <control type="label">
+                            <label>$INFO[Player.Duration]</label>
+                            <height>40</height>
+                            <width>90</width>
+                            <aligny>top</aligny>
+                            <align>right</align>
+                            <textcolor>main_fg_100</textcolor>
+                            <font>font_small</font>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+
+    <include name="OSD_Music_Info_Big">
+        <control type="group">
             <visible>Player.ShowInfo</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
             <!-- Overlay -->
@@ -671,11 +809,9 @@
 
     <include name="OSD_Controls_Music_Right">
         <control type="button" id="4">
-            <description>Lyrics</description>
-             <label>24013</label>
-            <onclick>Close</onclick>
-            <onclick>RunScript(script.cu.lrclyrics)</onclick>
-            <enable>System.HasAddon(script.cu.lrclyrics)</enable>
+            <description>Rate Song</description>
+            <label>$LOCALIZE[31311]</label>
+            <onclick>setrating</onclick>
             <include>OSD_TextButton</include>
         </control>
         <control type="button" id="500">
@@ -684,11 +820,20 @@
             <include>OSD_TextButton</include>
         </control>
         <control type="button" id="6">
+            <description>Lyrics</description>
+             <label>24013</label>
+            <onclick>Close</onclick>
+            <onclick>RunScript(script.cu.lrclyrics)</onclick>
+            <enable>System.HasAddon(script.cu.lrclyrics)</enable>
+            <include>OSD_TextButton</include>
+        </control>
+        <!-- <control type="button" id="6">
             <description>Presets</description>
             <label>13388</label>
             <onclick>XBMC.ActivateWindow(visualisationpresetlist)</onclick>
             <include>OSD_TextButton</include>
-        </control>
+        </control> -->
+        
     </include>
 
     <include name="OSD_TextButton">

@@ -416,6 +416,14 @@
                             <onclick>Skin.ToggleSetting(LargeStatusbarFont)</onclick>
                         </control>
 
+                        <control type="radiobutton" id="9356" description="Music Vis Big">
+                            <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31312]</label>
+                            <selected>Skin.HasSetting(BigMusicVis)</selected>
+                            <onclick>Skin.ToggleSetting(BigMusicVis)</onclick>
+                        </control>
+
                         
 
                         <!-- ======= -->

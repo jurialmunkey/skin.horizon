@@ -157,6 +157,12 @@
             <include>Defs_Hidden_Button</include>
         </control>
 
+        <control type="button" id ="7">
+            <description>Rating</description>
+            <label>$LOCALIZE[563]</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
         <control type="button" id ="10">
             <description>Get Thumb</description>
             <label>13405</label>

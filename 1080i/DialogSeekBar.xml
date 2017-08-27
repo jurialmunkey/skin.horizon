@@ -21,7 +21,7 @@
 
         
 
-        <include condition="Window.IsVisible(MusicVisualisation.xml)">OSD_Music_Seekbar</include>
+        <include condition="Window.IsVisible(MusicVisualisation.xml) + Skin.HasSetting(BigMusicVis)">OSD_Music_Seekbar</include>
         <include condition="Window.IsVisible(VideoFullScreen.xml)">OSD_Video_Seekbar</include>
     </controls>
 

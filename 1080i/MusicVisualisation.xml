@@ -97,6 +97,7 @@
                 <scrollspeed>80</scrollspeed>
             </control>
         </control>
-        <include>OSD_Music_Info</include>
+        <include condition="!Skin.HasSetting(BigMusicVis)">OSD_Music_Info</include>
+        <include condition="Skin.HasSetting(BigMusicVis)">OSD_Music_Info_Big</include>
     </controls>
 </window>
