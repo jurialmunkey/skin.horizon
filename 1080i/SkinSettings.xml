@@ -415,6 +415,15 @@
                             <selected>!Skin.HasSetting(DontPauseOSD)</selected>
                             <onclick>Skin.ToggleSetting(DontPauseOSD)</onclick>
                         </control>
+
+                        <control type="radiobutton" id="9399" description="Musicvideo auto info">
+                            <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31314]</label>
+                            <selected>!Skin.HasSetting(DisableMusicVideoAutoInfo)</selected>
+                            <onclick>Skin.ToggleSetting(DisableMusicVideoAutoInfo)</onclick>
+                            <visible>!Skin.HasSetting(BigMusicVis)</visible>
+                        </control>
                         
                         <control type="radiobutton" id="9287" description="Larger statusbar font">
                             <visible>ControlGroup(9100).HasFocus(9103)</visible>

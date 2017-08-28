@@ -18,141 +18,170 @@
     </include>
 
     <include name="OSD_Music_Info">
-        <control type="group">
-            <visible>Window.IsVisible(musicosd) | Player.ShowInfo</visible>
-            <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
-
-            <!-- Overlay -->
-            <control type="image">
-                <animation effect="fade" end="75" condition="true">Conditional</animation>
-                <texture>common/vignette.png</texture>
-            </control>
+        <param name="player" default="MusicPlayer" />
+        <param name="rating" default="MusicPlayer.UserRating" />
+        <param name="artwork" default="MusicPlayer.Cover" />
+        <definition>
             <control type="group">
-                <height>topbar_height</height>
-                <include>Topbar_TextDetails_DateTime</include>
-            </control>
+                <visible>[Window.IsVisible(VideoFullScreen.xml) + VideoPlayer.Content(musicvideos) + !Skin.HasSetting(BigMusicVis)] | !Window.IsVisible(VideoFullScreen.xml)</visible>
+                <visible>Window.IsVisible(musicosd) | Player.ShowInfo | [Window.IsVisible(VideoFullScreen.xml) + [!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml) | [!Skin.HasSetting(DisableMusicVideoAutoInfo) + [Integer.IsEqual(Player.Time(hh),0) + Integer.IsEqual(Player.Time(mm),0) + Integer.IsGreater(Player.Time(ss),5) + Integer.IsLess(Player.Time(ss),15)] | [Integer.IsEqual(Player.TimeRemaining(hh),0) + Integer.IsEqual(Player.TimeRemaining(mm),0) + Integer.IsGreater(Player.TimeRemaining(ss),5) + Integer.IsLess(Player.TimeRemaining(ss),15)]]]]</visible>
+                <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
 
-            <control type="group">
-                <visible>Window.IsVisible(musicosd) | Player.ShowInfo</visible>
-                <include>Animation_FadeIn</include>
-                <include>Aniamtion_FadeOut</include>
-                <control type="group">
-                    <bottom>58</bottom>
-                    <left>64</left>
-                    <width>206</width>
-                    <height>206</height>
-                    <!-- <control type="image">
-                        <width>206</width>
-                        <left>103</left>
-                        <texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.Discart)]</texture>
-                    </control> -->
-                    <control type="group">
-                        <left>-6</left>
-                        <right>-6</right>
-                        <top>-6</top>
-                        <bottom>-6</bottom>
-                        <control type="image">
-                            <include>Defs_Shadow_Opaque</include>
-                            <texture>$INFO[MusicPlayer.Cover]</texture>
-                        </control>
-                    </control>
-
+                <!-- Overlay -->
+                <control type="image">
+                    <animation effect="fade" end="85" condition="true">Conditional</animation>
+                    <texture>common/vignette.png</texture>
                 </control>
-                <control type="grouplist">
-                    <!-- <animation effect="slide" end="103" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Discart))">Conditional</animation> -->
-                    <bottom>48</bottom>
-                    <left>308</left>
-                    <right>64</right>
-                    <height>234</height>
-                    <orientation>vertical</orientation>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>0</itemgap>
-                    <control type="label">
-                        <label>$INFO[Player.Title]</label>
-                        <height>90</height>
-                        <aligny>top</aligny>
-                        <textcolor>main_fg_100</textcolor>
-                        <font>font_showcase_title</font>
-                    </control>
-                    <control type="label">
-                        <label>$VAR[Label_MusicPlayerArtist,[COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
-                        <height>40</height>
-                        <aligny>top</aligny>
-                        <textcolor>$VAR[ColorHighlight]</textcolor>
-                        <font>font_small</font>
+                <control type="group">
+                    <height>topbar_height</height>
+                    <include>Topbar_TextDetails_DateTime</include>
+                </control>
+
+                <control type="group">
+                    <visible>Window.IsVisible(musicosd) | Player.ShowInfo | [Window.IsVisible(VideoFullScreen.xml) + [!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml) | [!Skin.HasSetting(DisableMusicVideoAutoInfo) + [Integer.IsEqual(Player.Time(hh),0) + Integer.IsEqual(Player.Time(mm),0) + Integer.IsGreater(Player.Time(ss),5) + Integer.IsLess(Player.Time(ss),15)] | [Integer.IsEqual(Player.TimeRemaining(hh),0) + Integer.IsEqual(Player.TimeRemaining(mm),0) + Integer.IsGreater(Player.TimeRemaining(ss),5) + Integer.IsLess(Player.TimeRemaining(ss),15)]]]]</visible>
+                    <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
+                    <include>Animation_FadeIn</include>
+                    <include>Aniamtion_FadeOut</include>
+                    <control type="group">
+                        <bottom>58</bottom>
+                        <left>64</left>
+                        <width>206</width>
+                        <height>206</height>
+                        <!-- <control type="image">
+                            <width>206</width>
+                            <left>103</left>
+                            <texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.Discart)]</texture>
+                        </control> -->
+                        <control type="group">
+                            <left>-6</left>
+                            <right>-6</right>
+                            <top>-6</top>
+                            <bottom>-6</bottom>
+                            <control type="image">
+                                <include>Defs_Shadow_Opaque</include>
+                                <texture>$INFO[$PARAM[artwork]]</texture>
+                            </control>
+                        </control>
+
                     </control>
                     <control type="grouplist">
-                        <top>-10</top>
-                        <height>70</height>
-                        <orientation>horizontal</orientation>
+                        <!-- <animation effect="slide" end="103" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Discart))">Conditional</animation> -->
+                        <bottom>48</bottom>
+                        <left>308</left>
+                        <right>64</right>
+                        <height>234</height>
+                        <orientation>vertical</orientation>
                         <usecontrolcoords>true</usecontrolcoords>
-                        <control type="group">
-                            <top>-17</top>
-                            <left>-16</left>
-                            <width>260</width>
-                            <include content="Object_StarRating">
-                                <param name="align" value="left" />
-                                <param name="visible" value="true" />
-                                <param name="rating_prop" value="MusicPlayer.UserRating" />
-                            </include>
+                        <itemgap>0</itemgap>
+                        <control type="label">
+                            <label>$INFO[Player.Title]</label>
+                            <height>90</height>
+                            <aligny>top</aligny>
+                            <textcolor>main_fg_100</textcolor>
+                            <font>font_showcase_title</font>
+                        </control>
+                        <control type="label">
+                            <label>$INFO[MusicPlayer.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
+                            <height>40</height>
+                            <aligny>top</aligny>
+                            <textcolor>$VAR[ColorHighlight]</textcolor>
+                            <font>font_small</font>
+                            <visible>Window.IsVisible(MusicVisualisation.xml)</visible>
+                        </control>
+                        <control type="label">
+                            <label>$INFO[VideoPlayer.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[VideoPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[VideoPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
+                            <height>40</height>
+                            <aligny>top</aligny>
+                            <textcolor>$VAR[ColorHighlight]</textcolor>
+                            <font>font_small</font>
+                            <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
                         </control>
                         <control type="grouplist">
-                            <top>24</top>
-                            <itemgap>0</itemgap>
+                            <top>-10</top>
+                            <height>70</height>
                             <orientation>horizontal</orientation>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <control type="group">
+                                <top>-17</top>
+                                <left>-16</left>
+                                <width>260</width>
+                                <include content="Object_StarRating">
+                                    <param name="align" value="left" />
+                                    <param name="visible" value="true" />
+                                    <param name="rating_prop" value="$PARAM[rating]" />
+                                </include>
+                            </control>
+                            <control type="grouplist">
+                                <top>24</top>
+                                <itemgap>0</itemgap>
+                                <orientation>horizontal</orientation>
+                                <height>40</height>
+                                <usecontrolcoords>true</usecontrolcoords>
+                                <width>100%</width>
+                                <visible>Window.IsVisible(MusicVisualisation.xml)</visible>
+                                <control type="image" id="9968">
+                                    <width>84</width>
+                                    <top>-6</top>
+                                    <height>50</height>
+                                    <centertop>50%</centertop>
+                                    <texture>$INFO[MusicPlayer.Codec,flags/color/audio/,.png]</texture>
+                                    <aspectratio align="left">keep</aspectratio>
+                                    <visible allowhiddenfocus="true">!String.IsEmpty(Control.GetLabel(9968))</visible>
+                                </control>
+                                <control type="label">
+                                    <left>16</left>
+                                    <aligny>top</aligny>
+                                    <width>auto</width>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <font>font_tiny</font>
+                                    <label>$INFO[MusicPlayer.BitRate,, [COLOR=main_fg_30]kbps [/COLOR]]$INFO[MusicPlayer.BitsPerSample,[COLOR=main_fg_30]  |  [/COLOR], [COLOR=main_fg_30]bps [/COLOR]]$INFO[MusicPlayer.SampleRate,[COLOR=main_fg_30]  |  [/COLOR], [COLOR=main_fg_30]khz[/COLOR]]</label>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <top>6</top>
+                                <left>8</left>
+                                <height>70</height>
+                                <width>700</width>
+                                <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+                                <include content="Object_Flags">
+                                    <param name="align" value="left" />
+                                    <param name="source" value="VideoPlayer." />
+                                    <param name="directory" value="color" />
+                                </include>
+                            </control>
+                        </control>
+                        <control type="grouplist">
                             <height>40</height>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <width>100%</width>
-                            <control type="image" id="9968">
-                                <width>84</width>
-                                <top>-6</top>
-                                <height>50</height>
-                                <centertop>50%</centertop>
-                                <texture>$INFO[MusicPlayer.Codec,flags/color/audio/,.png]</texture>
-                                <aspectratio align="left">keep</aspectratio>
-                                <visible allowhiddenfocus="true">!String.IsEmpty(Control.GetLabel(9968))</visible>
+                            <orientation>horizontal</orientation>
+                            <control type="label">
+                                <label>$INFO[Player.Time]</label>
+                                <height>40</height>
+                                <width>90</width>
+                                <aligny>top</aligny>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
+                            </control>
+                            <control type="progress">
+                                <top>10</top>
+                                <height>24</height>
+                                <width>564</width>
+                                <info>Player.Progress</info>
                             </control>
                             <control type="label">
-                                <left>16</left>
+                                <label>$INFO[Player.Duration]</label>
+                                <height>40</height>
+                                <width>90</width>
                                 <aligny>top</aligny>
-                                <width>auto</width>
-                                <textcolor>main_fg_70</textcolor>
-                                <font>font_tiny</font>
-                                <label>$INFO[MusicPlayer.BitRate,, [COLOR=main_fg_30]kbps [/COLOR]]$INFO[MusicPlayer.BitsPerSample,[COLOR=main_fg_30]  |  [/COLOR], [COLOR=main_fg_30]bps [/COLOR]]$INFO[MusicPlayer.SampleRate,[COLOR=main_fg_30]  |  [/COLOR], [COLOR=main_fg_30]khz[/COLOR]]</label>
+                                <align>right</align>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_small</font>
                             </control>
-                        </control>
-                    </control>
-                    <control type="grouplist">
-                        <height>40</height>
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <orientation>horizontal</orientation>
-                        <control type="label">
-                            <label>$INFO[Player.Time]</label>
-                            <height>40</height>
-                            <width>90</width>
-                            <aligny>top</aligny>
-                            <textcolor>main_fg_100</textcolor>
-                            <font>font_small</font>
-                        </control>
-                        <control type="progress">
-                            <top>10</top>
-                            <height>24</height>
-                            <width>564</width>
-                            <info>Player.Progress</info>
-                        </control>
-                        <control type="label">
-                            <label>$INFO[Player.Duration]</label>
-                            <height>40</height>
-                            <width>90</width>
-                            <aligny>top</aligny>
-                            <align>right</align>
-                            <textcolor>main_fg_100</textcolor>
-                            <font>font_small</font>
                         </control>
                     </control>
                 </control>
             </control>
-        </control>
+        </definition>
     </include>
 
     <include name="OSD_Music_Info_Big">
@@ -326,6 +355,7 @@
 
     <include name="OSD_Video_Seekbar">
         <control type="group">
+            <visible>[!VideoPlayer.Content(musicvideos) | Skin.HasSetting(BigMusicVis)]</visible>
             <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
             <animation effect="fade" start="0" end="100" time="300" condition="![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml)]">WindowOpen</animation>
@@ -454,7 +484,17 @@
                                     <textcolor>main_fg_70</textcolor>
                                     <visible>!VideoPlayer.Content(episodes)</visible>
                                     <visible>!VideoPlayer.Content(livetv)</visible>
+                                    <visible>!VideoPlayer.Content(musicvideos)</visible>
                                     <visible>!String.IsEmpty(VideoPlayer.Director)</visible>
+                                </control>
+                                <control type="label">
+                                    <aligny>top</aligny>
+                                    <width>auto</width>
+                                    <font>font_musicvis_album</font>
+                                    <label>$INFO[VideoPlayer.Artist]</label>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <visible>VideoPlayer.Content(musicvideos)</visible>
+                                    <visible>!String.IsEmpty(VideoPlayer.Artist)</visible>
                                 </control>
                                 <control type="label">
                                     <aligny>top</aligny>
@@ -514,12 +554,21 @@
                                     <aligny>top</aligny>
                                     <width>640</width>
                                     <font>font_musicvis_album</font>
-                                    <scroll>true</scroll>
-                                    <textcolor>main_fg_70</textcolor>
                                     <label>$INFO[VideoPlayer.Director]</label>
+                                    <textcolor>main_fg_70</textcolor>
                                     <visible>!VideoPlayer.Content(episodes)</visible>
                                     <visible>!VideoPlayer.Content(livetv)</visible>
+                                    <visible>!VideoPlayer.Content(musicvideos)</visible>
                                     <visible>!String.IsEmpty(VideoPlayer.Director)</visible>
+                                </control>
+                                <control type="label">
+                                    <aligny>top</aligny>
+                                    <width>640</width>
+                                    <font>font_musicvis_album</font>
+                                    <label>$INFO[VideoPlayer.Artist]</label>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <visible>VideoPlayer.Content(musicvideos)</visible>
+                                    <visible>!String.IsEmpty(VideoPlayer.Artist)</visible>
                                 </control>
                                 <control type="label">
                                     <aligny>top</aligny>
@@ -575,6 +624,7 @@
                                 <font>font_plotbox</font>
                                 <textcolor>main_fg_70</textcolor>
                                 <label>$INFO[VideoPlayer.Plot]</label>
+                                <visible>!String.IsEmpty(VideoPlayer.Plot)</visible>
                             </control>
                         </control>
                     </control>

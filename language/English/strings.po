@@ -1470,3 +1470,8 @@ msgstr ""
 msgctxt "#31313"
 msgid "Increase background transparency"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31314"
+msgid "Automatically display music video info at beginning and end of clip"
+msgstr ""

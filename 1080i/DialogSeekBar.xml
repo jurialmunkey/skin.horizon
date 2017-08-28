@@ -23,6 +23,11 @@
 
         <include condition="Window.IsVisible(MusicVisualisation.xml) + Skin.HasSetting(BigMusicVis)">OSD_Music_Seekbar</include>
         <include condition="Window.IsVisible(VideoFullScreen.xml)">OSD_Video_Seekbar</include>
+        <include condition="Window.IsVisible(VideoFullScreen.xml)" content="OSD_Music_Info">
+            <param name="player" value="VideoPlayer" />
+            <param name="rating" value="VideoPlayer.Rating" />
+            <param name="artwork" value="VideoPlayer.Cover" />
+        </include>
     </controls>
 
 </window>
