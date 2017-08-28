@@ -401,7 +401,8 @@
                                 <control type="label">
                                     <aligny>top</aligny>
                                     <height>120</height>
-                                    <width>auto</width>
+                                    <width max="1137">auto</width>
+                                    <scroll>true</scroll>
                                     <font>font_musicvis_title</font>
                                     <textcolor>main_fg_100</textcolor>
                                     <label>$INFO[Player.Title]</label>
@@ -420,7 +421,7 @@
                                 <control type="label">
                                     <aligny>top</aligny>
                                     <height>120</height>
-                                    <width>auto</width>
+                                    <width max="1130">auto</width>
                                     <font>font_musicvis_title</font>
                                     <textcolor>main_fg_70</textcolor>
                                     <label>$INFO[VideoPlayer.TvShowTitle]</label>
