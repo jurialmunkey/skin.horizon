@@ -197,7 +197,7 @@
 
             <!-- Media Info -->
             <control type="fixedlist" id="557">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(videos) | Container.Content(episodes)</visible>
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(artists) | Container.Content(videos) | Container.Content(episodes)</visible>
                 <include>View_NotTheseWindows</include>
                 <viewtype label="$LOCALIZE[31298]">list</viewtype>
                 <include content="View_Forced">

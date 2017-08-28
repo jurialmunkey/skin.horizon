@@ -19,7 +19,7 @@
 
             <!-- Standard Wall w/ Info -->
             <control type="panel" id="551">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(musicvideos)</visible>
+                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
                 <include>View_NotTheseWindows</include>
                 <left>855</left>
                 <viewtype label="$LOCALIZE[31295]">icon</viewtype>

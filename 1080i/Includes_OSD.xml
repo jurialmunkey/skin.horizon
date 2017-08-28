@@ -74,20 +74,11 @@
                             <font>font_showcase_title</font>
                         </control>
                         <control type="label">
-                            <label>$INFO[MusicPlayer.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[MusicPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
+                            <label>$INFO[$PARAM[player].Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[$PARAM[player].Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[$PARAM[player].Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
                             <height>40</height>
                             <aligny>top</aligny>
                             <textcolor>$VAR[ColorHighlight]</textcolor>
                             <font>font_small</font>
-                            <visible>Window.IsVisible(MusicVisualisation.xml)</visible>
-                        </control>
-                        <control type="label">
-                            <label>$INFO[VideoPlayer.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[VideoPlayer.Album,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[VideoPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
-                            <height>40</height>
-                            <aligny>top</aligny>
-                            <textcolor>$VAR[ColorHighlight]</textcolor>
-                            <font>font_small</font>
-                            <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
                         </control>
                         <control type="grouplist">
                             <top>-10</top>
