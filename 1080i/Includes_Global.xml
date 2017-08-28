@@ -117,6 +117,12 @@
                 <control type="image">
                     <texture colordiffuse="FanartDim">common/white.png</texture>
                     <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
+                    <visible>!Skin.HasSetting(IncreaseTransparency)</visible>
+                </control>
+                <control type="image">
+                    <texture colordiffuse="FanartDim2">common/white.png</texture>
+                    <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
+                    <visible>Skin.HasSetting(IncreaseTransparency)</visible>
                 </control>
                 <control type="image">
                     <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>

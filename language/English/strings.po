@@ -1465,3 +1465,8 @@ msgstr ""
 msgctxt "#31312"
 msgid "Use large album art in music visualisation"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31313"
+msgid "Increase background transparency"
+msgstr ""

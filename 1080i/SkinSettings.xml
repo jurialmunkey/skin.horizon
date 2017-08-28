@@ -265,6 +265,14 @@
                             <onclick>AlarmClock(setfo,SetFocus(9336),00:00,silent)</onclick>
                         </control>
 
+                        <control type="radiobutton" id="9346" description="Transparent background">
+                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31313]</label>
+                            <selected>Skin.HasSetting(IncreaseTransparency)</selected>
+                            <onclick>Skin.ToggleSetting(IncreaseTransparency)</onclick>
+                        </control>
+
                         <control type="radiobutton" id="9227" description="Blur background fanart">
                             <visible>ControlGroup(9100).HasFocus(9102)</visible>
                             <include>Defs_Settings_Button</include>
