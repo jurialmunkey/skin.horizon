@@ -978,7 +978,8 @@
                 <top>0</top>
                 <bottom>alphabet_bottom</bottom>
                 <onleft>50</onleft>
-                <onright>50</onright>
+                <onright>60</onright>
+                <visible allowhiddenfocus="true">!Control.HasFocus(60)</visible>
                 <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])</visible>
                 <visible>!Container.Content(seasons)</visible>
                 <visible>Control.IsEnabled(3) | Control.IsEnabled(4)</visible>
@@ -1020,7 +1021,7 @@
                 <content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
             </control>
             <control type="group">
-                <visible>!Control.IsVisible(8000)</visible>
+                <!-- <visible>!Control.IsVisible(8000)</visible> -->
                 <include>Object_Scrollbar_Vert</include>
             </control>
         </control>
@@ -1038,6 +1039,7 @@
             <ondown>60</ondown>
             <onup>60</onup>
             <onfocus>SetFocus(60)</onfocus>
+            <visible>!Control.IsVisible(8000)</visible>
         </control>
         <control type="scrollbar" id="60">
             <onback>50</onback>
@@ -1048,11 +1050,13 @@
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
             <onright>50</onright>
-            <onleft>50</onleft>
+            <onleft condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">8001</onleft>
+            <onleft condition="![[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)]">50</onleft>
             <texturesliderbackground colordiffuse="main_fg_12">common/white.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturesliderbarfocus>
             <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+            <visible allowhiddenfocus="true">!Control.IsVisible(8000) | Control.HasFocus(60)</visible>
             <visible>!Window.IsVisible(home)</visible>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
