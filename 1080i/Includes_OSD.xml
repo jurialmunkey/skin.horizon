@@ -27,7 +27,6 @@
                 <visible>Window.IsVisible(musicosd) | Player.ShowInfo | [Window.IsVisible(VideoFullScreen.xml) + [!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml) | [!Skin.HasSetting(DisableMusicVideoAutoInfo) + [Integer.IsEqual(Player.Time(hh),0) + Integer.IsEqual(Player.Time(mm),0) + Integer.IsGreater(Player.Time(ss),5) + Integer.IsLess(Player.Time(ss),15)] | [Integer.IsEqual(Player.TimeRemaining(hh),0) + Integer.IsEqual(Player.TimeRemaining(mm),0) + Integer.IsGreater(Player.TimeRemaining(ss),5) + Integer.IsLess(Player.TimeRemaining(ss),15)]]]]</visible>
                 <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
 
-                <!-- Overlay -->
                 <control type="image">
                     <animation effect="fade" end="85" condition="true">Conditional</animation>
                     <texture>common/vignette.png</texture>
@@ -47,11 +46,6 @@
                         <left>64</left>
                         <width>206</width>
                         <height>206</height>
-                        <!-- <control type="image">
-                            <width>206</width>
-                            <left>103</left>
-                            <texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.Discart)]</texture>
-                        </control> -->
                         <control type="group">
                             <left>-6</left>
                             <right>-6</right>
@@ -65,7 +59,6 @@
 
                     </control>
                     <control type="grouplist">
-                        <!-- <animation effect="slide" end="103" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Discart))">Conditional</animation> -->
                         <bottom>48</bottom>
                         <left>308</left>
                         <right>64</right>
