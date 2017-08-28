@@ -58,7 +58,6 @@
     
     <include name="Global_Background_TopOffset">
         <top>view_top</top>
-        <left>86</left>
     </include>
 
     <include name="Global_Background">
