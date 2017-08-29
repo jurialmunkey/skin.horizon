@@ -89,10 +89,22 @@
                                 <top>-17</top>
                                 <left>-16</left>
                                 <width>260</width>
+                                <visible>!Window.IsVisible(MusicVisualisation.xml) | !Integer.IsEqual($PARAM[rating],0)</visible>
                                 <include content="Object_StarRating">
                                     <param name="align" value="left" />
                                     <param name="visible" value="true" />
                                     <param name="rating_prop" value="$PARAM[rating]" />
+                                </include>
+                            </control>
+                            <control type="group">
+                                <top>-17</top>
+                                <left>-16</left>
+                                <width>260</width>
+                                <visible>Window.IsVisible(MusicVisualisation.xml) + Integer.IsEqual($PARAM[rating],0)</visible>
+                                <include content="Object_StarRating_Music">
+                                    <param name="align" value="left" />
+                                    <param name="visible" value="true" />
+                                    <param name="rating" value="MusicPlayer.Rating" />
                                 </include>
                             </control>
                             <control type="grouplist">

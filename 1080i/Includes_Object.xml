@@ -9,7 +9,7 @@
     </include>
     <include name="Object_StarRating">
         <param name="align" default="left" />
-        <param name="rating_prop" default="ListItem.Rating" />
+        <param name="rating" default="ListItem.Rating" />
         <definition>
             <control type="group">
                 <height>64</height>
@@ -244,7 +244,7 @@
 
     <include name="Object_StarRating_Music">
         <param name="align" default="center" />
-        <param name="rating" default="ListItem.Rating" />
+        <param name="rating_prop" default="ListItem.Rating" />
         <param name="visible" default="Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist) | Container.Content(musicvideos)" />
         <definition>
             <control type="group">
