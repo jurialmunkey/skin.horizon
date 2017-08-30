@@ -9,7 +9,7 @@
     </include>
     <include name="Object_StarRating">
         <param name="align" default="left" />
-        <param name="rating" default="ListItem.Rating" />
+        <param name="rating_prop" default="ListItem.Rating" />
         <definition>
             <control type="group">
                 <height>64</height>
@@ -1050,7 +1050,7 @@
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
             <onright>50</onright>
-            <onleft condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">8001</onleft>
+            <onleft condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">50</onleft>
             <onleft condition="![[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)]">50</onleft>
             <texturesliderbackground colordiffuse="main_fg_12">common/white.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
