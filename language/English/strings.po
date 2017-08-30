@@ -1475,3 +1475,8 @@ msgstr ""
 msgctxt "#31314"
 msgid "Automatically display music video info at beginning and end of clip"
 msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31315"
+msgid "CinemaVision"
+msgstr ""

@@ -352,8 +352,8 @@
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window.Property(AlsoKnownAs),[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(year),[COLOR=main_fg_100],[/COLOR]]$INFO[Window.Property(mpaa),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window.Property(duration),  |  [COLOR=main_fg_100], $LOCALIZE[31102][/COLOR]]$INFO[Window.Property(rating),  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
-        <value condition="Container.Content(movies)">$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
-        <value condition="Container.Content(episodes)">$INFO[ListItem.TvShowTitle,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(movies)">$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="Container.Content(episodes)">$INFO[ListItem.TvShowTitle,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalSeasons),[COLOR=main_fg_100], $LOCALIZE[33054][/COLOR]  |  ]$VAR[Label_MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Rating,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100], $LOCALIZE[20360][/COLOR]  |  ]$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=main_fg_100], $LOCALIZE[31215][/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(musicvideos)">$INFO[ListItem.Artist,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Album,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[Container.Property(Album_Label),[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Year,[COLOR=main_fg_100],[/COLOR]]</value>
@@ -371,7 +371,11 @@
     <variable name="Label_ShowCase_InfoLine">
         <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Year),[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Sets_Count,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(seasons)">$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Property(WatchedEpisodes),[COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]</value>
-        <value>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</value>
+        <value>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</value>
+    </variable>
+
+    <variable name="Label_EndTime">
+        <value condition="!String.IsEmpty(ListItem.EndTime) + !String.IsEqual(ListItem.EndTime,System.Time)">$INFO[ListItem.EndTime]</value>
     </variable>
 
     <variable name="Label_Genre">

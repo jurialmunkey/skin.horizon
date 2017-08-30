@@ -181,12 +181,21 @@
 
     <include name="Home_MainMenu_InfoItems">
         <content>
+            <!-- Play -->
             <item>
                 <label>$INFO[Control.GetLabel(8)]</label>
                 <icon>special://skin/extras/icons/play3.png</icon>
                 <onclick>SendClick(8)</onclick>
                 <visible>Control.IsEnabled(8)</visible>
             </item>
+            <!-- CinemaVision -->
+            <item>
+                 <label>$LOCALIZE[31315]</label>
+                 <icon>special://skin/extras/icons/cinemavision.png</icon>
+                 <onclick>Dialog.Close(MovieInformation)</onclick>
+                 <onclick>RunScript(script.cinemavision,experience)</onclick>
+                 <visible>System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]</visible>
+            </item> 
             <!-- Trailer -->
             <item>
                 <label>$INFO[Control.GetLabel(11)]</label>
