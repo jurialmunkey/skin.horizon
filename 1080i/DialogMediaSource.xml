@@ -17,14 +17,13 @@
             </control>
 
             <control type="list" id="10">
-                <include>Dialog_Standard_List_Left</include>
                 <onup>19</onup>
                 <onleft>9000</onleft>
                 <onright>9000</onright>
                 <ondown>12</ondown>
-                <left>0</left>
-                <width>1080</width>
                 <top>120</top>
+                <height>483</height>
+                <include>Dialog_Standard_List_Left</include>
                 <itemlayout height="69" width="1080">
                     <control type="label">
                         <left>30</left>
