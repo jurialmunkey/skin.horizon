@@ -591,14 +591,14 @@
                 <visible>Control.IsEnabled(4)</visible>
             </item>
             <!-- Wraplist -->
-            <item>
+            <!-- <item>
                 <label>$VAR[Label_WrapList]</label>
                 <icon>special://skin/extras/icons/signpost.png</icon>
                 <onclick>Skin.ToggleSetting(WrapList)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(52) | Control.IsVisible(56)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
-            </item>
+            </item> -->
             <!-- Flipside -->
             <item>
                 <label>$LOCALIZE[31304]</label>
@@ -952,9 +952,6 @@
             <include content="Home_Textbar_Item">
                 <param name="id" value="11" />
             </include>
-            <include content="Home_Textbar_Item">
-                <param name="id" value="12" />
-            </include>
             <include content="Home_Separator">
                 <param name="visible" value="Control.HasFocus(300)" />
             </include>
@@ -964,6 +961,7 @@
     <include name="Home_MainMenu_Layout">
         <top>view_top</top>
         <width>240</width>
+        <height>890</height>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
         <scrolltime>0</scrolltime>
@@ -1044,6 +1042,7 @@
 
     <include name="Home_VideoInfo_Layout">
         <top>view_top</top>
+        <height>890</height>
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
