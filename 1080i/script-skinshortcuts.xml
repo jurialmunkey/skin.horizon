@@ -293,7 +293,7 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
 
-                <control type="button" id="311" description="Browse for Thumb">
+                <control type="button" id="306" description="Browse for Thumb">
                     <include>Defs_SkinShortcuts_SetStrings</include>
                     <width>100%</width>
                     <height>66</height>

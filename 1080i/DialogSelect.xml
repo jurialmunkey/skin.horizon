@@ -91,6 +91,12 @@
                 <itemlayout height="138" width="700">
                     <control type="image">
                         <include>Dialog_Standard_List_Left_Icon</include>
+                        <visible>!String.Contains(ListItem.Icon,special://skin/) + !String.Contains(ListItem.Icon,Default)</visible>
+                    </control>
+                    <control type="image">
+                        <colordiffuse>dialog_fg_70</colordiffuse>
+                        <include>Dialog_Standard_List_Left_Icon</include>
+                        <visible>String.Contains(ListItem.Icon,special://skin/) | String.Contains(ListItem.Icon,Default)</visible>
                     </control>
                     <control type="label">
                         <animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.Label2)">Conditional</animation>
@@ -173,6 +179,12 @@
                 <height>450</height>
                 <visible>Control.IsVisible(6)</visible>
                 <control type="image">
+                    <visible>String.Contains(Container(6).ListItem.Icon,special://skin/) | String.Contains(Container(6).ListItem.Icon,Default)</visible>
+                    <texture colordiffuse="dialog_fg_70">$INFO[Container(6).ListItem.Icon]</texture>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                </control>
+                <control type="image">
+                    <visible>!String.Contains(Container(6).ListItem.Icon,special://skin/) + !String.Contains(Container(6).ListItem.Icon,Default)</visible>
                     <texture>$INFO[Container(6).ListItem.Icon]</texture>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 </control>

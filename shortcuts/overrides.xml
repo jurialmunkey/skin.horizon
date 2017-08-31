@@ -6,6 +6,8 @@
     <!-- <widget label="31163">Submenu</widget> -->
     <widgetPlaylists>True</widgetPlaylists>
 
+    <thumbnailBrowseDefault>special://skin/extras/icons/</thumbnailBrowseDefault>
+
     <!-- Browse for Backgrounds -->
     <backgroundBrowse>True</backgroundBrowse>
     <background label="::PLAYLIST::">playlistBackground</background>
@@ -69,7 +71,7 @@
     <icon image="DefaultPicture.png">special://skin/extras/icons/pictures.png</icon>
     <icon image="DefaultProgram.png">special://skin/extras/icons/addons.png</icon>
     <icon image="DefaultDVDFull.png">special://skin/extras/icons/cd.png</icon>
-    <icon image="DefaultFolder.png">special://skin/extras/icons/files.png</icon>
+    <icon image="DefaultFolder.png">special://skin/extras/icons/folder.png</icon>
     <icon image="UnknownUser.png">special://skin/extras/icons/actor.png</icon>
     <icon image="DefaultVideoPlaylists.png">special://skin/extras/icons/playlist.png</icon>
     <icon image="DefaultMusicPlaylists.png">special://skin/extras/icons/playlist.png</icon>

@@ -36,9 +36,15 @@
                 <onup>450</onup>
                 <ondown>450</ondown>
                 <pagecontrol>60</pagecontrol>
-                <itemlayout height="138" width="700">
+                <itemlayout height="138" width="700" condition="![[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + String.IsEqual(ListItem.Label,..)]]">
                     <control type="image">
                         <include>Dialog_Standard_List_Left_Icon</include>
+                        <visible>!String.Contains(ListItem.Path,special://skin/extras/icons) + !String.Contains(ListItem.Icon,Default)</visible>
+                    </control>
+                    <control type="image">
+                        <colordiffuse>dialog_fg_70</colordiffuse>
+                        <include>Dialog_Standard_List_Left_Icon</include>
+                        <visible>String.Contains(ListItem.Path,special://skin/extras/icons) | String.Contains(ListItem.Icon,Default)</visible>
                     </control>
                     <control type="label">
                         <animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
@@ -49,7 +55,7 @@
                         <include>Dialog_Standard_List_Left_Label2</include>
                     </control>
                 </itemlayout>
-                <focusedlayout height="138" width="700">
+                <focusedlayout height="138" width="700" condition="![[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + String.IsEqual(ListItem.Label,..)]]">
                     <control type="group">
                         <width>100%</width>
                         <height>135</height>
@@ -74,6 +80,47 @@
                         <selectedcolor>Selected</selectedcolor>
                         <label>$INFO[ListItem.AddonSummary]</label>
                         <include>Dialog_Standard_List_Left_Label2</include>
+                    </control>
+                </focusedlayout>
+                <itemlayout height="138" width="140" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + String.IsEqual(ListItem.Label,..)]]">
+                    <control type="image">
+                        <centerleft>50%</centerleft>
+                        <centertop>50%</centertop>
+                        <width>111</width>
+                        <height>111</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
+                        <visible>!String.Contains(ListItem.Path,special://skin/extras/icons) + !String.Contains(ListItem.Icon,Default)</visible>
+                    </control>
+                    <control type="image">
+                        <colordiffuse>dialog_fg_70</colordiffuse>
+                        <centerleft>50%</centerleft>
+                        <centertop>50%</centertop>
+                        <width>111</width>
+                        <height>111</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
+                        <visible>String.Contains(ListItem.Path,special://skin/extras/icons) | String.Contains(ListItem.Icon,Default)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="138" width="140" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + String.IsEqual(ListItem.Label,..)]]">
+                    <control type="group">
+                        <width>100%</width>
+                        <height>135</height>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <centerleft>50%</centerleft>
+                        <centertop>50%</centertop>
+                        <width>111</width>
+                        <height>111</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
                     </control>
                 </focusedlayout>
             </control>
@@ -107,6 +154,12 @@
                 <width>300</width>
                 <height>450</height>
                 <control type="image">
+                    <visible>String.Contains(Container(450).ListItem.Path,special://skin/extras/icons) | String.Contains(Container(450).ListItem.Icon,Default)</visible>
+                    <texture colordiffuse="dialog_fg_70">$INFO[Container(450).ListItem.Icon]</texture>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                </control>
+                <control type="image">
+                    <visible>!String.Contains(Container(450).ListItem.Path,special://skin/extras/icons) + !String.Contains(Container(450).ListItem.Icon,Default)</visible>
                     <texture>$INFO[Container(450).ListItem.Icon]</texture>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 </control>

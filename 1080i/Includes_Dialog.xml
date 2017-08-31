@@ -94,7 +94,7 @@
         <width>111</width>
         <height>111</height>
         <aspectratio scalediffuse="false">keep</aspectratio>
-        <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+        <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
     </include>
 
     <include name="Dialog_Standard_List_Left_Label">
