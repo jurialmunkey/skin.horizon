@@ -17,6 +17,16 @@
                 <top>50</top>
                 <bottom>50</bottom>
                 <width>842</width>
+                <control type="scrollbar" id="60">
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <left>-8</left>
+                    <width>8</width>
+                    <top>70</top>
+                    <height>759</height>
+                    <onleft>noop</onleft>
+                    <onright>20</onright>
+                </control>
                 <control type="label" id="101">
                     <description>Header Label</description>
                     <top>0</top>
@@ -30,15 +40,16 @@
                 </control>
                 <control type="list" id="20">
                     <description>Left File List</description>
-                    <right>25</right>
-                    <width>817</width>
+                    <left>0</left>
+                    <width>867</width>
                     <top>70</top>
                     <height>759</height>
-                    <onleft>21</onleft>
+                    <onleft>60</onleft>
                     <onright>21</onright>
                     <onup>20</onup>
                     <ondown>20</ondown>
-                    <itemlayout height="69" width="817">
+                    <pagecontrol>60</pagecontrol>
+                    <itemlayout height="69" width="867">
                         <control type="label">
                             <left>30</left>
                             <width>720</width>
@@ -58,13 +69,18 @@
 
                     </itemlayout>
 
-                    <focusedlayout height="69" width="817">
+                    <focusedlayout height="69" width="867">
 
-                        <control type="image">
+                        <control type="group">
                             <width>100%</width>
-                            <height>66</height>
-                            <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
-                            <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(20)">Conditional</animation>
+                            <height>100%</height>
+                            <animation effect="fade" start="100" end="25" condition="!Control.HasFocus(20)">Conditional</animation>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                            </control>
                         </control>
 
                         <control type="label">
@@ -102,7 +118,7 @@
                 <width>2</width>
                 <centerleft>50%</centerleft>
                 <top>50</top>
-                <bottom>25</bottom>
+                <bottom>46</bottom>
                 <include>Object_Separator_Right</include>
             </control>
 
@@ -111,6 +127,17 @@
                 <top>50</top>
                 <bottom>50</bottom>
                 <width>842</width>
+
+                <control type="scrollbar" id="61">
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <right>-8</right>
+                    <width>8</width>
+                    <top>70</top>
+                    <height>759</height>
+                    <onleft>21</onleft>
+                    <onright>noop</onright>
+                </control>
 
                 <control type="label" id="102">
                     <description>Header Label</description>
@@ -126,16 +153,16 @@
 
                 <control type="list" id="21">
                     <description>Left File List</description>
-                    <left>25</left>
-                    <width>817</width>
+                    <right>0</right>
+                    <width>867</width>
                     <top>70</top>
                     <height>759</height>
                     <onleft>20</onleft>
-                    <onright>20</onright>
+                    <onright>61</onright>
                     <onup>21</onup>
                     <ondown>21</ondown>
-                    
-                    <itemlayout height="69" width="817">
+                    <pagecontrol>61</pagecontrol>
+                    <itemlayout height="69" width="867">
                         <control type="label">
                             <left>30</left>
                             <width>720</width>
@@ -152,12 +179,17 @@
                             <info>ListItem.Label2</info>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="69" width="817">
-                        <control type="image">
+                    <focusedlayout height="69" width="867">
+                        <control type="group">
                             <width>100%</width>
-                            <height>66</height>
-                            <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
-                            <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(21)">Conditional</animation>
+                            <height>100%</height>
+                            <animation effect="fade" start="100" end="25" condition="!Control.HasFocus(21)">Conditional</animation>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                            </control>
                         </control>
                         <control type="label">
                             <left>30</left>
