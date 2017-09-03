@@ -253,12 +253,6 @@
         <value condition="Skin.HasSetting(header.mainheadercount) + Integer.IsGreater(Pvr.BackendChannels,0) + !Integer.IsGreater(Window(home).Property(Music.SongsCount),0) + !Integer.IsGreater(Window(home).Property(Episodes.UnWatched),0) + !Integer.IsGreater(Window(home).Property(Movies.UnWatched),0)">[COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
     </variable>
 
-    <variable name="Label_SkinShortcuts_WidgetName">
-        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
-        <value condition="!String.IsEmpty(Container(211).ListItem.Property(background))">$LOCALIZE[31110]</value>
-        <value>$LOCALIZE[16018]</value>
-    </variable>
-
     <variable name="Label_Settings_Header">
         <value condition="Window.IsActive(systeminfo)">$LOCALIZE[130]</value>
         <value condition="Window.IsActive(systemsettings)">$LOCALIZE[13000]</value>
@@ -372,6 +366,34 @@
         <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Year),[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Sets_Count,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Container.Content(seasons)">$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Property(WatchedEpisodes),[COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]</value>
         <value>$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</value>
+    </variable>
+
+    <variable name="Label_SkinShortcuts_Widget0">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName))">$INFO[Container(211).ListItem.Property(WidgetName)]$INFO[Container(211).ListItem.Property(WidgetAspect),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget1">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget1))">$INFO[Container(211).ListItem.Property(WidgetName.Widget1)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget1),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget1),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget1),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget2">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget2))">$INFO[Container(211).ListItem.Property(WidgetName.Widget2)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget2),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget2),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget2),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget3">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget3))">$INFO[Container(211).ListItem.Property(WidgetName.Widget3)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget3),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget3),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget3),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget4">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget4))">$INFO[Container(211).ListItem.Property(WidgetName.Widget4)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget4),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget4),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget4),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget5">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget5))">$INFO[Container(211).ListItem.Property(WidgetName.Widget5)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget5),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget5),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget5),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget6">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget6))">$INFO[Container(211).ListItem.Property(WidgetName.Widget6)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget6),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget6),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget6),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget7">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget7))">$INFO[Container(211).ListItem.Property(WidgetName.Widget7)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget7),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget7),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget7),  |  ,]</value>
+    </variable>
+    <variable name="Label_SkinShortcuts_Widget8">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(WidgetName.Widget8))">$INFO[Container(211).ListItem.Property(WidgetName.Widget8)]$INFO[Container(211).ListItem.Property(WidgetAspect.Widget8),  |  ,]$INFO[Container(211).ListItem.Property(WidgetSort.Widget8),  |  ,]$INFO[Container(211).ListItem.Property(WidgetDirection.Widget8),  |  ,]</value>
     </variable>
 
     <variable name="Label_EndTime">
