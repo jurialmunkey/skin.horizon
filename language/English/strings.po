@@ -1468,7 +1468,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31313"
-msgid "Increase background transparency"
+msgid "Background transparency"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1479,4 +1479,14 @@ msgstr ""
 #: /1080i/Includes_Home.xml
 msgctxt "#31315"
 msgid "CinemaVision"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31316"
+msgid "Increased"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31317"
+msgid "Reduced"
 msgstr ""

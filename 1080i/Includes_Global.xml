@@ -116,17 +116,17 @@
                 <control type="image">
                     <texture colordiffuse="FanartDim">common/white.png</texture>
                     <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
-                    <visible>!String.IsEqual(Skin.String(TransparencyLevel),x1) + !String.IsEqual(Skin.String(TransparencyLevel),x2)</visible>
+                    <visible>String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31317])</visible>
                 </control>
                 <control type="image">
                     <texture colordiffuse="FanartDim2">common/white.png</texture>
                     <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
-                    <visible>String.IsEqual(Skin.String(TransparencyLevel),x1)</visible>
+                    <visible>!String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31317]) + !String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31316])</visible>
                 </control>
                 <control type="image">
                     <texture colordiffuse="FanartDim3">common/white.png</texture>
                     <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
-                    <visible>String.IsEqual(Skin.String(TransparencyLevel),x2)</visible>
+                    <visible>String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31316])</visible>
                 </control>
                 <control type="image">
                     <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
