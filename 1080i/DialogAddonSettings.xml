@@ -59,6 +59,7 @@
             <control type="radiobutton" id="4">
                 <description>Default RadioButton</description>
                 <radioposx>885</radioposx>
+                <textwidth>835</textwidth>
                 <include>Dialog_Standard_ListButton</include>
             </control>
 
