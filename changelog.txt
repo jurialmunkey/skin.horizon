@@ -1,3 +1,8 @@
+[B]1.0.22[/B]
+Update to next aired (horizontal)
+New music osd
+Other updates
+
 [B]1.0.21[/B]
 Tweaks to settings
 Add playlists for backgrounds

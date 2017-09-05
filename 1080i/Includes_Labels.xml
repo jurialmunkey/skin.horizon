@@ -97,6 +97,7 @@
     </variable>
 
     <variable name="Label_Header_Content">
+        <value condition="Window.IsVisible(script-NextAired-TVGuide2.xml) | Window.IsVisible(script-NextAired-TVGuide.xml)">$LOCALIZE[31220]</value>
         <value condition="Window.IsVisible(script-nextup-notification-PostPlayInfo.xml)">$LOCALIZE[31221]</value>
         <value condition="Window.IsVisible(MyPVRChannels.xml)">$LOCALIZE[19023]</value>
         <value condition="Window.IsVisible(MyPVRGuide.xml)">$LOCALIZE[19273]</value>
