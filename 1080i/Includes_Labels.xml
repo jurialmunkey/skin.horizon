@@ -267,6 +267,14 @@
         <value>$LOCALIZE[480]</value>
     </variable>
 
+    <variable name="Label_VideoInfo_Rating">
+        <value condition="Control.IsVisible(150) + !String.IsEmpty(Container(150).ListItem.Rating)">[COLOR=$VAR[ColorHighlight]]  |  [/COLOR]$INFO[Container(150).ListItem.Rating]</value>
+        <value condition="Control.IsVisible(250) + !String.IsEmpty(Container(150).ListItem.Rating)">[COLOR=$VAR[ColorHighlight]]  |  [/COLOR]$INFO[Container(250).ListItem.Rating]</value>
+    </variable>
+
+    <variable name="Label_VideoInfo_Year">
+        <value condition="Control.IsVisible(150) + !String.IsEmpty(Container(150).ListItem.Year)">[COLOR=$VAR[ColorHighlight]]  |  [/COLOR]$INFO[Container(150).ListItem.Year]</value>
+    </variable>
 
     <variable name="Label_VideoInfo_Title">
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + Control.IsVisible(150)">$INFO[Container(150).ListItem.Label]</value>
@@ -296,11 +304,10 @@
 
     <variable name="Label_VideoInfo_InfoLine">
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + Control.IsVisible(1000)">$INFO[Container(1000).ListItem.Property(character),[COLOR=panel_fg_70]$LOCALIZE[20347][/COLOR] ,]</value>
-        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + Control.IsVisible(750)">$INFO[Container(750).ListItem.Property(job)] $INFO[Window(Home).Property(VideoInfo_InfoLine)]</value>
+        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) + Control.IsVisible(750)">$INFO[Container(750).ListItem.Property(job)]</value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + Control.IsVisible(150)">$INFO[Container(150).ListItem.Property(character),[COLOR=panel_fg_70]$LOCALIZE[20347][/COLOR] ,]</value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + Control.IsVisible(250)">$INFO[Container(250).ListItem.Property(character),[COLOR=panel_fg_70]$LOCALIZE[20347][/COLOR] ,]</value>
         <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + Control.IsVisible(550)">$INFO[Container(550).ListItem.Property(job),[COLOR=panel_fg_70]$LOCALIZE[20347][/COLOR] ,]</value>
-        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window(Home).Property(VideoInfo_InfoLine)]</value>
         <value condition="[Control.HasFocus(50) | String.IsEqual(Window(Home).Property(FocusedList),50)] + !Container(50).IsUpdating">$INFO[Container(50).ListItem.Label2,[COLOR=panel_fg_70]$LOCALIZE[20347][/COLOR] ,]</value>
         <value condition="[Control.HasFocus(9502) | String.IsEqual(Window(Home).Property(FocusedList),9502)] + !Container(9502).IsUpdating">$INFO[Container(9502).ListItem.Year,  •  ,]</value>
     </variable>

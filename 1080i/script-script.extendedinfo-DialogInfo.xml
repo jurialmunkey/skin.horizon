@@ -86,7 +86,7 @@
                         <aligny>center</aligny>
                         <width>100%</width>
                         <height>100%</height>
-                        <label>$VAR[Label_VideoInfo_Title]$VAR[Label_VideoInfo_InfoLine, ,]</label>
+                        <label>$VAR[Label_VideoInfo_Title]$VAR[Label_VideoInfo_InfoLine, ,]$VAR[Label_VideoInfo_Year]$VAR[Label_VideoInfo_Rating]</label>
                     </control>
                 </control>
 
