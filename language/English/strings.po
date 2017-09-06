@@ -1490,3 +1490,8 @@ msgstr ""
 msgctxt "#31317"
 msgid "Reduced"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31318"
+msgid "Geometric overlay effect on fanart"
+msgstr ""

@@ -114,24 +114,14 @@
                 <visible>!Window.IsVisible(Home) | [Window.IsVisible(Home) + [String.IsEqual(Container(300).ListItem.Property(widget),Weather) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget1)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget2)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget3)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget4)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget5)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget6)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget7)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget8)) | [String.IsEqual(Container(300).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(DisableWidgetCategories)]]] | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]</visible>
                 <include>Animation_FadeInOut</include>
                 <control type="image">
-                    <texture colordiffuse="FanartDim">common/white.png</texture>
+                    <texture colordiffuse="$VAR[Global_FanartDim]">common/white.png</texture>
                     <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
-                    <visible>String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31317])</visible>
                 </control>
                 <control type="image">
-                    <texture colordiffuse="FanartDim2">common/white.png</texture>
-                    <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
-                    <visible>!String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31317]) + !String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31316])</visible>
-                </control>
-                <control type="image">
-                    <texture colordiffuse="FanartDim3">common/white.png</texture>
-                    <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
-                    <visible>String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31316])</visible>
-                </control>
-                <control type="image">
-                    <animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
+                    <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
                     <texture background="true">special://skin/extras/backgrounds/default.jpg</texture>
-                    <visible>[Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsSystemInfo.xml)]</visible>
+                    <visible>Skin.HasSetting(GeometricBackground)</visible>
+                    <!-- <visible>[Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsSystemInfo.xml)]</visible> -->
                 </control>
                 <control type="image">
                     <texture colordiffuse="$VAR[ColorOverlay]">common/gradient-solid.png</texture>
@@ -143,6 +133,12 @@
         </control>
         
     </include>
+
+    <variable name="Global_FanartDim">
+        <value condition="String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31317])">FanartDim_Reduced</value>
+        <value condition="String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31316])">FanartDim_Increased</value>
+        <value>FanartDim_Default</value>
+    </variable>
 
     <include name="Global_Background_Settings">
         <include>Global_Videowindow</include>

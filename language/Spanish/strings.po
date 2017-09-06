@@ -1573,3 +1573,45 @@ msgstr ""
 msgctxt "#31309"
 msgid "Blur effect type"
 msgstr "Tipo de Efecto de Difuminado"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31310"
+msgid "User rating"
+msgstr "Valoración de Usuario"
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31311"
+msgid "Rate Song"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31312"
+msgid "Use large album art in music visualisation"
+msgstr "Utilizar arte grande de álbum en visualización de música"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31313"
+msgid "Background transparency"
+msgstr "Transparencia de Fondo"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31314"
+msgid "Automatically display music video info at beginning and end of clip"
+msgstr ""
+"Mostrar automáticamente información de videoclip al principio y final del "
+"clip"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31315"
+msgid "CinemaVision"
+msgstr "CinemaVision"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31316"
+msgid "Increased"
+msgstr "Aumentada"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31317"
+msgid "Reduced"
+msgstr "Reducida"
