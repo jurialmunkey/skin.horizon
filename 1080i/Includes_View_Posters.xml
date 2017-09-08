@@ -256,6 +256,17 @@
                             <height>24</height>
                             <texture>$VAR[Image_Overlay]</texture>
                         </control>
+                        <control type="label">
+                            <top>2</top>
+                            <right>2</right>
+                            <width>28</width>
+                            <height>28</height>
+                            <font>font_unwatched</font>
+                            <align>center</align>
+                            <textcolor>Selected</textcolor>
+                            <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+                            <include>View_UnwatchedEpisodes_Visible</include>
+                        </control>
                         <visible>!String.IsEmpty(ListItem.Overlay)</visible>
                     </control>
                     <control type="group">
