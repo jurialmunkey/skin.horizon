@@ -176,6 +176,26 @@
                     <include content="Dialog_VideoInfo_BusyIndicator">
                         <param name="id" value="9502" />
                     </include>
+                    <!-- <control type="list" id="9503">
+                        <visible allowhiddenfocus="true">String.IsEqual(Window(Home).Property(FocusedList),9503) | Control.HasFocus(9503)</visible>
+                        <orientation>horizontal</orientation>
+                        <onleft>300</onleft>
+                        <onright>noop</onright>
+                        <include>Animation_FadeInOut</include>
+                        <include>View_Info_Movement</include>
+                        <onfocus>SetProperty(FocusedList,9503,Home)</onfocus>
+                        <onback>ClearProperty(FocusedList)</onback>
+                        <onback>50</onback>
+                        <animation effect="fade" start="100" end="0" time="0" condition="Container(9503).IsUpdating">Conditional</animation>
+                        <include content="View_Actor_Layout">
+                            <param name="id" value="9503" />
+                            <param name="infolabel" value="false" />
+                        </include>
+                        <content>plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=movies&amp;imdbid=$INFO[ListItem.IMDBNumber]</content>
+                    </control>
+                    <include content="Dialog_VideoInfo_BusyIndicator">
+                        <param name="id" value="9503" />
+                    </include> -->
                 </control>
 
                 <control type="grouplist">
@@ -685,6 +705,16 @@
             <onclick condition="String.IsEqual(ListItem.DbType,movie)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Title],imdb_id=$INFO[ListItem.IMDBNumber])</onclick>
             <onclick condition="String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,episode)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.TvShowTitle])</onclick>
             <visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,episode)]</visible>
+        </control>
+
+        <control type="button" id="9006">
+            <label>20339</label>
+            <onclick>SetProperty(VideoInfo_InfoLine,$INFO[ListItem.Label],Home)</onclick>
+            <onclick>SetProperty(FocusedList,9503,Home)</onclick>
+            <onclick>SetFocus(9503)</onclick>
+            <visible>Container.Content(movies)</visible>
+            <visible>!String.IsEmpty(ListItem.IMDBNumber)</visible>
+            <include>Defs_Hidden_Button</include>
         </control>
 
         <control type="button" id ="10">

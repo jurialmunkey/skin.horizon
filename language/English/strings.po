@@ -1495,3 +1495,8 @@ msgstr ""
 msgctxt "#31318"
 msgid "Geometric overlay effect on fanart"
 msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31319"
+msgid "Similar movies"
+msgstr ""

@@ -237,6 +237,15 @@
                 <visible>Control.IsEnabled(9002)</visible>
                 <visible>Integer.IsGreater(Container(9502).NumItems,0)</visible>
             </item>
+            <!-- Similar -->
+            <!-- <item>
+                <label>$LOCALIZE[31319]</label>
+                <icon>special://skin/extras/icons/bookmark-star.png</icon>
+                <onclick>SetFocus(9006)</onclick>
+                <onclick>Select</onclick>
+                <visible>Control.IsEnabled(9006)</visible>
+                <visible>Integer.IsGreater(Container(9503).NumItems,0)</visible>
+            </item> -->
             <!-- youtube -->
             <!-- <item>
                 <label>Youtube</label>
