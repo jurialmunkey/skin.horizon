@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="Defs_Settings_OnLoad">
+        <onload condition="Window.IsActive(interfacesettings)">SetProperty(MenuIconFocus,ReplaceWindow(interfacesettings),Home)</onload>
+        <onload condition="Window.IsActive(systemsettings)">SetProperty(MenuIconFocus,ReplaceWindow(systemsettings),Home)</onload>
+        <onload condition="Window.IsActive(pvrsettings)">SetProperty(MenuIconFocus,ReplaceWindow(pvrsettings),Home)</onload>
+        <onload condition="Window.IsActive(servicesettings)">SetProperty(MenuIconFocus,ReplaceWindow(servicesettings),Home)</onload>
+        <onload condition="Window.IsActive(mediasettings)">SetProperty(MenuIconFocus,ReplaceWindow(mediasettings),Home)</onload>
+        <onload condition="Window.IsActive(playersettings)">SetProperty(MenuIconFocus,ReplaceWindow(playersettings),Home)</onload>
+        <onload condition="Window.IsActive(systeminfo)">SetProperty(MenuIconFocus,ReplaceWindow(systeminfo),Home)</onload>
+        <onload condition="Window.IsActive(profiles)">SetProperty(MenuIconFocus,ReplaceWindow(profiles),Home)</onload>
+        <onload condition="Window.IsActive(skinsettings)">SetProperty(MenuIconFocus,ReplaceWindow(skinsettings),Home)</onload>
+    </include>
+
     <include name="Defs_Color_Overlay">
         <control type="image">
             <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>

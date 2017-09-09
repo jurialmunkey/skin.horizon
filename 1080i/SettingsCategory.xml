@@ -2,6 +2,7 @@
 <!-- Foundation -->
 <window id="12">
     <defaultcontrol always="true">3</defaultcontrol>
+    <include>Defs_Settings_OnLoad</include>
     <onunload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onunload>
     <controls>
 

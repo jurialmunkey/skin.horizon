@@ -79,7 +79,7 @@
                         <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_OptionsItems</include>
                         <include condition="Window.IsVisible(MyPlaylist.xml)">Home_MainMenu_PlaylistItems</include>
                         <include condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsProfile.xml)">Home_MainMenu_SettingsItems</include>
-                        <include>Home_MainMenu_NextAired</include>
+                        <include condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">Home_MainMenu_NextAired</include>
                     </control>
                     <control type="group">
                         <top>view_top</top>
@@ -145,9 +145,9 @@
             <item id="9">
                 <label>130</label>
                 <icon>special://skin/extras/icons/sysinfo.png</icon>
-                <onclick>ReplaceWindow(7)</onclick>
-                <property name="path">ReplaceWindow(7)</property>
-                <property name="altpath">ActivateWindow(7)</property>
+                <onclick>ReplaceWindow(systeminfo)</onclick>
+                <property name="path">ReplaceWindow(systeminfo)</property>
+                <property name="altpath">ActivateWindow(systeminfo)</property>
             </item>
             <item id="7">
                 <label>13200</label>
@@ -1194,7 +1194,6 @@
         <onclick>ClearProperty(MenuFocus,Home)</onclick>
 
         <!-- Set Menu Indicator -->
-        <onclick condition="String.Contains(ListItem.Property(path),ReplaceWindow)">SetProperty(MenuIconFocus,$INFO[ListItem.Property(path)],Home)</onclick>
         <onclick>$INFO[ListItem.Property(path)]</onclick>
 
         <onback condition="Window.IsVisible(SkinSettings.xml)">SetFocus(9100)</onback>
