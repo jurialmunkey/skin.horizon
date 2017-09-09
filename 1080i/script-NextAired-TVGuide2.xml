@@ -41,7 +41,7 @@
                 </include>
                 <include content="NextAired_Group">
                     <param name="listid" value="201" />
-                    <param name="label" value="$INFO[Window(Home).Property(NextAired.201.Weekday)]" />
+                    <param name="label" value="$INFO[Window(Home).Property(NextAired.TodayText)]" />
                     <param name="visible" value="!StringCompare(Window(Home).Property(NextAired.201.Wday),)" />
                 </include>
                 <include content="NextAired_Group">
