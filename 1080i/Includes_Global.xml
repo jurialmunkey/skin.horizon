@@ -124,9 +124,10 @@
                     <!-- <visible>[Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsSystemInfo.xml)]</visible> -->
                 </control>
                 <control type="image">
-                    <texture colordiffuse="$VAR[ColorOverlay]">common/gradient-solid.png</texture>
+                    <texture>common/gradient-solid.png</texture>
                     <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
                 </control>
+                <include>Defs_Color_Overlay</include>
 
             </control>
             
