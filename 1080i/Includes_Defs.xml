@@ -13,6 +13,18 @@
         <onload condition="Window.IsActive(skinsettings)">SetProperty(MenuIconFocus,ReplaceWindow(skinsettings),Home)</onload>
     </include>
 
+    <include name="Defs_Settings_OnLeft">
+        <onleft condition="Window.IsVisible(interfacesettings)">SetFocus(300,0)</onleft>
+        <onleft condition="Window.IsVisible(skinsettings)">SetFocus(300,1)</onleft>
+        <onleft condition="Window.IsVisible(mediasettings)">SetFocus(300,2)</onleft>
+        <onleft condition="Window.IsVisible(playersettings)">SetFocus(300,3)</onleft>
+        <onleft condition="Window.IsVisible(systemsettings)">SetFocus(300,4)</onleft>
+        <onleft condition="Window.IsVisible(servicesettings)">SetFocus(300,5)</onleft>
+        <onleft condition="Window.IsVisible(pvrsettings)">SetFocus(300,6)</onleft>
+        <onleft condition="Window.IsVisible(systeminfo)">SetFocus(300,7)</onleft>
+        <onleft condition="Window.IsVisible(profiles)">SetFocus(300,8)</onleft>
+    </include>
+
     <include name="Defs_Color_Overlay">
         <control type="image">
             <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>

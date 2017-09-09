@@ -91,7 +91,7 @@
                         <onright>5</onright>
                         <ondown>3</ondown>
                         <onup>3</onup>
-                        <onleft>300</onleft>
+                        <include>Defs_Settings_OnLeft</include>
                         <orientation>vertical</orientation>
                     </control>
 

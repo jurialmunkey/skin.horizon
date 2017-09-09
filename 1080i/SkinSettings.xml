@@ -2,7 +2,7 @@
     <defaultcontrol always="true">9100</defaultcontrol>
     <include>Defs_Settings_OnLoad</include>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|powermenu)</onunload>
-    <onunload condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:02,true)</onunload> 
+    <onunload condition="System.HasAddon(script.colorbox)">SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]|var=blend,set=$INFO[Skin.String(colorbox_blend)]",home)</onunload> 
     <controls>
 
         <include>Global_Background</include>
@@ -70,7 +70,7 @@
                         <top>0</top>
                         <bottom>0</bottom>
                         <itemgap>0</itemgap>
-                        <onleft>300</onleft>
+                        <include>Defs_Settings_OnLeft</include>
                         <onright>9200</onright>
                         <onup>9100</onup>
                         <ondown>9100</ondown>
@@ -327,6 +327,17 @@
 
                             <onunfocus condition="String.IsEqual(Skin.String(colorbox_effect),blur) | String.IsEqual(Skin.String(colorbox_effect),pixeledges) | String.IsEqual(Skin.String(colorbox_effect),distort)">Skin.SetString(colorbox_quality,8)</onunfocus>
                             <onunfocus condition="String.IsEqual(Skin.String(colorbox_effect),pixelate) | String.IsEqual(Skin.String(colorbox_effect),twotone) | String.IsEqual(Skin.String(colorbox_effect),posterize) | String.IsEqual(Skin.String(colorbox_effect),dataglitch) | String.IsEqual(Skin.String(colorbox_effect),desaturate)">Skin.SetString(colorbox_quality,1)</onunfocus>
+                            <onunfocus condition="String.IsEqual(Skin.String(colorbox_effect),dither)">Skin.SetString(colorbox_quality,4)</onunfocus>
+                            <enable>Skin.HasSetting(EnableBlur) + System.HasAddon(script.colorbox)</enable>
+                        </control>
+
+                        <control type="radiobutton" id="9357" description="Blend effect">
+                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31321]</label>
+                            <selected>String.IsEqual(Skin.String(colorbox_blend),50)</selected>
+                            <onclick condition="!String.IsEqual(Skin.String(colorbox_blend),50)">Skin.SetString(colorbox_blend,50)</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(colorbox_blend),50)">Skin.SetString(colorbox_blend,100)</onclick>
                             <enable>Skin.HasSetting(EnableBlur) + System.HasAddon(script.colorbox)</enable>
                         </control>
 

@@ -1505,3 +1505,8 @@ msgstr ""
 msgctxt "#31320"
 msgid "Important"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31321"
+msgid "Blend blur effect with original image (reduces strength of effect)"
+msgstr ""

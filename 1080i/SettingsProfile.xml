@@ -38,7 +38,7 @@
                 <!-- Left Group -->
                 <control type="radiobutton" id="4">
                     <top>0</top>
-                    <onleft>300</onleft>
+                    <include>Defs_Settings_OnLeft</include>
                     <onright>2</onright>
                     <width>450</width>
                     <label>20096</label>

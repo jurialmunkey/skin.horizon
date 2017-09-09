@@ -57,7 +57,7 @@
                         <top>0</top>
                         <bottom>0</bottom>
                         <itemgap>0</itemgap>
-                        <onleft>300</onleft>
+                        <include>Defs_Settings_OnLeft</include>
 
                         <control type="button" id="95">
                             <description>General</description>
