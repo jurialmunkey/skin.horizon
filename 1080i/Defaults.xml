@@ -180,9 +180,9 @@
 
     <default type="scrollbar">
         <width>8</width>
-        <texturesliderbackground colordiffuse="dialog_bg_12">osd/progress-end.png</texturesliderbackground>
-        <texturesliderbar colordiffuse="dialog_bg_30">osd/progress-end.png</texturesliderbar>
-        <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</texturesliderbarfocus>
+        <texturesliderbackground colordiffuse="dialog_bg_12">common/white.png</texturesliderbackground>
+        <texturesliderbar colordiffuse="dialog_bg_30">common/white.png</texturesliderbar>
+        <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturesliderbarfocus>
         <textureslidernib/>
         <textureslidernibfocus/>
         <showonepage>false</showonepage>
