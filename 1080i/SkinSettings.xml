@@ -2,6 +2,7 @@
     <defaultcontrol always="true">9100</defaultcontrol>
     <include>Defs_Settings_OnLoad</include>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|powermenu)</onunload>
+    <onunload condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:02,true)</onunload> 
     <controls>
 
         <include>Global_Background</include>
@@ -313,8 +314,8 @@
                             <label2>$INFO[Skin.String(colorbox_effect)]</label2>
                             <onclick condition="String.IsEmpty(Skin.String(colorbox_effect))">Skin.SetString(colorbox_effect,blur)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),blur)">Skin.SetString(colorbox_effect,pixelate)</onclick>
-                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_effect,fakelight)</onclick>
-                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),fakelight)">Skin.SetString(colorbox_effect,pixeledges)</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_effect,desaturate)</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(colorbox_effect),desaturate)">Skin.SetString(colorbox_effect,pixeledges)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixeledges)">Skin.SetString(colorbox_effect,twotone)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),twotone)">Skin.SetString(colorbox_effect,dither)</onclick>
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dither)">Skin.SetString(colorbox_effect,posterize)</onclick>
@@ -323,6 +324,9 @@
                             <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dataglitch)">Skin.SetString(colorbox_effect,blur)</onclick>
                             <onclick condition="Skin.HasSetting(EnableBlur)">SetProperty(FIVE_daemon_set,$INFO[Skin.String(colorbox_effect)],home)</onclick>
                             <onclick>SetProperty(FIVE_daemon_fire,True,home)</onclick>
+
+                            <onunfocus condition="String.IsEqual(Skin.String(colorbox_effect),blur) | String.IsEqual(Skin.String(colorbox_effect),pixeledges) | String.IsEqual(Skin.String(colorbox_effect),distort)">Skin.SetString(colorbox_quality,8)</onunfocus>
+                            <onunfocus condition="String.IsEqual(Skin.String(colorbox_effect),pixelate) | String.IsEqual(Skin.String(colorbox_effect),twotone) | String.IsEqual(Skin.String(colorbox_effect),posterize) | String.IsEqual(Skin.String(colorbox_effect),dataglitch) | String.IsEqual(Skin.String(colorbox_effect),desaturate)">Skin.SetString(colorbox_quality,1)</onunfocus>
                             <enable>Skin.HasSetting(EnableBlur) + System.HasAddon(script.colorbox)</enable>
                         </control>
 
