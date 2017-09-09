@@ -4,8 +4,6 @@
     <controls>
         <!-- Standard Furniture -->
         <include>Global_Background</include>
-        <include>Topbar</include>
-        <include>Home</include>
 
         <control type="group">
             <include>View_Group</include>
@@ -71,5 +69,8 @@
                 </include>
             </control>
         </control>
+
+        <include>Topbar</include>
+        <include>Home</include>
     </controls>
 </window>

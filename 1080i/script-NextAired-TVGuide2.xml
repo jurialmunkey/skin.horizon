@@ -4,9 +4,7 @@
     <controls>
         <!-- Standard Furniture -->
         <include>Global_Background</include>
-        <include>Topbar</include>
-        <include>Home</include>
-
+        
         <control type="group">
             <include>View_Group</include>
             <include>Animation_Home_Textbar_Slideover_Library</include>
@@ -116,5 +114,9 @@
                 </include>
             </control>
         </control>
+
+        <include>Topbar</include>
+        <include>Home</include>
+
     </controls>
 </window>
