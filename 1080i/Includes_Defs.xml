@@ -276,28 +276,6 @@
         </definition>
     </include>
 
-    <include name="Defs_Settings_InfoLine">
-        <left>40</left>
-        <right>30</right>
-        <top>82</top>
-        <height>20</height>
-        <font>font_tiny</font>
-        <textcolor>panel_fg_70</textcolor>
-        <scroll>true</scroll>
-    </include>
-
-    <include name="Defs_Settings_Header">
-        <control type="label">
-            <left>40</left>
-            <width>390</width>
-            <top>0</top>
-            <height>100</height>
-            <font>font_medium_bold</font>
-            <label>$VAR[Label_Settings_Header]</label>
-            <textcolor>panel_fg_100</textcolor>
-        </control>
-    </include>
-
     <include name="Defs_Settings_Arrows">
         <control type="image">
             <visible>Container($PARAM[id]).HasPrevious</visible>

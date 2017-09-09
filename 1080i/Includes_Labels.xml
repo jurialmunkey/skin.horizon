@@ -7,11 +7,6 @@
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label))">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</value>
     </variable>
 
-    <variable name="Label_MusicPlayerArtist">
-        <value condition="!String.IsEmpty(MusicPlayer.AlbumArtist)">$INFO[MusicPlayer.AlbumArtist]</value>
-        <value>$INFO[MusicPlayer.Artist]</value>
-    </variable>
-
     <variable name="Label_Info_NextAired_Details">
         <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate),,   -   ]$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ]$INFO[Window(Home).Property(NextAired.AirTime)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">$INFO[Window(Home).Property(NextAired.LatestDate),,   -   ]$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</value>
@@ -183,13 +178,6 @@
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">[COLOR=main_fg_100]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label),,  ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),[COLOR=main_fg_70]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
 
         <value>$VAR[Label_NumItems,[COLOR=main_fg_100],[/COLOR]]$VAR[Label_NumPages,[COLOR=main_fg_30]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
-    </variable>
-
-    <variable name="Label_Next_Airs">
-        <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">[COLOR=main_fg_100]$INFO[Window(Home).Property(NextAired.NextNumber),,. ]$INFO[Window(Home).Property(NextAired.NextTitle),,  ][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),,[COLOR=main_fg_70]  •  [/COLOR]]$INFO[Window(Home).Property(NextAired.NextDate),[COLOR=main_fg_100],[/COLOR]]</value>
-        <value condition="String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">[COLOR=main_fg_100]$INFO[Window(Home).Property(NextAired.LatestNumber),,. ]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ][/COLOR]$INFO[Window(Home).Property(NextAired.Status),,[COLOR=main_fg_70]  •  [/COLOR]]$INFO[Window(Home).Property(NextAired.LatestDate),[COLOR=main_fg_100],[/COLOR]]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">[COLOR=main_fg_100]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label),,  ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.AirDay),,: ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.AirTime),,[COLOR=main_fg_70]  •  [/COLOR]]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate),[COLOR=main_fg_100],[/COLOR]]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">[COLOR=main_fg_100]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Label),,  ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),[COLOR=main_fg_70]  •  [/COLOR][COLOR=main_fg_100],[/COLOR]]</value>
     </variable>
 
     <variable name="Label_Header_Location">

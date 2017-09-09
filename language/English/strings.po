@@ -1500,3 +1500,8 @@ msgstr ""
 msgctxt "#31319"
 msgid "Similar movies"
 msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31320"
+msgid "Important"
+msgstr ""

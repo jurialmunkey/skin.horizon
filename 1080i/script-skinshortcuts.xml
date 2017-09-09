@@ -96,7 +96,7 @@
                 <control type="label">
                     <description>Widgets</description>
                     <height>50</height>
-                    <label>Important</label>
+                    <label>$LOCALIZE[31320]</label>
                     <font>font_small_bold</font>
                     <align>left</align>
                     <textcolor>dialog_fg_70</textcolor>
@@ -434,7 +434,6 @@
                 <ondown>SetFocus(312)</ondown>
                 <ondown>AlarmClock(MoveList,SetFocus(9400),00:00,silent)</ondown>
                 <include>Defs_SkinShortcuts_SetStrings</include>
-                <width>100%</width>
                 <height>66</height>
                 <label>$LOCALIZE[31197]</label>
                 <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>

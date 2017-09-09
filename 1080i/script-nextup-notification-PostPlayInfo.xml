@@ -6,7 +6,7 @@
             <texture background="true">$INFO[Window.Property(background)]</texture>
         </control>
         <control type="image">
-            <texture colordiffuse="FanartDim">common/white.png</texture>
+            <texture colordiffuse="$VAR[Global_FanartDim]">common/white.png</texture>
         </control>
         <control type="image">
             <texture>common/gradient-solid.png</texture>

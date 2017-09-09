@@ -130,7 +130,6 @@
                 <height>64</height>
                 <control type="group">
                     <top>24</top>
-                    <orientation>horizontal</orientation>
                     <height>64</height>
                     <control type="image">
                         <height>64</height>
