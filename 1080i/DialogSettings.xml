@@ -85,9 +85,6 @@
                 <description>Default Button</description>
                 <include>Dialog_Standard_HintLabel</include>
             </control>
-
-
-
         </control>
 
     </controls>
