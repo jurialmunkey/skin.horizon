@@ -895,6 +895,19 @@
                 <include content="Home_Separator">
                     <param name="visible" value="Control.HasFocus(300)" />
                 </include>
+                <control type="image">
+                    <include>Animation_FadeIn_Delay</include>
+                    <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
+                    <left>8</left>
+                    <width>74</width>
+                    <texture colordiffuse="Selected">common/home-indicator.png</texture>
+                    <visible>Skin.HasSetting(SubmenuIndicator)</visible>
+                    <visible>Window.IsVisible(Home)</visible>
+                    <visible>Control.HasFocus(300)</visible>
+                    <visible>!Skin.HasSetting(IconOnlyMode)</visible>
+                    <visible>!Skin.HasSetting(DisableSubMenu)</visible>
+                    <visible>Integer.IsGreater(Container(302).NumItems,0)</visible>
+                </control>
             </control>
             <include content="Home_Textbar_Item_Label" condition="![Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]">
                 <param name="id" value="$PARAM[id]" />
@@ -1027,7 +1040,17 @@
                 <top>74</top>
                 <include>Home_Separator</include>
             </control>
-
+            <control type="image">
+                <width>74</width>
+                <texture colordiffuse="Selected">common/home-indicator.png</texture>
+                <visible>Skin.HasSetting(SubmenuIndicator)</visible>
+                <visible>Window.IsVisible(Home)</visible>
+                <visible>Control.HasFocus(300)</visible>
+                <visible>Integer.IsGreater(Container(302).NumItems,0)</visible>
+                <visible>!Skin.HasSetting(DisableSubMenu)</visible>
+                <visible>Skin.HasSetting(IconOnlyMode)</visible>
+                <animation effect="fade" start="0" end="100" time="350" delay="250" tween="cubic" easing="inout">Focus</animation>
+            </control>
             <control type="group">
                 <left>74</left>
                 <width>6</width>

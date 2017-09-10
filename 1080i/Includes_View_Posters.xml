@@ -38,41 +38,44 @@
 
             <!-- Showcase -->
             <control type="group">
-                <bottom>30</bottom>
-                <height>422.5</height>
-                <control type="$PARAM[listtype]" id="52">
-                    <focusposition>2</focusposition>
-                    <movement>3</movement>
-                    <viewtype label="$LOCALIZE[31161]">showcase</viewtype>
-                    <onup>300</onup>
-                    <ondown condition="Control.IsVisible(8000)">8000</ondown>
-                    <ondown condition="Control.IsVisible(60)">60</ondown>
-                    <onleft>52</onleft>
-                    <onright>52</onright>
-                    <include content="View_Forced">
-                        <param name="string" value="$LOCALIZE[31161]" />
-                    </include>
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(musicvideos)</visible>
-                    <include>View_NotTheseWindows</include>
-                    <include content="View_Posters_Layout">
-                        <param name="id" value="52" />
-                        <param name="orientation" value="horizontal" />
-                        <param name="landscape" value="false" />
-                        <param name="top_offset" value="34" />
-                        <param name="bottom_offset" value="-10" />
-                    </include>
+                <include condition="Skin.HasSetting(NoScrollbarHorizontal)">View_NoScrollbar</include>
+                <control type="group">
+                    <bottom>30</bottom>
+                    <height>422.5</height>
+                    <control type="$PARAM[listtype]" id="52">
+                        <focusposition>2</focusposition>
+                        <movement>3</movement>
+                        <viewtype label="$LOCALIZE[31161]">showcase</viewtype>
+                        <onup>300</onup>
+                        <ondown condition="Control.IsVisible(8000)">8000</ondown>
+                        <ondown condition="Control.IsVisible(60)">60</ondown>
+                        <onleft>52</onleft>
+                        <onright>52</onright>
+                        <include content="View_Forced">
+                            <param name="string" value="$LOCALIZE[31161]" />
+                        </include>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(musicvideos)</visible>
+                        <include>View_NotTheseWindows</include>
+                        <include content="View_Posters_Layout">
+                            <param name="id" value="52" />
+                            <param name="orientation" value="horizontal" />
+                            <param name="landscape" value="false" />
+                            <param name="top_offset" value="34" />
+                            <param name="bottom_offset" value="-10" />
+                        </include>
+                    </control>
                 </control>
+                <include content="View_Posters_Info">
+                    <param name="bottom" value="460" />
+                    <param name="id" value="52" />
+                    <param name="left" value="40" />
+                    <param name="right" value="130" />
+                    <param name="width" value="1654" />
+                    <param name="altwidth" value="1234" />
+                    <param name="discart" value="true" />
+                    <param name="hdsd_flag" value="true" />
+                </include>
             </control>
-            <include content="View_Posters_Info">
-                <param name="bottom" value="460" />
-                <param name="id" value="52" />
-                <param name="left" value="40" />
-                <param name="right" value="130" />
-                <param name="width" value="1654" />
-                <param name="altwidth" value="1234" />
-                <param name="discart" value="true" />
-                <param name="hdsd_flag" value="true" />
-            </include>
 
             <!-- Landscape -->
             <control type="panel" id="53">
@@ -91,42 +94,44 @@
 
             <!-- Landscape Showcase -->
             <control type="group">
-                <bottom>30</bottom>
-                <height>422.5</height>
-                <control type="$PARAM[listtype]" id="56">
-                    <focusposition>1</focusposition>
-                    <movement>1</movement>
-                    <viewtype label="$LOCALIZE[31178]">icon</viewtype>
-                    <onup>300</onup>
-                    <ondown condition="Control.IsVisible(8000)">8000</ondown>
-                    <ondown condition="Control.IsVisible(60)">60</ondown>
-                    <onleft>56</onleft>
-                    <onright>56</onright>
-                    <include content="View_Forced">
-                        <param name="string" value="$LOCALIZE[31178]" />
-                    </include>
-                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) |  Container.Content(artists) | Container.Content(episodes) | Container.Content(videos)</visible>
-                    <include>View_NotTheseWindows</include>
-                    <include content="View_Posters_Layout">
-                        <param name="id" value="56" />
-                        <param name="orientation" value="horizontal" />
-                        <param name="landscape" value="true" />
-                        <param name="top_offset" value="34" />
-                        <param name="bottom_offset" value="-10" />
-                    </include>
+                <include condition="Skin.HasSetting(NoScrollbarHorizontal)">View_NoScrollbar</include>
+                <control type="group">
+                    <bottom>30</bottom>
+                    <height>422.5</height>
+                    <control type="$PARAM[listtype]" id="56">
+                        <focusposition>1</focusposition>
+                        <movement>1</movement>
+                        <viewtype label="$LOCALIZE[31178]">icon</viewtype>
+                        <onup>300</onup>
+                        <ondown condition="Control.IsVisible(8000)">8000</ondown>
+                        <ondown condition="Control.IsVisible(60)">60</ondown>
+                        <onleft>56</onleft>
+                        <onright>56</onright>
+                        <include content="View_Forced">
+                            <param name="string" value="$LOCALIZE[31178]" />
+                        </include>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) |  Container.Content(artists) | Container.Content(episodes) | Container.Content(videos)</visible>
+                        <include>View_NotTheseWindows</include>
+                        <include content="View_Posters_Layout">
+                            <param name="id" value="56" />
+                            <param name="orientation" value="horizontal" />
+                            <param name="landscape" value="true" />
+                            <param name="top_offset" value="34" />
+                            <param name="bottom_offset" value="-10" />
+                        </include>
+                    </control>
                 </control>
+                <include content="View_Posters_Info">
+                    <param name="bottom" value="460" />
+                    <param name="id" value="56" />
+                    <param name="left" value="40" />
+                    <param name="right" value="130" />
+                    <param name="width" value="1654" />
+                    <param name="altwidth" value="1234" />
+                    <param name="discart" value="true" />
+                    <param name="hdsd_flag" value="true" />
+                </include>
             </control>
-            <include content="View_Posters_Info">
-                <param name="bottom" value="460" />
-                <param name="id" value="56" />
-                <param name="left" value="40" />
-                <param name="right" value="130" />
-                <param name="width" value="1654" />
-                <param name="altwidth" value="1234" />
-                <param name="discart" value="true" />
-                <param name="hdsd_flag" value="true" />
-            </include>
-
             <!-- Landscape Banner -->
             <control type="panel" id="553">
                 <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(videos)</visible>

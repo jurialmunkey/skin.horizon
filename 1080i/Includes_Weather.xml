@@ -147,7 +147,7 @@
                     <orientation>vertical</orientation>
                     <include>Animation_FadeIn</include>
                     <include>Animation_FadeOut</include>
-                    <visible>!Window.IsVisible(Home) | [Window.IsVisible(Home) + !Control.HasFocus(300) + !Control.HasFocus(302)]</visible>
+                    <visible>!Window.IsVisible(Home) | [Window.IsVisible(Home) + !Control.HasFocus(300) + !Control.HasFocus(302)] | Skin.HasSetting(IconOnlyMode)</visible>
                     <control type="button">
                         <height>48</height>
                         <font>font_small</font>
@@ -219,7 +219,7 @@
                 <width>336</width>
                 <include>Animation_FadeIn</include>
                 <include>Animation_FadeOut</include>
-                <visible>!Window.IsVisible(Home) | [Window.IsVisible(Home) + !Control.HasFocus(300) + !Control.HasFocus(302)]</visible>
+                <visible>!Window.IsVisible(Home) | [Window.IsVisible(Home) + !Control.HasFocus(300) + !Control.HasFocus(302)] | Skin.HasSetting(IconOnlyMode)</visible>
                 <include content="Weather_DailyForecast">
                     <param name="day" value="Day4" />
                     <param name="label" value="$INFO[Window(Weather).Property(Day4.Title)]" />

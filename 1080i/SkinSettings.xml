@@ -192,6 +192,13 @@
                             <selected>!Skin.HasSetting(DisableSubMenu)</selected>
                             <onclick>Skin.ToggleSetting(DisableSubMenu)</onclick>
                         </control>
+                        <control type="radiobutton" id="9313" description="Submenu indicator">
+                            <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>Display submenu indicator</label>
+                            <selected>Skin.HasSetting(SubmenuIndicator)</selected>
+                            <onclick>Skin.ToggleSetting(SubmenuIndicator)</onclick>
+                        </control>
                         <control type="radiobutton" id="9312" description="Display text labels on landscape widgets">
                             <visible>ControlGroup(9100).HasFocus(9101)</visible>
                             <include>Defs_Settings_Button</include>
@@ -701,6 +708,14 @@
                             <label>$LOCALIZE[31293]</label>
                             <selected>Skin.HasSetting(MinimalBusyLoader)</selected>
                             <onclick>Skin.ToggleSetting(MinimalBusyLoader)</onclick>
+                        </control>
+
+                        <control type="radiobutton" id="9388" description="No scrollbar / alphabet on showcase and lovefilm">
+                            <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>Display scrollbar / alphabet strip for showcase</label>
+                            <selected>!Skin.HasSetting(NoScrollbarHorizontal)</selected>
+                            <onclick>Skin.ToggleSetting(NoScrollbarHorizontal)</onclick>
                         </control>
 
                         <control type="radiobutton" id="9387" description="Icon only">

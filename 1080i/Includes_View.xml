@@ -47,12 +47,17 @@
         <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml)]</visible>
     </include>
 
+    <include name="View_NoScrollbar"><right>-90</right></include>
+
     <include name="View_Library">
         <control type="group">
             <include>Animation_Right</include>
             <include>Defs_InfoDialog_Visible</include>
             <control type="group">
-                <include>View_Library_AlphabetStrip</include>
+                <control type="group">
+                    <visible>!Skin.HasSetting(NoScrollbarHorizontal) | [Skin.HasSetting(NoScrollbarHorizontal) + !Control.IsVisible(52) + !Control.IsVisible(56)]</visible>
+                    <include>View_Library_AlphabetStrip</include>
+                </control>
                 <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]">View_List</include>
 
                 <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]">View_Posters</include>
