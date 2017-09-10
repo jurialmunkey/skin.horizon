@@ -166,6 +166,7 @@
     </variable>
 
     <variable name="Label_SubHeader_Content">
+        <value condition="Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)">$INFO[Container(300).ListItem.Label,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(script-nextup-notification-PostPlayInfo.xml)">$INFO[Window.Property(next.tvshowtitle),[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
         <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$VAR[Label_InfoLine]</value>

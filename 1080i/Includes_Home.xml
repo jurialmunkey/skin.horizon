@@ -1083,6 +1083,7 @@
                 <visible>Control.HasFocus(300)</visible>
                 <include>Animation_FocusBounce_Home</include>
             </control>
+            
         </focusedlayout>
     </include>
 
