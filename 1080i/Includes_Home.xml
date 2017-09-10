@@ -883,7 +883,7 @@
             <visible>!String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Label) | !String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Icon)</visible>
             <control type="group">
                 <visible>Control.HasFocus(300)</visible>
-                <include condition="!Skin.HasSetting(IconOnlyMode)">Animation_FadeOut_Delay</include>
+                <include>Animation_FadeOut_Delay</include>
                 <control type="image">
                     <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                     <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
