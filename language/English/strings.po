@@ -1555,3 +1555,8 @@ msgstr ""
 msgctxt "#31330"
 msgid "Advanced settings for colorbox (blur settings)"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31331"
+msgid "Icon only mode"
+msgstr ""
