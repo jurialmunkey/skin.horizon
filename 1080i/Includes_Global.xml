@@ -83,7 +83,7 @@
         <control type="group">
             <!-- Fanart and backgrounds with parallax -->
             <control type="group">
-                <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent) + Skin.HasSetting(ParallaxAnimation)">Conditional</animation>
+                <animation effect="slide" start="0" end="152" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(300) | Control.HasFocus(302) | !String.IsEmpty(Window(Home).Property(MenuFocus))] + !Skin.HasSetting(SlideOverContent) + Skin.HasSetting(ParallaxAnimation) + !Skin.HasSetting(IconOnlyMode)">Conditional</animation>
                 <include condition="Skin.HasSetting(DisableTransparentTopbar) | Skin.HasSetting(ShiftFanartDown)">Global_Background_TopOffset</include>
                 <control type="multiimage" description="Fanart">
                     <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio] | [Player.HasAudio + !String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))]</visible>

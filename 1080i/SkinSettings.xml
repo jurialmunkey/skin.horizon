@@ -603,7 +603,7 @@
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31276]</label>
                             <selected>Skin.HasSetting(ParallaxAnimation)</selected>
-                            <enable>!Skin.HasSetting(SlideOverContent)</enable>
+                            <enable>!Skin.HasSetting(SlideOverContent) + !Skin.HasSetting(IconOnlyMode)</enable>
                             <onclick>Skin.ToggleSetting(ParallaxAnimation)</onclick>
                         </control>
 
