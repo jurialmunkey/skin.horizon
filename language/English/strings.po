@@ -1560,3 +1560,8 @@ msgstr ""
 msgctxt "#31331"
 msgid "Icon only mode"
 msgstr ""
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31332"
+msgid "Change image"
+msgstr ""

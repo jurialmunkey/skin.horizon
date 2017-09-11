@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window type="dialog" id="1116">
+    <onload>SetProperty(Fanart,$INFO[Window(Home).Property(LatestMovie.1.Fanart)])</onload>
     <defaultcontrol always="true">9000</defaultcontrol>
     <controls>
         <include>Global_Overlay</include>
@@ -11,7 +12,7 @@
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>600</fadetime>
-            <imagepath background="true">special://skin/fanart.jpg</imagepath>
+            <imagepath background="true" fallback="special://skin/fanart.jpg">$INFO[Window.Property(Fanart)]</imagepath>
         </control>
         <control type="group">
             <include content="Dialog_Standard_Group">
@@ -149,16 +150,38 @@
                     <include>Dialog_Standard_ListButton</include>
                 </control>
 
-                <control type="button" id="9099">
-                    <label>$LOCALIZE[31321]</label>
-                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),twotone) | String.IsEqual(Skin.String(colorbox_effect),posterize) | String.IsEqual(Skin.String(colorbox_effect),desaturate) | String.IsEqual(Skin.String(colorbox_effect),dataglitch) | String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_quality,1)</onclick>
-                    <onclick condition="![String.IsEqual(Skin.String(colorbox_effect),twotone) | String.IsEqual(Skin.String(colorbox_effect),posterize) | String.IsEqual(Skin.String(colorbox_effect),desaturate) | String.IsEqual(Skin.String(colorbox_effect),dataglitch) | String.IsEqual(Skin.String(colorbox_effect),pixelate)]">Skin.SetString(colorbox_quality,8)</onclick>
-                    <onclick>Skin.SetString(colorbox_blend,100)</onclick>
-                    <onclick>Skin.SetString(colorbox_blursize,5)</onclick>
-                    <onclick>Skin.SetString(colorbox_bitsize,1)</onclick>
-                    <onclick>Skin.SetString(colorbox_pixelsize,12)</onclick>
-                    <include>Defs_UpdateColorbox_Onclick</include>
-                    <include>Dialog_Standard_ListButton</include>
+                <control type="group" id="9099">
+                    <height>66</height>
+                    <width>100%</width>
+                    <control type="button" id="9199">
+                        <onup>9098</onup>
+                        <ondown>9001</ondown>
+                        <onright>9299</onright>
+                        <width>335</width>
+                        <label>$LOCALIZE[31321]</label>
+                        <onclick condition="String.IsEqual(Skin.String(colorbox_effect),twotone) | String.IsEqual(Skin.String(colorbox_effect),posterize) | String.IsEqual(Skin.String(colorbox_effect),desaturate) | String.IsEqual(Skin.String(colorbox_effect),dataglitch) | String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_quality,1)</onclick>
+                        <onclick condition="![String.IsEqual(Skin.String(colorbox_effect),twotone) | String.IsEqual(Skin.String(colorbox_effect),posterize) | String.IsEqual(Skin.String(colorbox_effect),desaturate) | String.IsEqual(Skin.String(colorbox_effect),dataglitch) | String.IsEqual(Skin.String(colorbox_effect),pixelate)]">Skin.SetString(colorbox_quality,8)</onclick>
+                        <onclick>Skin.SetString(colorbox_blend,100)</onclick>
+                        <onclick>Skin.SetString(colorbox_blursize,5)</onclick>
+                        <onclick>Skin.SetString(colorbox_bitsize,1)</onclick>
+                        <onclick>Skin.SetString(colorbox_pixelsize,12)</onclick>
+                        <include>Defs_UpdateColorbox_Onclick</include>
+                        <include>Dialog_Standard_ListButton</include>
+                    </control>
+
+                    <control type="button" id="9299">
+                        <onup>9098</onup>
+                        <ondown>9001</ondown>
+                        <onleft>9199</onleft>
+                        <right>0</right>
+                        <width>335</width>
+                        <label>$LOCALIZE[31332]</label>
+                        <onclick condition="String.IsEqual(Window.Property(Fanart),Window(Home).Property(LatestMovie.1.Fanart))">SetProperty(Fanart,$INFO[Window(Home).Property(LatestMovie.2.Fanart)])</onclick>
+                        <onclick condition="String.IsEqual(Window.Property(Fanart),Window(Home).Property(LatestMovie.2.Fanart))">SetProperty(Fanart,$INFO[Window(Home).Property(LatestMovie.3.Fanart)])</onclick>
+                        <onclick condition="String.IsEqual(Window.Property(Fanart),Window(Home).Property(LatestMovie.3.Fanart))">SetProperty(Fanart,$INFO[Window(Home).Property(LatestMovie.4.Fanart)])</onclick>
+                        <onclick condition="String.IsEqual(Window.Property(Fanart),Window(Home).Property(LatestMovie.4.Fanart))">SetProperty(Fanart,$INFO[Window(Home).Property(LatestMovie.1.Fanart)])</onclick>
+                        <include>Dialog_Standard_ListButton</include>
+                    </control>
                 </control>
             </control>
 
