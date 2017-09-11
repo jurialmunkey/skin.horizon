@@ -59,26 +59,38 @@
                 <itemgap>10</itemgap>
                 <orientation>vertical</orientation>
                 <pagecontrol>60</pagecontrol>
-                <onleft>8000</onleft>
-                <onright>8000</onright>
-                <onup>8000</onup>
-                <ondown>8000</ondown>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="button" id="9001">
                     <label>$LOCALIZE[31309]</label>
                     <label2>$INFO[Skin.String(colorbox_effect)]</label2>
                     <onclick condition="!String.IsEqual(Skin.String(colorbox_blend),100)">Skin.SetString(colorbox_blend,100)</onclick>
                     <onclick condition="String.IsEmpty(Skin.String(colorbox_effect))">Skin.SetString(colorbox_effect,blur)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),blur)">Skin.SetString(colorbox_quality,1)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),blur)">Skin.SetString(colorbox_effect,pixelate)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_quality,1)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixelate)">Skin.SetString(colorbox_effect,desaturate)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),desaturate)">Skin.SetString(colorbox_quality,8)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),desaturate)">Skin.SetString(colorbox_effect,pixeledges)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixeledges)">Skin.SetString(colorbox_quality,1)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),pixeledges)">Skin.SetString(colorbox_effect,twotone)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),twotone)">Skin.SetString(colorbox_quality,8)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),twotone)">Skin.SetString(colorbox_effect,halftone)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),halftone)">Skin.SetString(colorbox_quality,8)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),halftone)">Skin.SetString(colorbox_effect,dither)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dither)">Skin.SetString(colorbox_quality,1)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dither)">Skin.SetString(colorbox_effect,posterize)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),posterize)">Skin.SetString(colorbox_quality,8)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),posterize)">Skin.SetString(colorbox_effect,distort)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),distort)">Skin.SetString(colorbox_quality,1)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),distort)">Skin.SetString(colorbox_effect,dataglitch)</onclick>
+                    <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dataglitch)">Skin.SetString(colorbox_quality,8)</onclick>
                     <onclick condition="String.IsEqual(Skin.String(colorbox_effect),dataglitch)">Skin.SetString(colorbox_effect,blur)</onclick>
+
+                    <onclick>Skin.SetString(colorbox_blend,100)</onclick>
+                    <onclick>Skin.SetString(colorbox_blursize,5)</onclick>
+                    <onclick>Skin.SetString(colorbox_bitsize,1)</onclick>
+                    <onclick>Skin.SetString(colorbox_pixelsize,12)</onclick>
+
                     <onclick>SetProperty(FIVE_daemon_set,$INFO[Skin.String(colorbox_effect)],home)</onclick>
                     <include>Defs_UpdateColorbox_Onclick</include>
                     <include>Dialog_Standard_ListButton</include>
@@ -94,7 +106,7 @@
                 </control>
 
                 <control type="button" id="9004">
-                    <label>$LOCALIZE[31325] (12 = $LOCALIZE[571])</label>
+                    <label>$LOCALIZE[31325]</label>
                     <label2>$INFO[Skin.String(colorbox_pixelsize)]</label2>
                     <onclick>Skin.SetNumeric(colorbox_pixelsize)</onclick>
                     <include>Defs_UpdateColorbox_Onclick</include>
@@ -103,7 +115,7 @@
                 </control>
 
                 <control type="button" id="9005">
-                    <label>$LOCALIZE[31324] (1 = $LOCALIZE[571])</label>
+                    <label>$LOCALIZE[31324]</label>
                     <label2>$INFO[Skin.String(colorbox_bitsize)]</label2>
                     <onclick condition="Integer.IsGreater(Skin.String(colorbox_bitsize),3)">Skin.SetString(colorbox_bitsize,1)</onclick>
                     <onclick condition="Integer.IsEqual(Skin.String(colorbox_bitsize),1)">Skin.SetString(colorbox_bitsize,2)</onclick>
@@ -136,6 +148,7 @@
                     <include>Defs_UpdateColorbox_Onclick</include>
                     <include>Dialog_Standard_ListButton</include>
                 </control>
+
             </control>
 
             <control type="grouplist">
@@ -153,13 +166,13 @@
                 <ondown>8000</ondown>
                 <align>bottom</align>
                 <usecontrolcoords>true</usecontrolcoords>
-                <control type="textbox" id="9099">
+                <control type="textbox">
                     <left>15</left>
                     <right>15</right>
                     <height>auto</height>
                     <textcolor>dialog_fg_70</textcolor>
                     <font>font_tiny</font>
-                    <label>$LOCALIZE[31322]</label>
+                    <label>[B]$LOCALIZE[31320][/B][CR]$LOCALIZE[31322]</label>
                 </control>
             </control>
         </control>

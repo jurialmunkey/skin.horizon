@@ -1506,19 +1506,14 @@ msgctxt "#31320"
 msgid "Important"
 msgstr ""
 
-#: /1080i/SkinSettings.xml
-msgctxt "#31321"
-msgid "Blend blur effect with original image (reduces strength of effect)"
-msgstr ""
-
 #: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
 msgctxt "#31322"
-msgid "[B]NOTE[/B][CR]Image quality changes the resolution of the generated image. Better quality images take longer to process. Quality changes can alter the intensity of the effect in addition to other effect settings.[CR][CR]The blend setting will blend the effect with the original image$COMMA with a value of 100 showing the full image effect."
+msgid "Image quality changes the resolution of the generated image. Better quality images take longer to process. Quality changes can alter the intensity of the effect in addition to other effect settings. The blend setting will blend the effect with the original image$COMMA with a value of 100 showing the full image effect."
 msgstr ""
 
 #: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
 msgctxt "#31323"
-msgid "Blend / effect strength"
+msgid "Blend"
 msgstr ""
 
 #: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
