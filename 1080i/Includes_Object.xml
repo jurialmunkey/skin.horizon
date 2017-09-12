@@ -362,37 +362,69 @@
     </include>
 
     <include name="Object_PVR_Info">
-        <control type="grouplist">
+        <control type="group">
             <include>Animation_Home_Textbar_Slideover_Library</include>
             <include>Animation_Right</include>
-            <bottom>600</bottom>
-            <top>186</top>
-            <left>136</left>
-            <right>50</right>
-            <orientation>vertical</orientation>
-            <usecontrolcoords>true</usecontrolcoords>
-            <itemgap>0</itemgap>
-            <control type="label">
-                <label>$INFO[ListItem.Title]</label>
-                <height>90</height>
-                <aligny>top</aligny>
-                <textcolor>main_fg_100</textcolor>
-                <font>font_showcase_title</font>
+            <control type="group">
+                <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Fanart))</visible>
+                <include>Animation_FadeIn</include>
+                <bottom>605</bottom>
+                <top>196</top>
+                <right>-40</right>
+                <width>496</width>
+                <control type="image">
+                    <include>Defs_Shadow_Opaque</include>
+                    <fadetime>100</fadetime>
+                    <aspectratio>scale</aspectratio>
+                    <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Fanart)]</texture>
+                </control>
             </control>
-            <control type="label">
-                <label>$INFO[ListItem.ChannelNumber,[COLOR=main_fg_100],. [/COLOR]]$INFO[ListItem.ChannelName,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100]$LOCALIZE[19126] ,[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[19127] ,[/COLOR]]</label>
-                <height>75</height>
-                <aligny>top</aligny>
-                <textcolor>$VAR[ColorHighlight]</textcolor>
-                <font>font_small</font>
+            <control type="grouplist">
+                <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Fanart))</visible>
+                <bottom>600</bottom>
+                <top>176</top>
+                <left>129</left>
+                <right>496</right>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
+                <include>Object_PVR_Info_Content</include>
             </control>
-            <control type="textbox">
-                <label fallback="19055">$VAR[Label_Plot]</label>
-                <height>130</height>
-                <aligny>top</aligny>
-                <textcolor>main_fg_70</textcolor>
-                <font>font_plotbox</font>
+            <control type="grouplist">
+                <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Fanart))</visible>
+                <bottom>600</bottom>
+                <top>176</top>
+                <left>129</left>
+                <right>50</right>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
+                <include>Object_PVR_Info_Content</include>
             </control>
+        </control>
+    </include>
+
+    <include name="Object_PVR_Info_Content">
+        <control type="label">
+            <label>$INFO[ListItem.Title]</label>
+            <height>90</height>
+            <aligny>top</aligny>
+            <textcolor>main_fg_100</textcolor>
+            <font>font_showcase_title</font>
+        </control>
+        <control type="label">
+            <label>$INFO[ListItem.ChannelNumber,[COLOR=main_fg_100],. [/COLOR]]$INFO[ListItem.ChannelName,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100]$LOCALIZE[19126] ,[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[19127] ,[/COLOR]]</label>
+            <height>75</height>
+            <aligny>top</aligny>
+            <textcolor>$VAR[ColorHighlight]</textcolor>
+            <font>font_small</font>
+        </control>
+        <control type="textbox">
+            <label fallback="19055">$VAR[Label_Plot]</label>
+            <height>130</height>
+            <aligny>top</aligny>
+            <textcolor>main_fg_70</textcolor>
+            <font>font_plotbox</font>
         </control>
     </include>
 

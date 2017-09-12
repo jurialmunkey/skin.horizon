@@ -3,6 +3,7 @@ Removed alphabet strip and retooled a number of views
 New global search view
 New alphabet jump dialog
 New scrollbars
+Add fanart to pvr views
 
 [B]1.0.22[/B]
 Update to next aired (horizontal)

@@ -1033,7 +1033,10 @@
                 
             </control>
         </control>
-        <include>Object_PVR_Info</include>
+        <control type="group">
+            <right>80</right>
+            <include>Object_PVR_Info</include>
+        </control>
     </include>
 
 </includes>

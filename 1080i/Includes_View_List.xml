@@ -242,7 +242,7 @@
                     <param name="left" value="0" />
                     <param name="width" value="1831" />
                     <param name="height" value="113" />
-                    <param name="offset" value="20" />
+                    <param name="offset" value="10" />
                 </include>
             </control>
         </control>

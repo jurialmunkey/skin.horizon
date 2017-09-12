@@ -635,17 +635,6 @@
                             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)</onclick>
                         </control>
 
-                        <control type="radiobutton" id="9272" description="Disable Alphabet Strip">
-                            <visible>ControlGroup(9100).HasFocus(9107)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31025]</label>
-                            <selected>Skin.HasSetting(DisableAlphabetStrip)</selected>
-                            <onclick>Skin.ToggleSetting(DisableAlphabetStrip)</onclick>
-                            <onclick>ReloadSkin()</onclick>
-                            <onclick>SetFocus(9107)</onclick>
-                            <onclick>AlarmClock(setfo,SetFocus(9272),00:00,silent)</onclick>
-                        </control>
-                        
                         <control type="radiobutton" id="9273" description="Kiosk Mode">
                             <visible>ControlGroup(9100).HasFocus(9107)</visible>
                             <include>Defs_Settings_Button</include>
@@ -708,14 +697,6 @@
                             <label>$LOCALIZE[31293]</label>
                             <selected>Skin.HasSetting(MinimalBusyLoader)</selected>
                             <onclick>Skin.ToggleSetting(MinimalBusyLoader)</onclick>
-                        </control>
-
-                        <control type="radiobutton" id="9388" description="No scrollbar / alphabet on showcase and lovefilm">
-                            <visible>ControlGroup(9100).HasFocus(9107)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>Display scrollbar / alphabet strip for showcase</label>
-                            <selected>!Skin.HasSetting(NoScrollbarHorizontal)</selected>
-                            <onclick>Skin.ToggleSetting(NoScrollbarHorizontal)</onclick>
                         </control>
 
                         <control type="radiobutton" id="9387" description="Icon only">
