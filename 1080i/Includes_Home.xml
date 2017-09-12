@@ -1243,10 +1243,6 @@
                     <height>home_icon</height>
                     <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
                     <visible>!Container.Scrolling</visible>
-                    <animation type="Conditional" condition="Window.IsVisible(DialogBusy.xml)">
-                        <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
-                        <effect type="slide" start="0,0" end="0,-10" time="300" tween="sine" easing="out"/>
-                    </animation>
                     <animation type="Visible">
                         <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="2000" />
                         <effect type="slide" start="0,-10" end="0,0" time="350" tween="sine" easing="out" delay="2000" />
@@ -1259,10 +1255,6 @@
                 <control type="label">
                     <width>home_icon</width>
                     <visible>Container.Scrolling</visible>
-                    <animation type="Conditional" condition="Window.IsVisible(DialogBusy.xml)">
-                        <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
-                        <effect type="slide" start="0,0" end="0,-10" time="300" tween="sine" easing="out"/>
-                    </animation>
                     <animation type="Visible">
                         <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" />
                         <effect type="slide" start="0,-10" end="0,0" time="350" tween="sine" easing="out" />
