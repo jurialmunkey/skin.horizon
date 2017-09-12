@@ -122,13 +122,11 @@
                     </control>
                     <control type="label">
                         <textcolor>Selected</textcolor>
-                        <selectedcolor>Selected</selectedcolor>
                         <animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.Label2)">Conditional</animation>
                         <include>Dialog_Standard_List_Left_Label</include>
                     </control>
                     <control type="label">
                         <textcolor>Selected</textcolor>
-                        <selectedcolor>Selected</selectedcolor>
                         <include>Dialog_Standard_List_Left_Label2</include>
                     </control>
                 </focusedlayout>
