@@ -108,6 +108,7 @@
         <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[13350]$INFO[ListItem.TvShowTitle, / ,]</value>
 
         <value condition="[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]">$VAR[Label_Title]</value>
+        <value condition="Window.IsVisible(script-globalsearch-main.xml)">$LOCALIZE[283]...</value>
 
         <value condition="String.Contains(Container.FolderPath,videodb://recentlyaddedmovies/)">$LOCALIZE[20386]</value>
         <value condition="String.Contains(Container.FolderPath,videodb://recentlyaddedepisodes/)">$LOCALIZE[20387]</value>
@@ -170,6 +171,7 @@
         <value condition="Window.IsVisible(script-nextup-notification-PostPlayInfo.xml)">$INFO[Window.Property(next.tvshowtitle),[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(weather) | [Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(widget),Weather) + Control.HasFocus(9966)]">[COLOR=main_fg_70]$INFO[Window(Weather).Property(WeatherProvider),$LOCALIZE[31006] ,][/COLOR]</value>
         <value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$VAR[Label_InfoLine]</value>
+        <value condition="Window.IsVisible(script-globalsearch-main.xml)">$INFO[Control.GetLabel(110),, [COLOR=main_fg_100]$LOCALIZE[342]   [/COLOR]]$INFO[Control.GetLabel(120),, [COLOR=main_fg_100]$LOCALIZE[20343]   [/COLOR]]$INFO[Control.GetLabel(140),, [COLOR=main_fg_100]$LOCALIZE[20360]   [/COLOR]]$INFO[Control.GetLabel(160),, [COLOR=main_fg_100]$LOCALIZE[133]   [/COLOR]]$INFO[Control.GetLabel(170),, [COLOR=main_fg_100]$LOCALIZE[132]   [/COLOR]]$INFO[Control.GetLabel(110),, [COLOR=main_fg_100]$LOCALIZE[134]   [/COLOR]]</value>
         <value condition="Window.IsVisible(Home)">$INFO[Container(300).ListItem.Label,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)">$INFO[Control.GetLabel(28),[COLOR=main_fg_100],[/COLOR]]$INFO[Container.NumItems,[COLOR=main_fg_70]  •  [/COLOR], [COLOR=main_fg_100]$LOCALIZE[14301][/COLOR]]</value>
 

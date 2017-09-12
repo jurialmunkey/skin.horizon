@@ -13,6 +13,7 @@
         <include>View_Layout</include>
         <include>Topbar</include>
         <include>Home</include>
+        <include>Object_AlphabetStrip</include>
 
        
         <!-- Hidden Buttons -->

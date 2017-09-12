@@ -1565,3 +1565,13 @@ msgstr ""
 msgctxt "#31332"
 msgid "Change image"
 msgstr ""
+
+#: /1080i/script-globalsearch-main.xml
+msgctxt "#31333"
+msgid "Programmes"
+msgstr ""
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31334"
+msgid "Jump to letter"
+msgstr ""

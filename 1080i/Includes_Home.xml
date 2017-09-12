@@ -64,8 +64,9 @@
                         <include>Defs_InfoDialog_Visible</include>
                         <include condition="![Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_OnClick</include>
                         <include>Home_OnFocus</include>
-                        <onleft condition="Window.IsVisible(Home) + [!Skin.HasSetting(DisableSubMenu) | String.IsEqual(Container(300).ListItem.Property(widget),Weather)]">302</onleft>
-                        <onleft condition="Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml)">9602</onleft>
+                        <onleft condition="Window.IsVisible(Home) + [!Skin.HasSetting(DisableSubMenu) | String.IsEqual(Container(300).ListItem.Property(widget),Weather)] + !Window.IsVisible(script-globalsearch-main.xml)">302</onleft>
+                        <onleft condition="[Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml)] + !Window.IsVisible(script-globalsearch-main.xml)">9602</onleft>
+                        <onright condition="Window.IsVisible(script-globalsearch-main.xml)">9500</onright>
                         <onright condition="Window.IsVisible(Home)">3000</onright>
                         <onright condition="Window.IsVisible(SettingsProfile.xml)">4</onright>
                         <onright condition="Window.IsVisible(SettingsCategory.xml)">3</onright>
@@ -77,11 +78,12 @@
                         <include condition="![Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_Layout</include>
                         <include condition="[Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_VideoInfo_Layout</include>
 
-                        <include condition="Window.IsVisible(Home)">Home_MainMenu_Items</include>
-                        <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_OptionsItems</include>
-                        <include condition="Window.IsVisible(MyPlaylist.xml)">Home_MainMenu_PlaylistItems</include>
-                        <include condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsProfile.xml)">Home_MainMenu_SettingsItems</include>
-                        <include condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">Home_MainMenu_NextAired</include>
+                        <include condition="Window.IsVisible(Home) + !Window.IsVisible(script-globalsearch-main.xml)">Home_MainMenu_Items</include>
+                        <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)] + !Window.IsVisible(script-globalsearch-main.xml)">Home_MainMenu_OptionsItems</include>
+                        <include condition="Window.IsVisible(MyPlaylist.xml) + !Window.IsVisible(script-globalsearch-main.xml)">Home_MainMenu_PlaylistItems</include>
+                        <include condition="[Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsProfile.xml)] + !Window.IsVisible(script-globalsearch-main.xml)">Home_MainMenu_SettingsItems</include>
+                        <include condition="[Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)] + !Window.IsVisible(script-globalsearch-main.xml)">Home_MainMenu_NextAired</include>
+                        <include condition="Window.IsVisible(script-globalsearch-main.xml)">Home_MainMenu_GlobalSearch</include>
                     </control>
                     <control type="group">
                         <top>view_top</top>
@@ -667,6 +669,7 @@
                 <label>$LOCALIZE[137]</label>
                 <icon>special://skin/extras/icons/search.png</icon>
                 <!-- <onclick>SendClick(8)</onclick> -->
+                <onclick>SetFocus(50)</onclick>
                 <onclick>RunScript(script.globalsearch)</onclick>
                 <visible>!String.Contains(Container.FolderPath,plugin://) + Control.IsEnabled(8)</visible>
             </item>
@@ -771,6 +774,16 @@
                 <label>$LOCALIZE[10140]</label>
                 <onclick>Addon.OpenSettings(script.tv.show.next.aired)</onclick>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
+            </item>
+        </content>
+    </include>
+
+    <include name="Home_MainMenu_GlobalSearch">
+        <content>
+            <item>
+                <icon>special://skin/extras/icons/search.png</icon>
+                <label>$LOCALIZE[137]</label>
+                <onclick>SendClick(198)</onclick>
             </item>
         </content>
     </include>
@@ -1222,18 +1235,55 @@
         <control type="group">
             <height>topbar_height</height>
             <control type="group">
-                <centertop>45%</centertop>
+                <centertop>53%</centertop>
                 <height>100</height>
                 <control type="image">
-                    <top>0</top>
+                    <top>-15</top>
                     <width>home_icon</width>
                     <height>home_icon</height>
                     <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+                    <visible>!Container.Scrolling</visible>
+                    <animation type="Conditional" condition="Window.IsVisible(DialogBusy.xml)">
+                        <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                        <effect type="slide" start="0,0" end="0,-10" time="300" tween="sine" easing="out"/>
+                    </animation>
+                    <animation type="Visible">
+                        <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="2000" />
+                        <effect type="slide" start="0,-10" end="0,0" time="350" tween="sine" easing="out" delay="2000" />
+                    </animation>
+                    <animation type="Hidden">
+                        <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                        <effect type="slide" start="0,0" end="0,-10" time="300" tween="sine" easing="out"/>
+                    </animation>
+                </control>
+                <control type="label">
+                    <width>home_icon</width>
+                    <visible>Container.Scrolling</visible>
+                    <animation type="Conditional" condition="Window.IsVisible(DialogBusy.xml)">
+                        <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                        <effect type="slide" start="0,0" end="0,-10" time="300" tween="sine" easing="out"/>
+                    </animation>
+                    <animation type="Visible">
+                        <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" />
+                        <effect type="slide" start="0,-10" end="0,0" time="350" tween="sine" easing="out" />
+                    </animation>
+                    <animation type="Hidden">
+                        <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" delay="2000" />
+                        <effect type="slide" start="0,0" end="0,-10" time="300" tween="sine" easing="out" delay="2000" />
+                    </animation>
+                    <label>$INFO[ListItem.SortLetter]</label>
+                    <align>center</align>
+                    <height>48</height>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <shadowcolor>main_bg_30</shadowcolor>
                 </control>
                 <control type="label">
                     <label>KODI</label>
                     <height>30</height>
-                    <top>70</top>
+                    <top>55</top>
                     <align>center</align>
                     <aligny>center</aligny>
                     <right>2</right>

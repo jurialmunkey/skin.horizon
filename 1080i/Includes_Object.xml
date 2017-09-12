@@ -919,111 +919,134 @@
         </definition>
     </include>
 
-    <include name="Object_AlphabetStrip_Skipper">
-        <control type="button">
-            <visible>false</visible>
-            <onfocus condition="!String.IsEmpty(Container(8001).ListItem.Property(NotAvailable)) + Container(8001).OnNext">Control.Move(8001,1)</onfocus>
-            <onfocus condition="!String.IsEmpty(Container(8001).ListItem.Property(NotAvailable)) + Container(8001).OnPrevious">Control.Move(8001,-1)</onfocus>
-        </control>
-    </include>
     <include name="Object_AlphabetStrip">
+        <control type="button" id="8000">
+            <left>-10000</left>
+            <width>10</width>
+            <height>1</height>
+            <onfocus condition="!String.IsEqual(ListItem.SortLetter,A) + !String.IsEqual(ListItem.SortLetter,B) + !String.IsEqual(ListItem.SortLetter,C) + !String.IsEqual(ListItem.SortLetter,D) + !String.IsEqual(ListItem.SortLetter,E) + !String.IsEqual(ListItem.SortLetter,F) + !String.IsEqual(ListItem.SortLetter,G) + !String.IsEqual(ListItem.SortLetter,H) + !String.IsEqual(ListItem.SortLetter,I) + !String.IsEqual(ListItem.SortLetter,J) + !String.IsEqual(ListItem.SortLetter,K) + !String.IsEqual(ListItem.SortLetter,L) + !String.IsEqual(ListItem.SortLetter,M) + !String.IsEqual(ListItem.SortLetter,N) + !String.IsEqual(ListItem.SortLetter,O) + !String.IsEqual(ListItem.SortLetter,P) + !String.IsEqual(ListItem.SortLetter,Q) + !String.IsEqual(ListItem.SortLetter,R) + !String.IsEqual(ListItem.SortLetter,S) + !String.IsEqual(ListItem.SortLetter,T) + !String.IsEqual(ListItem.SortLetter,U) + !String.IsEqual(ListItem.SortLetter,V) + !String.IsEqual(ListItem.SortLetter,W) + !String.IsEqual(ListItem.SortLetter,X) + !String.IsEqual(ListItem.SortLetter,Y) + !String.IsEqual(ListItem.SortLetter,Z)">SetFocus(8001,0)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,A)">SetFocus(8001,1)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,B)">SetFocus(8001,2)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,C)">SetFocus(8001,3)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,D)">SetFocus(8001,4)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,E)">SetFocus(8001,5)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,F)">SetFocus(8001,6)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,G)">SetFocus(8001,7)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,H)">SetFocus(8001,8)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,I)">SetFocus(8001,9)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,J)">SetFocus(8001,10)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,K)">SetFocus(8001,11)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,L)">SetFocus(8001,12)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,M)">SetFocus(8001,13)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,N)">SetFocus(8001,14)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,O)">SetFocus(8001,15)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,P)">SetFocus(8001,16)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,Q)">SetFocus(8001,17)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,R)">SetFocus(8001,18)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,S)">SetFocus(8001,19)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,T)">SetFocus(8001,20)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,U)">SetFocus(8001,21)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,V)">SetFocus(8001,22)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,W)">SetFocus(8001,23)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,X)">SetFocus(8001,24)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,Y)">SetFocus(8001,25)</onfocus>
+            <onfocus condition="String.IsEqual(ListItem.SortLetter,Z)">SetFocus(8001,26)</onfocus>
+        </control>
         <control type="group">
-            <visible>!Window.IsVisible(Home)</visible>
-
-            <control type="button" id="8000">
-                <left>-10000</left>
-                <width>10</width>
-                <height>1</height>
-                <visible allowhiddenfocus="true">Control.IsVisible(8001)</visible>
-                <onfocus condition="[String.IsEqual(ListItem.SortLetter,N) | String.IsEqual(ListItem.SortLetter,O) | String.IsEqual(ListItem.SortLetter,P) | String.IsEqual(ListItem.SortLetter,Q) | String.IsEqual(ListItem.SortLetter,R) | String.IsEqual(ListItem.SortLetter,S) | String.IsEqual(ListItem.SortLetter,T) | String.IsEqual(ListItem.SortLetter,U) | String.IsEqual(ListItem.SortLetter,V) | String.IsEqual(ListItem.SortLetter,W) | String.IsEqual(ListItem.SortLetter,X) | String.IsEqual(ListItem.SortLetter,Y) | String.IsEqual(ListItem.SortLetter,Z)] + Container(8001).HasNext">Control.Message(8099,pagedown)</onfocus>
-                <onfocus condition="![String.IsEqual(ListItem.SortLetter,N) | String.IsEqual(ListItem.SortLetter,O) | String.IsEqual(ListItem.SortLetter,P) | String.IsEqual(ListItem.SortLetter,Q) | String.IsEqual(ListItem.SortLetter,R) | String.IsEqual(ListItem.SortLetter,S) | String.IsEqual(ListItem.SortLetter,T) | String.IsEqual(ListItem.SortLetter,U) | String.IsEqual(ListItem.SortLetter,V) | String.IsEqual(ListItem.SortLetter,W) | String.IsEqual(ListItem.SortLetter,X) | String.IsEqual(ListItem.SortLetter,Y) | String.IsEqual(ListItem.SortLetter,Z)] + Container(8001).HasPrevious">Control.Message(8099,pageup)</onfocus>
-                <onfocus condition="!String.IsEqual(ListItem.SortLetter,A) + !String.IsEqual(ListItem.SortLetter,B) + !String.IsEqual(ListItem.SortLetter,C) + !String.IsEqual(ListItem.SortLetter,D) + !String.IsEqual(ListItem.SortLetter,E) + !String.IsEqual(ListItem.SortLetter,F) + !String.IsEqual(ListItem.SortLetter,G) + !String.IsEqual(ListItem.SortLetter,H) + !String.IsEqual(ListItem.SortLetter,I) + !String.IsEqual(ListItem.SortLetter,J) + !String.IsEqual(ListItem.SortLetter,K) + !String.IsEqual(ListItem.SortLetter,L) + !String.IsEqual(ListItem.SortLetter,M) + !String.IsEqual(ListItem.SortLetter,N) + !String.IsEqual(ListItem.SortLetter,O) + !String.IsEqual(ListItem.SortLetter,P) + !String.IsEqual(ListItem.SortLetter,Q) + !String.IsEqual(ListItem.SortLetter,R) + !String.IsEqual(ListItem.SortLetter,S) + !String.IsEqual(ListItem.SortLetter,T) + !String.IsEqual(ListItem.SortLetter,U) + !String.IsEqual(ListItem.SortLetter,V) + !String.IsEqual(ListItem.SortLetter,W) + !String.IsEqual(ListItem.SortLetter,X) + !String.IsEqual(ListItem.SortLetter,Y) + !String.IsEqual(ListItem.SortLetter,Z)">SetFocus(8001,0)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,A)">SetFocus(8001,1)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,B)">SetFocus(8001,2)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,C)">SetFocus(8001,3)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,D)">SetFocus(8001,4)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,E)">SetFocus(8001,5)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,F)">SetFocus(8001,6)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,G)">SetFocus(8001,7)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,H)">SetFocus(8001,8)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,I)">SetFocus(8001,9)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,J)">SetFocus(8001,10)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,K)">SetFocus(8001,11)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,L)">SetFocus(8001,12)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,M)">SetFocus(8001,13)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,N)">SetFocus(8001,1)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,O)">SetFocus(8001,2)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,P)">SetFocus(8001,3)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,Q)">SetFocus(8001,4)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,R)">SetFocus(8001,5)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,S)">SetFocus(8001,6)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,T)">SetFocus(8001,7)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,U)">SetFocus(8001,8)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,V)">SetFocus(8001,9)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,W)">SetFocus(8001,10)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,X)">SetFocus(8001,11)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,Y)">SetFocus(8001,12)</onfocus>
-                <onfocus condition="String.IsEqual(ListItem.SortLetter,Z)">SetFocus(8001,13)</onfocus>
-            </control>
-            <control type="scrollbar" id="8099">
-                <left>-10000</left>
-                <width>2</width>
-                <height>200</height>
-                <orientation>horizontal</orientation>
-            </control>
-            <control type="panel" id="8001">
-                <pagecontrol>8099</pagecontrol>
-                <orientation>vertical</orientation>
-                <right>12.5</right>
-                <width>48</width>
-                <top>0</top>
-                <bottom>alphabet_bottom</bottom>
-                <onleft>50</onleft>
-                <onright>60</onright>
-                <visible allowhiddenfocus="true">!Control.HasFocus(60)</visible>
-                <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])</visible>
-                <visible>!Container.Content(seasons)</visible>
-                <visible>Control.IsEnabled(3) | Control.IsEnabled(4)</visible>
-                <visible>!Skin.HasSetting(DisableAlphabetStrip)</visible>
-                <itemlayout height="alphabet_item_height" width="48">
-                    <control type="label">
-                        <aligny>center</aligny>
-                        <align>center</align>
-                        <height>alphabet_item_height</height>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>main_fg_12</textcolor>
-                        <animation effect="fade" start="100" end="10" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <aligny>center</aligny>
-                        <align>center</align>
-                        <height>alphabet_item_height</height>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>main_fg_30</textcolor>
-                        <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter) | [String.IsEqual(ListItem.Label,#) + !String.IsEqual(Container.ListItem.SortLetter,A) + !String.IsEqual(Container.ListItem.SortLetter,B) + !String.IsEqual(Container.ListItem.SortLetter,C) + !String.IsEqual(Container.ListItem.SortLetter,D) + !String.IsEqual(Container.ListItem.SortLetter,E) + !String.IsEqual(Container.ListItem.SortLetter,F) + !String.IsEqual(Container.ListItem.SortLetter,G) + !String.IsEqual(Container.ListItem.SortLetter,H) + !String.IsEqual(Container.ListItem.SortLetter,I) + !String.IsEqual(Container.ListItem.SortLetter,J) + !String.IsEqual(Container.ListItem.SortLetter,K) + !String.IsEqual(Container.ListItem.SortLetter,L) + !String.IsEqual(Container.ListItem.SortLetter,M) + !String.IsEqual(Container.ListItem.SortLetter,N) + !String.IsEqual(Container.ListItem.SortLetter,O) + !String.IsEqual(Container.ListItem.SortLetter,P) + !String.IsEqual(Container.ListItem.SortLetter,Q) + !String.IsEqual(Container.ListItem.SortLetter,R) + !String.IsEqual(Container.ListItem.SortLetter,S) + !String.IsEqual(Container.ListItem.SortLetter,T) + !String.IsEqual(Container.ListItem.SortLetter,U) + !String.IsEqual(Container.ListItem.SortLetter,V) + !String.IsEqual(Container.ListItem.SortLetter,W) + !String.IsEqual(Container.ListItem.SortLetter,X) + !String.IsEqual(Container.ListItem.SortLetter,Y) + !String.IsEqual(Container.ListItem.SortLetter,Z)]</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="alphabet_item_height" width="48">
-                    <control type="image">
-                        <height>4</height>
-                        <bottom>0</bottom>
-                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-                    </control>
-                    <control type="label">
-                        <aligny>center</aligny>
-                        <align>center</align>
-                        <height>alphabet_item_height</height>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>Selected</textcolor>
-                        <animation effect="fade" start="100" end="10" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                    </control>
-                    <include>Object_AlphabetStrip_Skipper</include>
-                </focusedlayout>
-                <content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
-            </control>
+            <include>Global_Overlay</include>
+            <visible>Control.HasFocus(8001) | Control.HasFocus(8101) | Control.HasFocus(8102) | Control.HasFocus(8103)</visible>
+        </control>
+        <control type="group">
+            <animation effect="slide" start="0" end="-5000" condition="![Control.HasFocus(8001) | Control.HasFocus(8101) | Control.HasFocus(8102) | Control.HasFocus(8103)]" reversible="false">Conditional</animation>
+            <animation type="Conditional" reversible="false" condition="[Control.HasFocus(8001) | Control.HasFocus(8101) | Control.HasFocus(8102) | Control.HasFocus(8103)]">
+                <effect type="fade" start="0" end="100" time="300" delay="150"/>
+                <effect type="slide" start="0,-48" end="0" center="auto" tween="back" easing="out" time="450" delay="150"/>
+            </animation>
             <control type="group">
-                <!-- <visible>!Control.IsVisible(8000)</visible> -->
-                <include>Object_Scrollbar_Vert</include>
+                <include content="Dialog_Standard_Group">
+                    <param name="height" value="450" />
+                    <param name="width" value="885" />
+                </include>
+                <control type="label">
+                    <include>Dialog_Standard_Header</include>
+                    <label>$LOCALIZE[31334]</label>
+                </control>
+                <control type="panel" id="8001">
+                    <orientation>vertical</orientation>
+                    <left>20</left>
+                    <right>0</right>
+                    <top>100</top>
+                    <bottom>20</bottom>
+                    <onright>noop</onright>
+                    <onleft>noop</onleft>
+                    <onup>noop</onup>
+                    <onback>50</onback>
+                    <ondown condition="Container(8001).Column(0) | Container(8001).Column(1) | Container(8001).Column(2) | Container(8001).Column(3)">8101</ondown>
+                    <ondown condition="Container(8001).Column(4) | Container(8001).Column(5) | Container(8001).Column(6) | Container(8001).Column(7) | Container(8001).Column(8)">8103</ondown>
+                    <itemlayout width="95" height="85">
+                        <control type="group">
+                            <bottom>10</bottom>
+                            <right>10</right>
+                            <control type="image">
+                                <texture colordiffuse="dialog_fg_12" border="5">common/box.png</texture>
+                            </control>
+                            <control type="label">
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>dialog_fg_70</textcolor>
+                                <animation effect="fade" start="100" end="33" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                            </control>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="95" height="85">
+                        <control type="group">
+                            <bottom>10</bottom>
+                            <right>10</right>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texture>
+                            </control>
+                            <control type="label">
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>Selected</textcolor>
+                                <animation effect="fade" start="100" end="33" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
+                </control>
+
+                <control type="grouplist" id="8100">
+                    <height>66</height>
+                    <onleft>noop</onleft>
+                    <onright>noop</onright>
+                    <ondown>noop</ondown>
+                    <onback>50</onback>
+                    <left>20</left>
+                    <right>20</right>
+                    <bottom>20</bottom>
+                    <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
+                    <control type="button" id="8101">
+                        <onup>SetFocus(8001)</onup>
+                        <onback>50</onback>
+                        <label>Search</label>
+                        <width>417.5</width>
+                        <onclick>SetFocus(50)</onclick>
+                        <onclick>RunScript(script.globalsearch)</onclick>
+                        <include>Dialog_Standard_OkCancel</include>
+                    </control>
+                    <control type="button" id="8103">
+                        <onup>SetFocus(8001)</onup>
+                        <onback>50</onback>
+                        <label>Close</label>
+                        <onclick>SetFocus(50)</onclick>
+                        <width>417.5</width>
+                        <include>Dialog_Standard_OkCancel</include>
+                    </control>
+                </control>
             </control>
         </control>
     </include>
@@ -1037,7 +1060,7 @@
             <bottom>0</bottom>
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
-            <onright>50</onright>
+            <onright condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">SetFocus(8000)</onright>
             <onleft>50</onleft>
             <texturesliderbackground colordiffuse="main_fg_12">common/null.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
@@ -1060,7 +1083,7 @@
             <showonepage>true</showonepage>
             <orientation>horizontal</orientation>
             <onup>50</onup>
-            <ondown>50</ondown>
+            <ondown condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">SetFocus(8000)</ondown>
             <texturesliderbackground colordiffuse="main_fg_12">common/null.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturesliderbarfocus>
