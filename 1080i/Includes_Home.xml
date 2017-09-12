@@ -18,7 +18,7 @@
             </control>
 
             <control type="group">
-                <animation effect="slide" start="0" end="304" time="300" tween="sine" easing="inout" condition="Control.HasFocus(302)">Conditional</animation>
+                <animation effect="slide" start="0" end="301" time="300" tween="sine" easing="inout" condition="Control.HasFocus(302)">Conditional</animation>
                 <control type="group">
                     <left>-320</left>
                     <width>320</width>
