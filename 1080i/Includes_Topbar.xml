@@ -169,7 +169,7 @@
             <orientation>horizontal</orientation>
             <control type="group">
                 <width>20</width>
-                <visible>![String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia] | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <visible>![String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia] | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)] | Control.HasFocus(8001)</visible>
                 <include>Object_DownArrows</include>
             </control>
             <control type="label">
