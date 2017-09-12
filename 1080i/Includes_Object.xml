@@ -919,6 +919,13 @@
         </definition>
     </include>
 
+    <include name="Object_AlphabetStrip_Skipper">
+        <control type="button">
+            <visible>false</visible>
+            <onfocus condition="!String.IsEmpty(Container(8001).ListItem.Property(NotAvailable)) + Container(8001).OnNext">Control.Move(8001,1)</onfocus>
+            <onfocus condition="!String.IsEmpty(Container(8001).ListItem.Property(NotAvailable)) + Container(8001).OnPrevious">Control.Move(8001,-1)</onfocus>
+        </control>
+    </include>
     <include name="Object_AlphabetStrip">
         <control type="button" id="8000">
             <left>-10000</left>
@@ -959,9 +966,7 @@
             <height>alphabet_item_height</height>
             <visible>Control.HasFocus(8001) | Control.HasFocus(8101) | Control.HasFocus(8102) | Control.HasFocus(8103)</visible>
             <control type="panel" id="8001">
-                <!-- <centerleft>50%</centerleft> -->
                 <orientation>horizontal</orientation>
-                <width>1296</width>
                 <height>alphabet_item_height</height>
                 <onup>50</onup>
                 <ondown>50</ondown>
