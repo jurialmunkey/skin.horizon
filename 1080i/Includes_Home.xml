@@ -9,10 +9,11 @@
             <control type="group">
                 <include>Animation_Home_Textbar_Slideover</include>
                 <control type="group">
-                    <left>70</left>
+                    <left>home_left</left>
                     <width>320</width>
                     <include>Home_Textbar_Texture</include>
                     <include>Home_Textbar_Items</include>
+                    <include>Home_Textbar_Bottomline</include>
                 </control>
             </control>
 
@@ -34,26 +35,27 @@
                         <include>Home_SubMenu_Layout</include>
                         <include>Home_SubMenu_Items</include>
                     </control>
+                    <include>Home_Textbar_Bottomline</include>
                     <control type="group">
                         <top>view_top</top>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,0)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,1)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,2)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,3)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,4)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,5)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,6)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,7)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,8)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,9)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,10)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(302).NumItems,11)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,0)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,1)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,2)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,3)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,4)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,5)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,6)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,7)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,8)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,9)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,10)">Conditional</animation>
+                        <animation effect="slide" end="0,home_icon" condition="Integer.IsGreater(Container(302).NumItems,11)">Conditional</animation>
                         <include>Home_Separator</include>
                     </control>
                 </control>
                 <control type="group">
                     <left>0</left>
-                    <width>74</width>
+                    <width>home_icon</width>
                     
                     <include>Home_Iconbar_Texture</include>
                     <include>Home_Iconbar_Logo</include>
@@ -89,6 +91,17 @@
             </control>
         </control>
         <include>Object_PlotOverlay</include>
+    </include>
+
+    <include name="Home_Textbar_Bottomline">
+        <control type="image">
+            <bottom>0</bottom>
+            <height>2</height>
+            <right>6</right>
+            <include>Animation_FadeOut_Delay</include>
+            <texture colordiffuse="darkline_separator">common/white.png</texture>
+            <visible>[Control.HasFocus(300) + Integer.IsGreater(Container(300).NumItems,11)] | [Control.HasFocus(302) + Integer.IsGreater(Container(302).NumItems,11)]</visible>
+        </control>
     </include>
 
     <include name="Home_MainMenu_SettingsItems">
@@ -828,7 +841,7 @@
         <param name="visible" default="true" />
         <definition>
             <control type="group">
-                <height>74</height>
+                <height>home_icon</height>
                 <control type="group">
                     <visible>$PARAM[visible]</visible>
                     <include>Animation_FadeOut_Delay</include>
@@ -879,7 +892,7 @@
 
     <include name="Home_Textbar_Item">
         <control type="group">
-            <height>74</height>
+            <height>home_icon</height>
             <visible>!String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Label) | !String.IsEmpty(Container(300).ListItemPosition($PARAM[id]).Icon)</visible>
             <control type="group">
                 <visible>Control.HasFocus(300)</visible>
@@ -899,7 +912,7 @@
                     <include>Animation_FadeIn_Delay</include>
                     <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                     <left>8</left>
-                    <width>74</width>
+                    <width>home_icon</width>
                     <texture colordiffuse="Selected">common/home-indicator.png</texture>
                     <visible>Skin.HasSetting(SubmenuIndicator)</visible>
                     <visible>Window.IsVisible(Home)</visible>
@@ -997,23 +1010,23 @@
     <include name="Home_MainMenu_Layout">
         <top>view_top</top>
         <width>240</width>
-        <height>890</height>
+        <!-- <height>890</height> -->
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
         <scrolltime>0</scrolltime>
-        <itemlayout height="74" width="240">
+        <itemlayout height="home_icon" width="240">
             <control type="group">
-                <top>74</top>
-                <width>74</width>
+                <top>home_icon</top>
+                <width>home_icon</width>
                 <include>Home_Separator</include>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
             </control>
 
             <control type="group">
-                <left>74</left>
+                <left>home_icon</left>
                 <width>6</width>
                 <visible>[!Control.HasFocus(300) + [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))] + !Skin.HasSetting(IconOnlyMode)]</visible>
                 <include>Animation_FadeIn_Delay</include>
@@ -1024,24 +1037,24 @@
                     <include>Home_Separator</include>
                 </control>
                 <control type="group">
-                    <top>74</top>
+                    <top>home_icon</top>
                     <include>Home_Separator</include>
                 </control>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
                 <visible>!Control.HasFocus(300) + [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]</visible>
             </control>
         </itemlayout>
-        <focusedlayout height="74" width="240">
+        <focusedlayout height="home_icon" width="240">
             <control type="group">
-                <width>74</width>
-                <top>74</top>
+                <width>home_icon</width>
+                <top>home_icon</top>
                 <include>Home_Separator</include>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="Selected">common/home-indicator.png</texture>
                 <visible>Skin.HasSetting(SubmenuIndicator)</visible>
                 <visible>Window.IsVisible(Home)</visible>
@@ -1052,7 +1065,7 @@
                 <animation effect="fade" start="0" end="100" time="350" delay="250" tween="cubic" easing="inout">Focus</animation>
             </control>
             <control type="group">
-                <left>74</left>
+                <left>home_icon</left>
                 <width>6</width>
                 <visible>[!Control.HasFocus(300) + [Window.IsVisible(Home) | [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]] + !Skin.HasSetting(IconOnlyMode)] | [[Control.HasFocus(300) | Control.HasFocus(302)] + Skin.HasSetting(IconOnlyMode)]</visible>
                 <include>Animation_FadeIn</include>
@@ -1063,22 +1076,22 @@
                     <include>Home_Separator</include>
                 </control>
                 <control type="group">
-                    <top>74</top>
+                    <top>home_icon</top>
                     <include>Home_Separator</include>
                 </control>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
                 <visible>!Control.HasFocus(300) + [Window.IsVisible(Home) | [!Window.IsVisible(Home) + String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))]]</visible>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
                 <visible>!Control.HasFocus(300) + !Window.IsVisible(Home) + !String.IsEqual(ListItem.Property(path),Window(Home).Property(MenuIconFocus))</visible>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
                 <visible>Control.HasFocus(300)</visible>
                 <include>Animation_FocusBounce_Home</include>
@@ -1089,30 +1102,30 @@
 
     <include name="Home_VideoInfo_Layout">
         <top>view_top</top>
-        <height>890</height>
+        <!-- <height>890</height> -->
         <width>240</width>
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
         <scrolltime>0</scrolltime>
-        <itemlayout height="74" width="240">
+        <itemlayout height="home_icon" width="240">
             <control type="group">
-                <width>74</width>
-                <top>74</top>
+                <width>home_icon</width>
+                <top>home_icon</top>
                 <include>Home_Separator</include>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
             </control>
         </itemlayout>
-        <focusedlayout height="74" width="240">
+        <focusedlayout height="home_icon" width="240">
             <control type="group">
-                <width>74</width>
-                <top>74</top>
+                <width>home_icon</width>
+                <top>home_icon</top>
                 <include>Home_Separator</include>
             </control>
             <control type="group">
-                <left>74</left>
+                <left>home_icon</left>
                 <width>6</width>
                 <visible>[Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
                 <include>Animation_FadeIn</include>
@@ -1123,17 +1136,17 @@
                     <include>Home_Separator</include>
                 </control>
                 <control type="group">
-                    <top>74</top>
+                    <top>home_icon</top>
                     <include>Home_Separator</include>
                 </control>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
                 <visible>!Control.HasFocus(300)</visible>
             </control>
             <control type="image">
-                <width>74</width>
+                <width>home_icon</width>
                 <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
                 <visible>Control.HasFocus(300)</visible>
                 <include>Animation_FocusBounce_Home</include>
@@ -1152,7 +1165,7 @@
         <preloaditems>2</preloaditems>
         <orientation>vertical</orientation>
         <focusposition>1</focusposition>
-        <itemlayout height="74" width="310">
+        <itemlayout height="home_icon" width="310">
             <include>Home_Separator</include>
             <control type="label">
                 <left>24</left>
@@ -1163,7 +1176,7 @@
                 <label>$INFO[ListItem.Label]</label>
             </control>
         </itemlayout>
-        <focusedlayout height="74" width="310">
+        <focusedlayout height="home_icon" width="310">
             <control type="image">
                 <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
             </control>
@@ -1213,8 +1226,8 @@
                 <height>100</height>
                 <control type="image">
                     <top>0</top>
-                    <width>74</width>
-                    <height>74</height>
+                    <width>home_icon</width>
+                    <height>home_icon</height>
                     <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
                 </control>
                 <control type="label">
@@ -1252,4 +1265,3 @@
         <onfocus>AlarmClock(SetLoad,SetProperty(WidgetLoading,1,Home),00:00,silent)</onfocus>
     </include>
 </includes>
-

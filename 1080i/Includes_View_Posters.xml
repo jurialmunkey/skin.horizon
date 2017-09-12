@@ -4,44 +4,52 @@
         <param name="listtype" default="fixedlist" />
         <definition>
             <!-- Standard Wall -->
-            <control type="panel" id="51">
-                <visible>!Container.Content(songs) + !Container.Content(episodes) + !Container.Content(videos)</visible>
-                <include>View_NotTheseWindows</include>
-                <viewtype label="$LOCALIZE[536]">icon</viewtype>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[536]" />
-                </include>
-                <include content="View_Posters_Layout">
-                    <param name="id" value="51" />
-                    <param name="orientation" value="vertical" />
-                </include>
+            <control type="group">
+                <visible>Control.IsVisible(51)</visible>
+                <control type="panel" id="51">
+                    <visible>!Container.Content(songs) + !Container.Content(episodes) + !Container.Content(videos)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <viewtype label="$LOCALIZE[536]">icon</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[536]" />
+                    </include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="51" />
+                        <param name="orientation" value="vertical" />
+                    </include>
+                </control>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
             <!-- Standard Wall w/ Info -->
-            <control type="panel" id="551">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
-                <include>View_NotTheseWindows</include>
-                <left>855</left>
-                <viewtype label="$LOCALIZE[31295]">icon</viewtype>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[31295]" />
-                </include>
-                <include content="View_Posters_Layout">
+            <control type="group">
+                <visible>Control.IsVisible(551)</visible>
+                <include>Object_Scrollbar_Vert</include>
+                <control type="panel" id="551">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <left>895.5</left>
+                    <viewtype label="$LOCALIZE[31295]">icon</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31295]" />
+                    </include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="551" />
+                        <param name="orientation" value="vertical" />
+                    </include>
+                </control>
+                <include content="View_Posters_FanartInfo">
                     <param name="id" value="551" />
-                    <param name="orientation" value="vertical" />
                 </include>
             </control>
-            <include content="View_Posters_FanartInfo">
-                <param name="id" value="551" />
-            </include>
             
 
             <!-- Showcase -->
             <control type="group">
-                <include condition="Skin.HasSetting(NoScrollbarHorizontal)">View_NoScrollbar</include>
+                <visible>Control.IsVisible(52)</visible>
                 <control type="group">
                     <bottom>30</bottom>
-                    <height>422.5</height>
+                    <height>437.75</height>
                     <control type="$PARAM[listtype]" id="52">
                         <focusposition>2</focusposition>
                         <movement>3</movement>
@@ -60,8 +68,6 @@
                             <param name="id" value="52" />
                             <param name="orientation" value="horizontal" />
                             <param name="landscape" value="false" />
-                            <param name="top_offset" value="34" />
-                            <param name="bottom_offset" value="-10" />
                         </include>
                     </control>
                 </control>
@@ -69,35 +75,40 @@
                     <param name="bottom" value="460" />
                     <param name="id" value="52" />
                     <param name="left" value="40" />
-                    <param name="right" value="130" />
+                    <param name="right" value="50" />
                     <param name="width" value="1654" />
                     <param name="altwidth" value="1234" />
                     <param name="discart" value="true" />
                     <param name="hdsd_flag" value="true" />
                 </include>
+                <include>Object_Scrollbar_Horz</include>
             </control>
 
             <!-- Landscape -->
-            <control type="panel" id="53">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(images) | Container.Content(artists) | Container.Content(videos)</visible>
-                <include>View_NotTheseWindows</include>
-                <viewtype label="$LOCALIZE[31038]">icon</viewtype>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[31038]" />
-                </include>
-                <include content="View_Posters_Layout">
-                    <param name="id" value="53" />
-                    <param name="orientation" value="vertical" />
-                    <param name="landscape" value="true" />
-                </include>
+            <control type="group">
+                <visible>Control.IsVisible(53)</visible>
+                <control type="panel" id="53">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(images) | Container.Content(artists) | Container.Content(videos)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <viewtype label="$LOCALIZE[31038]">icon</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31038]" />
+                    </include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="53" />
+                        <param name="orientation" value="vertical" />
+                        <param name="landscape" value="true" />
+                    </include>
+                </control>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
             <!-- Landscape Showcase -->
             <control type="group">
-                <include condition="Skin.HasSetting(NoScrollbarHorizontal)">View_NoScrollbar</include>
+                <visible>Control.IsVisible(56)</visible>
                 <control type="group">
                     <bottom>30</bottom>
-                    <height>422.5</height>
+                    <height>437.75</height>
                     <control type="$PARAM[listtype]" id="56">
                         <focusposition>1</focusposition>
                         <movement>1</movement>
@@ -116,8 +127,6 @@
                             <param name="id" value="56" />
                             <param name="orientation" value="horizontal" />
                             <param name="landscape" value="true" />
-                            <param name="top_offset" value="34" />
-                            <param name="bottom_offset" value="-10" />
                         </include>
                     </control>
                 </control>
@@ -125,70 +134,83 @@
                     <param name="bottom" value="460" />
                     <param name="id" value="56" />
                     <param name="left" value="40" />
-                    <param name="right" value="130" />
+                    <param name="right" value="50" />
                     <param name="width" value="1654" />
                     <param name="altwidth" value="1234" />
                     <param name="discart" value="true" />
                     <param name="hdsd_flag" value="true" />
                 </include>
+                <include>Object_Scrollbar_Horz</include>
             </control>
             <!-- Landscape Banner -->
-            <control type="panel" id="553">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(videos)</visible>
-                <include>View_NotTheseWindows</include>
-                <viewtype label="$LOCALIZE[31297]">icon</viewtype>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[31297]" />
-                </include>
-                <include content="View_Posters_Layout">
-                    <param name="id" value="553" />
-                    <param name="orientation" value="vertical" />
-                    <param name="bigbanner" value="true" />
-                    <param name="flipside" value="Skin.HasSetting(FlipSide.553)" />
-                </include>
+            <control type="group">
+                <visible>Control.IsVisible(553)</visible>
+                <control type="panel" id="553">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(videos)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <viewtype label="$LOCALIZE[31297]">icon</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31297]" />
+                    </include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="553" />
+                        <param name="orientation" value="vertical" />
+                        <param name="bigbanner" value="true" />
+                        <param name="flipside" value="Skin.HasSetting(FlipSide.553)" />
+                    </include>
+                </control>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
             <!-- Banners -->
-            <control type="panel" id="58">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
-                <include>View_NotTheseWindows</include>
-                <viewtype label="$LOCALIZE[20020]">icon</viewtype>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[20020]" />
-                </include>
-                <include content="View_Posters_Layout">
-                    <param name="id" value="58" />
-                    <param name="orientation" value="vertical" />
-                    <param name="banner" value="true" />
-                    <param name="top_offset" value="30" />
-                    <param name="bottom_offset" value="-10" />
-                    <param name="top" value="0" />
-                </include>
+            <control type="group">
+                <visible>Control.IsVisible(58)</visible>
+                <control type="panel" id="58">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <viewtype label="$LOCALIZE[20020]">icon</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[20020]" />
+                    </include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="58" />
+                        <param name="orientation" value="vertical" />
+                        <param name="banner" value="true" />
+                        <param name="top_offset" value="30" />
+                        <param name="bottom_offset" value="-10" />
+                        <param name="top" value="0" />
+                    </include>
+                </control>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
             <!-- Banners w/ Info -->
-            <control type="fixedlist" id="558">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
-                <include>View_NotTheseWindows</include>
-                <left>855</left>
-                <focusposition>1</focusposition>
-                <movement>1</movement>
-                <viewtype label="$LOCALIZE[31296]">icon</viewtype>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[31296]" />
-                </include>
-                <include content="View_Posters_Layout">
+            <control type="group">
+                <visible>Control.IsVisible(558)</visible>
+                <control type="fixedlist" id="558">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <left>895.5</left>
+                    <focusposition>1</focusposition>
+                    <movement>1</movement>
+                    <viewtype label="$LOCALIZE[31296]">icon</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31296]" />
+                    </include>
+                    <include content="View_Posters_Layout">
+                        <param name="id" value="558" />
+                        <param name="orientation" value="vertical" />
+                        <param name="banner" value="true" />
+                        <param name="top_offset" value="30" />
+                        <param name="bottom_offset" value="-10" />
+                        <param name="top" value="0" />
+                    </include>
+                </control>
+                <include content="View_Posters_FanartInfo">
                     <param name="id" value="558" />
-                    <param name="orientation" value="vertical" />
-                    <param name="banner" value="true" />
-                    <param name="top_offset" value="30" />
-                    <param name="bottom_offset" value="-10" />
-                    <param name="top" value="0" />
                 </include>
+                <include>Object_Scrollbar_Vert</include>
             </control>
-            <include content="View_Posters_FanartInfo">
-                <param name="id" value="558" />
-            </include>
 
             <!-- Lovefilm -->
             <control type="group">
@@ -219,25 +241,25 @@
                         <ondown condition="!Control.IsVisible(8000)">300</ondown>
                         <pagecontrol>60</pagecontrol>
                         <scrolltime tween="cubic">400</scrolltime>
-                        <itemlayout width="1754" height="926" condition="!Skin.HasSetting(LoveFilmSmall)">
+                        <itemlayout width="1831" height="926" condition="!Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="1754" height="926" condition="!Skin.HasSetting(LoveFilmSmall)">
+                        <focusedlayout width="1831" height="926" condition="!Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </focusedlayout>
-                        <itemlayout width="1674" height="lovefilm_height" condition="Skin.HasSetting(LoveFilmSmall)">
+                        <itemlayout width="1751" height="lovefilm_height" condition="Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="1674" height="lovefilm_height" condition="Skin.HasSetting(LoveFilmSmall)">
+                        <focusedlayout width="1751" height="lovefilm_height" condition="Skin.HasSetting(LoveFilmSmall)">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[Image_Fanart]</texture>
@@ -300,14 +322,14 @@
     </include>
 
     <include name="View_Posters_Lovefilm_Dimensions_Large">
-        <right>80</right>
+        <right>0</right>
         <left>0</left>
         <top>0</top>
         <bottom>0</bottom>
     </include>
 
     <include name="View_Posters_Lovefilm_Dimensions_Small">
-        <right>120</right>
+        <right>40</right>
         <left>40</left>
         <top>40</top>
         <bottom>40</bottom>
@@ -321,7 +343,7 @@
             <right>80</right>
             <bottom>0</bottom>
             <control type="group">
-                <width>855</width>
+                <width>895.5</width>
                 <control type="group">
                     <visible>!Skin.HasSetting(DisablePanels)</visible>
                     <control type="image">
@@ -330,7 +352,7 @@
                     </control>
                     <include>Defs_Color_Overlay</include>
                     <control type="group">
-                        <left>855</left>
+                        <left>895.5</left>
                         <include>Object_Separator_Left</include>
                     </control>
                 </control>
@@ -341,8 +363,8 @@
                     <visible>!ListItem.IsParentFolder</visible>
                     <control type="group">
                         <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
-                        <width>775</width>
-                        <height>436</height>
+                        <width>815.5</width>
+                        <height>458.71</height>
                         <control type="image">
                             <include>Defs_Shadow_Opaque</include>
                             <texture colordiffuse="PosterBack">common/white.png</texture>
@@ -368,7 +390,7 @@
             </control>
             <control type="group">
                 <right>-80</right>
-                <top>475</top>
+                <top>510</top>
                 <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
                 <include content="View_Posters_Info" condition="Window.IsVisible(MyVideoNav.xml)">
                     <param name="bottom" value="30" />
@@ -376,7 +398,7 @@
                     <param name="id" value="$PARAM[id]" />
                     <param name="left" value="40" />
                     <param name="right" value="1025" />
-                    <param name="width" value="855" />
+                    <param name="width" value="895.5" />
                     <param name="discart" value="false" />
                     <param name="rottentomatoes" value="true" />
                     <param name="usermeter" value="false" />
@@ -391,7 +413,7 @@
                     <param name="id" value="$PARAM[id]" />
                     <param name="left" value="40" />
                     <param name="right" value="1025" />
-                    <param name="width" value="855" />
+                    <param name="width" value="895.5" />
                     <param name="discart" value="false" />
                     <param name="rottentomatoes" value="true" />
                     <param name="usermeter" value="false" />
@@ -411,7 +433,7 @@
                     <param name="id" value="$PARAM[id]" />
                     <param name="left" value="50" />
                     <param name="right" value="1025" />
-                    <param name="width" value="855" />
+                    <param name="width" value="895.5" />
                     <param name="discart" value="false" />
                     <param name="rottentomatoes" value="true" />
                     <param name="usermeter" value="false" />
@@ -426,7 +448,7 @@
                     <param name="id" value="$PARAM[id]" />
                     <param name="left" value="50" />
                     <param name="right" value="1025" />
-                    <param name="width" value="855" />
+                    <param name="width" value="895.5" />
                     <param name="discart" value="false" />
                     <param name="rottentomatoes" value="true" />
                     <param name="usermeter" value="false" />
@@ -510,7 +532,7 @@
             </control>
             <control type="image">
                 <top>50</top>
-                <right>130</right>
+                <right>50</right>
                 <height>380</height>
                 <width>380</width>
                 <aspectratio>keep</aspectratio>
@@ -521,7 +543,7 @@
             </control>
             <control type="image">
                 <top>50</top>
-                <right>130</right>
+                <right>50</right>
                 <height>380</height>
                 <width>380</width>
                 <aspectratio>keep</aspectratio>
@@ -533,7 +555,7 @@
             </control>
             <control type="image">
                 <top>50</top>
-                <right>150</right>
+                <right>50</right>
                 <height>380</height>
                 <width>380</width>
                 <aspectratio aligny="top">keep</aspectratio>
@@ -734,13 +756,13 @@
             <movement>3</movement>
             <orientation>$PARAM[orientation]</orientation>
             <left>0</left>
-            <right>90</right>
+            <right>10</right>
             <include condition="!Window.IsVisible(DialogVideoInfo.xml)">View_Movement_Horizontal</include>
             <preloaditems>2</preloaditems>
             <pagecontrol>60</pagecontrol>
             <scrolltime tween="quadratic">400</scrolltime>
             <onfocus>SetProperty(ViewType,Posters,Home)</onfocus>
-            <itemlayout width="285" height="412.5" condition="!$PARAM[bigbanner] + !$PARAM[cards] + !$PARAM[landscape] + !$PARAM[banner]">
+            <itemlayout width="298.5" height="427.75" condition="!$PARAM[bigbanner] + !$PARAM[cards] + !$PARAM[landscape] + !$PARAM[banner]">
                 <control type="group">
                     <left>30</left>
                     <top>$PARAM[top_offset]</top>
@@ -755,7 +777,7 @@
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <texture colordiffuse="main_bg_30">common/white.png</texture>
                         </control>
@@ -767,7 +789,7 @@
                             <include>Defs_Color_Overlay</include>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture colordiffuse="main_fg_70" background="true">$INFO[ListItem.Icon]</texture>
@@ -775,7 +797,7 @@
                             <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -783,28 +805,28 @@
                             <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)]</visible>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_70" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <visible>Container.Content(genres) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_70" fallback="DefaultStudios.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
                             <visible>Container.Content(studios) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_30">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
                             <visible>Container.Content(countries) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="textbox">
-                            <height>265</height>
+                            <height>278.5</height>
                             <left>20</left>
                             <right>20</right>
                             <align>center</align>
@@ -817,7 +839,7 @@
                         </control>
                         
                         <control type="group">
-                            <top>255</top>
+                            <top>268.5</top>
                             <bottom>10</bottom>
                             <left>10</left>
                             <right>10</right>
@@ -850,7 +872,7 @@
                     <include>View_WatchedOverlay</include>
                 </control>
             </itemlayout>
-            <focusedlayout width="285" height="412.5" condition="!$PARAM[bigbanner] + !$PARAM[cards] + !$PARAM[landscape] + !$PARAM[banner]">
+            <focusedlayout width="298.5" height="427.75" condition="!$PARAM[bigbanner] + !$PARAM[cards] + !$PARAM[landscape] + !$PARAM[banner]">
                 <include content="View_Position_Button">
                     <param name="id" value="$PARAM[id]" />
                     <param name="setfanart" value="$PARAM[setfanart]" />
@@ -870,7 +892,7 @@
                             <texture colordiffuse="PosterBack">common/white.png</texture>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <texture colordiffuse="main_bg_30">common/white.png</texture>
                         </control>
@@ -882,35 +904,35 @@
                             <include>Defs_Color_Overlay</include>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">scale</aspectratio>
                             <texture colordiffuse="Selected" background="true">$INFO[ListItem.Icon]</texture>
                             <visible>![Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>70</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="Selected" fallback="DefaultGenres.png">$VAR[Image_GenreIcons]</texture>
                             <visible>Container.Content(genres) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="Selected" fallback="DefaultStudios.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
                             <visible>Container.Content(studios) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="image">
-                            <height>265</height>
+                            <height>278.5</height>
                             <bordersize>10</bordersize>
                             <aspectratio aligny="center">keep</aspectratio>
                             <texture background="true" colordiffuse="main_fg_30">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
                             <visible>Container.Content(countries) + !ListItem.IsParentFolder</visible>
                         </control>
                         <control type="textbox">
-                            <height>265</height>
+                            <height>278.5</height>
                             <left>20</left>
                             <right>20</right>
                             <align>center</align>
@@ -923,7 +945,7 @@
                         </control>
                         
                         <control type="group">
-                            <top>255</top>
+                            <top>268.5</top>
                             <bottom>10</bottom>
                             <left>10</left>
                             <right>10</right>
@@ -962,14 +984,14 @@
                 </control>
             </focusedlayout>
 
-            <itemlayout width="570" height="412.5" condition="$PARAM[landscape]">
+            <itemlayout width="597" height="427.75" condition="$PARAM[landscape]">
                 <control type="group">
                     <left>30</left>
                     <top>$PARAM[top_offset]</top>
                     <right>-10</right>
                     <bottom>$PARAM[bottom_offset]</bottom>
                     <control type="group">
-                        <height>313.75</height>
+                        <height>333.3125</height>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <include>Defs_Shadow_Small</include>
@@ -998,8 +1020,8 @@
                         </control>
                     </control>
                     <control type="group">
-                        <top>290</top>
-                        <bottom>10</bottom>
+                        <top>310</top>
+                        <bottom>15</bottom>
                         <left>10</left>
                         <right>10</right>
                         <control type="label">
@@ -1036,7 +1058,7 @@
                     <include>View_WatchedOverlay</include>
                 </control>
             </itemlayout>
-            <focusedlayout width="570" height="412.5" condition="$PARAM[landscape]">
+            <focusedlayout width="597" height="427.75" condition="$PARAM[landscape]">
                 <include content="View_Position_Button">
                     <param name="id" value="$PARAM[id]" />
                     <param name="setfanart" value="$PARAM[setfanart]" />
@@ -1049,7 +1071,7 @@
 
                     <control type="group">
                         <include>Animation_FocusBounce_Small</include>
-                        <height>313.75</height>
+                        <height>333.3125</height>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <include>Defs_Shadow_Small</include>
@@ -1084,8 +1106,8 @@
                         </control>
                     </control>
                     <control type="group">
-                        <top>290</top>
-                        <bottom>10</bottom>
+                        <top>310</top>
+                        <bottom>15</bottom>
                         <left>10</left>
                         <right>10</right>
                         <control type="label">
@@ -1122,7 +1144,7 @@
                 </control>
             </focusedlayout>
 
-            <itemlayout width="855" height="275" condition="$PARAM[banner]">
+            <itemlayout width="895.5" height="286.1666" condition="$PARAM[banner]">
                 <control type="group">
                     <left>30</left>
                     <top>$PARAM[top_offset]</top>
@@ -1141,21 +1163,21 @@
                         <include>Defs_Color_Overlay</include>
                     </control>
                     <control type="image" description="Poster">
-                        <height>170</height>
+                        <height>178.2675</height>
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
                     </control>
                     <control type="image" description="Poster">
-                        <height>170</height>
+                        <height>178.2675</height>
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">keep</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
                         <visible>ListItem.IsParentFolder</visible>
                     </control>
                     <control type="image">
-                        <height>170</height>
+                        <height>178.2675</height>
                         <left>20</left>
                         <right>20</right>
                         <bordersize>20</bordersize>
@@ -1164,7 +1186,7 @@
                         <visible>String.IsEmpty(ListItem.Art(banner)) + String.IsEmpty(ListItem.Art(tvshow.banner))</visible>
                     </control>
                     <control type="label">
-                        <top>170</top>
+                        <top>178.2675</top>
                         <bottom>50</bottom>
                         <left>30</left>
                         <right>30</right>
@@ -1174,7 +1196,7 @@
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
-                        <top>170</top>
+                        <top>178.2675</top>
                         <bottom>50</bottom>
                         <left>30</left>
                         <right>30</right>
@@ -1185,7 +1207,7 @@
                         <label>$INFO[ListItem.Label2]</label>
                     </control>
                     <control type="label">
-                        <top>200</top>
+                        <top>208.2675</top>
                         <bottom>20</bottom>
                         <left>30</left>
                         <right>30</right>
@@ -1195,7 +1217,7 @@
                         <label>$INFO[ListItem.Genre]</label>
                     </control>
                     <control type="label">
-                        <top>200</top>
+                        <top>208.2675</top>
                         <bottom>20</bottom>
                         <left>30</left>
                         <right>30</right>
@@ -1205,10 +1227,11 @@
                         <textcolor>main_fg_30</textcolor>
                         <label>$INFO[ListItem.Premiered]</label>
                     </control>
+                    
                     <include>View_WatchedOverlay</include>
                 </control>
             </itemlayout>
-            <focusedlayout width="855" height="275" condition="$PARAM[banner]">
+            <focusedlayout width="895.5" height="286.1666" condition="$PARAM[banner]">
                 <include content="View_Position_Button">
                     <param name="id" value="$PARAM[id]" />
                     <param name="setfanart" value="$PARAM[setfanart]" />
@@ -1232,21 +1255,21 @@
                         <include>Defs_Color_Overlay</include>
                     </control>
                     <control type="image" description="Poster">
-                        <height>170</height>
+                        <height>178.2675</height>
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
                         <visible>!ListItem.IsParentFolder</visible>
                     </control>
                     <control type="image" description="Poster">
-                        <height>170</height>
+                        <height>178.2675</height>
                         <bordersize>10</bordersize>
                         <aspectratio scalediffuse="false">keep</aspectratio>
                         <texture fallback="special://skin/extras/backgrounds/default.jpg" background="true">$VAR[Image_Banner]</texture>
                         <visible>ListItem.IsParentFolder</visible>
                     </control>
                     <control type="image">
-                        <height>170</height>
+                        <height>178.2675</height>
                         <left>20</left>
                         <right>20</right>
                         <bordersize>20</bordersize>
@@ -1255,47 +1278,48 @@
                         <visible>String.IsEmpty(ListItem.Art(banner)) + String.IsEmpty(ListItem.Art(tvshow.banner))</visible>
                     </control>
                     <control type="label">
-                        <top>170</top>
+                        <top>178.2675</top>
                         <bottom>50</bottom>
                         <left>30</left>
                         <right>30</right>
                         <aligny>center</aligny>
                         <font>font_tiny</font>
-                        <textcolor>main_fg_70</textcolor>
+                        <textcolor>Selected</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
-                        <top>170</top>
+                        <top>178.2675</top>
                         <bottom>50</bottom>
                         <left>30</left>
                         <right>30</right>
                         <align>right</align>
                         <aligny>center</aligny>
                         <font>font_tiny</font>
-                        <textcolor>main_fg_70</textcolor>
+                        <textcolor>Selected</textcolor>
                         <label>$INFO[ListItem.Label2]</label>
                     </control>
                     <control type="label">
-                        <top>200</top>
+                        <top>208.2675</top>
                         <bottom>20</bottom>
                         <left>30</left>
                         <right>30</right>
                         <aligny>center</aligny>
                         <font>font_tiny</font>
-                        <textcolor>main_fg_30</textcolor>
+                        <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.Genre]</label>
                     </control>
                     <control type="label">
-                        <top>200</top>
+                        <top>208.2675</top>
                         <bottom>20</bottom>
                         <left>30</left>
                         <right>30</right>
                         <align>right</align>
                         <aligny>center</aligny>
                         <font>font_tiny</font>
-                        <textcolor>main_fg_30</textcolor>
+                        <textcolor>main_fg_70</textcolor>
                         <label>$INFO[ListItem.Premiered]</label>
                     </control>
+                    
                     <include>View_WatchedOverlay</include>
                     <!-- Highlight -->
                     <control type="group">
@@ -1305,7 +1329,7 @@
                 </control>
             </focusedlayout>
 
-            <itemlayout width="1710" height="442" condition="$PARAM[bigbanner]">
+            <itemlayout width="1787" height="442" condition="$PARAM[bigbanner]">
                 <control type="group">
                     <left>30</left>
                     <top>$PARAM[top_offset]</top>
@@ -1351,7 +1375,7 @@
                     </include>
                 </control>
             </itemlayout>
-            <focusedlayout width="1710" height="442" condition="$PARAM[bigbanner]">
+            <focusedlayout width="1787" height="442" condition="$PARAM[bigbanner]">
                 <include content="View_Position_Button">
                     <param name="id" value="$PARAM[id]" />
                     <param name="setfanart" value="$PARAM[setfanart]" />

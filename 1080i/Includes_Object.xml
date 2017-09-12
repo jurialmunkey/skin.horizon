@@ -974,7 +974,7 @@
             <control type="panel" id="8001">
                 <pagecontrol>8099</pagecontrol>
                 <orientation>vertical</orientation>
-                <right>14</right>
+                <right>12.5</right>
                 <width>48</width>
                 <top>0</top>
                 <bottom>alphabet_bottom</bottom>
@@ -1029,35 +1029,42 @@
     </include>
 
     <include name="Object_Scrollbar_Vert">
-        <control type="button" id="61">
-            <centerright>37</centerright>
-            <width>8</width>
-            <top>40</top>
-            <bottom>80</bottom>
-            <visible allowhiddenfocus="true">false</visible>
-            <onleft>60</onleft>
-            <onright>60</onright>
-            <ondown>60</ondown>
-            <onup>60</onup>
-            <onfocus>SetFocus(60)</onfocus>
-            <visible>!Control.IsVisible(8000)</visible>
-        </control>
         <control type="scrollbar" id="60">
             <onback>50</onback>
-            <centerright>40</centerright>
+            <right>0</right>
             <width>8</width>
-            <top>40</top>
-            <bottom>40</bottom>
+            <top>0</top>
+            <bottom>0</bottom>
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
             <onright>50</onright>
-            <onleft condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">8000</onleft>
-            <onleft condition="![[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)]">50</onleft>
-            <texturesliderbackground colordiffuse="main_fg_12">common/white.png</texturesliderbackground>
+            <onleft>50</onleft>
+            <texturesliderbackground colordiffuse="main_fg_12">common/null.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturesliderbarfocus>
-            <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-            <visible allowhiddenfocus="true">!Control.IsVisible(8000) | Control.HasFocus(60)</visible>
+            <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+            <visible>!Window.IsVisible(home)</visible>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+        </control>
+    </include>
+
+    <include name="Object_Scrollbar_Horz">
+        <control type="scrollbar" id="60">
+            <onback>50</onback>
+            <height>8</height>
+            <left>0</left>
+            <right>0</right>
+            <width>100%</width>
+            <bottom>0</bottom>
+            <showonepage>true</showonepage>
+            <orientation>horizontal</orientation>
+            <onup>50</onup>
+            <ondown>50</ondown>
+            <texturesliderbackground colordiffuse="main_fg_12">common/null.png</texturesliderbackground>
+            <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
+            <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturesliderbarfocus>
+            <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
             <visible>!Window.IsVisible(home)</visible>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>

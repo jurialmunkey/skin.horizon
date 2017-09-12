@@ -29,7 +29,7 @@
 
     <include name="View_Group">
         <top>topbar_height</top>
-        <left>86</left>
+        <left>89</left>
         <right>0</right>
     </include>
 
@@ -47,56 +47,21 @@
         <visible>![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml)]</visible>
     </include>
 
-    <include name="View_NoScrollbar"><right>-90</right></include>
+    <include name="View_NoScrollbar"><right>-87</right></include>
 
     <include name="View_Library">
         <control type="group">
             <include>Animation_Right</include>
             <include>Defs_InfoDialog_Visible</include>
             <control type="group">
-                <control type="group">
-                    <visible>!Skin.HasSetting(NoScrollbarHorizontal) | [Skin.HasSetting(NoScrollbarHorizontal) + !Control.IsVisible(52) + !Control.IsVisible(56)]</visible>
-                    <include>View_Library_AlphabetStrip</include>
-                </control>
+                
                 <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]">View_List</include>
 
                 <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]">View_Posters</include>
-                
-                <!-- <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)] + !Skin.HasSetting(WrapList)">View_Posters</include>
-
-                <include condition="![Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)] + Skin.HasSetting(WrapList)" content="View_Posters">
-                    <param name="listtype" value="wraplist" />
-                </include> -->
 
                 <include condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]">View_List_PVR</include>
             </control>
         </control>
-    </include>
-
-    <include name="View_Library_AlphabetStrip">
-        <control type="image">
-            <width>80</width>
-            <right>0</right>
-            <texture colordiffuse="7f000000">common/white.png</texture>
-        </control>
-        <control type="image">
-            <width>80</width>
-            <right>0</right>
-            <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
-            <animation effect="fade" start="100" end="3" condition="true">Conditional</animation>
-            <visible>!String.IsEmpty(Skin.String(overlaycolor.name))</visible>
-        </control>
-        <control type="image">
-            <width>1</width>
-            <right>80</right>
-            <texture colordiffuse="highlight_bottombar">common/white.png</texture>
-        </control>
-        <control type="image">
-            <width>1</width>
-            <right>79</right>
-            <texture colordiffuse="darkline_separator">common/white.png</texture>
-        </control>
-        <include condition="Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml) | [Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)]">Object_AlphabetStrip</include>
     </include>
 
     <include name="View_Content">
@@ -503,8 +468,7 @@
     </include>
 
     <include name="View_Movement_Horizontal">
-        <onright condition="Control.IsVisible(8000)">8000</onright>
-        <onright condition="Control.IsVisible(60)">61</onright>
+        <onright condition="Control.IsVisible(60)">60</onright>
         <onright condition="!Control.IsVisible(8000) + !Control.IsVisible(60)">300</onright>
         <onleft condition="Control.IsVisible(300)">300</onleft>
     </include>

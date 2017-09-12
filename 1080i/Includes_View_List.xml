@@ -7,7 +7,7 @@
                 <visible>Control.IsVisible(50)</visible>
                 <top>0</top>
                 <left>0</left>
-                <right>80</right>
+                <right>0</right>
                 <bottom>0</bottom>
                 <control type="fixedlist" id="50">
                     <visible>!Container.Content(videos) + !Window.IsVisible(videoplaylist)</visible>
@@ -17,6 +17,7 @@
                     </include>
                     <include>View_List_Layout</include>
                 </control>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
             <!-- Info List -->
@@ -24,7 +25,7 @@
                 <visible>Control.IsVisible(54)</visible>
                 <top>0</top>
                 <left>0</left>
-                <right>80</right>
+                <right>0</right>
                 <bottom>0</bottom>
                 <control type="fixedlist" id="54">
                     <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(videos) | Window.IsVisible(videoplaylist)</visible>
@@ -37,6 +38,7 @@
                         <param name="id" value="54" />
                     </include>
                 </control>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
 
@@ -45,7 +47,7 @@
                 <visible>Control.IsVisible(55)</visible>
                 <top>0</top>
                 <left>0</left>
-                <right>80</right>
+                <right>0</right>
                 <bottom>0</bottom>
                 <control type="group">
                     <top>infolist_top</top>
@@ -78,6 +80,7 @@
                     <param name="width" value="infolist_width" />
                     <param name="discart" value="false" />
                 </include>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
             
@@ -86,97 +89,100 @@
                 <visible>Control.IsVisible(57)</visible>
                 <top>0</top>
                 <left>0</left>
-                <right>80</right>
+                <right>0</right>
                 <bottom>0</bottom>
                 <control type="group">
-                    <width>1068</width>
+                    <right>77</right>
                     <control type="group">
-                        <visible>!Skin.HasSetting(DisablePanels)</visible>
-                        <control type="image">
-                            <include>Defs_Shadow_Opaque</include>
-                            <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
-                        </control>
-                        <include>Defs_Color_Overlay</include>
+                        <width>1068</width>
                         <control type="group">
-                            <left>1068</left>
-                            <include>Object_Separator_Left</include>
+                            <visible>!Skin.HasSetting(DisablePanels)</visible>
+                            <control type="image">
+                                <include>Defs_Shadow_Opaque</include>
+                                <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
+                            </control>
+                            <include>Defs_Color_Overlay</include>
+                            <control type="group">
+                                <left>1068</left>
+                                <include>Object_Separator_Left</include>
+                            </control>
+                        </control>
+                        <include>Object_ParentFolder</include>
+                        <control type="group">
+                            <left>40</left>
+                            <top>40</top>
+                            <visible>!ListItem.IsParentFolder</visible>
+                            <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
+                            <control type="group">
+                                <width>704</width>
+                                <height>396</height>
+                                <control type="image">
+                                    <include>Defs_Shadow_Opaque</include>
+                                    <texture colordiffuse="PosterBack">common/white.png</texture>
+                                </control>
+                                <control type="image">
+                                    <fadetime>100</fadetime>
+                                    <aspectratio>scale</aspectratio>
+                                    <texture background="true">$VAR[Image_Fanart]</texture>
+                                </control>
+                                <control type="image">
+                                    <bottom>20</bottom>
+                                    <top>170</top>
+                                    <left>190</left>
+                                    <right>190</right>
+                                    <aspectratio aligny="bottom">keep</aspectratio>
+                                    <texture background="true">$VAR[Image_Clearlogo]</texture>
+                                    <visible>!Skin.HasSetting(DisableFakeLandscapeArt)</visible>
+                                    <visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(season.landscape))</visible>
+                                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <left>724</left>
+                                <width>264</width>
+                                <height>396</height>
+                                <control type="image">
+                                    <include>Defs_Shadow_Opaque</include>
+                                    <texture colordiffuse="PosterBack">common/white.png</texture>
+                                </control>
+                                <control type="image">
+                                    <fadetime>100</fadetime>
+                                    <aspectratio>scale</aspectratio>
+                                    <texture background="true">$VAR[Image_Poster]</texture>
+                                </control>
+                            </control>
                         </control>
                     </control>
-                    <include>Object_ParentFolder</include>
                     <control type="group">
-                        <left>40</left>
-                        <top>40</top>
-                        <visible>!ListItem.IsParentFolder</visible>
+                        <right>-77</right>
+                        <top>435</top>
                         <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
-                        <control type="group">
-                            <width>704</width>
-                            <height>396</height>
-                            <control type="image">
-                                <include>Defs_Shadow_Opaque</include>
-                                <texture colordiffuse="PosterBack">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <fadetime>100</fadetime>
-                                <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[Image_Fanart]</texture>
-                            </control>
-                            <control type="image">
-                                <bottom>20</bottom>
-                                <top>170</top>
-                                <left>190</left>
-                                <right>190</right>
-                                <aspectratio aligny="bottom">keep</aspectratio>
-                                <texture background="true">$VAR[Image_Clearlogo]</texture>
-                                <visible>!Skin.HasSetting(DisableFakeLandscapeArt)</visible>
-                                <visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(season.landscape))</visible>
-                                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <left>724</left>
-                            <width>264</width>
-                            <height>396</height>
-                            <control type="image">
-                                <include>Defs_Shadow_Opaque</include>
-                                <texture colordiffuse="PosterBack">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <fadetime>100</fadetime>
-                                <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[Image_Poster]</texture>
-                            </control>
-                        </control>
+                        <include content="View_Posters_Info">
+                            <param name="bottom" value="25" />
+                            <param name="plot_height" value="300" />
+                            <param name="id" value="57" />
+                            <param name="left" value="40" />
+                            <param name="right" value="800" />
+                            <param name="width" value="1068" />
+                            <param name="discart" value="false" />
+                            <param name="hdsd_flag" value="true" />
+                        </include>
                     </control>
-                </control>
-                <control type="group">
-                    <right>-80</right>
-                    <top>435</top>
-                    <visible>![[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
-                    <include content="View_Posters_Info">
-                        <param name="bottom" value="25" />
-                        <param name="plot_height" value="300" />
-                        <param name="id" value="57" />
-                        <param name="left" value="40" />
-                        <param name="right" value="800" />
-                        <param name="width" value="1068" />
-                        <param name="discart" value="false" />
-                        <param name="hdsd_flag" value="true" />
-                    </include>
-                </control>
-                <control type="group">
-                    <right>-80</right>
-                    <top>10</top>
-                    <visible>[[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
-                    <include content="View_Posters_Info">
-                        <param name="bottom" value="25" />
-                        <param name="plot_height" value="1000" />
-                        <param name="id" value="57" />
-                        <param name="left" value="40" />
-                        <param name="right" value="800" />
-                        <param name="width" value="1068" />
-                        <param name="discart" value="false" />
-                        <param name="hdsd_flag" value="true" />
-                    </include>
+                    <control type="group">
+                        <right>-77</right>
+                        <top>10</top>
+                        <visible>[[Control.IsVisible(54) + Skin.HasSetting(DisableInfoListArt.54)] | [Control.IsVisible(57) + Skin.HasSetting(DisableInfoListArt.57)] | [Control.IsVisible(551) + Skin.HasSetting(DisableInfoListArt.551)] | [Control.IsVisible(557) + Skin.HasSetting(DisableInfoListArt.557)] | [Control.IsVisible(558) + Skin.HasSetting(DisableInfoListArt.558)]]</visible>
+                        <include content="View_Posters_Info">
+                            <param name="bottom" value="25" />
+                            <param name="plot_height" value="1000" />
+                            <param name="id" value="57" />
+                            <param name="left" value="40" />
+                            <param name="right" value="800" />
+                            <param name="width" value="1068" />
+                            <param name="discart" value="false" />
+                            <param name="hdsd_flag" value="true" />
+                        </include>
+                    </control>
                 </control>
                 <control type="fixedlist" id="57">
                     <viewtype label="$LOCALIZE[31198]">list</viewtype>
@@ -190,28 +196,33 @@
                     <include content="View_List_Layout">
                         <param name="id" value="57" />
                         <param name="left" value="1068" />
-                        <param name="width" value="686" />
+                        <param name="width" value="763" />
                     </include>
                 </control>
+                <include>Object_Scrollbar_Vert</include>
             </control>
 
             <!-- Media Info -->
-            <control type="fixedlist" id="557">
-                <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(artists) | Container.Content(videos) | Container.Content(episodes)</visible>
-                <include>View_NotTheseWindows</include>
-                <viewtype label="$LOCALIZE[31298]">list</viewtype>
-                <include content="View_Forced">
-                    <param name="string" value="$LOCALIZE[31298]" />
-                </include>
-                <include content="View_List_Layout">
+            <control type="group">
+                <visible>Control.IsVisible(557)</visible>
+                <control type="fixedlist" id="557">
+                    <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(artists) | Container.Content(videos) | Container.Content(episodes)</visible>
+                    <include>View_NotTheseWindows</include>
+                    <viewtype label="$LOCALIZE[31298]">list</viewtype>
+                    <include content="View_Forced">
+                        <param name="string" value="$LOCALIZE[31298]" />
+                    </include>
+                    <include content="View_List_Layout">
+                        <param name="id" value="557" />
+                        <param name="left" value="895.5" />
+                        <param name="width" value="935.5" />
+                    </include>
+                </control>
+                <include content="View_Posters_FanartInfo">
                     <param name="id" value="557" />
-                    <param name="left" value="855" />
-                    <param name="width" value="899" />
                 </include>
+                <include>Object_Scrollbar_Vert</include>
             </control>
-            <include content="View_Posters_FanartInfo">
-                <param name="id" value="557" />
-            </include>
 
         </definition>
     </include>
@@ -221,7 +232,7 @@
             <visible>Control.IsVisible(50)</visible>
             <height>566</height>
             <left>0</left>
-            <right>80</right>
+            <right>0</right>
             <bottom>0</bottom>
             <control type="fixedlist" id="50">
                 <focusposition>2</focusposition>
@@ -229,7 +240,7 @@
                 <viewtype label="535">list</viewtype>
                 <include content="View_List_Layout">
                     <param name="left" value="0" />
-                    <param name="width" value="1754" />
+                    <param name="width" value="1831" />
                     <param name="height" value="113" />
                     <param name="offset" value="20" />
                 </include>
@@ -399,6 +410,7 @@
         <param name="width" default="view_width" />
         <param name="height" default="listitem_height" />
         <param name="offset" default="0" />
+        <param name="roffset" default="10" />
         <definition>
             <description>Plugin Content Widget</description>
             <focusposition>4</focusposition>
@@ -416,7 +428,7 @@
 
                 <control type="group">
                     <left>$PARAM[offset]</left>
-                    <right>$PARAM[offset]</right>
+                    <right>$PARAM[roffset]</right>
                     <control type="group">
                         <visible>!Window.IsVisible(MyPVRChannels.xml)</visible>
                         <!-- Overlay Indicator -->
@@ -655,7 +667,7 @@
 
                     <control type="group">
                         <left>$PARAM[offset]</left>
-                        <right>$PARAM[offset]</right>
+                        <right>$PARAM[roffset]</right>
                         <control type="group">
                             <visible>!Window.IsVisible(MyPVRChannels.xml)</visible>
                             <!-- Overlay Indicator -->
