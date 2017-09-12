@@ -1570,8 +1570,3 @@ msgstr ""
 msgctxt "#31333"
 msgid "Programmes"
 msgstr ""
-
-#: /1080i/Includes_Object.xml
-msgctxt "#31334"
-msgid "Jump to letter"
-msgstr ""
