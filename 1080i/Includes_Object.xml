@@ -953,100 +953,66 @@
             <onfocus condition="String.IsEqual(ListItem.SortLetter,Z)">SetFocus(8001,26)</onfocus>
         </control>
         <control type="group">
-            <include>Global_Overlay</include>
+            <left>150</left>
+            <right>40</right>
+            <top>70</top>
+            <height>alphabet_item_height</height>
             <visible>Control.HasFocus(8001) | Control.HasFocus(8101) | Control.HasFocus(8102) | Control.HasFocus(8103)</visible>
-        </control>
-        <control type="group">
-            <animation effect="slide" start="0" end="-5000" condition="![Control.HasFocus(8001) | Control.HasFocus(8101) | Control.HasFocus(8102) | Control.HasFocus(8103)]" reversible="false">Conditional</animation>
-            <animation type="Conditional" reversible="false" condition="[Control.HasFocus(8001) | Control.HasFocus(8101) | Control.HasFocus(8102) | Control.HasFocus(8103)]">
-                <effect type="fade" start="0" end="100" time="300" delay="150"/>
-                <effect type="slide" start="0,-48" end="0" center="auto" tween="back" easing="out" time="450" delay="150"/>
-            </animation>
-            <control type="group">
-                <include content="Dialog_Standard_Group">
-                    <param name="height" value="450" />
-                    <param name="width" value="885" />
-                </include>
-                <control type="label">
-                    <include>Dialog_Standard_Header</include>
-                    <label>$LOCALIZE[31334]</label>
-                </control>
-                <control type="panel" id="8001">
-                    <orientation>vertical</orientation>
-                    <left>20</left>
-                    <right>0</right>
-                    <top>100</top>
-                    <bottom>20</bottom>
-                    <onright>noop</onright>
-                    <onleft>noop</onleft>
-                    <onup>noop</onup>
-                    <onback>50</onback>
-                    <ondown condition="Container(8001).Column(0) | Container(8001).Column(1) | Container(8001).Column(2) | Container(8001).Column(3)">8101</ondown>
-                    <ondown condition="Container(8001).Column(4) | Container(8001).Column(5) | Container(8001).Column(6) | Container(8001).Column(7) | Container(8001).Column(8)">8103</ondown>
-                    <itemlayout width="95" height="85">
-                        <control type="group">
-                            <bottom>10</bottom>
-                            <right>10</right>
-                            <control type="image">
-                                <texture colordiffuse="dialog_fg_12" border="5">common/box.png</texture>
-                            </control>
-                            <control type="label">
-                                <aligny>center</aligny>
-                                <align>center</align>
-                                <label>$INFO[ListItem.Label]</label>
-                                <textcolor>dialog_fg_70</textcolor>
-                                <animation effect="fade" start="100" end="33" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                            </control>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="95" height="85">
-                        <control type="group">
-                            <bottom>10</bottom>
-                            <right>10</right>
-                            <control type="image">
-                                <texture colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texture>
-                            </control>
-                            <control type="label">
-                                <aligny>center</aligny>
-                                <align>center</align>
-                                <label>$INFO[ListItem.Label]</label>
-                                <textcolor>Selected</textcolor>
-                                <animation effect="fade" start="100" end="33" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                    <content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
-                </control>
-
-                <control type="grouplist" id="8100">
-                    <height>66</height>
-                    <onleft>noop</onleft>
-                    <onright>noop</onright>
-                    <ondown>noop</ondown>
-                    <onback>50</onback>
-                    <left>20</left>
-                    <right>20</right>
-                    <bottom>20</bottom>
-                    <orientation>horizontal</orientation>
-                    <itemgap>10</itemgap>
-                    <control type="button" id="8101">
-                        <onup>SetFocus(8001)</onup>
-                        <onback>50</onback>
-                        <label>Search</label>
-                        <width>417.5</width>
-                        <onclick>SetFocus(50)</onclick>
-                        <onclick>RunScript(script.globalsearch)</onclick>
-                        <include>Dialog_Standard_OkCancel</include>
+            <control type="panel" id="8001">
+                <!-- <centerleft>50%</centerleft> -->
+                <orientation>horizontal</orientation>
+                <width>1296</width>
+                <height>alphabet_item_height</height>
+                <onup>50</onup>
+                <ondown>50</ondown>
+                <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])</visible>
+                <visible>!Container.Content(seasons)</visible>
+                <visible>Control.IsEnabled(3) | Control.IsEnabled(4)</visible>
+                <itemlayout height="alphabet_item_height" width="42">
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <height>alphabet_item_height</height>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>main_fg_70</textcolor>
+                        <animation effect="fade" start="100" end="10" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
                     </control>
-                    <control type="button" id="8103">
-                        <onup>SetFocus(8001)</onup>
-                        <onback>50</onback>
-                        <label>Close</label>
-                        <onclick>SetFocus(50)</onclick>
-                        <width>417.5</width>
-                        <include>Dialog_Standard_OkCancel</include>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <height>alphabet_item_height</height>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>main_fg_100</textcolor>
+                        <font>font_small_bold</font>
+                        <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter) | [String.IsEqual(ListItem.Label,#) + !String.IsEqual(Container.ListItem.SortLetter,A) + !String.IsEqual(Container.ListItem.SortLetter,B) + !String.IsEqual(Container.ListItem.SortLetter,C) + !String.IsEqual(Container.ListItem.SortLetter,D) + !String.IsEqual(Container.ListItem.SortLetter,E) + !String.IsEqual(Container.ListItem.SortLetter,F) + !String.IsEqual(Container.ListItem.SortLetter,G) + !String.IsEqual(Container.ListItem.SortLetter,H) + !String.IsEqual(Container.ListItem.SortLetter,I) + !String.IsEqual(Container.ListItem.SortLetter,J) + !String.IsEqual(Container.ListItem.SortLetter,K) + !String.IsEqual(Container.ListItem.SortLetter,L) + !String.IsEqual(Container.ListItem.SortLetter,M) + !String.IsEqual(Container.ListItem.SortLetter,N) + !String.IsEqual(Container.ListItem.SortLetter,O) + !String.IsEqual(Container.ListItem.SortLetter,P) + !String.IsEqual(Container.ListItem.SortLetter,Q) + !String.IsEqual(Container.ListItem.SortLetter,R) + !String.IsEqual(Container.ListItem.SortLetter,S) + !String.IsEqual(Container.ListItem.SortLetter,T) + !String.IsEqual(Container.ListItem.SortLetter,U) + !String.IsEqual(Container.ListItem.SortLetter,V) + !String.IsEqual(Container.ListItem.SortLetter,W) + !String.IsEqual(Container.ListItem.SortLetter,X) + !String.IsEqual(Container.ListItem.SortLetter,Y) + !String.IsEqual(Container.ListItem.SortLetter,Z)]</visible>
                     </control>
-                </control>
+                </itemlayout>
+                <focusedlayout height="alphabet_item_height" width="42">
+                    <control type="image">
+                        <height>4</height>
+                        <bottom>0</bottom>
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    </control>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <height>alphabet_item_height</height>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>Selected</textcolor>
+                        <animation effect="fade" start="100" end="10" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <height>alphabet_item_height</height>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>Selected</textcolor>
+                        <font>font_small_bold</font>
+                        <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter) | [String.IsEqual(ListItem.Label,#) + !String.IsEqual(Container.ListItem.SortLetter,A) + !String.IsEqual(Container.ListItem.SortLetter,B) + !String.IsEqual(Container.ListItem.SortLetter,C) + !String.IsEqual(Container.ListItem.SortLetter,D) + !String.IsEqual(Container.ListItem.SortLetter,E) + !String.IsEqual(Container.ListItem.SortLetter,F) + !String.IsEqual(Container.ListItem.SortLetter,G) + !String.IsEqual(Container.ListItem.SortLetter,H) + !String.IsEqual(Container.ListItem.SortLetter,I) + !String.IsEqual(Container.ListItem.SortLetter,J) + !String.IsEqual(Container.ListItem.SortLetter,K) + !String.IsEqual(Container.ListItem.SortLetter,L) + !String.IsEqual(Container.ListItem.SortLetter,M) + !String.IsEqual(Container.ListItem.SortLetter,N) + !String.IsEqual(Container.ListItem.SortLetter,O) + !String.IsEqual(Container.ListItem.SortLetter,P) + !String.IsEqual(Container.ListItem.SortLetter,Q) + !String.IsEqual(Container.ListItem.SortLetter,R) + !String.IsEqual(Container.ListItem.SortLetter,S) + !String.IsEqual(Container.ListItem.SortLetter,T) + !String.IsEqual(Container.ListItem.SortLetter,U) + !String.IsEqual(Container.ListItem.SortLetter,V) + !String.IsEqual(Container.ListItem.SortLetter,W) + !String.IsEqual(Container.ListItem.SortLetter,X) + !String.IsEqual(Container.ListItem.SortLetter,Y) + !String.IsEqual(Container.ListItem.SortLetter,Z)]</visible>
+                    </control>
+                    <include>Object_AlphabetStrip_Skipper</include>
+                </focusedlayout>
+                <content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
             </control>
         </control>
     </include>

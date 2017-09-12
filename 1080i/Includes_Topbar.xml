@@ -181,6 +181,7 @@
                 <shadowcolor>main_bg_30</shadowcolor>
                 <label>$VAR[Label_SubHeader_Content]</label>
                 <visible>![String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia] | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <visible>!Control.HasFocus(8001)</visible>
             </control>
             <control type="multiimage">
                 <top>10</top>
@@ -193,6 +194,7 @@
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
                 <visible>!Player.Paused + !Player.Caching</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <visible>!Control.HasFocus(8001)</visible>
             </control>
             <control type="image">
                 <top>7</top>
@@ -204,6 +206,7 @@
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
                 <visible>Player.Paused + !Player.Caching</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <visible>!Control.HasFocus(8001)</visible>
             </control>
             <control type="group">
                 <width>48</width>
@@ -211,6 +214,7 @@
                 <top>-2</top>
                 <left>-8</left>
                 <visible>Player.Caching</visible>
+                <visible>!Control.HasFocus(8001)</visible>
                 <control type="image">
                     <description>Busy animation</description>
                     <centerleft>50%</centerleft>
@@ -249,6 +253,7 @@
                 <label>$INFO[MusicPlayer.Artist,,[COLOR=main_fg_30]  •  [/COLOR]]$INFO[Player.Title,[COLOR=main_fg_100],[/COLOR][COLOR=main_fg_30]  •  [/COLOR]]</label>
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <visible>!Control.HasFocus(8001)</visible>
             </control>
             <control type="label">
                 <left>-12</left>
@@ -261,6 +266,7 @@
                 <label>[COLOR=$VAR[ColorHighlight]]$INFO[Player.Time][/COLOR]  |  [COLOR=$VAR[ColorHighlight]]$INFO[Player.Duration][/COLOR]</label>
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <visible>!Control.HasFocus(8001)</visible>
             </control>
         </control>
     </include>
