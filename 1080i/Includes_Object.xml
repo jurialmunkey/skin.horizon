@@ -363,26 +363,41 @@
 
     <include name="Object_PVR_Info">
         <param name="artwork" default="Window(Home).Property(SkinHelper.ListItem.Art.Fanart)" />
+        <param name="fallback" default="Window(Home).Property(SkinHelper.ListItem.Art.Fanart)" />
         <definition>
             <control type="group">
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <include>Animation_Right</include>
+                <control type="image" id="9123">
+                    <left>-2160</left>
+                    <width>1</width>
+                    <height>1</height>
+                    <texture>$INFO[$PARAM[artwork]]</texture>
+                </control>
                 <control type="group">
-                    <visible>!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <visible>!String.IsEmpty($PARAM[fallback]) | !String.IsEmpty($PARAM[artwork])</visible>
                     <include>Animation_FadeIn</include>
                     <bottom>605</bottom>
                     <top>196</top>
                     <right>-40</right>
                     <width>496</width>
-                    <control type="image" id="9123">
+                    <control type="image">
                         <include>Defs_Shadow_Opaque</include>
                         <fadetime>100</fadetime>
                         <aspectratio>scale</aspectratio>
                         <texture>$INFO[$PARAM[artwork]]</texture>
+                        <visible>!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    </control>
+                    <control type="image">
+                        <include>Defs_Shadow_Opaque</include>
+                        <fadetime>100</fadetime>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$INFO[$PARAM[fallback]]</texture>
+                        <visible>!String.IsEmpty($PARAM[fallback]) + [String.IsEmpty($PARAM[artwork]) | String.StartsWith(Control.GetLabel(9123),Default)]</visible>
                     </control>
                 </control>
                 <control type="grouplist">
-                    <visible>!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <visible>[!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)] | [!String.IsEmpty($PARAM[fallback]) + [String.IsEmpty($PARAM[artwork]) | String.StartsWith(Control.GetLabel(9123),Default)]]</visible>
                     <bottom>600</bottom>
                     <top>176</top>
                     <left>129</left>
@@ -393,7 +408,7 @@
                     <include>Object_PVR_Info_Content</include>
                 </control>
                 <control type="grouplist">
-                    <visible>String.IsEmpty($PARAM[artwork]) | String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <visible>![[!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)] | [!String.IsEmpty($PARAM[fallback]) + [String.IsEmpty($PARAM[artwork]) | String.StartsWith(Control.GetLabel(9123),Default)]]]</visible>
                     <bottom>600</bottom>
                     <top>176</top>
                     <left>129</left>
