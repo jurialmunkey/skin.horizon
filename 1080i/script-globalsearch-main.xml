@@ -85,6 +85,12 @@
                         <param name="square" value="true" />
                     </include>
                     <include content="GlobalSearch_Group">
+                        <param name="listid" value="201" />
+                        <param name="label" value="$LOCALIZE[20337] $INFO[Control.GetLabel(200),(,)]" />
+                        <param name="visible" value="Control.IsVisible(209)" />
+                        <param name="groupid" value="209" />
+                    </include>
+                    <include content="GlobalSearch_Group">
                         <param name="listid" value="211" />
                         <param name="label" value="$LOCALIZE[20337] $INFO[Control.GetLabel(210),(,)]" />
                         <param name="visible" value="Control.IsVisible(219)" />
@@ -102,6 +108,9 @@
                         <param name="visible" value="Control.IsVisible(239)" />
                         <param name="groupid" value="239" />
                     </include>
+                    <control type="group" id="8889">
+                        <height>20</height>
+                    </control>
                 </control>
             </control>
 
@@ -133,7 +142,16 @@
         <control type="label" id="180">
             <visible>false</visible>
         </control>
+        <control type="label" id="200">
+            <visible>false</visible>
+        </control>
         <control type="label" id="210">
+            <visible>false</visible>
+        </control>
+        <control type="label" id="220">
+            <visible>false</visible>
+        </control>
+        <control type="label" id="230">
             <visible>false</visible>
         </control>
         <control type="label" id="190" description="Searching">
