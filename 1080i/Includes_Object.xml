@@ -362,46 +362,49 @@
     </include>
 
     <include name="Object_PVR_Info">
-        <control type="group">
-            <include>Animation_Home_Textbar_Slideover_Library</include>
-            <include>Animation_Right</include>
+        <param name="artwork" default="Window(Home).Property(SkinHelper.ListItem.Art.Fanart)" />
+        <definition>
             <control type="group">
-                <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Fanart))</visible>
-                <include>Animation_FadeIn</include>
-                <bottom>605</bottom>
-                <top>196</top>
-                <right>-40</right>
-                <width>496</width>
-                <control type="image">
-                    <include>Defs_Shadow_Opaque</include>
-                    <fadetime>100</fadetime>
-                    <aspectratio>scale</aspectratio>
-                    <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Fanart)]</texture>
+                <include>Animation_Home_Textbar_Slideover_Library</include>
+                <include>Animation_Right</include>
+                <control type="group">
+                    <visible>!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <include>Animation_FadeIn</include>
+                    <bottom>605</bottom>
+                    <top>196</top>
+                    <right>-40</right>
+                    <width>496</width>
+                    <control type="image" id="9123">
+                        <include>Defs_Shadow_Opaque</include>
+                        <fadetime>100</fadetime>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$INFO[$PARAM[artwork]]</texture>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <visible>!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <bottom>600</bottom>
+                    <top>176</top>
+                    <left>129</left>
+                    <right>496</right>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <include>Object_PVR_Info_Content</include>
+                </control>
+                <control type="grouplist">
+                    <visible>String.IsEmpty($PARAM[artwork]) | String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <bottom>600</bottom>
+                    <top>176</top>
+                    <left>129</left>
+                    <right>50</right>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <include>Object_PVR_Info_Content</include>
                 </control>
             </control>
-            <control type="grouplist">
-                <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Fanart))</visible>
-                <bottom>600</bottom>
-                <top>176</top>
-                <left>129</left>
-                <right>496</right>
-                <orientation>vertical</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <itemgap>0</itemgap>
-                <include>Object_PVR_Info_Content</include>
-            </control>
-            <control type="grouplist">
-                <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Fanart))</visible>
-                <bottom>600</bottom>
-                <top>176</top>
-                <left>129</left>
-                <right>50</right>
-                <orientation>vertical</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <itemgap>0</itemgap>
-                <include>Object_PVR_Info_Content</include>
-            </control>
-        </control>
+        </definition>
     </include>
 
     <include name="Object_PVR_Info_Content">

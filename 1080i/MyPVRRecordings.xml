@@ -11,7 +11,9 @@
 
         <control type="group">
             <right>80</right>
-            <include>Object_PVR_Info</include>
+            <include content="Object_PVR_Info">
+                <param name="artwork" value="ListItem.Icon" />
+            </include>
         </control>
 
         <include>Topbar</include>
