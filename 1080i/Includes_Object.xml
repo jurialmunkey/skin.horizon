@@ -362,13 +362,12 @@
     </include>
 
     <include name="Object_PVR_Info">
-        <param name="artwork" default="Window(Home).Property(SkinHelper.ListItem.Art.Fanart)" />
         <definition>
             <control type="group">
                 <include>Animation_Home_Textbar_Slideover_Library</include>
                 <include>Animation_Right</include>
                 <control type="group">
-                    <visible>!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <visible>!String.IsEmpty(ListItem.Icon)</visible>
                     <include>Animation_FadeIn</include>
                     <bottom>605</bottom>
                     <top>196</top>
@@ -378,11 +377,11 @@
                         <include>Defs_Shadow_Opaque</include>
                         <fadetime>100</fadetime>
                         <aspectratio>scale</aspectratio>
-                        <texture>$INFO[$PARAM[artwork]]</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
                     </control>
                 </control>
                 <control type="grouplist">
-                    <visible>!String.IsEmpty($PARAM[artwork]) + !String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <visible>!String.IsEmpty(ListItem.Icon)</visible>
                     <bottom>600</bottom>
                     <top>176</top>
                     <left>129</left>
@@ -393,7 +392,7 @@
                     <include>Object_PVR_Info_Content</include>
                 </control>
                 <control type="grouplist">
-                    <visible>String.IsEmpty($PARAM[artwork]) | String.StartsWith(Control.GetLabel(9123),Default)</visible>
+                    <visible>String.IsEmpty(ListItem.Icon)</visible>
                     <bottom>600</bottom>
                     <top>176</top>
                     <left>129</left>
