@@ -1092,6 +1092,7 @@
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
             <onright condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">SetFocus(8000)</onright>
+            <onright condition="![[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)]] + !Skin.HasSetting(DisableAlphabetStrip)">Notification($LOCALIZE[161],$LOCALIZE[31334])</onright>
             <onleft>50</onleft>
             <texturesliderbackground colordiffuse="main_fg_12">common/null.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
@@ -1115,6 +1116,7 @@
             <orientation>horizontal</orientation>
             <onup>50</onup>
             <ondown condition="[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)] + !Skin.HasSetting(DisableAlphabetStrip)">SetFocus(8000)</ondown>
+            <ondown condition="![[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + !Container.Content(seasons) + [Control.IsEnabled(3) | Control.IsEnabled(4)]] + !Skin.HasSetting(DisableAlphabetStrip)">Notification($LOCALIZE[161],$LOCALIZE[31334])</ondown>
             <texturesliderbackground colordiffuse="main_fg_12">common/null.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30">common/white.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturesliderbarfocus>

@@ -1570,3 +1570,8 @@ msgstr ""
 msgctxt "#31333"
 msgid "Programmes"
 msgstr ""
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31334"
+msgid "Alphabet strip is not available for this content"
+msgstr ""
