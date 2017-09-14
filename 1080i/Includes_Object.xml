@@ -429,6 +429,15 @@
             <aligny>top</aligny>
             <textcolor>main_fg_100</textcolor>
             <font>font_showcase_title</font>
+            <visible>!String.IsEmpty(ListItem.Title)</visible>
+        </control>
+        <control type="label">
+            <label>$INFO[ListItem.Label]</label>
+            <height>90</height>
+            <aligny>top</aligny>
+            <textcolor>main_fg_100</textcolor>
+            <font>font_showcase_title</font>
+            <visible>String.IsEmpty(ListItem.Title)</visible>
         </control>
         <control type="label">
             <label>$INFO[ListItem.ChannelNumber,[COLOR=main_fg_100],. [/COLOR]]$INFO[ListItem.ChannelName,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100]$LOCALIZE[19126] ,[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[19127] ,[/COLOR]]</label>
@@ -436,6 +445,7 @@
             <aligny>top</aligny>
             <textcolor>$VAR[ColorHighlight]</textcolor>
             <font>font_small</font>
+            <visible>!String.IsEmpty(ListItem.Title) | !String.IsEmpty(ListItem.ChannelNumber)</visible>
         </control>
         <control type="textbox">
             <label fallback="19055">$VAR[Label_Plot]</label>
