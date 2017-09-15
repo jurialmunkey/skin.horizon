@@ -724,6 +724,18 @@
                             <aspectratio>scale</aspectratio>
                             <visible>[!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !String.IsEqual(ListItem.Icon,ListItem.Art(poster)) + !String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))] | $PARAM[square]</visible>
                             <visible>!String.Contains(ListItem.Icon,/extras/icons/)</visible>
+                            <visible>String.IsEmpty(ListItem.ChannelName) + String.IsEmpty(ListItem.ChannelNumber)</visible>
+                        </control>
+                        <control type="image">
+                            <top>0</top>
+                            <left>0</left>
+                            <right>0</right>
+                            <bottom>0</bottom>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <aspectratio>keep</aspectratio>
+                            <visible>[!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !String.IsEqual(ListItem.Icon,ListItem.Art(poster)) + !String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))] | $PARAM[square]</visible>
+                            <visible>!String.Contains(ListItem.Icon,/extras/icons/)</visible>
+                            <visible>!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListItem.ChannelNumber)</visible>
                         </control>
                         <control type="image">
                             <top>47</top>
@@ -876,6 +888,18 @@
                             <aspectratio>scale</aspectratio>
                             <visible>[!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !String.IsEqual(ListItem.Icon,ListItem.Art(poster)) + !String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))] | $PARAM[square]</visible>
                             <visible>!String.Contains(ListItem.Icon,/extras/icons/)</visible>
+                            <visible>String.IsEmpty(ListItem.ChannelName) + String.IsEmpty(ListItem.ChannelNumber)</visible>
+                        </control>
+                        <control type="image">
+                            <top>0</top>
+                            <left>0</left>
+                            <right>0</right>
+                            <bottom>0</bottom>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <aspectratio>keep</aspectratio>
+                            <visible>[!$PARAM[studios] + !$PARAM[genres] + !$PARAM[text] + !String.IsEqual(ListItem.Icon,ListItem.Art(poster)) + !String.IsEqual(ListItem.Icon,ListItem.Art(tvshow.poster))] | $PARAM[square]</visible>
+                            <visible>!String.Contains(ListItem.Icon,/extras/icons/)</visible>
+                            <visible>!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListItem.ChannelNumber)</visible>
                         </control>
                         <control type="image">
                             <top>47</top>
