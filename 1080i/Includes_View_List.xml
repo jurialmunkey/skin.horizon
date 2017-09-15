@@ -230,21 +230,24 @@
     <include name="View_List_PVR">
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
-            <height>566</height>
-            <left>0</left>
-            <right>0</right>
-            <bottom>0</bottom>
-            <control type="fixedlist" id="50">
-                <focusposition>2</focusposition>
-                <movement>2</movement>
-                <viewtype label="535">list</viewtype>
-                <include content="View_List_Layout">
-                    <param name="left" value="0" />
-                    <param name="width" value="1831" />
-                    <param name="height" value="113" />
-                    <param name="offset" value="10" />
-                </include>
+            <control type="group">
+                <height>566</height>
+                <left>0</left>
+                <right>0</right>
+                <bottom>0</bottom>
+                <control type="fixedlist" id="50">
+                    <focusposition>2</focusposition>
+                    <movement>2</movement>
+                    <viewtype label="535">list</viewtype>
+                    <include content="View_List_Layout">
+                        <param name="left" value="0" />
+                        <param name="width" value="1831" />
+                        <param name="height" value="113" />
+                        <param name="offset" value="10" />
+                    </include>
+                </control>
             </control>
+            <include>Object_Scrollbar_Vert</include>
         </control>
     </include>
 
@@ -529,6 +532,7 @@
                             <bordersize>10</bordersize>
                             <height>$PARAM[height]</height>
                             <width>$PARAM[height]</width>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="special://skin/extras/icons/tv.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="group">
@@ -767,6 +771,7 @@
                             <bordersize>10</bordersize>
                             <height>$PARAM[height]</height>
                             <width>$PARAM[height]</width>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="special://skin/extras/icons/tv.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="group">
