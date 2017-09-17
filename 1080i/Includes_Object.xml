@@ -1030,8 +1030,6 @@
                 <height>alphabet_item_height</height>
                 <onup>50</onup>
                 <ondown>50</ondown>
-                <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])</visible>
-                <visible>Control.IsEnabled(3) | Control.IsEnabled(4)</visible>
                 <itemlayout height="alphabet_item_height" width="42">
                     <control type="label">
                         <aligny>center</aligny>
