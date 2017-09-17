@@ -626,14 +626,14 @@
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
             </item> -->
             <!-- Flipside -->
-            <item>
+            <!-- <item>
                 <label>$LOCALIZE[31304]</label>
                 <icon>special://skin/extras/icons/signpost.png</icon>
                 <onclick>Skin.ToggleSetting(FlipSide.553)</onclick>
                 <onclick>ReloadSkin()</onclick>
                 <visible>Control.IsVisible(553)</visible>
                 <visible>!Skin.HasSetting(global.kioskmode)</visible>
-            </item>
+            </item> -->
             <!-- No Padding Lovefilm -->
             <item>
                 <label>$VAR[Label_EdgePadding]</label>

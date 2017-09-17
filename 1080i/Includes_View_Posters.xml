@@ -156,18 +156,9 @@
                         <param name="id" value="553" />
                         <param name="orientation" value="vertical" />
                         <param name="bigbanner" value="true" />
-                        <param name="flipside" value="Skin.HasSetting(FlipSide.553)" />
                         <param name="artworkwidth" value="472.74" />
                         <param name="bigbannerheight" value="295" />
                     </include>
-                    <!-- <include content="View_Posters_Layout">
-                        <param name="id" value="553" />
-                        <param name="orientation" value="vertical" />
-                        <param name="bigbanner" value="true" />
-                        <param name="flipside" value="Skin.HasSetting(FlipSide.553)" />
-                        <param name="artworkwidth" value="771" />
-                        <param name="bigbannerheight" value="442" />
-                    </include> -->
                 </control>
                 <include>Object_Scrollbar_Vert</include>
             </control>
@@ -685,14 +676,15 @@
             <control type="label">
                 <left>0</left>
                 <right>$PARAM[right]</right>
-                <label>$VAR[Label_Genre]</label>
+                <label>[CAPITALIZE]$VAR[Label_Genre][/CAPITALIZE]</label>
                 <height>60</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_100</textcolor>
                 <font>font_small</font>
+                <!-- <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre)) | !String.IsEmpty(ListItem.Genre)</visible> -->
             </control>
             <control type="textbox">
-                <label>$VAR[Label_Plot]</label>
+                <label fallback="19055">$VAR[Label_Plot]</label>
                 <height>$PARAM[plot_height]</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
@@ -1347,7 +1339,6 @@
                     <bottom>$PARAM[bottom_offset]</bottom>
 
                     <control type="group">
-                        <include condition="$PARAM[flipside]">View_RightSide</include>
                         <width>$PARAM[artworkwidth]</width>
                         <control type="image">
                             <bordersize>10</bordersize>
@@ -1396,7 +1387,6 @@
                     <bottom>$PARAM[bottom_offset]</bottom>
 
                     <control type="group">
-                        <include condition="$PARAM[flipside]">View_RightSide</include>
                         <width>$PARAM[artworkwidth]</width>
                         <include>Animation_FocusBounce_Small</include>
                         <control type="image">
@@ -1443,8 +1433,6 @@
             
         </definition>
     </include>
-
-    <include name="View_RightSide"><right>0</right></include>
 
     <include name="View_BigBanner_Content">
         <param name="flipside" default="false" />
