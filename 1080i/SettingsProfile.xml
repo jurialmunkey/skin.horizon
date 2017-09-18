@@ -17,20 +17,20 @@
                 <right>-290</right>
                 <control type="label">
                     <left>40</left>
-                    <height>74</height>
+                    <height>77</height>
                     <label>$LOCALIZE[10039] $LOCALIZE[5]</label>
                     <font>font_button</font>
                     <textcolor>main_fg_30</textcolor>
                 </control>
 
                 <control type="group">
-                    <top>74</top>
-                    <height>740</height>
+                    <top>77</top>
+                    <height>770</height>
 
                 <!-- Left Gradient Fade -->
                 <control type="image">
                     <top>0</top>
-                    <height>74</height>
+                    <height>77</height>
                     <width>450</width>
                     <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                     <visible>Control.HasFocus(4)</visible>
@@ -52,13 +52,13 @@
                     <left>450</left>
                     <right>0</right>
                     <top>0</top>
-                    <bottom>74</bottom>
+                    <bottom>77</bottom>
                     <onleft>4</onleft>
                     <onup>noop</onup>
                     <ondown>noop</ondown>
                     <orientation>vertical</orientation>
                     <scrolltime>0</scrolltime>
-                    <itemlayout height="74" width="1384">
+                    <itemlayout height="77" width="1384">
                         <control type="label">
                             <right>50</right>
                             <left>50</left>
@@ -75,7 +75,7 @@
                         </control>
                     </itemlayout>
 
-                    <focusedlayout height="74" width="1384">
+                    <focusedlayout height="77" width="1384">
                         <control type="group">
                             <control type="image">
                                 <width>100%</width>

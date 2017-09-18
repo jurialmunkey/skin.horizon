@@ -16,51 +16,51 @@
                 <right>-290</right>
                 <control type="label">
                     <left>40</left>
-                    <height>74</height>
+                    <height>77</height>
                     <label>$LOCALIZE[10039] $LOCALIZE[5]</label>
                     <font>font_button</font>
                     <textcolor>main_fg_30</textcolor>
                 </control>
 
                 <control type="group">
-                    <top>74</top>
-                    <height>740</height>
+                    <top>77</top>
+                    <height>770</height>
 
                     <!-- Left Gradient Fade -->
                     <control type="image">
                         <top>0</top>
-                        <height>74</height>
+                        <height>77</height>
                         <width>450</width>
                         <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                         <visible>ControlGroup(9100).HasFocus() | ControlGroup(9200).HasFocus()</visible>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,0)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,1)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,2)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,3)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,4)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,5)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,6)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,7)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9100).Position,8)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,0)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,1)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,2)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,3)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,4)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,5)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,6)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,7)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,8)">Conditional</animation>
                     </control>
 
                     <!-- Right Gradient Fade -->
                     <control type="image">
                         <top>0</top>
                         <left>450</left>
-                        <height>74</height>
+                        <height>77</height>
                         <right>0</right>
                         <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                         <visible>ControlGroup(9200).HasFocus()</visible>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,0)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,1)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,2)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,3)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,4)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,5)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,6)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,7)">Conditional</animation>
-                        <animation effect="slide" end="0,74" condition="Integer.IsGreater(Container(9200).Position,8)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,0)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,1)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,2)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,3)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,4)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,5)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,6)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,7)">Conditional</animation>
+                        <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9200).Position,8)">Conditional</animation>
                     </control>
 
                     <!-- Left Group -->
@@ -145,7 +145,7 @@
                         <left>450</left>
                         <right>0</right>
                         <top>0</top>
-                        <bottom>74</bottom>
+                        <bottom>77</bottom>
                         <itemgap>0</itemgap>
                         <onback>9100</onback>
                         <onleft>9100</onleft>

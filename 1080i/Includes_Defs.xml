@@ -11,6 +11,16 @@
         <onload condition="Window.IsActive(systeminfo)">SetProperty(MenuIconFocus,ReplaceWindow(systeminfo),Home)</onload>
         <onload condition="Window.IsActive(profiles)">SetProperty(MenuIconFocus,ReplaceWindow(profiles),Home)</onload>
         <onload condition="Window.IsActive(skinsettings)">SetProperty(MenuIconFocus,ReplaceWindow(skinsettings),Home)</onload>
+
+        <!-- <onload condition="Window.IsVisible(interfacesettings)">SetFocus(300,0)</onload>
+        <onload condition="Window.IsVisible(skinsettings)">SetFocus(300,1)</onload>
+        <onload condition="Window.IsVisible(mediasettings)">SetFocus(300,2)</onload>
+        <onload condition="Window.IsVisible(playersettings)">SetFocus(300,3)</onload>
+        <onload condition="Window.IsVisible(systemsettings)">SetFocus(300,4)</onload>
+        <onload condition="Window.IsVisible(servicesettings)">SetFocus(300,5)</onload>
+        <onload condition="Window.IsVisible(pvrsettings)">SetFocus(300,6)</onload>
+        <onload condition="Window.IsVisible(systeminfo)">SetFocus(300,7)</onload>
+        <onload condition="Window.IsVisible(profiles)">SetFocus(300,8)</onload> -->
     </include>
 
     <include name="Defs_Settings_OnLeft">
@@ -430,7 +440,7 @@
         <radioposx>1310</radioposx>
         <textcolor>main_fg_100</textcolor>
         <disabledcolor>main_fg_12</disabledcolor>
-        <height>74</height>
+        <height>77</height>
         <textoffsetx>40</textoffsetx>
         <textureup flipy="true" colordiffuse="panel_fg_30">buttons/spin-down.png</textureup>
         <texturedown colordiffuse="panel_fg_30">buttons/spin-down.png</texturedown>
