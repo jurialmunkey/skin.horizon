@@ -75,6 +75,19 @@
                                     <centertop>50%</centertop>
                                     <centerleft>50.2%</centerleft>
                                     <texture colordiffuse="99ffffff">common/playwhite.png</texture>
+                                    <visible>String.IsEmpty(Window.Property(countdown))</visible>
+                                </control>
+                                <control type="label">
+                                    <width>48</width>
+                                    <height>48</height>
+                                    <centertop>50%</centertop>
+                                    <centerleft>50%</centerleft>
+                                    <label>[B]$INFO[Window.Property(countdown)][/B]</label>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <font>font_small_bold</font>
+                                    <align>center</align>
+                                    <aligny>center</aligny>
+                                    <visible>!String.IsEmpty(Window.Property(countdown))</visible>
                                 </control>
                                 <control type="group">
                                     <description>Busy animation</description>
@@ -108,7 +121,7 @@
                                     <textcolor>main_fg_100</textcolor>
                                     <font>font_tiny</font>
                                     <align>center</align>
-                                    <label>$LOCALIZE[31218]$INFO[Window.Property(countdown),  (,)]</label>
+                                    <label>$LOCALIZE[31218]</label>
                                 </control>
                             </control>
                             <control type="group">
