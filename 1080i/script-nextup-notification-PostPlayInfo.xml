@@ -54,18 +54,45 @@
                                     <texture background="true">$INFO[Window.Property(next.thumb)]</texture>
                                 </control>
                                 <control type="image">
-                                    <width>80</width>
-                                    <height>80</height>
-                                    <centertop>50%</centertop>
-                                    <centerleft>50%</centerleft>
-                                    <texture colordiffuse="77ffffff">common/circle.png</texture>
-                                </control>
-                                <control type="image">
+                                    <description>Busy animation</description>
                                     <width>128</width>
                                     <height>128</height>
                                     <centertop>50%</centertop>
                                     <centerleft>50%</centerleft>
-                                    <texture colordiffuse="77000000">special://skin/extras/icons/play3.png</texture>
+                                    <texture>dialog/loading-back.png</texture>
+                                    <aspectratio>keep</aspectratio>
+                                </control>
+                                <control type="image">
+                                    <width>48</width>
+                                    <height>48</height>
+                                    <centertop>50%</centertop>
+                                    <centerleft>50%</centerleft>
+                                    <texture colordiffuse="77000000">common/circle.png</texture>
+                                </control>
+                                <control type="image">
+                                    <width>32</width>
+                                    <height>32</height>
+                                    <centertop>50%</centertop>
+                                    <centerleft>50.2%</centerleft>
+                                    <texture colordiffuse="99ffffff">common/playwhite.png</texture>
+                                </control>
+                                <control type="group">
+                                    <description>Busy animation</description>
+                                    <width>128</width>
+                                    <height>128</height>
+                                    <centertop>50%</centertop>
+                                    <centerleft>50%</centerleft>
+                                    <visible>Control.HasFocus(102) + !String.IsEmpty(Window.Property(countdown))</visible>
+                                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                                    <control type="image">
+                                        <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
+                                        <aspectratio>keep</aspectratio>
+                                    </control>
+                                    <control type="image">
+                                        <texture colordiffuse="$VAR[ColorHighlight2]">dialog/loading-spinner.png</texture>
+                                        <aspectratio>keep</aspectratio>
+                                        <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
+                                    </control>
                                 </control>
                                 
                                 <control type="image">
@@ -403,7 +430,7 @@
         </control>
         <control type="group" id="200">
             <left>0</left>
-            <width>74</width>
+            <width>77</width>
             <include>Home_Iconbar_Texture</include>
             <include>Home_Iconbar_Logo</include>
             <control type="group">
@@ -411,8 +438,8 @@
                     <top>view_top</top>
                     <height>148</height>
                     <control type="group">
-                        <left>74</left>
-                        <height>74</height>
+                        <left>77</left>
+                        <height>77</height>
                         <width>6</width>     
                         <visible>Control.HasFocus(202)</visible>
                         <control type="image">
@@ -422,14 +449,14 @@
                             <include>Home_Separator</include>
                         </control>
                         <control type="group">
-                            <top>74</top>
+                            <top>77</top>
                             <include>Home_Separator</include>
                         </control>
                     </control>
                     <control type="group">
-                        <top>74</top>
-                        <left>74</left>
-                        <height>74</height>
+                        <top>77</top>
+                        <left>77</left>
+                        <height>77</height>
                         <width>6</width>     
                         <visible>Control.HasFocus(201)</visible>
                         <control type="image">
@@ -439,14 +466,14 @@
                             <include>Home_Separator</include>
                         </control>
                         <control type="group">
-                            <top>74</top>
+                            <top>77</top>
                             <include>Home_Separator</include>
                         </control>
                     </control>
                     <control type="radiobutton" id="202">
                         <description>Spoiler</description>
-                        <width>74</width>
-                        <height>74</height>
+                        <width>77</width>
+                        <height>77</height>
                         <font/>
                         <onup>201</onup>
                         <ondown>201</ondown>
@@ -456,9 +483,9 @@
                     </control>
                     <control type="button" id="201">
                         <description>Close</description>
-                        <top>74</top>
-                        <width>74</width>
-                        <height>74</height>
+                        <top>77</top>
+                        <width>77</width>
+                        <height>77</height>
                         <font/>
                         <onup>202</onup>
                         <ondown>202</ondown>
@@ -474,7 +501,7 @@
                         <include>Home_Separator</include>
                     </control>
                     <control type="group">
-                        <top>74</top>
+                        <top>77</top>
                         <include>Home_Separator</include>
                     </control>
                     <control type="group">
