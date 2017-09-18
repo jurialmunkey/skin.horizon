@@ -96,15 +96,9 @@
                                     <centertop>50%</centertop>
                                     <centerleft>50%</centerleft>
                                     <visible>Control.HasFocus(102) + !String.IsEmpty(Window.Property(countdown))</visible>
-                                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
                                     <control type="image">
-                                        <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
+                                        <texture colordiffuse="$VAR[ColorHighlight]">$INFO[Window.Property(countdown),progress/nextup/,.png]</texture>
                                         <aspectratio>keep</aspectratio>
-                                    </control>
-                                    <control type="image">
-                                        <texture colordiffuse="$VAR[ColorHighlight2]">dialog/loading-spinner.png</texture>
-                                        <aspectratio>keep</aspectratio>
-                                        <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
                                     </control>
                                 </control>
                                 
