@@ -463,8 +463,8 @@
                                 <visible>[String.IsEmpty(VideoPlayer.VideoCodec) + String.IsEmpty(VideoPlayer.VideoAspect) + String.IsEmpty(VideoPlayer.AudioCodec) + String.IsEmpty(VideoPlayer.AudioChannels)] | !Skin.HasSetting(ShowOSDVideoCodec)</visible>
                                 <control type="label">
                                     <aligny>top</aligny>
-                                    <width>80</width>
-                                    <label>31281</label>
+                                    <width>auto</width>
+                                    <label>$LOCALIZE[31281]  </label>
                                     <font>font_musicvis_album</font>
                                     <textcolor>main_fg_70</textcolor>
                                     <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
@@ -537,8 +537,8 @@
                                 <visible>Skin.HasSetting(ShowOSDVideoCodec)</visible>
                                 <control type="label">
                                     <aligny>top</aligny>
-                                    <width>80</width>
-                                    <label>31281</label>
+                                    <width>auto</width>
+                                    <label>$LOCALIZE[31281]  </label>
                                     <font>font_musicvis_album</font>
                                     <textcolor>main_fg_70</textcolor>
                                     <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
