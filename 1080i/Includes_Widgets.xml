@@ -663,7 +663,7 @@
                         <texture colordiffuse="main_bg_30">common/white.png</texture>
                         <visible>!$PARAM[landscape]</visible>
                     </control>
-                    <include>Defs_Color_Overlay</include>
+                    
                     <control type="group">
                         <top>222</top>
                         <visible>!$PARAM[poster] + !$PARAM[landscape]</visible>
@@ -827,7 +827,7 @@
                         <texture colordiffuse="main_bg_30">common/white.png</texture>
                         <visible>!$PARAM[landscape]</visible>
                     </control>
-                    <include>Defs_Color_Overlay</include>
+                    
                     <control type="group">
                         <top>222</top>
                         <visible>!$PARAM[poster] + !$PARAM[landscape]</visible>

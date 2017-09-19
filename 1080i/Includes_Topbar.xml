@@ -48,7 +48,7 @@
             <animation effect="fade" start="100" end="75" condition="!Skin.HasSetting(DisableTransparentTopbar)">Conditional</animation>
             <texture flipy="true">common/gradient-solid.png</texture>
         </control>
-        <include>Defs_Color_Overlay</include>
+        
         <control type="image">
             <bottom>2</bottom>
             <height>1</height>
@@ -77,7 +77,7 @@
             <top>0</top>
             <texture>common/gradient-solid.png</texture>
         </control>
-        <include>Defs_Color_Overlay</include>
+        
     </include>
 
     <include name="Topbar_MainMenu_Lines">

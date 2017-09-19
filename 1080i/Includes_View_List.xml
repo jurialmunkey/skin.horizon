@@ -101,7 +101,7 @@
                                 <include>Defs_Shadow_Opaque</include>
                                 <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                             </control>
-                            <include>Defs_Color_Overlay</include>
+                            
                             <control type="group">
                                 <left>1068</left>
                                 <include>Object_Separator_Left</include>
@@ -265,7 +265,7 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                     </control>
-                    <include>Defs_Color_Overlay</include>
+                    
                     <include>Object_Separator_Right</include>
                 </control>
                 <include>Object_ParentFolder</include>

@@ -35,14 +35,6 @@
         <onleft condition="Window.IsVisible(profiles)">SetFocus(300,8)</onleft>
     </include>
 
-    <include name="Defs_Color_Overlay">
-        <control type="image">
-            <texture colordiffuse="$VAR[ColorOverlay]">common/white.png</texture>
-            <animation effect="fade" start="100" end="5" condition="true">Conditional</animation>
-            <visible>!String.IsEmpty(Skin.String(overlaycolor.name)) + Skin.HasSetting(ColorPanels)</visible>
-        </control>
-    </include>
-
     <include name="Defs_SkinShortcuts_SetStrings">
         <onback condition="String.IsEqual(Window.Property(groupname),mainmenu)">Skin.SetString(HomeNumItems,$INFO[Container(211).NumItems])</onback>
 

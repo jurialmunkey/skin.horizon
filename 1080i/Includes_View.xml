@@ -104,7 +104,7 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                     </control>
-                    <include>Defs_Color_Overlay</include>
+                    
                 </control>
                 <control type="group">
                     <left>40</left>
@@ -186,7 +186,7 @@
                     <include>Defs_Shadow_Opaque</include>
                     <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                 </control>
-                <include>Defs_Color_Overlay</include>
+                
             </control>
             <include content="Object_BigPoster">
                 <param name="discart" value="false" />

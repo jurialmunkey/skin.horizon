@@ -1230,7 +1230,7 @@
             <texture>common/gradient-solid-horizontal.png</texture>
             <include>Defs_DarkShadow</include>
         </control>
-        <include>Defs_Color_Overlay</include>
+        
         <control type="image">
             <width>1</width>
             <left>-1</left>

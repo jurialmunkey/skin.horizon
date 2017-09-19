@@ -351,7 +351,7 @@
                         <include>Defs_Shadow_Opaque</include>
                         <texture colordiffuse="AAffffff">common/gradient-solid.png</texture>
                     </control>
-                    <include>Defs_Color_Overlay</include>
+                    
                     <control type="group">
                         <left>895.5</left>
                         <include>Object_Separator_Left</include>
@@ -788,7 +788,7 @@
                             <right>10</right>
                             <top>10</top>
                             <bottom>10</bottom>
-                            <include>Defs_Color_Overlay</include>
+                            
                         </control>
                         <control type="image">
                             <height>278.5</height>
@@ -903,7 +903,7 @@
                             <right>10</right>
                             <top>10</top>
                             <bottom>10</bottom>
-                            <include>Defs_Color_Overlay</include>
+                            
                         </control>
                         <control type="image">
                             <height>278.5</height>
@@ -1162,7 +1162,7 @@
                         <right>10</right>
                         <top>10</top>
                         <bottom>10</bottom>
-                        <include>Defs_Color_Overlay</include>
+                        
                     </control>
                     <control type="image" description="Poster">
                         <height>178.2675</height>
@@ -1254,7 +1254,7 @@
                         <right>10</right>
                         <top>10</top>
                         <bottom>10</bottom>
-                        <include>Defs_Color_Overlay</include>
+                        
                     </control>
                     <control type="image" description="Poster">
                         <height>178.2675</height>
