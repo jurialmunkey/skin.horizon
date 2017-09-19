@@ -87,26 +87,13 @@
                 <include condition="Skin.HasSetting(DisableTransparentTopbar) | Skin.HasSetting(ShiftFanartDown)">Global_Background_TopOffset</include>
                 <control type="multiimage" description="Fanart">
                     <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio] | [Player.HasAudio + !String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))]</visible>
-                    <visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
                     <include>Dimensions_Fullscreen</include>
                     <timeperimage>10000</timeperimage>
                     <randomize>true</randomize>
                     <fadetime>600</fadetime>
                     <aspectratio>scale</aspectratio>
                     <imagepath background="true">$VAR[Global_Background_Image]</imagepath>
-                    <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
-                    <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
                 </control>
-                <control type="image" description="Fanart Fallback always">
-                    <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio] | [Player.HasAudio + !String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))]</visible>
-                    <include>Dimensions_Fullscreen</include>
-                    <visible>!Window.IsVisible(home) + Skin.HasSetting(global.hidefanart) + !String.IsEmpty(Skin.String(fanart.fallback))</visible>
-                    <aspectratio>scale</aspectratio>
-                    <texture background="true">$INFO[Skin.String(fanart.fallback)]</texture>
-                    <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
-                    <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
-                </control>
-                
             </control>
 
             <!-- Texture Overlay -->
@@ -115,24 +102,30 @@
                 <include>Animation_FadeInOut</include>
                 <control type="image">
                     <texture colordiffuse="$VAR[Global_FanartDim]">common/white.png</texture>
-                    <animation effect="fade" start="100" end="90" condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + !Skin.HasSetting(OnlyBlurInfo)">Conditional</animation>
                 </control>
+                <!-- <include condition="Skin.HasSetting(GeometricBackground)">Global_Geometric</include> -->
                 <control type="image">
-                    <animation effect="fade" start="100" end="60" condition="true">Conditional</animation>
-                    <texture background="true">special://skin/extras/backgrounds/default.jpg</texture>
-                    <visible>Skin.HasSetting(GeometricBackground)</visible>
-                    <!-- <visible>[Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsSystemInfo.xml)]</visible> -->
-                </control>
-                <control type="image">
-                    <texture>common/gradient-solid.png</texture>
+                    <texture background="true">common/gradient-solid.png</texture>
                     <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
                 </control>
-                <include>Defs_Color_Overlay</include>
-
+                <!-- Vignette Overlay -->
+                <control type="image">
+                    <texture colordiffuse="$VAR[ColorOverlay]" background="true">common/vignette-white.png</texture>
+                    <visible>!String.IsEmpty(Skin.String(overlaycolor.name)) | Skin.HasSetting(MatchOverlayColors)</visible>
+                </control>
+                <control type="image">
+                    <texture background="true">common/vignette-full.png</texture>
+                </control>
             </control>
-            
         </control>
-        
+    </include>
+
+    <include name="Global_Geometric">
+        <control type="image">
+            <animation effect="fade" start="100" end="60" condition="true">Conditional</animation>
+            <texture background="true">special://skin/extras/backgrounds/default.jpg</texture>
+            <visible>Skin.HasSetting(GeometricBackground)</visible>
+        </control>
     </include>
 
     <variable name="Global_FanartDim">
@@ -149,20 +142,12 @@
             <animation effect="fade" start="0" end="100" time="400" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(Settings.xml) | Window.Previous(AddonBrowser.xml) | Window.Previous(SkinSettings.xml) | Window.Previous(MyWeather.xml) | Window.Previous(SettingsSystemInfo.xml) | Window.Previous(SettingsProfile.xml) | Window.Previous(SettingsScreenCalibration.xml) | Window.Previous(FileManager.xml)]">WindowOpen</animation>
             <control type="multiimage" description="Fanart">
                 <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
-                <visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
                 <include>Dimensions_Fullscreen</include>
                 <fadetime>0</fadetime>
                 <timeperimage>12000</timeperimage>
                 <randomize>true</randomize>
                 <aspectratio>scale</aspectratio>
                 <imagepath background="true">$VAR[Global_Background_Image]</imagepath>
-            </control>
-            <control type="image" description="Fanart Fallback always">
-                <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
-                <include>Dimensions_Fullscreen</include>
-                <visible>!Window.IsVisible(home) + Skin.HasSetting(global.hidefanart) + !String.IsEmpty(Skin.String(fanart.fallback))</visible>
-                <aspectratio>scale</aspectratio>
-                <texture background="true">$INFO[Skin.String(fanart.fallback)]</texture>
             </control>
         </control>
     </include>
@@ -176,6 +161,7 @@
     </variable>
 
     <variable name="Global_Background_Image">
+        <value condition="!Window.IsVisible(home) + Skin.HasSetting(global.hidefanart) + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
         <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
         <value condition="!String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + Skin.HasSetting(EnableBlur) + [!Skin.HasSetting(OnlyBlurInfo) | [Skin.HasSetting(OnlyBlurInfo) + [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)]]]">$INFO[Window(home).Property(ImageFilterFIVE)]</value>
         <value>$VAR[Global_Background_Image_Var]</value>

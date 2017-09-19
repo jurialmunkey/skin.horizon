@@ -1,3 +1,8 @@
+[B]1.0.24[/B]
+Improvements to color overlay approach
+Add vignette to background
+Tweaks to NextUp
+
 [B]1.0.23[/B]
 Removed alphabet strip and retooled a number of views
 New global search view

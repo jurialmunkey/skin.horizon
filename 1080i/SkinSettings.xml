@@ -293,13 +293,13 @@
                         </control>
 
 
-                        <control type="radiobutton" id="9347" description="Geometric Overlay">
+                        <!-- <control type="radiobutton" id="9347" description="Geometric Overlay">
                             <visible>ControlGroup(9100).HasFocus(9102)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31318]</label>
                             <selected>Skin.HasSetting(GeometricBackground)</selected>
                             <onclick>Skin.ToggleSetting(GeometricBackground)</onclick>
-                        </control>
+                        </control> -->
 
                         <control type="radiobutton" id="9227" description="Blur background fanart">
                             <visible>ControlGroup(9100).HasFocus(9102)</visible>
@@ -557,7 +557,16 @@
                             <label2>$INFO[Skin.String(overlaycolor.name)]</label2>
                             <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                             <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
+                            <enable>!Skin.HasSetting(MatchOverlayColors)</enable>
                         </control>
+                        <!-- <control type="radiobutton" id="9456" description="Overlay Color Panels">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>Apply overlay color to panel elements</label>
+                            <selected>Skin.HasSetting(ColorPanels)</selected>
+                            <onclick>Skin.ToggleSetting(ColorPanels)</onclick>
+                            <enable>!String.IsEmpty(Skin.String(overlaycolor.name))</enable>
+                        </control> -->
                         
                         <control type="radiobutton" id="9337" description="Enable color matching">
                             <visible>ControlGroup(9100).HasFocus(9105)</visible>
@@ -583,6 +592,18 @@
                             <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(CycleColors)</onclick>
                         </control>
 
+                        <control type="radiobutton" id="9456" description="Match overlay">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>Match overlay color</label>
+                            <selected>Skin.HasSetting(MatchOverlayColors)</selected>
+                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">RunScript(script.colorbox,daemon=True)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(MatchOverlayColors)</onclick>
+                        </control>
+
                         <control type="button" id="9254">
                             <visible>ControlGroup(9100).HasFocus(9105)</visible>
                             <label>$LOCALIZE[31193]</label>
@@ -592,6 +613,7 @@
                             <onclick>Skin.Reset(overlaycolor.name)</onclick>
                             <onclick>Skin.Reset(CycleColors)</onclick>
                             <onclick>Skin.Reset(MatchColors)</onclick>
+                            <onclick>Skin.Reset(MatchOverlayColors)</onclick>
                         </control>
 
                         <!-- ========== -->
