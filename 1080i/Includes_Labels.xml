@@ -481,7 +481,6 @@
         <value condition="Control.HasFocus(9244)">$LOCALIZE[31055]</value>
         <value condition="Control.HasFocus(9251)">$LOCALIZE[31058]</value>
         <value condition="Control.HasFocus(9271)">$LOCALIZE[31060]</value>
-        <value condition="Control.HasFocus(9272)">$LOCALIZE[31061]</value>
         <value condition="Control.HasFocus(9273)">$LOCALIZE[31062]</value>
         <value condition="Control.HasFocus(9274)">$LOCALIZE[31063]</value>
         <value condition="Control.HasFocus(9278)">$LOCALIZE[31155]</value>

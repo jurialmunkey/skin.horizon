@@ -1,3 +1,9 @@
+[B]1.0.25[/B]
+Getting ready for repo inclusion
+Set some defaults for color overlay and topbar transparency
+Fix submenu indicator delay on text menu
+Fix icon only sub header text not showing when music is playing
+
 [B]1.0.24[/B]
 Improvements to color overlay approach
 Add vignette to background

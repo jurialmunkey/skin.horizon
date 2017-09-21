@@ -922,7 +922,6 @@
                     <param name="visible" value="Control.HasFocus(300)" />
                 </include>
                 <control type="image">
-                    <include>Animation_FadeIn_Delay</include>
                     <visible>String.IsEqual(Container(300).ListItemPosition($PARAM[id]).Label,Container(300).ListItem.Label)</visible>
                     <left>8</left>
                     <width>home_icon</width>
@@ -1276,7 +1275,6 @@
                         <effect type="slide" start="0,0" end="0,-10" time="300" tween="sine" easing="out" delay="2000" />
                     </animation>
                     <label>$INFO[ListItem.SortLetter]</label>
-                    <align>center</align>
                     <height>48</height>
                     <aligny>center</aligny>
                     <align>center</align>

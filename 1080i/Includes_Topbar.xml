@@ -7,8 +7,8 @@
         <control type="group">
             <!-- <visible>Window.IsVisible(Home) | Control.IsVisible(51) | Control.IsVisible(53)</visible> -->
             <visible>Window.IsVisible(Home)</visible>
-            <animation effect="fade" start="100" end="0" delay="300" time="400" reversible="false" condition="!Skin.HasSetting(DisableTransparentTopbar) + [Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml)]">Conditional</animation>
-            <animation effect="fade" start="0" end="100" delay="0" time="400" reversible="false" condition="!Skin.HasSetting(DisableTransparentTopbar) + ![Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml)]">Conditional</animation>
+            <animation effect="fade" start="100" end="0" delay="300" time="400" reversible="false" condition="Skin.HasSetting(EnableTransparentTopbar) + [Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml)]">Conditional</animation>
+            <animation effect="fade" start="0" end="100" delay="0" time="400" reversible="false" condition="Skin.HasSetting(EnableTransparentTopbar) + ![Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml)]">Conditional</animation>
             <control type="image">
                 <height>150</height>
                 <texture>common/gradient-top.png</texture>
@@ -45,7 +45,7 @@
             <bottom>0</bottom>
             <top>0</top>
             <aspectratio>scale</aspectratio>
-            <animation effect="fade" start="100" end="75" condition="!Skin.HasSetting(DisableTransparentTopbar)">Conditional</animation>
+            <animation effect="fade" start="100" end="75" condition="Skin.HasSetting(EnableTransparentTopbar)">Conditional</animation>
             <texture flipy="true">common/gradient-solid.png</texture>
         </control>
         
@@ -169,7 +169,7 @@
             <orientation>horizontal</orientation>
             <control type="group">
                 <width>20</width>
-                <visible>![String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia] | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)] | Control.HasFocus(8001)</visible>
+                <visible>![String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia] | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)] | Control.HasFocus(8001) | [Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
                 <include>Object_DownArrows</include>
             </control>
             <control type="label">
@@ -180,7 +180,7 @@
                 <textcolor>$VAR[ColorHighlight]</textcolor>
                 <shadowcolor>main_bg_30</shadowcolor>
                 <label>$VAR[Label_SubHeader_Content]</label>
-                <visible>![String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia] | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
+                <visible>![String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia] | [Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)] | [Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
                 <visible>!Control.HasFocus(8001)</visible>
             </control>
             <control type="multiimage">
@@ -195,6 +195,7 @@
                 <visible>!Player.Paused + !Player.Caching</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                 <visible>!Control.HasFocus(8001)</visible>
+                <visible>![Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
             </control>
             <control type="image">
                 <top>7</top>
@@ -207,6 +208,7 @@
                 <visible>Player.Paused + !Player.Caching</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                 <visible>!Control.HasFocus(8001)</visible>
+                <visible>![Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
             </control>
             <control type="group">
                 <width>48</width>
@@ -215,6 +217,7 @@
                 <left>-8</left>
                 <visible>Player.Caching</visible>
                 <visible>!Control.HasFocus(8001)</visible>
+                <visible>![Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
                 <control type="image">
                     <description>Busy animation</description>
                     <centerleft>50%</centerleft>
@@ -254,6 +257,7 @@
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                 <visible>!Control.HasFocus(8001)</visible>
+                <visible>![Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
             </control>
             <control type="label">
                 <left>-12</left>
@@ -267,6 +271,7 @@
                 <visible>[String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasMedia]</visible>
                 <visible>![Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(MyWeather.xml)]</visible>
                 <visible>!Control.HasFocus(8001)</visible>
+                <visible>![Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)]</visible>
             </control>
         </control>
     </include>

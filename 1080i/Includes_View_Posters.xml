@@ -732,7 +732,6 @@
             <control type="textbox">
                 <label fallback="19055">$VAR[Label_Plot]</label>
                 <height>$PARAM[plot_height]</height>
-                <height>infolist3_plot_height</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>
@@ -1441,7 +1440,6 @@
                 <left>492</left>
                 <top>6</top>
                 <right>10</right>
-                <left>10</left>
                 <bottom>10</bottom>
                 <control type="label">
                     <label>$INFO[ListItem.Label]</label>

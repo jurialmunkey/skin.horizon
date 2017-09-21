@@ -1585,3 +1585,8 @@ msgstr ""
 msgctxt "#31336"
 msgid "Display background color overlay"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31337"
+msgid "Display submenu indicator"
+msgstr ""

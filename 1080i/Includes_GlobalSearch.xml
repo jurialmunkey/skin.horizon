@@ -78,14 +78,14 @@
                         </control>
                         <control type="image">
                             <bordersize>10</bordersize>
-                            <aspectartio>scale</aspectartio>
+                            <aspectratio>scale</aspectratio>
                             <visible>!$PARAM[square]</visible>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <height>265</height>
-                            <aspectartio>scale</aspectartio>
+                            <aspectratio>scale</aspectratio>
                             <visible>$PARAM[square]</visible>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                         </control>
@@ -131,14 +131,14 @@
                         </control>
                         <control type="image">
                             <bordersize>10</bordersize>
-                            <aspectartio>scale</aspectartio>
+                            <aspectratio>scale</aspectratio>
                             <visible>!$PARAM[square]</visible>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="image">
                             <bordersize>10</bordersize>
                             <height>265</height>
-                            <aspectartio>scale</aspectartio>
+                            <aspectratio>scale</aspectratio>
                             <visible>$PARAM[square]</visible>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                         </control>
