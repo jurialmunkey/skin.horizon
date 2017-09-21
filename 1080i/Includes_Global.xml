@@ -111,7 +111,7 @@
                 <!-- Vignette Overlay -->
                 <control type="image">
                     <texture colordiffuse="$VAR[ColorOverlay]" background="true">common/vignette-white.png</texture>
-                    <visible>!String.IsEmpty(Skin.String(overlaycolor.name)) | Skin.HasSetting(MatchOverlayColors)</visible>
+                    <visible>!Skin.HasSetting(DisableOverlayColor)</visible>
                 </control>
                 <control type="image">
                     <texture background="true">common/vignette-full.png</texture>

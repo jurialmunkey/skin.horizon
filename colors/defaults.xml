@@ -45,5 +45,6 @@
     <color name="Highlight">ffe53564</color>
     <color name="Highlight2">ffe5b535</color>
     <color name="GradientHighlight">ff9528a8</color>
+    <color name="Overlay">ff5528a8</color>
     <color name="Selected">ffededed</color>
 </colors>

@@ -103,7 +103,7 @@
     </variable>
 
     <variable name="Image_Poster_Color">
-        <value condition="Skin.HasSetting(CycleColors) + !Skin.HasSetting(MatchColors) + !Skin.HasSetting(MatchOverlayColors)">special://skin/extras/colorspin/</value>
+        <value condition="Skin.HasSetting(CycleColors) + !Skin.HasSetting(MatchColors)">special://skin/extras/colorspin/</value>
         <value condition="[Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
         <value condition="Container.Content(seasons) + !String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
