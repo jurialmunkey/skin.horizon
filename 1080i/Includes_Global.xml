@@ -129,7 +129,6 @@
     </include>
 
     <variable name="Global_FanartDim">
-        <value condition="String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31317])">FanartDim_Reduced</value>
         <value condition="String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31316])">FanartDim_Increased</value>
         <value>FanartDim_Default</value>
     </variable>

@@ -35,7 +35,6 @@
     
     <!-- Background -->
     <color name="Background">FF000000</color>
-    <color name="FanartDim_Reduced">cb000000</color>
     <color name="FanartDim_Default">9b000000</color>
     <color name="FanartDim_Increased">1b000000</color>
     <color name="PosterBack">0Fededed</color>
