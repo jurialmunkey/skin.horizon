@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31000"
@@ -1455,8 +1455,8 @@ msgstr "Restablecer a predeterminado"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31288"
-msgid "Match colors with poster"
-msgstr "Corresponder colores con póster"
+msgid "Match highlight colors with poster"
+msgstr "Corresponder colores de resalte con póster"
 
 msgctxt "#31289"
 msgid "Awards"
@@ -1582,7 +1582,7 @@ msgstr "Valoración de Usuario"
 #: /1080i/Includes_OSD.xml
 msgctxt "#31311"
 msgid "Rate Song"
-msgstr ""
+msgstr "Valorar Pista"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31312"
@@ -1615,3 +1615,113 @@ msgstr "Aumentada"
 msgctxt "#31317"
 msgid "Reduced"
 msgstr "Reducida"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31318"
+msgid "Geometric overlay effect on fanart"
+msgstr "Efecto de overlay geométrico sobre el fanart"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31319"
+msgid "Similar movies"
+msgstr "Películas Similares"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31320"
+msgid "Important"
+msgstr "Importante"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31321"
+msgid "Reset to defaults"
+msgstr "Restablecer a predeterminados"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31322"
+msgid ""
+"Image quality changes the resolution of the generated image. Better quality "
+"images take longer to process. Quality changes can alter the intensity of "
+"the effect in addition to other effect settings. The blend setting will "
+"blend the effect with the original image$COMMA with a value of 100 showing "
+"the full image effect."
+msgstr ""
+"La calidad de imagen cambia la resolución de la imagen generada. Imágenes "
+"con mejor calidad toman mayor tiempo para procesar. Los cambios de calidad "
+"pueden alterar la intensidad del efecto en adición a otros ajustes de "
+"efecto. El ajuste blend mezclará el efecto con la imagen original$COMMA con "
+"un valor de 100 mostrando el fecto completo en la imagen."
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31323"
+msgid "Blend"
+msgstr "Blend"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31324"
+msgid "Bitsize"
+msgstr "Bitsize"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31325"
+msgid "Pixel size"
+msgstr "Pixel size"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31326"
+msgid "Blur radius"
+msgstr "Radio de Blur"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31327"
+msgid "Image quality"
+msgstr "Calidad de Imagen"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31328"
+msgid "Highest"
+msgstr "Máximo"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31329"
+msgid "Colorbox Advanced Settings"
+msgstr "Ajustes Avanzados Colorbox"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31330"
+msgid "Advanced settings for colorbox (blur settings)"
+msgstr "Ajustes avanzados para colorbox (ajustes de blur)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31331"
+msgid "Icon only mode"
+msgstr "Modo Sólo Íconos"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31332"
+msgid "Change image"
+msgstr "Cambiar imagen"
+
+#: /1080i/script-globalsearch-main.xml
+msgctxt "#31333"
+msgid "Programmes"
+msgstr "Programas"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31334"
+msgid "Alphabet strip is not available for this content"
+msgstr "Barra de alfabeto no está disponible para este contenido"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31335"
+msgid "Match background overlay color"
+msgstr "Corresponder color de overlay de fondo"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31336"
+msgid "Display background color overlay"
+msgstr "Mostrar overlay de fondo a color"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31337"
+msgid "Display submenu indicator"
+msgstr "Mostrar indicador de submenú"
