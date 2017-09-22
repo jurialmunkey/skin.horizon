@@ -224,7 +224,7 @@
                         <texture colordiffuse="main_bg_100">common/white.png</texture>
                     </control>
                     <control type="wraplist" id="59">
-                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)</visible>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(artists)</visible>
                         <include>View_NotTheseWindows</include>
                         <viewtype label="$LOCALIZE[31231]">icon</viewtype>
                         <include content="View_Forced">
@@ -855,6 +855,7 @@
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <font>font_tiny</font>
+                                <autoscroll>false</autoscroll>
                                 <textcolor>main_fg_70</textcolor>
                                 <label>$VAR[Label_Square]</label>
                             </control>
