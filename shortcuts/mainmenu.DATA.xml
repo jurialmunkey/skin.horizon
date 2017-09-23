@@ -27,6 +27,7 @@
         <defaultID>livetv</defaultID>
         <icon>special://skin/extras/icons/livetv.png</icon>
         <action>ActivateWindow(TVChannels)</action>
+        <visible>PVR.HasTVChannels</visible>
     </shortcut>
     <shortcut>
         <label>24001</label>
