@@ -1590,3 +1590,8 @@ msgstr ""
 msgctxt "#31337"
 msgid "Display submenu indicator"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31338"
+msgid "Display background vignette effect"
+msgstr ""
