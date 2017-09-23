@@ -166,6 +166,11 @@
         <value>$VAR[Label_Header_Location]</value>
     </variable>
 
+    <variable name="Label_Premiered">
+        <value condition="!String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
+        <value condition="!String.IsEmpty(ListItem.Year) + Container.Content(movies)">$INFO[ListItem.Year]</value>
+    </variable>
+
     <variable name="Label_SubHeader_Content">
         <value condition="Control.HasFocus(300) + Skin.HasSetting(IconOnlyMode)">$INFO[Container(300).ListItem.Label,[COLOR=main_fg_100],[/COLOR]]</value>
         <value condition="Window.IsVisible(script-nextup-notification-PostPlayInfo.xml)">$INFO[Window.Property(next.tvshowtitle),[COLOR=main_fg_100],[/COLOR]]</value>
@@ -364,8 +369,8 @@
 
     <variable name="Label_ShowCase_InfoLine">
         <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(SkinHelper.ListItem.Year),[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Sets_Count,[COLOR=main_fg_100],[/COLOR]]</value>
-        <value condition="[Container.Content(seasons) | Container.Content(tvshows)] + [!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)] + !String.IsEmpty(ListItem.Property(TotalEpisodes))">$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Property(WatchedEpisodes),[COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]</value>
-        <value condition="!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</value>
+        <value condition="[Container.Content(seasons) | Container.Content(tvshows)] + [!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)] + !String.IsEmpty(ListItem.Property(TotalEpisodes))">$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.Property(WatchedEpisodes),[COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.MPAA,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Duration,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_Premiered,[COLOR=main_fg_100],[/COLOR]  |  ]$VAR[Label_EndTime,[COLOR=main_fg_100]$LOCALIZE[31106] ,[/COLOR]]</value>
         <value condition="!String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName,[COLOR=main_fg_100],[/COLOR]]</value>
     </variable>
 
