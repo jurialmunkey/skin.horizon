@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_OverlayColor">
+        <value condition="!String.IsEmpty(Skin.String(overlaycolor.name)) + !Skin.HasSetting(MatchOverlayColors) + !Skin.HasSetting(DisableOverlayColor)">$INFO[Skin.String(overlaycolor.name)]</value>
+        <value condition="String.IsEmpty(Skin.String(overlaycolor.name)) + !Skin.HasSetting(MatchOverlayColors) + !Skin.HasSetting(DisableOverlayColor)">$LOCALIZE[571]</value>
+        <value condition="Skin.HasSetting(MatchOverlayColors) + !Skin.HasSetting(DisableOverlayColor)">$LOCALIZE[31340]</value>
+        <value condition="Skin.HasSetting(DisableOverlayColor)">$LOCALIZE[1223]</value>
+    </variable>
+
     <variable name="Label_Info_NextAired_Status">
         <value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.Status)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">$INFO[Window(Home).Property(NextAired.Status)]</value>

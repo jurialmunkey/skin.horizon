@@ -88,6 +88,13 @@
                             <label>31110</label>
                         </control>
 
+                        <control type="togglebutton" id="9109" description="Background Effects">
+                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9109)</usealttexture>
+                            <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
+                            <width>450</width><include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31339]</label>
+                        </control>
+
                         <control type="togglebutton" id="9105" description="Colors">
                             <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9105)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
@@ -100,13 +107,6 @@
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width><include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31203]</label>
-                        </control>
-
-                        <control type="togglebutton" id="9109" description="Animations">
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + ControlGroup(9100).HasFocus(9109)</usealttexture>
-                            <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
-                            <width>450</width><include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31277]</label>
                         </control>
 
                         <control type="togglebutton" id="9107" description="Miscellaneous">
@@ -262,16 +262,11 @@
                             <onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
                         </control>
 
-                        <control type="radiobutton" id="9226" description="Transparent Top Bar">
-                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31185]</label>
-                            <selected>Skin.HasSetting(EnableTransparentTopbar)</selected>
-                            <onclick>Skin.ToggleSetting(EnableTransparentTopbar)</onclick>
-                        </control>
-
+                        <!-- ================== -->
+                        <!-- Background Effects -->
+                        <!-- ================== -->
                         <control type="button" id="9346" description="Transparent background">
-                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31313]</label>
                             <label2>$INFO[Skin.String(TransparencyLevel)]</label2>
@@ -279,8 +274,36 @@
                             <onclick condition="String.IsEqual(Skin.String(TransparencyLevel),$LOCALIZE[31316])">Skin.SetString(TransparencyLevel,$LOCALIZE[571])</onclick>
                         </control>
 
+                        <control type="button" id="9552" description="Set overlaycolor ">
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31273]</label>
+                            <label2>$VAR[Label_OverlayColor]</label2>
+                            <onclick condition="Skin.HasSetting(DisableOverlayColor)">Skin.ToggleSetting(DisableOverlayColor)</onclick>
+                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
+                            <enable>!Skin.HasSetting(MatchOverlayColors)</enable>
+                        </control>
+
+                        <control type="radiobutton" id="9457" description="Disable color overlay">
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31336]</label>
+                            <selected>!Skin.HasSetting(DisableOverlayColor)</selected>
+                            <onclick>Skin.ToggleSetting(DisableOverlayColor)</onclick>
+                        </control>
+
+                        <control type="radiobutton" id="9458" description="Disable color overlay">
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31338]</label>
+                            <selected>!Skin.HasSetting(DisableVignette)</selected>
+                            <enable>Skin.HasSetting(DisableOverlayColor)</enable>
+                            <onclick>Skin.ToggleSetting(DisableVignette)</onclick>
+                        </control>
+
                         <control type="radiobutton" id="9227" description="Blur background fanart">
-                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31275]</label>
                             <selected>Skin.HasSetting(EnableBlur)</selected>
@@ -292,7 +315,7 @@
                         </control>
 
                         <control type="radiobutton" id="9327" description="Only blur video info">
-                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31154]</label>
                             <selected>Skin.HasSetting(OnlyBlurInfo)</selected>
@@ -301,11 +324,115 @@
                         </control>
 
                         <control type="button" id="9367" description="Color Box Advanced Settings">
-                            <visible>ControlGroup(9100).HasFocus(9102)</visible>
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31330]</label>
                             <onclick>ActivateWindow(1116)</onclick>
                             <enable>Skin.HasSetting(EnableBlur) + System.HasAddon(script.colorbox)</enable>
+                        </control>
+
+                        <control type="radiobutton" id="9226" description="Transparent Top Bar">
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31185]</label>
+                            <selected>Skin.HasSetting(EnableTransparentTopbar)</selected>
+                            <onclick>Skin.ToggleSetting(EnableTransparentTopbar)</onclick>
+                        </control>
+
+                        <control type="button" id="9654">
+                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
+                            <label>$LOCALIZE[31321]</label>
+                            <include>Defs_Settings_Button</include>
+                            <onclick>Skin.Reset(overlaycolor.name)</onclick>
+                            <onclick>Skin.Reset(MatchOverlayColors)</onclick>
+                            <onclick>Skin.Reset(DisableOverlayColor)</onclick>
+                            <onclick>Skin.Reset(DisableVignette)</onclick>
+                            <onclick>Skin.Reset(EnableBlur)</onclick>
+                            <onclick>Skin.Reset(OnlyBlurInfo)</onclick>
+                            <onclick>Skin.SetString(TransparencyLevel,$LOCALIZE[571])</onclick>
+                        </control>
+
+                        <!-- ====== -->
+                        <!-- Colors -->
+                        <!-- ====== -->
+                        <control type="button" id="9251" description="Color Highlight">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <enable>!Skin.HasSetting(CycleColors)</enable>
+                            <label>31286</label>
+                            <label2>$INFO[Skin.String(focuscolor.name)]</label2>
+                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=focuscolor.name)</onclick>
+                        </control>
+                        <control type="button" id="9253" description="Color Highlight">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <enable>!Skin.HasSetting(CycleColors)</enable>
+                            <label>$LOCALIZE[31250]</label>
+                            <label2>$INFO[Skin.String(gradientcolor.name)]</label2>
+                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
+                        </control>
+                        <control type="button" id="9252" description="Set overlaycolor ">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31273]</label>
+                            <label2>$VAR[Label_OverlayColor]</label2>
+                            <onclick condition="Skin.HasSetting(DisableOverlayColor)">Skin.ToggleSetting(DisableOverlayColor)</onclick>
+                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
+                            <enable>!Skin.HasSetting(MatchOverlayColors)</enable>
+                        </control>
+
+                        <control type="radiobutton" id="9337" description="Enable color matching">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31288]</label>
+                            <selected>Skin.HasSetting(MatchColors)</selected>
+                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">RunScript(script.colorbox,daemon=True)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(MatchColors)</onclick>
+                        </control>
+
+                        <control type="radiobutton" id="9456" description="Match overlay">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31335]</label>
+                            <selected>Skin.HasSetting(MatchOverlayColors)</selected>
+                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">RunScript(script.colorbox,daemon=True)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(MatchOverlayColors)</onclick>
+                            <enable>!Skin.HasSetting(DisableOverlayColor)</enable>
+                        </control>
+
+                        <control type="radiobutton" id="9338" description="Enable color cycling">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31305]</label>
+                            <selected>Skin.HasSetting(CycleColors)</selected>
+                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">RunScript(script.colorbox,daemon=True)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(CycleColors)</onclick>
+                        </control>
+
+                        <control type="button" id="9254">
+                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
+                            <label>$LOCALIZE[31321]</label>
+                            <include>Defs_Settings_Button</include>
+                            <onclick>Skin.Reset(focuscolor.name)</onclick>
+                            <onclick>Skin.Reset(gradientcolor.name)</onclick>
+                            <onclick>Skin.Reset(overlaycolor.name)</onclick>
+                            <onclick>Skin.Reset(CycleColors)</onclick>
+                            <onclick>Skin.Reset(MatchColors)</onclick>
+                            <onclick>Skin.Reset(MatchOverlayColors)</onclick>
+                            <onclick>Skin.Reset(DisableOverlayColor)</onclick>
+                            <onclick>Skin.Reset(DisableVignette)</onclick>
                         </control>
                         
                         <!-- ================= -->
@@ -507,136 +634,6 @@
                             <include>Defs_Settings_Button</include>
                         </control>
 
-                        <!-- ====== -->
-                        <!-- Colors -->
-                        <!-- ====== -->
-                        <control type="button" id="9251" description="Color Highlight">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <enable>!Skin.HasSetting(CycleColors)</enable>
-                            <label>31286</label>
-                            <label2>$INFO[Skin.String(focuscolor.name)]</label2>
-                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
-                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=focuscolor.name)</onclick>
-                        </control>
-                        <control type="button" id="9253" description="Color Highlight">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <enable>!Skin.HasSetting(CycleColors)</enable>
-                            <label>$LOCALIZE[31250]</label>
-                            <label2>$INFO[Skin.String(gradientcolor.name)]</label2>
-                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
-                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
-                        </control>
-                        <control type="button" id="9252" description="Set overlaycolor ">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31273]</label>
-                            <label2>$INFO[Skin.String(overlaycolor.name)]</label2>
-                            <onclick condition="Skin.HasSetting(DisableOverlayColor)">Skin.ToggleSetting(DisableOverlayColor)</onclick>
-                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
-                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
-                            <enable>!Skin.HasSetting(MatchOverlayColors)</enable>
-                        </control>
-
-                        
-                        <control type="radiobutton" id="9337" description="Enable color matching">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31288]</label>
-                            <selected>Skin.HasSetting(MatchColors)</selected>
-                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">RunScript(script.colorbox,daemon=True)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(MatchColors)</onclick>
-                        </control>
-
-                        <control type="radiobutton" id="9338" description="Enable color cycling">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31305]</label>
-                            <selected>Skin.HasSetting(CycleColors)</selected>
-                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">RunScript(script.colorbox,daemon=True)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(CycleColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(CycleColors)</onclick>
-                        </control>
-
-                        <control type="radiobutton" id="9456" description="Match overlay">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31335]</label>
-                            <selected>Skin.HasSetting(MatchOverlayColors)</selected>
-                            <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">SetProperty(SEVEN_daemon_set,True,home)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">RunScript(script.colorbox,daemon=True)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(MatchOverlayColors)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
-                            <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(MatchOverlayColors)</onclick>
-                            <enable>!Skin.HasSetting(DisableOverlayColor)</enable>
-                        </control>
-
-                        <control type="radiobutton" id="9457" description="Disable color overlay">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31336]</label>
-                            <selected>!Skin.HasSetting(DisableOverlayColor)</selected>
-                            <onclick>Skin.ToggleSetting(DisableOverlayColor)</onclick>
-                        </control>
-
-                        <control type="radiobutton" id="9458" description="Disable color overlay">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31338]</label>
-                            <selected>!Skin.HasSetting(DisableVignette)</selected>
-                            <enable>Skin.HasSetting(DisableOverlayColor)</enable>
-                            <onclick>Skin.ToggleSetting(DisableVignette)</onclick>
-                        </control>
-
-                        <control type="button" id="9254">
-                            <visible>ControlGroup(9100).HasFocus(9105)</visible>
-                            <label>$LOCALIZE[31193]</label>
-                            <include>Defs_Settings_Button</include>
-                            <onclick>Skin.Reset(focuscolor.name)</onclick>
-                            <onclick>Skin.Reset(gradientcolor.name)</onclick>
-                            <onclick>Skin.Reset(overlaycolor.name)</onclick>
-                            <onclick>Skin.Reset(CycleColors)</onclick>
-                            <onclick>Skin.Reset(MatchColors)</onclick>
-                            <onclick>Skin.Reset(MatchOverlayColors)</onclick>
-                            <onclick>Skin.Reset(DisableOverlayColor)</onclick>
-                            <onclick>Skin.Reset(DisableVignette)</onclick>
-                        </control>
-
-                        <!-- ========== -->
-                        <!-- Animations -->
-                        <!-- ========== -->
-                        <control type="radiobutton" id="9275" description="Slide over content when opening side blade in library">
-                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31257]</label>
-                            <selected>!Skin.HasSetting(SlideOverContent)</selected>
-                            <onclick>Skin.ToggleSetting(SlideOverContent)</onclick>
-                        </control>
-
-                        <control type="radiobutton" id="9266" description="Parallax effect">
-                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31276]</label>
-                            <selected>Skin.HasSetting(ParallaxAnimation)</selected>
-                            <enable>!Skin.HasSetting(SlideOverContent) + !Skin.HasSetting(IconOnlyMode)</enable>
-                            <onclick>Skin.ToggleSetting(ParallaxAnimation)</onclick>
-                        </control>
-
-                        <control type="radiobutton" id="9278" description="Enable bounce animations">
-                            <visible>ControlGroup(9100).HasFocus(9109)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31192]</label>
-                            <selected>!Skin.HasSetting(BounceAnimations)</selected>
-                            <onclick>Skin.ToggleSetting(BounceAnimations)</onclick>
-                        </control>
-
-
                         <!-- ============= -->
                         <!-- Miscellaneous -->
                         <!-- ============= -->
@@ -710,6 +707,31 @@
                             <label>$LOCALIZE[31293]</label>
                             <selected>Skin.HasSetting(MinimalBusyLoader)</selected>
                             <onclick>Skin.ToggleSetting(MinimalBusyLoader)</onclick>
+                        </control>
+
+                        <control type="radiobutton" id="9275" description="Slide over content when opening side blade in library">
+                            <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31257]</label>
+                            <selected>!Skin.HasSetting(SlideOverContent)</selected>
+                            <onclick>Skin.ToggleSetting(SlideOverContent)</onclick>
+                        </control>
+
+                        <control type="radiobutton" id="9266" description="Parallax effect">
+                            <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31276]</label>
+                            <selected>Skin.HasSetting(ParallaxAnimation)</selected>
+                            <enable>!Skin.HasSetting(SlideOverContent) + !Skin.HasSetting(IconOnlyMode)</enable>
+                            <onclick>Skin.ToggleSetting(ParallaxAnimation)</onclick>
+                        </control>
+
+                        <control type="radiobutton" id="9278" description="Enable bounce animations">
+                            <visible>ControlGroup(9100).HasFocus(9107)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31192]</label>
+                            <selected>!Skin.HasSetting(BounceAnimations)</selected>
+                            <onclick>Skin.ToggleSetting(BounceAnimations)</onclick>
                         </control>
 
                         <control type="radiobutton" id="9333" description="Display backing panels for info">
