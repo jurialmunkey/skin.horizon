@@ -1578,7 +1578,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31335"
-msgid "Match background overlay color"
+msgid "Match background overlay color with poster"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
