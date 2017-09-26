@@ -1040,8 +1040,8 @@
             <right>40</right>
             <top>70</top>
             <height>alphabet_item_height</height>
-            <visible allowhiddenfocus="true">Control.HasFocus(8001)</visible>
             <control type="panel" id="8001">
+                <visible allowhiddenfocus="true">Control.HasFocus(8001)</visible>
                 <orientation>horizontal</orientation>
                 <height>alphabet_item_height</height>
                 <onup>50</onup>
