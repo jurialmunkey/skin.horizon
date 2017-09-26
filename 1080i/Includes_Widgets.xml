@@ -185,7 +185,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath))" />
         </include>
-        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.1))">
+        <include content="Home_Widget">
             <param name="id" value="$PARAM[pos]3003" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget1)]" />
             <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget1)]" />
@@ -195,7 +195,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget1)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)) + [!Skin.HasSetting(MouseWidgets) | [Skin.HasSetting(MouseWidgets) + [Skin.HasSetting(DisableWidgetCategories) | !Integer.IsGreater(Container(302).NumItems,0)]]]" />
         </include>
-        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.2)) + !Skin.HasSetting(MouseWidgets)">
+        <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3004" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget2)]" />
             <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget2)]" />
@@ -205,7 +205,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget2)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget2))" />
         </include>
-        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.3)) + !Skin.HasSetting(MouseWidgets)">
+        <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3005" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget3)]" />
             <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget3)]" />
@@ -215,7 +215,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget3)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget3))" />
         </include>
-        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.4)) + !Skin.HasSetting(MouseWidgets)">
+        <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3006" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget4)]" />
             <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget4)]" />
@@ -225,7 +225,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget4)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget4))" />
         </include>
-        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.5)) + !Skin.HasSetting(MouseWidgets)">
+        <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3007" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget5)]" />
             <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget5)]" />
@@ -235,7 +235,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget5)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget5))" />
         </include>
-        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.6)) + !Skin.HasSetting(MouseWidgets)">
+        <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3008" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget6)]" />
             <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget6)]" />
@@ -245,7 +245,7 @@
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget6)]" />
             <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget6))" />
         </include>
-        <include content="Home_Widget" condition="!String.IsEmpty(Skin.String(Home.$PARAM[pos].Widget.7)) + !Skin.HasSetting(MouseWidgets)">
+        <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3009" />
             <param name="target" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetTarget.Widget7)]" />
             <param name="sortby" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetSort.Widget7)]" />

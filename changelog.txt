@@ -1,3 +1,6 @@
+[B]1.0.26[/B]
+Fix bug with widgets not showing if menu items are hidden
+
 [B]1.0.25[/B]
 Getting ready for repo inclusion
 Set some defaults for color overlay and topbar transparency
