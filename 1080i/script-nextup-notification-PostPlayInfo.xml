@@ -80,7 +80,7 @@
                                     <centerleft>50%</centerleft>
                                     <visible>Control.HasFocus(102) + !String.IsEmpty(Window.Property(countdown))</visible>
                                     <control type="image">
-                                        <texture colordiffuse="$VAR[ColorHighlight]">$INFO[Window.Property(countdown),progress/nextup/,.png]</texture>
+                                        <texture colordiffuse="$VAR[ColorHighlight]" flipy="true" flipx="true">$INFO[Window.Property(countdown),progress/nextup/,.png]</texture>
                                         <aspectratio>keep</aspectratio>
                                     </control>
                                 </control>
