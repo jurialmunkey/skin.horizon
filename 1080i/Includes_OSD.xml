@@ -151,9 +151,9 @@
                             <usecontrolcoords>true</usecontrolcoords>
                             <orientation>horizontal</orientation>
                             <control type="label">
-                                <label>$INFO[Player.Time]</label>
+                                <label>$INFO[Player.Time,,   ]</label>
                                 <height>40</height>
-                                <width>90</width>
+                                <width>auto</width>
                                 <aligny>top</aligny>
                                 <textcolor>main_fg_100</textcolor>
                                 <font>font_small</font>
@@ -165,9 +165,9 @@
                                 <info>Player.Progress</info>
                             </control>
                             <control type="label">
-                                <label>$INFO[Player.Duration]</label>
+                                <label>$INFO[Player.Duration,   ,]</label>
                                 <height>40</height>
-                                <width>90</width>
+                                <width>auto</width>
                                 <aligny>top</aligny>
                                 <align>right</align>
                                 <textcolor>main_fg_100</textcolor>
