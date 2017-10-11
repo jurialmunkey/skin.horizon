@@ -168,6 +168,7 @@
                             <label>$LOCALIZE[31184]</label>
                             <selected>!Skin.HasSetting(DisableWidgetCategories)</selected>
                             <onclick>Skin.ToggleSetting(DisableWidgetCategories)</onclick>
+                            <enable>!Skin.HasSetting(HomeWidgetsUnified)</enable>
                         </control>
                         <control type="radiobutton" id="9219" description="Categories on bottom">
                             <visible>ControlGroup(9100).HasFocus(9101)</visible>
@@ -175,13 +176,13 @@
                             <label>$LOCALIZE[31183]</label>
                             <selected>Skin.HasSetting(CategoriesOnBottom)</selected>
                             <onclick>Skin.ToggleSetting(CategoriesOnBottom)</onclick>
-                            <enable>!Skin.HasSetting(DisableWidgetCategories)</enable>
+                            <enable>!Skin.HasSetting(DisableWidgetCategories) + !Skin.HasSetting(HomeWidgetsUnified)</enable>
                         </control>
                         <control type="radiobutton" id="9212" description="Big categories">
                             <visible>ControlGroup(9100).HasFocus(9101)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31190]</label>
-                            <enable>!Skin.HasSetting(MouseWidgets) + !Skin.HasSetting(DisableWidgetCategories)</enable>
+                            <enable>!Skin.HasSetting(MouseWidgets) + !Skin.HasSetting(DisableWidgetCategories) + !Skin.HasSetting(HomeWidgetsUnified)</enable>
                             <selected>Skin.HasSetting(BigSubmenu)</selected>
                             <onclick>Skin.ToggleSetting(BigSubmenu)</onclick>
                         </control>
@@ -206,10 +207,20 @@
                             <selected>!Skin.HasSetting(WidgetLabels)</selected>
                             <onclick>Skin.ToggleSetting(WidgetLabels)</onclick>
                         </control>
+                        <control type="radiobutton" id="9713" description="Unified widgets">
+                            <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31341]</label>
+                            <selected>Skin.HasSetting(HomeWidgetsUnified)</selected>
+                            <onclick>Skin.Reset(MouseWidgets)</onclick>
+                            <onclick>Skin.ToggleSetting(HomeWidgetsUnified)</onclick>
+                        </control>
                         <control type="radiobutton" id="9317" description="Touch / Mouse enabled widgets">
                             <visible>ControlGroup(9100).HasFocus(9101)</visible>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31307]</label>
+                            <enable>!Skin.HasSetting(HomeWidgetsUnified)</enable>
+                            <onclick>Skin.Reset(HomeWidgetsUnified)</onclick>
                             <selected>Skin.HasSetting(MouseWidgets)</selected>
                             <onclick>Skin.ToggleSetting(MouseWidgets)</onclick>
                         </control>
@@ -220,6 +231,7 @@
                             <selected>Skin.HasSetting(IconOnlyMode)</selected>
                             <onclick>Skin.ToggleSetting(IconOnlyMode)</onclick>
                         </control>
+
                         
 
                         <!-- ========== -->

@@ -1,6 +1,7 @@
 [B]1.0.27[/B]
 Switch artist slideshow with skin helper for backgrounds in vis
 Add caching progress indicator in center screen for caching videos
+Add option to display all widgets together (Skin Settings > Home > Display all widgets together)
 
 [B]1.0.26[/B]
 Fix bug with widgets not showing if menu items are hidden

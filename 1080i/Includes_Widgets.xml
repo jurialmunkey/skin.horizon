@@ -65,40 +65,41 @@
                 <top>0</top>
                 <bottom>0</bottom>
                 <include>Animation_Home_Textbar_Slideover_Widgets</include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),0)">
+                <include condition="Skin.HasSetting(HomeWidgetsUnified)">Home_Widgets_Grouplist_Unified</include>
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),0)]">
                     <param name="pos" value="0" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),1)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),1)]">
                     <param name="pos" value="1" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),2)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),2)]">
                     <param name="pos" value="2" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),3)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),3)]">
                     <param name="pos" value="3" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),4)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),4)]">
                     <param name="pos" value="4" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),5)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),5)]">
                     <param name="pos" value="5" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),6)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),6)]">
                     <param name="pos" value="6" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),7)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),7)]">
                     <param name="pos" value="7" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),8)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),8)]">
                     <param name="pos" value="8" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),9)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),9)]">
                     <param name="pos" value="9" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),10)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),10)]">
                     <param name="pos" value="10" />
                 </include>
-                <include content="Home_Widgets_Grouplist" condition="String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),11)">
+                <include content="Home_Widgets_Grouplist" condition="!Skin.HasSetting(HomeWidgetsUnified) + [String.IsEmpty(Skin.String(HomeNumItems)) | Integer.IsGreater(Skin.String(HomeNumItems),11)]">
                     <param name="pos" value="11" />
                 </include>
                 <control type="button" id="9966">
@@ -114,19 +115,6 @@
                     <visible>String.IsEqual(Container(300).ListItem.Property(widget),Weather)</visible>
                     <animation effect="fade" end="0" condition="true">Conditional</animation>
                 </control>
-                <!-- <control type="button" id="9967">
-                    <onleft>300</onleft>
-                    <onright>300</onright>
-                    <onup>300</onup>
-                    <ondown>300</ondown>
-                    <onback>300</onback>
-                    <width>1</width>
-                    <height>1</height>
-                    <top>-1000</top>
-                    <onclick>SetFocus(300)</onclick>
-                    <visible>[Window.IsVisible(Home) + ![String.IsEqual(Container(300).ListItem.Property(widget),Weather) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget1)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget2)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget3)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget4)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget5)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget6)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget7)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.Widget8)) | [String.IsEqual(Container(300).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(DisableWidgetCategories)]]]</visible>
-                    <animation effect="fade" end="0" condition="true">Conditional</animation>
-                </control> -->
                 <control type="group">
                     <visible>String.IsEqual(Container(300).ListItem.Property(widget),Weather)</visible>
                     <include>Weather</include>
@@ -159,10 +147,78 @@
             </control>
             <include content="Home_Widgets_Set">
                 <param name="pos" value="$PARAM[pos]" />
+                <param name="unified" value="false" />
             </include>
             <control type="group" id="$PARAM[pos]332">
                 <height>widget_spacer_bottom</height>
                 <visible>!Skin.HasSetting(MouseWidgets)</visible>
+            </control>
+        </control>
+    </include>
+
+    <include name="Home_Widgets_Grouplist_Unified">
+        <control type="grouplist" id="330">
+            <onup>430</onup>
+            <ondown>431</ondown>
+            <onleft>300</onleft>
+            <orientation>vertical</orientation>
+            <visible>!String.IsEqual(Container(300).ListItem.Property(widget),Weather)</visible>
+            <include>Home_Widgets_Grouplist_NormalGap</include>
+            <usecontrolcoords>true</usecontrolcoords>
+            <scrolltime tween="cubic" easing="out">500</scrolltime>
+            <control type="group" id="331" description="Spacer"> 
+                <height>widget_spacer_top</height>
+            </control>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="0" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="1" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="2" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="3" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="4" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="5" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="6" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="7" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="8" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="9" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="10" />
+                <param name="unified" value="true" />
+            </include>
+            <include content="Home_Widgets_Set">
+                <param name="pos" value="11" />
+                <param name="unified" value="true" />
+            </include>
+            <control type="group" id="332">
+                <height>widget_spacer_bottom</height>
             </control>
         </control>
     </include>
@@ -173,7 +229,7 @@
             <param name="submenu" value="true" />
             <param name="aspect" value="$LOCALIZE[31263]" />
             <param name="label" value="$LOCALIZE[31162]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
+            <param name="visible" value="!$PARAM[unified] + Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
         </include>
         <include content="Home_Widget">
             <param name="id" value="$PARAM[pos]3002" />
@@ -183,7 +239,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath))" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath))" />
         </include>
         <include content="Home_Widget">
             <param name="id" value="$PARAM[pos]3003" />
@@ -193,7 +249,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget1)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget1)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)) + [!Skin.HasSetting(MouseWidgets) | [Skin.HasSetting(MouseWidgets) + [Skin.HasSetting(DisableWidgetCategories) | !Integer.IsGreater(Container(302).NumItems,0)]]]" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)) + [!Skin.HasSetting(MouseWidgets) | [Skin.HasSetting(MouseWidgets) + [Skin.HasSetting(DisableWidgetCategories) | !Integer.IsGreater(Container(302).NumItems,0)]]]" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3004" />
@@ -203,7 +259,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget2)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget2)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget2)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget2))" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget2))" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3005" />
@@ -213,7 +269,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget3)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget3)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget3)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget3))" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget3))" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3006" />
@@ -223,7 +279,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget4)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget4)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget4)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget4))" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget4))" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3007" />
@@ -233,7 +289,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget5)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget5)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget5)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget5))" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget5))" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3008" />
@@ -243,7 +299,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget6)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget6)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget6)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget6))" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget6))" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3009" />
@@ -253,14 +309,14 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget7)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget7)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget7)]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget7))" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget7))" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(DisableWidgetCategories) + Skin.HasSetting(CategoriesOnBottom)">
             <param name="id" value="$PARAM[pos]3001" />
             <param name="submenu" value="true" />
             <param name="aspect" value="$LOCALIZE[31263]" />
             <param name="label" value="$LOCALIZE[31162]" />
-            <param name="visible" value="Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
+            <param name="visible" value="!$PARAM[unified] + Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
         </include>
     </include>
 

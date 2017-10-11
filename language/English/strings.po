@@ -1605,3 +1605,8 @@ msgstr ""
 msgctxt "#31340"
 msgid "Match poster"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31341"
+msgid "Display all widgets together (ungroup widgets)"
+msgstr ""
