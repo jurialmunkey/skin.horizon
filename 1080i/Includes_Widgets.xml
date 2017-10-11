@@ -389,7 +389,7 @@
                     <include content="Defs_BusySpinner">
                         <param name="label" value="$LOCALIZE[31138]..." />
                     </include>
-                    <visible>Container($PARAM[id]).IsUpdating</visible>
+                    <visible>Container($PARAM[id]).IsUpdating + !Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
                 </control>
             </control>
         </definition>
@@ -415,7 +415,7 @@
                     <include content="Defs_BusySpinner">
                         <param name="label" value="$LOCALIZE[31138]..." />
                     </include>
-                    <visible>Container($PARAM[id]).IsUpdating</visible>
+                    <visible>Container($PARAM[id]).IsUpdating + !Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
                 </control>
             </control>
             <control type="list" id="$PARAM[id]">
