@@ -1019,6 +1019,27 @@
         </control>
     </include>
 
+    <include name="Home_SwitchFocusButton">
+        <control type="button">
+            <visible allowhiddenfocus="true">false</visible>
+            <width>1</width>
+            <height>1</height>
+            <onfocus condition="Container(300).Position(0)">SetFocus(3002)</onfocus>
+            <onfocus condition="Container(300).Position(1)">SetFocus(13002)</onfocus>
+            <onfocus condition="Container(300).Position(2)">SetFocus(23002)</onfocus>
+            <onfocus condition="Container(300).Position(3)">SetFocus(33002)</onfocus>
+            <onfocus condition="Container(300).Position(4)">SetFocus(43002)</onfocus>
+            <onfocus condition="Container(300).Position(5)">SetFocus(53002)</onfocus>
+            <onfocus condition="Container(300).Position(6)">SetFocus(63002)</onfocus>
+            <onfocus condition="Container(300).Position(7)">SetFocus(73002)</onfocus>
+            <onfocus condition="Container(300).Position(8)">SetFocus(83002)</onfocus>
+            <onfocus condition="Container(300).Position(9)">SetFocus(93002)</onfocus>
+            <onfocus condition="Container(300).Position(10)">SetFocus(103002)</onfocus>
+            <onfocus condition="Container(300).Position(11)">SetFocus(113002)</onfocus>
+            <onfocus>SetFocus(300)</onfocus>
+        </control>
+    </include>
+
     <include name="Home_MainMenu_Layout">
         <top>view_top</top>
         <width>240</width>
@@ -1060,18 +1081,7 @@
             </control>
         </itemlayout>
         <focusedlayout height="home_icon" width="240">
-            <!-- <control type="button">
-                <visible allowhiddenfocus="true">false</visible>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(interfacesettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(InterfaceSettings))">AlarmClock(settingswitch,ReplaceWindow(InterfaceSettings),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(SkinSettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(SkinSettings))">AlarmClock(settingswitch,ReplaceWindow(SkinSettings),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(PlayerSettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(PlayerSettings))">AlarmClock(settingswitch,ReplaceWindow(PlayerSettings),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(SystemSettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(SystemSettings))">AlarmClock(settingswitch,ReplaceWindow(SystemSettings),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(MediaSettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(MediaSettings))">AlarmClock(settingswitch,ReplaceWindow(MediaSettings),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(ServiceSettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(ServiceSettings))">AlarmClock(settingswitch,ReplaceWindow(ServiceSettings),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(PVRSettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(PVRSettings))">AlarmClock(settingswitch,ReplaceWindow(PVRSettings),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(SystemInfo) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(SystemInfo))">AlarmClock(settingswitch,ReplaceWindow(SystemInfo),00:01,silent)</onfocus>
-                <onfocus condition="[Window.IsActive(systeminfo) | Window.IsActive(profiles) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(skinsettings)] + !Window.IsActive(Profiles) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(Profiles))">AlarmClock(settingswitch,ReplaceWindow(Profiles),00:01,silent)</onfocus>
-            </control> -->
+            <include condition="Skin.HasSetting(HomeWidgetsUnified)">Home_SwitchFocusButton</include>
             <control type="group">
                 <width>home_icon</width>
                 <top>home_icon</top>
