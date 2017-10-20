@@ -605,8 +605,18 @@
             </focusedlayout>
 
             <include condition="$PARAM[submenu]">Home_SubMenu_Items</include>
-            <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]">$INFO[$PARAM[content]]</content>
+            <include content="Home_Widget_ContentInclude">
+                <param name="target" value="$PARAM[target]" />
+                <param name="sortby" value="$PARAM[sortby]" />
+                <param name="sortorder" value="$PARAM[sortorder]" />
+                <param name="content" value="$PARAM[content]" />
+                <param name="limit" value="$VAR[Label_WidgetItemLimit]" />
+            </include>
         </definition>
+    </include>
+
+    <include name="Home_Widget_ContentInclude">
+        <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]">$INFO[$PARAM[content]]</content>
     </include>
 
     <include name="Home_Widget_Submenu_ItemLayout">

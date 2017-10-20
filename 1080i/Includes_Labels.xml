@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_WidgetItemLimit">
+        <value condition="!String.IsEmpty(Skin.String(HomeWidgetItemLimit))">$INFO[Skin.String(HomeWidgetItemLimit)]</value>
+        <value>$NUMBER[10]</value>
+    </variable>
+
     <variable name="Label_OverlayColor">
         <value condition="!String.IsEmpty(Skin.String(overlaycolor.name)) + !Skin.HasSetting(MatchOverlayColors) + !Skin.HasSetting(DisableOverlayColor)">$INFO[Skin.String(overlaycolor.name)]</value>
         <value condition="String.IsEmpty(Skin.String(overlaycolor.name)) + !Skin.HasSetting(MatchOverlayColors) + !Skin.HasSetting(DisableOverlayColor)">$LOCALIZE[571]</value>

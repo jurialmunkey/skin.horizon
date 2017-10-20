@@ -231,6 +231,15 @@
                             <selected>Skin.HasSetting(IconOnlyMode)</selected>
                             <onclick>Skin.ToggleSetting(IconOnlyMode)</onclick>
                         </control>
+                        <control type="button" id="9518" description="Widget Item Limit">
+                            <visible>ControlGroup(9100).HasFocus(9101)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31342]</label>
+                            <label2>$VAR[Label_WidgetItemLimit]</label2>
+                            <onclick condition="String.IsEmpty(Skin.String(HomeWidgetItemLimit)) | String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">Skin.SetString(HomeWidgetItemLimit,$NUMBER[25])</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),25)">Skin.SetString(HomeWidgetItemLimit,50)</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),50)">Skin.SetString(HomeWidgetItemLimit,10)</onclick>
+                        </control>
 
                         
 

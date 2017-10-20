@@ -1610,3 +1610,8 @@ msgstr ""
 msgctxt "#31341"
 msgid "Display all widgets together (ungroup widgets)"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31342"
+msgid "Widget item limit (use smaller values for better performance)"
+msgstr ""

@@ -1,3 +1,6 @@
+[B]1.0.28[/B]
+Add widget item limit (selectable values 10, 25, 50) to help improve performance.
+
 [B]1.0.27[/B]
 Switch artist slideshow with skin helper for backgrounds in vis
 Add caching progress indicator in center screen for caching videos

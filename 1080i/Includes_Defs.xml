@@ -203,7 +203,7 @@
     <include name="Defs_Settings_Button">
         <align>left</align>
         <font>font_small</font>
-        <radioposx>1310</radioposx>
+        <radioposx>1318</radioposx>
         <textcolor>main_fg_100</textcolor>
         <disabledcolor>main_fg_12</disabledcolor>
         <height>77</height>
