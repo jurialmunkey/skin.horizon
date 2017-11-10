@@ -1,5 +1,6 @@
 [B]1.0.29[/B]
 Add mono font for system info
+Fix skinsettings mouse issue
 
 [B]1.0.28[/B]
 Add widget item limit (selectable values 10, 25, 50) to help improve performance.
