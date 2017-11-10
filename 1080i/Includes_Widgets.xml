@@ -229,7 +229,7 @@
             <param name="submenu" value="true" />
             <param name="aspect" value="$LOCALIZE[31263]" />
             <param name="label" value="$LOCALIZE[31162]" />
-            <param name="visible" value="!$PARAM[unified] + Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
+            <param name="visible" value="!$PARAM[unified] + Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + [String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(hasSubmenu),true) | Integer.IsGreater(Container(302).NumItems,0)]" />
         </include>
         <include content="Home_Widget">
             <param name="id" value="$PARAM[pos]3002" />
@@ -249,7 +249,7 @@
             <param name="content" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)" />
             <param name="aspect" value="Container(300).ListItemAbsolute($PARAM[pos]).Property(WidgetAspect.Widget1)" />
             <param name="label" value="$INFO[Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetName.Widget1)]" />
-            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)) + [!Skin.HasSetting(MouseWidgets) | [Skin.HasSetting(MouseWidgets) + [Skin.HasSetting(DisableWidgetCategories) | !Integer.IsGreater(Container(302).NumItems,0)]]]" />
+            <param name="visible" value="[$PARAM[unified] | Integer.IsEqual(Container(300).Position,$PARAM[pos])] + !String.IsEmpty(Container(300).ListItemAbsolute($PARAM[pos]).Property(widgetPath.Widget1)) + [!Skin.HasSetting(MouseWidgets) | [Skin.HasSetting(MouseWidgets) + [Skin.HasSetting(DisableWidgetCategories) | ![String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(hasSubmenu),true) | Integer.IsGreater(Container(302).NumItems,0)]]]]" />
         </include>
         <include content="Home_Widget" condition="!Skin.HasSetting(MouseWidgets)">
             <param name="id" value="$PARAM[pos]3004" />
@@ -316,7 +316,7 @@
             <param name="submenu" value="true" />
             <param name="aspect" value="$LOCALIZE[31263]" />
             <param name="label" value="$LOCALIZE[31162]" />
-            <param name="visible" value="!$PARAM[unified] + Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + Integer.IsGreater(Container(302).NumItems,0)" />
+            <param name="visible" value="!$PARAM[unified] + Integer.IsEqual(Container(300).Position,$PARAM[pos]) + !String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(widget),Weather) + [String.IsEqual(Container(300).ListItemAbsolute($PARAM[pos]).Property(hasSubmenu),true) | Integer.IsGreater(Container(302).NumItems,0)]" />
         </include>
     </include>
 

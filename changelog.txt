@@ -3,6 +3,7 @@ Add mono font for system info
 Fix skinsettings mouse issue
 Fix mouseseek on small music vis osd
 Fix extendedinfo video playing focus bug
+Fix bug where switch between no submenu and submenu doesn't show
 
 [B]1.0.28[/B]
 Add widget item limit (selectable values 10, 25, 50) to help improve performance.
