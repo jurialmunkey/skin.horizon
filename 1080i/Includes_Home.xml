@@ -1024,21 +1024,23 @@
             <visible allowhiddenfocus="true">false</visible>
             <width>1</width>
             <height>1</height>
-            <onfocus condition="Container(300).Position(0)">SetFocus(3002)</onfocus>
-            <onfocus condition="Container(300).Position(1)">SetFocus(13002)</onfocus>
-            <onfocus condition="Container(300).Position(2)">SetFocus(23002)</onfocus>
-            <onfocus condition="Container(300).Position(3)">SetFocus(33002)</onfocus>
-            <onfocus condition="Container(300).Position(4)">SetFocus(43002)</onfocus>
-            <onfocus condition="Container(300).Position(5)">SetFocus(53002)</onfocus>
-            <onfocus condition="Container(300).Position(6)">SetFocus(63002)</onfocus>
-            <onfocus condition="Container(300).Position(7)">SetFocus(73002)</onfocus>
-            <onfocus condition="Container(300).Position(8)">SetFocus(83002)</onfocus>
-            <onfocus condition="Container(300).Position(9)">SetFocus(93002)</onfocus>
-            <onfocus condition="Container(300).Position(10)">SetFocus(103002)</onfocus>
-            <onfocus condition="Container(300).Position(11)">SetFocus(113002)</onfocus>
-            <onfocus>SetFocus(300)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(0)">SetFocus(3002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(1)">SetFocus(13002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(2)">SetFocus(23002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(3)">SetFocus(33002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(4)">SetFocus(43002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(5)">SetFocus(53002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(6)">SetFocus(63002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(7)">SetFocus(73002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(8)">SetFocus(83002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(9)">SetFocus(93002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(10)">SetFocus(103002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression] + Container(300).Position(11)">SetFocus(113002)</onfocus>
+            <onfocus condition="$EXP[Home_SwitchFocusButton_Expression]">SetFocus(300)</onfocus>
         </control>
     </include>
+
+    <expression name="Home_SwitchFocusButton_Expression">!Window.Next(programs) + !Window.Next(pictures) + !Window.Next(filemanager) + !Window.Next(settings) + !Window.Next(systeminfo) + !Window.Next(testpattern) + !Window.Next(screencalibration) + !Window.Next(SettingsCategory.xml) + !Window.Next(MyVideoNav.xml) + !Window.Next(MyMusicNav.xml) + !Window.Next(MyPlaylist.xml) + !Window.Next(loginscreen) + !Window.Next(profiles) + !Window.Next(skinsetting) + !Window.Next(addonbrowser) + !Window.Next(eventlog) + !Window.Next(favourites) + !Window.Next(MyPVRChannels.xml) + !Window.Next(MyPVRRecordings.xml) + !Window.Next(MyPVRTimers.xml) + !Window.Next(MyPVRSearch.xml) + !Window.Next(MyPVRGuide.xml) + !Window.Next(MyGames.xml) + !Window.Next(VideoFullScreen.xml) + !Window.Next(MyWeather.xml) + !Window.Next(SlideShow.xml) + !Window.Next(Startup.xml) + !Window.Next(MusicVisualisation.xml)</expression>
 
     <include name="Home_MainMenu_Layout">
         <top>view_top</top>
@@ -1081,7 +1083,7 @@
             </control>
         </itemlayout>
         <focusedlayout height="home_icon" width="240">
-            <include condition="Skin.HasSetting(HomeWidgetsUnified)">Home_SwitchFocusButton</include>
+            <include condition="Skin.HasSetting(HomeWidgetsUnified) + Window.IsVisible(Home)">Home_SwitchFocusButton</include>
             <control type="group">
                 <width>home_icon</width>
                 <top>home_icon</top>
