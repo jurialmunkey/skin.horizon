@@ -3,6 +3,7 @@
 
     <!-- Playlist -->
     <widget label="8">Weather</widget>
+    <widget label="5">Settings</widget>
     <!-- <widget label="31163">Submenu</widget> -->
     <widgetPlaylists>True</widgetPlaylists>
 

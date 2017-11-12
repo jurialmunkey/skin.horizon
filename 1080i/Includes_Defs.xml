@@ -52,7 +52,7 @@
                 <include>Dialog_Standard_Right_Buttons</include>
                 <visible>$PARAM[visible]</visible>
                 <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                <visible>!String.IsEqual(Container(211).ListItem.Property(widget),Weather)</visible>
+                <visible>!String.IsEqual(Container(211).ListItem.Property(widget),Weather) + !String.IsEqual(Container(211).ListItem.Property(widget),Settings)</visible>
                 <onfocus>SetProperty(WidgetName,WidgetName.Widget$PARAM[num])</onfocus>
                 <onfocus>SetProperty(WidgetSort,WidgetSort.Widget$PARAM[num])</onfocus>
                 <onfocus>SetProperty(WidgetDirection,WidgetDirection.Widget$PARAM[num])</onfocus>

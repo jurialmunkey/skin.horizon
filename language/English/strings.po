@@ -1615,3 +1615,18 @@ msgstr ""
 msgctxt "#31342"
 msgid "Widget item limit (use smaller values for better performance)"
 msgstr ""
+
+#: /1080i/Settings.xml
+msgctxt "#31343"
+msgid "PVR"
+msgstr ""
+
+#: /1080i/Settings.xml
+msgctxt "#31344"
+msgid "Install from repository or zip"
+msgstr ""
+
+#: /1080i/Includes_Widgets.xml
+msgctxt "#31345"
+msgid "Event logging"
+msgstr ""

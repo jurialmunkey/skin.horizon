@@ -110,7 +110,7 @@
         <content>
             <item id="1">
                 <label>14206</label>
-                <icon>special://skin/extras/icons/swissarmy.png</icon>
+                <icon>special://skin/extras/icons/skinsettings.png</icon>
                 <onclick>ReplaceWindow(InterfaceSettings)</onclick>
                 <property name="path">ReplaceWindow(InterfaceSettings)</property>
                 <property name="altpath">ActivateWindow(InterfaceSettings)</property>
@@ -173,7 +173,7 @@
             </item>
             <item id="8">
                 <label>24001</label>
-                <icon>special://skin/extras/icons/addons.png</icon>
+                <icon>special://skin/extras/icons/addon.png</icon>
                 <onclick>ActivateWindow(AddonBrowser)</onclick>
                 <property name="path">ActivateWindow(AddonBrowser)</property>
                 <property name="altpath">ActivateWindow(AddonBrowser)</property>
