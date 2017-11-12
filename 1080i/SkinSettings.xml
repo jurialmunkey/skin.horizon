@@ -255,8 +255,9 @@
                             <label>$LOCALIZE[31342]</label>
                             <label2>$VAR[Label_WidgetItemLimit]</label2>
                             <onclick condition="String.IsEmpty(Skin.String(HomeWidgetItemLimit)) | String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">Skin.SetString(HomeWidgetItemLimit,$NUMBER[25])</onclick>
-                            <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),25)">Skin.SetString(HomeWidgetItemLimit,50)</onclick>
-                            <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),50)">Skin.SetString(HomeWidgetItemLimit,10)</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),25)">Skin.SetString(HomeWidgetItemLimit,$NUMBER[50])</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),50)">Skin.SetString(HomeWidgetItemLimit,$LOCALIZE[21428])</onclick>
+                            <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),$LOCALIZE[21428])">Skin.SetString(HomeWidgetItemLimit,$NUMBER[10])</onclick>
                         </control>
 
                         
