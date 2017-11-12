@@ -152,6 +152,10 @@
                                         <texture colordiffuse="PosterBack">common/white.png</texture>
                                     </control>
                                     <control type="image">
+                                        <texture colordiffuse="main_bg_30">common/white.png</texture>
+                                    </control>
+                                    
+                                    <control type="image">
                                         <bottom>110</bottom>
                                         <width>128</width>
                                         <centerleft>50%</centerleft>
@@ -202,6 +206,9 @@
                                         <control type="image">
                                             <include>Defs_Shadow_Opaque</include>
                                             <texture colordiffuse="PosterBack">common/white.png</texture>
+                                        </control>
+                                        <control type="image">
+                                            <texture colordiffuse="main_bg_30">common/white.png</texture>
                                         </control>
                                         <control type="image">
                                             <bottom>110</bottom>
