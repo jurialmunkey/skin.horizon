@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Skin Horizon\n"
 "Report-Msgid-Bugs-To: https://github.com/asciidisco/plugin.video.netflix\n"
 "POT-Creation-Date: 2017-07-24 16:15+0000\n"
-"PO-Revision-Date: 2017-11-02 12:45+0200\n"
+"PO-Revision-Date: 2017-11-12 07:58+0200\n"
 "Last-Translator: A. Dambledore\n"
 "Language-Team: Eng2Heb\n"
 "MIME-Version: 1.0\n"
@@ -1621,3 +1621,18 @@ msgstr "הצג את כל היישומונים יחד (יישומונים שלא 
 msgctxt "#31342"
 msgid "Widget item limit (use smaller values for better performance)"
 msgstr "מגבלת פריטי יישומון (תשתמש בערכים קטנים יותר לביצועים טובים יותר)"
+
+#: /1080i/Settings.xml
+msgctxt "#31343"
+msgid "PVR"
+msgstr "מקליט PVR"
+
+#: /1080i/Settings.xml
+msgctxt "#31344"
+msgid "Install from repository or zip"
+msgstr "התקן ממאגר הרחבות או מקובץ זיפ"
+
+#: /1080i/Includes_Widgets.xml
+msgctxt "#31345"
+msgid "Event logging"
+msgstr "רישום יומן אירועים"
