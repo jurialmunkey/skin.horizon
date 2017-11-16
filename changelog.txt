@@ -7,6 +7,9 @@ Fix bug where switch between no submenu and submenu doesn't show
 Fix bug with ungroup widgets opening sideblade
 Add Settings Widget
 Add "No Limit" widget items option.
+Updates to plot overlay id="9601" 
+--> background opacity
+--> works on home screen using skin helper
 
 [B]1.0.28[/B]
 Add widget item limit (selectable values 10, 25, 50) to help improve performance.

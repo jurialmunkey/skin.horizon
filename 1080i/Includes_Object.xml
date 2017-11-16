@@ -1151,7 +1151,7 @@
                     <width>100%</width>
                     <height>100%</height>
                     <texture colordiffuse="Background">common/white.png</texture>
-                    <animation effect="fade" start="100" end="95" condition="true">Conditional</animation>
+                    <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
                 </control>
             </control>
 
@@ -1164,11 +1164,16 @@
                 <onleft condition="Control.IsVisible(9000)">9000</onleft>
                 <onright condition="Control.IsVisible(9000)">9000</onright>
                 <ondown condition="Control.IsVisible(9000)">9000</ondown>
-                <onback condition="!Control.IsVisible(9000)">50</onback>
-                <onup condition="!Control.IsVisible(9000)">50</onup>
-                <onleft condition="!Control.IsVisible(9000)">50</onleft>
-                <onright condition="!Control.IsVisible(9000)">50</onright>
-                <ondown condition="!Control.IsVisible(9000)">50</ondown>
+                <onback condition="Control.IsVisible(3000)">3000</onback>
+                <onup condition="Control.IsVisible(3000)">3000</onup>
+                <onleft condition="Control.IsVisible(3000)">3000</onleft>
+                <onright condition="Control.IsVisible(3000)">3000</onright>
+                <ondown condition="Control.IsVisible(3000)">3000</ondown>
+                <onback condition="!Control.IsVisible(3000) + !Control.IsVisible(9000)">50</onback>
+                <onup condition="!Control.IsVisible(3000) + !Control.IsVisible(9000)">50</onup>
+                <onleft condition="!Control.IsVisible(3000) + !Control.IsVisible(9000)">50</onleft>
+                <onright condition="!Control.IsVisible(3000) + !Control.IsVisible(9000)">50</onright>
+                <ondown condition="!Control.IsVisible(3000) + !Control.IsVisible(9000)">50</ondown>
                 <showonepage>true</showonepage>
                 <width>8</width>
                 <orientation>vertical</orientation>
