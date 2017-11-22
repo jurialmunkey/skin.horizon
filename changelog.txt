@@ -1,3 +1,7 @@
+[B]1.0.30[/B]
+Add flat texture theme
+Version bump for repo update
+
 [B]1.0.29[/B]
 Add mono font for system info
 Fix skinsettings mouse issue
