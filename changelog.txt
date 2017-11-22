@@ -1,4 +1,5 @@
 [B]1.0.30[/B]
+Escape characters in trailer path
 Add flat texture theme
 Version bump for repo update
 

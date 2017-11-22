@@ -220,7 +220,7 @@
                 <!-- <onclick>SendClick(11)</onclick> -->
                 <onclick>SetFocus(9503)</onclick>
                 <onclick>SetProperty(TrailerPlaying,1,Home)</onclick>
-                <onclick>PlayMedia($INFO[ListItem.Trailer],false,1)</onclick>
+                <onclick>PlayMedia($ESCINFO[ListItem.Trailer],false,1)</onclick>
                 <visible>Control.IsEnabled(11)</visible>
                 <visible>!String.IsEmpty(ListItem.Trailer)</visible>
             </item>
