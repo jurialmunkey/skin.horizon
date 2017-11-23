@@ -1,3 +1,6 @@
+[B]1.0.31[/B]
+Add top setting/search/power icons
+
 [B]1.0.30[/B]
 Escape characters in trailer path
 Add flat texture theme
