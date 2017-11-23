@@ -1283,12 +1283,12 @@
             <control type="image">
                 <width>home_icon</width>
                 <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
-                <visible>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)]</visible>
+                <visible>![Control.HasFocus(300)]</visible>
             </control>
             <control type="image">
                 <width>home_icon</width>
                 <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
-                <visible>[Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)]</visible>
+                <visible>[Control.HasFocus(300)]</visible>
                 <include>Animation_FocusBounce_Home</include>
             </control>
         </focusedlayout>
