@@ -36,7 +36,7 @@
         <icon />
         <action>ActivateWindow(AddonBrowser)</action>
     </shortcut>
-    <!-- <shortcut>
+    <shortcut>
         <label>5</label>
         <label2>Common Shortcut</label2>
         <defaultID>settings</defaultID>
@@ -49,5 +49,5 @@
         <defaultID>power</defaultID>
         <icon>special://skin/extras/icons/power.png</icon>
         <action>ActivateWindow(shutdownmenu)</action>
-    </shortcut> -->
+    </shortcut>
 </shortcuts>

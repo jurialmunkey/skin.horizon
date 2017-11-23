@@ -1630,3 +1630,8 @@ msgstr ""
 msgctxt "#31345"
 msgid "Event logging"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31346"
+msgid "Display settings$COMMA search and power icons"
+msgstr ""

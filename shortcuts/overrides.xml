@@ -15,7 +15,7 @@
     <widgetRename>True</widgetRename>
 
     <!-- Warning to Remove Settings -->
-    <!-- <warn heading="31176" message="31177">ActivateWindow(Settings)</warn> -->
+    <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
 
     <!-- For Power Menu -->
     <groupoverride group="powermenu" condition="Window.IsActive(DialogButtonMenu.xml)">Close</groupoverride>
