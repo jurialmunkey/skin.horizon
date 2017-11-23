@@ -74,10 +74,7 @@
                         <onright condition="[Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">50</onright>
                         <onright condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">9500</onright>
 
-                        <onup condition="Control.IsVisible(3902)">3902</onup>
-                        <ondown condition="Control.IsVisible(3902)">3902</ondown>
-                        <onup condition="!Control.IsVisible(3902)">300</onup>
-                        <ondown condition="!Control.IsVisible(3902)">300</ondown>
+                        
 
                         <include condition="![Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_MainMenu_Layout</include>
                         <include condition="[Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyVideoNav.xml)]">Home_VideoInfo_Layout</include>
@@ -998,6 +995,7 @@
                         <bottom>6</bottom>
                         <texturefocus colordiffuse="$VAR[ColorHighlight]">common/circle.png</texturefocus>
                         <texturenofocus />
+                        <onclick>Dialog.Close(all,force)</onclick>
                         <onclick>RunScript(script.globalsearch)</onclick>
                     </control>
                     <control type="image">
@@ -1023,6 +1021,7 @@
                         <bottom>6</bottom>
                         <texturefocus colordiffuse="$VAR[ColorHighlight]">common/circle.png</texturefocus>
                         <texturenofocus />
+                        <onclick>Dialog.Close(all,force)</onclick>
                         <onclick condition="Window.IsVisible(Home)">ActivateWindow(Settings)</onclick>
                         <onclick condition="!Window.IsVisible(Home)">ActivateWindow(Home)</onclick>
                     </control>
@@ -1426,6 +1425,10 @@
     </include>
 
     <include name="Home_OnFocus">
+        <onup condition="Control.IsVisible(3902)">3902</onup>
+        <ondown condition="Control.IsVisible(3902)">3902</ondown>
+        <onup condition="!Control.IsVisible(3902)">300</onup>
+        <ondown condition="!Control.IsVisible(3902)">300</ondown>
         <onunfocus>ClearProperty(MenuFocus,Home)</onunfocus>
         <onfocus>SetProperty(MenuFocus,1,Home)</onfocus>
         <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
