@@ -218,7 +218,7 @@
         <alttexturefocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturefocus>
     </include>
     <variable name="Defs_Settings_ColorHighlight">
-        <value condition="Control.HasFocus(300) | Control.HasFocus(302) | Control.HasFocus(20)">00ffffff</value>
+        <value condition="Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300) | Control.HasFocus(302) | Control.HasFocus(20)">00ffffff</value>
         <value>$VAR[ColorHighlight2]</value>
     </variable>
 
