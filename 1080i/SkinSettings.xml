@@ -32,7 +32,7 @@
                         <height>77</height>
                         <width>450</width>
                         <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-                        <visible>!Control.HasFocus(300) + !Control.HasFocus(302)</visible>
+                        <visible>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302)</visible>
                         <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,0)">Conditional</animation>
                         <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,1)">Conditional</animation>
                         <animation effect="slide" end="0,77" condition="Integer.IsGreater(Container(9100).Position,2)">Conditional</animation>
@@ -77,7 +77,7 @@
                         <orientation>vertical</orientation>
                         <control type="togglebutton" id="9101" description="Home">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9101])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9101)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9101)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -85,7 +85,7 @@
                         </control>
                         <control type="togglebutton" id="9102" description="Background">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9102])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9102)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9102)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -94,7 +94,7 @@
 
                         <control type="togglebutton" id="9109" description="Background Effects">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9109])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9109)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9109)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -103,7 +103,7 @@
 
                         <control type="togglebutton" id="9105" description="Colors">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9105])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9105)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9105)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -112,7 +112,7 @@
 
                         <control type="togglebutton" id="9104" description="Artwork">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9104])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9104)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9104)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -121,7 +121,7 @@
 
                         <control type="togglebutton" id="9107" description="Miscellaneous">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9107])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9107)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9107)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -130,7 +130,7 @@
 
                         <control type="togglebutton" id="9103" description="OSD">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9103])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9103)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9103)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -139,7 +139,7 @@
 
                         <control type="togglebutton" id="9108" description="Dependencies">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9108])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9108)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9108)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
@@ -148,7 +148,7 @@
 
                         <control type="togglebutton" id="9106" description="Reset Backup">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9106])</onfocus>
-                            <usealttexture>!Control.HasFocus(300) + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9106)</usealttexture>
+                            <usealttexture>![Control.HasFocus(3901) | Control.HasFocus(3902) | Control.HasFocus(3903) | Control.HasFocus(300)] + !Control.HasFocus(302) + Integer.IsEqual(Window.Property(CurrentFocus),9106)</usealttexture>
                             <alttexturenofocus colordiffuse="$VAR[Defs_Settings_ColorHighlight]">common/gradient-diffuse-horizontal.png</alttexturenofocus>
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
