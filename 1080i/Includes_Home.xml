@@ -1023,15 +1023,28 @@
                         <bottom>6</bottom>
                         <texturefocus colordiffuse="$VAR[ColorHighlight]">common/circle.png</texturefocus>
                         <texturenofocus />
-                        <onclick>ActivateWindow(Settings)</onclick>
+                        <onclick condition="Window.IsVisible(Home)">ActivateWindow(Settings)</onclick>
+                        <onclick condition="!Window.IsVisible(Home)">ActivateWindow(Home)</onclick>
                     </control>
                     <control type="image">
                         <texture colordiffuse="Selected">special://skin/extras/icons/settings.png</texture>
                         <visible>Control.HasFocus(3902)</visible>
+                        <visible>Window.IsVisible(Home)</visible>
                     </control>
                     <control type="image">
                         <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/settings.png</texture>
                         <visible>!Control.HasFocus(3902)</visible>
+                        <visible>Window.IsVisible(Home)</visible>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="Selected">special://skin/extras/icons/home.png</texture>
+                        <visible>Control.HasFocus(3902)</visible>
+                        <visible>!Window.IsVisible(Home)</visible>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/home.png</texture>
+                        <visible>!Control.HasFocus(3902)</visible>
+                        <visible>!Window.IsVisible(Home)</visible>
                     </control>
                 </control>
                 <control type="group">
