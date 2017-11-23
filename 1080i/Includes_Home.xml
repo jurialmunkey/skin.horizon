@@ -981,6 +981,7 @@
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <itemgap>12</itemgap>
+                <visible>!Skin.HasSetting(IconOnlyMode)</visible>
                 <control type="group">
                     <width>home_icon</width>
                     <height>home_icon</height>
