@@ -1635,3 +1635,8 @@ msgstr ""
 msgctxt "#31346"
 msgid "Display settings$COMMA search and power icons"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31347"
+msgid "Set header label"
+msgstr ""

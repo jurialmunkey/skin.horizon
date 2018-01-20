@@ -222,7 +222,8 @@
         <value condition="Window.IsVisible(MyPics.xml)">$LOCALIZE[1]</value>
         <value condition="Window.IsVisible(MyPrograms.xml)">$LOCALIZE[0]</value>
         <value condition="Window.IsVisible(AddonBrowser.xml)">$LOCALIZE[24001]</value>
-        <value condition="Window.IsVisible(Home.xml)">$LOCALIZE[10000]</value>
+        <value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(Skin.String(Home.Header))">$INFO[Skin.String(Home.Header)]</value>
+        <value condition="Window.IsVisible(Home.xml) + String.IsEmpty(Skin.String(Home.Header))">$LOCALIZE[10000]</value>
     </variable>
 
     <variable name="Label_Duration">

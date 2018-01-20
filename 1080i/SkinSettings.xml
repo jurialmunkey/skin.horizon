@@ -268,6 +268,14 @@
                             <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),$LOCALIZE[21428])">Skin.SetString(HomeWidgetItemLimit,$NUMBER[10])</onclick>
                         </control>
 
+                        <control type="button" id="9719" description="Header label">
+                            <visible>Integer.IsEqual(Window.Property(CurrentFocus),9101)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <onclick>Skin.SetString(Home.Header)</onclick>
+                            <label>$LOCALIZE[31347]</label>
+                            <label2>$INFO[Skin.String(Home.Header)]</label2>
+                        </control>
+
                         
 
                         <!-- ========== -->
