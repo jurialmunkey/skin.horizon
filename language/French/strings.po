@@ -1,0 +1,1637 @@
+# Kodi Media Center language file
+# Addon Name: Horizon
+# Addon id: skin.horizon
+# Addon Provider: jurialmunkey
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31000"
+msgid "Enable skin helper backgrounds for hub windows"
+msgstr "Activer les arrières plans skin helper pour les fenêtres hub"
+
+#: /1080i/DialogVideoInfo.xml
+msgctxt "#31001"
+msgid "Revenue"
+msgstr "Revenu"
+
+#: /1080i/Includes_Furniture.xml
+msgctxt "#31002"
+msgid "Current Conditions"
+msgstr "Conditions actuelles"
+
+#: /1080i/Includes_Furniture.xml
+msgctxt "#31003"
+msgid "Current conditions"
+msgstr "Conditions actuelles"
+
+#: /1080i/Includes_Furniture.xml
+msgctxt "#31004"
+msgid "Sunset at"
+msgstr "Coucher de soleil à"
+
+#: /1080i/Includes_Furniture.xml
+msgctxt "#31005"
+msgid "Sunrise at"
+msgstr "Lever du soleil à"
+
+#: /1080i/Includes_Furniture.xml
+msgctxt "#31006"
+msgid "Weather provided by"
+msgstr "Météo fournie par"
+
+#: /1080i/Includes_Furniture.xml
+msgctxt "#31007"
+msgid "Weather forecast for"
+msgstr "Prévisions météo pour"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31008"
+msgid "Install weather fanart"
+msgstr "Installer le fanart météo"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31009"
+msgid "Complete"
+msgstr "Terminer"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31010"
+msgid "Weather fanart successfully installed"
+msgstr "Fanart météo installé avec succès"
+
+#: /1080i/MyWeather.xml
+msgctxt "#31011"
+msgid "Default weather icons"
+msgstr "Icones météo par défaut"
+
+#: /1080i/MyWeather.xml
+msgctxt "#31012"
+msgid "Weather fanart installed"
+msgstr "Fanart météo installé"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31013"
+msgid "Set weather icons"
+msgstr "Définir les icones météo"
+
+#: /1080i/MyVideoNav.xml
+msgctxt "#31014"
+msgid "Extra fanart"
+msgstr "Fanart extra"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31015"
+msgid "Prefer colour media flags"
+msgstr "Préférer les flags média de couleur"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31016"
+msgid "Prefer posters for music videos"
+msgstr "Préférer les posters pour les vidéos musicales"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31017"
+msgid "Smart Shortcuts"
+msgstr "Raccourcis intelligents"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31018"
+msgid "Common Shortcut"
+msgstr "Raccourci commun"
+
+#: /1080i/script-globalsearch-main.xml
+msgctxt "#31019"
+msgid "Close"
+msgstr "Fermer"
+
+#: /1080i/script-globalsearch-main.xml
+msgctxt "#31020"
+msgid "mins"
+msgstr "mins"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31021"
+msgid "Colors"
+msgstr "Couleurs"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31022"
+msgid "Use animated artwork where available"
+msgstr "Utiliser les artworks anilés quand disponibles"
+
+#: /1080i/Includes_Statusbar.xml
+msgctxt "#31023"
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31024"
+msgid "Miscellaneous"
+msgstr "Divers"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31025"
+msgid "Prefer scrollbars"
+msgstr "Préférer les scrollbars"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31026"
+msgid "Prefer fanart for episodes on home screen"
+msgstr "Préférer les fanarts des épisodes sur la page d'accueil"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31027"
+msgid "Customise power menu"
+msgstr "Personnaliser le menu alimentation"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31028"
+msgid "Reset skin settings to defaults (WARNING: This will reset your home menu to skin defaults)"
+msgstr "Restaurer les paramètres par défaut du skin ( ATTENTION: Ceci va réinitialiser tout vos menus d'accueil )"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31029"
+msgid "Use posters instead of landscape art for tvshows"
+msgstr "Utiliser les posters à la place de la vue paysage pour les séries"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31030"
+msgid "Backup / Restore"
+msgstr "Sauvegarder / Restaurer"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31031"
+msgid "Backup skin settings"
+msgstr "Sauvegarder les paramètres du skin"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31032"
+msgid "Restore skin settings"
+msgstr "Restaurer les paramètres du skin"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31033"
+msgid "Backup and restore settings"
+msgstr "Paramètres de sauvegarde et de restauration"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31034"
+msgid "Change backup and restore path"
+msgstr "Changer le chemin des backups / restaurations"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31035"
+msgid "hrs"
+msgstr "hrs"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31036"
+msgid "hr"
+msgstr "hr"
+
+#: /1080i/Includes_View.xml
+msgctxt "#31037"
+msgid "Posters"
+msgstr "Posters"
+
+#: /1080i/Includes_View.xml
+msgctxt "#31038"
+msgid "Landscape"
+msgstr "Paysage"
+
+#: /1080i/Includes_View.xml
+msgctxt "#31039"
+msgid "Tiles"
+msgstr "Titres"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31040"
+msgid "Prefer posters for tvshows"
+msgstr "Préférer les poster"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31041"
+msgid "Customise your home menu items, widgets, and backgrounds."
+msgstr "Personnaliser les items de votre page d'accueil, widgets et images de fonds"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31042"
+msgid "Set a default widget or background that will be used if no widget is set for that home menu item."
+msgstr "Définir un widget par défaut, ou une image de fond qui sera utilisé si aucun widget n'est défini pour cette entrée menu"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31043"
+msgid "Allow pressing left to open the submenu. Useful to disable if using categories widget."
+msgstr "Autoriser de presser gauche pour ouvrir le sous menu. Utile à désactiver si vous utilisez le widget catégories"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31044"
+msgid "Always display the top menubar even when it doesn't have focus."
+msgstr "Toujours afficher le menu du haut, même s'il n'a pas le focus"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31045"
+msgid "Pressing back in the library will open the top bar directly rather than going home first."
+msgstr "Appuyer sur retour dans la librairie ouvrira directement le menu de haut plutôt que de devoir aller en page d'accueil"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31046"
+msgid "Whenever the top menubar is opened from the library the skin will return to the home screen to display your widgets."
+msgstr "Chaque fois que la barre de menu supérieure est ouverte à partir de la bibliothèque, l'habillage revient à l'écran d'accueil pour afficher vos widgets."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31047"
+msgid "This disables fanart in the library and shows the fallback image instead."
+msgstr "Ceci désactive les fanarts dans la librairie et affiche l'image de fallback à la place"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31048"
+msgid "Set a fallback image for when no fanart is available."
+msgstr "Définir une image de fallback au cas ou aucun fanart ne serait disponible"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31049"
+msgid "Display artist fanart stored from the library database on the music visualisation screen."
+msgstr "Affiche le fanart de l'artiste stocké dans la base de données de la bibliothèque sur l'écran de visualisation de la musique."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31050"
+msgid "Use artist slideshow addon to display artist fanart on the music visualisation screen."
+msgstr "Utilisez l'addon du diaporama pour afficher le fanart de l'artiste sur l'écran de visualisation de la musique."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31051"
+msgid "Make the artist fanart slightly transparent so that the music visualisation shows through."
+msgstr "Rendre le fanart de l'artiste légèrement transparent pour que la visualisation de la musique transparaisse."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31052"
+msgid "Use a pan and zoom effect on the artist fanart in the music visualisation."
+msgstr "Utilisez un effet de panoramique et de zoom sur le fanart de l'artiste dans la visualisation musicale."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31053"
+msgid "Display discart in showcase viewtypes. Available discart overrides logo if both options are enabled."
+msgstr "Afficher discart dans les types de vue showcase. Le discart disponible remplace le logo si les deux options sont activées."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31054"
+msgid "Display logo in showcase viewtypes. Available discart overrides logo if both options are enabled."
+msgstr "Afficher le logo dans les types de vue. Le discart disponible remplace le logo si les deux options sont activées."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31055"
+msgid "Use skinhelper to provide animated posters and fanart. These can be downloaded from the context menu."
+msgstr "Utilisez skinhelper pour fournir des affiches animées et fanart. Ceux-ci peuvent être téléchargés depuis le menu contextuel."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31056"
+msgid "Use genre colors in PVR guide"
+msgstr "Utiliser les couleurs de genre dans le guide PVR"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31057"
+msgid "Use fullscreen PVR guide (hide plot info)"
+msgstr "Utiliser le guide PVR en plein écran (cacher l'information de l'intrigue)"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31058"
+msgid "Change the highlight focus colour used throughout the skin."
+msgstr "Changer la couleur de mise en évidence utilisée dans l'ensemble du skin"
+
+#: /1080i/DialogContextMenu.xml
+msgctxt "#31059"
+msgid "Context Menu"
+msgstr "Menu contextuel"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31060"
+msgid "Set a music or video playlist that will run when kodi starts."
+msgstr "Définir une liste de lecture musicale ou vidéo qui sera exécutée lorsque Kodi démarre."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31061"
+msgid "Disable the alphabet strip and always use scrollbars instead."
+msgstr "Désactiver la bande alphabétique et utiliser les barres de défilement à la place."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31062"
+msgid "Disable changing view settings and some settings buttons in information dialogs."
+msgstr "Désactiver la modification des paramètres d'affichage et de certains boutons de paramètres dans les boîtes de dialogue d'informations."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31063"
+msgid "Change the items displayed in the power menu."
+msgstr "Changer les éléments affichés dans le menu d'alimentation."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31064"
+msgid "Backup your skin settings and home menu shortcuts to a zipfile. Useful to migrate settings to a new setup."
+msgstr "Sauvegarder les paramètres du skin et les raccourcis du menu d'accueil dans un fichier zip. Utile pour migrer les paramètres vers une nouvelle configuration."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31065"
+msgid "Restore your skin settings, shortcuts, and widgets from a backup file."
+msgstr "Restaurer les paramètres du skin, les raccourcis et les widgets à partir d'un fichier de sauvegarde."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31066"
+msgid "Change the location where skin backup files are saved."
+msgstr "Modifier l'emplacement où les fichiers de sauvegarde du skin sont enregistrés."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31067"
+msgid "Reset all your skin settings, shortcuts, and widgets to default skin settings. This will not change any kodi system settings."
+msgstr "Réinitialiser tous les paramètres du skin, raccourcis et widgets aux paramètres par défaut. Cela ne changera pas les paramètres de kodi."
+
+#: /1080i/Includes_Weather.xml
+msgctxt "#31068"
+msgid "Cloud cover"
+msgstr "Couverture nuageuse"
+
+#: /1080i/Includes_Weather.xml
+msgctxt "#31069"
+msgid "Cloud cover is "
+msgstr "La couverture nuageuse est"
+
+#: /1080i/Includes_Weather.xml
+msgctxt "#31070"
+msgid "Cloud Cover"
+msgstr "Couverture nuageuse"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31071"
+msgid "IMDB Top250"
+msgstr "IMDB Top250"
+
+#: /1080i/DialogButtonMenu.xml
+msgctxt "#31072"
+msgid "Power Menu"
+msgstr "Menu alimentation"
+
+#: /1080i/VideoOSD.xml
+msgctxt "#31073"
+msgid "Recommended Youtube Videos"
+msgstr "Vidéos youtube recommandées"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31074"
+msgid "Make bottom bar transparent"
+msgstr "Rendre la barre du bas transparente"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31075"
+msgid "Apply transparency to bottom bar"
+msgstr "Appliquer la transparence ç la barre du bas"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31076"
+msgid "Enable transparency"
+msgstr "Activer la transparence"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31077"
+msgid "Add a slight transparency to the top and bottom bars."
+msgstr "Ajouter une légère transparence aux barre du bas et du haut"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31078"
+msgid "Ended"
+msgstr "Terminé"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31079"
+msgid "Pause video when opening extended info"
+msgstr "Mettre la vidéo en pause lorsque extended info s'ouvre"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31080"
+msgid "Artwork button downloads all available artwork (as specified in artwork downloader settings)"
+msgstr "Le bouton Artwork télécharge toutes les illustrations disponibles (comme spécifié dans les paramètres de téléchargement des artworks)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31081"
+msgid "Hide plot"
+msgstr "Masquer l'intrigue"
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31082"
+msgid "Video process information"
+msgstr "Informations sur le processus vidéo"
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31083"
+msgid "Framerate"
+msgstr "Framerate"
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31084"
+msgid "Aspect Ratio"
+msgstr "Aspect Ratio"
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31085"
+msgid "Codec Info"
+msgstr "Informations codec"
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31086"
+msgid "Extended Info"
+msgstr "Extended infos"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31087"
+msgid "Use colour overlay effect"
+msgstr "Utiliser l'effet de superposition des couleurs"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31088"
+msgid "Use scrolling text effect"
+msgstr "Utiliser l'effet de texte déroulant"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31089"
+msgid "Position context menu based on focused item"
+msgstr "Positionner le menu contextuel en fonction de l'élément ciblé"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31090"
+msgid "Display duration format as X HRS XX MINS"
+msgstr "Afficher les infos de durées comme tel: X HRS XX MINS"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31091"
+msgid "Prefer list view for seasons"
+msgstr "Préférer la vie liste pour les saisons"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31092"
+msgid "System Name"
+msgstr "Nom Système"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31093"
+msgid "Gateway Address"
+msgstr "Adresse de passerelle"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31094"
+msgid "Network and Storage"
+msgstr "Réseau et stockage"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31095"
+msgid "Video Encoder"
+msgstr "Encodeur vidéo"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31096"
+msgid "Memory"
+msgstr "Mémoire"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31097"
+msgid "Fan Speed"
+msgstr "Fan Speed"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31098"
+msgid "CPU Info"
+msgstr "Infos CPU"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31099"
+msgid "CPU Usage"
+msgstr "Utilisation CPU"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31100"
+msgid "Processor, Memory and Video"
+msgstr "Processeur, mémoire et vidéo"
+
+msgctxt "#31101"
+msgid "items"
+msgstr "éléments"
+
+msgctxt "#31102"
+msgid "min"
+msgstr "min"
+
+msgctxt "#31103"
+msgid "Live TV"
+msgstr "TV en direct"
+
+msgctxt "#31104"
+msgid "Used Memory"
+msgstr "Mémoire utilisée"
+
+msgctxt "#31105"
+msgid "Spotlight"
+msgstr "En avant"
+
+msgctxt "#31106"
+msgid "Ends "
+msgstr "Fin"
+
+msgctxt "#31107"
+msgid "Video Stream"
+msgstr "Flux vidéo"
+
+msgctxt "#31108"
+msgid "Current Menu"
+msgstr "Menu actuel"
+
+msgctxt "#31109"
+msgid "Customise home menu"
+msgstr "Personnaliser le menu d'accueil"
+
+msgctxt "#31110"
+msgid "Background"
+msgstr "Arrière plan"
+
+msgctxt "#31111"
+msgid "Display now playing video in background"
+msgstr "Afficher en cours de lecture dans l'arrière plan"
+
+msgctxt "#31112"
+msgid "Submenu"
+msgstr "Sous menu"
+
+msgctxt "#31113"
+msgid "No Timer"
+msgstr "Pas de timer"
+
+msgctxt "#31114"
+msgid "Now Playing"
+msgstr "En cours de lecture"
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31115"
+msgid "Recommended"
+msgstr "Recommandé"
+
+msgctxt "#31116"
+msgid "DVD Menu"
+msgstr "Menu DVD"
+
+msgctxt "#31117"
+msgid "3D Mode"
+msgstr "Mode 3D"
+
+msgctxt "#31118"
+msgid "Display artist slideshow"
+msgstr "Afficher le diaporama de l'artiste"
+
+msgctxt "#31119"
+msgid "Display visualisation behind slideshow"
+msgstr "Afficher la visualisation derrière le diaporama"
+
+msgctxt "#31120"
+msgid "Animate artist slideshow"
+msgstr "Animer le diaporama de l'artiste"
+
+msgctxt "#31121"
+msgid "Display fanart"
+msgstr "Afficher le fanart"
+
+msgctxt "#31122"
+msgid "Ongoing Episodes"
+msgstr "Episodes en cours"
+
+msgctxt "#31123"
+msgid "Resumable Movies"
+msgstr "Films 'reprenables'"
+
+msgctxt "#31124"
+msgid "Recent Movies"
+msgstr "Films récents"
+
+msgctxt "#31125"
+msgid "Recent Episodes"
+msgstr "Episodes récents"
+
+msgctxt "#31126"
+msgid "Episodes Spotlight"
+msgstr "Episodes en avant"
+
+msgctxt "#31127"
+msgid "Movies Spotlight"
+msgstr "Films en avant"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31128"
+msgid "Allow scrolling through items when in full fanart mode"
+msgstr "Autoriser le défilement d'éléments en mode fanart complet"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31129"
+msgid "Enable full fanart mode"
+msgstr "Activer le mode fanart complet"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31130"
+msgid "Display media flags with video info"
+msgstr "Afficher les indicateurs multimédias avec les informations sur la vidéo"
+
+#: /1080i/MusicOSD.xml
+msgctxt "#31131"
+msgid "Colour overlay"
+msgstr "Superposition de couleur"
+
+msgctxt "#31132"
+msgid "Reset home menu shortcuts to defaults"
+msgstr "Réinitialiser les raccourcis du menu d'accueil aux valeurs par défaut"
+
+msgctxt "#31133"
+msgid "Hide watched"
+msgstr "Masquer déjà vu"
+
+msgctxt "#31134"
+msgid "Trending Movies"
+msgstr "Films à la mode"
+
+msgctxt "#31135"
+msgid "Trending Shows"
+msgstr "Séries à la mode"
+
+msgctxt "#31136"
+msgid "Airing Shows"
+msgstr "Séries en diffusion"
+
+msgctxt "#31137"
+msgid "Premiering Shows"
+msgstr "Séries en avant première"
+
+msgctxt "#31138"
+msgid "Content Loading"
+msgstr "Chargement du contenu"
+
+msgctxt "#31139"
+msgid "Box Office"
+msgstr "Box office"
+
+msgctxt "#31140"
+msgid "Budget"
+msgstr "Budget"
+
+msgctxt "#31141"
+msgid "Youtube"
+msgstr "Youtube"
+
+#: /1080i/MusicOSD.xml
+msgctxt "#31142"
+msgid "Scrolling text"
+msgstr "Texte défilant"
+
+msgctxt "#31143"
+msgid "Set weather fanart"
+msgstr "Définir le fanart météo"
+
+msgctxt "#31144"
+msgid "Edit Widgets"
+msgstr "Editer les widgets"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31145"
+msgid "Display poster and plot when video is paused"
+msgstr "Afficher l'affiche et l'intrigue lorsque la vidéo est en pause"
+
+msgctxt "#31146"
+msgid "Animate fanart"
+msgstr "Animer le fanart"
+
+msgctxt "#31147"
+msgid "Extra Info"
+msgstr "Infos complémentaires"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31148"
+msgid "Hide artwork"
+msgstr "Masquer les artworks"
+
+msgctxt "#31149"
+msgid "Replace widget fanart with background"
+msgstr "Remplacer le fanart widget avec l'image d'arrière plan"
+
+msgctxt "#31150"
+msgid "Set fallback image"
+msgstr "Définir une image de fallback"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31151"
+msgid "Hide tvshow labels"
+msgstr "Masquer le label séries tv"
+
+msgctxt "#31152"
+msgid "Furniture"
+msgstr "Fournitures"
+
+#: /1080i/Includes_Statusbar.xml
+msgctxt "#31153"
+msgid "Sort by:"
+msgstr "Trier par:"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31154"
+msgid "Only use blur in info dialog"
+msgstr "N'utiliser le blur que dans la boîte de dialogue d'informations"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31155"
+msgid "Disable the bounce in animation when scrolling between items."
+msgstr "Désactiver le bounce dans l'animation lorsque vous faites défiler les éléments."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31156"
+msgid "Apply a color changing overlay effect to music visualisation background."
+msgstr "Appliquer un effet de superposition de couleur à l'arrière-plan de visualisation de la musique."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31157"
+msgid "A scrolling text effect showing artist, album and song info overlayed on the music visualisation background."
+msgstr "Un effet de texte déroulant montrant des informations sur l'artiste, l'album et la chanson superposées sur le fond de visualisation de la musique."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31158"
+msgid "Automatically open visualisation after starting a song"
+msgstr "Ouvrir automatiquement la visualisation après le début d'une chanson"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31159"
+msgid "Video Sources"
+msgstr "Sources vidéo"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31160"
+msgid "Music sources"
+msgstr "Sources de musique"
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31161"
+msgid "Showcase"
+msgstr "Showcase"
+
+#: /1080i/Includes_Widgets.xml
+msgctxt "#31162"
+msgid "Categories"
+msgstr "Catégories"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31163"
+msgid "Submenu Items"
+msgstr "Elements du sous menu"
+
+#: /1080i/Includes_View_List.xml
+msgctxt "#31164"
+msgid "Info List"
+msgstr "Liste d'informations"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31165"
+msgid "TV recordings"
+msgstr "Enregistrements tv"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31166"
+msgid "TV timers"
+msgstr "Notifications tv"
+
+#: /1080i/Includes_View_List.xml
+msgctxt "#31167"
+msgid "Square list"
+msgstr "Liste carrée"
+
+msgctxt "#31168"
+msgid "Startup video or music playlist"
+msgstr "Démarrage de la vidéo ou de la playlist musicale"
+
+msgctxt "#31169"
+msgid "Extras"
+msgstr "Extras"
+
+msgctxt "#31170"
+msgid "Cinema Experience"
+msgstr "Expérience cinéma"
+
+msgctxt "#31171"
+msgid "Video Extras"
+msgstr "Videos Extra"
+
+msgctxt "#31172"
+msgid "Display music visualisation in background"
+msgstr "Afficher la visualisation de la musique en arrière-plan"
+
+msgctxt "#31173"
+msgid "Recently added"
+msgstr "Ajoutés récemment"
+
+msgctxt "#31174"
+msgid "Recently played"
+msgstr "Lu récemment"
+
+msgctxt "#31175"
+msgid "Play random"
+msgstr "Lecture aléatoire"
+
+msgctxt "#31176"
+msgid "Delete Settings Shortcut"
+msgstr "Supprimer les paramètres de raccourcis"
+
+msgctxt "#31177"
+msgid "Are you sure you want to remove the settings shortcut?[CR]Please ensure that you have an alternative method of accessing settings before you remove this shortcut."
+msgstr "Êtes-vous sûr de vouloir supprimer le raccourci des paramètres? [CR] Veuillez vous assurer que vous disposez d'une autre méthode d'accès aux paramètres avant de supprimer ce raccourci."
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31178"
+msgid "Showcase 2"
+msgstr "Showcase 2"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31179"
+msgid "Lock view"
+msgstr "Verrouiller la vue"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31180"
+msgid "Unlock view"
+msgstr "Déverouiller la vue"
+
+msgctxt "#31181"
+msgid "Select icon"
+msgstr "Sélectionner une icone"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31182"
+msgid "Wrap list"
+msgstr "Wrap liste"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31183"
+msgid "Move categories widget to bottom"
+msgstr "Déplacer le widget catégories vers le bas"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31184"
+msgid "Display submenu as categories widget"
+msgstr "Afficher le sous-menu en tant que widget de catégories"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31185"
+msgid "Make top header bar transparent"
+msgstr "Rendre la barre d'en-tête supérieure transparente"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31186"
+msgid "Display osd submenu"
+msgstr "Afficher le menu OSD"
+
+msgctxt "#31187"
+msgid "Random Albums"
+msgstr "Albums aléatoires"
+
+msgctxt "#31188"
+msgid "Recent Albums"
+msgstr "Albums récents"
+
+msgctxt "#31189"
+msgid "Recommended Albums"
+msgstr "Albums recommandés"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31190"
+msgid "Use large icons for categories widget"
+msgstr "Utiliser des icones larges pour le widget catégories"
+
+msgctxt "#31191"
+msgid "Directed by"
+msgstr "Dirigé par"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31192"
+msgid "Use focus bounce animation"
+msgstr "Utilisez l'animation focus bounce (rebond)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31193"
+msgid "Reset colors to default"
+msgstr "Réinitialiser les couleurs par défaut"
+
+msgctxt "#31194"
+msgid "View Options"
+msgstr "Options des vues"
+
+msgctxt "#31195"
+msgid "Reload Skin"
+msgstr "Recharger le skin"
+
+#: /1080i/Includes_View_List.xml
+msgctxt "#31196"
+msgid "Details List"
+msgstr "Liste détails"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31197"
+msgid "Save Changes"
+msgstr "Enregistrer"
+
+#: /1080i/Includes_View_List.xml
+msgctxt "#31198"
+msgid "Media Info 2"
+msgstr "Infos média 2"
+
+msgctxt "#31199"
+msgid "Kiosk mode"
+msgstr "Mode kiosque"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31200"
+msgid "Random Movies"
+msgstr "Films aléatoires"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31201"
+msgid "Pressing info only displays seekbar (hides poster and plot)"
+msgstr "Appuer sur infos n'affichera que la barre de recherche ( poster et intrigue masqués )"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31202"
+msgid "Display discart in showcase viewtype"
+msgstr "Afficher discart dans le type de vue showcase"
+
+msgctxt "#31203"
+msgid "Artwork"
+msgstr "Artwork"
+
+msgctxt "#31204"
+msgid "Similar to"
+msgstr "Similaire à"
+
+msgctxt "#31205"
+msgid "Released by"
+msgstr "Realeasé par"
+
+msgctxt "#31206"
+msgid "Similar"
+msgstr "Similaire"
+
+msgctxt "#31207"
+msgid "themoviedb.org"
+msgstr "themoviedb.org"
+
+msgctxt "#31208"
+msgid "In Cinemas"
+msgstr "Dans les cinémas"
+
+msgctxt "#31209"
+msgid "Upcoming"
+msgstr "A venir"
+
+msgctxt "#31210"
+msgid "Popular"
+msgstr "Populaire"
+
+msgctxt "#31211"
+msgid "Top Rated"
+msgstr "Mieux notés"
+
+msgctxt "#31212"
+msgid "Airing"
+msgstr "En diffusion"
+
+msgctxt "#31213"
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31214"
+msgid "Display panel backgrounds"
+msgstr "Afficher les arrière-plans du panneau"
+
+msgctxt "#31215"
+msgid "Unwatched"
+msgstr "Non vu"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31216"
+msgid "Display logo in showcase viewtype"
+msgstr "Afficher le logo dans le type de vue showcase"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31217"
+msgid "Change location"
+msgstr "Changer l'emplacement"
+
+#: /1080i/script-nextup-notification-PostPlayInfo.xml
+msgctxt "#31218"
+msgid "Playing Next..."
+msgstr "Lecture suivante..."
+
+#: /1080i/script-nextup-notification-PostPlayInfo.xml
+msgctxt "#31219"
+msgid "Previous"
+msgstr "Précédent"
+
+msgctxt "#31220"
+msgid "Next Aired"
+msgstr "Diffusé après"
+
+#: /1080i/script-nextup-notification-PostPlayInfo.xml
+msgctxt "#31221"
+msgid "Next Up"
+msgstr "Après"
+
+#: /1080i/script-nextup-notification-PostPlayInfo.xml
+msgctxt "#31222"
+msgid "Show/Hide Spoilers"
+msgstr "Afficher / masquer les spoilers"
+
+msgctxt "#31223"
+msgid "Upcoming Movies"
+msgstr "Films à venir"
+
+msgctxt "#31224"
+msgid "Popular Movies"
+msgstr "Films populaires"
+
+msgctxt "#31225"
+msgid "Top Rated Movies"
+msgstr "Films les mieux notés"
+
+msgctxt "#31226"
+msgid "Popular TV Shows"
+msgstr "Séries populaires"
+
+msgctxt "#31227"
+msgid "Top Rated TV Shows"
+msgstr "Séries les mieux notées"
+
+msgctxt "#31228"
+msgid "On Air TV Shows"
+msgstr "Séries en diffusion"
+
+msgctxt "#31229"
+msgid "TV Shows Airing Today"
+msgstr "Séries en diffusion aujourd'hui"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31230"
+msgid "Open submenu on left"
+msgstr "Ouvrir le sous menu en appuyant sur gauche"
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31231"
+msgid "Lovefilm"
+msgstr "Film d'amour"
+
+msgctxt "#31232"
+msgid "Reset path"
+msgstr "Réinitialiser le chemin"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31233"
+msgid "Edge padding"
+msgstr "Rembourrage de bord"
+
+#: /1080i/SettingsProfile.xml
+msgctxt "#31234"
+msgid "Customise your user profiles and enable/disable the login screen."
+msgstr "Personnaliser vos profils utilisateur et activez / désactivez l'écran de connexion."
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31235"
+msgid "Set sorting (default$COMMA year$COMMA rating$COMMA lastplayed$COMMA dateadded$COMMA etc.)"
+msgstr "Définir le tri (par défaut $COMMA année $COMMA rating $COMMA dernier lu $COMMA date d'ajout $COMMA etc.)"
+
+msgctxt "#31236"
+msgid "Now playing..."
+msgstr "En cours de lecture..."
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31237"
+msgid "Sort"
+msgstr "Tri"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31238"
+msgid "Set sort direction (ascending$COMMA descending)"
+msgstr "Définir la direction du tri (ascendant $COMMA décroissant)"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31239"
+msgid "Direction"
+msgstr "Direction"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31240"
+msgid "Aspect"
+msgstr "Aspect"
+
+msgctxt "#31241"
+msgid "Additional info"
+msgstr "Infos complémentaires"
+
+msgctxt "#31242"
+msgid "Provided by themoviedb.org"
+msgstr "Fournis par themoviedb.org"
+
+msgctxt "#31243"
+msgid "pages"
+msgstr "pages"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31244"
+msgid "Select Widget"
+msgstr "Sélectionnez un widget"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31245"
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31246"
+msgid "Press right to customize widgets"
+msgstr "Pressez droite pour personnaliser les widgets"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31247"
+msgid "Widgets"
+msgstr "Widgets"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31248"
+msgid "Edit Shortcuts"
+msgstr "Editer les raccourcis"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31249"
+msgid "Press right to customize shortcuts"
+msgstr "Presser droite pour personnaliser les raccourcis"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31250"
+msgid "Select secondary gradient colour"
+msgstr "Sélectionnez la couleur de dégradé secondaire"
+
+msgctxt "#31251"
+msgid "Weather Fanart"
+msgstr "Fanart météo"
+
+msgctxt "#31252"
+msgid "Weather Forecast"
+msgstr "Prévisions météo"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31253"
+msgid "Use larger font for progress bar"
+msgstr "Utiliser une fonte plus grande pour la barre de progression"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31254"
+msgid "If you are having difficulties with widgets or home menu items not displaying correctly please make sure that you press the \"save changes\" button to ensure that your shortcuts and widgets are set."
+msgstr "Si vous rencontrez des difficultés avec les widgets ou les éléments du menu d'accueil qui ne s'affichent pas correctement, assurez-vous d'avoir appuyé sur le bouton \"Enregistrer \" "
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31255"
+msgid "Use generated landscape art"
+msgstr "Utiliser le landscape généré"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31256"
+msgid "Display artwork"
+msgstr "Afficher l'artwork"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31257"
+msgid "Slide over library content when opening sideblade"
+msgstr "Glisser sur le contenu de la bibliothèque lors de l'ouverture du sideblade"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31258"
+msgid "Display clearart with seekbar"
+msgstr "Afficher clearart avec seekbar"
+
+msgctxt "#31259"
+msgid "Extra fanart"
+msgstr "Fanart extra"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31260"
+msgid "Use secondary color as background tint"
+msgstr "Utiliser une couleur secondaire comme teinte de fond"
+
+msgctxt "#31261"
+msgid "Widget aspect"
+msgstr "Aspect du widget"
+
+msgctxt "#31262"
+msgid "Poster"
+msgstr "Poster"
+
+msgctxt "#31263"
+msgid "Square"
+msgstr "Carré"
+
+msgctxt "#31264"
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+msgctxt "#31265"
+msgid "Fanart"
+msgstr "Fanart"
+
+msgctxt "#31266"
+msgid "Widget"
+msgstr "Widget"
+
+msgctxt "#31267"
+msgid "Action"
+msgstr "Action"
+
+msgctxt "#31268"
+msgid "Label"
+msgstr "Label"
+
+msgctxt "#31269"
+msgid "Fallback widget"
+msgstr "Widget de fallback"
+
+msgctxt "#31270"
+msgid "Video / Music OSD"
+msgstr "OSD musique / vidéo"
+
+msgctxt "#31271"
+msgid "Single Image"
+msgstr "Image seule"
+
+msgctxt "#31272"
+msgid "Multi Image"
+msgstr "Image multiple"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31273"
+msgid "Select background overlay color"
+msgstr "Sélectionnez la couleur de superposition d'arrière-plan"
+
+#: /1080i/Includes_View.xml
+msgctxt "#31274"
+msgid "Press down for info"
+msgstr "Appuyez bas pour info"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31275"
+msgid "Blur fanart (WARNING: CPU intensive. Please disable if having performance issues.)"
+msgstr "Flou de fanart (ATTENTION: utilisation intensive du processeur. Désactivez-le si vous rencontrez des problèmes de performance.)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31276"
+msgid "Use parallax effect on background when opening sideblade"
+msgstr "Utiliser l'effet de parallaxe sur le fond lors de l'ouverture sideblade"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31277"
+msgid "Animations"
+msgstr "Animations"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31278"
+msgid "Display filename and path in video info"
+msgstr "Afficher le nom de fichier et le chemin dans les informations de vidéo"
+
+msgctxt "#31279"
+msgid "Video decoder"
+msgstr "Décodeur vidéo"
+
+msgctxt "#31280"
+msgid "Pixel format"
+msgstr "Format de pixel"
+
+msgctxt "#31281"
+msgid "by"
+msgstr "par"
+
+msgctxt "#31282"
+msgid "on"
+msgstr "on"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31283"
+msgid "Display tvshow character art in showcase viewtype"
+msgstr "Afficher l'art des personnages des séries dans le type de vue showcase"
+
+#: MPAA Rating
+msgctxt "#31284"
+msgid "Classification"
+msgstr "Classification"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31285"
+msgid "Extended info"
+msgstr "Infos étendues"
+
+msgctxt "#31286"
+msgid "Select highlight colour"
+msgstr "Sélectionnez la couleur de surbrillance"
+
+msgctxt "#31287"
+msgid "Reset to default"
+msgstr "Restaurer les valeurs par défaut"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31288"
+msgid "Match highlight colors with poster"
+msgstr "Associer les couleurs de surbrillance avec les posters"
+
+msgctxt "#31289"
+msgid "Awards"
+msgstr "Prix"
+
+msgctxt "#31290"
+msgid "Consensus"
+msgstr "Consensus"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31291"
+msgid "Display text labels on landscape widgets"
+msgstr "Afficher les étiquettes de texte sur les widgets landscape"
+
+#: /1080i/DialogBusy.xml
+msgctxt "#31292"
+msgid "Kodi is busy$COMMA one moment please"
+msgstr "Kodi est occupé$COMMA un moment svp"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31293"
+msgid "Use minimal busy loader"
+msgstr "Utiliser un loader minimaliste"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31294"
+msgid "PVR / Live TV"
+msgstr "PVR / TV en direct"
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31295"
+msgid "Icons Info"
+msgstr "Icones infos"
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31296"
+msgid "Banner Info"
+msgstr "Bannière d'infos"
+
+#: /1080i/Includes_View_Posters.xml
+msgctxt "#31297"
+msgid "Landscape List"
+msgstr "Liste paysage"
+
+#: /1080i/Includes_View_List.xml
+msgctxt "#31298"
+msgid "Media Info"
+msgstr "Infos média"
+
+#: /1080i/DialogVideoInfo.xml
+msgctxt "#31299"
+msgid "Premiered"
+msgstr "A la une"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31300"
+msgid "Display next up episodes instead of cast in tvshow info dialog"
+msgstr "Afficher les prochains épisodes au lieu de les diffuser dans les info séries"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31301"
+msgid "Display media flags"
+msgstr "Afficher les flags média"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31302"
+msgid "Display ratings"
+msgstr "Afficher les évaluations"
+
+#: /1080i/DialogAddonInfo.xml
+msgctxt "#31303"
+msgid "Latest Changes"
+msgstr "Derniers changements"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31304"
+msgid "Switch artwork/info"
+msgstr "Changer artwork/info"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31305"
+msgid "Color cycling"
+msgstr "Cycle de couleurs"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31306"
+msgid "Shift fanart down"
+msgstr "Décaler le fanart vers le bas"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31307"
+msgid "Mouse and touch compatible widgets (NOTE: Limits widgets to two per menu item)"
+msgstr "Widgets compatibles avec la souris et le tactile (REMARQUE: Limite les widgets à deux par élément de menu)"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31308"
+msgid "Makes widgets touch and mouse compatible. Enabling this option will limit your widgets to a maximum of two per menu item. Categories widget will be set to large and will occupy one of the widget slots if it is enabled."
+msgstr "Rend les widgets tactiles et compatibles avec la souris. Si vous activez cette option, vos widgets seront limités à deux par élément de menu. Le widget Catégories sera défini sur large et occupera l'un des emplacements de widget s'il est activé."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31309"
+msgid "Blur effect type"
+msgstr "Type d'effet de flou"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31310"
+msgid "User rating"
+msgstr "Evaluation utilisateur"
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31311"
+msgid "Rate Song"
+msgstr "Evaluer la chanson"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31312"
+msgid "Use large album art in music visualisation"
+msgstr "Utiliser une grande pochette d'album dans la visualisation de musique"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31313"
+msgid "Background transparency"
+msgstr "Transparence d'arrière plan"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31314"
+msgid "Automatically display music video info at beginning and end of clip"
+msgstr "Afficher automatiquement les informations sur la vidéo musicale au début et à la fin du clip"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31315"
+msgid "CinemaVision"
+msgstr "CinemaVision"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31316"
+msgid "Increased"
+msgstr "Augmenté"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31317"
+msgid "Reduced"
+msgstr "Rédui"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31318"
+msgid "Geometric overlay effect on fanart"
+msgstr "Effet de superposition géométrique sur les fanart"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31319"
+msgid "Similar movies"
+msgstr "Films similaires"
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31320"
+msgid "Important"
+msgstr "Important"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31321"
+msgid "Reset to defaults"
+msgstr "Restaurer les valeurs par défaut"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31322"
+msgid "Image quality changes the resolution of the generated image. Better quality images take longer to process. Quality changes can alter the intensity of the effect in addition to other effect settings. The blend setting will blend the effect with the original image$COMMA with a value of 100 showing the full image effect."
+msgstr "La qualité de l'image modifie la résolution de l'image générée. Les images de meilleure qualité prennent plus de temps à traiter. Les changements de qualité peuvent modifier l'intensité de l'effet en plus d'autres paramètres. Le réglage va mélanger l'effet de l'image originale $COMMA avec une valeur de 100 désignant l'effet de l'image complète."
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31323"
+msgid "Blend"
+msgstr "Mélange"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31324"
+msgid "Bitsize"
+msgstr "Bitsize"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31325"
+msgid "Pixel size"
+msgstr "Taile de pixel"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31326"
+msgid "Blur radius"
+msgstr "Rayon du flou"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31327"
+msgid "Image quality"
+msgstr "Qualité d'image"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31328"
+msgid "Highest"
+msgstr "Plus grand"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31329"
+msgid "Colorbox Advanced Settings"
+msgstr "Paramètres avancés de la palette de couleurs"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31330"
+msgid "Advanced settings for colorbox (blur settings)"
+msgstr "Paramètres avancés pour la palette de couleurs (paramètres de flou)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31331"
+msgid "Icon only mode"
+msgstr "Mode icones seules"
+
+#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
+msgctxt "#31332"
+msgid "Change image"
+msgstr "Changer l'image"
+
+#: /1080i/script-globalsearch-main.xml
+msgctxt "#31333"
+msgid "Programmes"
+msgstr "Programmes"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31334"
+msgid "Alphabet strip is not available for this content"
+msgstr "La bande alphabet n'est pas disponible pour ce contenu"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31335"
+msgid "Match background overlay color with poster"
+msgstr "Associez la couleur de superposition de fond avec le poster"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31336"
+msgid "Display background color overlay"
+msgstr "Afficher la superposition de couleurs d'arrière-plan"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31337"
+msgid "Display submenu indicator"
+msgstr "Afficher l'indicateur de sous menu"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31338"
+msgid "Display background vignette effect"
+msgstr "Afficher l'effet de vignette d'arrière-plan"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31339"
+msgid "Effects"
+msgstr "Effets"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31340"
+msgid "Match poster"
+msgstr "Associer le poster"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31341"
+msgid "Display all widgets together (ungroup widgets)"
+msgstr "Afficher tous les widgets ensemble (dégrouper les widgets)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31342"
+msgid "Widget item limit (use smaller values for better performance)"
+msgstr "Limite de l'élément de widget (utilisez des valeurs plus petites pour de meilleures performances)"
+
+#: /1080i/Settings.xml
+msgctxt "#31343"
+msgid "PVR"
+msgstr "PVR"
+
+#: /1080i/Settings.xml
+msgctxt "#31344"
+msgid "Install from repository or zip"
+msgstr "Installer à partir d'un repository ou d'un zip"
+
+#: /1080i/Includes_Widgets.xml
+msgctxt "#31345"
+msgid "Event logging"
+msgstr "Logger les évènements"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31346"
+msgid "Display settings$COMMA search and power icons"
+msgstr "Afficher les icones paramètres$COMMA recherches et alimentation"
