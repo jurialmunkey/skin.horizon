@@ -12,6 +12,7 @@
     <onload>ClearProperty(HomeFocus,Home)</onload>
     <onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 
+    <onload>AlarmClock(SkinSplashStarted,SetProperty(SkinSplashStarted,1,home),00:01,silent,false)</onload>
 
     <controls>
         <control type="list" id="9988">
@@ -46,6 +47,31 @@
             <onright>3000</onright>
             <onfocus condition="String.IsEmpty(Window(Home).Property(WidgetFocus)) | Window.Previous(MusicVisualisation.xml) | Window.Previous(VideoFullScreen.xml)">SetFocus(300)</onfocus>
             <onfocus condition="!String.IsEmpty(Window(Home).Property(WidgetFocus)) + !Window.Previous(MusicVisualisation.xml) + !Window.Previous(VideoFullScreen.xml)">SetFocus(3000)</onfocus>
+        </control>
+
+        <!-- Splash -->
+        <control type="image" description="Background">
+            <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="ff000000">common/white.png</texture>
+            <visible>String.IsEmpty(Window(Home).Property(SkinSplashStarted)) | Integer.IsEqual(Container(300).NumItems,0) | Container(300).IsUpdating</visible>
+            <animation effect="fade" start="100" end="0" delay="600" time="600" tween="quadratic">Hidden</animation>
+            <visible>String.IsEmpty(Skin.String(StartupPlaylist))</visible>
+        </control>
+        <control type="image" description="Background">
+            <include>Dimensions_Fullscreen</include>
+            <texture>special://skin/fanart.jpg</texture>
+            <visible>String.IsEmpty(Window(Home).Property(SkinSplashStarted)) | Integer.IsEqual(Container(300).NumItems,0) | Container(300).IsUpdating</visible>
+            <animation effect="fade" start="100" end="0" time="600" tween="quadratic">Hidden</animation>
+            <visible>String.IsEmpty(Skin.String(StartupPlaylist))</visible>
+        </control>
+        <control type="group">
+            <top>470</top>
+            <visible>String.IsEmpty(Skin.String(StartupPlaylist))</visible>
+            <visible>String.IsEmpty(Window(Home).Property(SkinSplashStarted)) | Integer.IsEqual(Container(300).NumItems,0) | Container(300).IsUpdating</visible>
+            <animation effect="fade" start="100" end="0" time="600" tween="quadratic">Hidden</animation>
+            <include content="Defs_BusySpinner">
+                <param name="label" value="$LOCALIZE[31348]..." />
+            </include>
         </control>
     </controls>
 </window>

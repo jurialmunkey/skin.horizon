@@ -1,5 +1,7 @@
 [B]1.0.32[/B]
 Add ability to change home header text
+Improved splash screen handling
+Remove some unused includes
 
 [B]1.0.31[/B]
 Add top setting/search/power icons
