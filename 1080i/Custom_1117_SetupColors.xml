@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1117">
+    <zorder>10</zorder>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <onunload>Skin.SetBool(SkinInit)</onunload>
+    <onunload condition="String.IsEmpty(Window(Home).Property(SkinInitStarted))">ReplaceWindow(Startup.xml)</onunload>
+    <controls>
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Confirm">
+                <param name="header_label" value="Horizon Setup" />
+                <param name="textbox_label" value="Select the color scheme for the skin.[CR]Colors can be customised later in [I]Skin Settings > Colors[/I]" />
+            </include>
+
+            <control type="grouplist" id="9000">
+                <top>310</top>
+                <height>66</height>
+                <width>100%</width>
+                <align>center</align>
+                <orientation>horizontal</orientation>
+                <itemgap>30</itemgap>
+                <control type="button" id="9001">
+                    <description>Yes</description>
+                    <width>320</width>
+                    <label>Pink Purple</label>
+                    <font>font_button</font>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <onfocus>Skin.Reset(focuscolor.name)</onfocus>
+                    <onfocus>Skin.Reset(gradientcolor.name)</onfocus>
+                    <onfocus>Skin.Reset(overlaycolor.name)</onfocus>
+                    <onclick>Close</onclick>
+                </control>
+                <control type="button" id="9002">
+                    <description>No</description>
+                    <width>320</width>
+                    <label>Blue Green</label>
+                    <font>font_button</font>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <onfocus>Skin.SetString(focuscolor.name,ff0385b5)</onfocus>
+                    <onfocus>Skin.SetString(gradientcolor.name,ff28a855)</onfocus>
+                    <onfocus>Skin.SetString(overlaycolor.name,ff287ba8)</onfocus>
+                    <onclick>Close</onclick>
+                </control>
+            </control>
+
+        </control>
+    </controls>
+</window>
